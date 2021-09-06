@@ -1,0 +1,47 @@
+sha: a7dd88dc15a63ff9d1db44c9fd00e600c24961ca
+message: fixed bug and formatting
+commit_log: "commit a7dd88dc15a63ff9d1db44c9fd00e600c24961ca\nAuthor: jorgemf <jorgemf@gmail.com>\n\
+  Date:   Wed Dec 6 11:42:17 2017 +0100\n\n    fixed bug and formatting"
+contained_keywords:
+- fixed
+- bug
+commit_time: 2017-12-06 11:42:17 +0100
+commit_author: jorgemf
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorlayer/distributed.py
+  source_file: a/tensorlayer/distributed.py
+  target_file: b/tensorlayer/distributed.py
+  added: 2
+  removed: 3
+  add_line_no:
+  - - 9
+    - '    """Specification for the distributed task with the job name, index of the
+      task,
+
+      '
+  - - 172
+    - '    return tf.train.MonitoredTrainingSession(master=task_spec.target(),
+
+      '
+  del_line_no:
+  - - null
+    - '    """
+
+      '
+  - - null
+    - '    Specification for the distributed task with the job name, index of the
+      task,
+
+      '
+  - - null
+    - '    return tf.train.MonitoredTrainingSession(master=task_spec.target,
+
+      '

@@ -1,0 +1,8 @@
+UPD @type:atom_expr@ @[1402,1438]@ np.linspace(0.0, years, 365 * years) @TO@ @type:atom_expr@ @[1402,1443]@ np.linspace(0.0, years, int(365 * years))
+
+INS @type:atom_expr@ @[1426,1442]@ int(365 * years) @TO@ @type:arglist@ @[1414,1437]@ 0.0, years, 365 * years
+
+INS @type:atom_expr@ @[1426,1442]@ int(365 * years) @TO@ @type:arglist@ @[1414,1437]@ 0.0, years, 365 * years
+
+INS @type:trailer@ @[1429,1442]@ (365 * years) @TO@ @type:atom_expr@ @[1426,1442]@ int(365 * years)
+

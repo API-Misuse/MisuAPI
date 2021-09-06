@@ -1,0 +1,20 @@
+commit 0276865c72b227313db34230c5432d6a871d6525
+Author: Ruoming Pang <rpang@google.com>
+Date:   Sat Jan 9 21:17:39 2021 -0800
+
+    Adds tf.io.gfile.makedirs(self._program_dir) to avoid write failures for model_analysis.txt.
+    
+    PiperOrigin-RevId: 350977378
+
+diff --git a/lingvo/core/program.py b/lingvo/core/program.py
+index e2a3afde..91aff9f7 100644
+--- a/lingvo/core/program.py
++++ b/lingvo/core/program.py
+@@ -90,6 +90,7 @@ class BaseProgram:
+     else:
+       program_dir_name = p.name + '_' + p.dataset_name.lower()
+     self._program_dir = os.path.join(self._logdir, program_dir_name)
++    tf.io.gfile.makedirs(self._program_dir)
+     # Initialized on use; access via self._summary_writer property only.
+     self._summary_writer_obj = None
+ 

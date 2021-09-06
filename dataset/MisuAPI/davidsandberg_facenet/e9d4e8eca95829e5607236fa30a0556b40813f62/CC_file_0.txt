@@ -1,0 +1,18 @@
+UPD @type:simple_stmt@ @[8047,8102]@ max_axis = tf.reduce_max(target, axis, keep_dims=T <text_longer_than_50> @TO@ @type:simple_stmt@ @[8047,8101]@ max_axis = tf.reduce_max(target, axis, keepdims=Tr <text_longer_than_50>
+---UPD @type:expr_stmt@ @[8047,8101]@ max_axis = tf.reduce_max(target, axis, keep_dims=T <text_longer_than_50> @TO@ @type:expr_stmt@ @[8047,8100]@ max_axis = tf.reduce_max(target, axis, keepdims=Tr <text_longer_than_50>
+------UPD @type:atom_expr@ @[8058,8101]@ tf.reduce_max(target, axis, keep_dims=True) @TO@ @type:atom_expr@ @[8058,8100]@ tf.reduce_max(target, axis, keepdims=True)
+---------UPD @type:trailer@ @[8071,8101]@ (target, axis, keep_dims=True) @TO@ @type:trailer@ @[8071,8100]@ (target, axis, keepdims=True)
+------------UPD @type:arglist@ @[8072,8100]@ target, axis, keep_dims=True @TO@ @type:arglist@ @[8072,8099]@ target, axis, keepdims=True
+---------------UPD @type:argument@ @[8086,8100]@ keep_dims=True @TO@ @type:argument@ @[8086,8099]@ keepdims=True
+------------------UPD @type:name@ @[8086,8095]@ keep_dims @TO@ @type:name@ @[8086,8094]@ keepdims
+
+
+UPD @type:simple_stmt@ @[8155,8215]@ normalize = tf.reduce_sum(target_exp, axis, keep_d <text_longer_than_50> @TO@ @type:simple_stmt@ @[8154,8213]@ normalize = tf.reduce_sum(target_exp, axis, keepdi <text_longer_than_50>
+---UPD @type:expr_stmt@ @[8155,8214]@ normalize = tf.reduce_sum(target_exp, axis, keep_d <text_longer_than_50> @TO@ @type:expr_stmt@ @[8154,8212]@ normalize = tf.reduce_sum(target_exp, axis, keepdi <text_longer_than_50>
+------UPD @type:atom_expr@ @[8167,8214]@ tf.reduce_sum(target_exp, axis, keep_dims=True) @TO@ @type:atom_expr@ @[8166,8212]@ tf.reduce_sum(target_exp, axis, keepdims=True)
+---------UPD @type:trailer@ @[8180,8214]@ (target_exp, axis, keep_dims=True) @TO@ @type:trailer@ @[8179,8212]@ (target_exp, axis, keepdims=True)
+------------UPD @type:arglist@ @[8181,8213]@ target_exp, axis, keep_dims=True @TO@ @type:arglist@ @[8180,8211]@ target_exp, axis, keepdims=True
+---------------UPD @type:argument@ @[8199,8213]@ keep_dims=True @TO@ @type:argument@ @[8198,8211]@ keepdims=True
+------------------UPD @type:name@ @[8199,8208]@ keep_dims @TO@ @type:name@ @[8198,8206]@ keepdims
+
+

@@ -1,0 +1,87 @@
+UPD @type:with_stmt@ @[1057,1703]@ with tf.variable_scope(name) as scope:
+			#Create  <text_longer_than_50> @TO@ @type:with_stmt@ @[1057,1725]@ with tf.variable_scope(name) as scope:
+			#Create  <text_longer_than_50>
+---UPD @type:suite@ @[1095,1703]@ #Create variables
+			kernel_shape = (kernel_size,  <text_longer_than_50> @TO@ @type:suite@ @[1095,1725]@ #Create variables
+			kernel_shape = (kernel_size,  <text_longer_than_50>
+------INS @type:simple_stmt@ @[1706,1725]@ self.scope = scope @TO@ @type:suite@ @[1095,1703]@ #Create variables
+			kernel_shape = (kernel_size,  <text_longer_than_50>
+
+
+INS @type:with_stmt@ @[4012,4829]@ with tf.variable_scope(self.scope):
+			#Reshape to <text_longer_than_50> @TO@ @type:suite@ @[3891,4829]@ '''During this call, we change to channel last sch <text_longer_than_50>
+
+
+INS @type:with_stmt@ @[5076,6335]@ with tf.variable_scope(self.scope):
+			#input: [ba <text_longer_than_50> @TO@ @type:suite@ @[4866,6335]@ '''At sequential inference times:
+		we adopt fast  <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[4108,4203]@ outputs_ = tf.nn.conv1d(inputs_, self.kernel,
+			s <text_longer_than_50> @TO@ @type:simple_stmt@ @[4171,4267]@ outputs_ = tf.nn.conv1d(inputs_, self.kernel,
+				 <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4108,4202]@ outputs_ = tf.nn.conv1d(inputs_, self.kernel,
+			s <text_longer_than_50> @TO@ @type:expr_stmt@ @[4171,4266]@ outputs_ = tf.nn.conv1d(inputs_, self.kernel,
+				 <text_longer_than_50>
+------UPD @type:atom_expr@ @[4119,4202]@ tf.nn.conv1d(inputs_, self.kernel,
+			stride=1, pa <text_longer_than_50> @TO@ @type:atom_expr@ @[4182,4266]@ tf.nn.conv1d(inputs_, self.kernel,
+				stride=1, p <text_longer_than_50>
+---------UPD @type:trailer@ @[4131,4202]@ (inputs_, self.kernel,
+			stride=1, padding='VALID <text_longer_than_50> @TO@ @type:trailer@ @[4194,4266]@ (inputs_, self.kernel,
+				stride=1, padding='VALI <text_longer_than_50>
+------------UPD @type:arglist@ @[4132,4201]@ inputs_, self.kernel,
+			stride=1, padding='VALID' <text_longer_than_50> @TO@ @type:arglist@ @[4195,4265]@ inputs_, self.kernel,
+				stride=1, padding='VALID <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[4206,4274]@ if self.use_bias:
+			outputs_ = tf.nn.bias_add(out <text_longer_than_50> @TO@ @type:if_stmt@ @[4271,4340]@ if self.use_bias:
+				outputs_ = tf.nn.bias_add(ou <text_longer_than_50>
+---UPD @type:suite@ @[4223,4274]@ outputs_ = tf.nn.bias_add(outputs_, self.bias) @TO@ @type:suite@ @[4288,4340]@ outputs_ = tf.nn.bias_add(outputs_, self.bias)
+
+
+UPD @type:with_stmt@ @[4570,4737]@ with tf.control_dependencies([tf.assert_equal(tf.s <text_longer_than_50> @TO@ @type:with_stmt@ @[4642,4810]@ with tf.control_dependencies([tf.assert_equal(tf.s <text_longer_than_50>
+---UPD @type:suite@ @[4663,4737]@ outputs = tf.identity(outputs, name='output_equal_ <text_longer_than_50> @TO@ @type:suite@ @[4735,4810]@ outputs = tf.identity(outputs, name='output_equal_ <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[5048,5133]@ if self.training: 
+			raise RuntimeError('incremen <text_longer_than_50> @TO@ @type:if_stmt@ @[5162,5248]@ if self.training: 
+				raise RuntimeError('increme <text_longer_than_50>
+---UPD @type:suite@ @[5066,5133]@ raise RuntimeError('incremental_step only supports <text_longer_than_50> @TO@ @type:suite@ @[5180,5248]@ raise RuntimeError('incremental_step only supports <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[5390,5925]@ if kw > 1:
+			if self.convolution_queue is None:
+	 <text_longer_than_50> @TO@ @type:if_stmt@ @[5513,6059]@ if kw > 1:
+				if self.convolution_queue is None:
+ <text_longer_than_50>
+---UPD @type:suite@ @[5400,5925]@ if self.convolution_queue is None:
+				self.convol <text_longer_than_50> @TO@ @type:suite@ @[5523,6059]@ if self.convolution_queue is None:
+					self.convo <text_longer_than_50>
+------UPD @type:if_stmt@ @[5404,5638]@ if self.convolution_queue is None:
+				self.convol <text_longer_than_50> @TO@ @type:if_stmt@ @[5528,5766]@ if self.convolution_queue is None:
+					self.convo <text_longer_than_50>
+---------UPD @type:suite@ @[5438,5550]@ self.convolution_queue = tf.zeros((batch_size, (kw <text_longer_than_50> @TO@ @type:suite@ @[5562,5675]@ self.convolution_queue = tf.zeros((batch_size, (kw <text_longer_than_50>
+---------UPD @type:suite@ @[5558,5638]@ #shift queue
+				self.convolution_queue = self.con <text_longer_than_50> @TO@ @type:suite@ @[5684,5766]@ #shift queue
+					self.convolution_queue = self.co <text_longer_than_50>
+------UPD @type:if_stmt@ @[5869,5925]@ if dilation > 1:
+				inputs = inputs[:, 0::dilatio <text_longer_than_50> @TO@ @type:if_stmt@ @[6002,6059]@ if dilation > 1:
+					inputs = inputs[:, 0::dilati <text_longer_than_50>
+---------UPD @type:suite@ @[5885,5925]@ inputs = inputs[:, 0::dilation, :] @TO@ @type:suite@ @[6018,6059]@ inputs = inputs[:, 0::dilation, :]
+
+
+UPD @type:if_stmt@ @[6022,6086]@ if self.use_bias:
+			output = tf.nn.bias_add(outpu <text_longer_than_50> @TO@ @type:if_stmt@ @[6159,6224]@ if self.use_bias:
+				output = tf.nn.bias_add(outp <text_longer_than_50>
+---UPD @type:suite@ @[6039,6086]@ output = tf.nn.bias_add(output, self.bias) @TO@ @type:suite@ @[6176,6224]@ output = tf.nn.bias_add(output, self.bias)
+
+
+DEL @type:simple_stmt@ @[3872,3988]@ '''During this call, we change to channel last sch <text_longer_than_50> @FROM@ @type:suite@ @[3869,4755]@ '''During this call, we change to channel last sch <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[4795,5000]@ '''At sequential inference times:
+		we adopt fast  <text_longer_than_50> @FROM@ @type:suite@ @[4792,6195]@ '''At sequential inference times:
+		we adopt fast  <text_longer_than_50>
+
+

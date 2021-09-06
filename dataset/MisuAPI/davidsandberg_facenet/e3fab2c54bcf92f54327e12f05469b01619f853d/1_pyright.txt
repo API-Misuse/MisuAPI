@@ -1,0 +1,19 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet.py:18:6 - warning: Import "six.moves" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet.py:19:6 - warning: Import "six.moves" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet.py:25:6 - error: Import "scipy" could not be resolved (reportMissingImports)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet_train.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet_train.py:18:8 - error: Import "facenet" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet_train.py:155:14 - error: "xrange" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet_train.py:181:10 - error: "step" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e3fab2c54bcf92f54327e12f05469b01619f853d/a/facenet/src/facenet_train.py:203:12 - error: "xrange" is not defined (reportUndefinedVariable)
+5 errors, 2 warnings, 0 infos 
+Completed in 2.059sec
+
+time cost(in seconds): 2.290409803390503

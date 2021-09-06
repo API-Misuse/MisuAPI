@@ -1,0 +1,23 @@
+UPD @type:atom_expr@ @[1141,2243]@ setup(
+    name='prettytensor',
+    version=_VERSI <text_longer_than_50> @TO@ @type:atom_expr@ @[1141,2356]@ setup(
+    name='prettytensor',
+    version=_VERSI <text_longer_than_50>
+
+INS @type:argument@ @[1467,1492]@ include_package_data=True @TO@ @type:arglist@ @[1152,2237]@ name='prettytensor',
+    version=_VERSION,
+    des <text_longer_than_50>
+
+INS @type:operator@ @[1492,1493]@ , @TO@ @type:arglist@ @[1152,2237]@ name='prettytensor',
+    version=_VERSION,
+    des <text_longer_than_50>
+
+INS @type:argument@ @[1498,1574]@ package_data={
+        'prettytensor': ['tutorial/ <text_longer_than_50> @TO@ @type:arglist@ @[1152,2237]@ name='prettytensor',
+    version=_VERSION,
+    des <text_longer_than_50>
+
+INS @type:operator@ @[1574,1575]@ , @TO@ @type:arglist@ @[1152,2237]@ name='prettytensor',
+    version=_VERSION,
+    des <text_longer_than_50>
+

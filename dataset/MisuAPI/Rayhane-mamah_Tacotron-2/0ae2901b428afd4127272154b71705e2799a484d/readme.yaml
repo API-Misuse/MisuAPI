@@ -1,0 +1,32 @@
+sha: 0ae2901b428afd4127272154b71705e2799a484d
+message: 'encoder freeze var typo
+
+
+  fix var_list argument typo'
+commit_log: "commit 0ae2901b428afd4127272154b71705e2799a484d\nAuthor: Rayhane Mama\
+  \ <34689728+Rayhane-mamah@users.noreply.github.com>\nDate:   Sat Jan 5 07:25:07\
+  \ 2019 +0100\n\n    encoder freeze var typo\n    \n    fix var_list argument typo"
+contained_keywords:
+- fix
+commit_time: 2019-01-05 07:25:07 +0100
+commit_author: Rayhane Mama
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tacotron/models/tacotron.py
+  source_file: a/tacotron/models/tacotron.py
+  target_file: b/tacotron/models/tacotron.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 380
+    - "\t\t\t\t\tgradients = optimizer.compute_gradients(self.tower_loss[i], var_list=update_vars)\n"
+  del_line_no:
+  - - null
+    - "\t\t\t\t\tgradients = optimizer.compute_gradients(self.tower_loss[i], list_var=update_vars)\n"

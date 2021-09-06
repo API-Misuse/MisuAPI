@@ -1,0 +1,32 @@
+commit a8e674cc08fdab24290e39b331fad53a7c1e8600
+Author: keineahnung2345 <mimifasosofamire1123@gmail.com>
+Date:   Wed Oct 24 17:28:15 2018 +0800
+
+    [Bug fix]
+    
+    In current version of log(), when you pass a zero size array, it will throw an error:
+    `ValueError: Unknown format code 'f' for object of type 'str'`.
+    This PR fixes it.
+
+diff --git a/mrcnn/model.py b/mrcnn/model.py
+index 418698f..9d23f38 100644
+--- a/mrcnn/model.py
++++ b/mrcnn/model.py
+@@ -41,11 +41,12 @@ def log(text, array=None):
+     """
+     if array is not None:
+         text = text.ljust(25)
+-        text += ("shape: {:20}  min: {:10.5f}  max: {:10.5f}  {}".format(
+-            str(array.shape),
+-            array.min() if array.size else "",
+-            array.max() if array.size else "",
+-            array.dtype))
++        text += ("shape: {:20}  ".format(str(array.shape)))
++        if array.size:
++            text += ("min: {:10.5f}  max: {:10.5f}".format(array.min(),array.max()))
++        else:
++            text += ("min: {:10}  max: {:10}".format("",""))
++        text += "  {}".format(array.dtype)
+     print(text)
+ 
+ 

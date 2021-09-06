@@ -1,0 +1,20 @@
+commit efc2f94dd1c6806aa249ba418aa118ce6f1165df
+Author: David Sandberg <david.o.sandberg@gmail.com>
+Date:   Sat Mar 31 12:00:49 2018 +0200
+
+    Fixed update of centers for center loss
+
+diff --git a/src/facenet.py b/src/facenet.py
+index 17bfdaf..e2ff391 100644
+--- a/src/facenet.py
++++ b/src/facenet.py
+@@ -72,7 +72,8 @@ def center_loss(features, label, alfa, nrof_classes):
+     centers_batch = tf.gather(centers, label)
+     diff = (1 - alfa) * (centers_batch - features)
+     centers = tf.scatter_sub(centers, label, diff)
+-    loss = tf.reduce_mean(tf.square(features - centers_batch))
++    with tf.control_dependencies([centers]):
++        loss = tf.reduce_mean(tf.square(features - centers_batch))
+     return loss, centers
+ 
+ def get_image_paths_and_labels(dataset):

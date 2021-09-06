@@ -1,0 +1,47 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/macanv/BERT-BiLSTM-CRF-NER/issues/25
+  title: "\u91CD\u590D\u64CD\u4F5C"
+  body: "https://github.com/macanv/BERT-BiLSTM-CRF-NER/blob/4c7c7f7e530ee8f5b8d9b80b38ff4dbf8e4176fe/bert_lstm_ner.py#L264\r\
+    \n\r\n\u53EF\u4EE5\u5728\u65B9\u6CD5\u5916\u5EFA\u7ACB\u4E00\u4E2Alabel_map, \u7136\
+    \u540E\u4F5C\u4E3A\u53C2\u6570\u4F20\u5165\uFF0C\u4E0D\u9700\u8981\u5BF9\u6BCF\
+    \u4E2Aexample\u90FD\u4ECElabel_list\u5F00\u59CB\u521B\u5EFA\u4E00\u4E2Alabel_id\
+    \ map."
+sha: 4c7c7f7e530ee8f5b8d9b80b38ff4dbf8e4176fe
+message: 'Update bert_lstm_ner.py
+
+
+  predict result save file bug'
+commit_log: "commit 4c7c7f7e530ee8f5b8d9b80b38ff4dbf8e4176fe\nAuthor: MaCan <macanv1@hotmail.com>\n\
+  Date:   Tue Dec 18 10:30:52 2018 +0800\n\n    Update bert_lstm_ner.py\n    \n  \
+  \  predict result save file bug"
+contained_keywords:
+- bug
+commit_time: 2018-12-18 10:30:52 +0800
+commit_author: MaCan
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 802
+    - '        with codecs.open(os.path.join(FLAGS.output_dir, ''entity_level_predicted_result.txt''),
+      ''a'', encoding=''utf-8'') as fd:
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        with codecs.open(os.path.join(FLAGS.output_dir, ''entity_level_predicted_result.txt''))
+      as fd:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: bert_lstm_ner.py
+  removed: 1
+  source_file: a/bert_lstm_ner.py
+  target_file: b/bert_lstm_ner.py

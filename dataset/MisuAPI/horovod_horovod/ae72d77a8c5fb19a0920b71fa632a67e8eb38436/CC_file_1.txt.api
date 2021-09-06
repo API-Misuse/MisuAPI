@@ -1,0 +1,254 @@
+MOV @type:simple_stmt@ @[53047,53083]@ tensor = tf.ones([17] * dim) * rank @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53099,53145]@ root_tensor = tf.ones([17] * dim) * root_rank @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:if_stmt@ @[53161,53272]@ if dtype == tf.bool:
+                    tensor =  <text_longer_than_50> @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53288,53326]@ tensor = tf.cast(tensor, dtype=dtype) @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53342,53390]@ root_tensor = tf.cast(root_tensor, dtype=dtype) @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53406,53460]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50> @TO@ @type:suite@ @[53449,53520]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50>
+
+MOV @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50> @TO@ @type:funcdef@ @[51934,53708]@ def test_horovod_broadcast_gpu(self):
+        """T <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53047,53083]@ tensor = tf.ones([17] * dim) * rank @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53099,53145]@ root_tensor = tf.ones([17] * dim) * root_rank @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:if_stmt@ @[53161,53272]@ if dtype == tf.bool:
+                    tensor =  <text_longer_than_50> @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53288,53326]@ tensor = tf.cast(tensor, dtype=dtype) @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53342,53390]@ root_tensor = tf.cast(root_tensor, dtype=dtype) @TO@ @type:suite@ @[52978,53708]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[53406,53460]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50> @TO@ @type:suite@ @[53449,53520]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50>
+
+UPD @type:atom_expr@ @[10047,10086]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[10047,10094]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[10051,10093]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[10061,10086]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[10051,10093]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[10061,10086]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[10065,10093]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[10051,10093]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[10049,10057]@ .environ @TO@ @type:atom_expr@ @[10051,10093]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[10057,10061]@ .get @TO@ @type:atom_expr@ @[10051,10093]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[11720,11759]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[11728,11775]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[11732,11774]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[11734,11759]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[11732,11774]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[11734,11759]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[11746,11774]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[11732,11774]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[11722,11730]@ .environ @TO@ @type:atom_expr@ @[11732,11774]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[11730,11734]@ .get @TO@ @type:atom_expr@ @[11732,11774]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[13567,13606]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[13583,13630]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[13587,13629]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[13581,13606]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[13587,13629]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[13581,13606]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[13601,13629]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[13587,13629]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[13569,13577]@ .environ @TO@ @type:atom_expr@ @[13587,13629]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[13577,13581]@ .get @TO@ @type:atom_expr@ @[13587,13629]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[15693,15732]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[15717,15764]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[15707,15732]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[15707,15732]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[15735,15763]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[15695,15703]@ .environ @TO@ @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[15703,15707]@ .get @TO@ @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[19194,19233]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[19226,19273]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[19230,19272]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[19208,19233]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[19230,19272]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[19208,19233]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[19244,19272]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[19230,19272]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[19196,19204]@ .environ @TO@ @type:atom_expr@ @[19230,19272]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[19204,19208]@ .get @TO@ @type:atom_expr@ @[19230,19272]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[23281,23320]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[23321,23368]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[23325,23367]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[23295,23320]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[23325,23367]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[23295,23320]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[23339,23367]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[23325,23367]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[23283,23291]@ .environ @TO@ @type:atom_expr@ @[23325,23367]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[23291,23295]@ .get @TO@ @type:atom_expr@ @[23325,23367]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[25188,25227]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[25236,25283]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[25240,25282]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[25202,25227]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[25240,25282]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[25202,25227]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[25254,25282]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[25240,25282]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[25190,25198]@ .environ @TO@ @type:atom_expr@ @[25240,25282]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[25198,25202]@ .get @TO@ @type:atom_expr@ @[25240,25282]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[28731,28770]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[28787,28834]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[28791,28833]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[28745,28770]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[28791,28833]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[28745,28770]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[28805,28833]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[28791,28833]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[28733,28741]@ .environ @TO@ @type:atom_expr@ @[28791,28833]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[28741,28745]@ .get @TO@ @type:atom_expr@ @[28791,28833]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[32764,32803]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[32828,32875]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[32832,32874]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[32778,32803]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[32832,32874]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[32778,32803]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[32846,32874]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[32832,32874]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[32766,32774]@ .environ @TO@ @type:atom_expr@ @[32832,32874]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[32774,32778]@ .get @TO@ @type:atom_expr@ @[32832,32874]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[47992,48031]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[48064,48111]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[48068,48110]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[48006,48031]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[48068,48110]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[48006,48031]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[48082,48110]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[48068,48110]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[47994,48002]@ .environ @TO@ @type:atom_expr@ @[48068,48110]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[48002,48006]@ .get @TO@ @type:atom_expr@ @[48068,48110]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:if_stmt@ @[52123,52221]@ if not tf.test.is_gpu_available(cuda_only=True):
+  <text_longer_than_50> @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+UPD @type:atom_expr@ @[52233,52272]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[52313,52360]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[52247,52272]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[52247,52272]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[52331,52359]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[52235,52243]@ .environ @TO@ @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[52243,52247]@ .get @TO@ @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:if_stmt@ @[52230,52421]@ if os.environ.get('HOROVOD_MIXED_INSTALL'):
+       <text_longer_than_50> @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+UPD @type:atom_expr@ @[52233,52272]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[52313,52360]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[52247,52272]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[52247,52272]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[52331,52359]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[52235,52243]@ .environ @TO@ @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[52243,52247]@ .get @TO@ @type:atom_expr@ @[52317,52359]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:simple_stmt@ @[52430,52441]@ hvd.init() @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[52449,52467]@ rank = hvd.rank() @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[52475,52505]@ local_rank = hvd.local_rank() @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[52513,52531]@ size = hvd.size() @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+MOV @type:if_stmt@ @[52604,52673]@ if size == 1:
+            self.skipTest("Only one  <text_longer_than_50> @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[52682,52833]@ dtypes = [tf.uint8, tf.int8, tf.uint16, tf.int16,
+ <text_longer_than_50> @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[52866,52897]@ root_ranks = list(range(size)) @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+INS @type:suite@ @[53449,53520]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50> @TO@ @type:with_stmt@ @[52991,53460]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+INS @type:suite@ @[53449,53520]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50> @TO@ @type:with_stmt@ @[52991,53460]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+MOV @type:for_stmt@ @[52905,53708]@ for dtype, dim, root_rank in itertools.product(dty <text_longer_than_50> @TO@ @type:suite@ @[53030,53460]@ tensor = tf.ones([17] * dim) * rank
+               <text_longer_than_50>
+
+INS @type:suite@ @[53449,53520]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50> @TO@ @type:with_stmt@ @[52991,53460]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+INS @type:suite@ @[53449,53520]@ broadcasted_tensor = hvd.broadcast(tensor, root_ra <text_longer_than_50> @TO@ @type:with_stmt@ @[52991,53460]@ with tf.device("/gpu:%d" % local_rank):
+           <text_longer_than_50>
+
+UPD @type:atom_expr@ @[57756,57795]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[57816,57863]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[57820,57862]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[57770,57795]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[57820,57862]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[57770,57795]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[57834,57862]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[57820,57862]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[57758,57766]@ .environ @TO@ @type:atom_expr@ @[57820,57862]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[57766,57770]@ .get @TO@ @type:atom_expr@ @[57820,57862]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+UPD @type:atom_expr@ @[65427,65466]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[65495,65542]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[65499,65541]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[65441,65466]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[65499,65541]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[65441,65466]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[65513,65541]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[65499,65541]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[65429,65437]@ .environ @TO@ @type:atom_expr@ @[65499,65541]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[65437,65441]@ .get @TO@ @type:atom_expr@ @[65499,65541]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+

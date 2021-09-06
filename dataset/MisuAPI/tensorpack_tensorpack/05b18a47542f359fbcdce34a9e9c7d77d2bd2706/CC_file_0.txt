@@ -1,0 +1,19 @@
+INS @type:try_stmt@ @[4957,5315]@ try:
+            for k in itertools.count():
+      <text_longer_than_50> @TO@ @type:suite@ @[4948,5315]@ try:
+            for k in itertools.count():
+      <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[4957,5138]@ for k in itertools.count():
+            if self._s <text_longer_than_50> @TO@ @type:for_stmt@ @[4974,5171]@ for k in itertools.count():
+                if sel <text_longer_than_50>
+---UPD @type:suite@ @[4984,5138]@ if self._size > 0 and k >= self._size:
+            <text_longer_than_50> @TO@ @type:suite@ @[5001,5171]@ if self._size > 0 and k >= self._size:
+            <text_longer_than_50>
+------UPD @type:if_stmt@ @[4997,5058]@ if self._size > 0 and k >= self._size:
+            <text_longer_than_50> @TO@ @type:if_stmt@ @[5018,5083]@ if self._size > 0 and k >= self._size:
+            <text_longer_than_50>
+---------UPD @type:suite@ @[5035,5058]@ break @TO@ @type:suite@ @[5056,5083]@ break
+
+

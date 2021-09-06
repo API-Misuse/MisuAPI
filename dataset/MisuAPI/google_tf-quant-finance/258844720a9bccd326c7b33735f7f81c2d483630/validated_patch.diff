@@ -1,0 +1,26 @@
+commit 258844720a9bccd326c7b33735f7f81c2d483630
+Author: Ashish Saxena <saxeas@google.com>
+Date:   Wed Sep 11 07:47:44 2019 -0700
+
+    Fix segment_ops to use int32 when calling scatter_nd. This is needed because scatter_nd does not support boolean updates when running on GPU.
+    
+    PiperOrigin-RevId: 268456498
+
+diff --git a/tf_quant_finance/math/segment_ops.py b/tf_quant_finance/math/segment_ops.py
+index 614f18c..07e22c5 100644
+--- a/tf_quant_finance/math/segment_ops.py
++++ b/tf_quant_finance/math/segment_ops.py
+@@ -109,10 +109,13 @@ def segment_diff(x,
+ 
+     needs_fix = tf.scatter_nd(
+         fix_indices,
+-        tf.reshape(tf.ones_like(fix_indices, dtype=tf.bool), [-1]),
++        # Unfortunately, scatter_nd doesn't support bool on GPUs so we need to
++        # do ints here and then convert to bool.
++        tf.reshape(tf.ones_like(fix_indices, dtype=tf.int32), [-1]),
+         shape=tf.shape(x))
+     # If exclusive is False, then needs_fix means we need to replace the values
+     # in raw_diffs at those locations with the values in x.
++    needs_fix = tf.cast(needs_fix, dtype=tf.bool)
+     if not exclusive:
+       return tf.where(needs_fix, x, raw_diffs)

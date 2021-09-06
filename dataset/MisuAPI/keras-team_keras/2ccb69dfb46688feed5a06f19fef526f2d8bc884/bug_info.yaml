@@ -1,0 +1,57 @@
+issues_cnt: 3
+issue_0:
+  html_url: https://github.com/keras-team/keras/pull/12418
+  title: '[WiP] Porting Keras to run on TF 2.0.'
+  body: Work ongoing. PRs to the `tf-2` branch are welcome. There are many tests to
+    be fixed :)
+issue_1:
+  html_url: https://github.com/keras-team/keras/pull/13182
+  title: '# Prediction on test data'
+  body: "# Prediction on test data\r\nprec = model.predict(x_test)\r\nprint(prec)"
+issue_2:
+  html_url: https://github.com/keras-team/keras/pull/13509
+  title: Tf 23
+  body: "hi\r\n<!--\r\nPlease make sure you've read and understood our contributing\
+    \ guidelines;\r\nhttps://github.com/keras-team/keras/blob/master/CONTRIBUTING.md\r\
+    \n\r\nNote:\r\nWe are no longer adding new features to multi-backend Keras (we\
+    \ only fix bugs), as we are refocusing development efforts on tf.keras. If you\
+    \ are still interested in submitting a feature pull request, please direct it\
+    \ to tf.keras in the TensorFlow repository instead.\r\n-->\r\n\r\n### Summary\r\
+    \n\r\n### Related Issues\r\n\r\n### PR Overview\r\n\r\n- [ ] This PR requires\
+    \ new unit tests [y/n] (make sure tests are included)\r\n- [ ] This PR requires\
+    \ to update the documentation [y/n] (make sure the docs are up-to-date)\r\n- [\
+    \ ] This PR is backwards compatible [y/n]\r\n- [ ] This PR changes the current\
+    \ API [y/n] (all API changes need to be approved by fchollet)\r\n"
+sha: 2ccb69dfb46688feed5a06f19fef526f2d8bc884
+message: Fix
+commit_log: "commit 2ccb69dfb46688feed5a06f19fef526f2d8bc884\nAuthor: Franc\u0327\
+  ois Chollet <francois.chollet@gmail.com>\nDate:   Sun Aug 25 09:06:58 2019 -0700\n\
+  \n    Fix"
+contained_keywords:
+- fix
+commit_time: 2019-08-25 09:06:58 -0700
+commit_author: "Franc\u0327ois Chollet"
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 82
+    - '        with K.control_dependencies(update_op):  # For TF
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        with K.control_dependencies([update_op]):  # For TF
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: keras/metrics.py
+  removed: 1
+  source_file: a/keras/metrics.py
+  target_file: b/keras/metrics.py

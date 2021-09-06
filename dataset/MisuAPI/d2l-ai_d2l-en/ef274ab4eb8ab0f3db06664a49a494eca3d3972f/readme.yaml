@@ -1,0 +1,221 @@
+sha: ef274ab4eb8ab0f3db06664a49a494eca3d3972f
+message: +improve Vocab, fix nli bert
+commit_log: "commit ef274ab4eb8ab0f3db06664a49a494eca3d3972f\nAuthor: Aston Zhang\
+  \ <asv325@gmail.com>\nDate:   Tue Sep 1 17:58:31 2020 +0000\n\n    +improve Vocab,\
+  \ fix nli bert"
+contained_keywords:
+- fix
+commit_time: 2020-09-01 17:58:31 +0000
+commit_author: Aston Zhang
+added_files: 0
+removed_files: 0
+modified_files: 5
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: chapter_natural-language-processing-applications/natural-language-inference-bert.md
+  source_file: a/chapter_natural-language-processing-applications/natural-language-inference-bert.md
+  target_file: b/chapter_natural-language-processing-applications/natural-language-inference-bert.md
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 62
+    - '    vocab = d2l.Vocab()
+
+      '
+  del_line_no:
+  - - null
+    - '    vocab = d2l.Vocab([])
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: chapter_recurrent-neural-networks/text-preprocessing.md
+  source_file: a/chapter_recurrent-neural-networks/text-preprocessing.md
+  target_file: b/chapter_recurrent-neural-networks/text-preprocessing.md
+  added: 6
+  removed: 3
+  add_line_no:
+  - - 116
+    - '    def __init__(self, tokens=None, min_freq=0, reserved_tokens=None):
+
+      '
+  - - 117
+    - '        if tokens is None:
+
+      '
+  - - 118
+    - '            tokens = []
+
+      '
+  - - 120
+    - "            reserved_tokens = [] \n"
+  - - 149
+    - '    # Here `tokens` is a 1D list or 2D list
+
+      '
+  - - 150
+    - '    if len(tokens) == 0 or isinstance(tokens[0], list):
+
+      '
+  del_line_no:
+  - - null
+    - '    def __init__(self, tokens, min_freq=0, reserved_tokens=None):
+
+      '
+  - - null
+    - '            reserved_tokens = []
+
+      '
+  - - null
+    - '    if isinstance(tokens[0], list):
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: d2l/mxnet.py
+  source_file: a/d2l/mxnet.py
+  target_file: b/d2l/mxnet.py
+  added: 6
+  removed: 3
+  add_line_no:
+  - - 532
+    - '    def __init__(self, tokens=None, min_freq=0, reserved_tokens=None):
+
+      '
+  - - 533
+    - '        if tokens is None:
+
+      '
+  - - 534
+    - '            tokens = []
+
+      '
+  - - 536
+    - "            reserved_tokens = [] \n"
+  - - 567
+    - '    # Here `tokens` is a 1D list or 2D list
+
+      '
+  - - 568
+    - '    if len(tokens) == 0 or isinstance(tokens[0], list):
+
+      '
+  del_line_no:
+  - - null
+    - '    def __init__(self, tokens, min_freq=0, reserved_tokens=None):
+
+      '
+  - - null
+    - '            reserved_tokens = []
+
+      '
+  - - null
+    - '    if isinstance(tokens[0], list):
+
+      '
+patched_file_3:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: d2l/tensorflow.py
+  source_file: a/d2l/tensorflow.py
+  target_file: b/d2l/tensorflow.py
+  added: 6
+  removed: 3
+  add_line_no:
+  - - 556
+    - '    def __init__(self, tokens=None, min_freq=0, reserved_tokens=None):
+
+      '
+  - - 557
+    - '        if tokens is None:
+
+      '
+  - - 558
+    - '            tokens = []
+
+      '
+  - - 560
+    - "            reserved_tokens = [] \n"
+  - - 591
+    - '    # Here `tokens` is a 1D list or 2D list
+
+      '
+  - - 592
+    - '    if len(tokens) == 0 or isinstance(tokens[0], list):
+
+      '
+  del_line_no:
+  - - null
+    - '    def __init__(self, tokens, min_freq=0, reserved_tokens=None):
+
+      '
+  - - null
+    - '            reserved_tokens = []
+
+      '
+  - - null
+    - '    if isinstance(tokens[0], list):
+
+      '
+patched_file_4:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: d2l/torch.py
+  source_file: a/d2l/torch.py
+  target_file: b/d2l/torch.py
+  added: 6
+  removed: 3
+  add_line_no:
+  - - 563
+    - '    def __init__(self, tokens=None, min_freq=0, reserved_tokens=None):
+
+      '
+  - - 564
+    - '        if tokens is None:
+
+      '
+  - - 565
+    - '            tokens = []
+
+      '
+  - - 567
+    - "            reserved_tokens = [] \n"
+  - - 598
+    - '    # Here `tokens` is a 1D list or 2D list
+
+      '
+  - - 599
+    - '    if len(tokens) == 0 or isinstance(tokens[0], list):
+
+      '
+  del_line_no:
+  - - null
+    - '    def __init__(self, tokens, min_freq=0, reserved_tokens=None):
+
+      '
+  - - null
+    - '            reserved_tokens = []
+
+      '
+  - - null
+    - '    if isinstance(tokens[0], list):
+
+      '

@@ -1,0 +1,94 @@
+issues_cnt: 0
+sha: a66240b5e962813d8c09df22b466a45d05e0b342
+message: Security fixes
+commit_log: "commit a66240b5e962813d8c09df22b466a45d05e0b342\nAuthor: Peter Izsak\
+  \ <peter.izsak@intel.com>\nDate:   Thu Apr 12 16:40:08 2018 +0300\n\n    Security\
+  \ fixes"
+contained_keywords:
+- fixes
+commit_time: 2018-04-12 16:40:08 +0300
+commit_author: Peter Izsak
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 22
+    - 'import os
+
+      '
+  - - 51
+    - '    if not os.path.exists(args.settings):
+
+      '
+  - - 52
+    - '        raise Exception(''Not valid model settings file'')
+
+      '
+  - - 53
+    - '    else:
+
+      '
+  - - 54
+    - '        with open(args.settings, ''rb'') as fp:
+
+      '
+  - - 55
+    - '            mp = pickle.load(fp)
+
+      '
+  - - 62
+    - '    if not os.path.exists(args.input):
+
+      '
+  - - 63
+    - '        raise Exception(''Not valid input file'')
+
+      '
+  - - 64
+    - '    else:
+
+      '
+  - - 65
+    - '        with open(args.input) as fp:
+
+      '
+  - - 66
+    - '            input_texts = [t.strip() for t in fp.readlines()]
+
+      '
+  - - 84
+    - '        x_vocab = mp.get(''vocabs'').get(''token'')
+
+      '
+  added: 12
+  del_line_no:
+  - - null
+    - '    with open(args.settings, ''rb'') as fp:
+
+      '
+  - - null
+    - '        mp = pickle.load(fp)
+
+      '
+  - - null
+    - '    with open(args.input) as fp:
+
+      '
+  - - null
+    - '        input_texts = [t.strip() for t in fp.readlines()]
+
+      '
+  - - null
+    - '        x_vocab = mp[''vocabs''][''token'']
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: chunker/inference.py
+  removed: 5
+  source_file: a/chunker/inference.py
+  target_file: b/chunker/inference.py

@@ -1,0 +1,30 @@
+UPD @type:if_stmt@ @[2666,2885]@ if allow_weights:
+    # Multiply by weights, resha <text_longer_than_50> @TO@ @type:if_stmt@ @[2666,2885]@ if allow_weights:
+    # Multiply by weights, resha <text_longer_than_50>
+---UPD @type:suite@ @[2683,2885]@ # Multiply by weights, reshaping to allow broadcas <text_longer_than_50> @TO@ @type:suite@ @[2683,2885]@ # Multiply by weights, reshaping to allow broadcas <text_longer_than_50>
+------UPD @type:simple_stmt@ @[2745,2822]@ broadcast_weights_shape = tf.concat(axis=[tf.shape <text_longer_than_50> @TO@ @type:simple_stmt@ @[2745,2822]@ broadcast_weights_shape = tf.concat(axis=0, values <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[2745,2821]@ broadcast_weights_shape = tf.concat(axis=[tf.shape <text_longer_than_50> @TO@ @type:expr_stmt@ @[2745,2821]@ broadcast_weights_shape = tf.concat(axis=0, values <text_longer_than_50>
+------------UPD @type:atom_expr@ @[2771,2821]@ tf.concat(axis=[tf.shape(weights), [1]], values=0) @TO@ @type:atom_expr@ @[2771,2821]@ tf.concat(axis=0, values=[tf.shape(weights), [1]])
+---------------UPD @type:trailer@ @[2780,2821]@ (axis=[tf.shape(weights), [1]], values=0) @TO@ @type:trailer@ @[2780,2821]@ (axis=0, values=[tf.shape(weights), [1]])
+------------------UPD @type:arglist@ @[2781,2820]@ axis=[tf.shape(weights), [1]], values=0 @TO@ @type:arglist@ @[2781,2820]@ axis=0, values=[tf.shape(weights), [1]]
+---------------------MOV @type:argument@ @[2781,2810]@ axis=[tf.shape(weights), [1]] @TO@ @type:arglist@ @[2781,2820]@ axis=[tf.shape(weights), [1]], values=0
+------------------------UPD @type:name@ @[2781,2785]@ axis @TO@ @type:name@ @[2789,2795]@ values
+---------------------INS @type:argument@ @[2781,2787]@ axis=0 @TO@ @type:arglist@ @[2781,2820]@ axis=[tf.shape(weights), [1]], values=0
+---------------------UPD @type:argument@ @[2781,2810]@ axis=[tf.shape(weights), [1]] @TO@ @type:argument@ @[2789,2820]@ values=[tf.shape(weights), [1]]
+------------------------UPD @type:name@ @[2781,2785]@ axis @TO@ @type:name@ @[2789,2795]@ values
+---------------------DEL @type:argument@ @[2812,2820]@ values=0 @FROM@ @type:arglist@ @[2781,2820]@ axis=[tf.shape(weights), [1]], values=0
+
+
+UPD @type:simple_stmt@ @[14120,14170]@ last_layer = tf.concat(axis=embeddings, values=1) @TO@ @type:simple_stmt@ @[14120,14170]@ last_layer = tf.concat(axis=1, values=embeddings)
+---UPD @type:expr_stmt@ @[14120,14169]@ last_layer = tf.concat(axis=embeddings, values=1) @TO@ @type:expr_stmt@ @[14120,14169]@ last_layer = tf.concat(axis=1, values=embeddings)
+------UPD @type:atom_expr@ @[14133,14169]@ tf.concat(axis=embeddings, values=1) @TO@ @type:atom_expr@ @[14133,14169]@ tf.concat(axis=1, values=embeddings)
+---------UPD @type:trailer@ @[14142,14169]@ (axis=embeddings, values=1) @TO@ @type:trailer@ @[14142,14169]@ (axis=1, values=embeddings)
+------------UPD @type:arglist@ @[14143,14168]@ axis=embeddings, values=1 @TO@ @type:arglist@ @[14143,14168]@ axis=1, values=embeddings
+---------------UPD @type:argument@ @[14143,14158]@ axis=embeddings @TO@ @type:argument@ @[14143,14149]@ axis=1
+------------------INS @type:number@ @[14148,14149]@ 1 @TO@ @type:argument@ @[14143,14158]@ axis=embeddings
+------------------DEL @type:name@ @[14148,14158]@ embeddings @FROM@ @type:argument@ @[14143,14158]@ axis=embeddings
+---------------UPD @type:argument@ @[14160,14168]@ values=1 @TO@ @type:argument@ @[14151,14168]@ values=embeddings
+------------------INS @type:name@ @[14158,14168]@ embeddings @TO@ @type:argument@ @[14160,14168]@ values=1
+------------------DEL @type:number@ @[14167,14168]@ 1 @FROM@ @type:argument@ @[14160,14168]@ values=1
+
+

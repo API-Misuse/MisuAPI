@@ -1,0 +1,19 @@
+INS @type:simple_stmt@ @[735,750]@ import logging @TO@ @type:file_input@ @[576,7529]@ from __future__ import absolute_import
+from __futu <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[1024,1061]@ logger = logging.getLogger(__name__) @TO@ @type:file_input@ @[576,7529]@ from __future__ import absolute_import
+from __futu <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[4257,4543]@ try:
+            return shutil.rmtree(saved_path)
+ <text_longer_than_50> @TO@ @type:suite@ @[4117,4236]@ saved_path = os.path.join(self.base_path, bento_na <text_longer_than_50>
+---INS @type:suite@ @[4261,4307]@ return shutil.rmtree(saved_path) @TO@ @type:try_stmt@ @[4257,4543]@ try:
+            return shutil.rmtree(saved_path)
+ <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[4203,4236]@ return shutil.rmtree(saved_path) @TO@ @type:suite@ @[4261,4307]@ return shutil.rmtree(saved_path)
+
+

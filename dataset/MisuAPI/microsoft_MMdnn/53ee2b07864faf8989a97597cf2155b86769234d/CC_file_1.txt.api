@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[6311,6398]@ caffe_extractor.inference(architecture_name,archit <text_longer_than_50> @TO@ @type:atom_expr@ @[6311,6422]@ caffe_extractor.inference(architecture_name, (arch <text_longer_than_50>
+
+INS @type:atom_expr@ @[6390,6409]@ TestModels.cachedir @TO@ @type:arglist@ @[6337,6397]@ architecture_name,architecture_file, weight_file,  <text_longer_than_50>
+

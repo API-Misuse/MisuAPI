@@ -1,0 +1,35 @@
+UPD @type:for_stmt@ @[653,1509]@ for step in range(1000):
+    # Fake loss and accur <text_longer_than_50> @TO@ @type:for_stmt@ @[653,1511]@ for step in range(1000):
+    # Fake loss and accur <text_longer_than_50>
+---UPD @type:suite@ @[677,1509]@ # Fake loss and accuracy
+    loss -= loss * np.ran <text_longer_than_50> @TO@ @type:suite@ @[677,1511]@ # Fake loss and accuracy
+    loss -= loss * np.ran <text_longer_than_50>
+------UPD @type:if_stmt@ @[878,1509]@ if step % 10 == 0:
+        # Store metrics in the  <text_longer_than_50> @TO@ @type:if_stmt@ @[878,1511]@ if step % 10 == 0:
+        # Store metrics in the  <text_longer_than_50>
+---------UPD @type:suite@ @[896,1509]@ # Store metrics in the history object
+        h.lo <text_longer_than_50> @TO@ @type:suite@ @[896,1511]@ # Store metrics in the history object
+        h.lo <text_longer_than_50>
+------------UPD @type:if_stmt@ @[1115,1484]@ if step % 100 == 0:
+            # Plot the two met <text_longer_than_50> @TO@ @type:if_stmt@ @[1115,1486]@ if step % 100 == 0:
+            # Plot the two met <text_longer_than_50>
+---------------UPD @type:suite@ @[1134,1484]@ # Plot the two metrics in one graph
+            c. <text_longer_than_50> @TO@ @type:suite@ @[1134,1486]@ # Plot the two metrics in one graph
+            c. <text_longer_than_50>
+------------------UPD @type:simple_stmt@ @[1195,1233]@ c.draw_plot(h["loss"], h["accuracy"]) @TO@ @type:simple_stmt@ @[1195,1235]@ c.draw_plot([h["loss"], h["accuracy"]])
+---------------------UPD @type:atom_expr@ @[1195,1232]@ c.draw_plot(h["loss"], h["accuracy"]) @TO@ @type:atom_expr@ @[1195,1234]@ c.draw_plot([h["loss"], h["accuracy"]])
+------------------------UPD @type:trailer@ @[1206,1232]@ (h["loss"], h["accuracy"]) @TO@ @type:trailer@ @[1206,1234]@ ([h["loss"], h["accuracy"]])
+---------------------------INS @type:atom@ @[1207,1233]@ [h["loss"], h["accuracy"]] @TO@ @type:trailer@ @[1206,1232]@ (h["loss"], h["accuracy"])
+------------------------------INS @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"] @TO@ @type:atom@ @[1207,1233]@ [h["loss"], h["accuracy"]]
+---------------------------DEL @type:arglist@ @[1207,1231]@ h["loss"], h["accuracy"] @FROM@ @type:trailer@ @[1206,1232]@ (h["loss"], h["accuracy"])
+
+
+MOV @type:atom_expr@ @[1207,1216]@ h["loss"] @TO@ @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"]
+
+
+MOV @type:operator@ @[1216,1217]@ , @TO@ @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"]
+
+
+MOV @type:atom_expr@ @[1218,1231]@ h["accuracy"] @TO@ @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"]
+
+

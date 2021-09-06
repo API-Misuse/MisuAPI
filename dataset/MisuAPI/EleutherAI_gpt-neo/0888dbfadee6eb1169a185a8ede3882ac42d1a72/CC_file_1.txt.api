@@ -1,0 +1,180 @@
+UPD @type:atom_expr@ @[5574,5813]@ sample_autoregressive(
+                inputs, oth <text_longer_than_50> @TO@ @type:atom_expr@ @[5571,5802]@ sample_autoregressive(
+            inputs, other_f <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5560,5814]@ mtf_samples = sample_autoregressive(
+              <text_longer_than_50> @TO@ @type:suite@ @[5397,6915]@ inputs = mtf_features["inputs"]
+        if params[ <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5574,5813]@ sample_autoregressive(
+                inputs, oth <text_longer_than_50> @TO@ @type:atom_expr@ @[5571,5802]@ sample_autoregressive(
+            inputs, other_f <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5505,5548]@ params["remove_partial_sequences"] = False @TO@ @type:suite@ @[5492,5548]@ params["remove_partial_sequences"] = False
+
+MOV @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50> @TO@ @type:funcdef@ @[509,15202]@ def model_fn(features, labels, mode, params):
+     <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5574,5813]@ sample_autoregressive(
+                inputs, oth <text_longer_than_50> @TO@ @type:atom_expr@ @[5571,5802]@ sample_autoregressive(
+            inputs, other_f <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5560,5814]@ mtf_samples = sample_autoregressive(
+              <text_longer_than_50> @TO@ @type:suite@ @[5397,6915]@ inputs = mtf_features["inputs"]
+        if params[ <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5574,5813]@ sample_autoregressive(
+                inputs, oth <text_longer_than_50> @TO@ @type:atom_expr@ @[5571,5802]@ sample_autoregressive(
+            inputs, other_f <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5505,5548]@ params["remove_partial_sequences"] = False @TO@ @type:suite@ @[5492,5548]@ params["remove_partial_sequences"] = False
+
+MOV @type:simple_stmt@ @[586,629]@ params = defaultdict(lambda: None, params) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[633,674]@ global_step = tf.train.get_global_step() @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[724,744]@ graph = mtf.Graph() @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[748,804]@ mesh_shape = mtf.convert_to_shape(params["mesh_sha <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:if_stmt@ @[808,920]@ if mode == tf.estimator.ModeKeys.PREDICT:
+         <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[924,985]@ layout_rules = mtf.convert_to_layout_rules(params[ <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[1015,1060]@ summary = TpuSummaries(params["model_path"]) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:if_stmt@ @[1086,2356]@ if params["use_tpu"]:
+        # construct SimdMesh <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:if_stmt@ @[2488,2780]@ if params['precision'] == 'bfloat16':
+        vari <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2814,2860]@ mesh = mtf.Mesh(graph, 'my_mesh', var_placer) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3080,3158]@ sequence_length_dict = {"inputs": params["n_ctx"], <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:if_stmt@ @[3163,3602]@ if mode == tf.estimator.ModeKeys.PREDICT:
+         <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3607,3654]@ batch_dim = mtf.Dimension('batch', batch_size) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3687,3735]@ feature_length = sequence_length_dict["inputs"] @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3739,3794]@ length_dim = mtf.Dimension("sequence", feature_len <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:for_stmt@ @[3821,4175]@ for key, x in features_dict.items():
+        if x  <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4357,4425]@ memory_length_dim = mtf.Dimension("memory_length", <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4429,4516]@ attn_bias = biasmask_attn_weights(mesh, length_dim <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4559,4599]@ other_features["attn_bias"] = attn_bias @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4667,4718]@ embd_dim = mtf.Dimension("embd", params["n_embd"]) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4722,4776]@ vocab_dim = mtf.Dimension("vocab", params["n_vocab <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5034,5141]@ embed_sequence_dim = mtf.Dimension('embed_sequence <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5146,5184]@ other_features["embd_dim"] = embd_dim @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5188,5228]@ other_features["vocab_dim"] = vocab_dim @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5232,5290]@ other_features["embed_sequence_dim"] = embed_seque <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[5294,5350]@ other_features["memory_length_dim"] = memory_lengt <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+INS @type:suite@ @[5492,5548]@ params["remove_partial_sequences"] = False @TO@ @type:if_stmt@ @[5446,5814]@ if params["remove_partial_sequences"] is None:
+    <text_longer_than_50>
+
+INS @type:suite@ @[5492,5548]@ params["remove_partial_sequences"] = False @TO@ @type:if_stmt@ @[5446,5814]@ if params["remove_partial_sequences"] is None:
+    <text_longer_than_50>
+
+MOV @type:if_stmt@ @[5356,6915]@ if mode == tf.estimator.ModeKeys.PREDICT:
+         <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+INS @type:suite@ @[5492,5548]@ params["remove_partial_sequences"] = False @TO@ @type:if_stmt@ @[5446,5814]@ if params["remove_partial_sequences"] is None:
+    <text_longer_than_50>
+
+INS @type:suite@ @[5492,5548]@ params["remove_partial_sequences"] = False @TO@ @type:if_stmt@ @[5446,5814]@ if params["remove_partial_sequences"] is None:
+    <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[6920,7003]@ assert (mode == tf.estimator.ModeKeys.TRAIN or mod <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[7178,7719]@ num_microbatches = int(mtf_transformer.utils.seria <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[7723,7803]@ params["num_microbatches"] = num_microbatches  # a <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+UPD @type:atom_expr@ @[8900,9010]@ gpt2.model(mtf_features, other_features, params, m <text_longer_than_50> @TO@ @type:atom_expr@ @[8890,8989]@ gpt2.model(mtf_features, other_features, params, m <text_longer_than_50>
+
+MOV @type:if_stmt@ @[7812,9130]@ if num_microbatches > 1:
+        def serialized_fn <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+UPD @type:atom_expr@ @[8900,9010]@ gpt2.model(mtf_features, other_features, params, m <text_longer_than_50> @TO@ @type:atom_expr@ @[8890,8989]@ gpt2.model(mtf_features, other_features, params, m <text_longer_than_50>
+
+MOV @type:if_stmt@ @[9190,9514]@ if params["auto_layout"]:
+        layout_rules = m <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:if_stmt@ @[9518,10137]@ if params["auto_layout_and_mesh_shape"]:
+        l <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:if_stmt@ @[10159,11227]@ if mode == tf.estimator.ModeKeys.TRAIN:
+        if <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[11304,11326]@ get_graph_info(graph) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[11424,11490]@ lowering = mtf.Lowering(graph, {mesh: mesh_impl},  <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[11494,11539]@ tf_loss = lowering.export_to_tf_tensor(loss) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[11543,11582]@ tf_loss = tf.cast(tf_loss, tf.float32) @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:if_stmt@ @[11591,12244]@ if mode == tf.estimator.ModeKeys.TRAIN:
+        #  <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+
+MOV @type:with_stmt@ @[12249,15202]@ with mtf.utils.outside_all_rewrites():
+        # C <text_longer_than_50> @TO@ @type:suite@ @[5492,5814]@ params["remove_partial_sequences"] = False
+        <text_longer_than_50>
+

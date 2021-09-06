@@ -1,0 +1,24 @@
+UPD @type:simple_stmt@ @[1649,1694]@ clf = ImageClassifier(path='resources/temp') @TO@ @type:simple_stmt@ @[1649,1700]@ clf = ImageClassifier(path='tests/resources/temp')
+---UPD @type:expr_stmt@ @[1649,1693]@ clf = ImageClassifier(path='resources/temp') @TO@ @type:expr_stmt@ @[1649,1699]@ clf = ImageClassifier(path='tests/resources/temp')
+------UPD @type:atom_expr@ @[1655,1693]@ ImageClassifier(path='resources/temp') @TO@ @type:atom_expr@ @[1655,1699]@ ImageClassifier(path='tests/resources/temp')
+---------UPD @type:trailer@ @[1670,1693]@ (path='resources/temp') @TO@ @type:trailer@ @[1670,1699]@ (path='tests/resources/temp')
+------------UPD @type:argument@ @[1671,1692]@ path='resources/temp' @TO@ @type:argument@ @[1671,1698]@ path='tests/resources/temp'
+---------------UPD @type:string@ @[1676,1692]@ 'resources/temp' @TO@ @type:string@ @[1676,1698]@ 'tests/resources/temp'
+
+
+UPD @type:simple_stmt@ @[1783,1827]@ clf = load_from_path(path='resources/temp') @TO@ @type:simple_stmt@ @[1789,1839]@ clf = load_from_path(path='tests/resources/temp')
+---UPD @type:expr_stmt@ @[1783,1826]@ clf = load_from_path(path='resources/temp') @TO@ @type:expr_stmt@ @[1789,1838]@ clf = load_from_path(path='tests/resources/temp')
+------UPD @type:atom_expr@ @[1789,1826]@ load_from_path(path='resources/temp') @TO@ @type:atom_expr@ @[1795,1838]@ load_from_path(path='tests/resources/temp')
+---------UPD @type:trailer@ @[1803,1826]@ (path='resources/temp') @TO@ @type:trailer@ @[1809,1838]@ (path='tests/resources/temp')
+------------UPD @type:argument@ @[1804,1825]@ path='resources/temp' @TO@ @type:argument@ @[1810,1837]@ path='tests/resources/temp'
+---------------UPD @type:string@ @[1809,1825]@ 'resources/temp' @TO@ @type:string@ @[1815,1837]@ 'tests/resources/temp'
+
+
+INS @type:simple_stmt@ @[1843,1869]@ clf.fit(train_x, train_y) @TO@ @type:suite@ @[1459,1892]@ constant.MAX_ITER_NUM = 2
+    constant.MAX_MODEL_N <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[1938,1967]@ assert len(clf.history) == 4 @TO@ @type:suite@ @[1459,1892]@ constant.MAX_ITER_NUM = 2
+    constant.MAX_MODEL_N <text_longer_than_50>
+
+

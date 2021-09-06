@@ -1,0 +1,13 @@
+UPD @type:if_stmt@ @[5737,6045]@ if TFSparkNode.mgr is None:
+    msg = "No TFManage <text_longer_than_50> @TO@ @type:if_stmt@ @[5737,6116]@ if TFSparkNode.mgr is None:
+    msg = "No TFManage <text_longer_than_50>
+---UPD @type:suite@ @[5764,6045]@ msg = "No TFManager found on this node, please ens <text_longer_than_50> @TO@ @type:suite@ @[5764,6116]@ msg = "No TFManager found on this node, please ens <text_longer_than_50>
+------UPD @type:simple_stmt@ @[5769,6020]@ msg = "No TFManager found on this node, please ens <text_longer_than_50> @TO@ @type:simple_stmt@ @[5769,6091]@ msg = "No TFManager found on this node, please ens <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[5769,6019]@ msg = "No TFManager found on this node, please ens <text_longer_than_50> @TO@ @type:expr_stmt@ @[5769,6090]@ msg = "No TFManager found on this node, please ens <text_longer_than_50>
+------------UPD @type:arith_expr@ @[5775,6019]@ "No TFManager found on this node, please ensure th <text_longer_than_50> @TO@ @type:arith_expr@ @[5775,6090]@ "No TFManager found on this node, please ensure th <text_longer_than_50>
+---------------UPD @type:string@ @[5919,5962]@ "2. Spark cores/tasks per executor is 1.\n" @TO@ @type:string@ @[5919,5955]@ "2. Spark tasks per executor is 1\n"
+---------------INS @type:string@ @[5970,6013]@ "3. Spark dynamic allocation is disabled\n" @TO@ @type:arith_expr@ @[5775,6019]@ "No TFManager found on this node, please ensure th <text_longer_than_50>
+---------------INS @type:operator@ @[6014,6015]@ + @TO@ @type:arith_expr@ @[5775,6019]@ "No TFManager found on this node, please ensure th <text_longer_than_50>
+---------------UPD @type:string@ @[5977,6019]@ "3. Spark dynamic allocation is disabled." @TO@ @type:string@ @[6028,6090]@ "4. There are no other root-cause exceptions on ot <text_longer_than_50>
+
+

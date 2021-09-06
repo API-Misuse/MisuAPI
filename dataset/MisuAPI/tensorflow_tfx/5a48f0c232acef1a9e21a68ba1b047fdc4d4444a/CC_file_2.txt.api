@@ -1,0 +1,10 @@
+INS @type:atom_expr@ @[7517,7555]@ list(bucket.list_blobs(prefix=prefix)) @TO@ @type:expr_stmt@ @[7509,7549]@ blobs = bucket.list_blobs(prefix=prefix)
+
+INS @type:atom_expr@ @[7517,7555]@ list(bucket.list_blobs(prefix=prefix)) @TO@ @type:expr_stmt@ @[7509,7549]@ blobs = bucket.list_blobs(prefix=prefix)
+
+INS @type:trailer@ @[7521,7555]@ (bucket.list_blobs(prefix=prefix)) @TO@ @type:atom_expr@ @[7517,7555]@ list(bucket.list_blobs(prefix=prefix))
+
+INS @type:trailer@ @[7521,7555]@ (bucket.list_blobs(prefix=prefix)) @TO@ @type:atom_expr@ @[7517,7555]@ list(bucket.list_blobs(prefix=prefix))
+
+MOV @type:atom_expr@ @[7517,7549]@ bucket.list_blobs(prefix=prefix) @TO@ @type:trailer@ @[7521,7555]@ (bucket.list_blobs(prefix=prefix))
+

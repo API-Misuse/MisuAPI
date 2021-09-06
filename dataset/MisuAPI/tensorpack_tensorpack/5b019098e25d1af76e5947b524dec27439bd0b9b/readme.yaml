@@ -1,0 +1,139 @@
+sha: 5b019098e25d1af76e5947b524dec27439bd0b9b
+message: handle error in find_library
+commit_log: "commit 5b019098e25d1af76e5947b524dec27439bd0b9b\nAuthor: Yuxin Wu <ppwwyyxx@users.noreply.github.com>\n\
+  Date:   Sun Aug 11 05:03:24 2019 +0000\n\n    handle error in find_library"
+contained_keywords:
+- error
+commit_time: 2019-08-11 05:03:24 +0000
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/DeepQNetwork/README.md
+  source_file: a/examples/DeepQNetwork/README.md
+  target_file: b/examples/DeepQNetwork/README.md
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 21
+    - 'Install [ALE](https://github.com/mgbellemare/Arcade-Learning-Environment) and
+      `gym[atari]`.
+
+      '
+  del_line_no:
+  - - null
+    - 'Install [ALE](https://github.com/mgbellemare/Arcade-Learning-Environment) and
+      gym.
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/utils/utils.py
+  source_file: a/tensorpack/utils/utils.py
+  target_file: b/tensorpack/utils/utils.py
+  added: 14
+  removed: 9
+  add_line_no:
+  - - 254
+    - '        try:
+
+      '
+  - - 255
+    - '            with open(procmap, ''r'') as f:
+
+      '
+  - - 256
+    - '                for line in f:
+
+      '
+  - - 257
+    - '                    line = line.strip().split('' '')
+
+      '
+  - - 258
+    - '                    sofile = line[-1]
+
+      '
+  - - 259
+    - '
+
+      '
+  - - 260
+    - '                    basename = os.path.basename(sofile)
+
+      '
+  - - 261
+    - '                    if ''lib'' + name + ''.so'' in basename:
+
+      '
+  - - 262
+    - '                        if os.path.isfile(sofile):
+
+      '
+  - - 263
+    - '                            return os.path.realpath(sofile)
+
+      '
+  - - 264
+    - '        except PermissionError:
+
+      '
+  - - 265
+    - '            # can fail in certain environment (e.g. chroot)
+
+      '
+  - - 266
+    - '            # if the pids are incorrectly mapped
+
+      '
+  - - 267
+    - '            pass
+
+      '
+  del_line_no:
+  - - null
+    - '        with open(procmap, ''r'') as f:
+
+      '
+  - - null
+    - '            for line in f:
+
+      '
+  - - null
+    - '                line = line.strip().split('' '')
+
+      '
+  - - null
+    - '                sofile = line[-1]
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '                basename = os.path.basename(sofile)
+
+      '
+  - - null
+    - '                if ''lib'' + name + ''.so'' in basename:
+
+      '
+  - - null
+    - '                    if os.path.isfile(sofile):
+
+      '
+  - - null
+    - '                        return os.path.realpath(sofile)
+
+      '

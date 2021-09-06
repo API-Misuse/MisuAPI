@@ -1,0 +1,138 @@
+INS @type:simple_stmt@ @[170,195]@ from scipy import linalg @TO@ @type:file_input@ @[0,11454]@ import random
+import time
+import warnings
+from cop <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[169,232]@ from scipy.linalg import cholesky, cho_solve, solv <text_longer_than_50> @TO@ @type:simple_stmt@ @[195,271]@ from scipy.linalg import cholesky, cho_solve, solv <text_longer_than_50>
+---UPD @type:import_from@ @[169,231]@ from scipy.linalg import cholesky, cho_solve, solv <text_longer_than_50> @TO@ @type:import_from@ @[195,270]@ from scipy.linalg import cholesky, cho_solve, solv <text_longer_than_50>
+------UPD @type:import_as_names@ @[194,231]@ cholesky, cho_solve, solve_triangular @TO@ @type:import_as_names@ @[220,270]@ cholesky, cho_solve, solve_triangular, LinAlgError
+---------INS @type:operator@ @[257,258]@ , @TO@ @type:import_as_names@ @[194,231]@ cholesky, cho_solve, solve_triangular
+---------INS @type:name@ @[259,270]@ LinAlgError @TO@ @type:import_as_names@ @[194,231]@ cholesky, cho_solve, solve_triangular
+
+
+INS @type:simple_stmt@ @[320,368]@ from sklearn.metrics.pairwise import rbf_kernel @TO@ @type:file_input@ @[0,11454]@ import random
+import time
+import warnings
+from cop <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[7255,7287]@ return np.array(distort_matrix) @TO@ @type:simple_stmt@ @[7112,7166]@ return rbf_kernel(distort_elements, distort_elemen <text_longer_than_50>
+---UPD @type:return_stmt@ @[7255,7286]@ return np.array(distort_matrix) @TO@ @type:return_stmt@ @[7112,7165]@ return rbf_kernel(distort_elements, distort_elemen <text_longer_than_50>
+------DEL @type:atom_expr@ @[7262,7286]@ np.array(distort_matrix) @FROM@ @type:return_stmt@ @[7255,7286]@ return np.array(distort_matrix)
+
+
+UPD @type:simple_stmt@ @[2996,3059]@ self._distance_matrix = np.concatenate((up_k, down <text_longer_than_50> @TO@ @type:simple_stmt@ @[3083,3145]@ temp_distance_matrix = np.concatenate((up_k, down_ <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2996,3058]@ self._distance_matrix = np.concatenate((up_k, down <text_longer_than_50> @TO@ @type:expr_stmt@ @[3083,3144]@ temp_distance_matrix = np.concatenate((up_k, down_ <text_longer_than_50>
+------INS @type:name@ @[3083,3103]@ temp_distance_matrix @TO@ @type:expr_stmt@ @[2996,3058]@ self._distance_matrix = np.concatenate((up_k, down <text_longer_than_50>
+------MOV @type:atom_expr@ @[2996,3017]@ self._distance_matrix @TO@ @type:expr_stmt@ @[3648,3692]@ self._distance_matrix = temp_distance_matrix
+
+
+UPD @type:simple_stmt@ @[3067,3133]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50> @TO@ @type:simple_stmt@ @[3153,3212]@ k_matrix = bourgain_embedding_matrix(temp_distance <text_longer_than_50>
+---UPD @type:expr_stmt@ @[3067,3132]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50> @TO@ @type:expr_stmt@ @[3153,3211]@ k_matrix = bourgain_embedding_matrix(temp_distance <text_longer_than_50>
+------UPD @type:name@ @[3067,3081]@ distort_matrix @TO@ @type:name@ @[3153,3161]@ k_matrix
+------DEL @type:atom_expr@ @[3084,3132]@ bourgain_embedding_matrix(self._distance_matrix) @FROM@ @type:expr_stmt@ @[3067,3132]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[3390,3517]@ try:
+            self._l_matrix = cholesky(k_matri <text_longer_than_50> @TO@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+---INS @type:suite@ @[3394,3465]@ self._l_matrix = cholesky(k_matrix, lower=True)  # <text_longer_than_50> @TO@ @type:try_stmt@ @[3390,3517]@ try:
+            self._l_matrix = cholesky(k_matri <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[3648,3693]@ self._distance_matrix = temp_distance_matrix @TO@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+---INS @type:expr_stmt@ @[3648,3692]@ self._distance_matrix = temp_distance_matrix @TO@ @type:simple_stmt@ @[3648,3693]@ self._distance_matrix = temp_distance_matrix
+
+
+UPD @type:simple_stmt@ @[4009,4075]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50> @TO@ @type:simple_stmt@ @[4149,4209]@ k_matrix = bourgain_embedding_matrix(self._distanc <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4009,4074]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50> @TO@ @type:expr_stmt@ @[4149,4208]@ k_matrix = bourgain_embedding_matrix(self._distanc <text_longer_than_50>
+------UPD @type:name@ @[4009,4023]@ distort_matrix @TO@ @type:name@ @[4149,4157]@ k_matrix
+
+
+UPD @type:simple_stmt@ @[4445,4546]@ k_trans = 1.0 / np.exp(np.power(self.edit_distance <text_longer_than_50> @TO@ @type:simple_stmt@ @[4518,4614]@ k_trans = np.exp(-np.power(self.edit_distance_matr <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4445,4545]@ k_trans = 1.0 / np.exp(np.power(self.edit_distance <text_longer_than_50> @TO@ @type:expr_stmt@ @[4518,4613]@ k_trans = np.exp(-np.power(self.edit_distance_matr <text_longer_than_50>
+------DEL @type:term@ @[4455,4545]@ 1.0 / np.exp(np.power(self.edit_distance_matrix(se <text_longer_than_50> @FROM@ @type:expr_stmt@ @[4445,4545]@ k_trans = 1.0 / np.exp(np.power(self.edit_distance <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[7061,7077]@ np.zeros((n, n)) @TO@ @type:atom_expr@ @[7119,7165]@ rbf_kernel(distort_elements, distort_elements)
+---UPD @type:trailer@ @[7069,7077]@ ((n, n)) @TO@ @type:trailer@ @[7129,7165]@ (distort_elements, distort_elements)
+------INS @type:arglist@ @[7130,7164]@ distort_elements, distort_elements @TO@ @type:trailer@ @[7069,7077]@ ((n, n))
+------DEL @type:atom@ @[7070,7076]@ (n, n) @FROM@ @type:trailer@ @[7069,7077]@ ((n, n))
+---UPD @type:name@ @[7061,7063]@ np @TO@ @type:name@ @[7148,7164]@ distort_elements
+---MOV @type:name@ @[7061,7063]@ np @TO@ @type:arglist@ @[7130,7164]@ distort_elements, distort_elements
+---DEL @type:trailer@ @[7063,7069]@ .zeros @FROM@ @type:atom_expr@ @[7061,7077]@ np.zeros((n, n))
+
+
+MOV @type:atom_expr@ @[7061,7077]@ np.zeros((n, n)) @TO@ @type:return_stmt@ @[7255,7286]@ return np.array(distort_matrix)
+---UPD @type:trailer@ @[7069,7077]@ ((n, n)) @TO@ @type:trailer@ @[7129,7165]@ (distort_elements, distort_elements)
+------INS @type:arglist@ @[7130,7164]@ distort_elements, distort_elements @TO@ @type:trailer@ @[7069,7077]@ ((n, n))
+------DEL @type:atom@ @[7070,7076]@ (n, n) @FROM@ @type:trailer@ @[7069,7077]@ ((n, n))
+---UPD @type:name@ @[7061,7063]@ np @TO@ @type:name@ @[7148,7164]@ distort_elements
+---MOV @type:name@ @[7061,7063]@ np @TO@ @type:arglist@ @[7130,7164]@ distort_elements, distort_elements
+---DEL @type:trailer@ @[7063,7069]@ .zeros @FROM@ @type:atom_expr@ @[7061,7077]@ np.zeros((n, n))
+
+
+UPD @type:name@ @[7262,7264]@ np @TO@ @type:name@ @[7119,7129]@ rbf_kernel
+
+
+MOV @type:name@ @[7262,7264]@ np @TO@ @type:atom_expr@ @[7061,7077]@ np.zeros((n, n))
+
+
+UPD @type:atom_expr@ @[3110,3131]@ self._distance_matrix @TO@ @type:atom_expr@ @[3164,3211]@ bourgain_embedding_matrix(temp_distance_matrix)
+---UPD @type:trailer@ @[3114,3131]@ ._distance_matrix @TO@ @type:trailer@ @[3189,3211]@ (temp_distance_matrix)
+------DEL @type:name@ @[3115,3131]@ _distance_matrix @FROM@ @type:trailer@ @[3114,3131]@ ._distance_matrix
+---UPD @type:name@ @[3110,3114]@ self @TO@ @type:name@ @[3190,3210]@ temp_distance_matrix
+---MOV @type:name@ @[3110,3114]@ self @TO@ @type:trailer@ @[3114,3131]@ ._distance_matrix
+
+
+MOV @type:atom_expr@ @[3110,3131]@ self._distance_matrix @TO@ @type:expr_stmt@ @[3067,3132]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50>
+---UPD @type:trailer@ @[3114,3131]@ ._distance_matrix @TO@ @type:trailer@ @[3189,3211]@ (temp_distance_matrix)
+------DEL @type:name@ @[3115,3131]@ _distance_matrix @FROM@ @type:trailer@ @[3114,3131]@ ._distance_matrix
+---UPD @type:name@ @[3110,3114]@ self @TO@ @type:name@ @[3190,3210]@ temp_distance_matrix
+---MOV @type:name@ @[3110,3114]@ self @TO@ @type:trailer@ @[3114,3131]@ ._distance_matrix
+
+
+MOV @type:simple_stmt@ @[3495,3553]@ self._l_matrix = cholesky(k_matrix, lower=True)  # <text_longer_than_50> @TO@ @type:suite@ @[3394,3465]@ self._l_matrix = cholesky(k_matrix, lower=True)  # <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[4461,4545]@ np.exp(np.power(self.edit_distance_matrix(self.ker <text_longer_than_50> @TO@ @type:atom_expr@ @[4528,4613]@ np.exp(-np.power(self.edit_distance_matrix(self.ke <text_longer_than_50>
+---UPD @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4534,4613]@ (-np.power(self.edit_distance_matrix(self.kernel_l <text_longer_than_50>
+------INS @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+------MOV @type:atom_expr@ @[4468,4544]@ np.power(self.edit_distance_matrix(self.kernel_lam <text_longer_than_50> @TO@ @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+
+MOV @type:atom_expr@ @[4461,4545]@ np.exp(np.power(self.edit_distance_matrix(self.ker <text_longer_than_50> @TO@ @type:expr_stmt@ @[4445,4545]@ k_trans = 1.0 / np.exp(np.power(self.edit_distance <text_longer_than_50>
+---UPD @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4534,4613]@ (-np.power(self.edit_distance_matrix(self.kernel_l <text_longer_than_50>
+------INS @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+------MOV @type:atom_expr@ @[4468,4544]@ np.power(self.edit_distance_matrix(self.kernel_lam <text_longer_than_50> @TO@ @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+
+MOV @type:name@ @[3084,3109]@ bourgain_embedding_matrix @TO@ @type:atom_expr@ @[3110,3131]@ self._distance_matrix
+
+
+UPD @type:name@ @[7044,7058]@ distort_matrix @TO@ @type:name@ @[7130,7146]@ distort_elements
+
+
+MOV @type:name@ @[7044,7058]@ distort_matrix @TO@ @type:arglist@ @[7130,7164]@ distort_elements, distort_elements
+
+
+UPD @type:operator@ @[7059,7060]@ = @TO@ @type:operator@ @[7146,7147]@ ,
+
+
+MOV @type:operator@ @[7059,7060]@ = @TO@ @type:arglist@ @[7130,7164]@ distort_elements, distort_elements
+
+
+DEL @type:simple_stmt@ @[3141,3194]@ k_matrix = 1.0 / np.exp(np.power(distort_matrix, 2 <text_longer_than_50> @FROM@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[4083,4136]@ k_matrix = 1.0 / np.exp(np.power(distort_matrix, 2 <text_longer_than_50> @FROM@ @type:suite@ @[3777,4404]@ train_x, train_y = np.array(train_x), np.array(tra <text_longer_than_50>
+
+
+DEL @type:for_stmt@ @[7082,7251]@ for i in range(n):
+        for j in range(i + 1, n <text_longer_than_50> @FROM@ @type:suite@ @[6365,7287]@ distance_matrix = np.array(distance_matrix)
+    n  <text_longer_than_50>
+
+

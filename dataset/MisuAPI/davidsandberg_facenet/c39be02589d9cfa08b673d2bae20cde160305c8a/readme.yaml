@@ -1,0 +1,56 @@
+sha: c39be02589d9cfa08b673d2bae20cde160305c8a
+message: 'Fixed bug in get_dataset when there are files in the root dataset
+
+  directory'
+commit_log: "commit c39be02589d9cfa08b673d2bae20cde160305c8a\nAuthor: David Sandberg\
+  \ <david.o.sandberg@gmail.com>\nDate:   Sat Jun 18 19:06:30 2016 +0200\n\n    Fixed\
+  \ bug in get_dataset when there are files in the root dataset\n    directory"
+contained_keywords:
+- fixed
+- bug
+commit_time: 2016-06-18 19:06:30 +0200
+commit_author: David Sandberg
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: facenet/src/facenet.py
+  source_file: a/facenet/src/facenet.py
+  target_file: b/facenet/src/facenet.py
+  added: 4
+  removed: 3
+  add_line_no:
+  - - 571
+    - '      if os.path.isdir(facedir):
+
+      '
+  - - 572
+    - '        images = os.listdir(facedir)
+
+      '
+  - - 573
+    - '        image_paths = map(lambda x: os.path.join(facedir,x), images)
+
+      '
+  - - 574
+    - '        dataset.append(ImageClass(class_name, image_paths))
+
+      '
+  del_line_no:
+  - - null
+    - '      images = os.listdir(facedir)
+
+      '
+  - - null
+    - '      image_paths = map(lambda x: os.path.join(facedir,x), images)
+
+      '
+  - - null
+    - '      dataset.append(ImageClass(class_name, image_paths))
+
+      '

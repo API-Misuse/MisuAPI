@@ -1,0 +1,31 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:116:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:117:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:118:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:145:13 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:147:13 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:186:8 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:189:17 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:193:17 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:197:13 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:199:15 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:225:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:226:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:227:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:228:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:25:8 - error: Import "model" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:26:8 - error: Import "wiki_data" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:27:8 - error: Import "parameters" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:28:8 - error: Import "data_utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:212:11 - error: Cannot assign member "words" for type "Utility"
+    Member "words" is unknown (reportGeneralTypeIssues)
+19 errors, 0 warnings, 0 infos 
+Completed in 1.197sec
+
+time cost(in seconds): 1.3336091041564941

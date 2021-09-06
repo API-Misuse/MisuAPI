@@ -1,0 +1,300 @@
+sha: f6067695ea541e2aa8a58e7d9785454945836b93
+message: 'Fixed race condition in PyTorch MNIST example (#2709)
+
+
+  Signed-off-by: Travis Addair <tgaddair@gmail.com>'
+commit_log: "commit f6067695ea541e2aa8a58e7d9785454945836b93\nAuthor: Travis Addair\
+  \ <tgaddair@gmail.com>\nDate:   Fri Mar 5 07:01:12 2021 -0800\n\n    Fixed race\
+  \ condition in PyTorch MNIST example (#2709)\n    \n    Signed-off-by: Travis Addair\
+  \ <tgaddair@gmail.com>"
+contained_keywords:
+- fixed
+commit_time: 2021-03-05 07:01:12 -0800
+commit_author: Travis Addair
+added_files: 0
+removed_files: 0
+modified_files: 4
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/elastic/pytorch/pytorch_mnist_elastic.py
+  source_file: a/examples/elastic/pytorch/pytorch_mnist_elastic.py
+  target_file: b/examples/elastic/pytorch/pytorch_mnist_elastic.py
+  added: 11
+  removed: 7
+  add_line_no:
+  - - 2
+    - 'import os
+
+      '
+  - - 3
+    - 'from filelock import FileLock
+
+      '
+  - - 4
+    - '
+
+      '
+  - - 54
+    - 'data_dir = args.data_dir or ''./data''
+
+      '
+  - - 55
+    - 'with FileLock(os.path.expanduser("~/.horovod_lock")):
+
+      '
+  - - 56
+    - '    train_dataset = \
+
+      '
+  - - 57
+    - '        datasets.MNIST(data_dir, train=True, download=True,
+
+      '
+  - - 58
+    - '                       transform=transforms.Compose([
+
+      '
+  - - 59
+    - '                           transforms.ToTensor(),
+
+      '
+  - - 60
+    - '                           transforms.Normalize((0.1307,), (0.3081,))
+
+      '
+  - - 61
+    - '                       ]))
+
+      '
+  del_line_no:
+  - - null
+    - 'data_dir = args.data_dir or f''data-{hvd.rank()}''
+
+      '
+  - - null
+    - 'train_dataset = \
+
+      '
+  - - null
+    - '    datasets.MNIST(data_dir, train=True, download=True,
+
+      '
+  - - null
+    - '                   transform=transforms.Compose([
+
+      '
+  - - null
+    - '                       transforms.ToTensor(),
+
+      '
+  - - null
+    - '                       transforms.Normalize((0.1307,), (0.3081,))
+
+      '
+  - - null
+    - '                   ]))
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/pytorch/pytorch_mnist.py
+  source_file: a/examples/pytorch/pytorch_mnist.py
+  target_file: b/examples/pytorch/pytorch_mnist.py
+  added: 12
+  removed: 7
+  add_line_no:
+  - - 2
+    - 'import os
+
+      '
+  - - 3
+    - 'from filelock import FileLock
+
+      '
+  - - 4
+    - '
+
+      '
+  - - 139
+    - '    data_dir = args.data_dir or ''./data''
+
+      '
+  - - 140
+    - '    with FileLock(os.path.expanduser("~/.horovod_lock")):
+
+      '
+  - - 141
+    - '        train_dataset = \
+
+      '
+  - - 142
+    - '            datasets.MNIST(data_dir, train=True, download=True,
+
+      '
+  - - 143
+    - '                           transform=transforms.Compose([
+
+      '
+  - - 144
+    - '                               transforms.ToTensor(),
+
+      '
+  - - 145
+    - '                               transforms.Normalize((0.1307,), (0.3081,))
+
+      '
+  - - 146
+    - '                           ]))
+
+      '
+  - - 147
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - '    data_dir = args.data_dir or f''data-{hvd.rank()}''
+
+      '
+  - - null
+    - '    train_dataset = \
+
+      '
+  - - null
+    - '        datasets.MNIST(data_dir, train=True, download=True,
+
+      '
+  - - null
+    - '                       transform=transforms.Compose([
+
+      '
+  - - null
+    - '                           transforms.ToTensor(),
+
+      '
+  - - null
+    - '                           transforms.Normalize((0.1307,), (0.3081,))
+
+      '
+  - - null
+    - '                       ]))
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/ray/basic_ray_elastic.py
+  source_file: a/examples/ray/basic_ray_elastic.py
+  target_file: b/examples/ray/basic_ray_elastic.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 82
+    - '    with FileLock(os.path.expanduser("~/.horovod_lock")):
+
+      '
+  del_line_no:
+  - - null
+    - '    with FileLock(os.path.expanduser("~/.datalock")):
+
+      '
+patched_file_3:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/ray/pytorch_ray_elastic.py
+  source_file: a/examples/ray/pytorch_ray_elastic.py
+  target_file: b/examples/ray/pytorch_ray_elastic.py
+  added: 11
+  removed: 8
+  add_line_no:
+  - - 2
+    - 'import os
+
+      '
+  - - 3
+    - 'from filelock import FileLock
+
+      '
+  - - 4
+    - '
+
+      '
+  - - 125
+    - '    data_dir = args.data_dir or ''./data''
+
+      '
+  - - 126
+    - '    with FileLock(os.path.expanduser("~/.horovod_lock")):
+
+      '
+  - - 127
+    - '        train_dataset = \
+
+      '
+  - - 128
+    - '            datasets.MNIST(data_dir, train=True, download=True,
+
+      '
+  - - 129
+    - '                           transform=transforms.Compose([
+
+      '
+  - - 130
+    - '                               transforms.ToTensor(),
+
+      '
+  - - 131
+    - '                               transforms.Normalize((0.1307,), (0.3081,))
+
+      '
+  - - 132
+    - '                           ]))
+
+      '
+  del_line_no:
+  - - null
+    - 'import os
+
+      '
+  - - null
+    - '    data_dir = args.data_dir or f''data-{hvd.rank()}''
+
+      '
+  - - null
+    - '    train_dataset = \
+
+      '
+  - - null
+    - '        datasets.MNIST(data_dir, train=True, download=True,
+
+      '
+  - - null
+    - '                       transform=transforms.Compose([
+
+      '
+  - - null
+    - '                           transforms.ToTensor(),
+
+      '
+  - - null
+    - '                           transforms.Normalize((0.1307,), (0.3081,))
+
+      '
+  - - null
+    - '                       ]))
+
+      '

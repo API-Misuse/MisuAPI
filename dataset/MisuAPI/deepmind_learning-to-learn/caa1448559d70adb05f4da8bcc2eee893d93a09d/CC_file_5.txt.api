@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[4324,4359]@ isinstance(name, types.StringTypes) @TO@ @type:atom_expr@ @[4369,4399]@ isinstance(name, string_types)
+
+DEL @type:atom_expr@ @[4341,4358]@ types.StringTypes @FROM@ @type:arglist@ @[4335,4358]@ name, types.StringTypes
+
+MOV @type:name@ @[4341,4346]@ types @TO@ @type:arglist@ @[4335,4358]@ name, types.StringTypes
+

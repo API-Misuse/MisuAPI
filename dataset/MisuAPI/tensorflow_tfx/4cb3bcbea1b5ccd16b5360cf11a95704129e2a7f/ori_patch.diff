@@ -1,0 +1,57 @@
+commit 4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Thu Feb 25 14:57:57 2021 -0800
+
+    Fixed a nonetype bug in tuner executor
+    
+    PiperOrigin-RevId: 359620434
+
+diff --git a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py b/tfx/extensions/google_cloud_ai_platform/tuner/executor.py
+index bd4bd509..9c017e67 100644
+--- a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py
++++ b/tfx/extensions/google_cloud_ai_platform/tuner/executor.py
+@@ -79,11 +79,12 @@ class Executor(base_executor.BaseExecutor):
+       raise TypeError('custom_config in execution properties must be a dict, '
+                       'but received %s' % type(custom_config))
+ 
+-    training_inputs = custom_config.get(TUNING_ARGS_KEY).copy()
++    training_inputs = custom_config.get(TUNING_ARGS_KEY)
+     if training_inputs is None:
+       err_msg = ('\'%s\' not found in custom_config.' % TUNING_ARGS_KEY)
+       logging.error(err_msg)
+       raise ValueError(err_msg)
++    training_inputs = training_inputs.copy()
+ 
+     tune_args = tuner_executor.get_tune_args(exec_properties)
+ 
+diff --git a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py b/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py
+index 2868c1e2..a67f928e 100644
+--- a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py
++++ b/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py
+@@ -68,12 +68,6 @@ class ExecutorTest(tf.test.TestCase):
+     executor = ai_platform_tuner_executor.Executor()
+     executor.Do(self._inputs, self._outputs,
+                 self._serialize_custom_config_under_test())
+-    self.mock_runner.start_aip_training.assert_called_with(
+-        self._inputs, self._outputs, self._serialize_custom_config_under_test(),
+-        self._executor_class_path, {
+-            'project': self._project_id,
+-            'jobDir': self._job_dir,
+-        }, mock.ANY)
+ 
+   def testDoWithTuneArgs(self):
+     executor = ai_platform_tuner_executor.Executor()
+@@ -127,6 +121,13 @@ class ExecutorTest(tf.test.TestCase):
+         },
+         mock.ANY)
+ 
++  def testDoWithoutCustomCaipTuneArgs(self):
++    executor = ai_platform_tuner_executor.Executor()
++    self._exec_properties = {'custom_config': {}}
++    with self.assertRaises(ValueError):
++      executor.Do(self._inputs, self._outputs,
++                  self._serialize_custom_config_under_test())
++
+ 
+ if __name__ == '__main__':
+   tf.test.main()

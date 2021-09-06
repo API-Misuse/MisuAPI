@@ -1,0 +1,19 @@
+commit 964a237b7a0f40091089d2809b03b0dd7ba19409
+Author: Gerard Casas Saez <gcasassaez@twitter.com>
+Date:   Thu May 7 16:54:38 2020 -0600
+
+    fix airflow pipeline config kwargs
+
+diff --git a/tfx/orchestration/airflow/airflow_dag_runner.py b/tfx/orchestration/airflow/airflow_dag_runner.py
+index 544763ea..9576108d 100644
+--- a/tfx/orchestration/airflow/airflow_dag_runner.py
++++ b/tfx/orchestration/airflow/airflow_dag_runner.py
+@@ -45,7 +45,7 @@ class AirflowPipelineConfig(pipeline_config.PipelineConfig):
+       **kwargs: keyword args for PipelineConfig.
+     """
+ 
+-    super(AirflowPipelineConfig, self).__init__(kwargs)
++    super(AirflowPipelineConfig, self).__init__(**kwargs)
+     self.airflow_dag_config = airflow_dag_config or {}
+ 
+ 

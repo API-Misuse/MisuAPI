@@ -1,0 +1,24 @@
+commit fa78e9e91fc4b2f1b8d36ccbc926ca4a791877b7
+Author: Quim Llimona <ql@lemonzi.me>
+Date:   Mon Mar 27 10:23:06 2017 -0400
+
+    Fix trim_silence for short audio files (#247)
+
+diff --git a/wavenet/audio_reader.py b/wavenet/audio_reader.py
+index d675a33..a65e9c8 100644
+--- a/wavenet/audio_reader.py
++++ b/wavenet/audio_reader.py
+@@ -61,9 +61,11 @@ def load_generic_audio(directory, sample_rate):
+         yield audio, filename, category_id
+ 
+ 
+-def trim_silence(audio, threshold):
++def trim_silence(audio, threshold, frame_length=2048):
+     '''Removes silence at the beginning and end of a sample.'''
+-    energy = librosa.feature.rmse(audio)
++    if audio.size < frame_length:
++        frame_length = audio.size
++    energy = librosa.feature.rmse(audio, frame_length=frame_length)
+     frames = np.nonzero(energy > threshold)
+     indices = librosa.core.frames_to_samples(frames)[1]
+ 

@@ -1,0 +1,30 @@
+INS @type:simple_stmt@ @[178,204]@ from warnings import warn @TO@ @type:file_input@ @[0,4257]@ import argparse
+from tacotron.synthesize import ta <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[3380,3728]@ if args.model in ('Both', 'Tacotron-2'):
+		if args <text_longer_than_50> @TO@ @type:if_stmt@ @[3406,3728]@ if args.model in ('Both', 'Tacotron-2'):
+		if args <text_longer_than_50>
+---UPD @type:suite@ @[3420,3728]@ if args.mode == 'live':
+			raise ValueError('Impos <text_longer_than_50> @TO@ @type:suite@ @[3446,3728]@ if args.mode == 'live':
+			warn('Requested a live  <text_longer_than_50>
+------UPD @type:if_stmt@ @[3423,3555]@ if args.mode == 'live':
+			raise ValueError('Impos <text_longer_than_50> @TO@ @type:if_stmt@ @[3449,3555]@ if args.mode == 'live':
+			warn('Requested a live  <text_longer_than_50>
+---------UPD @type:suite@ @[3446,3555]@ raise ValueError('Impossible to generate live spee <text_longer_than_50> @TO@ @type:suite@ @[3472,3555]@ warn('Requested a live evaluation with Tacotron-2, <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[3450,3555]@ raise ValueError('Impossible to generate live spee <text_longer_than_50> @TO@ @type:simple_stmt@ @[3476,3555]@ warn('Requested a live evaluation with Tacotron-2, <text_longer_than_50>
+---------------DEL @type:raise_stmt@ @[3450,3554]@ raise ValueError('Impossible to generate live spee <text_longer_than_50> @FROM@ @type:simple_stmt@ @[3450,3555]@ raise ValueError('Impossible to generate live spee <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[3456,3554]@ ValueError('Impossible to generate live speech usi <text_longer_than_50> @TO@ @type:atom_expr@ @[3476,3554]@ warn('Requested a live evaluation with Tacotron-2, <text_longer_than_50>
+---UPD @type:name@ @[3456,3466]@ ValueError @TO@ @type:name@ @[3476,3480]@ warn
+---UPD @type:trailer@ @[3466,3554]@ ('Impossible to generate live speech using Tacotro <text_longer_than_50> @TO@ @type:trailer@ @[3480,3554]@ ('Requested a live evaluation with Tacotron-2, Wav <text_longer_than_50>
+------UPD @type:string@ @[3467,3553]@ 'Impossible to generate live speech using Tacotron <text_longer_than_50> @TO@ @type:string@ @[3481,3553]@ 'Requested a live evaluation with Tacotron-2, Wave <text_longer_than_50>
+
+
+MOV @type:atom_expr@ @[3456,3554]@ ValueError('Impossible to generate live speech usi <text_longer_than_50> @TO@ @type:simple_stmt@ @[3450,3555]@ raise ValueError('Impossible to generate live spee <text_longer_than_50>
+---UPD @type:name@ @[3456,3466]@ ValueError @TO@ @type:name@ @[3476,3480]@ warn
+---UPD @type:trailer@ @[3466,3554]@ ('Impossible to generate live speech using Tacotro <text_longer_than_50> @TO@ @type:trailer@ @[3480,3554]@ ('Requested a live evaluation with Tacotron-2, Wav <text_longer_than_50>
+------UPD @type:string@ @[3467,3553]@ 'Impossible to generate live speech using Tacotron <text_longer_than_50> @TO@ @type:string@ @[3481,3553]@ 'Requested a live evaluation with Tacotron-2, Wave <text_longer_than_50>
+
+

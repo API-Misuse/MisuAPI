@@ -1,0 +1,30 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:28:6 - error: Import "ml_metadata.proto" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:29:6 - error: Import "tfx.utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:137:8 - error: Operator "==" not supported for types "Type[Artifact]" and "Type[Artifact]"
+    Operator "==" not supported for types "Type[Artifact]" and "Type[Artifact]" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:192:40 - error: "properties" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:194:46 - error: "properties" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:208:40 - error: "properties" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:219:46 - error: "properties" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:248:29 - error: "name" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:259:29 - error: Argument of type "Unknown | None" cannot be assigned to parameter "message" of type "Message" in function "MessageToJson"
+    Type "Unknown | None" cannot be assigned to type "Message"
+      Type "None" cannot be assigned to type "Message" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:288:32 - error: "name" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:349:36 - error: "properties" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact.py:356:36 - error: "properties" is not a known member of "None" (reportOptionalMemberAccess)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact_test.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact_test.py:25:6 - error: Import "ml_metadata.proto" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact_test.py:26:6 - error: Import "tfx.types" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/ad1811aa72654f070da10e4c8313d2556a356e5c/a/tfx/types/artifact_test.py:27:6 - error: Import "tfx.utils" could not be resolved (reportMissingImports)
+15 errors, 0 warnings, 0 infos 
+Completed in 1.693sec
+
+time cost(in seconds): 1.9109101295471191

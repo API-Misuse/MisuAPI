@@ -1,0 +1,79 @@
+INS @type:for_stmt@ @[6930,8075]@ for bento in bentos:
+            name, version = b <text_longer_than_50> @TO@ @type:suite@ @[6407,7699]@ """Delete saved BentoService.
+
+        BENTO is th <text_longer_than_50>
+
+INS @type:for_stmt@ @[6930,8075]@ for bento in bentos:
+            name, version = b <text_longer_than_50> @TO@ @type:suite@ @[6407,7699]@ """Delete saved BentoService.
+
+        BENTO is th <text_longer_than_50>
+
+INS @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50> @TO@ @type:for_stmt@ @[6930,8075]@ for bento in bentos:
+            name, version = b <text_longer_than_50>
+
+INS @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50> @TO@ @type:for_stmt@ @[6930,8075]@ for bento in bentos:
+            name, version = b <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[6668,6701]@ name, version = bento.split(':') @TO@ @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6750,6927]@ _echo(
+                'BentoService name or versi <text_longer_than_50> @TO@ @type:atom_expr@ @[7053,7246]@ _echo(
+                    'BentoService name or v <text_longer_than_50>
+
+MOV @type:if_stmt@ @[6709,6947]@ if not name and not version:
+            _echo(
+   <text_longer_than_50> @TO@ @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6750,6927]@ _echo(
+                'BentoService name or versi <text_longer_than_50> @TO@ @type:atom_expr@ @[7053,7246]@ _echo(
+                    'BentoService name or v <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6974,7129]@ click.confirm(
+            f'Are you sure about de <text_longer_than_50> @TO@ @type:atom_expr@ @[7301,7468]@ click.confirm(
+                f'Are you sure abou <text_longer_than_50>
+
+MOV @type:if_stmt@ @[6955,7150]@ if not yes and not click.confirm(
+            f'Ar <text_longer_than_50> @TO@ @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6974,7129]@ click.confirm(
+            f'Are you sure about de <text_longer_than_50> @TO@ @type:atom_expr@ @[7301,7468]@ click.confirm(
+                f'Are you sure abou <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7167,7265]@ yatai_client.repository.dangerously_delete_bento(
+ <text_longer_than_50> @TO@ @type:atom_expr@ @[7514,7620]@ yatai_client.repository.dangerously_delete_bento(
+ <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[7158,7266]@ result = yatai_client.repository.dangerously_delet <text_longer_than_50> @TO@ @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7167,7265]@ yatai_client.repository.dangerously_delete_bento(
+ <text_longer_than_50> @TO@ @type:atom_expr@ @[7514,7620]@ yatai_client.repository.dangerously_delete_bento(
+ <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7368,7448]@ status_pb_to_error_code_and_message(
+              <text_longer_than_50> @TO@ @type:atom_expr@ @[7731,7819]@ status_pb_to_error_code_and_message(
+              <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7461,7623]@ _echo(
+                f'Failed to delete Bento {n <text_longer_than_50> @TO@ @type:atom_expr@ @[7836,8014]@ _echo(
+                    f'Failed to delete Bent <text_longer_than_50>
+
+MOV @type:if_stmt@ @[7274,7643]@ if result.status.status_code != status_pb2.Status. <text_longer_than_50> @TO@ @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7368,7448]@ status_pb_to_error_code_and_message(
+              <text_longer_than_50> @TO@ @type:atom_expr@ @[7731,7819]@ status_pb_to_error_code_and_message(
+              <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7461,7623]@ _echo(
+                f'Failed to delete Bento {n <text_longer_than_50> @TO@ @type:atom_expr@ @[7836,8014]@ _echo(
+                    f'Failed to delete Bent <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[7651,7699]@ _echo(f'BentoService {name}:{version} deleted') @TO@ @type:suite@ @[6950,8075]@ name, version = bento.split(':')
+            if no <text_longer_than_50>
+

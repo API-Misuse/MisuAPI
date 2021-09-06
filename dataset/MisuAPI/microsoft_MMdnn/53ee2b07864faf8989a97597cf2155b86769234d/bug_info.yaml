@@ -1,0 +1,57 @@
+issues_cnt: 0
+sha: 53ee2b07864faf8989a97597cf2155b86769234d
+message: Fix misusage of caffe inference api in test.
+commit_log: "commit 53ee2b07864faf8989a97597cf2155b86769234d\nAuthor: Kit <cncng@microsoft.com>\n\
+  Date:   Sun Apr 8 21:02:03 2018 +0800\n\n    Fix misusage of caffe inference api\
+  \ in test."
+contained_keywords:
+- fix
+commit_time: 2018-04-08 21:02:03 +0800
+commit_author: Kit
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  add_line_no:
+  - - 240
+    - '
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: mmdnn/conversion/examples/tensorflow/extractor.py
+  removed: 0
+  source_file: a/mmdnn/conversion/examples/tensorflow/extractor.py
+  target_file: b/mmdnn/conversion/examples/tensorflow/extractor.py
+patched_file_1:
+  add_line_no:
+  - - 188
+    - '        original_predict = caffe_extractor.inference(architecture_name, (architecture_file,
+      weight_file), TestModels.cachedir, image_path)
+
+      '
+  - - 578
+    - '            # ''voc-fcn8s''       : [TensorflowEmit]
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '        original_predict = caffe_extractor.inference(architecture_name,architecture_file,
+      weight_file, image_path)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tests/test_conversion_imagenet.py
+  removed: 1
+  source_file: a/tests/test_conversion_imagenet.py
+  target_file: b/tests/test_conversion_imagenet.py

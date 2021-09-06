@@ -1,0 +1,33 @@
+UPD @type:simple_stmt@ @[5421,5569]@ sparse_indices = tf.concat(axis=[tf.expand_dims(sp <text_longer_than_50> @TO@ @type:simple_stmt@ @[5421,5584]@ sparse_indices = tf.concat(axis=1, values=[tf.expa <text_longer_than_50>
+---UPD @type:expr_stmt@ @[5421,5568]@ sparse_indices = tf.concat(axis=[tf.expand_dims(sp <text_longer_than_50> @TO@ @type:expr_stmt@ @[5421,5583]@ sparse_indices = tf.concat(axis=1, values=[tf.expa <text_longer_than_50>
+------UPD @type:atom_expr@ @[5438,5568]@ tf.concat(axis=[tf.expand_dims(sparse_local_row, 1 <text_longer_than_50> @TO@ @type:atom_expr@ @[5438,5583]@ tf.concat(axis=1, values=[tf.expand_dims(sparse_lo <text_longer_than_50>
+---------UPD @type:trailer@ @[5447,5568]@ (axis=[tf.expand_dims(sparse_local_row, 1),
+       <text_longer_than_50> @TO@ @type:trailer@ @[5447,5583]@ (axis=1, values=[tf.expand_dims(sparse_local_row,  <text_longer_than_50>
+------------UPD @type:arglist@ @[5448,5567]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50> @TO@ @type:arglist@ @[5448,5582]@ axis=1, values=[tf.expand_dims(sparse_local_row, 1 <text_longer_than_50>
+---------------MOV @type:argument@ @[5448,5557]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50> @TO@ @type:arglist@ @[5448,5567]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50>
+------------------UPD @type:name@ @[5448,5452]@ axis @TO@ @type:name@ @[5456,5462]@ values
+------------------UPD @type:atom@ @[5453,5557]@ [tf.expand_dims(sparse_local_row, 1),
+             <text_longer_than_50> @TO@ @type:atom@ @[5463,5582]@ [tf.expand_dims(sparse_local_row, 1),
+             <text_longer_than_50>
+---------------------UPD @type:testlist_comp@ @[5454,5556]@ tf.expand_dims(sparse_local_row, 1),
+              <text_longer_than_50> @TO@ @type:testlist_comp@ @[5464,5581]@ tf.expand_dims(sparse_local_row, 1),
+              <text_longer_than_50>
+---------------INS @type:argument@ @[5448,5454]@ axis=1 @TO@ @type:arglist@ @[5448,5567]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50>
+---------------UPD @type:argument@ @[5448,5557]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50> @TO@ @type:argument@ @[5456,5582]@ values=[tf.expand_dims(sparse_local_row, 1),
+      <text_longer_than_50>
+------------------UPD @type:name@ @[5448,5452]@ axis @TO@ @type:name@ @[5456,5462]@ values
+------------------UPD @type:atom@ @[5453,5557]@ [tf.expand_dims(sparse_local_row, 1),
+             <text_longer_than_50> @TO@ @type:atom@ @[5463,5582]@ [tf.expand_dims(sparse_local_row, 1),
+             <text_longer_than_50>
+---------------------UPD @type:testlist_comp@ @[5454,5556]@ tf.expand_dims(sparse_local_row, 1),
+              <text_longer_than_50> @TO@ @type:testlist_comp@ @[5464,5581]@ tf.expand_dims(sparse_local_row, 1),
+              <text_longer_than_50>
+---------------DEL @type:argument@ @[5559,5567]@ values=1 @FROM@ @type:arglist@ @[5448,5567]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50>
+
+

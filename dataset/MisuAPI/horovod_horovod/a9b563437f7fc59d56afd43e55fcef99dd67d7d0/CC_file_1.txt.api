@@ -1,0 +1,10 @@
+UPD @type:atom_expr@ @[3043,3204]@ StructType([StructField('x1', IntegerType()),
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[3063,3285]@ StructType([StructField('x1', IntegerType()),
+     <text_longer_than_50>
+
+INS @type:operator@ @[3222,3223]@ , @TO@ @type:testlist_comp@ @[3055,3202]@ StructField('x1', IntegerType()),
+                 <text_longer_than_50>
+
+INS @type:atom_expr@ @[3249,3283]@ StructField('weight', FloatType()) @TO@ @type:testlist_comp@ @[3055,3202]@ StructField('x1', IntegerType()),
+                 <text_longer_than_50>
+

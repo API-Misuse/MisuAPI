@@ -1,0 +1,117 @@
+sha: 8b3503054f70353ab91a2b9c43fce5bb10e6b4af
+message: "[PyTorch] Fix evaluate_loss (#1245)\n\n* [PyTorch] Bug fix eval_loss; reshape\
+  \ is required in chapters later\r\n\r\n* [PyTorch] update"
+commit_log: "commit 8b3503054f70353ab91a2b9c43fce5bb10e6b4af\nAuthor: Anirudh <anirudhdagar6@gmail.com>\n\
+  Date:   Sat Jul 25 13:38:51 2020 +0530\n\n    [PyTorch] Fix evaluate_loss (#1245)\n\
+  \    \n    * [PyTorch] Bug fix eval_loss; reshape is required in chapters later\n\
+  \    \n    * [PyTorch] update"
+contained_keywords:
+- bug
+- fix
+commit_time: 2020-07-25 13:38:51 +0530
+commit_author: Anirudh
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: chapter_multilayer-perceptrons/underfit-overfit.md
+  source_file: a/chapter_multilayer-perceptrons/underfit-overfit.md
+  target_file: b/chapter_multilayer-perceptrons/underfit-overfit.md
+  added: 14
+  removed: 1
+  add_line_no:
+  - - 473
+    - '#@tab mxnet, tensorflow
+
+      '
+  - - 483
+    - '```{.python .input}
+
+      '
+  - - 484
+    - '#@tab pytorch
+
+      '
+  - - 485
+    - 'def evaluate_loss(net, data_iter, loss):  #@save
+
+      '
+  - - 486
+    - '    """Evaluate the loss of a model on the given dataset."""
+
+      '
+  - - 487
+    - '    metric = d2l.Accumulator(2)  # Sum of losses, no. of examples
+
+      '
+  - - 488
+    - '    for X, y in data_iter:
+
+      '
+  - - 489
+    - '        out = net(X)
+
+      '
+  - - 490
+    - '        y = d2l.reshape(y, out.shape)
+
+      '
+  - - 491
+    - '        l = loss(out, y)
+
+      '
+  - - 492
+    - '        metric.add(d2l.reduce_sum(l), d2l.size(l))
+
+      '
+  - - 493
+    - '    return metric[0] / metric[1]
+
+      '
+  - - 494
+    - '```
+
+      '
+  - - 495
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - '#@tab all
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: d2l/torch.py
+  source_file: a/d2l/torch.py
+  target_file: b/d2l/torch.py
+  added: 3
+  removed: 1
+  add_line_no:
+  - - 350
+    - '        out = net(X)
+
+      '
+  - - 351
+    - '        y = d2l.reshape(y, out.shape)
+
+      '
+  - - 352
+    - '        l = loss(out, y)
+
+      '
+  del_line_no:
+  - - null
+    - '        l = loss(net(X), y)
+
+      '

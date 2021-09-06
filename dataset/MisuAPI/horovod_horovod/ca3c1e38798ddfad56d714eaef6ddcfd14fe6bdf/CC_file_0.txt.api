@@ -1,0 +1,14 @@
+DEL @type:atom_expr@ @[7613,7643]@ train_loss.update(loss.item()) @FROM@ @type:simple_stmt@ @[7613,7644]@ train_loss.update(loss.item())
+
+UPD @type:atom_expr@ @[7631,7642]@ loss.item() @TO@ @type:atom_expr@ @[7613,7636]@ train_loss.update(loss)
+
+DEL @type:trailer@ @[7640,7642]@ () @FROM@ @type:atom_expr@ @[7631,7642]@ loss.item()
+
+MOV @type:atom_expr@ @[7631,7642]@ loss.item() @TO@ @type:simple_stmt@ @[7613,7644]@ train_loss.update(loss.item())
+
+DEL @type:trailer@ @[7640,7642]@ () @FROM@ @type:atom_expr@ @[7631,7642]@ loss.item()
+
+MOV @type:name@ @[7613,7623]@ train_loss @TO@ @type:atom_expr@ @[7631,7642]@ loss.item()
+
+MOV @type:trailer@ @[7623,7630]@ .update @TO@ @type:atom_expr@ @[7631,7642]@ loss.item()
+

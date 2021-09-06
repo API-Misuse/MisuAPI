@@ -1,0 +1,340 @@
+issues_cnt: 0
+sha: 3698e34abfd6215605a21f28bb61dba872c5cc63
+message: better handle resource error messages when files not given or not it path
+commit_log: "commit 3698e34abfd6215605a21f28bb61dba872c5cc63\nAuthor: Alon Eirew <alon.eirew@intel.com>\n\
+  Date:   Sat Nov 10 14:12:13 2018 +0200\n\n    better handle resource error messages\
+  \ when files not given or not it path"
+contained_keywords:
+- error
+commit_time: 2018-11-10 14:12:13 +0200
+commit_author: Alon Eirew
+added_files: 0
+removed_files: 0
+modified_files: 6
+patched_file_0:
+  add_line_no:
+  - - 18
+    - 'import os
+
+      '
+  - - 42
+    - '        if ref_dict is not None and os.path.isfile(ref_dict):
+
+      '
+  - - 43
+    - '            if method == OnlineOROfflineMethod.OFFLINE:
+
+      '
+  - - 44
+    - '                self.ref_dict = load_json_file(ref_dict)
+
+      '
+  - - 45
+    - '            elif method == OnlineOROfflineMethod.ONLINE:
+
+      '
+  - - 46
+    - '                self.ref_dict = self.load_reference_dict(ref_dict)
+
+      '
+  - - 47
+    - '            logger.info(''ReferentDict module lead successfully'')
+
+      '
+  - - 48
+    - '        else:
+
+      '
+  - - 49
+    - '            raise FileNotFoundError(''Referent Dict file not found or not in
+      path..'')
+
+      '
+  - - 50
+    - '
+
+      '
+  added: 10
+  del_line_no:
+  - - null
+    - '        if method == OnlineOROfflineMethod.OFFLINE:
+
+      '
+  - - null
+    - '            self.ref_dict = load_json_file(ref_dict)
+
+      '
+  - - null
+    - '        elif method == OnlineOROfflineMethod.ONLINE:
+
+      '
+  - - null
+    - '            self.ref_dict = self.load_reference_dict(ref_dict)
+
+      '
+  - - null
+    - '        logger.info(''ReferentDict module lead successfully'')
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nlp_architect/data/cdc_resources/relations/referent_dict_relation_extraction.py
+  removed: 5
+  source_file: a/nlp_architect/data/cdc_resources/relations/referent_dict_relation_extraction.py
+  target_file: b/nlp_architect/data/cdc_resources/relations/referent_dict_relation_extraction.py
+patched_file_1:
+  add_line_no:
+  - - 18
+    - 'import os
+
+      '
+  - - 42
+    - '        if vo_file is not None and os.path.isfile(vo_file):
+
+      '
+  - - 43
+    - '            if method == OnlineOROfflineMethod.OFFLINE:
+
+      '
+  - - 44
+    - '                self.vo = load_json_file(vo_file)
+
+      '
+  - - 45
+    - '            elif method == OnlineOROfflineMethod.ONLINE:
+
+      '
+  - - 46
+    - '                self.vo = self.load_verbocean_file(vo_file)
+
+      '
+  - - 47
+    - '            logger.info(''Verb Ocean module lead successfully'')
+
+      '
+  - - 48
+    - '        else:
+
+      '
+  - - 49
+    - '            raise FileNotFoundError(''VerbOcean file not found or not in path..'')
+
+      '
+  added: 9
+  del_line_no:
+  - - null
+    - '        if method == OnlineOROfflineMethod.OFFLINE:
+
+      '
+  - - null
+    - '            self.vo = load_json_file(vo_file)
+
+      '
+  - - null
+    - '        elif method == OnlineOROfflineMethod.ONLINE:
+
+      '
+  - - null
+    - '            self.vo = self.load_verbocean_file(vo_file)
+
+      '
+  - - null
+    - '        logger.info(''Verb Ocean module lead successfully'')
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nlp_architect/data/cdc_resources/relations/verbocean_relation_extraction.py
+  removed: 5
+  source_file: a/nlp_architect/data/cdc_resources/relations/verbocean_relation_extraction.py
+  target_file: b/nlp_architect/data/cdc_resources/relations/verbocean_relation_extraction.py
+patched_file_2:
+  add_line_no:
+  - - 20
+    - 'import os
+
+      '
+  - - 54
+    - '
+
+      '
+  - - 59
+    - '            if wiki_file is not None and os.path.isdir(wiki_file):
+
+      '
+  - - 60
+    - '                self.pywiki_impl = WikiOffline(wiki_file)
+
+      '
+  - - 61
+    - '            else:
+
+      '
+  - - 62
+    - '                raise FileNotFoundError(''Wikipedia resource file not found
+      or not in path, ''
+
+      '
+  - - 63
+    - '                                        ''create it or change the initialization
+      method'')
+
+      '
+  - - 66
+    - '
+
+      '
+  added: 8
+  del_line_no:
+  - - null
+    - '            self.pywiki_impl = WikiOffline(wiki_file)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nlp_architect/data/cdc_resources/relations/wikipedia_relation_extraction.py
+  removed: 1
+  source_file: a/nlp_architect/data/cdc_resources/relations/wikipedia_relation_extraction.py
+  target_file: b/nlp_architect/data/cdc_resources/relations/wikipedia_relation_extraction.py
+patched_file_3:
+  add_line_no:
+  - - 16
+    - 'import logging
+
+      '
+  - - 17
+    - 'import os
+
+      '
+  - - 25
+    - 'logger = logging.getLogger(__name__)
+
+      '
+  - - 26
+    - '
+
+      '
+  - - 36
+    - '        logger.info(''Loading Within doc resource'')
+
+      '
+  - - 37
+    - '        if wd_file is not None and os.path.isfile(wd_file):
+
+      '
+  - - 38
+    - '            wd_mentions_json = load_json_file(wd_file)
+
+      '
+  - - 39
+    - '            self.within_doc_coref_chain = self.arrange_resource(wd_mentions_json)
+
+      '
+  - - 40
+    - '        else:
+
+      '
+  - - 41
+    - '            raise FileNotFoundError(''Within-doc resource file not found or
+      not in path'')
+
+      '
+  added: 10
+  del_line_no:
+  - - null
+    - '        wd_mentions_json = load_json_file(wd_file)
+
+      '
+  - - null
+    - '        self.within_doc_coref_chain = self.arrange_resource(wd_mentions_json)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nlp_architect/data/cdc_resources/relations/within_doc_coref_extraction.py
+  removed: 2
+  source_file: a/nlp_architect/data/cdc_resources/relations/within_doc_coref_extraction.py
+  target_file: b/nlp_architect/data/cdc_resources/relations/within_doc_coref_extraction.py
+patched_file_4:
+  add_line_no:
+  - - 18
+    - 'import os
+
+      '
+  - - 48
+    - '            if wn_file is not None and os.path.isdir(wn_file):
+
+      '
+  - - 49
+    - '                self.wordnet_impl = WordnetOffline(wn_file)
+
+      '
+  - - 50
+    - '            else:
+
+      '
+  - - 51
+    - '                raise FileNotFoundError(''WordNet resource directory not found
+      or not in path'')
+
+      '
+  - - 52
+    - '
+
+      '
+  added: 6
+  del_line_no:
+  - - null
+    - '            self.wordnet_impl = WordnetOffline(wn_file)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nlp_architect/data/cdc_resources/relations/wordnet_relation_extraction.py
+  removed: 1
+  source_file: a/nlp_architect/data/cdc_resources/relations/wordnet_relation_extraction.py
+  target_file: b/nlp_architect/data/cdc_resources/relations/wordnet_relation_extraction.py
+patched_file_5:
+  add_line_no:
+  - - 95
+    - '            ''/datasets/ecb/ecb_all_event_mentions.json''
+
+      '
+  - - 123
+    - '            ''/datasets/ecb/ecb_all_entity_mentions.json''
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '            ''/datasets/cdc/gold_mentions/ecb_test_event_gold_mentions.json''
+
+      '
+  - - null
+    - '            ''/datasets/cdc/gold_mentions/ecb_test_entity_gold_mentions.json''
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nlp_architect/models/cross_doc_coref/cdc_config.py
+  removed: 2
+  source_file: a/nlp_architect/models/cross_doc_coref/cdc_config.py
+  target_file: b/nlp_architect/models/cross_doc_coref/cdc_config.py

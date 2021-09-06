@@ -1,0 +1,77 @@
+sha: e5a59fe313cf9bb96ff3a240ea7ba61b70a91876
+message: 'Raise the exception when container builder fails.
+
+
+  PiperOrigin-RevId: 281867664'
+commit_log: "commit e5a59fe313cf9bb96ff3a240ea7ba61b70a91876\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Thu Nov 21 17:18:16 2019 -0800\n\n    Raise the exception when container\
+  \ builder fails.\n    \n    PiperOrigin-RevId: 281867664"
+contained_keywords:
+- fails
+commit_time: 2019-11-21 17:18:16 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: RELEASE.md
+  source_file: a/RELEASE.md
+  target_file: b/RELEASE.md
+  added: 1
+  removed: 0
+  add_line_no:
+  - - 17
+    - '*   Raise exceptions when container building fails.
+
+      '
+  del_line_no: []
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/tools/cli/handler/kubeflow_handler.py
+  source_file: a/tfx/tools/cli/handler/kubeflow_handler.py
+  target_file: b/tfx/tools/cli/handler/kubeflow_handler.py
+  added: 6
+  removed: 2
+  add_line_no:
+  - - 34
+    - '# Standard Imports.third_party.tfx.tools.cli.container_builder.labels as container_builder_labels
+
+      '
+  - - 74
+    - '      if target_image is not None or os.path.exists(
+
+      '
+  - - 75
+    - '          container_builder_labels.BUILD_SPEC_FILENAME):
+
+      '
+  - - 76
+    - '        target_image = self._build_pipeline_image(target_image, skaffold_cmd)
+
+      '
+  - - 77
+    - '        os.environ[labels.KUBEFLOW_TFX_IMAGE_ENV] = target_image
+
+      '
+  - - 80
+    - '      raise
+
+      '
+  del_line_no:
+  - - null
+    - '      target_image = self._build_pipeline_image(target_image, skaffold_cmd)
+
+      '
+  - - null
+    - '      os.environ[labels.KUBEFLOW_TFX_IMAGE_ENV] = target_image
+
+      '

@@ -1,0 +1,37 @@
+commit 4af483993c629deb6f49f249ddf060a3ae483ff3
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Sat Jul 16 16:28:56 2016 -0700
+
+    fix about box & imgaug
+
+diff --git a/tensorpack/dataflow/common.py b/tensorpack/dataflow/common.py
+index de990a11..3d14b8c1 100644
+--- a/tensorpack/dataflow/common.py
++++ b/tensorpack/dataflow/common.py
+@@ -68,8 +68,15 @@ class BatchData(ProxyDataFlow):
+                 tp = 'float32'
+             else:
+                 tp = dt.dtype
+-            result.append(
+-                np.array([x[k] for x in data_holder], dtype=tp))
++            try:
++                result.append(
++                    np.array([x[k] for x in data_holder], dtype=tp))
++            except KeyboardInterrupt:
++                raise
++            except:
++                logger.exception("Cannot batch data. Perhaps they are of inconsistent shape?")
++                import IPython as IP;
++                IP.embed(config=IP.terminal.ipapp.load_default_config())
+         return result
+ 
+ class FixedSizeData(ProxyDataFlow):
+
+ 
+-__all__ = ['RandomCrop', 'CenterCrop', 'FixedCrop', 'RandomCropRandomShape']
++__all__ = ['RandomCrop', 'CenterCrop', 'FixedCrop',
++        'RandomCropRandomShape', 'perturb_BB']
+ 
+ class RandomCrop(ImageAugmentor):
+     """ Randomly crop the image into a smaller one """
+

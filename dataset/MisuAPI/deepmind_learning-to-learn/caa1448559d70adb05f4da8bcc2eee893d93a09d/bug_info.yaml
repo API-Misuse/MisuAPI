@@ -1,0 +1,338 @@
+issues_cnt: 0
+sha: caa1448559d70adb05f4da8bcc2eee893d93a09d
+message: 'Python 3 compatibility
+
+
+  Fixes #8'
+commit_log: "commit caa1448559d70adb05f4da8bcc2eee893d93a09d\nAuthor: Sergio Gomez\
+  \ <sergomez@google.com>\nDate:   Thu Feb 9 16:53:58 2017 +0000\n\n    Python 3 compatibility\n\
+  \    \n    Fixes #8"
+contained_keywords:
+- fixes
+commit_time: 2017-02-09 16:53:58 +0000
+commit_author: Sergio Gomez
+added_files: 0
+removed_files: 0
+modified_files: 14
+patched_file_0:
+  add_line_no:
+  - - 21
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: convergence_test.py
+  removed: 0
+  source_file: a/convergence_test.py
+  target_file: b/convergence_test.py
+patched_file_1:
+  add_line_no:
+  - - 21
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: evaluate.py
+  removed: 0
+  source_file: a/evaluate.py
+  target_file: b/evaluate.py
+patched_file_2:
+  add_line_no:
+  - - 185
+    - '      key = next(iter(config))
+
+      '
+  - - 186
+    - '      kwargs = config[key]
+
+      '
+  - - 250
+    - '    for k, net in self._nets.items():
+
+      '
+  - - 380
+    - '    for k, net in nets.items():
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - '      key, kwargs = config.items()[0]
+
+      '
+  - - null
+    - '    for k, net in self._nets.iteritems():
+
+      '
+  - - null
+    - '    for k, net in nets.iteritems():
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: meta.py
+  removed: 3
+  source_file: a/meta.py
+  target_file: b/meta.py
+patched_file_3:
+  add_line_no:
+  - - 26
+    - 'from six.moves import xrange
+
+      '
+  - - 66
+    - '    torch_final_x = 0.8559
+
+      '
+  - - 212
+    - '      save_result = optimizer.save(sess, path=tmp_dir)
+
+      '
+  - - 213
+    - '      net_path = next(iter(save_result))
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - '    torch_final_x = np.array([0.8559])
+
+      '
+  - - null
+    - '      net_path = optimizer.save(sess, path=tmp_dir).keys()[0]
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: meta_test.py
+  removed: 2
+  source_file: a/meta_test.py
+  target_file: b/meta_test.py
+patched_file_4:
+  add_line_no:
+  - - 41
+    - '    with open(net_path, "rb") as f:
+
+      '
+  - - 59
+    - '    with open(filename, "wb") as f:
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '    with open(net_path, "r") as f:
+
+      '
+  - - null
+    - '    with open(filename, "w") as f:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: networks.py
+  removed: 2
+  source_file: a/networks.py
+  target_file: b/networks.py
+patched_file_5:
+  add_line_no:
+  - - 28
+    - 'from six import string_types
+
+      '
+  - - 29
+    - 'from six.moves import xrange
+
+      '
+  - - 120
+    - '    if not isinstance(name, string_types):
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - 'import types
+
+      '
+  - - null
+    - '    if not isinstance(name, types.StringTypes):
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nn/base.py
+  removed: 2
+  source_file: a/nn/base.py
+  target_file: b/nn/base.py
+patched_file_6:
+  add_line_no:
+  - - 25
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nn/batch_norm.py
+  removed: 0
+  source_file: a/nn/batch_norm.py
+  target_file: b/nn/batch_norm.py
+patched_file_7:
+  add_line_no:
+  - - 22
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nn/convnet.py
+  removed: 0
+  source_file: a/nn/convnet.py
+  target_file: b/nn/convnet.py
+patched_file_8:
+  add_line_no:
+  - - 22
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nn/mlp.py
+  removed: 0
+  source_file: a/nn/mlp.py
+  target_file: b/nn/mlp.py
+patched_file_9:
+  add_line_no:
+  - - 30
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nn/rnn_core.py
+  removed: 0
+  source_file: a/nn/rnn_core.py
+  target_file: b/nn/rnn_core.py
+patched_file_10:
+  add_line_no:
+  - - 112
+    - '    for key, entry in dictionary.items():
+
+      '
+  - - 159
+    - '    for key, entry in dictionary.items():
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '    for key, entry in dictionary.iteritems():
+
+      '
+  - - null
+    - '    for key, entry in dictionary.iteritems():
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: nn/util.py
+  removed: 2
+  source_file: a/nn/util.py
+  target_file: b/nn/util.py
+patched_file_11:
+  add_line_no:
+  - - 21
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: problems_test.py
+  removed: 0
+  source_file: a/problems_test.py
+  target_file: b/problems_test.py
+patched_file_12:
+  add_line_no:
+  - - 23
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: train.py
+  removed: 0
+  source_file: a/train.py
+  target_file: b/train.py
+patched_file_13:
+  add_line_no:
+  - - 25
+    - 'from six.moves import xrange
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: util.py
+  removed: 0
+  source_file: a/util.py
+  target_file: b/util.py

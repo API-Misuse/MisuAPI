@@ -1,0 +1,20 @@
+INS @type:simple_stmt@ @[3374,3405]@ container = BentoMLContainer() @TO@ @type:suite@ @[3324,3791]@ parser = argparse.ArgumentParser()
+        parser. <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[3413,3472]@ config = BentoMLConfiguration(override_config_file <text_longer_than_50> @TO@ @type:suite@ @[3324,3791]@ parser = argparse.ArgumentParser()
+        parser. <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[3480,3525]@ container.config.from_dict(config.as_dict()) @TO@ @type:suite@ @[3324,3791]@ parser = argparse.ArgumentParser()
+        parser. <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[3534,3562]@ from bentoml import tracing @TO@ @type:suite@ @[3324,3791]@ parser = argparse.ArgumentParser()
+        parser. <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[3571,3606]@ container.wire(packages=[tracing]) @TO@ @type:suite@ @[3324,3791]@ parser = argparse.ArgumentParser()
+        parser. <text_longer_than_50>
+
+

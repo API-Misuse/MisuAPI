@@ -1,0 +1,97 @@
+INS @type:expr_stmt@ @[2326,2371]@ choice_len = len(search_space[key]['_value']) @TO@ @type:simple_stmt@ @[2300,2541]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:expr_stmt@ @[2326,2371]@ choice_len = len(search_space[key]['_value']) @TO@ @type:simple_stmt@ @[2300,2541]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+DEL @type:atom_expr@ @[2300,2540]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50> @FROM@ @type:simple_stmt@ @[2300,2541]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:simple_stmt@ @[2400,2608]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50> @TO@ @type:suite@ @[2271,2541]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:simple_stmt@ @[2400,2608]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50> @TO@ @type:suite@ @[2271,2541]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:atom_expr@ @[2400,2607]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50> @TO@ @type:simple_stmt@ @[2400,2608]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:atom_expr@ @[2400,2607]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50> @TO@ @type:simple_stmt@ @[2400,2608]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:trailer@ @[2412,2607]@ ('%s categorical {%s} [%s]\n' % (
+                 <text_longer_than_50> @TO@ @type:atom_expr@ @[2400,2607]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:trailer@ @[2412,2607]@ ('%s categorical {%s} [%s]\n' % (
+                 <text_longer_than_50> @TO@ @type:atom_expr@ @[2400,2607]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:term@ @[2413,2606]@ '%s categorical {%s} [%s]\n' % (
+                  <text_longer_than_50> @TO@ @type:trailer@ @[2412,2607]@ ('%s categorical {%s} [%s]\n' % (
+                 <text_longer_than_50>
+
+INS @type:term@ @[2413,2606]@ '%s categorical {%s} [%s]\n' % (
+                  <text_longer_than_50> @TO@ @type:trailer@ @[2412,2607]@ ('%s categorical {%s} [%s]\n' % (
+                 <text_longer_than_50>
+
+INS @type:atom@ @[2444,2606]@ (
+                                key, 
+           <text_longer_than_50> @TO@ @type:term@ @[2413,2606]@ '%s categorical {%s} [%s]\n' % (
+                  <text_longer_than_50>
+
+INS @type:atom@ @[2444,2606]@ (
+                                key, 
+           <text_longer_than_50> @TO@ @type:term@ @[2413,2606]@ '%s categorical {%s} [%s]\n' % (
+                  <text_longer_than_50>
+
+INS @type:testlist_comp@ @[2478,2605]@ key, 
+                                json.dumps(l <text_longer_than_50> @TO@ @type:atom@ @[2444,2606]@ (
+                                key, 
+           <text_longer_than_50>
+
+INS @type:testlist_comp@ @[2478,2605]@ key, 
+                                json.dumps(l <text_longer_than_50> @TO@ @type:atom@ @[2444,2606]@ (
+                                key, 
+           <text_longer_than_50>
+
+INS @type:atom_expr@ @[2516,2557]@ json.dumps(list(range(choice_len)))[1:-1] @TO@ @type:testlist_comp@ @[2478,2605]@ key, 
+                                json.dumps(l <text_longer_than_50>
+
+INS @type:atom_expr@ @[2516,2557]@ json.dumps(list(range(choice_len)))[1:-1] @TO@ @type:testlist_comp@ @[2478,2605]@ key, 
+                                json.dumps(l <text_longer_than_50>
+
+INS @type:if_stmt@ @[2636,2800]@ if key in categorical_dict:
+                       <text_longer_than_50> @TO@ @type:suite@ @[2271,2541]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:simple_stmt@ @[2828,2880]@ categorical_dict[key] = search_space[key]['_value' <text_longer_than_50> @TO@ @type:suite@ @[2271,2541]@ pcs_fd.write('%s categorical {%s} [%s]\n' % (
+     <text_longer_than_50>
+
+INS @type:return_stmt@ @[6586,6617]@ return generate_pcs(ss_content) @TO@ @type:simple_stmt@ @[6199,6224]@ generate_pcs(ss_content)
+
+INS @type:return_stmt@ @[6586,6617]@ return generate_pcs(ss_content) @TO@ @type:simple_stmt@ @[6199,6224]@ generate_pcs(ss_content)
+
+MOV @type:atom_expr@ @[6199,6223]@ generate_pcs(ss_content) @TO@ @type:return_stmt@ @[6586,6617]@ return generate_pcs(ss_content)
+
+MOV @type:name@ @[2300,2306]@ pcs_fd @TO@ @type:expr_stmt@ @[2326,2371]@ choice_len = len(search_space[key]['_value'])
+
+MOV @type:operator@ @[2342,2343]@ % @TO@ @type:expr_stmt@ @[2326,2371]@ choice_len = len(search_space[key]['_value'])
+
+UPD @type:atom_expr@ @[2416,2461]@ json.dumps(search_space[key]['_value'])[1:-1] @TO@ @type:atom_expr@ @[2339,2371]@ len(search_space[key]['_value'])
+
+MOV @type:trailer@ @[2455,2461]@ [1:-1] @TO@ @type:atom_expr@ @[2516,2557]@ json.dumps(list(range(choice_len)))[1:-1]
+
+DEL @type:trailer@ @[2420,2426]@ .dumps @FROM@ @type:atom_expr@ @[2416,2461]@ json.dumps(search_space[key]['_value'])[1:-1]
+
+MOV @type:atom_expr@ @[2416,2461]@ json.dumps(search_space[key]['_value'])[1:-1] @TO@ @type:expr_stmt@ @[2326,2371]@ choice_len = len(search_space[key]['_value'])
+
+MOV @type:trailer@ @[2455,2461]@ [1:-1] @TO@ @type:atom_expr@ @[2516,2557]@ json.dumps(list(range(choice_len)))[1:-1]
+
+DEL @type:trailer@ @[2420,2426]@ .dumps @FROM@ @type:atom_expr@ @[2416,2461]@ json.dumps(search_space[key]['_value'])[1:-1]
+

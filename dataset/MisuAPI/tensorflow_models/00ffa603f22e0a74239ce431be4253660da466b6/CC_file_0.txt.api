@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[9775,9836]@ tf.concat(axis=initial_state, values=1, name="init <text_longer_than_50> @TO@ @type:atom_expr@ @[9775,9836]@ tf.concat(axis=1, values=initial_state, name="init <text_longer_than_50>
+
+UPD @type:atom_expr@ @[10397,10448]@ tf.concat(axis=state_tuple, values=1, name="state" <text_longer_than_50> @TO@ @type:atom_expr@ @[10397,10448]@ tf.concat(axis=1, values=state_tuple, name="state" <text_longer_than_50>
+

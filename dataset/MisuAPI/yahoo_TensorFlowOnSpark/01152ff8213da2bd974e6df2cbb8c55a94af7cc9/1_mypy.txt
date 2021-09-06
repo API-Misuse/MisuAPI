@@ -1,0 +1,9 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/yahoo_TensorFlowOnSpark/01152ff8213da2bd974e6df2cbb8c55a94af7cc9/a/tensorflowonspark/TFSparkNode.py:26: error: No parent module -- cannot perform relative import
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/yahoo_TensorFlowOnSpark/01152ff8213da2bd974e6df2cbb8c55a94af7cc9/a/tensorflowonspark/TFSparkNode.py:27: error: No parent module -- cannot perform relative import
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/yahoo_TensorFlowOnSpark/01152ff8213da2bd974e6df2cbb8c55a94af7cc9/a/tensorflowonspark/TFSparkNode.py:28: error: No parent module -- cannot perform relative import
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/yahoo_TensorFlowOnSpark/01152ff8213da2bd974e6df2cbb8c55a94af7cc9/a/tensorflowonspark/TFSparkNode.py:29: error: No parent module -- cannot perform relative import
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/yahoo_TensorFlowOnSpark/01152ff8213da2bd974e6df2cbb8c55a94af7cc9/a/tensorflowonspark/TFSparkNode.py:30: error: No parent module -- cannot perform relative import
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/yahoo_TensorFlowOnSpark/01152ff8213da2bd974e6df2cbb8c55a94af7cc9/a/tensorflowonspark/TFSparkNode.py:31: error: No parent module -- cannot perform relative import
+Found 6 errors in 1 file (errors prevented further checking)
+
+time cost(in seconds): 0.24553871154785156

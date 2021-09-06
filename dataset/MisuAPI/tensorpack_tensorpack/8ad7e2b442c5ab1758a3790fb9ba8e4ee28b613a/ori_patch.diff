@@ -1,0 +1,22 @@
+commit 8ad7e2b442c5ab1758a3790fb9ba8e4ee28b613a
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Tue Jan 17 11:34:11 2017 -0500
+
+    fix scope bug in DQN. fix #108
+
+diff --git a/examples/DeepQNetwork/DQN.py b/examples/DeepQNetwork/DQN.py
+index a6fa26cc..2db568a7 100755
+--- a/examples/DeepQNetwork/DQN.py
++++ b/examples/DeepQNetwork/DQN.py
+@@ -124,8 +124,9 @@ class Model(ModelDesc):
+             best_v = tf.reduce_max(targetQ_predict_value, 1)    # N,
+         else:
+             # Double-DQN
+-            tf.get_variable_scope().reuse_variables()
+-            next_predict_value = self._get_DQN_prediction(next_state)
++            sc = tf.get_variable_scope()
++            with tf.variable_scope(sc, reuse=True):
++                next_predict_value = self._get_DQN_prediction(next_state)
+             self.greedy_choice = tf.argmax(next_predict_value, 1)   # N,
+             predict_onehot = tf.one_hot(self.greedy_choice, NUM_ACTIONS, 1.0, 0.0)
+             best_v = tf.reduce_sum(targetQ_predict_value * predict_onehot, 1)

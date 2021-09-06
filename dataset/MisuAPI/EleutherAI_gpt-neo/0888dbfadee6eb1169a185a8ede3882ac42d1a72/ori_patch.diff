@@ -1,0 +1,585 @@
+commit 0888dbfadee6eb1169a185a8ede3882ac42d1a72
+Author: Phil Wang <lucidrains@gmail.com>
+Date:   Sat Sep 12 10:51:58 2020 -0700
+
+    add faster sampling for global attention (#43)
+    
+    * add faster sampling for global attention
+    
+    * allow user to toggle slow sampling, in case fast sampling contains a bug
+    
+    * make fast sampling compatible with local attention by expanding and reducing queries before and after the local attention op
+    
+    * remove pasts variable, in favor of using contexts object
+    
+    * fix a bunch of broken things
+    
+    * remove use of reshapes in attention blocks
+
+diff --git a/main.py b/main.py
+index 97b851c..37ca947 100644
+--- a/main.py
++++ b/main.py
+@@ -31,6 +31,7 @@ def main():
+     parser.add_argument('--new', action='store_true')
+     parser.add_argument('--test', action='store_true')
+     parser.add_argument('--predict', action='store_true')
++    parser.add_argument('--slow_sampling', action='store_true')
+     parser.add_argument('--check_dataset', action='store_true')
+     args = parser.parse_args()
+ 
+@@ -115,6 +116,7 @@ def main():
+     # can we change the mesh layout so batch will not be split at prediction time?
+     params["predict_batch_size"] = params.get("predict_batch_size", 1) # Default to 1
+     params["predict"] = args.predict
++    params["slow_sampling"] = args.slow_sampling
+ 
+     eval_tasks = params.get('eval_tasks', [])
+     has_predict_or_eval_steps_or_eval_tasks = params['predict_steps'] > 0 or params['eval_steps'] > 0 or len(eval_tasks) > 0
+diff --git a/model_fns.py b/model_fns.py
+index fb90b44..3d80b7e 100644
+--- a/model_fns.py
++++ b/model_fns.py
+@@ -123,9 +123,11 @@ def model_fn(features, labels, mode, params):
+         inputs = mtf_features["inputs"]
+         if params["remove_partial_sequences"] is None:
+             params["remove_partial_sequences"] = False
+-            mtf_samples = sample_autoregressive(
+-                inputs, other_features=other_features, params=params, variable_dtype=variable_dtype,
+-                remove_partial_sequences=params["remove_partial_sequences"], stop_at_token=params["stop_at_token"])
++
++        mtf_samples = sample_autoregressive(
++            inputs, other_features=other_features, params=params, variable_dtype=variable_dtype,
++            remove_partial_sequences=params["remove_partial_sequences"], stop_at_token=params["stop_at_token"])
++
+         mtf_samples = mtf.anonymize(mtf_samples)
+         inputs = mtf.anonymize(inputs)
+         lowering = mtf.Lowering(graph, {mesh: mesh_impl}, autostack=True)
+@@ -183,7 +185,7 @@ def model_fn(features, labels, mode, params):
+         if params["model"] == "GPT2":
+             with mtf.utils.outside_all_rewrites():
+                 with tf.variable_scope('gpt2'):
+-                    logits, loss, loss_batch = gpt2.model(mtf_features, other_features, params, mesh, variable_dtype=variable_dtype, past=None, context=None)
++                    logits, loss, loss_batch = gpt2.model(mtf_features, other_features, params, mesh, variable_dtype=variable_dtype, context=None)
+         else:
+             raise Exception("{} is not a valid model - please select from GPT2".format(params['model']))
+ 
+diff --git a/models/gpt2/gpt2.py b/models/gpt2/gpt2.py
+index d085205..6369e96 100644
+--- a/models/gpt2/gpt2.py
++++ b/models/gpt2/gpt2.py
+@@ -11,10 +11,14 @@ from models.utils import expand_tile
+ 
+ sentinel = object()
+ 
++def exists(x):
++    return x is not None
+ 
+ def identity(x, *args, **kwargs):
+     return x
+ 
++def is_incremental_inference(context):
++    return exists(context) and context.mode == 'incremental'
+ 
+ def positions_for(tokens: mtf.Tensor, past_length: int, batch_dim: mtf.Dimension):
+     nsteps = tokens.shape[1]
+@@ -39,7 +43,7 @@ def scale_norm(x, scope, *, variable_dtype, axis=sentinel, epsilon=1e-5, params=
+         g = mtf.get_variable(x.mesh, 'g', [], initializer=tf.constant_initializer(1), 
+                     master_dtype=variable_dtype.master_dtype, 
+                     slice_dtype=variable_dtype.slice_dtype,
+-                    activation_dtype=x.dtype.activation_dtype) 
++                    activation_dtype=variable_dtype.activation_dtype)
+ 
+         x = norm(x, axis, epsilon)
+         x = x * g
+@@ -103,17 +107,12 @@ def linear(x, scope, nf, *, w_init_stdev=0.02, variable_dtype, params=None, scal
+                         )
+         return c
+ 
+-
+-def attn(x, scope, n_state, *, layer_num, past, params, bias, memory_length_dim, variable_dtype, context=None):
++def attn(x, scope, n_state, *, layer_num, params, bias, dim_seq, memory_length_dim, variable_dtype, context=None):
+     # x :: [batch, seq, n_embd]
+-    x_shape, dim_batch, dim_seq, dim_embd, mesh = x.shape, *x.shape, x.mesh
++    x_shape, dim_batch, *_, dim_embd, mesh = x.shape, *x.shape, x.mesh
+ 
+     # n_state is the same as config['n_embd'], which is also the same as dim_embd.
+-    assert x.shape.ndims == 3  # Should be [batch, sequence, features]
+     assert n_state.size % params["n_head"] == 0
+-    if past is not None:
+-        assert past.shape.ndims == 5  # Should be [batch, 2, heads, sequence, features], where 2 is [k, v]
+-    assert past is None
+ 
+     dim_heads = mtf.Dimension("heads", params['n_head'])
+ 
+@@ -134,20 +133,16 @@ def attn(x, scope, n_state, *, layer_num, past, params, bias, memory_length_dim,
+         k = mtfparams.compute_k(x)
+         v = mtfparams.compute_v(x)
+ 
+-        if context is not None:
+-            if context.mode == "incremental":
+-                one_hot = mtf.one_hot(
+-                    context.position, dim_seq, dtype=variable_dtype.master_dtype)
+-                inv_one_hot = 1.0 - one_hot
+-                old_k, old_v = context.get_states(2)
+-                k = old_k * inv_one_hot + k * one_hot
+-                v = old_v * inv_one_hot + v * one_hot
+-
+-            # will probably need this later (related to masking) - not sure how it works exactly for now
+-            # memory_position = mtf.range(context.mesh, memory_length, tf.int32)
+-        if context is not None:
+-            if context.mode == "incremental" or context.mode == "first_part":
+-                context.record_new_states([k, v])
++        if is_incremental_inference(context):
++            one_hot = mtf.one_hot(context.position - 1, dim_seq, dtype=variable_dtype.master_dtype)
++            inv_one_hot = 1.0 - one_hot
++            old_k, old_v = context.get_states(2)
++            k = old_k * inv_one_hot + k * one_hot
++            v = old_v * inv_one_hot + v * one_hot
++            bias = None
++
++        if exists(context):
++            context.record_new_states([k, v])
+ 
+         present = None
+ 
+@@ -158,9 +153,12 @@ def attn(x, scope, n_state, *, layer_num, past, params, bias, memory_length_dim,
+                 # `local_attention_1d` has built in autoregressive masking, so we don't need mask_attn_weights.
+                 radius = params.get("local_attention_radius", 256)
+ 
++                if is_incremental_inference(context):
++                    q *= one_hot
++
+                 a = mtf_transformer.attention.local_attention_1d(
+                     q, k, v,
+-                    length_dim=dim_seq,  # TODO: should this be memory length?
++                    length_dim=k.shape[1],  # TODO: should this be memory length?
+                     key_dim=dim_kv,
+                     value_dim=dim_kv,
+                     radius=radius,
+@@ -170,6 +168,10 @@ def attn(x, scope, n_state, *, layer_num, past, params, bias, memory_length_dim,
+                     # TODO: we might need to split along length dimension at some point, when we do we'll need to
+                     #  wire this up as a param
+                 )
++
++                if is_incremental_inference(context):
++                    a = mtf.gather(a, context.position - 1, dim_seq)
++
+             elif attention_type == "global":
+ 
+                 # TODO: the only use of context within attention is in _maybe_reshape...
+@@ -179,7 +181,7 @@ def attn(x, scope, n_state, *, layer_num, past, params, bias, memory_length_dim,
+                 #   we should create a fake context, and pass to attention for the efficiency
+ 
+                 # broadcast mask bias across batch and heads
+-                broadcasted_bias = mtf.broadcast(bias, [dim_batch, dim_heads, bias.shape[-2], bias.shape[-1]])
++                broadcasted_bias = mtf.broadcast(bias, [dim_batch, dim_heads, bias.shape[-2], bias.shape[-1]]) if exists(bias) else None
+ 
+                 # rename sequence dim of k, v because otherwise the einsum calculating QK^T won't keep both sequence
+                 # dims.
+@@ -278,11 +280,10 @@ def mlp_glu(x, scope, n_state, *, variable_dtype, params):
+             h2 = mtf.dropout(h2, rate=params["res_dropout"], name="mlp_dropout")
+         return h2
+ 
+-
+-def block(params, scope, past, layer_num, bias, memory_length_dim, variable_dtype, context=None):
++def block(params, scope, layer_num, bias, sequence_dim, memory_length_dim, variable_dtype, context=None):
+     use_mlp_glu = params["mlp_glu"] == True
+     use_scale_norm = params["scalenorm"] == True
+-    use_moe = (params["moe_layers"] is not None) and (layer_num in params["moe_layers"])
++    use_moe = exists(params["moe_layers"]) and (layer_num in params["moe_layers"])
+     use_rezero = params["rezero"] == True
+ 
+     def fn(x):
+@@ -298,8 +299,8 @@ def block(params, scope, past, layer_num, bias, memory_length_dim, variable_dtyp
+ 
+             pre_residual_fn = rezero if use_rezero else identity
+ 
+-            a, present = attn(prenorm(x, 'norm_1', variable_dtype=variable_dtype, params=params), 'attn', nx, layer_num=layer_num, past=past,
+-                              params=params, bias=bias, memory_length_dim=memory_length_dim,
++            a, present = attn(prenorm(x, 'norm_1', variable_dtype=variable_dtype, params=params), 'attn', nx, layer_num=layer_num,
++                              params=params, bias=bias, dim_seq=sequence_dim, memory_length_dim=memory_length_dim,
+                               variable_dtype=variable_dtype, context=context)
+ 
+             x = x + pre_residual_fn(a, 'norm_rezero_1', dtype=variable_dtype)
+@@ -339,14 +340,13 @@ def block(params, scope, past, layer_num, bias, memory_length_dim, variable_dtyp
+ # --------------------------------------------------------------------------------
+ # MODEL:
+ 
+-
+-def model(mtf_features, other_features, params, mesh, variable_dtype, past=None, context=None):
++def model(mtf_features, other_features, params, mesh, variable_dtype, context=None):
+     """A GPT style model implemented in mesh tensorflow."""
+     results = {}
+     recompute_grad = params["recompute_grad"] == True  # if true, enable gradient checkpointing
+     use_axial_pos_emb = params["axial_pos_emb"] != None
+     no_weight_tie_emb = params["no_weight_tie"] == True
+-    share_parameters = params["share_parameters"] is not None and params["share_parameters"] == True
++    share_parameters = exists(params["share_parameters"]) and params["share_parameters"] == True
+ 
+     # parse inputs and labels from the mtf_features / other_features input dicts
+     # all dimensions are defined inside model_fn for efficiency
+@@ -358,6 +358,10 @@ def model(mtf_features, other_features, params, mesh, variable_dtype, past=None,
+     vocab_dim = other_features["vocab_dim"]
+     embed_sequence_dim = other_features["embed_sequence_dim"]
+ 
++    if is_incremental_inference(context):
++        x = mtf.gather(x, context.position - 1, sequence_dim)
++        x = mtf.reshape(x, [batch_dim])
++
+     if not use_axial_pos_emb:
+         wpe = mtf.get_variable(mesh, 'wpe', mtf.Shape([embed_sequence_dim, embd_dim]),  # Position encoding
+                                initializer=tf.random_normal_initializer(stddev=0.01),
+@@ -401,12 +405,15 @@ def model(mtf_features, other_features, params, mesh, variable_dtype, past=None,
+     with tf.variable_scope('token_embd'):
+         # text embedding
+         h = mtf.gather(wte, x, vocab_dim)
++
+     with tf.variable_scope('pos_embd'):
+         # positional embedding
+-        h += mtf.gather(wpe, mtf.range(mesh, sequence_dim, tf.int64), wpe.shape[0])
++        if is_incremental_inference(context):
++            h += mtf.gather(wpe, context.position - 1, wpe.shape[0])
++        else:
++            h += mtf.gather(wpe, mtf.range(mesh, sequence_dim, tf.int64), wpe.shape[0])
+ 
+     # Transformer
+-    pasts = [None] * params["n_layer"]
+ 
+     # gradient checkpointing 
+     aux_losses = mtf.get_variable(mesh, 
+@@ -416,15 +423,16 @@ def model(mtf_features, other_features, params, mesh, variable_dtype, past=None,
+                             trainable=False,  
+                             dtype=variable_dtype.slice_dtype)
+ 
+-    for layer, past in enumerate(pasts):
++    for layer in range(params["n_layer"]):
+         # attn blocks
+         block_scope = 'h%s' % (str(layer) if not share_parameters else '')
+ 
+-        block_fn = block(params=params, scope=block_scope, past=past, layer_num=layer,
+-                        bias=other_features["attn_bias"],
+-                        memory_length_dim=other_features["memory_length_dim"],
+-                        variable_dtype=variable_dtype,
+-                        context=context)
++        block_fn = block(params=params, scope=block_scope, layer_num=layer,
++                         bias=other_features["attn_bias"],
++                         sequence_dim = sequence_dim,
++                         memory_length_dim=other_features["memory_length_dim"],
++                         variable_dtype=variable_dtype,
++                         context=context)
+ 
+         h, loss = block_fn(h) if not recompute_grad else mtf.recompute_grad(block_fn, [h])
+         aux_losses += loss
+@@ -437,12 +445,13 @@ def model(mtf_features, other_features, params, mesh, variable_dtype, past=None,
+     else:
+         # layer normalize & affine transform
+         h = layer_norm(h, 'ln_f', variable_dtype=variable_dtype, params=params)
++        seq_dim = sequence_dim if not is_incremental_inference(context) else mtf.Dimension('sequence', 1)
+         with tf.variable_scope('wte_final_einsum'):
+             # equivalent to tf.matmul
+-            logits = mtf.einsum([h, wte], output_shape=[batch_dim, sequence_dim, vocab_dim])
++            logits = mtf.einsum([h, wte], output_shape=[batch_dim, seq_dim, vocab_dim])
+ 
+-    vdim = logits.shape[2]  # get vocab dimension
+     if params["mode"] is not "predict":
++        vdim = logits.shape[-1]  # get vocab dimension
+         labels = mtf_features["labels"]
+         z_loss = params.get('z_loss', 1e-4)
+         # go to full precision for the logits 
+@@ -456,11 +465,11 @@ def model(mtf_features, other_features, params, mesh, variable_dtype, past=None,
+     else:
+         loss = None
+         loss_batch = None
++
+     if loss:
+         # convert to train dimension 
+         loss = mtf.cast(loss, variable_dtype.slice_dtype)
+ 
+     # cast back to checkpoint dtype
+     logits = mtf.cast(logits, variable_dtype.master_dtype)
+-
+     return logits, loss, loss_batch
+diff --git a/optimizers.py b/optimizers.py
+index d92ede6..5b8ea87 100644
+--- a/optimizers.py
++++ b/optimizers.py
+@@ -15,15 +15,13 @@ def clip_by_global_norm(grads, clip_norm):
+ 
+ def get_optimizer(loss, params, summary, variable_dtype, inp_var_grads=None):
+     """Creates and returns an optimizer training op."""
++    mesh = loss.mesh  # get mesh info from loss
++    graph = mesh.graph  # get graph info from mesh
++    global_step = tf.train.get_or_create_global_step() # get global step
+ 
+     learning_rate = tf.constant(value=params["lr"], shape=[], dtype=variable_dtype.slice_dtype) # grab lr param
+     clip_value = mtf.constant(mesh, params["gradient_clipping"], dtype=variable_dtype.slice_dtype)
+ 
+-
+-    global_step = tf.train.get_or_create_global_step() # get global step
+-    mesh = loss.mesh  # get mesh info from loss
+-    graph = mesh.graph  # get graph info from mesh
+-
+     if inp_var_grads is None:
+         var_grads = mtf.gradients([loss], [v.outputs[0] for v in graph.trainable_variables])
+     else:
+diff --git a/sample.py b/sample.py
+index 74a941c..03d0eb1 100644
+--- a/sample.py
++++ b/sample.py
+@@ -2,6 +2,7 @@ import mesh_tensorflow as mtf
+ import tensorflow.compat.v1 as tf
+ import mesh_tensorflow.transformer as mtf_transformer
+ 
++from models.gpt2 import gpt2
+ 
+ def sample_autoregressive(partial_sequences,
+                           other_features,
+@@ -60,6 +61,7 @@ def sample_autoregressive(partial_sequences,
+     inputs = partial_sequences  # partial sequences to fill in
+     batch_dims = inputs.shape.dims[:-1]  # √
+     length_dim = inputs.shape.dims[-1]  # √
++    slow_sampling = params.get('slow_sampling', False)
+ 
+     initial_position = mtf.reduce_sum(
+         mtf.to_int32(mtf.not_equal(inputs, 0)), reduced_dim=length_dim)  # gets position where zero padding starts
+@@ -76,41 +78,42 @@ def sample_autoregressive(partial_sequences,
+ 
+     # builds context to pass around internally
+     # the 'first part' context records initial states of k / v / x
+-    context_first_part = mtf_transformer.transformer.Context(
+-        model=None,
+-        mesh=inputs.mesh,
+-        batch_dims=batch_dims,
+-        length_dim=length_dim,
+-        variable_dtype=variable_dtype,
+-        mode="first_part",
+-        position=length_range,
+-        position_is_default=True,
+-        new_states=[],
+-        initial_position=initial_position,
+-        sequence_id=None,
+-        encoder_output=encoder_output,
+-        encoder_sequence_id=encoder_sequence_id,
+-        constant_states=[],
+-        shared_params=shared_params,
+-        encoder_layer_outputs=encoder_layer_outputs,
+-        write_priority=write_priority,
+-        read_priority=read_priority,
+-        inputs=inputs,
+-        encoder_inputs=encoder_inputs)
+-
+-    from models.gpt2 import gpt2
+-
+-    # with tf.variable_scope('gpt2'):
+-    #     logits, _, _ = gpt2.model({'inputs': inputs}, other_features, params, inputs.mesh, context=context_first_part)
+-    # del logits
+-    # constant_states = context_first_part.constant_states
++
++    if not slow_sampling:
++        context_first_part = mtf_transformer.transformer.Context(
++            model=None,
++            mesh=inputs.mesh,
++            batch_dims=batch_dims,
++            length_dim=length_dim,
++            variable_dtype=variable_dtype,
++            mode="first_part",
++            position=length_range,
++            position_is_default=True,
++            new_states=[],
++            initial_position=initial_position,
++            sequence_id=None,
++            encoder_output=encoder_output,
++            encoder_sequence_id=encoder_sequence_id,
++            constant_states=[],
++            shared_params=shared_params,
++            encoder_layer_outputs=encoder_layer_outputs,
++            write_priority=write_priority,
++            read_priority=read_priority,
++            inputs=inputs,
++            encoder_inputs=encoder_inputs)
++
++        with tf.variable_scope('gpt2'):
++            logits, _, _ = gpt2.model({'inputs': inputs}, other_features, params, inputs.mesh, variable_dtype = variable_dtype, context = context_first_part)
++
++        if not has_partial_sequences:
++            initial_states = [mtf.zeros_like(t) for t in context_first_part.new_states]
++        else:
++            initial_states = context_first_part.new_states
++    else:
++        initial_states = []
+ 
+     if not has_partial_sequences:
+-        # initial_states = [
+-        #     mtf.zeros_like(t) for t in context_first_part.new_states]
+         partial_sequences_eos_count = 0
+-    else:
+-       initial_states = context_first_part.new_states
+ 
+     if stop_at_token is not None:
+         partial_sequences_eos_count = mtf.reduce_sum(
+@@ -136,50 +139,32 @@ def sample_autoregressive(partial_sequences,
+ 
+     def body_fn(position, ids, *states):
+         nonlocal sampling_keep_top_k
+-        nonlocal context_first_part
+         """One step in the decode loop."""
+-        # inputs_this_step = mtf.gather(ids, position - 1, length_dim)
+-        # # Setting proper bos_id for position == 0. No-op otherwise.
+-        # if bos_id:
+-        #     inputs_this_step += bos_id * mtf.ones_like(inputs_this_step) * mtf.cast(
+-        #         mtf.equal(position, 0), tf.int32)
+-
+-        # initial_position = mtf.reduce_sum(mtf.to_int32(mtf.not_equal(inputs, 0)), reduced_dim=length_dim)
+-        #
+-        # context = mtf_transformer.transformer.Context(
+-        #     model=None,
+-        #     mesh=inputs.mesh,
+-        #     batch_dims=batch_dims,
+-        #     length_dim=length_dim,
+-        #     variable_dtype=variable_dtype,
+-        #     mode="first_part",
+-        #     position=length_range,
+-        #     position_is_default=True,
+-        #     new_states=[],
+-        #     initial_position=position,
+-        #     sequence_id=None,
+-        #     encoder_output=encoder_output,
+-        #     encoder_sequence_id=encoder_sequence_id,
+-        #     constant_states=[],
+-        #     shared_params=shared_params,
+-        #     encoder_layer_outputs=encoder_layer_outputs,
+-        #     write_priority=write_priority,
+-        #     read_priority=read_priority,
+-        #     inputs=ids,
+-        #     encoder_inputs=encoder_inputs)
++
++        context = mtf_transformer.transformer.Context(
++            model=None,
++            mesh=inputs.mesh,
++            batch_dims=batch_dims,
++            length_dim=length_dim,
++            variable_dtype=variable_dtype,
++            mode="incremental",
++            position=position,
++            position_is_default=True,
++            states=states,
++            new_states=[],
++            initial_position=position,
++            sequence_id=None,
++            encoder_output=encoder_output,
++            encoder_sequence_id=encoder_sequence_id,
++            shared_params=shared_params,
++            encoder_layer_outputs=encoder_layer_outputs,
++            write_priority=write_priority,
++            read_priority=read_priority,
++            inputs=ids,
++            encoder_inputs=encoder_inputs) if not slow_sampling else None
+ 
+         with tf.variable_scope('gpt2', reuse=tf.AUTO_REUSE):
+-            logits, _, _ = gpt2.model({'inputs': ids}, other_features, params, inputs.mesh, variable_dtype=variable_dtype, context = None)
+-        # if never_end:
+-        #     logits += mtf.one_hot(
+-        #         mtf.constant(logits.mesh, stop_at_token, dtype=tf.int32),
+-        #         self.output_vocab_dim, on_value=-1e9, off_value=0.0,
+-        #         dtype=logits.dtype)
+-        # TBD whether this should be before or after never_end:
+-        # Note for adding top_p sampling in the future, in other code bases, the
+-        # option to apply temperature is done before the top-k truncation. This
+-        # implementation does this in the opposite order. For top-k this doesn't
+-        # matter, but for top_p it will.
++            logits, _, _ = gpt2.model({'inputs': ids}, other_features, params, inputs.mesh, variable_dtype=variable_dtype, context = context)
+ 
+         # by default, do topk sampling of 0.9
+         if sampling_keep_top_k == -2:
+@@ -196,13 +181,22 @@ def sample_autoregressive(partial_sequences,
+ 
+         ids_this_step = mtf.sample_with_temperature(
+             logits, other_features["vocab_dim"], temperature)
+-        ids_this_step = mtf.shift(ids_this_step, offset=1, dim=length_dim, wrap=False)
++
++        if slow_sampling:
++            ids_this_step = mtf.shift(ids_this_step, offset=1, dim=length_dim, wrap=False)
++        else:
++            ids_this_step = mtf.reshape(ids_this_step, (batch_dims))
++
+         one_new_id = ids_this_step * mtf.one_hot(position, length_dim, dtype=tf.int32)
+         new_ids = ids + one_new_id
+         new_position = position + 1
+-        return [new_position, new_ids]
+ 
+-    while_loop_inputs = [initial_position, inputs]
++        ret = [new_position, new_ids]
++        if context is not None:
++            ret += context.new_states
++        return ret
++
++    while_loop_inputs = [initial_position, inputs] + initial_states
+     final_position, outputs = mtf.while_loop(
+         cond_fn, body_fn, while_loop_inputs)[:2]
+     del final_position
+diff --git a/test_models.py b/test_models.py
+index 39bd538..9f0e898 100644
+--- a/test_models.py
++++ b/test_models.py
+@@ -12,6 +12,8 @@ from mesh_tensorflow import placement_mesh_impl
+ from models.gpt2 import gpt2
+ from models.utils import biasmask_attn_weights
+ 
++from sample import sample_autoregressive
++
+ # helper functions
+ 
+ @contextmanager
+@@ -56,7 +58,6 @@ def test_model():
+     graph = mtf.Graph()
+     mesh = mtf.Mesh(graph, "my_mesh")
+ 
+-
+     seq_len = params["n_ctx"]
+ 
+     batch_dim = mtf.Dimension("batch", 1)
+@@ -91,3 +92,43 @@ def test_model():
+         mesh_impl = placement_mesh_impl.PlacementMeshImpl(shape=[], layout={}, devices=[""])
+         lowering = mtf.Lowering(graph, {mesh: mesh_impl})
+         logits = lowering.export_to_tf_tensor(logits)
++
++
++def test_sampling():
++    graph = mtf.Graph()
++    mesh = mtf.Mesh(graph, "my_mesh")
++
++    batch_dim = mtf.Dimension("batch", 1)
++    sequence_dim = mtf.Dimension("sequence", 1)
++
++    inputs = mtf.ones(mesh, mtf.Shape((batch_dim, sequence_dim)), tf.int32)
++    inputs = mtf.pad(inputs, [0, 3], sequence_dim.name)
++
++    # create mask
++
++    seq_len = params["n_ctx"]
++    num_mem_kv = params.get('num_mem_kv', 0)
++    length_dim = mtf.Dimension('sequence', seq_len)
++    memory_length_dim = mtf.Dimension('memory_length', seq_len + num_mem_kv)
++    embed_sequence_dim = mtf.Dimension('embed_sequence', seq_len)
++    embd_dim = mtf.Dimension("embd", params["n_embd"])
++    vocab_dim = mtf.Dimension("vocab", params["n_vocab"])
++
++    other_features = {}
++
++    other_features["attn_bias"] = biasmask_attn_weights(mesh, length_dim, memory_length_dim, mtf.VariableDType(tf.float32))
++    other_features["embd_dim"] = embd_dim
++    other_features["vocab_dim"] = vocab_dim
++    other_features["embed_sequence_dim"] = embed_sequence_dim
++    other_features["memory_length_dim"] = memory_length_dim
++
++    params["mode"] = "predict"
++
++    with not_raises(Exception):
++        samples = sample_autoregressive(
++            inputs, other_features=other_features, params=params, variable_dtype=mtf.VariableDType(),
++            remove_partial_sequences=params["remove_partial_sequences"], stop_at_token=params["stop_at_token"])
++
++        mesh_impl = placement_mesh_impl.PlacementMeshImpl(shape=[], layout={}, devices=[""])
++        lowering = mtf.Lowering(graph, {mesh: mesh_impl})
++        samples = lowering.export_to_tf_tensor(samples)

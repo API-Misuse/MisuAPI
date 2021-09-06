@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[9269,9324]@ tf.logging.info("Bleu score (uncased):", uncased_s <text_longer_than_50> @TO@ @type:atom_expr@ @[9269,9327]@ tf.logging.info("Bleu score (uncased): %d", uncase <text_longer_than_50>
+
+UPD @type:atom_expr@ @[9327,9378]@ tf.logging.info("Bleu score (cased):", cased_score <text_longer_than_50> @TO@ @type:atom_expr@ @[9330,9384]@ tf.logging.info("Bleu score (cased): %d", cased_sc <text_longer_than_50>
+

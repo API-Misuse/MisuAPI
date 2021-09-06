@@ -1,0 +1,28 @@
+INS @type:simple_stmt@ @[5887,5912]@ key = next(iter(config)) @TO@ @type:suite@ @[5880,5958]@ key, kwargs = config.items()[0]
+      net = networ <text_longer_than_50>
+
+INS @type:simple_stmt@ @[5887,5912]@ key = next(iter(config)) @TO@ @type:suite@ @[5880,5958]@ key, kwargs = config.items()[0]
+      net = networ <text_longer_than_50>
+
+INS @type:expr_stmt@ @[5887,5911]@ key = next(iter(config)) @TO@ @type:simple_stmt@ @[5887,5912]@ key = next(iter(config))
+
+INS @type:expr_stmt@ @[5887,5911]@ key = next(iter(config)) @TO@ @type:simple_stmt@ @[5887,5912]@ key = next(iter(config))
+
+UPD @type:atom_expr@ @[5901,5918]@ config.items()[0] @TO@ @type:atom_expr@ @[5927,5938]@ config[key]
+
+DEL @type:trailer@ @[5907,5913]@ .items @FROM@ @type:atom_expr@ @[5901,5918]@ config.items()[0]
+
+DEL @type:trailer@ @[5913,5915]@ () @FROM@ @type:atom_expr@ @[5901,5918]@ config.items()[0]
+
+DEL @type:testlist_star_expr@ @[5887,5898]@ key, kwargs @FROM@ @type:expr_stmt@ @[5887,5918]@ key, kwargs = config.items()[0]
+
+UPD @type:atom_expr@ @[8030,8052]@ self._nets.iteritems() @TO@ @type:atom_expr@ @[8050,8068]@ self._nets.items()
+
+UPD @type:atom_expr@ @[12647,12663]@ nets.iteritems() @TO@ @type:atom_expr@ @[12663,12675]@ nets.items()
+
+MOV @type:name@ @[5887,5890]@ key @TO@ @type:expr_stmt@ @[5887,5911]@ key = next(iter(config))
+
+MOV @type:operator@ @[5890,5891]@ , @TO@ @type:expr_stmt@ @[5887,5911]@ key = next(iter(config))
+
+MOV @type:name@ @[5892,5898]@ kwargs @TO@ @type:expr_stmt@ @[5887,5918]@ key, kwargs = config.items()[0]
+

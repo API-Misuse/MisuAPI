@@ -1,0 +1,118 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/matterport/Mask_RCNN/issues/223
+  title: Image size
+  body: "1. Do the images have to be 128*128? When I try 256*256 I get the \"invalid\
+    \ bounding box error\" which is because of using mini masks and when not using\
+    \ mini masks, I get seg faults.\r\n2. Do the images have to be square in this\
+    \ implementation?"
+issue_1:
+  html_url: https://github.com/matterport/Mask_RCNN/issues/170
+  title: An error raise when positive_overlaps has shape (0,0), how to fix?
+  body: "Sometimes, a picture gives no positive_roi, and this will raise an error:\r\
+    \n\r\nW tensorflow/core/framework/op_kernel.cc:1192] Invalid argument: Reduction\
+    \ axis 1 is empty in shape [0,0]\r\n\t [[Node: proposal_targets/ArgMax = ArgMax[T=DT_FLOAT,\
+    \ Tidx=DT_INT32, output_type=DT_INT64, _device=\"/job:localhost/replica:0/task:0/device:GPU:0\"\
+    ](proposal_targets/Gather_5, rpn_class_loss/Equal/y)]]\r\nTraceback (most recent\
+    \ call last):\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/client/session.py\"\
+    , line 1323, in _do_call\r\n    return fn(*args)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/client/session.py\"\
+    , line 1302, in _run_fn\r\n    status, run_metadata)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py\"\
+    , line 473, in __exit__\r\n    c_api.TF_GetCode(self.status.status))\r\ntensorflow.python.framework.errors_impl.InvalidArgumentError:\
+    \ Reduction axis 1 is empty in shape [0,0]\r\n\t [[Node: proposal_targets/ArgMax\
+    \ = ArgMax[T=DT_FLOAT, Tidx=DT_INT32, output_type=DT_INT64, _device=\"/job:localhost/replica:0/task:0/device:GPU:0\"\
+    ](proposal_targets/Gather_5, rpn_class_loss/Equal/y)]]\r\n\t [[Node: roi_align_classifier/Cast_2/_7079\
+    \ = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/device:CPU:0\"\
+    , send_device=\"/job:localhost/replica:0/task:0/device:GPU:0\", send_device_incarnation=1,\
+    \ tensor_name=\"edge_8551_roi_align_classifier/Cast_2\", tensor_type=DT_INT32,\
+    \ _device=\"/job:localhost/replica:0/task:0/device:CPU:0\"]()]]\r\n\r\nDuring\
+    \ handling of the above exception, another exception occurred:\r\n\r\nTraceback\
+    \ (most recent call last):\r\n  File \"portrait_seg.py\", line 206, in <module>\r\
+    \n    layers='4+')\r\n  File \"/home/xxx/Desktop/keras_Mask_RCNN/model.py\", line\
+    \ 2211, in train\r\n    use_multiprocessing=True,\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/keras/legacy/interfaces.py\"\
+    , line 87, in wrapper\r\n    return func(*args, **kwargs)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/keras/engine/training.py\"\
+    , line 2096, in fit_generator\r\n    class_weight=class_weight)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/keras/engine/training.py\"\
+    , line 1814, in train_on_batch\r\n    outputs = self.train_function(ins)\r\n \
+    \ File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py\"\
+    , line 2352, in __call__\r\n    **self.session_kwargs)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/client/session.py\"\
+    , line 889, in run\r\n    run_metadata_ptr)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/client/session.py\"\
+    , line 1120, in _run\r\n    feed_dict_tensor, options, run_metadata)\r\n  File\
+    \ \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/client/session.py\"\
+    , line 1317, in _do_run\r\n    options, run_metadata)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/client/session.py\"\
+    , line 1336, in _do_call\r\n    raise type(e)(node_def, op, message)\r\ntensorflow.python.framework.errors_impl.InvalidArgumentError:\
+    \ Reduction axis 1 is empty in shape [0,0]\r\n\t [[Node: proposal_targets/ArgMax\
+    \ = ArgMax[T=DT_FLOAT, Tidx=DT_INT32, output_type=DT_INT64, _device=\"/job:localhost/replica:0/task:0/device:GPU:0\"\
+    ](proposal_targets/Gather_5, rpn_class_loss/Equal/y)]]\r\n\t [[Node: roi_align_classifier/Cast_2/_7079\
+    \ = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/device:CPU:0\"\
+    , send_device=\"/job:localhost/replica:0/task:0/device:GPU:0\", send_device_incarnation=1,\
+    \ tensor_name=\"edge_8551_roi_align_classifier/Cast_2\", tensor_type=DT_INT32,\
+    \ _device=\"/job:localhost/replica:0/task:0/device:CPU:0\"]()]]\r\n\r\nCaused\
+    \ by op 'proposal_targets/ArgMax', defined at:\r\n  File \"portrait_seg.py\",\
+    \ line 168, in <module>\r\n    model_dir=MODEL_DIR)\r\n  File \"/home/xxx/Desktop/keras_Mask_RCNN/model.py\"\
+    , line 1744, in __init__\r\n    self.keras_model = self.build(mode=mode, config=config)\r\
+    \n  File \"/home/xxx/Desktop/keras_Mask_RCNN/model.py\", line 1885, in build\r\
+    \n    target_rois, input_gt_class_ids, gt_boxes, input_gt_masks])\r\n  File \"\
+    /home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/keras/engine/topology.py\"\
+    , line 603, in __call__\r\n    output = self.call(inputs, **kwargs)\r\n  File\
+    \ \"/home/xxx/Desktop/keras_Mask_RCNN/model.py\", line 641, in call\r\n    self.config.IMAGES_PER_GPU,\
+    \ names=names)\r\n  File \"/home/xxx/Desktop/keras_Mask_RCNN/utils.py\", line\
+    \ 673, in batch_slice\r\n    output_slice = graph_fn(*inputs_slice)\r\n  File\
+    \ \"/home/xxx/Desktop/keras_Mask_RCNN/model.py\", line 640, in <lambda>\r\n  \
+    \  w, x, y, z, self.config),\r\n  File \"/home/xxx/Desktop/keras_Mask_RCNN/model.py\"\
+    , line 544, in detection_targets_graph\r\n    roi_gt_box_assignment = tf.argmax(positive_overlaps,\
+    \ axis=1)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/util/deprecation.py\"\
+    , line 316, in new_func\r\n    return func(*args, **kwargs)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py\"\
+    , line 205, in argmax\r\n    return gen_math_ops.arg_max(input, axis, name=name,\
+    \ output_type=output_type)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/ops/gen_math_ops.py\"\
+    , line 441, in arg_max\r\n    name=name)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py\"\
+    , line 787, in _apply_op_helper\r\n    op_def=op_def)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/framework/ops.py\"\
+    , line 2956, in create_op\r\n    op_def=op_def)\r\n  File \"/home/xxx/anaconda2/envs/py36/lib/python3.6/site-packages/tensorflow/python/framework/ops.py\"\
+    , line 1470, in __init__\r\n    self._traceback = self._graph._extract_stack()\
+    \  # pylint: disable=protected-access\r\n\r\nInvalidArgumentError (see above for\
+    \ traceback): Reduction axis 1 is empty in shape [0,0]\r\n\t [[Node: proposal_targets/ArgMax\
+    \ = ArgMax[T=DT_FLOAT, Tidx=DT_INT32, output_type=DT_INT64, _device=\"/job:localhost/replica:0/task:0/device:GPU:0\"\
+    ](proposal_targets/Gather_5, rpn_class_loss/Equal/y)]]\r\n\t [[Node: roi_align_classifier/Cast_2/_7079\
+    \ = _Recv[client_terminated=false, recv_device=\"/job:localhost/replica:0/task:0/device:CPU:0\"\
+    , send_device=\"/job:localhost/replica:0/task:0/device:GPU:0\", send_device_incarnation=1,\
+    \ tensor_name=\"edge_8551_roi_align_classifier/Cast_2\", tensor_type=DT_INT32,\
+    \ _device=\"/job:localhost/replica:0/task:0/device:CPU:0\"]()]]\r\n\r\n\r\n\r\n\
+    I tried to fix this by add a check if there is a positive_indices, in model.py,\
+    \ line528:\r\n\r\n    # Subsample ROIs. Aim for 33% positive\r\n    # Positive\
+    \ ROIs\r\n    positive_count = int(config.TRAIN_ROIS_PER_IMAGE *\r\n         \
+    \                config.ROI_POSITIVE_RATIO)\r\n    positive_indices = tf.random_shuffle(positive_indices)[:positive_count]\r\
+    \n    a = positive_indices.get_shape()[0]\r\n    if a == 0:\r\n        positive_indices\
+    \ = tf.constant([1])\r\n    positive_count = tf.shape(positive_indices)[0]\r\n\
+    \r\nHowever, it can avoid some wrong cases, but still raise error in other cases.\r\
+    \nHow to fix this throghly?\r\n\r\n"
+sha: 1c51787d8d8a5e4d08667178428cb99e31143713
+message: Fix call to image_reference()
+commit_log: "commit 1c51787d8d8a5e4d08667178428cb99e31143713\nAuthor: Waleed Abdulla\
+  \ <waleed.abdulla@gmail.com>\nDate:   Sat Dec 23 23:25:46 2017 -0800\n\n    Fix\
+  \ call to image_reference()"
+contained_keywords:
+- fix
+commit_time: 2017-12-23 23:25:46 -0800
+commit_author: Waleed Abdulla
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 275
+    - '            super(CocoDataset, self).image_reference(image_id)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '            super(CocoDataset, self).image_reference(self, image_id)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: coco.py
+  removed: 1
+  source_file: a/coco.py
+  target_file: b/coco.py

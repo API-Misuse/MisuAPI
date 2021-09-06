@@ -1,0 +1,6 @@
+location: a/autokeras/classifier.py:14
+patch_location: b/autokeras/classifier.py:14
+api: pickle.load
+location: a/autokeras/classifier.py:74
+patch_location: b/autokeras/classifier.py:76
+api: pickle.dump

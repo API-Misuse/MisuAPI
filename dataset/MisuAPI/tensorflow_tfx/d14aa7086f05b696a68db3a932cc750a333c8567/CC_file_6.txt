@@ -1,0 +1,31 @@
+INS @type:simple_stmt@ @[596,638]@ """Tests for tfx.dsl.io.plugins.local.""" @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[639,678]@ from __future__ import absolute_import @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[678,710]@ from __future__ import division @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[710,748]@ from __future__ import print_function @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[749,759]@ import os @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[759,775]@ import tempfile @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[776,800]@ import tensorflow as tf @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[800,848]@ from tfx.dsl.io.filesystem import NotFoundError @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[848,901]@ from tfx.dsl.io.plugins.local import LocalFilesyst <text_longer_than_50> @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:if_stmt@ @[2128,2172]@ if __name__ == '__main__':
+  tf.test.main() @TO@ @type:file_input@ @[0,0]@
+
+

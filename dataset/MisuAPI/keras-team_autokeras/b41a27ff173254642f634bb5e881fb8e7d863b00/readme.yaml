@@ -1,0 +1,155 @@
+sha: b41a27ff173254642f634bb5e881fb8e7d863b00
+message: "[MRG] Face detection pretrained (resolves #332) (#384)\n\n* pretrained model\
+  \ for face detection\r\n\r\n* added a test for face detection\r\n\r\n* raise error\
+  \ when no image exists in the path\r\n\r\n* modified the test case\r\n\r\n* changed\
+  \ constant to uppercase\r\n\r\n* moved downloading models into load()\r\n\r\n* added\
+  \ docstrings\r\n\r\n* handled case when output file is None"
+commit_log: "commit b41a27ff173254642f634bb5e881fb8e7d863b00\nAuthor: Yashwanth Reddy\
+  \ <yashwanth95tuniki@gmail.com>\nDate:   Tue Dec 18 16:01:52 2018 -0600\n\n    [MRG]\
+  \ Face detection pretrained (resolves #332) (#384)\n    \n    * pretrained model\
+  \ for face detection\n    \n    * added a test for face detection\n    \n    * raise\
+  \ error when no image exists in the path\n    \n    * modified the test case\n \
+  \   \n    * changed constant to uppercase\n    \n    * moved downloading models\
+  \ into load()\n    \n    * added docstrings\n    \n    * handled case when output\
+  \ file is None"
+contained_keywords:
+- resolves
+- error
+commit_time: 2018-12-18 16:01:52 -0600
+commit_author: Yashwanth Reddy
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: autokeras/image/face_detection_pretrained.py
+  source_file: a/autokeras/image/face_detection_pretrained.py
+  target_file: b/autokeras/image/face_detection_pretrained.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 599
+    - '    if output_file_path is not None:
+
+      '
+  - - 600
+    - '        vis_face(img_bg, bboxs, output_file_path, landmarks)
+
+      '
+  del_line_no:
+  - - null
+    - '    vis_face(img_bg, bboxs, output_file_path, landmarks)
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: autokeras/pretrained.py
+  source_file: a/autokeras/pretrained.py
+  target_file: b/autokeras/pretrained.py
+  added: 14
+  removed: 0
+  add_line_no:
+  - - 37
+    - '    """A class to predict faces using the MTCNN pre-trained model.
+
+      '
+  - - 38
+    - '    """
+
+      '
+  - - 51
+    - '        """Predicts faces in an image.
+
+      '
+  - - 52
+    - '
+
+      '
+  - - 53
+    - '        Args:
+
+      '
+  - - 54
+    - '            img_path: A string. The path to the image on which the prediction
+      is to be done.
+
+      '
+  - - 55
+    - '            output_file_path: A string. The path where the output image is
+      to be saved after the prediction. `None` by default.
+
+      '
+  - - 56
+    - '
+
+      '
+  - - 57
+    - '        Returns:
+
+      '
+  - - 58
+    - '            A tuple containing numpy arrays of bounding boxes and landmarks.
+      Bounding boxes are of shape `(n, 5)` and
+
+      '
+  - - 59
+    - '            landmarks are of shape `(n, 10)` where `n` is the number of faces
+      predicted. Each bounding box is of length
+
+      '
+  - - 60
+    - '            5 and the corresponding rectangle is defined by the first four
+      values. Each bounding box has five landmarks
+
+      '
+  - - 61
+    - '            represented by 10 coordinates.
+
+      '
+  - - 62
+    - '        """
+
+      '
+  del_line_no: []
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tests/test_pretrained.py
+  source_file: a/tests/test_pretrained.py
+  target_file: b/tests/test_pretrained.py
+  added: 3
+  removed: 2
+  add_line_no:
+  - - 12
+    - '    bboxs1, landmarks1 = face_detection.predict(img_file, out_file)
+
+      '
+  - - 14
+    - '    bboxs2, landmarks2 = face_detection.predict(img_file)
+
+      '
+  - - 15
+    - '    assert bboxs1.shape == bboxs2.shape == (11, 5) and landmarks1.shape ==
+      landmarks2.shape == (11, 10)
+
+      '
+  del_line_no:
+  - - null
+    - '    bboxs, landmarks = face_detection.predict(img_file, out_file)
+
+      '
+  - - null
+    - '    assert bboxs.shape == (11, 5) and landmarks.shape == (11, 10)
+
+      '

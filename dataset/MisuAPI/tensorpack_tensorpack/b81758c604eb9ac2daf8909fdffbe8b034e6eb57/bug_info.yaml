@@ -1,0 +1,53 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/tensorpack/tensorpack/pull/1020
+  title: 'fix a bug cause Graph is finalized and cannot be modified like #449'
+  body: 'fix a bug cause: "Graph is finalized and cannot be modified" in b79a9d3b7e7f6036e20330acd542f39a665da151
+    like #449'
+issue_1:
+  html_url: https://github.com/tensorpack/tensorpack/pull/1291
+  title: Fasterrcnn fpn CPU + NHWC + save graph + dummy data run support
+  body: "Tensorpack is a neural network training interface based on TensorFlow. \r\
+    \n\r\nThis specifc branch is for updating the existing branch on cpu run with\
+    \ additional support.\r\n\r\n1. Inference in CPU \r\n2. NHWC format support\r\n\
+    3. Save forzen graph protobuf format support.\r\n4. Run Inference from frozen\
+    \ graph support.\r\n5. Run Inference on single image support\r\n6. Run Inference\
+    \ on dataset support\r\n7. Run Inference on dummy data support"
+sha: b81758c604eb9ac2daf8909fdffbe8b034e6eb57
+message: 'fix a bug cause Graph is finalized and cannot be modified like #449 (#1020)'
+commit_log: "commit b81758c604eb9ac2daf8909fdffbe8b034e6eb57\nAuthor: Hao Feng <3140102270@zju.edu.cn>\n\
+  Date:   Wed Dec 19 16:49:22 2018 +0800\n\n    fix a bug cause Graph is finalized\
+  \ and cannot be modified like #449 (#1020)"
+contained_keywords:
+- fix
+- bug
+commit_time: 2018-12-19 16:49:22 +0800
+commit_author: Hao Feng
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 48
+    - '            config.session_init._setup_graph()
+
+      '
+  - - 50
+    - '            config.session_init._run_init(self.sess)
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '            config.session_init.init(self.sess)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/predict/multigpu.py
+  removed: 1
+  source_file: a/tensorpack/predict/multigpu.py
+  target_file: b/tensorpack/predict/multigpu.py

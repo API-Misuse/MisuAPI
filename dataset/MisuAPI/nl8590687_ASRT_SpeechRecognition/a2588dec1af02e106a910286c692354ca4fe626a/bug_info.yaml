@@ -1,0 +1,116 @@
+issues_cnt: 0
+sha: a2588dec1af02e106a910286c692354ca4fe626a
+message: "\u4FEE\u590D\u4E86\u8BED\u8A00\u6A21\u578B\u7684\u6982\u7387\u8BA1\u7B97\
+  \u9519\u8BEF\u7684Bug\uFF0C\u5E76\u63D0\u9AD8API\u670D\u52A1\u5668\u7684\u5065\u58EE\
+  \u6027"
+commit_log: "commit a2588dec1af02e106a910286c692354ca4fe626a\nAuthor: nl8590687 <3210346136@qq.com>\n\
+  Date:   Thu Jun 7 12:48:31 2018 +0800\n\n    \u4FEE\u590D\u4E86\u8BED\u8A00\u6A21\
+  \u578B\u7684\u6982\u7387\u8BA1\u7B97\u9519\u8BEF\u7684Bug\uFF0C\u5E76\u63D0\u9AD8\
+  API\u670D\u52A1\u5668\u7684\u5065\u58EE\u6027"
+contained_keywords:
+- bug
+commit_time: 2018-06-07 12:48:31 +0800
+commit_author: nl8590687
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  add_line_no:
+  - - 140
+    - "\t\t\t\t\t\t\ttuple_word[1] = tuple_word[1] * float(self.model2[tmp_words])\
+      \ / float(self.model1[tmp_words[-2]])\n"
+  - - 142
+    - "\t\t\t\t\t\t\t#print(self.model2[tmp_words],self.model1[tmp_words[-2]])\n"
+  - - 242
+    - "\tstr_pinyin = ['da4', 'jia1', 'hao3']\n"
+  added: 3
+  del_line_no:
+  - - null
+    - "\t\t\t\t\t\t\ttuple_word[1] = tuple_word[1] * float(self.model2[tmp_words])\
+      \ / float(self.model1[tmp_words[-1]])\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: LanguageModel.py
+  removed: 1
+  source_file: a/LanguageModel.py
+  target_file: b/LanguageModel.py
+patched_file_1:
+  add_line_no:
+  - - 17
+    - 'ms.LoadModel(modelpath + ''m24/speech_model24_e_0_step_411000.model'')
+
+      '
+  - - 58
+    - "\t\t\tif('wavs' == key and '' != value):\n"
+  - - 69
+    - "\t\tif(token != 'qwertasd'):\n"
+  - - 70
+    - "\t\t\tbuf = '403'\n"
+  - - 71
+    - "\t\t\tprint(buf)\n"
+  - - 72
+    - "\t\t\tbuf = bytes(buf,encoding=\"utf-8\")\n"
+  - - 73
+    - "\t\t\tself.wfile.write(buf)  \n"
+  - - 74
+    - "\t\t\treturn\n"
+  - - 75
+    - "\t\t\n"
+  - - 77
+    - "\t\tif(len(wavs)>0):\n"
+  - - 78
+    - "\t\t\tr = self.recognize([wavs], fs)\n"
+  - - 79
+    - "\t\telse:\n"
+  - - 80
+    - "\t\t\tr = ''\n"
+  - - 95
+    - "\t\tprint(buf)\n"
+  - - 100
+    - "\t\tr=''\n"
+  - - 101
+    - "\t\ttry:\n"
+  - - 102
+    - "\t\t\tr_speech = ms.RecognizeSpeech(wavs, fs)\n"
+  - - 103
+    - "\t\t\tprint(r_speech)\n"
+  - - 104
+    - "\t\t\tstr_pinyin = r_speech\n"
+  - - 105
+    - "\t\t\tr = ml.SpeechToText(str_pinyin)\n"
+  - - 106
+    - "\t\texcept:\n"
+  - - 107
+    - "\t\t\tr=''\n"
+  - - 108
+    - "\t\t\tprint('[*Message] Server raise a bug. ')\n"
+  added: 23
+  del_line_no:
+  - - null
+    - 'ms.LoadModel(modelpath + ''speech_model24_e_0_step_216500.model'')
+
+      '
+  - - null
+    - "\t\t\tif('wavs' == key):\n"
+  - - null
+    - "\t\tr = self.recognize([wavs], fs)\n"
+  - - null
+    - "\t\tr_speech = ms.RecognizeSpeech(wavs, fs)\n"
+  - - null
+    - "\t\t\n"
+  - - null
+    - "\t\tstr_pinyin = r_speech\n"
+  - - null
+    - "\t\tr = ml.SpeechToText(str_pinyin)\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: asrserver.py
+  removed: 7
+  source_file: a/asrserver.py
+  target_file: b/asrserver.py

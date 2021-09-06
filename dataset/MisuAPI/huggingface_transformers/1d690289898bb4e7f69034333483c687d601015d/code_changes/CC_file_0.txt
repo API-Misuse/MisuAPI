@@ -1,0 +1,68 @@
+UPD @type:if_stmt@ @[23272,23656]@ if data_mask is not None:
+            # all mems c <text_longer_than_50> @TO@ @type:if_stmt@ @[23272,23689]@ if data_mask is not None:
+            # all mems c <text_longer_than_50>
+---UPD @type:suite@ @[23297,23656]@ # all mems can be attended to
+            mems_mas <text_longer_than_50> @TO@ @type:suite@ @[23297,23689]@ # all mems can be attended to
+            if mlen  <text_longer_than_50>
+------INS @type:if_stmt@ @[23352,23530]@ if mlen > 0:
+                mems_mask = tf.zeros( <text_longer_than_50> @TO@ @type:suite@ @[23297,23656]@ # all mems can be attended to
+            mems_mas <text_longer_than_50>
+---------INS @type:suite@ @[23364,23530]@ mems_mask = tf.zeros([shape_list(data_mask)[0], ml <text_longer_than_50> @TO@ @type:if_stmt@ @[23352,23530]@ if mlen > 0:
+                mems_mask = tf.zeros( <text_longer_than_50>
+------MOV @type:simple_stmt@ @[23352,23431]@ mems_mask = tf.zeros([shape_list(data_mask)[0], ml <text_longer_than_50> @TO@ @type:suite@ @[23364,23530]@ mems_mask = tf.zeros([shape_list(data_mask)[0], ml <text_longer_than_50>
+------MOV @type:simple_stmt@ @[23443,23497]@ data_mask = tf.concat([mems_mask, data_mask], axis <text_longer_than_50> @TO@ @type:suite@ @[23364,23530]@ mems_mask = tf.zeros([shape_list(data_mask)[0], ml <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[23766,24107]@ if attn_mask is not None:
+            non_tgt_mask <text_longer_than_50> @TO@ @type:if_stmt@ @[23799,24169]@ if attn_mask is not None:
+            non_tgt_mask <text_longer_than_50>
+---UPD @type:suite@ @[23791,24061]@ non_tgt_mask = -tf.eye(qlen, dtype=dtype_float)
+   <text_longer_than_50> @TO@ @type:suite@ @[23824,24123]@ non_tgt_mask = -tf.eye(qlen, dtype=dtype_float)
+   <text_longer_than_50>
+------INS @type:if_stmt@ @[23897,24019]@ if mlen > 0:
+                non_tgt_mask = tf.con <text_longer_than_50> @TO@ @type:suite@ @[23791,24061]@ non_tgt_mask = -tf.eye(qlen, dtype=dtype_float)
+   <text_longer_than_50>
+---------INS @type:suite@ @[23909,24019]@ non_tgt_mask = tf.concat([tf.zeros([qlen, mlen], d <text_longer_than_50> @TO@ @type:if_stmt@ @[23897,24019]@ if mlen > 0:
+                non_tgt_mask = tf.con <text_longer_than_50>
+------MOV @type:simple_stmt@ @[23864,23957]@ non_tgt_mask = tf.concat([tf.zeros([qlen, mlen], d <text_longer_than_50> @TO@ @type:suite@ @[23909,24019]@ non_tgt_mask = tf.concat([tf.zeros([qlen, mlen], d <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[24869,25369]@ if token_type_ids is not None:
+            # Conve <text_longer_than_50> @TO@ @type:if_stmt@ @[24931,25523]@ if token_type_ids is not None:
+            # Conve <text_longer_than_50>
+---UPD @type:suite@ @[24899,25328]@ # Convert `token_type_ids` to one-hot `seg_mat`
+   <text_longer_than_50> @TO@ @type:suite@ @[24961,25482]@ # Convert `token_type_ids` to one-hot `seg_mat`
+   <text_longer_than_50>
+------INS @type:if_stmt@ @[25034,25236]@ if mlen > 0:
+                mem_pad = tf.zeros([m <text_longer_than_50> @TO@ @type:suite@ @[24899,25328]@ # Convert `token_type_ids` to one-hot `seg_mat`
+   <text_longer_than_50>
+---------INS @type:suite@ @[25046,25177]@ mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32)
+   <text_longer_than_50> @TO@ @type:if_stmt@ @[25034,25236]@ if mlen > 0:
+                mem_pad = tf.zeros([m <text_longer_than_50>
+------MOV @type:simple_stmt@ @[24972,25020]@ mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32) @TO@ @type:suite@ @[25046,25177]@ mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32)
+   <text_longer_than_50>
+------MOV @type:simple_stmt@ @[25032,25082]@ cat_ids = tf.concat([mem_pad, token_type_ids], 0) @TO@ @type:suite@ @[25046,25177]@ mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32)
+   <text_longer_than_50>
+
+
+UPD @type:suite@ @[25978,26144]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50> @TO@ @type:suite@ @[26095,26134]@ raise NotImplementedError
+---UPD @type:simple_stmt@ @[25995,26069]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50> @TO@ @type:simple_stmt@ @[26108,26134]@ raise NotImplementedError
+------INS @type:raise_stmt@ @[26108,26133]@ raise NotImplementedError @TO@ @type:simple_stmt@ @[25995,26069]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50>
+------DEL @type:expr_stmt@ @[25995,26068]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50> @FROM@ @type:simple_stmt@ @[25995,26069]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50>
+---DEL @type:simple_stmt@ @[26085,26144]@ head_mask = head_mask.expand(self.n_layer, -1, -1, <text_longer_than_50> @FROM@ @type:suite@ @[25978,26144]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50>
+
+
+MOV @type:suite@ @[25978,26144]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50> @TO@ @type:if_stmt@ @[25916,26472]@ if head_mask is not None:
+            if head_mask <text_longer_than_50>
+---UPD @type:simple_stmt@ @[25995,26069]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50> @TO@ @type:simple_stmt@ @[26108,26134]@ raise NotImplementedError
+------INS @type:raise_stmt@ @[26108,26133]@ raise NotImplementedError @TO@ @type:simple_stmt@ @[25995,26069]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50>
+------DEL @type:expr_stmt@ @[25995,26068]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50> @FROM@ @type:simple_stmt@ @[25995,26069]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50>
+---DEL @type:simple_stmt@ @[26085,26144]@ head_mask = head_mask.expand(self.n_layer, -1, -1, <text_longer_than_50> @FROM@ @type:suite@ @[25978,26144]@ head_mask = head_mask.unsqueeze(0).unsqueeze(0).un <text_longer_than_50>
+
+
+UPD @type:name@ @[25957,25966]@ head_mask @TO@ @type:name@ @[26114,26133]@ NotImplementedError
+
+
+MOV @type:name@ @[25957,25966]@ head_mask @TO@ @type:raise_stmt@ @[26108,26133]@ raise NotImplementedError
+
+

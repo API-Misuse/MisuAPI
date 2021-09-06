@@ -1,0 +1,22 @@
+commit 6af52be48d789e7f0226d9d660acbf19e60f8538
+Author: iamsusiep <sujip@google.com>
+Date:   Thu Jul 30 04:30:06 2020 -0400
+
+    raise error if component id or name doesn't exist
+
+diff --git a/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py b/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py
+index 36e64aad..7f4b635a 100644
+--- a/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py
++++ b/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py
+@@ -56,6 +59,8 @@ def _get_paths(metadata_connection: metadata.Metadata, execution_ids: List[int],
+     src_uri = artifact.uri
+     artifact_properties = artifact.custom_properties
+     component_id = artifact_properties['producer_component'].string_value
+-    name = artifact_properties['name'].string_value
+-    dest_uri = os.path.join(output_dir, component_id, name)
++    output_key = artifact_properties['name'].string_value
++    if not component_id or not output_key:
++      raise ValueError("component_id and output_key cannot be None.")
++    dest_uri = os.path.join(output_dir, component_id, output_key)
+     yield (src_uri, dest_uri)
+

@@ -1,0 +1,22 @@
+commit a9d4a7c8699acbd72bf76cebdb2bbc94d9ed00c6
+Author: tinally <tinally@google.com>
+Date:   Thu Aug 13 18:28:02 2020 -0400
+
+    small fix
+
+
+diff --git a/tfx/components/transform/executor_test.py b/tfx/components/transform/executor_test.py
+index 58b30e84..10a19dfd 100644
+--- a/tfx/components/transform/executor_test.py
++++ b/tfx/components/transform/executor_test.py
+@@ -124,8 +124,8 @@ class ExecutorTest(tft_unit.TransformTestCase):
+               tf.io.gfile.listdir(
+                   os.path.join(self._transformed_examples.uri, 'eval'))))
+       self.assertGreater(
+-        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'train')),
+-        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'eval')))
++        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'train')).size(),
++        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'eval')).size())
+     else:
+       # there should not be transformed data under _output_data_dir.
+       self.assertEqual(['transformed_graph'],

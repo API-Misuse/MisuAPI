@@ -1,0 +1,44 @@
+INS @type:try_stmt@ @[4494,5312]@ try:
+            while True:
+                msg = <text_longer_than_50> @TO@ @type:suite@ @[4432,5138]@ self.clients = defaultdict(self.ClientState)
+      <text_longer_than_50>
+---INS @type:suite@ @[4498,5211]@ while True:
+                msg = loads(self.c2s_s <text_longer_than_50> @TO@ @type:try_stmt@ @[4494,5312]@ try:
+            while True:
+                msg = <text_longer_than_50>
+
+
+UPD @type:while_stmt@ @[4494,5138]@ while True:
+            msg = loads(self.c2s_socke <text_longer_than_50> @TO@ @type:while_stmt@ @[4511,5211]@ while True:
+                msg = loads(self.c2s_s <text_longer_than_50>
+---UPD @type:suite@ @[4505,5138]@ msg = loads(self.c2s_socket.recv(copy=False).bytes <text_longer_than_50> @TO@ @type:suite@ @[4522,5211]@ msg = loads(self.c2s_socket.recv(copy=False).bytes <text_longer_than_50>
+------UPD @type:if_stmt@ @[4833,5054]@ if len(client.memory) > 0:
+                client. <text_longer_than_50> @TO@ @type:if_stmt@ @[4878,5119]@ if len(client.memory) > 0:
+                    cli <text_longer_than_50>
+---------UPD @type:suite@ @[4859,5054]@ client.memory[-1].reward = reward
+                 <text_longer_than_50> @TO@ @type:suite@ @[4904,5119]@ client.memory[-1].reward = reward
+                 <text_longer_than_50>
+------------UPD @type:if_stmt@ @[4926,5054]@ if isOver:
+                    self._on_episode_ov <text_longer_than_50> @TO@ @type:if_stmt@ @[4979,5119]@ if isOver:
+                        self._on_episod <text_longer_than_50>
+---------------UPD @type:suite@ @[4936,4986]@ self._on_episode_over(ident) @TO@ @type:suite@ @[4989,5043]@ self._on_episode_over(ident)
+---------------UPD @type:suite@ @[5007,5054]@ self._on_datapoint(ident) @TO@ @type:suite@ @[5068,5119]@ self._on_datapoint(ident)
+
+
+MOV @type:while_stmt@ @[4494,5138]@ while True:
+            msg = loads(self.c2s_socke <text_longer_than_50> @TO@ @type:suite@ @[4498,5211]@ while True:
+                msg = loads(self.c2s_s <text_longer_than_50>
+---UPD @type:suite@ @[4505,5138]@ msg = loads(self.c2s_socket.recv(copy=False).bytes <text_longer_than_50> @TO@ @type:suite@ @[4522,5211]@ msg = loads(self.c2s_socket.recv(copy=False).bytes <text_longer_than_50>
+------UPD @type:if_stmt@ @[4833,5054]@ if len(client.memory) > 0:
+                client. <text_longer_than_50> @TO@ @type:if_stmt@ @[4878,5119]@ if len(client.memory) > 0:
+                    cli <text_longer_than_50>
+---------UPD @type:suite@ @[4859,5054]@ client.memory[-1].reward = reward
+                 <text_longer_than_50> @TO@ @type:suite@ @[4904,5119]@ client.memory[-1].reward = reward
+                 <text_longer_than_50>
+------------UPD @type:if_stmt@ @[4926,5054]@ if isOver:
+                    self._on_episode_ov <text_longer_than_50> @TO@ @type:if_stmt@ @[4979,5119]@ if isOver:
+                        self._on_episod <text_longer_than_50>
+---------------UPD @type:suite@ @[4936,4986]@ self._on_episode_over(ident) @TO@ @type:suite@ @[4989,5043]@ self._on_episode_over(ident)
+---------------UPD @type:suite@ @[5007,5054]@ self._on_datapoint(ident) @TO@ @type:suite@ @[5068,5119]@ self._on_datapoint(ident)
+
+

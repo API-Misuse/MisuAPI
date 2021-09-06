@@ -1,0 +1,106 @@
+issues_cnt: 0
+sha: 807296b3d74dcbeb93dff8373448893ad8fa136e
+message: fix locallyshuffledata
+commit_log: "commit 807296b3d74dcbeb93dff8373448893ad8fa136e\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Mon Jul 18 15:40:44 2016 -0700\n\n    fix locallyshuffledata"
+contained_keywords:
+- fix
+commit_time: 2016-07-18 15:40:44 -0700
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 321
+    - '        self.ds_itr = self.ds.get_data()
+
+      '
+  - - 326
+    - '            try:
+
+      '
+  - - 327
+    - '                self.q.append(next(self.ds_itr))
+
+      '
+  - - 328
+    - '            except StopIteration:
+
+      '
+  - - 329
+    - '                logger.error("LocallyShuffleData: cache_size is larger than
+      the size of ds!")
+
+      '
+  - - 334
+    - '                try:
+
+      '
+  - - 335
+    - '                    self.q.append(next(self.ds_itr))
+
+      '
+  - - 336
+    - '                except StopIteration:
+
+      '
+  - - 337
+    - '                    # produce the rest and return
+
+      '
+  - - 338
+    - '                    self.rng.shuffle(self.q)
+
+      '
+  - - 339
+    - '                    for v in self.q:
+
+      '
+  - - 340
+    - '                        yield v
+
+      '
+  - - 344
+    - '
+
+      '
+  added: 13
+  del_line_no:
+  - - null
+    - '        self.ds_wrap = RepeatedData(self.ds, -1)
+
+      '
+  - - null
+    - '        self.ds_itr = self.ds_wrap.get_data()
+
+      '
+  - - null
+    - '            self.q.append(next(self.ds_itr))
+
+      '
+  - - null
+    - '        cnt = 0
+
+      '
+  - - null
+    - '                self.q.append(next(self.ds_itr))
+
+      '
+  - - null
+    - '                cnt += 1
+
+      '
+  - - null
+    - '                if cnt == self.size():
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/dataflow/common.py
+  removed: 7
+  source_file: a/tensorpack/dataflow/common.py
+  target_file: b/tensorpack/dataflow/common.py

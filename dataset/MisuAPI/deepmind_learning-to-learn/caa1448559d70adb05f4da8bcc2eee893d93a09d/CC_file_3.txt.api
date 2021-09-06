@@ -1,0 +1,15 @@
+DEL @type:atom_expr@ @[1961,1979]@ np.array([0.8559]) @FROM@ @type:expr_stmt@ @[1945,1979]@ torch_final_x = np.array([0.8559])
+
+UPD @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0] @TO@ @type:atom_expr@ @[6706,6740]@ optimizer.save(sess, path=tmp_dir)
+
+DEL @type:trailer@ @[6720,6725]@ .keys @FROM@ @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0]
+
+DEL @type:trailer@ @[6725,6727]@ () @FROM@ @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0]
+
+DEL @type:trailer@ @[6727,6730]@ [0] @FROM@ @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0]
+
+INS @type:simple_stmt@ @[6747,6782]@ net_path = next(iter(save_result)) @TO@ @type:suite@ @[6520,6835]@ sess.run(tf.global_variables_initializer())
+       <text_longer_than_50>
+
+MOV @type:number@ @[1971,1977]@ 0.8559 @TO@ @type:expr_stmt@ @[1945,1979]@ torch_final_x = np.array([0.8559])
+

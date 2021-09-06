@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[11991,12029]@ tf.clip_by_global_norm(gradients, 0.5) @TO@ @type:atom_expr@ @[11991,12028]@ tf.clip_by_global_norm(gradients, 1.)
+

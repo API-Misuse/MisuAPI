@@ -1,0 +1,54 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/davidsandberg/facenet/pull/966
+  title: changes in train_softmax.py
+  body: " for key, value in stat.items():\r\ninstead of \r\n for key, value in stat.iteritems():"
+issue_1:
+  html_url: https://github.com/davidsandberg/facenet/issues/673
+  title: Center loss didn't update in code
+  body: "There is a center_loss function in facenet.py\r\nit will return loss and\
+    \ centers\r\nwhen execute loss op can calculate center loss\r\nand execute centers\
+    \ op can update the center\r\n\r\nBut!!!!\r\nin train_softmax.py\r\n`prelogits_center_loss,\
+    \ _ = facenet.center_loss(prelogits, label_batch, args.center_loss_alfa, nrof_classes)\r\
+    \ntf.add_to_collection(tf.GraphKeys.REGULARIZATION_LOSSES, prelogits_center_loss\
+    \ * args.center_loss_factor)`\r\nthe code omit the centers op which center_loss\
+    \ function return\r\nthis code don't care about center update and center will\
+    \ always the same\r\n\r\ni think this is a bug right? or has something I misunderstanding?\r\
+    \n\r\n\r\n \r\n"
+sha: efc2f94dd1c6806aa249ba418aa118ce6f1165df
+message: Fixed update of centers for center loss
+commit_log: "commit efc2f94dd1c6806aa249ba418aa118ce6f1165df\nAuthor: David Sandberg\
+  \ <david.o.sandberg@gmail.com>\nDate:   Sat Mar 31 12:00:49 2018 +0200\n\n    Fixed\
+  \ update of centers for center loss"
+contained_keywords:
+- fixed
+commit_time: 2018-03-31 12:00:49 +0200
+commit_author: David Sandberg
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 75
+    - '    with tf.control_dependencies([centers]):
+
+      '
+  - - 76
+    - '        loss = tf.reduce_mean(tf.square(features - centers_batch))
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '    loss = tf.reduce_mean(tf.square(features - centers_batch))
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/facenet.py
+  removed: 1
+  source_file: a/src/facenet.py
+  target_file: b/src/facenet.py

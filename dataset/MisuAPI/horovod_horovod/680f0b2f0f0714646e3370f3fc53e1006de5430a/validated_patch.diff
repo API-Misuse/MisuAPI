@@ -1,0 +1,21 @@
+commit 680f0b2f0f0714646e3370f3fc53e1006de5430a
+Author: Peng Zhang <irasit@users.noreply.github.com>
+Date:   Mon Feb 22 13:57:47 2021 -0800
+
+    fix_sample_weights (#2683)
+    
+    Signed-off-by: Peng Zhang <pengz@uber.com>
+
+diff --git a/horovod/spark/torch/remote.py b/horovod/spark/torch/remote.py
+index d55686b..e1b9da1 100644
+--- a/horovod/spark/torch/remote.py
++++ b/horovod/spark/torch/remote.py
+@@ -265,7 +265,7 @@ def RemoteTrainer(estimator, metadata, last_checkpoint_state, run_id, dataset_id
+                         if cuda_available:
+                             inputs = [input.cuda() for input in inputs]
+                             labels = [label.cuda() for label in labels]
+-                            if sample_weights:
++                            if sample_weights is not None:
+                                 sample_weights = sample_weights.cuda()
+                         return inputs, labels, sample_weights
+ 

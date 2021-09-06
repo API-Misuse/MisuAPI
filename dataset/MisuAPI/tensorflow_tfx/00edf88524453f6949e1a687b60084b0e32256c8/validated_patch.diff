@@ -1,0 +1,21 @@
+commit 00edf88524453f6949e1a687b60084b0e32256c8
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Thu Dec 17 11:54:34 2020 -0800
+
+    When stateful_working_dir is not found when deleted, do a warning log and ignore the error.
+    
+    PiperOrigin-RevId: 348064925
+
+diff --git a/tfx/orchestration/portable/outputs_utils.py b/tfx/orchestration/portable/outputs_utils.py
+index d287070e..65cd8063 100644
+--- a/tfx/orchestration/portable/outputs_utils.py
++++ b/tfx/orchestration/portable/outputs_utils.py
+@@ -157,2 +181,7 @@ class OutputsResolver:
+-    fileio.makedirs(stateful_working_dir)
++    try:
++      fileio.makedirs(stateful_working_dir)
++    except Exception:  # pylint: disable=broad-except
++      logging.exception('Failed to make stateful working dir: %s',
++                        stateful_working_dir)
++      raise
+     return stateful_working_dir

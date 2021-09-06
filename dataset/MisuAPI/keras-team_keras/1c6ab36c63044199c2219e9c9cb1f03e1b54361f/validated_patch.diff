@@ -1,0 +1,19 @@
+commit 1c6ab36c63044199c2219e9c9cb1f03e1b54361f
+Author: Francois Chollet <francois.chollet@gmail.com>
+Date:   Wed Dec 2 09:56:57 2015 -0800
+
+    Fix typo in recurrent.
+
+diff --git a/keras/layers/recurrent.py b/keras/layers/recurrent.py
+index e67289e9..e3f567e0 100644
+--- a/keras/layers/recurrent.py
++++ b/keras/layers/recurrent.py
+@@ -216,7 +216,7 @@ class GRU(Recurrent):
+                 raise Exception('If a RNN is stateful, a complete ' +
+                                 'input_shape must be provided ' +
+                                 '(including batch size).')
+-            self.states = [K.zeros(input_shape[0], self.output_dim)]
++            self.states = [K.zeros((input_shape[0], self.output_dim))]
+         else:
+             # initial states: all-zero tensor of shape (output_dim)
+             self.states = [None]

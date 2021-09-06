@@ -1,0 +1,27 @@
+UPD @type:simple_stmt@ @[4219,4414]@ upsampled = tf.nn.conv3d_transpose(
+        inputs <text_longer_than_50> @TO@ @type:simple_stmt@ @[4219,4413]@ upsampled = tf.nn.conv3d_transpose(
+        value= <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4219,4413]@ upsampled = tf.nn.conv3d_transpose(
+        inputs <text_longer_than_50> @TO@ @type:expr_stmt@ @[4219,4412]@ upsampled = tf.nn.conv3d_transpose(
+        value= <text_longer_than_50>
+------UPD @type:atom_expr@ @[4231,4413]@ tf.nn.conv3d_transpose(
+        inputs=inputs,
+    <text_longer_than_50> @TO@ @type:atom_expr@ @[4231,4412]@ tf.nn.conv3d_transpose(
+        value=inputs,
+     <text_longer_than_50>
+---------UPD @type:trailer@ @[4253,4413]@ (
+        inputs=inputs,
+        filter=kernel,
+   <text_longer_than_50> @TO@ @type:trailer@ @[4253,4412]@ (
+        value=inputs,
+        filter=kernel,
+    <text_longer_than_50>
+------------UPD @type:arglist@ @[4263,4412]@ inputs=inputs,
+        filter=kernel,
+        outp <text_longer_than_50> @TO@ @type:arglist@ @[4263,4411]@ value=inputs,
+        filter=kernel,
+        outpu <text_longer_than_50>
+---------------UPD @type:argument@ @[4263,4276]@ inputs=inputs @TO@ @type:argument@ @[4263,4275]@ value=inputs
+------------------UPD @type:name@ @[4263,4269]@ inputs @TO@ @type:name@ @[4263,4268]@ value
+
+

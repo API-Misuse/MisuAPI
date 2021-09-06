@@ -1,0 +1,9 @@
+INS @type:with_stmt@ @[2379,2479]@ with open(filepath, 'wb') as output_yaml:
+         <text_longer_than_50> @TO@ @type:suite@ @[2370,2479]@ with open(filepath, 'wb') as output_yaml:
+         <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[2379,2408]@ output_yaml = Path(filepath) @FROM@ @type:suite@ @[2370,2462]@ output_yaml = Path(filepath)
+        self._yaml.du <text_longer_than_50>
+
+

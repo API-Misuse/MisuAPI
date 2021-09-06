@@ -1,0 +1,40 @@
+commit 5c63453356c2019854b94a54e10a5922796df474
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Fri Jan 29 16:29:39 2021 -0800
+
+    Fixed the Kubeflow v2 FBEG driver metadata output when using local filesystem.
+    
+    PiperOrigin-RevId: 354634169
+
+diff --git a/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver.py b/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver.py
+index 717f12d7..e6d96ee9 100644
+--- a/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver.py
++++ b/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver.py
+@@ -14,6 +14,7 @@
+ """Driver for file-based ExampleGen components in Kubeflow V2 runner."""
+ 
+ import argparse
++import os
+ from typing import Any, Dict, List, Optional
+ 
+ from absl import logging
+@@ -111,6 +112,7 @@ def _run_driver(exec_properties: Dict[str, Any],
+       kubeflow_v2_entrypoint_utils.to_runtime_artifact(example_artifact,
+                                                        name_from_id))
+ 
++  fileio.makedirs(os.path.dirname(output_metadata_uri))
+   fileio.open(output_metadata_uri, 'wb').write(
+       json_format.MessageToJson(output_metadata, sort_keys=True))
+ 
+diff --git a/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver_test.py b/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver_test.py
+index a0879f87..137454ab 100644
+--- a/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver_test.py
++++ b/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver_test.py
+@@ -74,7 +74,6 @@ class RunDriverTest(test_case_utils.TfxTest):
+     # Change working directory after all the testdata files have been read.
+     self.enter_context(test_case_utils.change_working_dir(self.tmp_dir))
+ 
+-    fileio.makedirs(os.path.dirname(_TEST_OUTPUT_METADATA_JSON))
+     fileio.makedirs(os.path.dirname(_TEST_INPUT_DIR))
+ 
+   def testDriverWithoutSpan(self):

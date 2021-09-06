@@ -1,0 +1,23 @@
+UPD @type:simple_stmt@ @[7545,7989]@ x = tf.layers.dense(inputs=x,
+                     <text_longer_than_50> @TO@ @type:simple_stmt@ @[7545,7987]@ x = tf.layers.dense(inputs=x,
+                     <text_longer_than_50>
+---UPD @type:expr_stmt@ @[7545,7988]@ x = tf.layers.dense(inputs=x,
+                     <text_longer_than_50> @TO@ @type:expr_stmt@ @[7545,7986]@ x = tf.layers.dense(inputs=x,
+                     <text_longer_than_50>
+------UPD @type:atom_expr@ @[7549,7988]@ tf.layers.dense(inputs=x,
+                         <text_longer_than_50> @TO@ @type:atom_expr@ @[7549,7986]@ tf.layers.dense(inputs=x,
+                         <text_longer_than_50>
+---------UPD @type:trailer@ @[7564,7988]@ (inputs=x,
+                        filters=1,
+     <text_longer_than_50> @TO@ @type:trailer@ @[7564,7986]@ (inputs=x,
+                        units=1,
+       <text_longer_than_50>
+------------UPD @type:arglist@ @[7565,7987]@ inputs=x,
+                        filters=1,
+      <text_longer_than_50> @TO@ @type:arglist@ @[7565,7985]@ inputs=x,
+                        units=1,
+        <text_longer_than_50>
+---------------UPD @type:argument@ @[7599,7608]@ filters=1 @TO@ @type:argument@ @[7599,7606]@ units=1
+------------------UPD @type:name@ @[7599,7606]@ filters @TO@ @type:name@ @[7599,7604]@ units
+
+

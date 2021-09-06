@@ -1,0 +1,92 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/deezer/spleeter/pull/396
+  title: fix stft window centering
+  body: "# Fixing Centering of windows in STFT/ISTFT on Librosa Backend\r\n\r\n##\
+    \ Description\r\n\r\nA wrong parameter used in the call to *stft* and *istft*\
+    \ function in the librosa backend led to reconstruction artefacts as described\
+    \ in #392 \r\n\r\n## How this patch was tested\r\n\r\nWith and without the parameter\
+    \ value. I also added a new test verifying that the *separator* object is able\
+    \ to exactly transform and reconstruct example file.\r\n\r\n## Documentation link\
+    \ and external references\r\n\r\nShould be pretty straightforward\r\n"
+issue_1:
+  html_url: https://github.com/deezer/spleeter/pull/416
+  title: 'fix: add ffmpeg binaries check'
+  body: Just ensure CI and merge.
+sha: 68ab303cd840bd98cfd7697035f4504b137fe0fa
+message: 'fix: add ffmpeg binaries check'
+commit_log: "commit 68ab303cd840bd98cfd7697035f4504b137fe0fa\nAuthor: F\xE9lix Voituret\
+  \ <fvoituret@deezer.com>\nDate:   Wed Jun 10 16:40:55 2020 +0200\n\n    fix: add\
+  \ ffmpeg binaries check"
+contained_keywords:
+- fix
+commit_time: 2020-06-10 16:40:55 +0200
+commit_author: "F\xE9lix Voituret"
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 12
+    - 'import shutil
+
+      '
+  - - 28
+    - 'def _check_ffmpeg_install():
+
+      '
+  - - 29
+    - '    """ Ensure FFMPEG binaries are available.
+
+      '
+  - - 30
+    - '
+
+      '
+  - - 31
+    - '    :raise SpleeterError: If ffmpeg or ffprobe is not found.
+
+      '
+  - - 32
+    - '    """
+
+      '
+  - - 33
+    - '    for binary in (''ffmpeg'', ''ffprobe''):
+
+      '
+  - - 34
+    - '        if shutil.which(binary) is None:
+
+      '
+  - - 35
+    - '            raise SpleeterError(''{} binary not found''.format(binary))
+
+      '
+  - - 36
+    - '
+
+      '
+  - - 37
+    - '
+
+      '
+  - - 80
+    - '        _check_ffmpeg_install()
+
+      '
+  - - 127
+    - '        _check_ffmpeg_install()
+
+      '
+  added: 13
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: spleeter/audio/ffmpeg.py
+  removed: 0
+  source_file: a/spleeter/audio/ffmpeg.py
+  target_file: b/spleeter/audio/ffmpeg.py

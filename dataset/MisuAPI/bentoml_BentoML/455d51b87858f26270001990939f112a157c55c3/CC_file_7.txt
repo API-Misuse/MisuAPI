@@ -1,0 +1,20 @@
+MOV @type:simple_stmt@ @[221,261]@ from jaeger_client.config import Config @TO@ @type:suite@ @[452,681]@ config = Config(
+        config={'sampler': {'type <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[261,328]@ from opentracing.scope_managers.asyncio import Asy <text_longer_than_50> @TO@ @type:suite@ @[452,681]@ config = Config(
+        config={'sampler': {'type <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[171,190]@ import opentracing @TO@ @type:suite@ @[1042,1793]@ """
+    Opentracing tracer function
+    """
+    de <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[190,221]@ from opentracing import Format @TO@ @type:suite@ @[1042,1793]@ """
+    Opentracing tracer function
+    """
+    de <text_longer_than_50>
+
+

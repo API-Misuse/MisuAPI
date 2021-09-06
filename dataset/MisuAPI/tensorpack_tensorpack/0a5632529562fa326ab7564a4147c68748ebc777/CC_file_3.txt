@@ -1,0 +1,45 @@
+INS @type:simple_stmt@ @[111,140]@ import multiprocessing as mp @TO@ @type:file_input@ @[111,959]@ from .base import Callback
+from ..utils.concurrenc <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[138,193]@ from ..utils.concurrency import start_proc_mask_si <text_longer_than_50> @TO@ @type:simple_stmt@ @[167,239]@ from ..utils.concurrency import start_proc_mask_si <text_longer_than_50>
+---UPD @type:import_from@ @[138,192]@ from ..utils.concurrency import start_proc_mask_si <text_longer_than_50> @TO@ @type:import_from@ @[167,238]@ from ..utils.concurrency import start_proc_mask_si <text_longer_than_50>
+------INS @type:import_as_names@ @[199,238]@ start_proc_mask_signal, StoppableThread @TO@ @type:import_from@ @[138,192]@ from ..utils.concurrency import start_proc_mask_si <text_longer_than_50>
+------MOV @type:name@ @[170,192]@ start_proc_mask_signal @TO@ @type:import_as_names@ @[199,238]@ start_proc_mask_signal, StoppableThread
+
+
+UPD @type:simple_stmt@ @[403,590]@ """
+        Args:
+            startable(list): lis <text_longer_than_50> @TO@ @type:simple_stmt@ @[468,946]@ """
+        Args:
+            startable (list): li <text_longer_than_50>
+---UPD @type:string@ @[403,589]@ """
+        Args:
+            startable(list): lis <text_longer_than_50> @TO@ @type:string@ @[468,945]@ """
+        Args:
+            startable (list): li <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[1074,1108]@ self._stop_at_last = stop_at_last @TO@ @type:suite@ @[394,710]@ """
+        Args:
+            startable(list): lis <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[748,853]@ logger.info("Starting " +
+                    ', ' <text_longer_than_50> @TO@ @type:simple_stmt@ @[1146,1242]@ logger.info("Starting " +
+                    ', ' <text_longer_than_50>
+---UPD @type:atom_expr@ @[748,852]@ logger.info("Starting " +
+                    ', ' <text_longer_than_50> @TO@ @type:atom_expr@ @[1146,1241]@ logger.info("Starting " +
+                    ', ' <text_longer_than_50>
+------UPD @type:trailer@ @[759,852]@ ("Starting " +
+                    ', '.join([k.na <text_longer_than_50> @TO@ @type:trailer@ @[1157,1241]@ ("Starting " +
+                    ', '.join([k.na <text_longer_than_50>
+---------UPD @type:arith_expr@ @[760,851]@ "Starting " +
+                    ', '.join([k.nam <text_longer_than_50> @TO@ @type:arith_expr@ @[1158,1240]@ "Starting " +
+                    ', '.join([k.nam <text_longer_than_50>
+------------DEL @type:operator@ @[843,844]@ + @FROM@ @type:arith_expr@ @[760,851]@ "Starting " +
+                    ', '.join([k.nam <text_longer_than_50>
+------------DEL @type:string@ @[845,851]@ ' ...' @FROM@ @type:arith_expr@ @[760,851]@ "Starting " +
+                    ', '.join([k.nam <text_longer_than_50>
+
+

@@ -1,0 +1,375 @@
+commit 00ffa603f22e0a74239ce431be4253660da466b6
+Author: Neal Wu <neal@nealwu.com>
+Date:   Thu Feb 23 14:59:56 2017 -0800
+
+    Manually fixed many occurrences of tf.concat
+
+diff --git a/im2txt/im2txt/show_and_tell_model.py b/im2txt/im2txt/show_and_tell_model.py
+index 41b62d65..0ac29e7f 100644
+--- a/im2txt/im2txt/show_and_tell_model.py
++++ b/im2txt/im2txt/show_and_tell_model.py
+@@ -264,7 +264,7 @@ class ShowAndTellModel(object):
+       if self.mode == "inference":
+         # In inference mode, use concatenated states for convenient feeding and
+         # fetching.
+-        tf.concat(axis=initial_state, values=1, name="initial_state")
++        tf.concat(axis=1, values=initial_state, name="initial_state")
+ 
+         # Placeholder for feeding a batch of concatenated states.
+         state_feed = tf.placeholder(dtype=tf.float32,
+@@ -278,7 +278,7 @@ class ShowAndTellModel(object):
+             state=state_tuple)
+ 
+         # Concatentate the resulting state.
+-        tf.concat(axis=state_tuple, values=1, name="state")
++        tf.concat(axis=1, values=state_tuple, name="state")
+       else:
+         # Run the batch of sequence embeddings through the LSTM.
+         sequence_length = tf.reduce_sum(self.input_mask, 1)
+diff --git a/inception/inception/slim/inception_model.py b/inception/inception/slim/inception_model.py
+index 00a53513..4a646115 100644
+--- a/inception/inception/slim/inception_model.py
++++ b/inception/inception/slim/inception_model.py
+@@ -122,7 +122,7 @@ def inception_v3(inputs,
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 32, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch5x5, branch3x3dbl, branch_pool])
+           end_points['mixed_35x35x256a'] = net
+         # mixed_1: 35 x 35 x 288.
+         with tf.variable_scope('mixed_35x35x288a'):
+@@ -138,7 +138,7 @@ def inception_v3(inputs,
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 64, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch5x5, branch3x3dbl, branch_pool])
+           end_points['mixed_35x35x288a'] = net
+         # mixed_2: 35 x 35 x 288.
+         with tf.variable_scope('mixed_35x35x288b'):
+@@ -154,7 +154,7 @@ def inception_v3(inputs,
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 64, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch5x5, branch3x3dbl, branch_pool])
+           end_points['mixed_35x35x288b'] = net
+         # mixed_3: 17 x 17 x 768.
+         with tf.variable_scope('mixed_17x17x768a'):
+@@ -167,7 +167,7 @@ def inception_v3(inputs,
+                                       stride=2, padding='VALID')
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.max_pool(net, [3, 3], stride=2, padding='VALID')
+-          net = tf.concat(axis=[branch3x3, branch3x3dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch3x3, branch3x3dbl, branch_pool])
+           end_points['mixed_17x17x768a'] = net
+         # mixed4: 17 x 17 x 768.
+         with tf.variable_scope('mixed_17x17x768b'):
+@@ -186,7 +186,7 @@ def inception_v3(inputs,
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 192, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl, branch_pool])
+           end_points['mixed_17x17x768b'] = net
+         # mixed_5: 17 x 17 x 768.
+         with tf.variable_scope('mixed_17x17x768c'):
+@@ -205,7 +205,7 @@ def inception_v3(inputs,
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 192, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl, branch_pool])
+           end_points['mixed_17x17x768c'] = net
+         # mixed_6: 17 x 17 x 768.
+         with tf.variable_scope('mixed_17x17x768d'):
+@@ -224,7 +224,7 @@ def inception_v3(inputs,
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 192, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl, branch_pool])
+           end_points['mixed_17x17x768d'] = net
+         # mixed_7: 17 x 17 x 768.
+         with tf.variable_scope('mixed_17x17x768e'):
+@@ -243,7 +243,7 @@ def inception_v3(inputs,
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 192, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl, branch_pool])
+           end_points['mixed_17x17x768e'] = net
+         # Auxiliary Head logits
+         aux_logits = tf.identity(end_points['mixed_17x17x768e'])
+@@ -276,7 +276,7 @@ def inception_v3(inputs,
+                                      stride=2, padding='VALID')
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.max_pool(net, [3, 3], stride=2, padding='VALID')
+-          net = tf.concat(axis=[branch3x3, branch7x7x3, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch3x3, branch7x7x3, branch_pool])
+           end_points['mixed_17x17x1280a'] = net
+         # mixed_9: 8 x 8 x 2048.
+         with tf.variable_scope('mixed_8x8x2048a'):
+@@ -284,17 +284,17 @@ def inception_v3(inputs,
+             branch1x1 = ops.conv2d(net, 320, [1, 1])
+           with tf.variable_scope('branch3x3'):
+             branch3x3 = ops.conv2d(net, 384, [1, 1])
+-            branch3x3 = tf.concat(axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+-                                   ops.conv2d(branch3x3, 384, [3, 1])], values=3)
++            branch3x3 = tf.concat(axis=3,values=[ops.conv2d(branch3x3, 384, [1, 3]),
++                                                 ops.conv2d(branch3x3, 384, [3, 1])])
+           with tf.variable_scope('branch3x3dbl'):
+             branch3x3dbl = ops.conv2d(net, 448, [1, 1])
+             branch3x3dbl = ops.conv2d(branch3x3dbl, 384, [3, 3])
+-            branch3x3dbl = tf.concat(axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+-                                      ops.conv2d(branch3x3dbl, 384, [3, 1])], values=3)
++            branch3x3dbl = tf.concat(axis=3, values=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
++                                                     ops.conv2d(branch3x3dbl, 384, [3, 1])])
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 192, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch3x3, branch3x3dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch3x3, branch3x3dbl, branch_pool])
+           end_points['mixed_8x8x2048a'] = net
+         # mixed_10: 8 x 8 x 2048.
+         with tf.variable_scope('mixed_8x8x2048b'):
+@@ -302,17 +302,17 @@ def inception_v3(inputs,
+             branch1x1 = ops.conv2d(net, 320, [1, 1])
+           with tf.variable_scope('branch3x3'):
+             branch3x3 = ops.conv2d(net, 384, [1, 1])
+-            branch3x3 = tf.concat(axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+-                                   ops.conv2d(branch3x3, 384, [3, 1])], values=3)
++            branch3x3 = tf.concat(axis=3, values=[ops.conv2d(branch3x3, 384, [1, 3]),
++                                                  ops.conv2d(branch3x3, 384, [3, 1])])
+           with tf.variable_scope('branch3x3dbl'):
+             branch3x3dbl = ops.conv2d(net, 448, [1, 1])
+             branch3x3dbl = ops.conv2d(branch3x3dbl, 384, [3, 3])
+-            branch3x3dbl = tf.concat(axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+-                                      ops.conv2d(branch3x3dbl, 384, [3, 1])], values=3)
++            branch3x3dbl = tf.concat(axis=3, values=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
++                                                     ops.conv2d(branch3x3dbl, 384, [3, 1])])
+           with tf.variable_scope('branch_pool'):
+             branch_pool = ops.avg_pool(net, [3, 3])
+             branch_pool = ops.conv2d(branch_pool, 192, [1, 1])
+-          net = tf.concat(axis=[branch1x1, branch3x3, branch3x3dbl, branch_pool], values=3)
++          net = tf.concat(axis=3, values=[branch1x1, branch3x3, branch3x3dbl, branch_pool])
+           end_points['mixed_8x8x2048b'] = net
+         # Final pooling and prediction
+         with tf.variable_scope('logits'):
+diff --git a/inception/inception/slim/ops.py b/inception/inception/slim/ops.py
+index 7c225f61..8bf10017 100644
+--- a/inception/inception/slim/ops.py
++++ b/inception/inception/slim/ops.py
+@@ -331,7 +331,7 @@ def one_hot_encoding(labels, num_classes, scope=None):
+     batch_size = labels.get_shape()[0]
+     indices = tf.expand_dims(tf.range(0, batch_size), 1)
+     labels = tf.cast(tf.expand_dims(labels, 1), indices.dtype)
+-    concated = tf.concat(axis=[indices, labels], values=1)
++    concated = tf.concat(axis=1, values=[indices, labels])
+     onehot_labels = tf.sparse_to_dense(
+         concated, tf.stack([batch_size, num_classes]), 1.0, 0.0)
+     onehot_labels.set_shape([batch_size, num_classes])
+diff --git a/neural_gpu/neural_gpu.py b/neural_gpu/neural_gpu.py
+index 786a588a..be513412 100644
+--- a/neural_gpu/neural_gpu.py
++++ b/neural_gpu/neural_gpu.py
+@@ -36,7 +36,7 @@ def conv_linear(args, kw, kh, nin, nout, rate, do_bias, bias_start, prefix):
+     if len(args) == 1:
+       arg = args[0]
+     else:
+-      arg = tf.concat(axis=args, values=3)
++      arg = tf.concat(axis=3, values=args)
+     res = tf.nn.convolution(arg, k, dilation_rate=(rate, 1), padding="SAME")
+     if not do_bias: return res
+     with tf.device("/cpu:0"):
+@@ -71,14 +71,14 @@ def place_at14(decided, selected, it):
+   """Place selected at it-th coordinate of decided, dim=1 of 4."""
+   slice1 = decided[:, :it, :, :]
+   slice2 = decided[:, it + 1:, :, :]
+-  return tf.concat(axis=[slice1, selected, slice2], values=1)
++  return tf.concat(axis=1, values=[slice1, selected, slice2])
+ 
+ 
+ def place_at13(decided, selected, it):
+   """Place selected at it-th coordinate of decided, dim=1 of 3."""
+   slice1 = decided[:, :it, :]
+   slice2 = decided[:, it + 1:, :]
+-  return tf.concat(axis=[slice1, selected, slice2], values=1)
++  return tf.concat(axis=1, values=[slice1, selected, slice2])
+ 
+ 
+ def tanh_cutoff(x, cutoff):
+@@ -221,9 +221,9 @@ def reorder_beam(beam_size, batch_size, beam_val, output, is_first,
+                                  cur_beam_val], "GREPO", summarize=8)
+     all_beam_vals.append(top_out + tf.expand_dims(cur_beam_val, 1))
+     all_beam_idx.append(top_out_idx)
+-  all_beam_idx = tf.reshape(tf.transpose(tf.concat(axis=all_beam_idx, values=1), [1, 0]),
++  all_beam_idx = tf.reshape(tf.transpose(tf.concat(axis=1, values=all_beam_idx), [1, 0]),
+                             [-1])
+-  top_beam, top_beam_idx = tf.nn.top_k(tf.concat(axis=all_beam_vals, values=1), k=beam_size)
++  top_beam, top_beam_idx = tf.nn.top_k(tf.concat(axis=1, values=all_beam_vals), k=beam_size)
+   top_beam_idx = tf.Print(top_beam_idx, [top_beam, top_beam_idx],
+                           "GREP", summarize=8)
+   reordered = [[] for _ in xrange(len(tensors_to_reorder) + 1)]
+@@ -236,8 +236,8 @@ def reorder_beam(beam_size, batch_size, beam_val, output, is_first,
+     reordered[0].append(tf.gather(output, which_beam))
+     for i, t in enumerate(tensors_to_reorder):
+       reordered[i + 1].append(tf.gather(t, which_beam))
+-  new_tensors = [tf.concat(axis=t, values=0) for t in reordered]
+-  top_out_idx = tf.concat(axis=top_out_idx, values=0)
++  new_tensors = [tf.concat(axis=0, values=t) for t in reordered]
++  top_out_idx = tf.concat(axis=0, values=top_out_idx)
+   return (top_beam, new_tensors[0], top_out_idx, new_tensors[1:])
+ 
+ 
+@@ -410,7 +410,7 @@ class NeuralGPU(object):
+       out_write = output_ta.write(it, output_l[:batch_size, :, :, :])
+       output = tf.gather(target_emb_weights, out)
+       output = tf.reshape(output, [-1, 1, nmaps])
+-      output = tf.concat(axis=[output] * height, values=1)
++      output = tf.concat(axis=1, values=[output] * height)
+       tgt = tgts[it, :, :, :]
+       selected = tf.cond(tf.less(tf.random_uniform([]), self.sampling),
+                          lambda: output, lambda: tgt)
+@@ -419,7 +419,7 @@ class NeuralGPU(object):
+       out_idx = place_at13(
+           out_idx, tf.reshape(out, [beam_size * batch_size, 1, 1]), it)
+       if mem_size > 0:
+-        mem = tf.concat(axis=[mem] * height, values=2)
++        mem = tf.concat(axis=2, values=[mem] * height)
+         dec_write = place_at14(dec_write, mem, it_incr)
+       return (step, dec_write, out_write, mloss + mem_loss, nupd_in + nupd,
+               out_idx, beam_cost)
+@@ -459,7 +459,7 @@ class NeuralGPU(object):
+                                               gpu_targets_tn)
+               embedded_targets_tn = tf.transpose(
+                   embedded_targets_tn, [2, 0, 1, 3])  # len x b x 1 x nmaps
+-              embedded_targets_tn = tf.concat(axis=[embedded_targets_tn] * height, values=2)
++              embedded_targets_tn = tf.concat(axis=2, values=[embedded_targets_tn] * height)
+ 
+         # First image comes from start by applying convolution and adding 0s.
+         start = tf.transpose(start, [0, 2, 1, 3])  # Now b x len x h x vec_s
+@@ -505,7 +505,7 @@ class NeuralGPU(object):
+               attn_res = attention_query(attn_q, tf.get_variable(
+                   "attn_v", [height * nmaps],
+                   initializer=tf.random_uniform_initializer(-0.1, 0.1)))
+-              concatenated = tf.reshape(tf.concat(axis=[cell_inp, attn_res], values=1),
++              concatenated = tf.reshape(tf.concat(axis=1, values=[cell_inp, attn_res]),
+                                         [batch_size, 2 * height * nmaps])
+               cell_inp = tf.layers.dense(
+                   concatenated, height * nmaps, name="attn_merge")
+@@ -519,14 +519,14 @@ class NeuralGPU(object):
+                 res = tf.gather(target_emb_weights, res)
+                 res *= tf.expand_dims(mask[:, 0], 1)
+                 output = tf.layers.dense(
+-                    tf.concat(axis=[output, res], values=1), height * nmaps, name="rnnmem")
++                    tf.concat(axis=1, values=[output, res]), height * nmaps, name="rnnmem")
+ 
+               return new_state, output, mem_loss
+             # pylint: enable=cell-var-from-loop
+             gpu_targets = tf.squeeze(gpu_target[gpu], [1])  # b x len
+             gpu_tgt_trans = tf.transpose(gpu_targets, [1, 0])
+             dec_zero = tf.zeros([batch_size, 1], dtype=tf.int32)
+-            dec_inp = tf.concat(axis=[dec_zero, gpu_targets], values=1)
++            dec_inp = tf.concat(axis=1, values=[dec_zero, gpu_targets])
+             dec_inp = dec_inp[:, :length]
+             embedded_dec_inp = tf.gather(target_emb_weights, dec_inp)
+             embedded_dec_inp_proj = tf.layers.dense(
+@@ -573,9 +573,9 @@ class NeuralGPU(object):
+                                   height, vec_size])
+ 
+             # Prepare for beam search.
+-            tgts = tf.concat(axis=[embedded_targets_tn] * beam_size, values=1)
++            tgts = tf.concat(axis=1, values=[embedded_targets_tn] * beam_size)
+             beam_cost = tf.zeros([batch_size, beam_size])
+-            step = tf.concat(axis=[step] * beam_size, values=0)
++            step = tf.concat(axis=0, values=[step] * beam_size)
+             # First step hard-coded.
+             step, decided_t, output_ta, mem_loss, nupd, oi, bc = dec_step(
+                 step, 0, 0, decided_t, output_ta, tgts, 0.0, 0, out_idx,
+@@ -654,7 +654,7 @@ class NeuralGPU(object):
+                        % (gpu, time.time() - start_time))
+ 
+     self.updates = []
+-    self.after_enc_step = tf.concat(axis=self.after_enc_step, values=0)  # Concat GPUs.
++    self.after_enc_step = tf.concat(axis=0, values=self.after_enc_step)  # Concat GPUs.
+     if backward:
+       tf.get_variable_scope()._reuse = False
+       tf.get_variable_scope().set_caching_device(None)
+@@ -667,10 +667,10 @@ class NeuralGPU(object):
+ 
+     self.losses = [gpu_avg([gpu_losses[g][i] for g in xrange(num_gpus)])
+                    for i in xrange(len(gpu_losses[0]))]
+-    self.out_idx = tf.concat(axis=gpu_out_idx, values=0)
++    self.out_idx = tf.concat(axis=0, values=gpu_out_idx)
+     self.grad_norms = [gpu_avg([gpu_grad_norms[g][i] for g in xrange(num_gpus)])
+                        for i in xrange(len(gpu_grad_norms[0]))]
+-    self.outputs = [tf.concat(axis=[gpu_outputs[g] for g in xrange(num_gpus)], values=1)]
++    self.outputs = [tf.concat(axis=1, values=[gpu_outputs[g] for g in xrange(num_gpus)])]
+     self.quantize_op = quantize_weights_op(512, 8)
+     if backward:
+       self.saver = tf.train.Saver(tf.global_variables(), max_to_keep=10)
+diff --git a/swivel/swivel.py b/swivel/swivel.py
+index f964cba4..611bc503 100644
+--- a/swivel/swivel.py
++++ b/swivel/swivel.py
+@@ -135,8 +135,8 @@ def count_matrix_input(filenames, submatrix_rows, submatrix_cols):
+   sparse_local_col = features['sparse_local_col'].values
+   sparse_count = features['sparse_value'].values
+ 
+-  sparse_indices = tf.concat(axis=[tf.expand_dims(sparse_local_row, 1),
+-                              tf.expand_dims(sparse_local_col, 1)], values=1)
++  sparse_indices = tf.concat(axis=1, values=[tf.expand_dims(sparse_local_row, 1),
++                                             tf.expand_dims(sparse_local_col, 1)])
+   count = tf.sparse_to_dense(sparse_indices, [submatrix_rows, submatrix_cols],
+                              sparse_count)
+ 
+diff --git a/syntaxnet/syntaxnet/graph_builder.py b/syntaxnet/syntaxnet/graph_builder.py
+index f3126207..6c8621f0 100644
+--- a/syntaxnet/syntaxnet/graph_builder.py
++++ b/syntaxnet/syntaxnet/graph_builder.py
+@@ -69,7 +69,7 @@ def EmbeddingLookupFeatures(params, sparse_features, allow_weights):
+ 
+   if allow_weights:
+     # Multiply by weights, reshaping to allow broadcast.
+-    broadcast_weights_shape = tf.concat(axis=[tf.shape(weights), [1]], values=0)
++    broadcast_weights_shape = tf.concat(axis=0, values=[tf.shape(weights), [1]])
+     embeddings *= tf.reshape(weights, broadcast_weights_shape)
+ 
+   # Sum embeddings by index.
+@@ -330,7 +330,7 @@ class GreedyParser(object):
+                                            i,
+                                            return_average=return_average))
+ 
+-    last_layer = tf.concat(axis=embeddings, values=1)
++    last_layer = tf.concat(axis=1, values=embeddings)
+     last_layer_size = self.embedding_size
+ 
+     # Create ReLU layers.
+diff --git a/tutorials/image/cifar10/cifar10_multi_gpu_train.py b/tutorials/image/cifar10/cifar10_multi_gpu_train.py
+index 8fa67a00..1c70ad39 100644
+--- a/tutorials/image/cifar10/cifar10_multi_gpu_train.py
++++ b/tutorials/image/cifar10/cifar10_multi_gpu_train.py
+@@ -124,7 +124,7 @@ def average_gradients(tower_grads):
+       grads.append(expanded_g)
+ 
+     # Average over the 'tower' dimension.
+-    grad = tf.concat(axis=grads, values=0)
++    grad = tf.concat(axis=0, values=grads)
+     grad = tf.reduce_mean(grad, 0)
+ 
+     # Keep in mind that the Variables are redundant because they are shared
+diff --git a/tutorials/rnn/ptb/ptb_word_lm.py b/tutorials/rnn/ptb/ptb_word_lm.py
+index 63417914..72f6f03d 100644
+--- a/tutorials/rnn/ptb/ptb_word_lm.py
++++ b/tutorials/rnn/ptb/ptb_word_lm.py
+@@ -146,7 +146,7 @@ class PTBModel(object):
+         (cell_output, state) = cell(inputs[:, time_step, :], state)
+         outputs.append(cell_output)
+ 
+-    output = tf.reshape(tf.concat(axis=outputs, values=1), [-1, size])
++    output = tf.reshape(tf.concat(axis=1, values=outputs), [-1, size])
+     softmax_w = tf.get_variable(
+         "softmax_w", [size, vocab_size], dtype=data_type())
+     softmax_b = tf.get_variable("softmax_b", [vocab_size], dtype=data_type())

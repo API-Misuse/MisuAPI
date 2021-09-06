@@ -1,0 +1,350 @@
+sha: 4af483993c629deb6f49f249ddf060a3ae483ff3
+message: fix about box & imgaug
+commit_log: "commit 4af483993c629deb6f49f249ddf060a3ae483ff3\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Sat Jul 16 16:28:56 2016 -0700\n\n    fix about box & imgaug"
+contained_keywords:
+- fix
+commit_time: 2016-07-16 16:28:56 -0700
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 8
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: scripts/dump_train_config.py
+  source_file: a/scripts/dump_train_config.py
+  target_file: b/scripts/dump_train_config.py
+  added: 1
+  removed: 0
+  add_line_no:
+  - - 29
+    - 'logger.auto_set_dir(action=''d'')
+
+      '
+  del_line_no: []
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/dataflow/common.py
+  source_file: a/tensorpack/dataflow/common.py
+  target_file: b/tensorpack/dataflow/common.py
+  added: 9
+  removed: 2
+  add_line_no:
+  - - 71
+    - '            try:
+
+      '
+  - - 72
+    - '                result.append(
+
+      '
+  - - 73
+    - '                    np.array([x[k] for x in data_holder], dtype=tp))
+
+      '
+  - - 74
+    - '            except KeyboardInterrupt:
+
+      '
+  - - 75
+    - '                raise
+
+      '
+  - - 76
+    - '            except:
+
+      '
+  - - 77
+    - '                logger.exception("Cannot batch data. Perhaps they are of inconsistent
+      shape?")
+
+      '
+  - - 78
+    - '                import IPython as IP;
+
+      '
+  - - 79
+    - '                IP.embed(config=IP.terminal.ipapp.load_default_config())
+
+      '
+  del_line_no:
+  - - null
+    - '            result.append(
+
+      '
+  - - null
+    - '                np.array([x[k] for x in data_holder], dtype=tp))
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/dataflow/dataset/ilsvrc.py
+  source_file: a/tensorpack/dataflow/dataset/ilsvrc.py
+  target_file: b/tensorpack/dataflow/dataset/ilsvrc.py
+  added: 10
+  removed: 9
+  add_line_no:
+  - - 148
+    - '            bbdir = os.path.join(dir, ''bbox'') if not \
+
+      '
+  - - 149
+    - '                    isinstance(include_bb, six.string_types) else include_bb
+
+      '
+  - - 151
+    - '            self.bblist = ILSVRC12.get_training_bbox(bbdir, self.imglist)
+
+      '
+  - - 160
+    - '        and optionally a bbox of [xmin, ymin, xmax, ymax]
+
+      '
+  - - 178
+    - '                if bb is None:
+
+      '
+  - - 179
+    - '                    bb = [0, 0, im.shape[1]-1, im.shape[0]-1]
+
+      '
+  - - 195
+    - '            #box[0] /= size[0]
+
+      '
+  - - 196
+    - '            #box[1] /= size[1]
+
+      '
+  - - 197
+    - '            #box[2] /= size[0]
+
+      '
+  - - 198
+    - '            #box[3] /= size[1]
+
+      '
+  del_line_no:
+  - - null
+    - '            self.bblist = ILSVRC12.get_training_bbox(
+
+      '
+  - - null
+    - '                    os.path.join(dir, ''bbox''), self.imglist)
+
+      '
+  - - null
+    - '        and optionally a bbox of [xmin, ymin, xmax, ymax] in [0, 1]
+
+      '
+  - - null
+    - '                if not bb:
+
+      '
+  - - null
+    - '                    bb = [0, 0, 1, 1]
+
+      '
+  - - null
+    - '            box[0] /= size[0]
+
+      '
+  - - null
+    - '            box[1] /= size[1]
+
+      '
+  - - null
+    - '            box[2] /= size[0]
+
+      '
+  - - null
+    - '            box[3] /= size[1]
+
+      '
+patched_file_3:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/dataflow/imgaug/crop.py
+  source_file: a/tensorpack/dataflow/imgaug/crop.py
+  target_file: b/tensorpack/dataflow/imgaug/crop.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 11
+    - '__all__ = [''RandomCrop'', ''CenterCrop'', ''FixedCrop'',
+
+      '
+  - - 12
+    - '        ''RandomCropRandomShape'', ''perturb_BB'']
+
+      '
+  del_line_no:
+  - - null
+    - '__all__ = [''RandomCrop'', ''CenterCrop'', ''FixedCrop'', ''RandomCropRandomShape'']
+
+      '
+patched_file_4:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/dataflow/imgaug/imgproc.py
+  source_file: a/tensorpack/dataflow/imgaug/imgproc.py
+  target_file: b/tensorpack/dataflow/imgaug/imgproc.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 101
+    - '        img = np.clip(img, 0, 255).astype(''uint8'')
+
+      '
+  del_line_no:
+  - - null
+    - '        img = img.astype(''uint8'')
+
+      '
+patched_file_5:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/dataflow/imgaug/meta.py
+  source_file: a/tensorpack/dataflow/imgaug/meta.py
+  target_file: b/tensorpack/dataflow/imgaug/meta.py
+  added: 9
+  removed: 0
+  add_line_no:
+  - - 28
+    - '    def reset_state(self):
+
+      '
+  - - 29
+    - '        super(RandomApplyAug, self).reset_state()
+
+      '
+  - - 30
+    - '        self.aug.reset_state()
+
+      '
+  - - 31
+    - '
+
+      '
+  - - 51
+    - '    def reset_state(self):
+
+      '
+  - - 52
+    - '        super(RandomChooseAug, self).reset_state()
+
+      '
+  - - 53
+    - '        for a in self.aug_lists:
+
+      '
+  - - 54
+    - '            a.reset_state()
+
+      '
+  - - 55
+    - '
+
+      '
+  del_line_no: []
+patched_file_6:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/utils/logger.py
+  source_file: a/tensorpack/utils/logger.py
+  target_file: b/tensorpack/utils/logger.py
+  added: 7
+  removed: 3
+  add_line_no:
+  - - 48
+    - 'LOG_DIR = None
+
+      '
+  - - 67
+    - '        if not action:
+
+      '
+  - - 68
+    - '            _logger.warn("""\
+
+      '
+  - - 71
+    - '            _logger.info("Select Action: k (keep) / b (backup) / d (delete)
+      / n (new):")
+
+      '
+  - - 102
+    - 'def auto_set_dir(action=None, overwrite_setting=False):
+
+      '
+  - - 105
+    - '    if LOG_DIR is not None and not overwrite_setting:
+
+      '
+  - - 106
+    - '        return
+
+      '
+  del_line_no:
+  - - null
+    - '        _logger.warn("""\
+
+      '
+  - - null
+    - '        _logger.info("Select Action: k (keep) / b (backup) / d (delete) / n
+      (new):")
+
+      '
+  - - null
+    - 'def auto_set_dir(action=None):
+
+      '
+patched_file_7:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/utils/rect.py
+  source_file: a/tensorpack/utils/rect.py
+  target_file: b/tensorpack/utils/rect.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 70
+    - '        assert self.validate(img.shape[:2]), "{} vs {}".format(self, img.shape[:2])
+
+      '
+  - - 74
+    - '        assert frac > 1.0, frac
+
+      '
+  del_line_no:
+  - - null
+    - '        assert self.validate(img.shape[:2])
+
+      '

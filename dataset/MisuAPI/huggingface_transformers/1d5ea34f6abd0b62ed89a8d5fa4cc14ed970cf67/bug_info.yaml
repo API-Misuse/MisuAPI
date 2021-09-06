@@ -1,0 +1,47 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/huggingface/transformers/pull/7720
+  title: Fix trainer callback
+  body: "Fix a bug that happends when subclassing Trainer and\r\noverwriting evaluate()\
+    \ without calling prediciton_loop()\r\n\r\n# What does this PR do?\r\n\r\n\r\n\
+    Fixes #7702\r\n\r\n@sgugger \r\n"
+sha: 1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67
+message: "Fix trainer callback (#7720)\n\nFix a bug that happends when subclassing\
+  \ Trainer and\r\noverwriting evaluate() without calling prediciton_loop()"
+commit_log: "commit 1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67\nAuthor: Jonathan Chang\
+  \ <31893406+cccntu@users.noreply.github.com>\nDate:   Mon Oct 12 04:45:12 2020 -0700\n\
+  \n    Fix trainer callback (#7720)\n    \n    Fix a bug that happends when subclassing\
+  \ Trainer and\n    overwriting evaluate() without calling prediciton_loop()"
+contained_keywords:
+- bug
+- fix
+commit_time: 2020-10-12 04:45:12 -0700
+commit_author: Jonathan Chang
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 446
+    - '            if self.prediction_bar is not None:
+
+      '
+  - - 447
+    - '                self.prediction_bar.close()
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '            self.prediction_bar.close()
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/transformers/trainer_callback.py
+  removed: 1
+  source_file: a/src/transformers/trainer_callback.py
+  target_file: b/src/transformers/trainer_callback.py

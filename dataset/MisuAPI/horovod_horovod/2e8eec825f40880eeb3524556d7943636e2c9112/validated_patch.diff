@@ -1,0 +1,21 @@
+commit 2e8eec825f40880eeb3524556d7943636e2c9112
+Author: Enrico Minack <github@enrico.minack.dev>
+Date:   Wed Mar 11 22:32:15 2020 +0100
+
+    Fix tests_required in setup.py (#1698)
+    
+    Signed-off-by: Enrico Minack <github@enrico.minack.dev>
+
+diff --git a/setup.py b/setup.py
+index c57d6d7..e174a6e 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1537,7 +1537,7 @@ setup(name='horovod',
+       # so it's only necessary for `build*` or `bdist*` actions.
+       setup_requires=require_list if is_build_action() else [],
+       install_requires=require_list,
+-      test_requires=test_require_list,
++      tests_require=test_require_list,
+       extras_require={
+           'spark':  [
+               'h5py>=2.9',

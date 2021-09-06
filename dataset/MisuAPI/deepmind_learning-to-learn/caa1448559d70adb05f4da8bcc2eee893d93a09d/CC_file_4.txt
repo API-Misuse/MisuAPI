@@ -1,0 +1,36 @@
+UPD @type:if_stmt@ @[1126,1224]@ if net_path:
+    with open(net_path, "r") as f:
+   <text_longer_than_50> @TO@ @type:if_stmt@ @[1126,1225]@ if net_path:
+    with open(net_path, "rb") as f:
+  <text_longer_than_50>
+---UPD @type:suite@ @[1138,1224]@ with open(net_path, "r") as f:
+      net_options[" <text_longer_than_50> @TO@ @type:suite@ @[1138,1225]@ with open(net_path, "rb") as f:
+      net_options[ <text_longer_than_50>
+------UPD @type:with_stmt@ @[1143,1224]@ with open(net_path, "r") as f:
+      net_options[" <text_longer_than_50> @TO@ @type:with_stmt@ @[1143,1225]@ with open(net_path, "rb") as f:
+      net_options[ <text_longer_than_50>
+---------UPD @type:with_item@ @[1148,1172]@ open(net_path, "r") as f @TO@ @type:with_item@ @[1148,1173]@ open(net_path, "rb") as f
+------------UPD @type:atom_expr@ @[1148,1167]@ open(net_path, "r") @TO@ @type:atom_expr@ @[1148,1168]@ open(net_path, "rb")
+---------------UPD @type:trailer@ @[1152,1167]@ (net_path, "r") @TO@ @type:trailer@ @[1152,1168]@ (net_path, "rb")
+------------------UPD @type:arglist@ @[1153,1166]@ net_path, "r" @TO@ @type:arglist@ @[1153,1167]@ net_path, "rb"
+---------------------UPD @type:string@ @[1163,1166]@ "r" @TO@ @type:string@ @[1163,1167]@ "rb"
+
+
+UPD @type:if_stmt@ @[1635,1713]@ if filename:
+    with open(filename, "w") as f:
+   <text_longer_than_50> @TO@ @type:if_stmt@ @[1636,1715]@ if filename:
+    with open(filename, "wb") as f:
+  <text_longer_than_50>
+---UPD @type:suite@ @[1647,1713]@ with open(filename, "w") as f:
+      pickle.dump(t <text_longer_than_50> @TO@ @type:suite@ @[1648,1715]@ with open(filename, "wb") as f:
+      pickle.dump( <text_longer_than_50>
+------UPD @type:with_stmt@ @[1652,1713]@ with open(filename, "w") as f:
+      pickle.dump(t <text_longer_than_50> @TO@ @type:with_stmt@ @[1653,1715]@ with open(filename, "wb") as f:
+      pickle.dump( <text_longer_than_50>
+---------UPD @type:with_item@ @[1657,1681]@ open(filename, "w") as f @TO@ @type:with_item@ @[1658,1683]@ open(filename, "wb") as f
+------------UPD @type:atom_expr@ @[1657,1676]@ open(filename, "w") @TO@ @type:atom_expr@ @[1658,1678]@ open(filename, "wb")
+---------------UPD @type:trailer@ @[1661,1676]@ (filename, "w") @TO@ @type:trailer@ @[1662,1678]@ (filename, "wb")
+------------------UPD @type:arglist@ @[1662,1675]@ filename, "w" @TO@ @type:arglist@ @[1663,1677]@ filename, "wb"
+---------------------UPD @type:string@ @[1672,1675]@ "w" @TO@ @type:string@ @[1673,1677]@ "wb"
+
+

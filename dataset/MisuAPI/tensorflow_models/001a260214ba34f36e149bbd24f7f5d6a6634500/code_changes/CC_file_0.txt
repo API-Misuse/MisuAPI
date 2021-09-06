@@ -1,0 +1,17 @@
+UPD @type:with_stmt@ @[12525,19998]@ with tf.Graph().as_default():
+    ################ <text_longer_than_50> @TO@ @type:with_stmt@ @[12525,20053]@ with tf.Graph().as_default():
+    ################ <text_longer_than_50>
+---UPD @type:suite@ @[12554,19998]@ #######################
+    # Config model_deploy  <text_longer_than_50> @TO@ @type:suite@ @[12554,20053]@ #######################
+    # Config model_deploy  <text_longer_than_50>
+------UPD @type:funcdef@ @[15055,15758]@ def clone_fn(batch_queue):
+      """Allows data pa <text_longer_than_50> @TO@ @type:funcdef@ @[15055,15813]@ def clone_fn(batch_queue):
+      """Allows data pa <text_longer_than_50>
+---------UPD @type:suite@ @[15081,15758]@ """Allows data parallelism by creating multiple cl <text_longer_than_50> @TO@ @type:suite@ @[15081,15813]@ """Allows data parallelism by creating multiple cl <text_longer_than_50>
+------------INS @type:with_stmt@ @[15167,15261]@ with tf.device(deploy_config.inputs_device()):
+    <text_longer_than_50> @TO@ @type:suite@ @[15081,15758]@ """Allows data parallelism by creating multiple cl <text_longer_than_50>
+---------------INS @type:suite@ @[15213,15261]@ images, labels = batch_queue.dequeue() @TO@ @type:with_stmt@ @[15167,15261]@ with tf.device(deploy_config.inputs_device()):
+    <text_longer_than_50>
+------------MOV @type:simple_stmt@ @[15167,15206]@ images, labels = batch_queue.dequeue() @TO@ @type:suite@ @[15213,15261]@ images, labels = batch_queue.dequeue()
+
+

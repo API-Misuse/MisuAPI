@@ -1,0 +1,121 @@
+INS @type:simple_stmt@ @[2140,2167]@ self.categorical_dict = {} @TO@ @type:suite@ @[1735,2132]@ '''
+        Constructor
+        '''
+        self.l <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[4517,4931]@ if not self.update_ss_done:
+            generate_s <text_longer_than_50> @TO@ @type:if_stmt@ @[4552,5145]@ if not self.update_ss_done:
+            self.categ <text_longer_than_50>
+---UPD @type:suite@ @[4544,4844]@ generate_scenario(search_space)
+            self.o <text_longer_than_50> @TO@ @type:suite@ @[4579,5058]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4557,4589]@ generate_scenario(search_space) @TO@ @type:simple_stmt@ @[4592,4648]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50>
+---------INS @type:expr_stmt@ @[4592,4647]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50> @TO@ @type:simple_stmt@ @[4557,4589]@ generate_scenario(search_space)
+---------MOV @type:atom_expr@ @[4557,4588]@ generate_scenario(search_space) @TO@ @type:expr_stmt@ @[4592,4647]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50>
+------INS @type:if_stmt@ @[4660,4803]@ if self.categorical_dict is None:
+                 <text_longer_than_50> @TO@ @type:suite@ @[4544,4844]@ generate_scenario(search_space)
+            self.o <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[5635,5727]@ '''
+        convert the values of type `loguniform <text_longer_than_50> @TO@ @type:simple_stmt@ @[5861,6141]@ '''
+        Convert the values of type `loguniform <text_longer_than_50>
+---UPD @type:string@ @[5635,5726]@ '''
+        convert the values of type `loguniform <text_longer_than_50> @TO@ @type:string@ @[5861,6140]@ '''
+        Convert the values of type `loguniform <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[5735,5889]@ for key, value in challenger_dict.items():
+        <text_longer_than_50> @TO@ @type:for_stmt@ @[6149,6555]@ for key, value in challenger_dict.items():
+        <text_longer_than_50>
+---UPD @type:suite@ @[5777,5889]@ if key in self.loguniform_key:
+                cha <text_longer_than_50> @TO@ @type:suite@ @[6191,6555]@ # convert to loguniform
+            if key in self <text_longer_than_50>
+------INS @type:if_stmt@ @[6408,6555]@ if key in self.categorical_dict:
+                i <text_longer_than_50> @TO@ @type:suite@ @[5777,5889]@ if key in self.loguniform_key:
+                cha <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[6051,6664]@ if self.first_one:
+            init_challenger = s <text_longer_than_50> @TO@ @type:if_stmt@ @[6717,7354]@ if self.first_one:
+            init_challenger = s <text_longer_than_50>
+---UPD @type:suite@ @[6069,6335]@ init_challenger = self.smbo_solver.nni_smac_start( <text_longer_than_50> @TO@ @type:suite@ @[6735,7013]@ init_challenger = self.smbo_solver.nni_smac_start( <text_longer_than_50>
+------UPD @type:simple_stmt@ @[6270,6335]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50> @TO@ @type:simple_stmt@ @[7812,7897]@ params.append(self.convert_loguniform_categorical( <text_longer_than_50>
+---------INS @type:atom_expr@ @[7812,7896]@ params.append(self.convert_loguniform_categorical( <text_longer_than_50> @TO@ @type:simple_stmt@ @[6270,6335]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50>
+------------INS @type:trailer@ @[7825,7896]@ (self.convert_loguniform_categorical(init_challeng <text_longer_than_50> @TO@ @type:atom_expr@ @[7812,7896]@ params.append(self.convert_loguniform_categorical( <text_longer_than_50>
+---------DEL @type:return_stmt@ @[6270,6334]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50> @FROM@ @type:simple_stmt@ @[6270,6335]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50>
+------MOV @type:simple_stmt@ @[6270,6335]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50> @TO@ @type:suite@ @[6911,7195]@ init_challenger = self.smbo_solver.nni_smac_start( <text_longer_than_50>
+---------INS @type:atom_expr@ @[7812,7896]@ params.append(self.convert_loguniform_categorical( <text_longer_than_50> @TO@ @type:simple_stmt@ @[6270,6335]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50>
+------------INS @type:trailer@ @[7825,7896]@ (self.convert_loguniform_categorical(init_challeng <text_longer_than_50> @TO@ @type:atom_expr@ @[7812,7896]@ params.append(self.convert_loguniform_categorical( <text_longer_than_50>
+---------DEL @type:return_stmt@ @[6270,6334]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50> @FROM@ @type:simple_stmt@ @[6270,6335]@ return self.convert_loguniform(init_challenger.get <text_longer_than_50>
+---UPD @type:suite@ @[6348,6664]@ challengers = self.smbo_solver.nni_smac_request_ch <text_longer_than_50> @TO@ @type:suite@ @[7026,7354]@ challengers = self.smbo_solver.nni_smac_request_ch <text_longer_than_50>
+------UPD @type:for_stmt@ @[6435,6664]@ for challenger in challengers:
+                sel <text_longer_than_50> @TO@ @type:for_stmt@ @[7113,7354]@ for challenger in challengers:
+                sel <text_longer_than_50>
+---------UPD @type:suite@ @[6465,6664]@ self.total_data[parameter_id] = challenger
+        <text_longer_than_50> @TO@ @type:suite@ @[7143,7354]@ self.total_data[parameter_id] = challenger
+        <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[6604,6664]@ return self.convert_loguniform(challenger.get_dict <text_longer_than_50> @TO@ @type:simple_stmt@ @[7282,7354]@ return self.convert_loguniform_categorical(challen <text_longer_than_50>
+---------------UPD @type:return_stmt@ @[6604,6663]@ return self.convert_loguniform(challenger.get_dict <text_longer_than_50> @TO@ @type:return_stmt@ @[7282,7353]@ return self.convert_loguniform_categorical(challen <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[6611,6663]@ self.convert_loguniform(challenger.get_dictionary( <text_longer_than_50> @TO@ @type:atom_expr@ @[7289,7353]@ self.convert_loguniform_categorical(challenger.get <text_longer_than_50>
+---------------------UPD @type:trailer@ @[6615,6634]@ .convert_loguniform @TO@ @type:trailer@ @[7293,7324]@ .convert_loguniform_categorical
+------------------------UPD @type:name@ @[6616,6634]@ convert_loguniform @TO@ @type:name@ @[7294,7324]@ convert_loguniform_categorical
+
+
+UPD @type:if_stmt@ @[6824,7687]@ if self.first_one:
+            params = []
+        <text_longer_than_50> @TO@ @type:if_stmt@ @[7514,8401]@ if self.first_one:
+            params = []
+        <text_longer_than_50>
+---UPD @type:suite@ @[6842,7195]@ params = []
+            for one_id in parameter_id <text_longer_than_50> @TO@ @type:suite@ @[7532,7897]@ params = []
+            for one_id in parameter_id <text_longer_than_50>
+------UPD @type:for_stmt@ @[6879,7195]@ for one_id in parameter_id_list:
+                i <text_longer_than_50> @TO@ @type:for_stmt@ @[7569,7897]@ for one_id in parameter_id_list:
+                i <text_longer_than_50>
+---------UPD @type:suite@ @[6911,7195]@ init_challenger = self.smbo_solver.nni_smac_start( <text_longer_than_50> @TO@ @type:suite@ @[7601,7897]@ init_challenger = self.smbo_solver.nni_smac_start( <text_longer_than_50>
+---UPD @type:suite@ @[7208,7687]@ challengers = self.smbo_solver.nni_smac_request_ch <text_longer_than_50> @TO@ @type:suite@ @[7910,8401]@ challengers = self.smbo_solver.nni_smac_request_ch <text_longer_than_50>
+------UPD @type:for_stmt@ @[7339,7687]@ for challenger in challengers:
+                if  <text_longer_than_50> @TO@ @type:for_stmt@ @[8041,8401]@ for challenger in challengers:
+                if  <text_longer_than_50>
+---------UPD @type:suite@ @[7369,7687]@ if cnt >= len(parameter_id_list):
+                 <text_longer_than_50> @TO@ @type:suite@ @[8071,8401]@ if cnt >= len(parameter_id_list):
+                 <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[7594,7662]@ params.append(self.convert_loguniform(challenger.g <text_longer_than_50> @TO@ @type:simple_stmt@ @[8296,8376]@ params.append(self.convert_loguniform_categorical( <text_longer_than_50>
+---------------UPD @type:atom_expr@ @[7594,7661]@ params.append(self.convert_loguniform(challenger.g <text_longer_than_50> @TO@ @type:atom_expr@ @[8296,8375]@ params.append(self.convert_loguniform_categorical( <text_longer_than_50>
+------------------UPD @type:trailer@ @[7607,7661]@ (self.convert_loguniform(challenger.get_dictionary <text_longer_than_50> @TO@ @type:trailer@ @[8309,8375]@ (self.convert_loguniform_categorical(challenger.ge <text_longer_than_50>
+---------------------UPD @type:atom_expr@ @[7608,7660]@ self.convert_loguniform(challenger.get_dictionary( <text_longer_than_50> @TO@ @type:atom_expr@ @[8310,8374]@ self.convert_loguniform_categorical(challenger.get <text_longer_than_50>
+------------------------UPD @type:trailer@ @[7612,7631]@ .convert_loguniform @TO@ @type:trailer@ @[8314,8345]@ .convert_loguniform_categorical
+---------------------------UPD @type:name@ @[7613,7631]@ convert_loguniform @TO@ @type:name@ @[8315,8345]@ convert_loguniform_categorical
+
+
+UPD @type:simple_stmt@ @[7122,7195]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50> @TO@ @type:simple_stmt@ @[6936,7013]@ return self.convert_loguniform_categorical(init_ch <text_longer_than_50>
+---INS @type:return_stmt@ @[6936,7012]@ return self.convert_loguniform_categorical(init_ch <text_longer_than_50> @TO@ @type:simple_stmt@ @[7122,7195]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50>
+---DEL @type:atom_expr@ @[7122,7194]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50> @FROM@ @type:simple_stmt@ @[7122,7195]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[7122,7195]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50> @TO@ @type:suite@ @[6069,6335]@ init_challenger = self.smbo_solver.nni_smac_start( <text_longer_than_50>
+---INS @type:return_stmt@ @[6936,7012]@ return self.convert_loguniform_categorical(init_ch <text_longer_than_50> @TO@ @type:simple_stmt@ @[7122,7195]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50>
+---DEL @type:atom_expr@ @[7122,7194]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50> @FROM@ @type:simple_stmt@ @[7122,7195]@ params.append(self.convert_loguniform(init_challen <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[7136,7193]@ self.convert_loguniform(init_challenger.get_dictio <text_longer_than_50> @TO@ @type:atom_expr@ @[6943,7012]@ self.convert_loguniform_categorical(init_challenge <text_longer_than_50>
+---UPD @type:trailer@ @[7140,7159]@ .convert_loguniform @TO@ @type:trailer@ @[6947,6978]@ .convert_loguniform_categorical
+------UPD @type:name@ @[7141,7159]@ convert_loguniform @TO@ @type:name@ @[6948,6978]@ convert_loguniform_categorical
+
+
+MOV @type:atom_expr@ @[7136,7193]@ self.convert_loguniform(init_challenger.get_dictio <text_longer_than_50> @TO@ @type:return_stmt@ @[6936,7012]@ return self.convert_loguniform_categorical(init_ch <text_longer_than_50>
+---UPD @type:trailer@ @[7140,7159]@ .convert_loguniform @TO@ @type:trailer@ @[6947,6978]@ .convert_loguniform_categorical
+------UPD @type:name@ @[7141,7159]@ convert_loguniform @TO@ @type:name@ @[6948,6978]@ convert_loguniform_categorical
+
+
+UPD @type:atom_expr@ @[6277,6334]@ self.convert_loguniform(init_challenger.get_dictio <text_longer_than_50> @TO@ @type:atom_expr@ @[7826,7895]@ self.convert_loguniform_categorical(init_challenge <text_longer_than_50>
+---UPD @type:trailer@ @[6281,6300]@ .convert_loguniform @TO@ @type:trailer@ @[7830,7861]@ .convert_loguniform_categorical
+------UPD @type:name@ @[6282,6300]@ convert_loguniform @TO@ @type:name@ @[7831,7861]@ convert_loguniform_categorical
+
+
+MOV @type:atom_expr@ @[6277,6334]@ self.convert_loguniform(init_challenger.get_dictio <text_longer_than_50> @TO@ @type:trailer@ @[7825,7896]@ (self.convert_loguniform_categorical(init_challeng <text_longer_than_50>
+---UPD @type:trailer@ @[6281,6300]@ .convert_loguniform @TO@ @type:trailer@ @[7830,7861]@ .convert_loguniform_categorical
+------UPD @type:name@ @[6282,6300]@ convert_loguniform @TO@ @type:name@ @[7831,7861]@ convert_loguniform_categorical
+
+

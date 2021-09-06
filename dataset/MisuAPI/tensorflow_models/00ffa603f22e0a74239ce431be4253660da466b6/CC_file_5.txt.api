@@ -1,0 +1,10 @@
+UPD @type:atom_expr@ @[2771,2821]@ tf.concat(axis=[tf.shape(weights), [1]], values=0) @TO@ @type:atom_expr@ @[2771,2821]@ tf.concat(axis=0, values=[tf.shape(weights), [1]])
+
+MOV @type:argument@ @[2781,2810]@ axis=[tf.shape(weights), [1]] @TO@ @type:arglist@ @[2781,2820]@ axis=[tf.shape(weights), [1]], values=0
+
+INS @type:argument@ @[2781,2787]@ axis=0 @TO@ @type:arglist@ @[2781,2820]@ axis=[tf.shape(weights), [1]], values=0
+
+DEL @type:argument@ @[2812,2820]@ values=0 @FROM@ @type:arglist@ @[2781,2820]@ axis=[tf.shape(weights), [1]], values=0
+
+UPD @type:atom_expr@ @[14133,14169]@ tf.concat(axis=embeddings, values=1) @TO@ @type:atom_expr@ @[14133,14169]@ tf.concat(axis=1, values=embeddings)
+

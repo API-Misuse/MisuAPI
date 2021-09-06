@@ -1,0 +1,78 @@
+commit a9b563437f7fc59d56afd43e55fcef99dd67d7d0
+Author: Fardin abdi <fardin@uber.com>
+Date:   Thu Mar 26 09:44:51 2020 -0700
+
+    Fixes bug with sample weight in torch (#1790)
+    
+    Signed-off-by: fardin abdi <fardin@uber.com>
+
+diff --git a/horovod/spark/torch/remote.py b/horovod/spark/torch/remote.py
+index aae774b..e33820e 100644
+--- a/horovod/spark/torch/remote.py
++++ b/horovod/spark/torch/remote.py
+@@ -235,6 +235,8 @@ def RemoteTrainer(estimator, metadata, last_checkpoint_state, run_id, dataset_id
+                         if cuda_available:
+                             inputs = [input.cuda() for input in inputs]
+                             labels = [label.cuda() for label in labels]
++                            if sample_weights:
++                                sample_weights = sample_weights.cuda()
+                         return inputs, labels, sample_weights
+ 
+                     def transform_outputs(outputs, labels):
+diff --git a/test/spark_common.py b/test/spark_common.py
+index f1e18d9..3bce999 100644
+--- a/test/spark_common.py
++++ b/test/spark_common.py
+@@ -85,10 +85,11 @@ def spark_session(app, cores=2, gpus=0, *args):
+ 
+ 
+ def create_xor_data(spark):
+-    data = [[0, 0, 0.0], [0, 1, 1.0], [1, 0, 1.0], [1, 1, 0.0]]
++    data = [[0, 0, 0.0, 0.1], [0, 1, 1.0, 0.2], [1, 0, 1.0, 0.3], [1, 1, 0.0, 0.4]]
+     schema = StructType([StructField('x1', IntegerType()),
+                          StructField('x2', IntegerType()),
+-                         StructField('y', FloatType())])
++                         StructField('y', FloatType()),
++                         StructField('weight', FloatType())])
+     raw_df = create_test_data_from_schema(spark, data, schema)
+ 
+     vector_assembler = VectorAssembler().setInputCols(['x1', 'x2']).setOutputCol('features')
+diff --git a/test/test_spark_torch.py b/test/test_spark_torch.py
+index aae4bd0..4224baa 100644
+--- a/test/test_spark_torch.py
++++ b/test/test_spark_torch.py
+@@ -26,6 +26,7 @@ from pyspark.sql.types import DoubleType, LongType
+ import mock
+ import torch
+ import torch.nn as nn
++from torch.nn import functional as F
+ import torch.optim as optim
+ 
+ import horovod.spark.torch as hvd
+@@ -63,7 +64,7 @@ class SparkTorchTests(unittest.TestCase):
+     def test_fit_model(self):
+         model = create_xor_model()
+         optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+-        loss = nn.BCELoss()
++        loss = F.binary_cross_entropy
+ 
+         with spark_session('test_fit_model') as spark:
+             df = create_xor_data(spark)
+@@ -80,7 +81,8 @@ class SparkTorchTests(unittest.TestCase):
+                     label_cols=['y'],
+                     batch_size=1,
+                     epochs=3,
+-                    verbose=2)
++                    verbose=2,
++                    sample_weight_col='weight')
+ 
+                 torch_model = torch_estimator.fit(df)
+ 
+@@ -145,6 +147,7 @@ class SparkTorchTests(unittest.TestCase):
+                 'x1': LongType,
+                 'x2': LongType,
+                 'features': VectorUDT,
++                'weight': DoubleType,
+                 'y': DoubleType,
+                 'y__output': VectorUDT
+             }

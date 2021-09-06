@@ -1,0 +1,21 @@
+commit e93ec37201f5f2116933ae96e505f409ddbf344d
+Author: Martin Wicke <martin.wicke@gmail.com>
+Date:   Sun Jan 8 01:18:20 2017 -0800
+
+    Fix xent call in mnist tutorial code
+    
+    Fixes #857.
+
+diff --git a/tutorials/image/mnist/convolutional.py b/tutorials/image/mnist/convolutional.py
+index b4582803..0f74aab1 100644
+--- a/tutorials/image/mnist/convolutional.py
++++ b/tutorials/image/mnist/convolutional.py
+@@ -228,7 +228,7 @@ def main(_):
+   # Training computation: logits + cross-entropy loss.
+   logits = model(train_data_node, True)
+   loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(
+-      logits, train_labels_node))
++      labels=train_labels_node, logits=logits))
+ 
+   # L2 regularization for the fully connected parameters.
+   regularizers = (tf.nn.l2_loss(fc1_weights) + tf.nn.l2_loss(fc1_biases) +

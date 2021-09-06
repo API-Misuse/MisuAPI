@@ -1,0 +1,17 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/a/coco.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/a/coco.py:40:6 - error: Import "pycocotools.coco" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/a/coco.py:41:6 - error: Import "pycocotools.cocoeval" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/a/coco.py:42:6 - error: Import "pycocotools" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/a/coco.py:48:6 - error: Import "config" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/a/coco.py:49:8 - error: Import "utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/matterport_Mask_RCNN/1c51787d8d8a5e4d08667178428cb99e31143713/a/coco.py:50:8 - error: Import "model" could not be resolved (reportMissingImports)
+6 errors, 0 warnings, 0 infos 
+Completed in 1.657sec
+
+time cost(in seconds): 1.8875787258148193

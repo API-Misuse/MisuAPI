@@ -1,0 +1,1225 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/3126
+  title: Introduce `NotFoundError` in `tfx.dsl.io.fileio` and remove dependency of
+    `PythonExecutorOperator` on TensorFlow GFile.
+  body: 'Introduce `NotFoundError` in `tfx.dsl.io.fileio` and remove dependency of
+    `PythonExecutorOperator` on TensorFlow GFile.
+
+    '
+sha: d14aa7086f05b696a68db3a932cc750a333c8567
+message: 'Introduce `NotFoundError` in `tfx.dsl.io.fileio` and remove dependency of
+  `PythonExecutorOperator` on TensorFlow GFile.
+
+
+  PiperOrigin-RevId: 354008399'
+commit_log: "commit d14aa7086f05b696a68db3a932cc750a333c8567\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Tue Jan 26 20:03:50 2021 -0800\n\n    Introduce `NotFoundError` in `tfx.dsl.io.fileio`\
+  \ and remove dependency of `PythonExecutorOperator` on TensorFlow GFile.\n    \n\
+  \    PiperOrigin-RevId: 354008399"
+contained_keywords:
+- notfounderror
+commit_time: 2021-01-26 20:03:50 -0800
+commit_author: tfx-team
+added_files: 2
+removed_files: 0
+modified_files: 8
+patched_file_0:
+  add_line_no:
+  - - 60
+    - '    component-level configs are included in the `tfx` package directly.
+
+      '
+  - - 61
+    - '*   The `tfx.dsl.io.fileio.NotFoundError` exception unifies handling of not-
+
+      '
+  - - 62
+    - '    found errors across different filesystem plugin backends.
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '    componnent-level configs are included in the `tfx` package directly.
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: RELEASE.md
+  removed: 1
+  source_file: a/RELEASE.md
+  target_file: b/RELEASE.md
+patched_file_1:
+  add_line_no:
+  - - 559
+    - '  files = fileio.glob(split_glob_pattern)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '  try:
+
+      '
+  - - null
+    - '    files = fileio.glob(split_glob_pattern)
+
+      '
+  - - null
+    - '  except tf.errors.NotFoundError:
+
+      '
+  - - null
+    - '    # TODO(b/168831931): fileio.glob shouldn''t throw NotFoundError.
+
+      '
+  - - null
+    - '    files = []
+
+      '
+  - - null
+    - '
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/components/example_gen/utils.py
+  removed: 6
+  source_file: a/tfx/components/example_gen/utils.py
+  target_file: b/tfx/components/example_gen/utils.py
+patched_file_2:
+  add_line_no:
+  - - 190
+    - '    filenames = fileio.glob(glob_pattern)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    try:
+
+      '
+  - - null
+    - '      filenames = fileio.glob(glob_pattern)
+
+      '
+  - - null
+    - '    except tf.errors.NotFoundError:
+
+      '
+  - - null
+    - '      filenames = []
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/components/infra_validator/request_builder.py
+  removed: 4
+  source_file: a/tfx/components/infra_validator/request_builder.py
+  target_file: b/tfx/components/infra_validator/request_builder.py
+patched_file_3:
+  add_line_no:
+  - - 32
+    - '# Expose `NotFoundError` as `fileio.NotFoundError`.
+
+      '
+  - - 33
+    - 'NotFoundError = filesystem.NotFoundError
+
+      '
+  - - 34
+    - '
+
+      '
+  - - 35
+    - '
+
+      '
+  added: 4
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/dsl/io/fileio.py
+  removed: 0
+  source_file: a/tfx/dsl/io/fileio.py
+  target_file: b/tfx/dsl/io/fileio.py
+patched_file_4:
+  add_line_no:
+  - - 26
+    - 'class NotFoundError(IOError):
+
+      '
+  - - 27
+    - '  pass
+
+      '
+  - - 28
+    - '
+
+      '
+  - - 29
+    - '
+
+      '
+  added: 4
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/dsl/io/filesystem.py
+  removed: 0
+  source_file: a/tfx/dsl/io/filesystem.py
+  target_file: b/tfx/dsl/io/filesystem.py
+patched_file_5:
+  add_line_no:
+  - - 39
+    - '    try:
+
+      '
+  - - 40
+    - '      return open(name, mode=mode)
+
+      '
+  - - 41
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 42
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 50
+    - '    try:
+
+      '
+  - - 51
+    - '      shutil.copyfile(src, dst)
+
+      '
+  - - 52
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 53
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 69
+    - '    try:
+
+      '
+  - - 70
+    - '      return os.listdir(path)
+
+      '
+  - - 71
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 72
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 80
+    - '    try:
+
+      '
+  - - 81
+    - '      os.mkdir(path)
+
+      '
+  - - 82
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 83
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 87
+    - '    try:
+
+      '
+  - - 88
+    - '      os.remove(path)
+
+      '
+  - - 89
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 90
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 98
+    - '    try:
+
+      '
+  - - 99
+    - '      os.rename(src, dst)
+
+      '
+  - - 100
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 101
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 105
+    - '    try:
+
+      '
+  - - 106
+    - '      shutil.rmtree(path)
+
+      '
+  - - 107
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 108
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 112
+    - '    try:
+
+      '
+  - - 113
+    - '      return os.stat(path)
+
+      '
+  - - 114
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 115
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  - - 123
+    - '    try:
+
+      '
+  - - 124
+    - '      yield from os.walk(top, topdown=topdown, onerror=onerror)
+
+      '
+  - - 125
+    - '    except FileNotFoundError as e:
+
+      '
+  - - 126
+    - '      raise filesystem.NotFoundError() from e
+
+      '
+  added: 36
+  del_line_no:
+  - - null
+    - '    return open(name, mode=mode)
+
+      '
+  - - null
+    - '    shutil.copyfile(src, dst)
+
+      '
+  - - null
+    - '    return os.listdir(path)
+
+      '
+  - - null
+    - '    os.mkdir(path)
+
+      '
+  - - null
+    - '    os.remove(path)
+
+      '
+  - - null
+    - '    os.rename(src, dst)
+
+      '
+  - - null
+    - '    shutil.rmtree(path)
+
+      '
+  - - null
+    - '    return os.stat(path)
+
+      '
+  - - null
+    - '    yield from os.walk(top, topdown=topdown, onerror=onerror)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/dsl/io/plugins/local.py
+  removed: 9
+  source_file: a/tfx/dsl/io/plugins/local.py
+  target_file: b/tfx/dsl/io/plugins/local.py
+patched_file_6:
+  add_line_no:
+  - - 1
+    - '# Copyright 2021 Google LLC. All Rights Reserved.
+
+      '
+  - - 2
+    - '#
+
+      '
+  - - 3
+    - '# Licensed under the Apache License, Version 2.0 (the "License");
+
+      '
+  - - 4
+    - '# you may not use this file except in compliance with the License.
+
+      '
+  - - 5
+    - '# You may obtain a copy of the License at
+
+      '
+  - - 6
+    - '#
+
+      '
+  - - 7
+    - '#     http://www.apache.org/licenses/LICENSE-2.0
+
+      '
+  - - 8
+    - '#
+
+      '
+  - - 9
+    - '# Unless required by applicable law or agreed to in writing, software
+
+      '
+  - - 10
+    - '# distributed under the License is distributed on an "AS IS" BASIS,
+
+      '
+  - - 11
+    - '# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+      '
+  - - 12
+    - '# See the License for the specific language governing permissions and
+
+      '
+  - - 13
+    - '# limitations under the License.
+
+      '
+  - - 14
+    - '"""Tests for tfx.dsl.io.plugins.local."""
+
+      '
+  - - 15
+    - '
+
+      '
+  - - 16
+    - 'from __future__ import absolute_import
+
+      '
+  - - 17
+    - 'from __future__ import division
+
+      '
+  - - 18
+    - 'from __future__ import print_function
+
+      '
+  - - 19
+    - '
+
+      '
+  - - 20
+    - 'import os
+
+      '
+  - - 21
+    - 'import tempfile
+
+      '
+  - - 22
+    - '
+
+      '
+  - - 23
+    - 'import tensorflow as tf
+
+      '
+  - - 24
+    - 'from tfx.dsl.io.filesystem import NotFoundError
+
+      '
+  - - 25
+    - 'from tfx.dsl.io.plugins.local import LocalFilesystem
+
+      '
+  - - 26
+    - '
+
+      '
+  - - 27
+    - '
+
+      '
+  - - 28
+    - 'class LocalTest(tf.test.TestCase):
+
+      '
+  - - 29
+    - '
+
+      '
+  - - 30
+    - '  def testNotFound(self):
+
+      '
+  - - 31
+    - '    temp_dir = tempfile.mkdtemp()
+
+      '
+  - - 32
+    - '
+
+      '
+  - - 33
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 34
+    - '      LocalFilesystem.open(os.path.join(temp_dir, ''foo'')).read()
+
+      '
+  - - 35
+    - '
+
+      '
+  - - 36
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 37
+    - '      LocalFilesystem.copy(
+
+      '
+  - - 38
+    - '          os.path.join(temp_dir, ''foo''), os.path.join(temp_dir, ''bar''))
+
+      '
+  - - 39
+    - '
+
+      '
+  - - 40
+    - '    # No exception raised.
+
+      '
+  - - 41
+    - '    self.assertEqual(LocalFilesystem.glob(os.path.join(temp_dir, ''foo/*'')),
+      [])
+
+      '
+  - - 42
+    - '
+
+      '
+  - - 43
+    - '    # No exception raised.
+
+      '
+  - - 44
+    - '    self.assertEqual(
+
+      '
+  - - 45
+    - '        LocalFilesystem.isdir(os.path.join(temp_dir, ''foo/bar'')), False)
+
+      '
+  - - 46
+    - '
+
+      '
+  - - 47
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 48
+    - '      LocalFilesystem.listdir(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 49
+    - '
+
+      '
+  - - 50
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 51
+    - '      LocalFilesystem.mkdir(os.path.join(temp_dir, ''foo/bar''))
+
+      '
+  - - 52
+    - '
+
+      '
+  - - 53
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 54
+    - '      LocalFilesystem.remove(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 55
+    - '
+
+      '
+  - - 56
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 57
+    - '      LocalFilesystem.rmtree(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 58
+    - '
+
+      '
+  - - 59
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 60
+    - '      LocalFilesystem.stat(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 61
+    - '
+
+      '
+  - - 62
+    - '    # No exception raised.
+
+      '
+  - - 63
+    - '    self.assertEqual(
+
+      '
+  - - 64
+    - '        list(LocalFilesystem.walk(os.path.join(temp_dir, ''foo''))), [])
+
+      '
+  - - 65
+    - '
+
+      '
+  - - 66
+    - '
+
+      '
+  - - 67
+    - 'if __name__ == ''__main__'':
+
+      '
+  - - 68
+    - '  tf.test.main()
+
+      '
+  added: 68
+  del_line_no: []
+  is_added_file: true
+  is_binary_file: false
+  is_modified_file: false
+  is_removed_file: false
+  is_rename: false
+  path: tfx/dsl/io/plugins/local_test.py
+  removed: 0
+  source_file: /dev/null
+  target_file: b/tfx/dsl/io/plugins/local_test.py
+patched_file_7:
+  add_line_no:
+  - - 41
+    - '      # Because the GFile implementation delays I/O until necessary, we cannot
+
+      '
+  - - 42
+    - '      # catch `NotFoundError` here.
+
+      '
+  - - 47
+    - '      try:
+
+      '
+  - - 48
+    - '        tf.io.gfile.copy(src, dst, overwrite=overwrite)
+
+      '
+  - - 49
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 50
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  - - 58
+    - '      try:
+
+      '
+  - - 59
+    - '        return tf.io.gfile.glob(pattern)
+
+      '
+  - - 60
+    - '      except tf.errors.NotFoundError:
+
+      '
+  - - 61
+    - '        return []
+
+      '
+  - - 69
+    - '      try:
+
+      '
+  - - 70
+    - '        return tf.io.gfile.listdir(path)
+
+      '
+  - - 71
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 72
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  - - 80
+    - '      try:
+
+      '
+  - - 81
+    - '        tf.io.gfile.mkdir(path)
+
+      '
+  - - 82
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 83
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  - - 87
+    - '      try:
+
+      '
+  - - 88
+    - '        tf.io.gfile.remove(path)
+
+      '
+  - - 89
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 90
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  - - 94
+    - '      try:
+
+      '
+  - - 95
+    - '        tf.io.gfile.rename(src, dst, overwrite=overwrite)
+
+      '
+  - - 96
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 97
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  - - 101
+    - '      try:
+
+      '
+  - - 102
+    - '        tf.io.gfile.rmtree(path)
+
+      '
+  - - 103
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 104
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  - - 108
+    - '      try:
+
+      '
+  - - 109
+    - '        return tf.io.gfile.stat(path)
+
+      '
+  - - 110
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 111
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  - - 119
+    - '      try:
+
+      '
+  - - 120
+    - '        yield from tf.io.gfile.walk(top, topdown=topdown, onerror=onerror)
+
+      '
+  - - 121
+    - '      except tf.errors.NotFoundError as e:
+
+      '
+  - - 122
+    - '        raise filesystem.NotFoundError() from e
+
+      '
+  added: 38
+  del_line_no:
+  - - null
+    - '      tf.io.gfile.copy(src, dst, overwrite=overwrite)
+
+      '
+  - - null
+    - '      return tf.io.gfile.glob(pattern)
+
+      '
+  - - null
+    - '      return tf.io.gfile.listdir(path)
+
+      '
+  - - null
+    - '      tf.io.gfile.mkdir(path)
+
+      '
+  - - null
+    - '      tf.io.gfile.remove(path)
+
+      '
+  - - null
+    - '      tf.io.gfile.rename(src, dst, overwrite=overwrite)
+
+      '
+  - - null
+    - '      tf.io.gfile.rmtree(path)
+
+      '
+  - - null
+    - '      return tf.io.gfile.stat(path)
+
+      '
+  - - null
+    - '      yield from tf.io.gfile.walk(top, topdown=topdown, onerror=onerror)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/dsl/io/plugins/tensorflow_gfile.py
+  removed: 9
+  source_file: a/tfx/dsl/io/plugins/tensorflow_gfile.py
+  target_file: b/tfx/dsl/io/plugins/tensorflow_gfile.py
+patched_file_8:
+  add_line_no:
+  - - 1
+    - '# Copyright 2021 Google LLC. All Rights Reserved.
+
+      '
+  - - 2
+    - '#
+
+      '
+  - - 3
+    - '# Licensed under the Apache License, Version 2.0 (the "License");
+
+      '
+  - - 4
+    - '# you may not use this file except in compliance with the License.
+
+      '
+  - - 5
+    - '# You may obtain a copy of the License at
+
+      '
+  - - 6
+    - '#
+
+      '
+  - - 7
+    - '#     http://www.apache.org/licenses/LICENSE-2.0
+
+      '
+  - - 8
+    - '#
+
+      '
+  - - 9
+    - '# Unless required by applicable law or agreed to in writing, software
+
+      '
+  - - 10
+    - '# distributed under the License is distributed on an "AS IS" BASIS,
+
+      '
+  - - 11
+    - '# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+      '
+  - - 12
+    - '# See the License for the specific language governing permissions and
+
+      '
+  - - 13
+    - '# limitations under the License.
+
+      '
+  - - 14
+    - '"""Tests for tfx.dsl.io.plugins.tensorflow_gfile."""
+
+      '
+  - - 15
+    - '
+
+      '
+  - - 16
+    - 'from __future__ import absolute_import
+
+      '
+  - - 17
+    - 'from __future__ import division
+
+      '
+  - - 18
+    - 'from __future__ import print_function
+
+      '
+  - - 19
+    - '
+
+      '
+  - - 20
+    - 'import os
+
+      '
+  - - 21
+    - 'import tempfile
+
+      '
+  - - 22
+    - '
+
+      '
+  - - 23
+    - 'import tensorflow as tf
+
+      '
+  - - 24
+    - '
+
+      '
+  - - 25
+    - 'from tfx.dsl.io.filesystem import NotFoundError
+
+      '
+  - - 26
+    - 'from tfx.dsl.io.plugins.tensorflow_gfile import TensorflowFilesystem
+
+      '
+  - - 27
+    - '
+
+      '
+  - - 28
+    - '
+
+      '
+  - - 29
+    - 'class TensorflowGfileTest(tf.test.TestCase):
+
+      '
+  - - 30
+    - '
+
+      '
+  - - 31
+    - '  def testNotFound(self):
+
+      '
+  - - 32
+    - '    temp_dir = tempfile.mkdtemp()
+
+      '
+  - - 33
+    - '
+
+      '
+  - - 34
+    - '    # Because the GFile implementation delays I/O until necessary, we cannot
+
+      '
+  - - 35
+    - '    # catch `NotFoundError` here, so this does not raise an error.
+
+      '
+  - - 36
+    - '    TensorflowFilesystem.open(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 37
+    - '
+
+      '
+  - - 38
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 39
+    - '      TensorflowFilesystem.copy(
+
+      '
+  - - 40
+    - '          os.path.join(temp_dir, ''foo''), os.path.join(temp_dir, ''bar''))
+
+      '
+  - - 41
+    - '
+
+      '
+  - - 42
+    - '    # No exception raised.
+
+      '
+  - - 43
+    - '    self.assertEqual(
+
+      '
+  - - 44
+    - '        TensorflowFilesystem.glob(os.path.join(temp_dir, ''foo/*'')), [])
+
+      '
+  - - 45
+    - '
+
+      '
+  - - 46
+    - '    # No exception raised.
+
+      '
+  - - 47
+    - '    self.assertEqual(
+
+      '
+  - - 48
+    - '        TensorflowFilesystem.isdir(os.path.join(temp_dir, ''foo/bar'')), False)
+
+      '
+  - - 49
+    - '
+
+      '
+  - - 50
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 51
+    - '      TensorflowFilesystem.listdir(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 52
+    - '
+
+      '
+  - - 53
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 54
+    - '      TensorflowFilesystem.mkdir(os.path.join(temp_dir, ''foo/bar''))
+
+      '
+  - - 55
+    - '
+
+      '
+  - - 56
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 57
+    - '      TensorflowFilesystem.remove(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 58
+    - '
+
+      '
+  - - 59
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 60
+    - '      TensorflowFilesystem.rmtree(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 61
+    - '
+
+      '
+  - - 62
+    - '    with self.assertRaises(NotFoundError):
+
+      '
+  - - 63
+    - '      TensorflowFilesystem.stat(os.path.join(temp_dir, ''foo''))
+
+      '
+  - - 64
+    - '
+
+      '
+  - - 65
+    - '    # No exception raised.
+
+      '
+  - - 66
+    - '    self.assertEqual(
+
+      '
+  - - 67
+    - '        list(TensorflowFilesystem.walk(os.path.join(temp_dir, ''foo''))), [])
+
+      '
+  - - 68
+    - '
+
+      '
+  - - 69
+    - '
+
+      '
+  - - 70
+    - 'if __name__ == ''__main__'':
+
+      '
+  - - 71
+    - '  tf.test.main()
+
+      '
+  added: 71
+  del_line_no: []
+  is_added_file: true
+  is_binary_file: false
+  is_modified_file: false
+  is_removed_file: false
+  is_rename: false
+  path: tfx/dsl/io/plugins/tensorflow_gfile_test.py
+  removed: 0
+  source_file: /dev/null
+  target_file: b/tfx/dsl/io/plugins/tensorflow_gfile_test.py
+patched_file_9:
+  add_line_no:
+  - - 113
+    - '      # read from the executor_output_uri.
+
+      '
+  - - 114
+    - '      if fileio.exists(execution_info.execution_output_uri):
+
+      '
+  - - 115
+    - '        result = execution_result_pb2.ExecutorOutput.FromString(
+
+      '
+  - - 116
+    - '            fileio.open(execution_info.execution_output_uri, ''rb'').read())
+
+      '
+  - - 117
+    - '      else:
+
+      '
+  added: 5
+  del_line_no:
+  - - null
+    - 'import tensorflow as tf
+
+      '
+  - - null
+    - '      # read if from the executor_output_uri.
+
+      '
+  - - null
+    - '      try:
+
+      '
+  - - null
+    - '        with fileio.open(execution_info.execution_output_uri, ''rb'') as f:
+
+      '
+  - - null
+    - '          result = execution_result_pb2.ExecutorOutput.FromString(
+
+      '
+  - - null
+    - '              f.read())
+
+      '
+  - - null
+    - '      except tf.errors.NotFoundError:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/python_executor_operator.py
+  removed: 7
+  source_file: a/tfx/orchestration/portable/python_executor_operator.py
+  target_file: b/tfx/orchestration/portable/python_executor_operator.py

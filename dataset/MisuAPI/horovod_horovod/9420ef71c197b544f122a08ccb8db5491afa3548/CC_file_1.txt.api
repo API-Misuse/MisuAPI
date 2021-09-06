@@ -1,0 +1,3 @@
+INS @type:simple_stmt@ @[2309,2346]@ K.get_session().run(var.initializer) @TO@ @type:suite@ @[2246,2406]@ var = tf.Variable(value, name=metric)
+             <text_longer_than_50>
+

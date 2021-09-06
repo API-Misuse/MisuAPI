@@ -1,0 +1,21 @@
+INS @type:simple_stmt@ @[1706,1725]@ self.scope = scope @TO@ @type:suite@ @[1095,1703]@ #Create variables
+			kernel_shape = (kernel_size,  <text_longer_than_50>
+
+INS @type:with_stmt@ @[4012,4829]@ with tf.variable_scope(self.scope):
+			#Reshape to <text_longer_than_50> @TO@ @type:suite@ @[3891,4829]@ '''During this call, we change to channel last sch <text_longer_than_50>
+
+INS @type:with_stmt@ @[4012,4829]@ with tf.variable_scope(self.scope):
+			#Reshape to <text_longer_than_50> @TO@ @type:suite@ @[3891,4829]@ '''During this call, we change to channel last sch <text_longer_than_50>
+
+INS @type:with_stmt@ @[5076,6335]@ with tf.variable_scope(self.scope):
+			#input: [ba <text_longer_than_50> @TO@ @type:suite@ @[4866,6335]@ '''At sequential inference times:
+		we adopt fast  <text_longer_than_50>
+
+INS @type:with_stmt@ @[5076,6335]@ with tf.variable_scope(self.scope):
+			#input: [ba <text_longer_than_50> @TO@ @type:suite@ @[4866,6335]@ '''At sequential inference times:
+		we adopt fast  <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4119,4202]@ tf.nn.conv1d(inputs_, self.kernel,
+			stride=1, pa <text_longer_than_50> @TO@ @type:atom_expr@ @[4182,4266]@ tf.nn.conv1d(inputs_, self.kernel,
+				stride=1, p <text_longer_than_50>
+

@@ -1,0 +1,4 @@
+INS @type:simple_stmt@ @[2214,2288]@ print('Memory utilization (SetUpClass): %.3f MB' % <text_longer_than_50> @TO@ @type:suite@ @[1478,2015]@ self.tmp_dir = tempfile.mkdtemp()
+        self.dat <text_longer_than_50>
+
+

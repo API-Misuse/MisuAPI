@@ -1,0 +1,26 @@
+INS @type:try_stmt@ @[6878,7428]@ try:
+            with open(procmap, 'r') as f:
+    <text_longer_than_50> @TO@ @type:suite@ @[6521,7225]@ """
+        Find so from /proc/pid/maps
+        On <text_longer_than_50>
+
+INS @type:try_stmt@ @[6878,7428]@ try:
+            with open(procmap, 'r') as f:
+    <text_longer_than_50> @TO@ @type:suite@ @[6521,7225]@ """
+        Find so from /proc/pid/maps
+        On <text_longer_than_50>
+
+INS @type:suite@ @[6882,7270]@ with open(procmap, 'r') as f:
+                for  <text_longer_than_50> @TO@ @type:try_stmt@ @[6878,7428]@ try:
+            with open(procmap, 'r') as f:
+    <text_longer_than_50>
+
+INS @type:suite@ @[6882,7270]@ with open(procmap, 'r') as f:
+                for  <text_longer_than_50> @TO@ @type:try_stmt@ @[6878,7428]@ try:
+            with open(procmap, 'r') as f:
+    <text_longer_than_50>
+
+MOV @type:with_stmt@ @[6878,7225]@ with open(procmap, 'r') as f:
+            for line <text_longer_than_50> @TO@ @type:suite@ @[6882,7270]@ with open(procmap, 'r') as f:
+                for  <text_longer_than_50>
+

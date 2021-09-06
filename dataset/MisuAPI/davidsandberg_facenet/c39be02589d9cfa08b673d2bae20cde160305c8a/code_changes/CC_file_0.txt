@@ -1,0 +1,26 @@
+UPD @type:for_stmt@ @[22370,22801]@ for path in paths.split(':'):
+    path_exp = os.pa <text_longer_than_50> @TO@ @type:for_stmt@ @[22370,22840]@ for path in paths.split(':'):
+    path_exp = os.pa <text_longer_than_50>
+---UPD @type:suite@ @[22399,22801]@ path_exp = os.path.expanduser(path)
+    classes =  <text_longer_than_50> @TO@ @type:suite@ @[22399,22840]@ path_exp = os.path.expanduser(path)
+    classes =  <text_longer_than_50>
+------UPD @type:for_stmt@ @[22530,22801]@ for i in range(nrof_classes):
+      class_name = c <text_longer_than_50> @TO@ @type:for_stmt@ @[22530,22840]@ for i in range(nrof_classes):
+      class_name = c <text_longer_than_50>
+---------UPD @type:suite@ @[22559,22801]@ class_name = classes[i]
+      facedir = os.path.jo <text_longer_than_50> @TO@ @type:suite@ @[22559,22840]@ class_name = classes[i]
+      facedir = os.path.jo <text_longer_than_50>
+------------INS @type:if_stmt@ @[22647,22840]@ if os.path.isdir(facedir):
+        images = os.lis <text_longer_than_50> @TO@ @type:suite@ @[22559,22801]@ class_name = classes[i]
+      facedir = os.path.jo <text_longer_than_50>
+---------------INS @type:suite@ @[22673,22840]@ images = os.listdir(facedir)
+        image_paths = <text_longer_than_50> @TO@ @type:if_stmt@ @[22647,22840]@ if os.path.isdir(facedir):
+        images = os.lis <text_longer_than_50>
+------------MOV @type:simple_stmt@ @[22647,22676]@ images = os.listdir(facedir) @TO@ @type:suite@ @[22673,22840]@ images = os.listdir(facedir)
+        image_paths = <text_longer_than_50>
+------------MOV @type:simple_stmt@ @[22682,22743]@ image_paths = map(lambda x: os.path.join(facedir,x <text_longer_than_50> @TO@ @type:suite@ @[22673,22840]@ images = os.listdir(facedir)
+        image_paths = <text_longer_than_50>
+------------MOV @type:simple_stmt@ @[22749,22801]@ dataset.append(ImageClass(class_name, image_paths) <text_longer_than_50> @TO@ @type:suite@ @[22673,22840]@ images = os.listdir(facedir)
+        image_paths = <text_longer_than_50>
+
+

@@ -1,0 +1,5 @@
+INS @type:simple_stmt@ @[814,843]@ from six.moves import xrange @TO@ @type:file_input@ @[656,2048]@ """Tests for L2L TensorFlow implementation."""
+
+fr <text_longer_than_50>
+
+

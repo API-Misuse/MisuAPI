@@ -1,0 +1,97 @@
+INS @type:simple_stmt@ @[1083,1135]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50> @TO@ @type:suite@ @[1044,1299]@ text = text.ljust(25)
+        text += ("shape: {:2 <text_longer_than_50>
+
+INS @type:simple_stmt@ @[1083,1135]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50> @TO@ @type:suite@ @[1044,1299]@ text = text.ljust(25)
+        text += ("shape: {:2 <text_longer_than_50>
+
+INS @type:expr_stmt@ @[1083,1134]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50> @TO@ @type:simple_stmt@ @[1083,1135]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50>
+
+INS @type:expr_stmt@ @[1083,1134]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50> @TO@ @type:simple_stmt@ @[1083,1135]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50>
+
+INS @type:atom@ @[1091,1134]@ ("shape: {:20}  ".format(str(array.shape))) @TO@ @type:expr_stmt@ @[1083,1134]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50>
+
+INS @type:atom@ @[1091,1134]@ ("shape: {:20}  ".format(str(array.shape))) @TO@ @type:expr_stmt@ @[1083,1134]@ text += ("shape: {:20}  ".format(str(array.shape)) <text_longer_than_50>
+
+INS @type:atom_expr@ @[1092,1133]@ "shape: {:20}  ".format(str(array.shape)) @TO@ @type:atom@ @[1091,1134]@ ("shape: {:20}  ".format(str(array.shape)))
+
+INS @type:atom_expr@ @[1092,1133]@ "shape: {:20}  ".format(str(array.shape)) @TO@ @type:atom@ @[1091,1134]@ ("shape: {:20}  ".format(str(array.shape)))
+
+INS @type:trailer@ @[1115,1133]@ (str(array.shape)) @TO@ @type:atom_expr@ @[1092,1133]@ "shape: {:20}  ".format(str(array.shape))
+
+INS @type:trailer@ @[1115,1133]@ (str(array.shape)) @TO@ @type:atom_expr@ @[1092,1133]@ "shape: {:20}  ".format(str(array.shape))
+
+INS @type:if_stmt@ @[1143,1318]@ if array.size:
+            text += ("min: {:10.5f} <text_longer_than_50> @TO@ @type:suite@ @[1044,1299]@ text = text.ljust(25)
+        text += ("shape: {:2 <text_longer_than_50>
+
+INS @type:if_stmt@ @[1143,1318]@ if array.size:
+            text += ("min: {:10.5f} <text_longer_than_50> @TO@ @type:suite@ @[1044,1299]@ text = text.ljust(25)
+        text += ("shape: {:2 <text_longer_than_50>
+
+INS @type:suite@ @[1157,1243]@ text += ("min: {:10.5f}  max: {:10.5f}".format(arr <text_longer_than_50> @TO@ @type:if_stmt@ @[1143,1318]@ if array.size:
+            text += ("min: {:10.5f} <text_longer_than_50>
+
+INS @type:suite@ @[1157,1243]@ text += ("min: {:10.5f}  max: {:10.5f}".format(arr <text_longer_than_50> @TO@ @type:if_stmt@ @[1143,1318]@ if array.size:
+            text += ("min: {:10.5f} <text_longer_than_50>
+
+INS @type:simple_stmt@ @[1326,1361]@ text += "  {}".format(array.dtype) @TO@ @type:suite@ @[1044,1299]@ text = text.ljust(25)
+        text += ("shape: {:2 <text_longer_than_50>
+
+INS @type:simple_stmt@ @[1326,1361]@ text += "  {}".format(array.dtype) @TO@ @type:suite@ @[1044,1299]@ text = text.ljust(25)
+        text += ("shape: {:2 <text_longer_than_50>
+
+INS @type:expr_stmt@ @[1326,1360]@ text += "  {}".format(array.dtype) @TO@ @type:simple_stmt@ @[1326,1361]@ text += "  {}".format(array.dtype)
+
+INS @type:expr_stmt@ @[1326,1360]@ text += "  {}".format(array.dtype) @TO@ @type:simple_stmt@ @[1326,1361]@ text += "  {}".format(array.dtype)
+
+INS @type:atom_expr@ @[1334,1360]@ "  {}".format(array.dtype) @TO@ @type:expr_stmt@ @[1326,1360]@ text += "  {}".format(array.dtype)
+
+INS @type:atom_expr@ @[1334,1360]@ "  {}".format(array.dtype) @TO@ @type:expr_stmt@ @[1326,1360]@ text += "  {}".format(array.dtype)
+
+INS @type:trailer@ @[1347,1360]@ (array.dtype) @TO@ @type:atom_expr@ @[1334,1360]@ "  {}".format(array.dtype)
+
+INS @type:trailer@ @[1347,1360]@ (array.dtype) @TO@ @type:atom_expr@ @[1334,1360]@ "  {}".format(array.dtype)
+
+UPD @type:atom_expr@ @[1092,1297]@ "shape: {:20}  min: {:10.5f}  max: {:10.5f}  {}".f <text_longer_than_50> @TO@ @type:atom_expr@ @[1179,1241]@ "min: {:10.5f}  max: {:10.5f}".format(array.min(), <text_longer_than_50>
+
+DEL @type:test@ @[1191,1224]@ array.min() if array.size else "" @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+DEL @type:operator@ @[1224,1225]@ , @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+DEL @type:test@ @[1238,1271]@ array.max() if array.size else "" @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+DEL @type:operator@ @[1271,1272]@ , @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[1083,1299]@ text += ("shape: {:20}  min: {:10.5f}  max: {:10.5 <text_longer_than_50> @TO@ @type:suite@ @[1157,1243]@ text += ("min: {:10.5f}  max: {:10.5f}".format(arr <text_longer_than_50>
+
+UPD @type:atom_expr@ @[1092,1297]@ "shape: {:20}  min: {:10.5f}  max: {:10.5f}  {}".f <text_longer_than_50> @TO@ @type:atom_expr@ @[1179,1241]@ "min: {:10.5f}  max: {:10.5f}".format(array.min(), <text_longer_than_50>
+
+DEL @type:test@ @[1191,1224]@ array.min() if array.size else "" @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+DEL @type:operator@ @[1224,1225]@ , @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+DEL @type:test@ @[1238,1271]@ array.max() if array.size else "" @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+DEL @type:operator@ @[1271,1272]@ , @FROM@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+MOV @type:atom_expr@ @[1206,1216]@ array.size @TO@ @type:if_stmt@ @[1143,1318]@ if array.size:
+            text += ("min: {:10.5f} <text_longer_than_50>
+
+MOV @type:atom_expr@ @[1285,1296]@ array.dtype @TO@ @type:trailer@ @[1347,1360]@ (array.dtype)
+
+MOV @type:atom_expr@ @[1161,1177]@ str(array.shape) @TO@ @type:trailer@ @[1115,1133]@ (str(array.shape))
+
+MOV @type:atom_expr@ @[1191,1202]@ array.min() @TO@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+
+MOV @type:atom_expr@ @[1238,1249]@ array.max() @TO@ @type:arglist@ @[1161,1296]@ str(array.shape),
+            array.min() if array <text_longer_than_50>
+

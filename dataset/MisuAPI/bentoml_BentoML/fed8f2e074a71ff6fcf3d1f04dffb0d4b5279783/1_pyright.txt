@@ -1,0 +1,28 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 3 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:29:6 - error: Import "bentoml.utils.exceptions" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:30:6 - error: Import "bentoml.service_env" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:31:6 - error: Import "bentoml.artifact" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:32:6 - error: Import "bentoml.utils.s3" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:315:14 - error: Import "bentoml" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:334:14 - error: Import "bentoml.archive" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:277:14 - error: Cannot assign member "name" for type "BentoService"
+    Expression of type "str" cannot be assigned to member "name" of class "BentoService"
+      Type "str" cannot be assigned to type "() -> str" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/service.py:277:14 - error: Declaration "name" is obscured by a declaration of the same name (reportGeneralTypeIssues)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/handlers/dataframe_handler.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/handlers/dataframe_handler.py:24:8 - error: Import "pandas" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/handlers/dataframe_handler.py:25:6 - warning: Import "flask" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/handlers/dataframe_handler.py:27:6 - error: Import "bentoml.handlers.base_handlers" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/handlers/dataframe_handler.py:28:6 - error: Import "bentoml.utils.s3" could not be resolved (reportMissingImports)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/utils/__init__.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783/a/bentoml/utils/__init__.py:25:10 - error: Import "pathlib2" could not be resolved (reportMissingImports)
+12 errors, 1 warning, 0 infos 
+Completed in 1.833sec
+
+time cost(in seconds): 2.0614686012268066

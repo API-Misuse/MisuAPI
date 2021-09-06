@@ -1,0 +1,41 @@
+issues_cnt: 0
+sha: 8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749
+message: fix bugs
+commit_log: "commit 8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749\nAuthor: nl8590687 <3210346136@qq.com>\n\
+  Date:   Thu Apr 5 19:08:19 2018 +0800\n\n    fix bugs"
+contained_keywords:
+- fix
+- bugs
+commit_time: 2018-04-05 19:08:19 +0800
+commit_author: nl8590687
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 129
+    - "\t\tif('Windows' == plat.system()):\n"
+  - - 130
+    - "\t\t\tfilename=filename.replace('/','\\\\') # windows\u7CFB\u7EDF\u4E0B\u9700\
+      \u8981\u6267\u884C\u8FD9\u4E00\u884C\uFF0C\u5BF9\u6587\u4EF6\u8DEF\u5F84\u505A\
+      \u7279\u522B\u5904\u7406\n"
+  - - 181
+    - "\t\t\n"
+  - - 207
+    - "\t\t\tlabel_length = np.matrix(label_length)\n"
+  added: 4
+  del_line_no:
+  - - null
+    - "\t\tfilename=filename.replace('/','\\\\') # windows\u7CFB\u7EDF\u4E0B\u9700\
+      \u8981\u6DFB\u52A0\u8FD9\u4E00\u884C\n"
+  - - null
+    - "\t\tlabel_length = np.matrix(label_length)\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: readdata2.py
+  removed: 2
+  source_file: a/readdata2.py
+  target_file: b/readdata2.py

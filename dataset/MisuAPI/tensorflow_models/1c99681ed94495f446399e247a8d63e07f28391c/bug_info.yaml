@@ -1,0 +1,50 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/models/pull/6049
+  title: 'Transformer: Stop crashing at the end of training phase.'
+  body: "It currently fails with\r\nTypeError: not all arguments converted during\
+    \ string formatting"
+sha: 1c99681ed94495f446399e247a8d63e07f28391c
+message: "Stop crashing at the end of training phase. (#6049)\n\nIt currently fails\
+  \ with\r\nTypeError: not all arguments converted during string formatting"
+commit_log: "commit 1c99681ed94495f446399e247a8d63e07f28391c\nAuthor: wangtz <34290063+wangtz@users.noreply.github.com>\n\
+  Date:   Wed Jan 16 02:24:54 2019 +0800\n\n    Stop crashing at the end of training\
+  \ phase. (#6049)\n    \n    It currently fails with\n    TypeError: not all arguments\
+  \ converted during string formatting"
+contained_keywords:
+- fails
+- typeerror
+commit_time: 2019-01-16 02:24:54 +0800
+commit_author: wangtz
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 235
+    - '  tf.logging.info("Bleu score (uncased): %d", uncased_score)
+
+      '
+  - - 236
+    - '  tf.logging.info("Bleu score (cased): %d", cased_score)
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '  tf.logging.info("Bleu score (uncased):", uncased_score)
+
+      '
+  - - null
+    - '  tf.logging.info("Bleu score (cased):", cased_score)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: official/transformer/transformer_main.py
+  removed: 2
+  source_file: a/official/transformer/transformer_main.py
+  target_file: b/official/transformer/transformer_main.py

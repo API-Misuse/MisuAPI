@@ -1,0 +1,14 @@
+UPD @type:atom_expr@ @[2907,3051]@ model.compile(
+      optimizer=tf.keras.optimizers <text_longer_than_50> @TO@ @type:atom_expr@ @[2907,3092]@ model.compile(
+      optimizer=tf.keras.optimizers <text_longer_than_50>
+
+INS @type:atom@ @[3041,3091]@ [tf.keras.metrics.BinaryAccuracy(name='accuracy')] @TO@ @type:argument@ @[3033,3050]@ metric='accuracy'
+
+INS @type:atom@ @[3041,3091]@ [tf.keras.metrics.BinaryAccuracy(name='accuracy')] @TO@ @type:argument@ @[3033,3050]@ metric='accuracy'
+
+INS @type:atom_expr@ @[3042,3090]@ tf.keras.metrics.BinaryAccuracy(name='accuracy') @TO@ @type:atom@ @[3041,3091]@ [tf.keras.metrics.BinaryAccuracy(name='accuracy')]
+
+INS @type:atom_expr@ @[3042,3090]@ tf.keras.metrics.BinaryAccuracy(name='accuracy') @TO@ @type:atom@ @[3041,3091]@ [tf.keras.metrics.BinaryAccuracy(name='accuracy')]
+
+INS @type:trailer@ @[3073,3090]@ (name='accuracy') @TO@ @type:atom_expr@ @[3042,3090]@ tf.keras.metrics.BinaryAccuracy(name='accuracy')
+

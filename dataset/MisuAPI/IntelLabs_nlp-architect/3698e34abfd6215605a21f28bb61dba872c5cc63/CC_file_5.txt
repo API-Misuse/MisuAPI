@@ -1,0 +1,24 @@
+UPD @type:simple_stmt@ @[3786,3905]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50> @TO@ @type:simple_stmt@ @[3786,3885]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50>
+---UPD @type:expr_stmt@ @[3786,3904]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50> @TO@ @type:expr_stmt@ @[3786,3884]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50>
+------UPD @type:arith_expr@ @[3812,3904]@ LIBRARY_ROOT + \
+            '/datasets/cdc/gold_m <text_longer_than_50> @TO@ @type:arith_expr@ @[3812,3884]@ LIBRARY_ROOT + \
+            '/datasets/ecb/ecb_al <text_longer_than_50>
+---------UPD @type:string@ @[3841,3904]@ '/datasets/cdc/gold_mentions/ecb_test_event_gold_m <text_longer_than_50> @TO@ @type:string@ @[3841,3884]@ '/datasets/ecb/ecb_all_event_mentions.json'
+
+
+UPD @type:simple_stmt@ @[5185,5305]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50> @TO@ @type:simple_stmt@ @[5165,5265]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50>
+---UPD @type:expr_stmt@ @[5185,5304]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50> @TO@ @type:expr_stmt@ @[5165,5264]@ self.gold_mentions_file = LIBRARY_ROOT + \
+        <text_longer_than_50>
+------UPD @type:arith_expr@ @[5211,5304]@ LIBRARY_ROOT + \
+            '/datasets/cdc/gold_m <text_longer_than_50> @TO@ @type:arith_expr@ @[5191,5264]@ LIBRARY_ROOT + \
+            '/datasets/ecb/ecb_al <text_longer_than_50>
+---------UPD @type:string@ @[5240,5304]@ '/datasets/cdc/gold_mentions/ecb_test_entity_gold_ <text_longer_than_50> @TO@ @type:string@ @[5220,5264]@ '/datasets/ecb/ecb_all_entity_mentions.json'
+
+

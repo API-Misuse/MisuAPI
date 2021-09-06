@@ -1,0 +1,4 @@
+INS @type:simple_stmt@ @[0,10]@ import os @TO@ @type:file_input@ @[0,2410]@ from keras.layers import Conv1D, Conv2D, Conv3D
+fr <text_longer_than_50>
+
+

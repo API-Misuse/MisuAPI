@@ -1,0 +1,81 @@
+UPD @type:simple_stmt@ @[292,357]@ ms.LoadModel(modelpath + 'speech_model24_e_0_step_ <text_longer_than_50> @TO@ @type:simple_stmt@ @[292,361]@ ms.LoadModel(modelpath + 'm24/speech_model24_e_0_s <text_longer_than_50>
+---UPD @type:atom_expr@ @[292,356]@ ms.LoadModel(modelpath + 'speech_model24_e_0_step_ <text_longer_than_50> @TO@ @type:atom_expr@ @[292,360]@ ms.LoadModel(modelpath + 'm24/speech_model24_e_0_s <text_longer_than_50>
+------UPD @type:trailer@ @[304,356]@ (modelpath + 'speech_model24_e_0_step_216500.model <text_longer_than_50> @TO@ @type:trailer@ @[304,360]@ (modelpath + 'm24/speech_model24_e_0_step_411000.m <text_longer_than_50>
+---------UPD @type:arith_expr@ @[305,355]@ modelpath + 'speech_model24_e_0_step_216500.model' @TO@ @type:arith_expr@ @[305,359]@ modelpath + 'm24/speech_model24_e_0_step_411000.mo <text_longer_than_50>
+------------UPD @type:string@ @[317,355]@ 'speech_model24_e_0_step_216500.model' @TO@ @type:string@ @[317,359]@ 'm24/speech_model24_e_0_step_411000.model'
+
+
+UPD @type:for_stmt@ @[1216,1483]@ for line in datas_split:
+			[key, value]=line.spli <text_longer_than_50> @TO@ @type:for_stmt@ @[1220,1503]@ for line in datas_split:
+			[key, value]=line.spli <text_longer_than_50>
+---UPD @type:suite@ @[1240,1483]@ [key, value]=line.split('=')
+			if('wavs' == key): <text_longer_than_50> @TO@ @type:suite@ @[1244,1503]@ [key, value]=line.split('=')
+			if('wavs' == key a <text_longer_than_50>
+------UPD @type:if_stmt@ @[1276,1483]@ if('wavs' == key):
+				wavs.append(int(value))
+			 <text_longer_than_50> @TO@ @type:if_stmt@ @[1280,1503]@ if('wavs' == key and '' != value):
+				wavs.append <text_longer_than_50>
+---------UPD @type:atom@ @[1278,1293]@ ('wavs' == key) @TO@ @type:atom@ @[1282,1313]@ ('wavs' == key and '' != value)
+------------INS @type:and_test@ @[1283,1312]@ 'wavs' == key and '' != value @TO@ @type:atom@ @[1278,1293]@ ('wavs' == key)
+---------------INS @type:comparison@ @[1283,1296]@ 'wavs' == key @TO@ @type:and_test@ @[1283,1312]@ 'wavs' == key and '' != value
+------------UPD @type:comparison@ @[1279,1292]@ 'wavs' == key @TO@ @type:comparison@ @[1301,1312]@ '' != value
+---------------MOV @type:string@ @[1279,1285]@ 'wavs' @TO@ @type:comparison@ @[1283,1296]@ 'wavs' == key
+---------------MOV @type:operator@ @[1286,1288]@ == @TO@ @type:comparison@ @[1283,1296]@ 'wavs' == key
+---------------MOV @type:name@ @[1289,1292]@ key @TO@ @type:comparison@ @[1283,1296]@ 'wavs' == key
+---------------INS @type:string@ @[1301,1303]@ '' @TO@ @type:comparison@ @[1279,1292]@ 'wavs' == key
+---------------INS @type:operator@ @[1304,1306]@ != @TO@ @type:comparison@ @[1279,1292]@ 'wavs' == key
+---------------INS @type:name@ @[1307,1312]@ value @TO@ @type:comparison@ @[1279,1292]@ 'wavs' == key
+------------MOV @type:comparison@ @[1279,1292]@ 'wavs' == key @TO@ @type:and_test@ @[1283,1312]@ 'wavs' == key and '' != value
+---------------MOV @type:string@ @[1279,1285]@ 'wavs' @TO@ @type:comparison@ @[1283,1296]@ 'wavs' == key
+---------------MOV @type:operator@ @[1286,1288]@ == @TO@ @type:comparison@ @[1283,1296]@ 'wavs' == key
+---------------MOV @type:name@ @[1289,1292]@ key @TO@ @type:comparison@ @[1283,1296]@ 'wavs' == key
+---------------INS @type:string@ @[1301,1303]@ '' @TO@ @type:comparison@ @[1279,1292]@ 'wavs' == key
+---------------INS @type:operator@ @[1304,1306]@ != @TO@ @type:comparison@ @[1279,1292]@ 'wavs' == key
+---------------INS @type:name@ @[1307,1312]@ value @TO@ @type:comparison@ @[1279,1292]@ 'wavs' == key
+
+
+INS @type:if_stmt@ @[1509,1637]@ if(token != 'qwertasd'):
+			buf = '403'
+			print(b <text_longer_than_50> @TO@ @type:suite@ @[813,1981]@ '''
+		处理通过POST方式传递过来并接收的语音数据
+		通过语音模型和语言模型计算得到语音识别 <text_longer_than_50>
+
+
+INS @type:if_stmt@ @[1672,1741]@ if(len(wavs)>0):
+			r = self.recognize([wavs], fs) <text_longer_than_50> @TO@ @type:suite@ @[813,1981]@ '''
+		处理通过POST方式传递过来并接收的语音数据
+		通过语音模型和语言模型计算得到语音识别 <text_longer_than_50>
+---INS @type:suite@ @[1688,1723]@ r = self.recognize([wavs], fs) @TO@ @type:if_stmt@ @[1672,1741]@ if(len(wavs)>0):
+			r = self.recognize([wavs], fs) <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[2112,2123]@ print(buf) @TO@ @type:suite@ @[813,1981]@ '''
+		处理通过POST方式传递过来并接收的语音数据
+		通过语音模型和语言模型计算得到语音识别 <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[2229,2418]@ try:
+			r_speech = ms.RecognizeSpeech(wavs, fs)
+		 <text_longer_than_50> @TO@ @type:suite@ @[2219,2436]@ r=''
+		try:
+			r_speech = ms.RecognizeSpeech(wavs, <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[2121,2130]@ return r @TO@ @type:suite@ @[2219,2436]@ r=''
+		try:
+			r_speech = ms.RecognizeSpeech(wavs, <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[1519,1550]@ r = self.recognize([wavs], fs) @TO@ @type:suite@ @[1688,1723]@ r = self.recognize([wavs], fs)
+
+
+INS @type:simple_stmt@ @[2280,2296]@ print(r_speech) @TO@ @type:suite@ @[2015,2137]@ r_speech = ms.RecognizeSpeech(wavs, fs)
+		
+		str_p <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[2132,2137]@ pass @FROM@ @type:suite@ @[2015,2137]@ r_speech = ms.RecognizeSpeech(wavs, fs)
+		
+		str_p <text_longer_than_50>
+
+

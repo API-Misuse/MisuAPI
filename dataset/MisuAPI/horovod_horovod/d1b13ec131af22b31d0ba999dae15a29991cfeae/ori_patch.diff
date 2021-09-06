@@ -1,0 +1,21 @@
+commit d1b13ec131af22b31d0ba999dae15a29991cfeae
+Author: Travis Addair <taddair@uber.com>
+Date:   Thu Apr 23 16:25:57 2020 -0700
+
+    Fixed usage of settings.nics to use the new parameter name (#1902)
+    
+    Signed-off-by: Travis Addair <taddair@uber.com>
+
+diff --git a/horovod/run/driver/driver_service.py b/horovod/run/driver/driver_service.py
+index 7bf49a1..254aed6 100644
+--- a/horovod/run/driver/driver_service.py
++++ b/horovod/run/driver/driver_service.py
+@@ -145,7 +145,7 @@ def _driver_fn(all_host_names, local_host_names, settings):
+     """
+     # Launch a TCP server called service service on the host running horovod
+     driver = HorovodRunDriverService(
+-        settings.num_hosts, settings.key, settings.nic)
++        settings.num_hosts, settings.key, settings.nics)
+     if settings.verbose >= 2:
+         print('Launched horovod server.')
+     # Have all the workers register themselves with the service service.

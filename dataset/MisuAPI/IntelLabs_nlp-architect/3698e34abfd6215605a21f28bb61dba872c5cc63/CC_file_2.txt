@@ -1,0 +1,16 @@
+INS @type:simple_stmt@ @[797,807]@ import os @TO@ @type:file_input@ @[749,15452]@ from __future__ import division
+
+import logging
+fr <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[2506,2835]@ if connectivity == WikipediaSearchMethod.ONLINE:
+  <text_longer_than_50> @TO@ @type:if_stmt@ @[2517,3117]@ if connectivity == WikipediaSearchMethod.ONLINE:
+  <text_longer_than_50>
+---INS @type:suite@ @[2669,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50> @TO@ @type:if_stmt@ @[2506,2835]@ if connectivity == WikipediaSearchMethod.ONLINE:
+  <text_longer_than_50>
+------INS @type:if_stmt@ @[2682,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50> @TO@ @type:suite@ @[2669,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50>
+---UPD @type:suite@ @[2658,2713]@ self.pywiki_impl = WikiOffline(wiki_file) @TO@ @type:suite@ @[2736,2795]@ self.pywiki_impl = WikiOffline(wiki_file)
+---MOV @type:suite@ @[2658,2713]@ self.pywiki_impl = WikiOffline(wiki_file) @TO@ @type:if_stmt@ @[2682,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50>
+
+

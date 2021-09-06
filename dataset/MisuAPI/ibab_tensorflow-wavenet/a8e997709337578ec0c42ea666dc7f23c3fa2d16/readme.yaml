@@ -1,0 +1,40 @@
+sha: a8e997709337578ec0c42ea666dc7f23c3fa2d16
+message: "Add casting to supress CUDA_ERROR_ILLEGAL_ADDRESS in generating results.\
+  \ (#20)\n\nIt is tentative workaround. Calculating softmax of float32 255x255 matrix\r\
+  \ncauses CUDA_ERROR_ILLEGAL_ADDRESS somehow. We can keep away from the fail\r\n\
+  by casting to float64.\r\n\r\nFundamental solution is needed. See #13 for the discussion."
+commit_log: "commit a8e997709337578ec0c42ea666dc7f23c3fa2d16\nAuthor: mecab <masafumi.orz@gmail.com>\n\
+  Date:   Sat Sep 17 03:41:05 2016 +0900\n\n    Add casting to supress CUDA_ERROR_ILLEGAL_ADDRESS\
+  \ in generating results. (#20)\n    \n    It is tentative workaround. Calculating\
+  \ softmax of float32 255x255 matrix\n    causes CUDA_ERROR_ILLEGAL_ADDRESS somehow.\
+  \ We can keep away from the fail\n    by casting to float64.\n    \n    Fundamental\
+  \ solution is needed. See #13 for the discussion."
+contained_keywords:
+- fail
+- error
+commit_time: 2016-09-17 03:41:05 +0900
+commit_author: mecab
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: wavenet.py
+  source_file: a/wavenet.py
+  target_file: b/wavenet.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 173
+    - '            proba = tf.nn.softmax(tf.cast(out, tf.float64))
+
+      '
+  del_line_no:
+  - - null
+    - '            proba = tf.nn.softmax(out)
+
+      '

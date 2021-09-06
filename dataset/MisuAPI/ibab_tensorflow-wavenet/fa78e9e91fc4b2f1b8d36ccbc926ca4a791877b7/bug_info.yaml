@@ -1,0 +1,54 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/ibab/tensorflow-wavenet/pull/247
+  title: Fix trim_silence for short audio files
+  body: 'Fixes #228.'
+sha: fa78e9e91fc4b2f1b8d36ccbc926ca4a791877b7
+message: Fix trim_silence for short audio files (#247)
+commit_log: "commit fa78e9e91fc4b2f1b8d36ccbc926ca4a791877b7\nAuthor: Quim Llimona\
+  \ <ql@lemonzi.me>\nDate:   Mon Mar 27 10:23:06 2017 -0400\n\n    Fix trim_silence\
+  \ for short audio files (#247)"
+contained_keywords:
+- fix
+commit_time: 2017-03-27 10:23:06 -0400
+commit_author: Quim Llimona
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 64
+    - 'def trim_silence(audio, threshold, frame_length=2048):
+
+      '
+  - - 66
+    - '    if audio.size < frame_length:
+
+      '
+  - - 67
+    - '        frame_length = audio.size
+
+      '
+  - - 68
+    - '    energy = librosa.feature.rmse(audio, frame_length=frame_length)
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - 'def trim_silence(audio, threshold):
+
+      '
+  - - null
+    - '    energy = librosa.feature.rmse(audio)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: wavenet/audio_reader.py
+  removed: 2
+  source_file: a/wavenet/audio_reader.py
+  target_file: b/wavenet/audio_reader.py

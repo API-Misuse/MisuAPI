@@ -1,0 +1,44 @@
+INS @type:if_stmt@ @[4592,5178]@ if fileio.exists(execution_info.execution_output_u <text_longer_than_50> @TO@ @type:suite@ @[4498,5206]@ # If result is not returned from the Do function,  <text_longer_than_50>
+
+INS @type:if_stmt@ @[4592,5178]@ if fileio.exists(execution_info.execution_output_u <text_longer_than_50> @TO@ @type:suite@ @[4498,5206]@ # If result is not returned from the Do function,  <text_longer_than_50>
+
+DEL @type:try_stmt@ @[4619,5206]@ try:
+        with fileio.open(execution_info.execu <text_longer_than_50> @FROM@ @type:suite@ @[4498,5206]@ # If result is not returned from the Do function,  <text_longer_than_50>
+
+DEL @type:with_stmt@ @[4632,4789]@ with fileio.open(execution_info.execution_output_u <text_longer_than_50> @FROM@ @type:suite@ @[4623,4789]@ with fileio.open(execution_info.execution_output_u <text_longer_than_50>
+
+MOV @type:suite@ @[4623,4789]@ with fileio.open(execution_info.execution_output_u <text_longer_than_50> @TO@ @type:if_stmt@ @[4592,5178]@ if fileio.exists(execution_info.execution_output_u <text_longer_than_50>
+
+DEL @type:with_stmt@ @[4632,4789]@ with fileio.open(execution_info.execution_output_u <text_longer_than_50> @FROM@ @type:suite@ @[4623,4789]@ with fileio.open(execution_info.execution_output_u <text_longer_than_50>
+
+MOV @type:suite@ @[4826,5206]@ # Old style TFX executor doesn't return executor_o <text_longer_than_50> @TO@ @type:if_stmt@ @[4592,5178]@ if fileio.exists(execution_info.execution_output_u <text_longer_than_50>
+
+DEL @type:atom_expr@ @[4717,4788]@ execution_result_pb2.ExecutorOutput.FromString(
+   <text_longer_than_50> @FROM@ @type:expr_stmt@ @[4708,4788]@ result = execution_result_pb2.ExecutorOutput.FromS <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4708,4789]@ result = execution_result_pb2.ExecutorOutput.FromS <text_longer_than_50> @TO@ @type:suite@ @[4623,4789]@ with fileio.open(execution_info.execution_output_u <text_longer_than_50>
+
+DEL @type:atom_expr@ @[4717,4788]@ execution_result_pb2.ExecutorOutput.FromString(
+   <text_longer_than_50> @FROM@ @type:expr_stmt@ @[4708,4788]@ result = execution_result_pb2.ExecutorOutput.FromS <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4779,4787]@ f.read() @TO@ @type:atom_expr@ @[4664,4786]@ execution_result_pb2.ExecutorOutput.FromString(
+   <text_longer_than_50>
+
+INS @type:trailer@ @[4684,4699]@ .ExecutorOutput @TO@ @type:atom_expr@ @[4779,4787]@ f.read()
+
+MOV @type:trailer@ @[4785,4787]@ () @TO@ @type:atom_expr@ @[4637,4691]@ fileio.open(execution_info.execution_output_uri, ' <text_longer_than_50>
+
+MOV @type:atom_expr@ @[4779,4787]@ f.read() @TO@ @type:expr_stmt@ @[4708,4788]@ result = execution_result_pb2.ExecutorOutput.FromS <text_longer_than_50>
+
+INS @type:trailer@ @[4684,4699]@ .ExecutorOutput @TO@ @type:atom_expr@ @[4779,4787]@ f.read()
+
+MOV @type:trailer@ @[4785,4787]@ () @TO@ @type:atom_expr@ @[4637,4691]@ fileio.open(execution_info.execution_output_uri, ' <text_longer_than_50>
+
+MOV @type:trailer@ @[4737,4752]@ .ExecutorOutput @TO@ @type:atom_expr@ @[4779,4787]@ f.read()
+
+UPD @type:atom_expr@ @[4637,4691]@ fileio.open(execution_info.execution_output_uri, ' <text_longer_than_50> @TO@ @type:atom_expr@ @[4724,4785]@ fileio.open(execution_info.execution_output_uri, ' <text_longer_than_50>
+
+MOV @type:atom_expr@ @[4637,4691]@ fileio.open(execution_info.execution_output_uri, ' <text_longer_than_50> @TO@ @type:trailer@ @[4780,4785]@ .read
+
+MOV @type:trailer@ @[4752,4763]@ .FromString @TO@ @type:atom_expr@ @[4637,4691]@ fileio.open(execution_info.execution_output_uri, ' <text_longer_than_50>
+

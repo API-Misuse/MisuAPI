@@ -1,0 +1,39 @@
+INS @type:if_stmt@ @[5011,5202]@ if stop_at_token is not None:
+        partial_sequ <text_longer_than_50> @TO@ @type:suite@ @[932,9543]@ """Sample randomly one token at a time.
+
+    The p <text_longer_than_50>
+---INS @type:suite@ @[5040,5202]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50> @TO@ @type:if_stmt@ @[5011,5202]@ if stop_at_token is not None:
+        partial_sequ <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[5011,5156]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50> @TO@ @type:simple_stmt@ @[5049,5202]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50>
+---UPD @type:expr_stmt@ @[5011,5155]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50> @TO@ @type:expr_stmt@ @[5049,5201]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50>
+------UPD @type:atom_expr@ @[5041,5155]@ mtf.reduce_sum(
+        mtf.to_int32(mtf.equal(par <text_longer_than_50> @TO@ @type:atom_expr@ @[5079,5201]@ mtf.reduce_sum(
+            mtf.to_int32(mtf.equal <text_longer_than_50>
+---------UPD @type:trailer@ @[5055,5155]@ (
+        mtf.to_int32(mtf.equal(partial_sequences <text_longer_than_50> @TO@ @type:trailer@ @[5093,5201]@ (
+            mtf.to_int32(mtf.equal(partial_seque <text_longer_than_50>
+------------UPD @type:arglist@ @[5065,5154]@ mtf.to_int32(mtf.equal(partial_sequences, stop_at_ <text_longer_than_50> @TO@ @type:arglist@ @[5107,5200]@ mtf.to_int32(mtf.equal(partial_sequences, stop_at_ <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[5011,5156]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50> @TO@ @type:suite@ @[5040,5202]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50>
+---UPD @type:expr_stmt@ @[5011,5155]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50> @TO@ @type:expr_stmt@ @[5049,5201]@ partial_sequences_eos_count = mtf.reduce_sum(
+     <text_longer_than_50>
+------UPD @type:atom_expr@ @[5041,5155]@ mtf.reduce_sum(
+        mtf.to_int32(mtf.equal(par <text_longer_than_50> @TO@ @type:atom_expr@ @[5079,5201]@ mtf.reduce_sum(
+            mtf.to_int32(mtf.equal <text_longer_than_50>
+---------UPD @type:trailer@ @[5055,5155]@ (
+        mtf.to_int32(mtf.equal(partial_sequences <text_longer_than_50> @TO@ @type:trailer@ @[5093,5201]@ (
+            mtf.to_int32(mtf.equal(partial_seque <text_longer_than_50>
+------------UPD @type:arglist@ @[5065,5154]@ mtf.to_int32(mtf.equal(partial_sequences, stop_at_ <text_longer_than_50> @TO@ @type:arglist@ @[5107,5200]@ mtf.to_int32(mtf.equal(partial_sequences, stop_at_ <text_longer_than_50>
+
+

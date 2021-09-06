@@ -1,0 +1,437 @@
+MOV @type:simple_stmt@ @[2427,2641]@ yatai_service = [
+    "grpcio~=1.34.0",  # match t <text_longer_than_50> @TO@ @type:file_input@ @[576,4218]@ import setuptools
+
+import versioneer
+
+with open("R <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2427,2640]@ yatai_service = [
+    "grpcio~=1.34.0",  # match t <text_longer_than_50> @TO@ @type:expr_stmt@ @[1481,1703]@ yatai_service_requires = [
+    "grpcio~=1.34.0",   <text_longer_than_50>
+------UPD @type:name@ @[2427,2440]@ yatai_service @TO@ @type:name@ @[1481,1503]@ yatai_service_requires
+
+
+INS @type:simple_stmt@ @[698,1480]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50> @TO@ @type:file_input@ @[576,4218]@ import setuptools
+
+import versioneer
+
+with open("R <text_longer_than_50>
+---INS @type:expr_stmt@ @[698,1479]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50> @TO@ @type:simple_stmt@ @[698,1480]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50>
+------INS @type:atom@ @[717,1479]@ [
+    "aiohttp",
+    "alembic",
+    "urllib3<=1.25 <text_longer_than_50> @TO@ @type:expr_stmt@ @[698,1479]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50>
+---------INS @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50> @TO@ @type:atom@ @[717,1479]@ [
+    "aiohttp",
+    "alembic",
+    "urllib3<=1.25 <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[2427,2641]@ yatai_service = [
+    "grpcio~=1.34.0",  # match t <text_longer_than_50> @TO@ @type:simple_stmt@ @[1481,1704]@ yatai_service_requires = [
+    "grpcio~=1.34.0",   <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2427,2640]@ yatai_service = [
+    "grpcio~=1.34.0",  # match t <text_longer_than_50> @TO@ @type:expr_stmt@ @[1481,1703]@ yatai_service_requires = [
+    "grpcio~=1.34.0",   <text_longer_than_50>
+------UPD @type:name@ @[2427,2440]@ yatai_service @TO@ @type:name@ @[1481,1503]@ yatai_service_requires
+
+
+UPD @type:simple_stmt@ @[698,1497]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50> @TO@ @type:simple_stmt@ @[1705,1790]@ model_server_requires = [
+    "opentracing",
+    " <text_longer_than_50>
+---UPD @type:expr_stmt@ @[698,1496]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50> @TO@ @type:expr_stmt@ @[1705,1789]@ model_server_requires = [
+    "opentracing",
+    " <text_longer_than_50>
+------MOV @type:name@ @[698,714]@ install_requires @TO@ @type:expr_stmt@ @[698,1479]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50>
+------MOV @type:operator@ @[715,716]@ = @TO@ @type:expr_stmt@ @[698,1479]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50>
+------INS @type:name@ @[1705,1726]@ model_server_requires @TO@ @type:expr_stmt@ @[698,1496]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50>
+------UPD @type:atom@ @[717,1496]@ [
+    "aiohttp",
+    "alembic",
+    "urllib3<=1.25 <text_longer_than_50> @TO@ @type:atom@ @[1729,1789]@ [
+    "opentracing",
+    "py_zipkin",
+    "jaeger_ <text_longer_than_50>
+---------UPD @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50> @TO@ @type:testlist_comp@ @[1735,1787]@ "opentracing",
+    "py_zipkin",
+    "jaeger_client <text_longer_than_50>
+------------MOV @type:string@ @[723,732]@ "aiohttp" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[732,733]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[738,747]@ "alembic" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[747,748]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[753,771]@ "urllib3<=1.25.11" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[771,772]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[777,784]@ "boto3" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[784,785]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[790,800]@ "cerberus" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[800,801]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[806,815]@ "certifi" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[815,816]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[821,833]@ "click>=7.0" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[833,834]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[839,853]@ "configparser" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[853,854]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[859,870]@ "deepmerge" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[870,871]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[876,907]@ "dependency-injector>=4.0,<5.0" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[907,908]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[913,921]@ "docker" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[921,922]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[927,934]@ "flask" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[934,935]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[940,948]@ "grpcio" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[948,949]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[954,964]@ "gunicorn" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[964,965]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[970,985]@ "humanfriendly" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[985,986]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[991,998]@ "numpy" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[998,999]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1004,1015]@ "packaging" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1015,1016]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1021,1040]@ "prometheus_client" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1040,1041]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1046,1063]@ "protobuf>=3.8.0" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1063,1064]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1069,1077]@ "psutil" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1077,1078]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1201,1232]@ "python-dateutil>=2.7.3,<3.0.0" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1094,1095]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1238,1258]@ "python-json-logger" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1232,1233]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1258,1259]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1280,1301]@ "ruamel.yaml>=0.15.0" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1274,1275]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1307,1315]@ "schema" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1301,1302]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1315,1316]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1352,1378]@ "sqlalchemy>=1.3.0,<1.4.0" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1346,1347]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1384,1394]@ "tabulate" @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1378,1379]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1394,1395]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:string@ @[1442,1478]@ 'dataclasses;python_version < "3.7"' @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------MOV @type:operator@ @[1436,1437]@ , @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------UPD @type:string@ @[1400,1436]@ 'contextvars;python_version < "3.7"' @TO@ @type:string@ @[1467,1476]@ "chardet"
+------------MOV @type:string@ @[1400,1436]@ 'contextvars;python_version < "3.7"' @TO@ @type:testlist_comp@ @[723,1477]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------UPD @type:string@ @[1484,1493]@ "chardet" @TO@ @type:string@ @[1735,1748]@ "opentracing"
+------------INS @type:operator@ @[1748,1749]@ , @TO@ @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------INS @type:string@ @[1754,1765]@ "py_zipkin" @TO@ @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------INS @type:operator@ @[1765,1766]@ , @TO@ @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------INS @type:string@ @[1771,1786]@ "jaeger_client" @TO@ @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------DEL @type:string@ @[1083,1094]@ "py_zipkin" @FROM@ @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------DEL @type:string@ @[1264,1274]@ "requests" @FROM@ @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+------------DEL @type:string@ @[1321,1346]@ "sqlalchemy-utils<0.36.8" @FROM@ @type:testlist_comp@ @[723,1494]@ "aiohttp",
+    "alembic",
+    "urllib3<=1.25.11",
+ <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1498,1841]@ test_requires = [
+    "idna<=2.8",  # for moto
+    <text_longer_than_50> @TO@ @type:simple_stmt@ @[1791,2158]@ test_requires = [
+    "idna<=2.8",  # for moto
+    <text_longer_than_50>
+---UPD @type:expr_stmt@ @[1498,1840]@ test_requires = [
+    "idna<=2.8",  # for moto
+    <text_longer_than_50> @TO@ @type:expr_stmt@ @[1791,2157]@ test_requires = [
+    "idna<=2.8",  # for moto
+    <text_longer_than_50>
+------INS @type:arith_expr@ @[1807,2157]@ [
+    "idna<=2.8",  # for moto
+    "ecdsa==0.14",  <text_longer_than_50> @TO@ @type:expr_stmt@ @[1498,1840]@ test_requires = [
+    "idna<=2.8",  # for moto
+    <text_longer_than_50>
+------MOV @type:atom@ @[1514,1840]@ [
+    "idna<=2.8",  # for moto
+    "ecdsa==0.14",  <text_longer_than_50> @TO@ @type:arith_expr@ @[1807,2157]@ [
+    "idna<=2.8",  # for moto
+    "ecdsa==0.14",  <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[2642,2848]@ extras_require = {
+    "dev": dev_all,
+    "doc_bu <text_longer_than_50> @TO@ @type:simple_stmt@ @[2744,2981]@ extras_require = {
+    "dev": dev_all,
+    "test": <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2642,2847]@ extras_require = {
+    "dev": dev_all,
+    "doc_bu <text_longer_than_50> @TO@ @type:expr_stmt@ @[2744,2980]@ extras_require = {
+    "dev": dev_all,
+    "test": <text_longer_than_50>
+------UPD @type:atom@ @[2659,2847]@ {
+    "dev": dev_all,
+    "doc_builder": docs_requ <text_longer_than_50> @TO@ @type:atom@ @[2761,2980]@ {
+    "dev": dev_all,
+    "test": test_requires,
+  <text_longer_than_50>
+---------UPD @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50> @TO@ @type:dictorsetmaker@ @[2767,2931]@ "dev": dev_all,
+    "test": test_requires,
+    "ya <text_longer_than_50>
+------------MOV @type:operator@ @[2732,2733]@ , @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+------------MOV @type:operator@ @[2789,2790]@ , @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+------------MOV @type:string@ @[2685,2698]@ "doc_builder" @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+------------INS @type:string@ @[2859,2873]@ "model_server" @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+------------INS @type:name@ @[2875,2896]@ model_server_requires @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+------------DEL @type:arith_expr@ @[2700,2732]@ docs_requires + install_requires @FROM@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+------------DEL @type:arith_expr@ @[2812,2844]@ yatai_service + install_requires @FROM@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+------------DEL @type:operator@ @[2844,2845]@ , @FROM@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+
+
+UPD @type:operator@ @[1478,1479]@ , @TO@ @type:operator@ @[1727,1728]@ =
+
+
+MOV @type:operator@ @[1478,1479]@ , @TO@ @type:expr_stmt@ @[698,1496]@ install_requires = [
+    "aiohttp",
+    "alembic", <text_longer_than_50>
+
+
+UPD @type:operator@ @[2714,2715]@ + @TO@ @type:operator@ @[2808,2809]@ ,
+
+
+MOV @type:operator@ @[2714,2715]@ + @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+
+
+UPD @type:name@ @[2716,2732]@ install_requires @TO@ @type:name@ @[2831,2853]@ yatai_service_requires
+
+
+MOV @type:name@ @[2716,2732]@ install_requires @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+
+
+MOV @type:name@ @[2700,2713]@ docs_requires @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+
+
+UPD @type:operator@ @[2826,2827]@ + @TO@ @type:operator@ @[2930,2931]@ ,
+
+
+MOV @type:operator@ @[2826,2827]@ + @TO@ @type:dictorsetmaker@ @[2665,2845]@ "dev": dev_all,
+    "doc_builder": docs_requires + <text_longer_than_50>
+
+

@@ -1,0 +1,131 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/microsoft/MMdnn/pull/368
+  title: ' fix caffe_emitter constant layer to help #366'
+  body: "\r\nfix caffe_emitter constant layer to help #366"
+sha: 2ddc0238b01234c09c4eca8136efba3ffc7df15a
+message: fix caffe_emitter constant layer to help https://github.com/Microsoft/MMdnn/issues/366
+commit_log: "commit 2ddc0238b01234c09c4eca8136efba3ffc7df15a\nAuthor: namizzz <874169101@qq.com>\n\
+  Date:   Wed Aug 22 14:30:42 2018 +0800\n\n    fix caffe_emitter constant layer to\
+  \ help https://github.com/Microsoft/MMdnn/issues/366"
+contained_keywords:
+- fix
+- issues
+commit_time: 2018-08-22 14:30:42 +0800
+commit_author: namizzz
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 373
+    - '    def emit_Scale(self, IR_node):
+
+      '
+  - - 381
+    - '            try:
+
+      '
+  - - 382
+    - '                self.weights_dict[IR_node.variable_name] = self.weights_dict.pop(IR_node.name)
+
+      '
+  - - 383
+    - '            except:
+
+      '
+  - - 384
+    - '                self.weights_dict[IR_node.variable_name] = self.weights_dict.pop(IR_node.name
+      + "_second")
+
+      '
+  - - 385
+    - '
+
+      '
+  - - 386
+    - '
+
+      '
+  - - 387
+    - '    def emit_Constant(self, IR_node):
+
+      '
+  - - 388
+    - '        IR_node_after = self.IR_graph.get_son(IR_node.name, [0])
+
+      '
+  - - 389
+    - '        shape = IR_node_after.get_attr("_output_shapes")[0]
+
+      '
+  - - 390
+    - '        shape = shape_to_list(shape)
+
+      '
+  - - 391
+    - '        if IR_node_after.type == ''Mul'':
+
+      '
+  - - 392
+    - '            return
+
+      '
+  - - 393
+    - '        else: #Sub
+
+      '
+  - - 394
+    - '            self.add_body(1, "n.{:<15} = L.DummyData(shape=[dict(dim=[1,{},{},{}])],
+      data_filler=dict(type=''constant'', value={}), ntop=1)".format(
+
+      '
+  - - 395
+    - '                IR_node.variable_name,
+
+      '
+  - - 396
+    - '                shape[-1],
+
+      '
+  - - 397
+    - '                shape[1],
+
+      '
+  - - 398
+    - '                shape[2],
+
+      '
+  - - 399
+    - '                self.weights_dict[IR_node.name][''value''][0]
+
+      '
+  - - 400
+    - '            ))
+
+      '
+  - - 477
+    - '
+
+      '
+  added: 22
+  del_line_no:
+  - - null
+    - '    def emit_Scale(self, IR_node):
+
+      '
+  - - null
+    - '            self.weights_dict[IR_node.variable_name] = self.weights_dict.pop(IR_node.name)
+
+      '
+  - - null
+    - "        \n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: mmdnn/conversion/caffe/caffe_emitter.py
+  removed: 3
+  source_file: a/mmdnn/conversion/caffe/caffe_emitter.py
+  target_file: b/mmdnn/conversion/caffe/caffe_emitter.py

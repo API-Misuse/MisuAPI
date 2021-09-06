@@ -1,0 +1,19 @@
+commit 16553fd759e70d93824407f18cdea419703d85d4
+Author: Thomas Kipf <tkipf@users.noreply.github.com>
+Date:   Mon Feb 20 10:11:05 2017 +0100
+
+    Fix typo for named argument
+
+diff --git a/gcn/metrics.py b/gcn/metrics.py
+index 942c6a5..0a60edc 100644
+--- a/gcn/metrics.py
++++ b/gcn/metrics.py
+@@ -3,7 +3,7 @@ import tensorflow as tf
+ 
+ def masked_softmax_cross_entropy(preds, labels, mask):
+     """Softmax cross-entropy loss with masking."""
+-    loss = tf.nn.softmax_cross_entropy_with_logits(logits=preds, lables=labels)
++    loss = tf.nn.softmax_cross_entropy_with_logits(logits=preds, labels=labels)
+     mask = tf.cast(mask, dtype=tf.float32)
+     mask /= tf.reduce_mean(mask)
+     loss *= mask

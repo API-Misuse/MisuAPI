@@ -1,0 +1,4 @@
+INS @type:if_stmt@ @[10946,11036]@ if sample_weights:
+                                <text_longer_than_50> @TO@ @type:suite@ @[10773,10918]@ inputs = [input.cuda() for input in inputs]
+       <text_longer_than_50>
+

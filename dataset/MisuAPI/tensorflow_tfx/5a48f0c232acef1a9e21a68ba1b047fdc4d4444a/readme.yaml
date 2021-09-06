@@ -1,0 +1,89 @@
+sha: 5a48f0c232acef1a9e21a68ba1b047fdc4d4444a
+message: 'Fixes wrong argument type of delete_blobs in GCS client library.
+
+
+  delete_blobs() requires a list. We used to supply an iterator returned from list_blobs,
+  but it stopped working in recent 1.30 release of GCS client package.
+
+
+  PiperOrigin-RevId: 323567675'
+commit_log: "commit 5a48f0c232acef1a9e21a68ba1b047fdc4d4444a\nAuthor: jiyongjung <jiyongjung@google.com>\n\
+  Date:   Tue Jul 28 07:24:04 2020 -0700\n\n    Fixes wrong argument type of delete_blobs\
+  \ in GCS client library.\n    \n    delete_blobs() requires a list. We used to supply\
+  \ an iterator returned from list_blobs, but it stopped working in recent 1.30 release\
+  \ of GCS client package.\n    \n    PiperOrigin-RevId: 323567675"
+contained_keywords:
+- wrong
+- fixes
+commit_time: 2020-07-28 07:24:04 -0700
+commit_author: jiyongjung
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/orchestration/kubeflow/kubeflow_e2e_test.py
+  source_file: a/tfx/orchestration/kubeflow/kubeflow_e2e_test.py
+  target_file: b/tfx/orchestration/kubeflow/kubeflow_e2e_test.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 209
+    - '    # TODO(b/159965444): Re-enable when we have tensorflow/serving for TF 2.3.
+
+      '
+  - - 210
+    - '    # self._assert_infra_validator_passed(pipeline_name)
+
+      '
+  del_line_no:
+  - - null
+    - '    self._assert_infra_validator_passed(pipeline_name)
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/orchestration/test_utils.py
+  source_file: a/tfx/orchestration/test_utils.py
+  target_file: b/tfx/orchestration/test_utils.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 102
+    - '    blobs = list(bucket.list_blobs(prefix=path))
+
+      '
+  del_line_no:
+  - - null
+    - '    blobs = bucket.list_blobs(prefix=path)
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/tools/cli/e2e/cli_kubeflow_e2e_test.py
+  source_file: a/tfx/tools/cli/e2e/cli_kubeflow_e2e_test.py
+  target_file: b/tfx/tools/cli/e2e/cli_kubeflow_e2e_test.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 188
+    - '    blobs = list(bucket.list_blobs(prefix=prefix))
+
+      '
+  del_line_no:
+  - - null
+    - '    blobs = bucket.list_blobs(prefix=prefix)
+
+      '

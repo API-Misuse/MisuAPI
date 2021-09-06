@@ -1,0 +1,26 @@
+UPD @type:with_stmt@ @[2698,3446]@ with self.sess.as_default():
+            try:
+     <text_longer_than_50> @TO@ @type:with_stmt@ @[2698,3561]@ with self.sess.as_default():
+            try:
+     <text_longer_than_50>
+---UPD @type:suite@ @[2726,3446]@ try:
+                while True:
+                  <text_longer_than_50> @TO@ @type:suite@ @[2726,3561]@ try:
+                while True:
+                  <text_longer_than_50>
+------UPD @type:try_stmt@ @[2739,3446]@ try:
+                while True:
+                  <text_longer_than_50> @TO@ @type:try_stmt@ @[2739,3561]@ try:
+                while True:
+                  <text_longer_than_50>
+---------UPD @type:suite@ @[3304,3446]@ self.sess.run(self.close_op)
+                self. <text_longer_than_50> @TO@ @type:suite@ @[3304,3561]@ try:
+                    self.sess.run(self.close_ <text_longer_than_50>
+------------INS @type:try_stmt@ @[3321,3465]@ try:
+                    self.sess.run(self.close_ <text_longer_than_50> @TO@ @type:suite@ @[3304,3446]@ self.sess.run(self.close_op)
+                self. <text_longer_than_50>
+---------------INS @type:suite@ @[3325,3375]@ self.sess.run(self.close_op) @TO@ @type:try_stmt@ @[3321,3465]@ try:
+                    self.sess.run(self.close_ <text_longer_than_50>
+------------MOV @type:simple_stmt@ @[3321,3350]@ self.sess.run(self.close_op) @TO@ @type:suite@ @[3325,3375]@ self.sess.run(self.close_op)
+
+

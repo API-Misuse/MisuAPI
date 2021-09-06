@@ -1,0 +1,35 @@
+commit b41a27ff173254642f634bb5e881fb8e7d863b00
+Author: Yashwanth Reddy <yashwanth95tuniki@gmail.com>
+Date:   Tue Dec 18 16:01:52 2018 -0600
+
+    [MRG] Face detection pretrained (resolves #332) (#384)
+    
+    * pretrained model for face detection
+    
+    * added a test for face detection
+    
+    * raise error when no image exists in the path
+    
+    * modified the test case
+    
+    * changed constant to uppercase
+    
+    * moved downloading models into load()
+    
+    * added docstrings
+    
+    * handled case when output file is None
+
+diff --git a/autokeras/image/face_detection_pretrained.py b/autokeras/image/face_detection_pretrained.py
+index 8560914..7d52621 100644
+--- a/autokeras/image/face_detection_pretrained.py
++++ b/autokeras/image/face_detection_pretrained.py
+@@ -596,5 +596,6 @@ def detect_faces(pnet_path, rnet_path, onet_path, img_path, output_file_path):
+     img = cv2.imread(img_path)
+     img_bg = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+     bboxs, landmarks = mtcnn_detector.detect_face(img)
+-    vis_face(img_bg, bboxs, output_file_path, landmarks)
++    if output_file_path is not None:
++        vis_face(img_bg, bboxs, output_file_path, landmarks)
+     return bboxs, landmarks
+

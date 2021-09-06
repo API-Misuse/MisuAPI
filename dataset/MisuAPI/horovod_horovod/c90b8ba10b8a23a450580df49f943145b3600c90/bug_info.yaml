@@ -1,0 +1,134 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/horovod/horovod/pull/1376
+  title: Make gloo job raise error when any task failed
+  body: "Gloo job should raise error if any task failed. But current master code if\
+    \ some task failed, gloo job will still exit normally.\r\n\r\nI add checking code\
+    \ and raise error if needed.\r\n\r\n(This keep similar behavior with `mpirun`,\
+    \ which will exit with non-zero value if any task failed)\r\n\r\n### Test\r\n\
+    We could manually test this by:\r\n```\r\nhorovodrun -np 1 --gloo python -c \"\
+    raise RuntimeError('error1')\"\r\necho $?\r\n```\r\n\r\n**Before**\r\n`horovodrun`\
+    \ exit with 0\r\n\r\n**After**\r\n`horovodrun` exit with 1, and raise Runtime\
+    \ error \"Run gloo job failed.\" "
+sha: c90b8ba10b8a23a450580df49f943145b3600c90
+message: Make gloo job raise error when any task failed (#1376)
+commit_log: "commit c90b8ba10b8a23a450580df49f943145b3600c90\nAuthor: WeichenXu <weichen.xu@databricks.com>\n\
+  Date:   Mon Sep 9 03:32:22 2019 +0800\n\n    Make gloo job raise error when any\
+  \ task failed (#1376)"
+contained_keywords:
+- failed
+- error
+commit_time: 2019-09-09 03:32:22 +0800
+commit_author: WeichenXu
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  add_line_no:
+  - - 23
+    - 'import time
+
+      '
+  - - 191
+    - '            exit_code = 1
+
+      '
+  - - 197
+    - '        return exit_code, time.time()
+
+      '
+  - - 252
+    - '    res = threads.execute_function_multithreaded(_exec_command,
+
+      '
+  - - 253
+    - '                                                 args_list,
+
+      '
+  - - 254
+    - '                                                 block_until_all_done=True)
+
+      '
+  - - 255
+    - '
+
+      '
+  - - 256
+    - '    for name, value in sorted(res.items(), key=lambda item: item[1][1]):
+
+      '
+  - - 257
+    - '        exit_code, timestamp = value
+
+      '
+  - - 258
+    - '        if exit_code != 0:
+
+      '
+  - - 259
+    - '            raise RuntimeError(''Gloo job detected that one or more processes
+      exited with non-zero ''
+
+      '
+  - - 260
+    - '                               ''status, thus causing the job to be terminated.
+      The first process ''
+
+      '
+  - - 261
+    - '                               ''to do so was:\nProcess name: {name}\nExit
+      code: {code}\n''
+
+      '
+  - - 262
+    - '                               .format(name=name, code=exit_code))
+
+      '
+  added: 14
+  del_line_no:
+  - - null
+    - '        return 0
+
+      '
+  - - null
+    - '    threads.execute_function_multithreaded(_exec_command,
+
+      '
+  - - null
+    - '                                           args_list,
+
+      '
+  - - null
+    - '                                           block_until_all_done=True)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: horovod/run/gloo_run.py
+  removed: 4
+  source_file: a/horovod/run/gloo_run.py
+  target_file: b/horovod/run/gloo_run.py
+patched_file_1:
+  add_line_no:
+  - - 46
+    - '            self.assertTrue(gloo_built())
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '            self.assertEqual(gloo_built())
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: test/test_common.py
+  removed: 1
+  source_file: a/test/test_common.py
+  target_file: b/test/test_common.py

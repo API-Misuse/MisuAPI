@@ -1,0 +1,16 @@
+INS @type:with_stmt@ @[8207,8409]@ with tf.name_scope(None):
+            # cannot add <text_longer_than_50> @TO@ @type:suite@ @[7360,8367]@ name = re.sub('tower[0-9]+/', '', c.op.name)
+      <text_longer_than_50>
+
+INS @type:with_stmt@ @[8207,8409]@ with tf.name_scope(None):
+            # cannot add <text_longer_than_50> @TO@ @type:suite@ @[7360,8367]@ name = re.sub('tower[0-9]+/', '', c.op.name)
+      <text_longer_than_50>
+
+INS @type:suite@ @[8232,8409]@ # cannot add it into colocate group -- will force  <text_longer_than_50> @TO@ @type:with_stmt@ @[8207,8409]@ with tf.name_scope(None):
+            # cannot add <text_longer_than_50>
+
+INS @type:suite@ @[8232,8409]@ # cannot add it into colocate group -- will force  <text_longer_than_50> @TO@ @type:with_stmt@ @[8207,8409]@ with tf.name_scope(None):
+            # cannot add <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[8284,8367]@ tf.summary.scalar(name + '-summary', ema_op)    #  <text_longer_than_50> @TO@ @type:suite@ @[8232,8409]@ # cannot add it into colocate group -- will force  <text_longer_than_50>
+

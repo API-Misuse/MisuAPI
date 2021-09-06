@@ -1,0 +1,22 @@
+commit e9d4e8eca95829e5607236fa30a0556b40813f62
+Author: David Sandberg <david.o.sandberg@gmail.com>
+Date:   Tue Apr 10 22:32:45 2018 +0200
+
+    Fixed keepdims
+
+diff --git a/src/align/detect_face.py b/src/align/detect_face.py
+index ab43af0..7f98ca7 100644
+--- a/src/align/detect_face.py
++++ b/src/align/detect_face.py
+@@ -207,9 +207,9 @@ class Network(object):
+     """
+     @layer
+     def softmax(self, target, axis, name=None):
+-        max_axis = tf.reduce_max(target, axis, keep_dims=True)
++        max_axis = tf.reduce_max(target, axis, keepdims=True)
+         target_exp = tf.exp(target-max_axis)
+-        normalize = tf.reduce_sum(target_exp, axis, keep_dims=True)
++        normalize = tf.reduce_sum(target_exp, axis, keepdims=True)
+         softmax = tf.div(target_exp, normalize, name)
+         return softmax
+     

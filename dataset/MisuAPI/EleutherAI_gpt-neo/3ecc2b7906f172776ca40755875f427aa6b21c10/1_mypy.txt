@@ -1,0 +1,8 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/3ecc2b7906f172776ca40755875f427aa6b21c10/a/models/gpt2/gpt2.py:3: error: Skipping analyzing "numpy": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/3ecc2b7906f172776ca40755875f427aa6b21c10/a/models/gpt2/gpt2.py:3: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/3ecc2b7906f172776ca40755875f427aa6b21c10/a/models/gpt2/gpt2.py:4: error: Skipping analyzing "tensorflow": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/3ecc2b7906f172776ca40755875f427aa6b21c10/a/models/gpt2/gpt2.py:5: error: Cannot find implementation or library stub for module named "mesh_tensorflow"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/3ecc2b7906f172776ca40755875f427aa6b21c10/a/models/gpt2/gpt2.py:6: error: Cannot find implementation or library stub for module named "mesh_tensorflow.transformer"
+Found 4 errors in 1 file (checked 1 source file)
+
+time cost(in seconds): 1.8768806457519531

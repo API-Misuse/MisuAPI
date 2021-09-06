@@ -1,0 +1,15 @@
+UPD @type:for_stmt@ @[5930,6748]@ for n_layer, n_filt in enumerate(n_filters):
+      <text_longer_than_50> @TO@ @type:for_stmt@ @[5930,6751]@ for n_layer, n_filt in enumerate(n_filters):
+      <text_longer_than_50>
+---UPD @type:suite@ @[5974,6748]@ if use_dilation:
+            dilation_rate = 2**n_ <text_longer_than_50> @TO@ @type:suite@ @[5974,6751]@ if use_dilation:
+            dilation_rate = 2**n_ <text_longer_than_50>
+------UPD @type:simple_stmt@ @[6516,6624]@ sigmoid_gate = tf.layers.dense(input_units, activa <text_longer_than_50> @TO@ @type:simple_stmt@ @[6516,6627]@ sigmoid_gate = tf.layers.dense(input_units, 1, act <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[6516,6623]@ sigmoid_gate = tf.layers.dense(input_units, activa <text_longer_than_50> @TO@ @type:expr_stmt@ @[6516,6626]@ sigmoid_gate = tf.layers.dense(input_units, 1, act <text_longer_than_50>
+------------UPD @type:atom_expr@ @[6531,6623]@ tf.layers.dense(input_units, activation=tf.sigmoid <text_longer_than_50> @TO@ @type:atom_expr@ @[6531,6626]@ tf.layers.dense(input_units, 1, activation=tf.sigm <text_longer_than_50>
+---------------UPD @type:trailer@ @[6546,6623]@ (input_units, activation=tf.sigmoid, kernel_initia <text_longer_than_50> @TO@ @type:trailer@ @[6546,6626]@ (input_units, 1, activation=tf.sigmoid, kernel_ini <text_longer_than_50>
+------------------UPD @type:arglist@ @[6547,6622]@ input_units, activation=tf.sigmoid, kernel_initial <text_longer_than_50> @TO@ @type:arglist@ @[6547,6625]@ input_units, 1, activation=tf.sigmoid, kernel_init <text_longer_than_50>
+---------------------INS @type:number@ @[6560,6561]@ 1 @TO@ @type:arglist@ @[6547,6622]@ input_units, activation=tf.sigmoid, kernel_initial <text_longer_than_50>
+---------------------INS @type:operator@ @[6561,6562]@ , @TO@ @type:arglist@ @[6547,6622]@ input_units, activation=tf.sigmoid, kernel_initial <text_longer_than_50>
+
+

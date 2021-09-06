@@ -1,0 +1,10 @@
+UPD @type:simple_stmt@ @[194,271]@ __all__ = ['RandomCrop', 'CenterCrop', 'FixedCrop' <text_longer_than_50> @TO@ @type:simple_stmt@ @[194,293]@ __all__ = ['RandomCrop', 'CenterCrop', 'FixedCrop' <text_longer_than_50>
+---UPD @type:expr_stmt@ @[194,270]@ __all__ = ['RandomCrop', 'CenterCrop', 'FixedCrop' <text_longer_than_50> @TO@ @type:expr_stmt@ @[194,292]@ __all__ = ['RandomCrop', 'CenterCrop', 'FixedCrop' <text_longer_than_50>
+------UPD @type:atom@ @[204,270]@ ['RandomCrop', 'CenterCrop', 'FixedCrop', 'RandomC <text_longer_than_50> @TO@ @type:atom@ @[204,292]@ ['RandomCrop', 'CenterCrop', 'FixedCrop',
+         <text_longer_than_50>
+---------UPD @type:testlist_comp@ @[205,269]@ 'RandomCrop', 'CenterCrop', 'FixedCrop', 'RandomCr <text_longer_than_50> @TO@ @type:testlist_comp@ @[205,291]@ 'RandomCrop', 'CenterCrop', 'FixedCrop',
+        ' <text_longer_than_50>
+------------INS @type:operator@ @[277,278]@ , @TO@ @type:testlist_comp@ @[205,269]@ 'RandomCrop', 'CenterCrop', 'FixedCrop', 'RandomCr <text_longer_than_50>
+------------INS @type:string@ @[279,291]@ 'perturb_BB' @TO@ @type:testlist_comp@ @[205,269]@ 'RandomCrop', 'CenterCrop', 'FixedCrop', 'RandomCr <text_longer_than_50>
+
+

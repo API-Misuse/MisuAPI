@@ -1,0 +1,578 @@
+commit 455d51b87858f26270001990939f112a157c55c3
+Author: Chaoyu <paranoyang@gmail.com>
+Date:   Tue Mar 16 06:58:53 2021 -0700
+
+    Install tracing dependencies in docker base image (#1504)
+    
+    * updates
+    
+    * Update __init__.py
+    
+    * Update marshal.py
+    
+    * updates
+    
+    * updates
+    
+    * set configs in `bentoml run`
+    
+    * fix marshal trace ctx call
+
+diff --git a/bentoml/cli/bento_service.py b/bentoml/cli/bento_service.py
+index 462e88a..514cc97 100644
+--- a/bentoml/cli/bento_service.py
++++ b/bentoml/cli/bento_service.py
+@@ -110,7 +110,16 @@ def create_bento_service_cli(pip_installed_bundle_path=None):
+     @conditional_argument(pip_installed_bundle_path is None, "bento", type=click.STRING)
+     @click.argument("api_name", type=click.STRING)
+     @click.argument('run_args', nargs=-1, type=click.UNPROCESSED)
+-    def run(api_name, run_args, bento=None):
++    @add_options(config_options)
++    def run(api_name, config, run_args, bento=None):
++        container = BentoMLContainer()
++        config = BentoMLConfiguration(override_config_file=config)
++        container.config.from_dict(config.as_dict())
++
++        from bentoml import tracing
++
++        container.wire(packages=[tracing])
++
+         parser = argparse.ArgumentParser()
+         parser.add_argument('--yatai-url', type=str, default=None)
+         parsed_args, _ = parser.parse_known_args(run_args)
+diff --git a/bentoml/configuration/default_bentoml.yml b/bentoml/configuration/default_bentoml.yml
+index 07bbf98..d07ceaa 100644
+--- a/bentoml/configuration/default_bentoml.yml
++++ b/bentoml/configuration/default_bentoml.yml
+@@ -37,6 +37,8 @@ yatai:
+ 
+ tracing:
+   zipkin_api_url: Null
++  opentracing_server_address: Null
++  opentracing_server_port: Null
+ 
+ instrument:
+   namespace: BENTOML
+diff --git a/bentoml/marshal/marshal.py b/bentoml/marshal/marshal.py
+index 9929d08..fa4338a 100644
+--- a/bentoml/marshal/marshal.py
++++ b/bentoml/marshal/marshal.py
+@@ -29,7 +29,8 @@ from bentoml.marshal.dispatcher import CorkDispatcher, NonBlockSema
+ from bentoml.marshal.utils import DataLoader
+ from bentoml.saved_bundle import load_bento_service_metadata
+ from bentoml.saved_bundle.config import DEFAULT_MAX_BATCH_SIZE, DEFAULT_MAX_LATENCY
+-from bentoml.tracing.trace import async_trace, make_http_headers
++from bentoml.tracing import async_trace
++from bentoml.tracing.zipkin import make_http_headers
+ from bentoml.types import HTTPRequest, HTTPResponse
+ 
+ logger = logging.getLogger(__name__)
+@@ -149,7 +150,6 @@ class MarshalService:
+         max_request_size: int = Provide[
+             BentoMLContainer.config.api_server.max_request_size
+         ],
+-        zipkin_api_url: str = Provide[BentoMLContainer.config.tracing.zipkin_api_url],
+         outbound_unix_socket: str = None,
+     ):
+         self.outbound_unix_socket = outbound_unix_socket
+@@ -162,7 +162,6 @@ class MarshalService:
+         self._outbound_sema = None  # the semaphore to limit outbound connections
+         self.request_header_flag = request_header_flag
+         self.max_request_size = max_request_size
+-        self.zipkin_api_url = zipkin_api_url
+ 
+         self.bento_service_metadata_pb = load_bento_service_metadata(bento_bundle_path)
+ 
+@@ -246,7 +245,6 @@ class MarshalService:
+ 
+     async def request_dispatcher(self, request):
+         with async_trace(
+-            self.zipkin_api_url,
+             service_name=self.__class__.__name__,
+             span_name="[1]http request",
+             is_root=True,
+@@ -282,11 +280,10 @@ class MarshalService:
+         url = request.url.with_host(self.outbound_host).with_port(self.outbound_port)
+ 
+         with async_trace(
+-            self.zipkin_api_url,
+-            service_name=self.__class__.__name__,
+-            span_name=f"[2]{url.path} relay",
++            service_name=self.__class__.__name__, span_name=f"[2]{url.path} relay",
+         ) as trace_ctx:
+-            headers.update(make_http_headers(trace_ctx))
++            if trace_ctx:
++                headers.update(make_http_headers(trace_ctx))
+             try:
+                 client = self.get_client()
+                 async with client.request(
+@@ -313,11 +310,10 @@ class MarshalService:
+         api_url = f"http://{self.outbound_host}:{self.outbound_port}/{api_route}"
+ 
+         with async_trace(
+-            self.zipkin_api_url,
+-            service_name=self.__class__.__name__,
+-            span_name=f"[2]merged {api_route}",
++            service_name=self.__class__.__name__, span_name=f"[2]merged {api_route}",
+         ) as trace_ctx:
+-            headers.update(make_http_headers(trace_ctx))
++            if trace_ctx:
++                headers.update(make_http_headers(trace_ctx))
+             reqs_s = DataLoader.merge_requests(requests)
+             try:
+                 client = self.get_client()
+diff --git a/bentoml/server/api_server.py b/bentoml/server/api_server.py
+index c5ab980..cd6f1a4 100644
+--- a/bentoml/server/api_server.py
++++ b/bentoml/server/api_server.py
+@@ -30,7 +30,7 @@ from bentoml.marshal.utils import DataLoader
+ from bentoml.server.instruments import InstrumentMiddleware
+ from bentoml.server.open_api import get_open_api_spec_json
+ from bentoml.service import InferenceAPI
+-from bentoml.tracing.__init__ import trace
++from bentoml.tracing import trace
+ 
+ CONTENT_TYPE_LATEST = str("text/plain; version=0.0.4; charset=utf-8")
+ 
+@@ -419,7 +419,7 @@ class BentoAPIServer:
+ 
+         def api_func_with_tracing():
+             with trace(
+-                request.headers, service_name=self.__class__.__name__,
++                request_headers=request.headers, service_name=self.__class__.__name__,
+             ):
+                 return api_func()
+ 
+diff --git a/bentoml/service/__init__.py b/bentoml/service/__init__.py
+index e8c529b..ef6390e 100644
+--- a/bentoml/service/__init__.py
++++ b/bentoml/service/__init__.py
+@@ -258,7 +258,7 @@ def env_decorator(
+         auto_pip_dependencies: same as infer_pip_packages but deprecated
+         requirements_txt_file: path to the requirements.txt where pip dependencies
+             are explicitly specified, with ideally pinned versions
+-        conda_channels: list of extra conda channels other than dafault channels to be
++        conda_channels: list of extra conda channels other than default channels to be
+             used. This is equivalent to passing the --channels to conda commands
+         conda_override_channels: ensures that conda searches only your specified
+             channel and no other channels, such as default channels.
+diff --git a/bentoml/service/env.py b/bentoml/service/env.py
+index 3723fba..7e51049 100644
+--- a/bentoml/service/env.py
++++ b/bentoml/service/env.py
+@@ -131,7 +131,7 @@ class BentoServiceEnv(object):
+             pip dependencies and pin their version
+         requirements_txt_file: path to the requirements.txt where pip dependencies
+             are explicitly specified, with ideally pinned versions
+-        conda_channels: list of extra conda channels other than dafault channels to be
++        conda_channels: list of extra conda channels other than default channels to be
+             used. This is equivalent to passing the --channels to conda commands.
+             If the `conda_env_yml_file` is specified, this will override the `channels`
+             section of the env yml file
+diff --git a/bentoml/tracing/__init__.py b/bentoml/tracing/__init__.py
+index 54aa2f5..7e2c4f0 100644
+--- a/bentoml/tracing/__init__.py
++++ b/bentoml/tracing/__init__.py
+@@ -12,64 +12,79 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-# List of APIs for accessing remote or local yatai service via Python
+-
+ from contextlib import contextmanager
+ 
+-from bentoml import config
+-
++from dependency_injector.wiring import Provide, inject
+ 
+-ZIPKIN_API_URL = config("tracing").get("zipkin_api_url")
+-OPENTRACING_SERVER_ADDRESS = config("tracing").get("opentracing_server_address")
+-OPENTRACING_SERVER_PORT = config("tracing").get("opentracing_server_port")
++from bentoml.configuration.containers import BentoMLContainer
+ 
+ 
++@inject
+ @contextmanager
+-def trace(*args, **kwargs):
++def trace(
++    zipkin_api_url: str = Provide[BentoMLContainer.config.tracing.zipkin_api_url],
++    opentracing_server_address: str = Provide[
++        BentoMLContainer.config.tracing.opentracing_server_address
++    ],
++    opentracing_server_port: str = Provide[
++        BentoMLContainer.config.tracing.opentracing_server_port
++    ],
++    **kwargs,
++):
+     """
+-    synchronous tracing function, will choose relevant tracer
++    synchronous tracing function, will choose relevant tracer based on config
+     """
+ 
+-    if ZIPKIN_API_URL:
+-        from bentoml.tracing.trace import trace as _trace
++    if zipkin_api_url:
++        from bentoml.tracing.zipkin import trace as _trace
+ 
+-        new_args = [ZIPKIN_API_URL, *args]
++        kwargs['server_url'] = zipkin_api_url
+ 
+-    elif OPENTRACING_SERVER_ADDRESS:
++    elif opentracing_server_address:
+         from bentoml.tracing.opentrace import trace as _trace
+ 
+-        new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+-        kwargs['port'] = OPENTRACING_SERVER_PORT
++        kwargs['server_url'] = opentracing_server_address
++        kwargs['port'] = opentracing_server_port
+ 
+     else:
+-        yield
++        yield None
+         return
+ 
+-    with _trace(*new_args, **kwargs) as scope:
++    with _trace(**kwargs) as scope:
+         yield scope
+     return
+ 
+ 
++@inject
+ @contextmanager
+-def async_trace(*args, **kwargs):
++def async_trace(
++    zipkin_api_url: str = Provide[BentoMLContainer.config.tracing.zipkin_api_url],
++    opentracing_server_address: str = Provide[
++        BentoMLContainer.config.tracing.opentracing_server_address
++    ],
++    opentracing_server_port: str = Provide[
++        BentoMLContainer.config.tracing.opentracing_server_port
++    ],
++    **kwargs,
++):
+     """
+-    asynchronous tracing function, will choose relevant tracer
++    asynchronous tracing function, will choose relevant tracer based on config
+     """
+-    if ZIPKIN_API_URL:
+-        from bentoml.tracing.trace import async_trace as _async_trace
++    if zipkin_api_url:
++        from bentoml.tracing.zipkin import async_trace as _async_trace
+ 
+-        new_args = [ZIPKIN_API_URL, *args]
++        kwargs['server_url'] = zipkin_api_url
+ 
+-    elif OPENTRACING_SERVER_ADDRESS:
++    elif opentracing_server_address:
+         from bentoml.tracing.opentrace import async_trace as _async_trace
+ 
+-        new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+-        kwargs['port'] = OPENTRACING_SERVER_PORT
++        kwargs['server_url'] = opentracing_server_address
++        kwargs['port'] = opentracing_server_port
+ 
+     else:
+-        yield
++        yield None
+         return
+ 
+-    with _async_trace(*new_args, **kwargs) as scope:
++    with _async_trace(**kwargs) as scope:
+         yield scope
+     return
+diff --git a/bentoml/tracing/opentrace.py b/bentoml/tracing/opentrace.py
+index 47519da..d13732d 100644
+--- a/bentoml/tracing/opentrace.py
++++ b/bentoml/tracing/opentrace.py
+@@ -5,19 +5,17 @@ from contextlib import contextmanager
+ from contextvars import ContextVar
+ from functools import partial
+ 
+-# pylint: disable=E0401
+-import opentracing
+-from opentracing import Format
+-from jaeger_client.config import Config
+-from opentracing.scope_managers.asyncio import AsyncioScopeManager
+-
+-# pylint: enable=E0401
+-
+ 
+ span_context_var = ContextVar('span context', default=None)
+ 
+ 
+ def initialize_tracer(service_name):
++    # pylint: disable=E0401
++    from jaeger_client.config import Config
++    from opentracing.scope_managers.asyncio import AsyncioScopeManager
++
++    # pylint: enable=E0401
++
+     config = Config(
+         config={'sampler': {'type': 'const', 'param': 1}},
+         service_name=service_name,
+@@ -45,6 +43,12 @@ def trace(
+     """
+     del server_url, async_transport, sample_rate, standalone, is_root, port
+ 
++    # pylint: disable=E0401
++    import opentracing
++    from opentracing import Format
++
++    # pylint: enable=E0401
++
+     tracer = initialize_tracer(service_name) or opentracing.global_tracer() or None
+     if tracer is None:
+         yield
+diff --git a/bentoml/tracing/trace.py b/bentoml/tracing/zipkin.py
+similarity index 100%
+rename from bentoml/tracing/trace.py
+rename to bentoml/tracing/zipkin.py
+diff --git a/docker/model-server/Dockerfile b/docker/model-server/Dockerfile
+index ed9ee84..1dfb376 100644
+--- a/docker/model-server/Dockerfile
++++ b/docker/model-server/Dockerfile
+@@ -16,7 +16,7 @@ ENV PYTHON_VERSION=$PYTHON_VERSION
+ RUN conda install pip python=$PYTHON_VERSION -y
+ 
+ # pre-install BentoML base dependencies
+-RUN pip install bentoml==$BENTOML_VERSION --no-cache-dir
++RUN pip install bentoml[model_server]==$BENTOML_VERSION --no-cache-dir
+ 
+ COPY entrypoint.sh /usr/local/bin/
+ 
+diff --git a/docker/model-server/Dockerfile-slim b/docker/model-server/Dockerfile-slim
+index 7f076c1..9643bcf 100644
+--- a/docker/model-server/Dockerfile-slim
++++ b/docker/model-server/Dockerfile-slim
+@@ -11,7 +11,7 @@ RUN python -m venv /opt/venv
+ ENV PATH="/opt/venv/bin:$PATH"
+ 
+ # pre-install BentoML requirements
+-RUN pip install bentoml==$BENTOML_VERSION --no-cache-dir
++RUN pip install bentoml[model_server]==$BENTOML_VERSION --no-cache-dir
+ COPY entrypoint.sh .
+ 
+ # multi-stage build to shave dependency cost
+diff --git a/docs/source/bentoml_wordlist.txt b/docs/source/bentoml_wordlist.txt
+index 2af5c53..2fea728 100644
+--- a/docs/source/bentoml_wordlist.txt
++++ b/docs/source/bentoml_wordlist.txt
+@@ -94,4 +94,5 @@ torchvision
+ gRPC
+ Http
+ http
+-HTTP
+\ No newline at end of file
++HTTP
++zipkin
+\ No newline at end of file
+diff --git a/docs/source/guides/index.rst b/docs/source/guides/index.rst
+index 9e190f4..bfd0036 100644
+--- a/docs/source/guides/index.rst
++++ b/docs/source/guides/index.rst
+@@ -18,5 +18,6 @@ and ask in the bentoml-users channel.
+   custom_artifact
+   custom_input_adapter
+   yatai_service
++  tracing
+   helm
+ 
+diff --git a/docs/source/guides/micro_batching.rst b/docs/source/guides/micro_batching.rst
+index 971e0bd..1ce8430 100644
+--- a/docs/source/guides/micro_batching.rst
++++ b/docs/source/guides/micro_batching.rst
+@@ -1,11 +1,11 @@
+-Understanding BentoML adaptive micro batching
+-=============================================
++Adaptive Micro Batching
++=======================
+ 
+ 1. The overall architecture of BentoML's micro-batching server
+-==============================================================
++--------------------------------------------------------------
+ 
+ 1.1 Why micro batching matters
+-------------------------------
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+    While serving a TensorFlow model, batching individual model
+    inference requests together can be important for performance. In
+@@ -18,13 +18,13 @@ Plus, under BentoML's architecture, the HTTP handling and data
+ preprocessing procedure will also benefit from micro-batching.
+ 
+ 1.2 Architecture & Data Flow
+-----------------------------
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ .. raw:: html
+    :file: ../_static/img/batching-arch.svg
+ 
+ 1.3 Parameters & Concepts of micro batching
+--------------------------------------------
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -  **inbound requests**: requests from user clients
+ -  **outbound requests**: requests to upstream model servers
+@@ -42,7 +42,7 @@ preprocessing procedure will also benefit from micro-batching.
+    batch. Inferred from historical data and current batch size in queue.
+ 
+ 1.4 Sequence & How it works
+----------------------------
++~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ Take bento service with single API and —workers=1 as example
+ 
+@@ -74,7 +74,7 @@ If the outbound semaphore is still locked, requests may be canceled once
+ reached ``mb_max_latency``.
+ 
+ 1.5 The main design decisions and trade-offs
+---------------------------------------------
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ Throughput and latency are most concerned for API servers. BentoML will
+ fine-tune batches **automatically** to(in the order priority):
+@@ -85,7 +85,7 @@ fine-tune batches **automatically** to(in the order priority):
+ -  Minimum the average Latency
+ 
+ 2. parameter tuning best practices & recommendations
+-====================================================
++----------------------------------------------------
+ 
+ Different from TensorFlow Serving, BentoML will **automatically adjust**
+ the batch size and wait timeout, balancing the maximum throughput and
+@@ -112,7 +112,7 @@ by default.
+    throughput.
+ 
+ 3. How to implement batch mode for custom input adapters
+-========================================================
++--------------------------------------------------------
+ 
+ TL;DR: Implement the method ``handle_batch_request(requests)``
+ following existent input adapters.
+@@ -140,11 +140,11 @@ will be O(N) in time complexity. Thus we implemented an nearly O(1)
+ function to concat DataFrame CSV strings, so that all DataFrames in
+ requests could be loaded by calling ``pd.read_csv`` once.
+ 
+-4. Comparison
+-=============
++4. Comparisons
++--------------
+ 
+ 4.1 TensorFlow Serving
+-----------------------
++~~~~~~~~~~~~~~~~~~~~~~
+ 
+ Tensorflow Serving employed similar approach to batch individual
+ requests together. But the parameters of batching scheduling is static.
+@@ -164,7 +164,7 @@ deployment. Once deployed, it won't change anymore.
+    -- `tensorflow/serving <https://github.com/tensorflow/serving/blob/master/tensorflow_serving/batching/README.md#performance-tuning>`__
+ 
+ 4.2 Clipper
+------------
++~~~~~~~~~~~
+ 
+ Clipper applied a combination of TCP Nagle and AIMD algorithm. This
+ approach is more similar with BentoML, the difference is scheduling
+diff --git a/docs/source/guides/tracing.rst b/docs/source/guides/tracing.rst
+new file mode 100644
+index 0000000..16385ed
+--- /dev/null
++++ b/docs/source/guides/tracing.rst
+@@ -0,0 +1,30 @@
++Performance Tracing
++===================
++
++BentoML API server supports tracing with `Zipkin <https://zipkin.io/>`_ or `Opentracing
++<https://opentracing.io/>`_. To config tracing server, user can provide a config YAML
++file containing either a zipkin server url or an opentracing server address and port:
++
++.. code-block:: yml
++
++    tracing:
++      zipkin_api_url: Null
++      opentracing_server_address: Null
++      opentracing_server_port: Null
++
++When starting a BentoML API model server, provide the CLI command with this YAML config
++file with the `--config` option:
++
++.. code-block:: bash
++
++    bentoml serve $BENTO_BUNDLE_PATH --config my_config_file.yml
++
++Similarly when serving with BentoML API server docker image:
++
++.. code-block:: bash
++
++    docker run -v $(PWD):/tmp my-bento-api-server --config /tmp/my_config_file.yml
++
++BentoML has already implemented basic tracing information for its micro-batching server
++and model server. If there's additional tracing that you'd like to add to your BentoML
++model server, you may import
+diff --git a/setup.py b/setup.py
+index 2adc86a..8c419c3 100644
+--- a/setup.py
++++ b/setup.py
+@@ -40,7 +40,6 @@ install_requires = [
+     "prometheus_client",
+     "protobuf>=3.8.0",
+     "psutil",
+-    "py_zipkin",
+     # python-dateutil required by pandas and boto3, this makes sure the version
+     # works for both
+     "python-dateutil>=2.7.3,<3.0.0",
+@@ -56,6 +55,21 @@ install_requires = [
+     "chardet",
+ ]
+ 
++yatai_service_requires = [
++    "grpcio~=1.34.0",  # match the grpcio-tools version used in yatai docker image
++    "google-cloud-storage",
++    "azure-cli",
++    "aws-sam-cli==0.33.1",
++    "psycopg2",
++    "psycopg2-binary",
++]
++
++model_server_requires = [
++    "opentracing",
++    "py_zipkin",
++    "jaeger_client",
++]
++
+ test_requires = [
+     "idna<=2.8",  # for moto
+     "ecdsa==0.14",  # for moto
+@@ -72,7 +86,7 @@ test_requires = [
+     "pytest>=5.4.0",
+     "pytest-asyncio",
+     "scikit-learn",
+-]
++] + model_server_requires
+ 
+ dev_requires = [
+     "flake8>=3.8.2",
+@@ -100,20 +114,12 @@ docs_requires = [
+ 
+ dev_all = install_requires + dev_requires + docs_requires
+ 
+-yatai_service = [
+-    "grpcio~=1.34.0",  # match the grpcio-tools version used in yatai docker image
+-    "google-cloud-storage",
+-    "azure-cli",
+-    "aws-sam-cli==0.33.1",
+-    "psycopg2",
+-    "psycopg2-binary",
+-]
+-
+ extras_require = {
+     "dev": dev_all,
+-    "doc_builder": docs_requires + install_requires,  # required by readthedocs.io
+     "test": test_requires,
+-    "yatai_service": yatai_service + install_requires,
++    "yatai_service": yatai_service_requires,
++    "model_server": model_server_requires,
++    "doc_builder": docs_requires,  # 'doc_builder' is required by readthedocs.io
+ }
+ 
+ setuptools.setup(

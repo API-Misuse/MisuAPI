@@ -1,0 +1,16 @@
+UPD @type:with_stmt@ @[2258,3354]@ with TemporaryDirectory() as path:
+        # gener <text_longer_than_50> @TO@ @type:with_stmt@ @[2258,3359]@ with TemporaryDirectory() as path:
+        # gener <text_longer_than_50>
+---UPD @type:suite@ @[2292,3354]@ # generate training dataset
+        generate_fake_ <text_longer_than_50> @TO@ @type:suite@ @[2292,3359]@ # generate training dataset
+        generate_fake_ <text_longer_than_50>
+------UPD @type:with_stmt@ @[2800,2888]@ with open('useless_config.json') as stream:
+       <text_longer_than_50> @TO@ @type:with_stmt@ @[2800,2893]@ with open('useless_config.json', 'w') as stream:
+  <text_longer_than_50>
+---------UPD @type:with_item@ @[2805,2842]@ open('useless_config.json') as stream @TO@ @type:with_item@ @[2805,2847]@ open('useless_config.json', 'w') as stream
+------------UPD @type:atom_expr@ @[2805,2832]@ open('useless_config.json') @TO@ @type:atom_expr@ @[2805,2837]@ open('useless_config.json', 'w')
+---------------UPD @type:trailer@ @[2809,2832]@ ('useless_config.json') @TO@ @type:trailer@ @[2809,2837]@ ('useless_config.json', 'w')
+------------------INS @type:arglist@ @[2810,2836]@ 'useless_config.json', 'w' @TO@ @type:trailer@ @[2809,2832]@ ('useless_config.json')
+------------------MOV @type:string@ @[2810,2831]@ 'useless_config.json' @TO@ @type:arglist@ @[2810,2836]@ 'useless_config.json', 'w'
+
+

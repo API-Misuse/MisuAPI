@@ -1,0 +1,365 @@
+sha: ad1811aa72654f070da10e4c8313d2556a356e5c
+message: 'Allow deserialization of serialized JSON artifact, even if concrete class
+  cannot be resolved.
+
+
+  PiperOrigin-RevId: 289726893'
+commit_log: "commit ad1811aa72654f070da10e4c8313d2556a356e5c\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Tue Jan 14 14:07:39 2020 -0800\n\n    Allow deserialization of serialized\
+  \ JSON artifact, even if concrete class cannot be resolved.\n    \n    PiperOrigin-RevId:\
+  \ 289726893"
+contained_keywords:
+- resolved
+commit_time: 2020-01-14 14:07:39 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/types/artifact.py
+  source_file: a/tfx/types/artifact.py
+  target_file: b/tfx/types/artifact.py
+  added: 17
+  removed: 3
+  add_line_no:
+  - - 27
+    - 'import absl
+
+      '
+  - - 28
+    - '
+
+      '
+  - - 275
+    - '    json_format.Parse(json.dumps(dict_data[''artifact'']), artifact)
+
+      '
+  - - 277
+    - '
+
+      '
+  - - 278
+    - '    # First, try to resolve the specific class used for the artifact; if this
+
+      '
+  - - 279
+    - '    # is not possible, use a generic artifact.Artifact object.
+
+      '
+  - - 280
+    - '    try:
+
+      '
+  - - 281
+    - '      artifact_cls = getattr(importlib.import_module(module_name), class_name)
+
+      '
+  - - 282
+    - '      result = artifact_cls()
+
+      '
+  - - 283
+    - '    except (AttributeError, ImportError):
+
+      '
+  - - 284
+    - '      absl.logging.warning((
+
+      '
+  - - 285
+    - '          ''Could not load artifact class %s.%s; using fallback deserialization
+      ''
+
+      '
+  - - 286
+    - '          ''for the relevant artifact. This behavior may not be supported in
+      ''
+
+      '
+  - - 287
+    - '          ''the future; please make sure that any artifact classes can be ''
+
+      '
+  - - 288
+    - '          ''imported within your container or environment.'') %
+
+      '
+  - - 289
+    - '                           (module_name, class_name))
+
+      '
+  - - 290
+    - '      result = Artifact(mlmd_artifact_type=artifact_type)
+
+      '
+  del_line_no:
+  - - null
+    - '    artifact_cls = getattr(importlib.import_module(module_name), class_name)
+
+      '
+  - - null
+    - '    json_format.Parse(json.dumps(dict_data[''artifact'']), artifact)
+
+      '
+  - - null
+    - '    result = artifact_cls()
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/types/artifact_test.py
+  source_file: a/tfx/types/artifact_test.py
+  target_file: b/tfx/types/artifact_test.py
+  added: 49
+  removed: 11
+  add_line_no:
+  - - 24
+    - 'import absl
+
+      '
+  - - 25
+    - 'import mock
+
+      '
+  - - 26
+    - '
+
+      '
+  - - 35
+    - '  PROPERTIES = {
+
+      '
+  - - 36
+    - '      ''int1'': artifact.Property(type=artifact.PropertyType.INT),
+
+      '
+  - - 37
+    - '      ''int2'': artifact.Property(type=artifact.PropertyType.INT),
+
+      '
+  - - 38
+    - '      ''string1'': artifact.Property(type=artifact.PropertyType.STRING),
+
+      '
+  - - 39
+    - '      ''string2'': artifact.Property(type=artifact.PropertyType.STRING),
+
+      '
+  - - 40
+    - '  }
+
+      '
+  - - 132
+    - '    my_artifact = _MyArtifact()
+
+      '
+  - - 165
+    - '  @mock.patch(''absl.logging.warning'')
+
+      '
+  - - 166
+    - '  def testDeserialize(self, *unused_mocks):
+
+      '
+  - - 167
+    - '    original = _MyArtifact()
+
+      '
+  - - 168
+    - '    original.uri = ''/my/path''
+
+      '
+  - - 169
+    - '    original.int1 = 111
+
+      '
+  - - 170
+    - '    original.int2 = 222
+
+      '
+  - - 171
+    - '    original.string1 = ''111''
+
+      '
+  - - 172
+    - '    original.string2 = ''222''
+
+      '
+  - - 173
+    - '
+
+      '
+  - - 174
+    - '    serialized = original.to_json_dict()
+
+      '
+  - - 175
+    - '
+
+      '
+  - - 176
+    - '    rehydrated = artifact.Artifact.from_json_dict(serialized)
+
+      '
+  - - 177
+    - '    absl.logging.warning.assert_not_called()
+
+      '
+  - - 178
+    - '    self.assertIs(rehydrated.__class__, _MyArtifact)
+
+      '
+  - - 179
+    - '    self.assertEqual(rehydrated.int1, 111)
+
+      '
+  - - 180
+    - '    self.assertEqual(rehydrated.int2, 222)
+
+      '
+  - - 181
+    - '    self.assertEqual(rehydrated.string1, ''111'')
+
+      '
+  - - 182
+    - '    self.assertEqual(rehydrated.string2, ''222'')
+
+      '
+  - - 183
+    - '
+
+      '
+  - - 184
+    - '  @mock.patch(''absl.logging.warning'')
+
+      '
+  - - 185
+    - '  def testDeserializeUnknownArtifactClass(self, *unused_mocks):
+
+      '
+  - - 186
+    - '    original = _MyArtifact()
+
+      '
+  - - 187
+    - '    original.uri = ''/my/path''
+
+      '
+  - - 188
+    - '    original.int1 = 111
+
+      '
+  - - 189
+    - '    original.int2 = 222
+
+      '
+  - - 190
+    - '    original.string1 = ''111''
+
+      '
+  - - 191
+    - '    original.string2 = ''222''
+
+      '
+  - - 192
+    - '
+
+      '
+  - - 193
+    - '    serialized = original.to_json_dict()
+
+      '
+  - - 194
+    - '    serialized[''__artifact_class_name__''] = ''MissingClassName''
+
+      '
+  - - 195
+    - '
+
+      '
+  - - 196
+    - '    rehydrated = artifact.Artifact.from_json_dict(serialized)
+
+      '
+  - - 197
+    - '    absl.logging.warning.assert_called_once()
+
+      '
+  - - 198
+    - '    self.assertIs(rehydrated.__class__, artifact.Artifact)
+
+      '
+  - - 199
+    - '    self.assertEqual(rehydrated.int1, 111)
+
+      '
+  - - 200
+    - '    self.assertEqual(rehydrated.int2, 222)
+
+      '
+  - - 201
+    - '    self.assertEqual(rehydrated.string1, ''111'')
+
+      '
+  - - 202
+    - '    self.assertEqual(rehydrated.string2, ''222'')
+
+      '
+  - - 203
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - '
+
+      '
+  - - null
+    - '    class MyCustomArtifact(artifact.Artifact):
+
+      '
+  - - null
+    - '      TYPE_NAME = ''MyCustomArtifact''
+
+      '
+  - - null
+    - '      PROPERTIES = {
+
+      '
+  - - null
+    - '          ''int1'': artifact.Property(type=artifact.PropertyType.INT),
+
+      '
+  - - null
+    - '          ''int2'': artifact.Property(type=artifact.PropertyType.INT),
+
+      '
+  - - null
+    - '          ''string1'': artifact.Property(type=artifact.PropertyType.STRING),
+
+      '
+  - - null
+    - '          ''string2'': artifact.Property(type=artifact.PropertyType.STRING),
+
+      '
+  - - null
+    - '      }
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '    my_artifact = MyCustomArtifact()
+
+      '

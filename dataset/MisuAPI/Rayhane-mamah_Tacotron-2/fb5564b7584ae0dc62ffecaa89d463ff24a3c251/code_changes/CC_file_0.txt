@@ -1,0 +1,23 @@
+UPD @type:if_stmt@ @[2141,2368]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50> @TO@ @type:if_stmt@ @[2189,2425]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50>
+---UPD @type:suite@ @[2325,2368]@ return _griffin_lim(S ** hparams.power) @TO@ @type:suite@ @[2373,2425]@ return _griffin_lim(S ** hparams.power, hparams)
+------UPD @type:simple_stmt@ @[2328,2368]@ return _griffin_lim(S ** hparams.power) @TO@ @type:simple_stmt@ @[2376,2425]@ return _griffin_lim(S ** hparams.power, hparams)
+---------UPD @type:return_stmt@ @[2328,2367]@ return _griffin_lim(S ** hparams.power) @TO@ @type:return_stmt@ @[2376,2424]@ return _griffin_lim(S ** hparams.power, hparams)
+------------UPD @type:atom_expr@ @[2335,2367]@ _griffin_lim(S ** hparams.power) @TO@ @type:atom_expr@ @[2383,2424]@ _griffin_lim(S ** hparams.power, hparams)
+---------------UPD @type:trailer@ @[2347,2367]@ (S ** hparams.power) @TO@ @type:trailer@ @[2395,2424]@ (S ** hparams.power, hparams)
+------------------INS @type:arglist@ @[2396,2423]@ S ** hparams.power, hparams @TO@ @type:trailer@ @[2347,2367]@ (S ** hparams.power)
+------------------MOV @type:power@ @[2348,2366]@ S ** hparams.power @TO@ @type:arglist@ @[2396,2423]@ S ** hparams.power, hparams
+
+
+UPD @type:if_stmt@ @[2684,2911]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50> @TO@ @type:if_stmt@ @[2741,2977]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50>
+---UPD @type:suite@ @[2868,2911]@ return _griffin_lim(S ** hparams.power) @TO@ @type:suite@ @[2925,2977]@ return _griffin_lim(S ** hparams.power, hparams)
+------UPD @type:simple_stmt@ @[2871,2911]@ return _griffin_lim(S ** hparams.power) @TO@ @type:simple_stmt@ @[2928,2977]@ return _griffin_lim(S ** hparams.power, hparams)
+---------UPD @type:return_stmt@ @[2871,2910]@ return _griffin_lim(S ** hparams.power) @TO@ @type:return_stmt@ @[2928,2976]@ return _griffin_lim(S ** hparams.power, hparams)
+------------UPD @type:atom_expr@ @[2878,2910]@ _griffin_lim(S ** hparams.power) @TO@ @type:atom_expr@ @[2935,2976]@ _griffin_lim(S ** hparams.power, hparams)
+---------------UPD @type:trailer@ @[2890,2910]@ (S ** hparams.power) @TO@ @type:trailer@ @[2947,2976]@ (S ** hparams.power, hparams)
+------------------INS @type:arglist@ @[2948,2975]@ S ** hparams.power, hparams @TO@ @type:trailer@ @[2890,2910]@ (S ** hparams.power)
+------------------MOV @type:power@ @[2891,2909]@ S ** hparams.power @TO@ @type:arglist@ @[2948,2975]@ S ** hparams.power, hparams
+

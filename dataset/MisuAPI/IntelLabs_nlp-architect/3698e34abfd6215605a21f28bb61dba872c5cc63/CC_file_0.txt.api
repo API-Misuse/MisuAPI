@@ -1,0 +1,19 @@
+INS @type:if_stmt@ @[1784,2239]@ if ref_dict is not None and os.path.isfile(ref_dic <text_longer_than_50> @TO@ @type:suite@ @[1360,2111]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+
+INS @type:if_stmt@ @[1784,2239]@ if ref_dict is not None and os.path.isfile(ref_dic <text_longer_than_50> @TO@ @type:suite@ @[1360,2111]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+
+INS @type:suite@ @[1837,2140]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1784,2239]@ if ref_dict is not None and os.path.isfile(ref_dic <text_longer_than_50>
+
+INS @type:suite@ @[1837,2140]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1784,2239]@ if ref_dict is not None and os.path.isfile(ref_dic <text_longer_than_50>
+
+MOV @type:if_stmt@ @[1774,1987]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:suite@ @[1837,2140]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[1995,2048]@ logger.info('ReferentDict module lead successfully <text_longer_than_50> @TO@ @type:suite@ @[1837,2140]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+

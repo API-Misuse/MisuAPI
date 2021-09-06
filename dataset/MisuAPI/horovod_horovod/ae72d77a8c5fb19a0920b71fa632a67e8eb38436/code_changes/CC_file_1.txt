@@ -1,0 +1,12 @@
+UPD @type:if_stmt@ @[15690,15881]@ if os.environ.get('HOROVOD_MIXED_INSTALL'):
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[15714,15913]@ if int(os.environ.get('HOROVOD_MIXED_INSTALL', 0)) <text_longer_than_50>
+---UPD @type:atom_expr@ @[15693,15732]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[15717,15764]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+------UPD @type:name@ @[15693,15695]@ os @TO@ @type:name@ @[15717,15720]@ int
+------UPD @type:trailer@ @[15707,15732]@ ('HOROVOD_MIXED_INSTALL') @TO@ @type:trailer@ @[15720,15764]@ (os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+---------INS @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[15707,15732]@ ('HOROVOD_MIXED_INSTALL')
+------------INS @type:trailer@ @[15735,15763]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+---------------INS @type:arglist@ @[15736,15762]@ 'HOROVOD_MIXED_INSTALL', 0 @TO@ @type:trailer@ @[15735,15763]@ ('HOROVOD_MIXED_INSTALL', 0)
+---------MOV @type:string@ @[15708,15731]@ 'HOROVOD_MIXED_INSTALL' @TO@ @type:arglist@ @[15736,15762]@ 'HOROVOD_MIXED_INSTALL', 0
+------MOV @type:trailer@ @[15695,15703]@ .environ @TO@ @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+------MOV @type:trailer@ @[15703,15707]@ .get @TO@ @type:atom_expr@ @[15721,15763]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+

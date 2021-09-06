@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[1543,1573]@ self.assertEqual(gloo_built()) @TO@ @type:atom_expr@ @[1543,1572]@ self.assertTrue(gloo_built())
+

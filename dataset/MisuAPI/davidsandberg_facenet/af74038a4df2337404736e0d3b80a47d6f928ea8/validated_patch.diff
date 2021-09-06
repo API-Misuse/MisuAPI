@@ -1,0 +1,19 @@
+commit af74038a4df2337404736e0d3b80a47d6f928ea8
+Author: David Sandberg <david.o.sandberg@gmail.com>
+Date:   Sat Mar 11 20:06:56 2017 +0100
+
+    Closing session to fix problem with memory leak in test cases
+
+diff --git a/src/facenet_train.py b/src/facenet_train.py
+index 4a66717..651ea22 100644
+--- a/src/facenet_train.py
++++ b/src/facenet_train.py
+@@ -204,6 +205,7 @@ def main(args):
+                             batch_size_placeholder, learning_rate_placeholder, phase_train_placeholder, enqueue_op, actual_issame, args.batch_size, 
+                             args.lfw_nrof_folds, log_dir, step, summary_writer, args.embedding_size)
+ 
++    sess.close()
+     return model_dir
+ 
+ 
+

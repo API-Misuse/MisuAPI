@@ -1,0 +1,15 @@
+UPD @type:if_stmt@ @[14801,14915]@ if self.weight_loaded:
+            self.weights_di <text_longer_than_50> @TO@ @type:if_stmt@ @[14801,15063]@ if self.weight_loaded:
+            try:
+           <text_longer_than_50>
+---INS @type:suite@ @[14823,15063]@ try:
+                self.weights_dict[IR_node.var <text_longer_than_50> @TO@ @type:if_stmt@ @[14801,14915]@ if self.weight_loaded:
+            self.weights_di <text_longer_than_50>
+------INS @type:try_stmt@ @[14836,15063]@ try:
+                self.weights_dict[IR_node.var <text_longer_than_50> @TO@ @type:suite@ @[14823,15063]@ try:
+                self.weights_dict[IR_node.var <text_longer_than_50>
+---UPD @type:suite@ @[14823,14915]@ self.weights_dict[IR_node.variable_name] = self.we <text_longer_than_50> @TO@ @type:suite@ @[14840,14936]@ self.weights_dict[IR_node.variable_name] = self.we <text_longer_than_50>
+---MOV @type:suite@ @[14823,14915]@ self.weights_dict[IR_node.variable_name] = self.we <text_longer_than_50> @TO@ @type:try_stmt@ @[14836,15063]@ try:
+                self.weights_dict[IR_node.var <text_longer_than_50>
+
+

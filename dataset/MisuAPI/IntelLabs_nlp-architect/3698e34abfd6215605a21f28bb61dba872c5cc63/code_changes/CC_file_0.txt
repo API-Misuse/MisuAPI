@@ -1,0 +1,29 @@
+INS @type:simple_stmt@ @[764,774]@ import os @TO@ @type:file_input@ @[749,5726]@ import logging
+from typing import Dict, List, Set
+ <text_longer_than_50>
+
+
+INS @type:if_stmt@ @[1784,2239]@ if ref_dict is not None and os.path.isfile(ref_dic <text_longer_than_50> @TO@ @type:suite@ @[1360,2111]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+---INS @type:suite@ @[1837,2140]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1784,2239]@ if ref_dict is not None and os.path.isfile(ref_dic <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[1774,1987]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1850,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+---UPD @type:suite@ @[1817,1871]@ self.ref_dict = load_json_file(ref_dict) @TO@ @type:suite@ @[1893,1951]@ self.ref_dict = load_json_file(ref_dict)
+---UPD @type:suite@ @[1923,1987]@ self.ref_dict = self.load_reference_dict(ref_dict) @TO@ @type:suite@ @[2007,2075]@ self.ref_dict = self.load_reference_dict(ref_dict)
+
+
+MOV @type:if_stmt@ @[1774,1987]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:suite@ @[1837,2140]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+---UPD @type:suite@ @[1817,1871]@ self.ref_dict = load_json_file(ref_dict) @TO@ @type:suite@ @[1893,1951]@ self.ref_dict = load_json_file(ref_dict)
+---UPD @type:suite@ @[1923,1987]@ self.ref_dict = self.load_reference_dict(ref_dict) @TO@ @type:suite@ @[2007,2075]@ self.ref_dict = self.load_reference_dict(ref_dict)
+
+
+MOV @type:simple_stmt@ @[1995,2048]@ logger.info('ReferentDict module lead successfully <text_longer_than_50> @TO@ @type:suite@ @[1837,2140]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+
+

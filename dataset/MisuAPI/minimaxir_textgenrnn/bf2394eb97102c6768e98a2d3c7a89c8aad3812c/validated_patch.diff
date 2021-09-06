@@ -1,0 +1,21 @@
+commit bf2394eb97102c6768e98a2d3c7a89c8aad3812c
+Author: Bruno Afonso <bafonso@gmail.com>
+Date:   Thu Jan 31 16:43:24 2019 -0500
+
+    Fixes generate_to_file using unicode characters
+    
+    Fixes generate_to_file using unicode characters by adding encoding="utf-8" in the open command.
+
+diff --git a/textgenrnn/textgenrnn.py b/textgenrnn/textgenrnn.py
+index 3bd8caf..ae9563c 100644
+--- a/textgenrnn/textgenrnn.py
++++ b/textgenrnn/textgenrnn.py
+@@ -340,7 +340,7 @@ class textgenrnn:
+ 
+     def generate_to_file(self, destination_path, **kwargs):
+         texts = self.generate(return_as_list=True, **kwargs)
+-        with open(destination_path, 'w') as f:
++        with open(destination_path, 'w', encoding="utf-8") as f:
+             for text in texts:
+                 f.write("{}\n".format(text))
+ 

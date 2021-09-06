@@ -1,0 +1,89 @@
+issues_cnt: 0
+sha: ff3004426023df8953e68ed3627b576bbf0579cc
+message: 'Fix calling get() on None.
+
+
+  PiperOrigin-RevId: 236912303'
+commit_log: "commit ff3004426023df8953e68ed3627b576bbf0579cc\nAuthor: tfx-team <tensorflow-extended-team@google.com>\n\
+  Date:   Tue Mar 5 13:41:13 2019 -0800\n\n    Fix calling get() on None.\n    \n\
+  \    PiperOrigin-RevId: 236912303"
+contained_keywords:
+- fix
+commit_time: 2019-03-05 13:41:13 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 48
+    - '          providing instruction of destination to push model.
+
+      '
+  - - 100
+    - '    if exec_properties.get(''custom_config''):
+
+      '
+  - - 101
+    - '      cmle_serving_args = exec_properties.get(''custom_config'',
+
+      '
+  - - 102
+    - '                                              {}).get(''cmle_serving_args'')
+
+      '
+  - - 103
+    - '      if cmle_serving_args is not None:
+
+      '
+  - - 104
+    - '        return cmle_runner.deploy_model_for_serving(serving_path, model_version,
+
+      '
+  - - 105
+    - '                                                    cmle_serving_args,
+
+      '
+  - - 106
+    - '                                                    exec_properties[''log_root''])
+
+      '
+  added: 8
+  del_line_no:
+  - - null
+    - '            providing instruction of destination to push model.
+
+      '
+  - - null
+    - '    cmle_serving_args = exec_properties.get(''custom_config'',
+
+      '
+  - - null
+    - '                                            {}).get(''cmle_serving_args'')
+
+      '
+  - - null
+    - '    if cmle_serving_args is not None:
+
+      '
+  - - null
+    - '      return cmle_runner.deploy_model_for_serving(serving_path, model_version,
+
+      '
+  - - null
+    - '                                                  cmle_serving_args,
+
+      '
+  - - null
+    - '                                                  exec_properties[''log_root''])
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/components/pusher/executor.py
+  removed: 7
+  source_file: a/tfx/components/pusher/executor.py
+  target_file: b/tfx/components/pusher/executor.py

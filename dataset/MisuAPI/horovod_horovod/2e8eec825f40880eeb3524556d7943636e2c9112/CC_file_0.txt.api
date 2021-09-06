@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[61868,63416]@ setup(name='horovod',
+      version=__version__,
+  <text_longer_than_50> @TO@ @type:atom_expr@ @[61868,63416]@ setup(name='horovod',
+      version=__version__,
+  <text_longer_than_50>
+

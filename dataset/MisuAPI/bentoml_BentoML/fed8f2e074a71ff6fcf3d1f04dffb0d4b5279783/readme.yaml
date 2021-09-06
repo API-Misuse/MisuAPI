@@ -1,0 +1,271 @@
+sha: fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783
+message: "Validate custom API name (#125)\n\n* validate-custom-api-name\r\n\r\n* formatting\
+  \ & lint fix\r\n\r\n* fix isidentifier in py2\r\n\r\n* Update __init__.py"
+commit_log: "commit fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783\nAuthor: Chaoyu <paranoyang@gmail.com>\n\
+  Date:   Thu Apr 25 14:39:51 2019 -0700\n\n    Validate custom API name (#125)\n\
+  \    \n    * validate-custom-api-name\n    \n    * formatting & lint fix\n    \n\
+  \    * fix isidentifier in py2\n    \n    * Update __init__.py"
+contained_keywords:
+- fix
+commit_time: 2019-04-25 14:39:51 -0700
+commit_author: Chaoyu
+added_files: 1
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: bentoml/handlers/dataframe_handler.py
+  source_file: a/bentoml/handlers/dataframe_handler.py
+  target_file: b/bentoml/handlers/dataframe_handler.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 122
+    - '                " are supported"
+
+      '
+  del_line_no:
+  - - null
+    - '                        " are supported"
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: bentoml/service.py
+  source_file: a/bentoml/service.py
+  target_file: b/bentoml/service.py
+  added: 5
+  removed: 1
+  add_line_no:
+  - - 32
+    - 'from bentoml.utils import isidentifier
+
+      '
+  - - 157
+    - '        if not isidentifier(api_name):
+
+      '
+  - - 158
+    - '            raise ValueError(
+
+      '
+  - - 159
+    - '                "Invalid API name: ''{}'', a valid identifier must contains
+      only letters, "
+
+      '
+  - - 160
+    - '                "numbers, underscores and not starting with a number.".format(api_name))
+
+      '
+  del_line_no:
+  - - null
+    - '        # TODO: validate api_name
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: bentoml/utils/__init__.py
+  source_file: a/bentoml/utils/__init__.py
+  target_file: b/bentoml/utils/__init__.py
+  added: 15
+  removed: 0
+  add_line_no:
+  - - 21
+    - 'import re
+
+      '
+  - - 22
+    - '
+
+      '
+  - - 28
+    - '
+
+      '
+  - - 29
+    - '
+
+      '
+  - - 30
+    - 'def isidentifier(s):
+
+      '
+  - - 31
+    - '    """
+
+      '
+  - - 32
+    - '    Return true if string is in a valid python identifier format:
+
+      '
+  - - 33
+    - '
+
+      '
+  - - 34
+    - '    https://docs.python.org/2/reference/lexical_analysis.html#identifiers
+
+      '
+  - - 35
+    - '    """
+
+      '
+  - - 36
+    - '    try:
+
+      '
+  - - 37
+    - '        return s.isidentifier()
+
+      '
+  - - 38
+    - '    except AttributeError:
+
+      '
+  - - 39
+    - '        # str#isidentifier is only available in python 3
+
+      '
+  - - 40
+    - '        return re.match(r"[A-Za-z_][A-Za-z_0-9]*\Z", s) is not None
+
+      '
+  del_line_no: []
+patched_file_3:
+  is_added_file: true
+  is_removed_file: false
+  is_modified_file: false
+  is_binary_file: false
+  is_rename: false
+  path: tests/test_service.py
+  source_file: /dev/null
+  target_file: b/tests/test_service.py
+  added: 26
+  removed: 0
+  add_line_no:
+  - - 1
+    - 'import os
+
+      '
+  - - 2
+    - 'import sys
+
+      '
+  - - 3
+    - 'import pytest
+
+      '
+  - - 4
+    - '
+
+      '
+  - - 5
+    - 'sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__),
+      ''..'')))
+
+      '
+  - - 6
+    - 'import bentoml  # noqa: E402
+
+      '
+  - - 7
+    - '
+
+      '
+  - - 8
+    - '
+
+      '
+  - - 9
+    - 'def test_custom_api_name():
+
+      '
+  - - 10
+    - '    # these names should work:
+
+      '
+  - - 11
+    - '    bentoml.api(bentoml.handlers.DataframeHandler, api_name="a_valid_name")(lambda
+      x: x)
+
+      '
+  - - 12
+    - '    bentoml.api(bentoml.handlers.DataframeHandler, api_name="AValidName")(lambda
+      x: x)
+
+      '
+  - - 13
+    - '    bentoml.api(bentoml.handlers.DataframeHandler, api_name="_AValidName")(lambda
+      x: x)
+
+      '
+  - - 14
+    - '    bentoml.api(bentoml.handlers.DataframeHandler, api_name="a_valid_name_123")(lambda
+      x: x)
+
+      '
+  - - 15
+    - '
+
+      '
+  - - 16
+    - '    with pytest.raises(ValueError) as e:
+
+      '
+  - - 17
+    - '        bentoml.api(bentoml.handlers.DataframeHandler, api_name="a invalid
+      name")(lambda x: x)
+
+      '
+  - - 18
+    - '    assert str(e.value).startswith("Invalid API name")
+
+      '
+  - - 19
+    - '
+
+      '
+  - - 20
+    - '    with pytest.raises(ValueError) as e:
+
+      '
+  - - 21
+    - '        bentoml.api(bentoml.handlers.DataframeHandler, api_name="123_a_invalid_name")(lambda
+      x: x)
+
+      '
+  - - 22
+    - '    assert str(e.value).startswith("Invalid API name")
+
+      '
+  - - 23
+    - '
+
+      '
+  - - 24
+    - '    with pytest.raises(ValueError) as e:
+
+      '
+  - - 25
+    - '        bentoml.api(bentoml.handlers.DataframeHandler, api_name="a-invalid-name")(lambda
+      x: x)
+
+      '
+  - - 26
+    - '    assert str(e.value).startswith("Invalid API name")
+
+      '
+  del_line_no: []

@@ -1,0 +1,24 @@
+MOV @type:simple_stmt@ @[4259,4281]@ time_steps = len(out) @TO@ @type:suite@ @[1755,5215]@ """
+	Preprocesses a single utterance wav/text pair <text_longer_than_50>
+
+INS @type:simple_stmt@ @[4076,4151]@ fft_size = hparams.n_fft if hparams.win_size is No <text_longer_than_50> @TO@ @type:suite@ @[1755,5215]@ """
+	Preprocesses a single utterance wav/text pair <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4083,4147]@ audio.pad_lr(wav, hparams.fft_size, audio.get_hop_ <text_longer_than_50> @TO@ @type:atom_expr@ @[4159,4215]@ audio.pad_lr(wav, fft_size, audio.get_hop_size(hpa <text_longer_than_50>
+
+DEL @type:atom_expr@ @[4101,4117]@ hparams.fft_size @FROM@ @type:arglist@ @[4096,4146]@ wav, hparams.fft_size, audio.get_hop_size(hparams)
+
+INS @type:atom_expr@ @[4334,4342]@ len(out) @TO@ @type:comparison@ @[4289,4343]@ time_steps >= mel_frames * audio.get_hop_size(hpar <text_longer_than_50>
+
+INS @type:atom_expr@ @[4334,4342]@ len(out) @TO@ @type:comparison@ @[4289,4343]@ time_steps >= mel_frames * audio.get_hop_size(hpar <text_longer_than_50>
+
+INS @type:trailer@ @[4337,4342]@ (out) @TO@ @type:atom_expr@ @[4334,4342]@ len(out)
+
+INS @type:atom_expr@ @[4589,4597]@ len(out) @TO@ @type:term@ @[4546,4586]@ time_steps % audio.get_hop_size(hparams)
+
+INS @type:atom_expr@ @[4589,4597]@ len(out) @TO@ @type:term@ @[4546,4586]@ time_steps % audio.get_hop_size(hparams)
+
+INS @type:trailer@ @[4592,4597]@ (out) @TO@ @type:atom_expr@ @[4589,4597]@ len(out)
+
+MOV @type:name@ @[4101,4108]@ hparams @TO@ @type:arglist@ @[4096,4146]@ wav, hparams.fft_size, audio.get_hop_size(hparams)
+

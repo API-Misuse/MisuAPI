@@ -1,0 +1,21 @@
+commit 123a890d4e423b7ecdf10d56217dad216b7a35d7
+Author: Chaoyu <paranoyang@gmail.com>
+Date:   Wed May 6 19:46:09 2020 -0700
+
+    Fix issue with fastcore and ruamel-yaml (#637)
+
+diff --git a/bentoml/service_env.py b/bentoml/service_env.py
+index e8f6a4f..3f0f427 100644
+--- a/bentoml/service_env.py
++++ b/bentoml/service_env.py
+@@ -81,8 +81,8 @@ class CondaEnv(object):
+         self._conda_env["channels"] += channels
+ 
+     def write_to_yaml_file(self, filepath):
+-        output_yaml = Path(filepath)
+-        self._yaml.dump(self._conda_env, output_yaml)
++        with open(filepath, 'wb') as output_yaml:
++            self._yaml.dump(self._conda_env, output_yaml)
+ 
+ 
+ class BentoServiceEnv(object):

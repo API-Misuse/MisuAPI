@@ -1,0 +1,18 @@
+INS @type:with_stmt@ @[6168,7059]@ with tf.variable_scope(tf.get_variable_scope()):
+  <text_longer_than_50> @TO@ @type:suite@ @[5121,9881]@ # Create a variable to count the number of train() <text_longer_than_50>
+
+INS @type:with_stmt@ @[6168,7059]@ with tf.variable_scope(tf.get_variable_scope()):
+  <text_longer_than_50> @TO@ @type:suite@ @[5121,9881]@ # Create a variable to count the number of train() <text_longer_than_50>
+
+INS @type:suite@ @[6216,7059]@ for i in xrange(FLAGS.num_gpus):
+        with tf.d <text_longer_than_50> @TO@ @type:with_stmt@ @[6168,7059]@ with tf.variable_scope(tf.get_variable_scope()):
+  <text_longer_than_50>
+
+INS @type:suite@ @[6216,7059]@ for i in xrange(FLAGS.num_gpus):
+        with tf.d <text_longer_than_50> @TO@ @type:with_stmt@ @[6168,7059]@ with tf.variable_scope(tf.get_variable_scope()):
+  <text_longer_than_50>
+
+MOV @type:for_stmt@ @[6168,6976]@ for i in xrange(FLAGS.num_gpus):
+      with tf.dev <text_longer_than_50> @TO@ @type:suite@ @[6216,7059]@ for i in xrange(FLAGS.num_gpus):
+        with tf.d <text_longer_than_50>
+

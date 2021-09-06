@@ -1,0 +1,43 @@
+INS @type:simple_stmt@ @[831,843]@ import absl @TO@ @type:file_input@ @[624,5768]@ """Tests for tfx.types.artifact."""
+
+from __future <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[843,855]@ import mock @TO@ @type:file_input@ @[624,5768]@ """Tests for tfx.types.artifact."""
+
+from __future <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[1010,1035]@ TYPE_NAME = 'MyTypeName' @TO@ @type:suite@ @[4137,4492]@ TYPE_NAME = 'MyCustomArtifact'
+      PROPERTIES =  <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[4181,4492]@ PROPERTIES = {
+          'int1': artifact.Property <text_longer_than_50> @TO@ @type:simple_stmt@ @[1062,1353]@ PROPERTIES = {
+      'int1': artifact.Property(typ <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4181,4491]@ PROPERTIES = {
+          'int1': artifact.Property <text_longer_than_50> @TO@ @type:expr_stmt@ @[1062,1352]@ PROPERTIES = {
+      'int1': artifact.Property(typ <text_longer_than_50>
+------UPD @type:atom@ @[4194,4491]@ {
+          'int1': artifact.Property(type=artifac <text_longer_than_50> @TO@ @type:atom@ @[1075,1352]@ {
+      'int1': artifact.Property(type=artifact.Pr <text_longer_than_50>
+---------UPD @type:dictorsetmaker@ @[4206,4483]@ 'int1': artifact.Property(type=artifact.PropertyTy <text_longer_than_50> @TO@ @type:dictorsetmaker@ @[1083,1348]@ 'int1': artifact.Property(type=artifact.PropertyTy <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[4497,4530]@ my_artifact = MyCustomArtifact() @TO@ @type:simple_stmt@ @[4412,4440]@ my_artifact = _MyArtifact()
+---UPD @type:expr_stmt@ @[4497,4529]@ my_artifact = MyCustomArtifact() @TO@ @type:expr_stmt@ @[4412,4439]@ my_artifact = _MyArtifact()
+------UPD @type:atom_expr@ @[4511,4529]@ MyCustomArtifact() @TO@ @type:atom_expr@ @[4426,4439]@ _MyArtifact()
+---------UPD @type:name@ @[4511,4527]@ MyCustomArtifact @TO@ @type:name@ @[4426,4437]@ _MyArtifact
+
+
+INS @type:simple_stmt@ @[6751,6806]@ self.assertIs(rehydrated.__class__, artifact.Artif <text_longer_than_50> @TO@ @type:suite@ @[6367,6988]@ original = _MyArtifact()
+    original.uri = '/my/p <text_longer_than_50>
+---INS @type:atom_expr@ @[6751,6805]@ self.assertIs(rehydrated.__class__, artifact.Artif <text_longer_than_50> @TO@ @type:simple_stmt@ @[6751,6806]@ self.assertIs(rehydrated.__class__, artifact.Artif <text_longer_than_50>
+------INS @type:trailer@ @[6764,6805]@ (rehydrated.__class__, artifact.Artifact) @TO@ @type:atom_expr@ @[6751,6805]@ self.assertIs(rehydrated.__class__, artifact.Artif <text_longer_than_50>
+---------INS @type:arglist@ @[6765,6804]@ rehydrated.__class__, artifact.Artifact @TO@ @type:trailer@ @[6764,6805]@ (rehydrated.__class__, artifact.Artifact)
+
+
+DEL @type:simple_stmt@ @[4144,4175]@ TYPE_NAME = 'MyCustomArtifact' @FROM@ @type:suite@ @[4137,4492]@ TYPE_NAME = 'MyCustomArtifact'
+      PROPERTIES =  <text_longer_than_50>
+
+

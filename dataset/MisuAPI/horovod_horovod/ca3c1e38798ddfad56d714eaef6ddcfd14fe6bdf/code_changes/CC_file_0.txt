@@ -1,0 +1,40 @@
+UPD @type:with_stmt@ @[6813,8039]@ with tqdm(total=len(train_loader),
+              d <text_longer_than_50> @TO@ @type:with_stmt@ @[6813,8032]@ with tqdm(total=len(train_loader),
+              d <text_longer_than_50>
+---UPD @type:suite@ @[6948,8039]@ for batch_idx, (data, target) in enumerate(train_l <text_longer_than_50> @TO@ @type:suite@ @[6948,8032]@ for batch_idx, (data, target) in enumerate(train_l <text_longer_than_50>
+------UPD @type:for_stmt@ @[6957,8039]@ for batch_idx, (data, target) in enumerate(train_l <text_longer_than_50> @TO@ @type:for_stmt@ @[6957,8032]@ for batch_idx, (data, target) in enumerate(train_l <text_longer_than_50>
+---------UPD @type:suite@ @[7014,8039]@ adjust_learning_rate(epoch, batch_idx)
+
+           <text_longer_than_50> @TO@ @type:suite@ @[7014,8032]@ adjust_learning_rate(epoch, batch_idx)
+
+           <text_longer_than_50>
+------------UPD @type:for_stmt@ @[7258,7803]@ for i in range(0, len(data), args.batch_size):
+    <text_longer_than_50> @TO@ @type:for_stmt@ @[7258,7796]@ for i in range(0, len(data), args.batch_size):
+    <text_longer_than_50>
+---------------UPD @type:suite@ @[7304,7803]@ data_batch = data[i:i + args.batch_size]
+          <text_longer_than_50> @TO@ @type:suite@ @[7304,7796]@ data_batch = data[i:i + args.batch_size]
+          <text_longer_than_50>
+------------------UPD @type:simple_stmt@ @[7613,7644]@ train_loss.update(loss.item()) @TO@ @type:simple_stmt@ @[7613,7637]@ train_loss.update(loss)
+---------------------DEL @type:atom_expr@ @[7613,7643]@ train_loss.update(loss.item()) @FROM@ @type:simple_stmt@ @[7613,7644]@ train_loss.update(loss.item())
+
+
+UPD @type:atom_expr@ @[7631,7642]@ loss.item() @TO@ @type:atom_expr@ @[7613,7636]@ train_loss.update(loss)
+---UPD @type:trailer@ @[7635,7640]@ .item @TO@ @type:trailer@ @[7630,7636]@ (loss)
+------DEL @type:name@ @[7636,7640]@ item @FROM@ @type:trailer@ @[7635,7640]@ .item
+---MOV @type:name@ @[7631,7635]@ loss @TO@ @type:trailer@ @[7635,7640]@ .item
+---DEL @type:trailer@ @[7640,7642]@ () @FROM@ @type:atom_expr@ @[7631,7642]@ loss.item()
+
+
+MOV @type:atom_expr@ @[7631,7642]@ loss.item() @TO@ @type:simple_stmt@ @[7613,7644]@ train_loss.update(loss.item())
+---UPD @type:trailer@ @[7635,7640]@ .item @TO@ @type:trailer@ @[7630,7636]@ (loss)
+------DEL @type:name@ @[7636,7640]@ item @FROM@ @type:trailer@ @[7635,7640]@ .item
+---MOV @type:name@ @[7631,7635]@ loss @TO@ @type:trailer@ @[7635,7640]@ .item
+---DEL @type:trailer@ @[7640,7642]@ () @FROM@ @type:atom_expr@ @[7631,7642]@ loss.item()
+
+
+MOV @type:name@ @[7613,7623]@ train_loss @TO@ @type:atom_expr@ @[7631,7642]@ loss.item()
+
+
+MOV @type:trailer@ @[7623,7630]@ .update @TO@ @type:atom_expr@ @[7631,7642]@ loss.item()
+
+

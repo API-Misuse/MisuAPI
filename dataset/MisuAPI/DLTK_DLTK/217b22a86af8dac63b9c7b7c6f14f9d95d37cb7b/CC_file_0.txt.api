@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[4231,4413]@ tf.nn.conv3d_transpose(
+        inputs=inputs,
+    <text_longer_than_50> @TO@ @type:atom_expr@ @[4231,4412]@ tf.nn.conv3d_transpose(
+        value=inputs,
+     <text_longer_than_50>
+

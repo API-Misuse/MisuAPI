@@ -1,0 +1,37 @@
+UPD @type:simple_stmt@ @[20498,24840]@ test_table = {
+        'cntk' : {
+            # 'a <text_longer_than_50> @TO@ @type:simple_stmt@ @[20522,24915]@ test_table = {
+        'cntk' : {
+            # 'a <text_longer_than_50>
+---UPD @type:expr_stmt@ @[20498,24839]@ test_table = {
+        'cntk' : {
+            # 'a <text_longer_than_50> @TO@ @type:expr_stmt@ @[20522,24914]@ test_table = {
+        'cntk' : {
+            # 'a <text_longer_than_50>
+------UPD @type:atom@ @[20511,24839]@ {
+        'cntk' : {
+            # 'alexnet'       <text_longer_than_50> @TO@ @type:atom@ @[20535,24914]@ {
+        'cntk' : {
+            # 'alexnet'       <text_longer_than_50>
+---------UPD @type:dictorsetmaker@ @[20521,24833]@ 'cntk' : {
+            # 'alexnet'       : [CntkEm <text_longer_than_50> @TO@ @type:dictorsetmaker@ @[20545,24908]@ 'cntk' : {
+            # 'alexnet'       : [CntkEm <text_longer_than_50>
+------------UPD @type:atom@ @[22557,23350]@ {
+            'vgg19'         : [CntkEmit, Tensorf <text_longer_than_50> @TO@ @type:atom@ @[22581,23425]@ {
+            # 'voc-fcn8s'       : [TensorflowEmi <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[6292,6399]@ original_predict = caffe_extractor.inference(archi <text_longer_than_50> @TO@ @type:simple_stmt@ @[6292,6423]@ original_predict = caffe_extractor.inference(archi <text_longer_than_50>
+---UPD @type:expr_stmt@ @[6292,6398]@ original_predict = caffe_extractor.inference(archi <text_longer_than_50> @TO@ @type:expr_stmt@ @[6292,6422]@ original_predict = caffe_extractor.inference(archi <text_longer_than_50>
+------UPD @type:atom_expr@ @[6311,6398]@ caffe_extractor.inference(architecture_name,archit <text_longer_than_50> @TO@ @type:atom_expr@ @[6311,6422]@ caffe_extractor.inference(architecture_name, (arch <text_longer_than_50>
+---------UPD @type:trailer@ @[6336,6398]@ (architecture_name,architecture_file, weight_file, <text_longer_than_50> @TO@ @type:trailer@ @[6336,6422]@ (architecture_name, (architecture_file, weight_fil <text_longer_than_50>
+------------UPD @type:arglist@ @[6337,6397]@ architecture_name,architecture_file, weight_file,  <text_longer_than_50> @TO@ @type:arglist@ @[6337,6421]@ architecture_name, (architecture_file, weight_file <text_longer_than_50>
+---------------INS @type:atom@ @[6356,6388]@ (architecture_file, weight_file) @TO@ @type:arglist@ @[6337,6397]@ architecture_name,architecture_file, weight_file,  <text_longer_than_50>
+------------------INS @type:testlist_comp@ @[6357,6387]@ architecture_file, weight_file @TO@ @type:atom@ @[6356,6388]@ (architecture_file, weight_file)
+---------------INS @type:atom_expr@ @[6390,6409]@ TestModels.cachedir @TO@ @type:arglist@ @[6337,6397]@ architecture_name,architecture_file, weight_file,  <text_longer_than_50>
+---------------INS @type:operator@ @[6409,6410]@ , @TO@ @type:arglist@ @[6337,6397]@ architecture_name,architecture_file, weight_file,  <text_longer_than_50>
+---------------MOV @type:name@ @[6355,6372]@ architecture_file @TO@ @type:testlist_comp@ @[6357,6387]@ architecture_file, weight_file
+---------------MOV @type:operator@ @[6372,6373]@ , @TO@ @type:testlist_comp@ @[6357,6387]@ architecture_file, weight_file
+---------------MOV @type:name@ @[6374,6385]@ weight_file @TO@ @type:testlist_comp@ @[6357,6387]@ architecture_file, weight_file
+
+

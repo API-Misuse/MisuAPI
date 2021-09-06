@@ -1,0 +1,60 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/3165
+  title: Fixed the Kubeflow v2 FBEG driver metadata output.
+  body: 'Fixed the Kubeflow v2 FBEG driver metadata output.
+
+    '
+sha: 5c63453356c2019854b94a54e10a5922796df474
+message: 'Fixed the Kubeflow v2 FBEG driver metadata output when using local filesystem.
+
+
+  PiperOrigin-RevId: 354634169'
+commit_log: "commit 5c63453356c2019854b94a54e10a5922796df474\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Fri Jan 29 16:29:39 2021 -0800\n\n    Fixed the Kubeflow v2 FBEG driver\
+  \ metadata output when using local filesystem.\n    \n    PiperOrigin-RevId: 354634169"
+contained_keywords:
+- fixed
+commit_time: 2021-01-29 16:29:39 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  add_line_no:
+  - - 17
+    - 'import os
+
+      '
+  - - 115
+    - '  fileio.makedirs(os.path.dirname(output_metadata_uri))
+
+      '
+  added: 2
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/kubeflow/v2/file_based_example_gen/driver.py
+  removed: 0
+  source_file: a/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver.py
+  target_file: b/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver.py
+patched_file_1:
+  add_line_no: []
+  added: 0
+  del_line_no:
+  - - null
+    - '    fileio.makedirs(os.path.dirname(_TEST_OUTPUT_METADATA_JSON))
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/kubeflow/v2/file_based_example_gen/driver_test.py
+  removed: 1
+  source_file: a/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver_test.py
+  target_file: b/tfx/orchestration/kubeflow/v2/file_based_example_gen/driver_test.py

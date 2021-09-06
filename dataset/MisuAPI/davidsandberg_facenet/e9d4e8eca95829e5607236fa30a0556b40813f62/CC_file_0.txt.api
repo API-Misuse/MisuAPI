@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[8058,8101]@ tf.reduce_max(target, axis, keep_dims=True) @TO@ @type:atom_expr@ @[8058,8100]@ tf.reduce_max(target, axis, keepdims=True)
+
+UPD @type:atom_expr@ @[8167,8214]@ tf.reduce_sum(target_exp, axis, keep_dims=True) @TO@ @type:atom_expr@ @[8166,8212]@ tf.reduce_sum(target_exp, axis, keepdims=True)
+

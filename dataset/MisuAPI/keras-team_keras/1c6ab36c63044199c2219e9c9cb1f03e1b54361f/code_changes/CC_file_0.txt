@@ -1,0 +1,25 @@
+UPD @type:if_stmt@ @[8310,8742]@ if self.stateful:
+            if not input_shape[0 <text_longer_than_50> @TO@ @type:if_stmt@ @[8310,8744]@ if self.stateful:
+            if not input_shape[0 <text_longer_than_50>
+---UPD @type:suite@ @[8327,8627]@ if not input_shape[0]:
+                raise Excep <text_longer_than_50> @TO@ @type:suite@ @[8327,8629]@ if not input_shape[0]:
+                raise Excep <text_longer_than_50>
+------UPD @type:simple_stmt@ @[8570,8627]@ self.states = [K.zeros(input_shape[0], self.output <text_longer_than_50> @TO@ @type:simple_stmt@ @[8570,8629]@ self.states = [K.zeros((input_shape[0], self.outpu <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[8570,8626]@ self.states = [K.zeros(input_shape[0], self.output <text_longer_than_50> @TO@ @type:expr_stmt@ @[8570,8628]@ self.states = [K.zeros((input_shape[0], self.outpu <text_longer_than_50>
+------------UPD @type:atom@ @[8584,8626]@ [K.zeros(input_shape[0], self.output_dim)] @TO@ @type:atom@ @[8584,8628]@ [K.zeros((input_shape[0], self.output_dim))]
+---------------UPD @type:atom_expr@ @[8585,8625]@ K.zeros(input_shape[0], self.output_dim) @TO@ @type:atom_expr@ @[8585,8627]@ K.zeros((input_shape[0], self.output_dim))
+------------------UPD @type:trailer@ @[8592,8625]@ (input_shape[0], self.output_dim) @TO@ @type:trailer@ @[8592,8627]@ ((input_shape[0], self.output_dim))
+---------------------INS @type:atom@ @[8593,8626]@ (input_shape[0], self.output_dim) @TO@ @type:trailer@ @[8592,8625]@ (input_shape[0], self.output_dim)
+------------------------INS @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim @TO@ @type:atom@ @[8593,8626]@ (input_shape[0], self.output_dim)
+---------------------DEL @type:arglist@ @[8593,8624]@ input_shape[0], self.output_dim @FROM@ @type:trailer@ @[8592,8625]@ (input_shape[0], self.output_dim)
+
+
+MOV @type:atom_expr@ @[8593,8607]@ input_shape[0] @TO@ @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim
+
+
+MOV @type:operator@ @[8607,8608]@ , @TO@ @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim
+
+
+MOV @type:atom_expr@ @[8609,8624]@ self.output_dim @TO@ @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim
+
+

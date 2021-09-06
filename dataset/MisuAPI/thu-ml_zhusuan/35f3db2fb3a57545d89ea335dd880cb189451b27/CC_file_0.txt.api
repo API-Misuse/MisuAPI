@@ -1,0 +1,10 @@
+UPD @type:atom_expr@ @[2188,2202]@ pickle.load(f) @TO@ @type:atom_expr@ @[2188,2221]@ pickle.load(f, encoding='latin1')
+
+UPD @type:atom_expr@ @[6096,6117]@ open(batch_file, 'r') @TO@ @type:atom_expr@ @[6115,6137]@ open(batch_file, 'rb')
+
+UPD @type:atom_expr@ @[6143,6157]@ pickle.load(f) @TO@ @type:atom_expr@ @[6163,6196]@ pickle.load(f, encoding='latin1')
+
+UPD @type:atom_expr@ @[6378,6404]@ open(test_batch_file, 'r') @TO@ @type:atom_expr@ @[6417,6444]@ open(test_batch_file, 'rb')
+
+UPD @type:atom_expr@ @[6426,6440]@ pickle.load(f) @TO@ @type:atom_expr@ @[6466,6499]@ pickle.load(f, encoding='latin1')
+

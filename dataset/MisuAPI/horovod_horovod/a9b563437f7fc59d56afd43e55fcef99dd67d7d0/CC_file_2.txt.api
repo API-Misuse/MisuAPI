@@ -1,0 +1,8 @@
+UPD @type:atom_expr@ @[2045,2057]@ nn.BCELoss() @TO@ @type:atom_expr@ @[2082,2104]@ F.binary_cross_entropy
+
+DEL @type:trailer@ @[2055,2057]@ () @FROM@ @type:atom_expr@ @[2045,2057]@ nn.BCELoss()
+
+UPD @type:atom_expr@ @[2230,2639]@ hvd.TorchEstimator(
+                    num_proc=2 <text_longer_than_50> @TO@ @type:atom_expr@ @[2277,2734]@ hvd.TorchEstimator(
+                    num_proc=2 <text_longer_than_50>
+

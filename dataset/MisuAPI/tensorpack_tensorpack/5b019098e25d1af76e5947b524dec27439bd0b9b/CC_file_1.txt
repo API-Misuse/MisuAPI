@@ -1,0 +1,59 @@
+INS @type:try_stmt@ @[6878,7428]@ try:
+            with open(procmap, 'r') as f:
+    <text_longer_than_50> @TO@ @type:suite@ @[6521,7225]@ """
+        Find so from /proc/pid/maps
+        On <text_longer_than_50>
+---INS @type:suite@ @[6882,7270]@ with open(procmap, 'r') as f:
+                for  <text_longer_than_50> @TO@ @type:try_stmt@ @[6878,7428]@ try:
+            with open(procmap, 'r') as f:
+    <text_longer_than_50>
+
+
+UPD @type:with_stmt@ @[6878,7225]@ with open(procmap, 'r') as f:
+            for line <text_longer_than_50> @TO@ @type:with_stmt@ @[6895,7270]@ with open(procmap, 'r') as f:
+                for  <text_longer_than_50>
+---UPD @type:suite@ @[6907,7225]@ for line in f:
+                line = line.strip() <text_longer_than_50> @TO@ @type:suite@ @[6924,7270]@ for line in f:
+                    line = line.str <text_longer_than_50>
+------UPD @type:for_stmt@ @[6920,7225]@ for line in f:
+                line = line.strip() <text_longer_than_50> @TO@ @type:for_stmt@ @[6941,7270]@ for line in f:
+                    line = line.str <text_longer_than_50>
+---------UPD @type:suite@ @[6934,7225]@ line = line.strip().split(' ')
+                sof <text_longer_than_50> @TO@ @type:suite@ @[6955,7270]@ line = line.strip().split(' ')
+                    <text_longer_than_50>
+------------UPD @type:if_stmt@ @[7085,7225]@ if 'lib' + name + '.so' in basename:
+              <text_longer_than_50> @TO@ @type:if_stmt@ @[7122,7270]@ if 'lib' + name + '.so' in basename:
+              <text_longer_than_50>
+---------------UPD @type:suite@ @[7121,7225]@ if os.path.isfile(sofile):
+                        <text_longer_than_50> @TO@ @type:suite@ @[7158,7270]@ if os.path.isfile(sofile):
+                        <text_longer_than_50>
+------------------UPD @type:if_stmt@ @[7142,7225]@ if os.path.isfile(sofile):
+                        <text_longer_than_50> @TO@ @type:if_stmt@ @[7183,7270]@ if os.path.isfile(sofile):
+                        <text_longer_than_50>
+---------------------UPD @type:suite@ @[7168,7225]@ return os.path.realpath(sofile) @TO@ @type:suite@ @[7209,7270]@ return os.path.realpath(sofile)
+
+
+MOV @type:with_stmt@ @[6878,7225]@ with open(procmap, 'r') as f:
+            for line <text_longer_than_50> @TO@ @type:suite@ @[6882,7270]@ with open(procmap, 'r') as f:
+                for  <text_longer_than_50>
+---UPD @type:suite@ @[6907,7225]@ for line in f:
+                line = line.strip() <text_longer_than_50> @TO@ @type:suite@ @[6924,7270]@ for line in f:
+                    line = line.str <text_longer_than_50>
+------UPD @type:for_stmt@ @[6920,7225]@ for line in f:
+                line = line.strip() <text_longer_than_50> @TO@ @type:for_stmt@ @[6941,7270]@ for line in f:
+                    line = line.str <text_longer_than_50>
+---------UPD @type:suite@ @[6934,7225]@ line = line.strip().split(' ')
+                sof <text_longer_than_50> @TO@ @type:suite@ @[6955,7270]@ line = line.strip().split(' ')
+                    <text_longer_than_50>
+------------UPD @type:if_stmt@ @[7085,7225]@ if 'lib' + name + '.so' in basename:
+              <text_longer_than_50> @TO@ @type:if_stmt@ @[7122,7270]@ if 'lib' + name + '.so' in basename:
+              <text_longer_than_50>
+---------------UPD @type:suite@ @[7121,7225]@ if os.path.isfile(sofile):
+                        <text_longer_than_50> @TO@ @type:suite@ @[7158,7270]@ if os.path.isfile(sofile):
+                        <text_longer_than_50>
+------------------UPD @type:if_stmt@ @[7142,7225]@ if os.path.isfile(sofile):
+                        <text_longer_than_50> @TO@ @type:if_stmt@ @[7183,7270]@ if os.path.isfile(sofile):
+                        <text_longer_than_50>
+---------------------UPD @type:suite@ @[7168,7225]@ return os.path.realpath(sofile) @TO@ @type:suite@ @[7209,7270]@ return os.path.realpath(sofile)
+
+

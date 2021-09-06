@@ -1,0 +1,123 @@
+sha: 1d690289898bb4e7f69034333483c687d601015d
+message: fix (#4410)
+commit_log: "commit 1d690289898bb4e7f69034333483c687d601015d\nAuthor: ZhuBaohe <ehoabuhz@gmail.com>\n\
+  Date:   Tue May 26 20:51:28 2020 +0800\n\n    fix (#4410)"
+contained_keywords:
+- fix
+commit_time: 2020-05-26 20:51:28 +0800
+commit_author: ZhuBaohe
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: src/transformers/modeling_tf_xlnet.py
+  source_file: a/src/transformers/modeling_tf_xlnet.py
+  target_file: b/src/transformers/modeling_tf_xlnet.py
+  added: 11
+  removed: 13
+  add_line_no:
+  - - 589
+    - '            if mlen > 0:
+
+      '
+  - - 590
+    - '                mems_mask = tf.zeros([shape_list(data_mask)[0], mlen, bsz],
+      dtype=dtype_float)
+
+      '
+  - - 591
+    - '                data_mask = tf.concat([mems_mask, data_mask], axis=1)
+
+      '
+  - - 602
+    - '            if mlen > 0:
+
+      '
+  - - 603
+    - '                non_tgt_mask = tf.concat([tf.zeros([qlen, mlen], dtype=dtype_float),
+      non_tgt_mask], axis=-1)
+
+      '
+  - - 626
+    - '            if mlen > 0:
+
+      '
+  - - 627
+    - '                mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32)
+
+      '
+  - - 628
+    - '                cat_ids = tf.concat([mem_pad, token_type_ids], 0)
+
+      '
+  - - 629
+    - '            else:
+
+      '
+  - - 630
+    - '                cat_ids = token_type_ids
+
+      '
+  - - 648
+    - '            raise NotImplementedError
+
+      '
+  del_line_no:
+  - - null
+    - '            mems_mask = tf.zeros([shape_list(data_mask)[0], mlen, bsz], dtype=dtype_float)
+
+      '
+  - - null
+    - '            data_mask = tf.concat([mems_mask, data_mask], axis=1)
+
+      '
+  - - null
+    - '            non_tgt_mask = tf.concat([tf.zeros([qlen, mlen], dtype=dtype_float),
+      non_tgt_mask], axis=-1)
+
+      '
+  - - null
+    - '            mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32)
+
+      '
+  - - null
+    - '            cat_ids = tf.concat([mem_pad, token_type_ids], 0)
+
+      '
+  - - null
+    - '            if head_mask.dim() == 1:
+
+      '
+  - - null
+    - '                head_mask = head_mask.unsqueeze(0).unsqueeze(0).unsqueeze(0).unsqueeze(0)
+
+      '
+  - - null
+    - '                head_mask = head_mask.expand(self.n_layer, -1, -1, -1, -1)
+
+      '
+  - - null
+    - '            elif head_mask.dim() == 2:
+
+      '
+  - - null
+    - '                head_mask = head_mask.unsqueeze(1).unsqueeze(1).unsqueeze(1)
+
+      '
+  - - null
+    - '            head_mask = head_mask.to(
+
+      '
+  - - null
+    - '                dtype=next(self.parameters()).dtype
+
+      '
+  - - null
+    - '            )  # switch to fload if need + fp16 compatibility
+
+      '

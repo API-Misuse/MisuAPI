@@ -1,0 +1,82 @@
+UPD @type:simple_stmt@ @[73,13501]@ hparams = tf.contrib.training.HParams(
+	# Comma-se <text_longer_than_50> @TO@ @type:simple_stmt@ @[73,13876]@ hparams = tf.contrib.training.HParams(
+	# Comma-se <text_longer_than_50>
+---UPD @type:expr_stmt@ @[73,13500]@ hparams = tf.contrib.training.HParams(
+	# Comma-se <text_longer_than_50> @TO@ @type:expr_stmt@ @[73,13875]@ hparams = tf.contrib.training.HParams(
+	# Comma-se <text_longer_than_50>
+------UPD @type:atom_expr@ @[83,13500]@ tf.contrib.training.HParams(
+	# Comma-separated li <text_longer_than_50> @TO@ @type:atom_expr@ @[83,13875]@ tf.contrib.training.HParams(
+	# Comma-separated li <text_longer_than_50>
+---------UPD @type:trailer@ @[110,13500]@ (
+	# Comma-separated list of cleaners to run on te <text_longer_than_50> @TO@ @type:trailer@ @[110,13875]@ (
+	# Comma-separated list of cleaners to run on te <text_longer_than_50>
+------------UPD @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50> @TO@ @type:arglist@ @[285,13871]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------UPD @type:argument@ @[793,807]@ num_freq = 513 @TO@ @type:argument@ @[793,808]@ num_freq = 1025
+------------------UPD @type:number@ @[804,807]@ 513 @TO@ @type:number@ @[804,808]@ 1025
+---------------UPD @type:argument@ @[1424,1436]@ use_lws=True @TO@ @type:argument@ @[1501,1514]@ use_lws=False
+---------------UPD @type:argument@ @[1549,1564]@ fft_size = 1024 @TO@ @type:argument@ @[1627,1639]@ n_fft = 2048
+------------------UPD @type:name@ @[1549,1557]@ fft_size @TO@ @type:name@ @[1627,1632]@ n_fft
+------------------UPD @type:number@ @[1560,1564]@ 1024 @TO@ @type:number@ @[1635,1639]@ 2048
+---------------UPD @type:argument@ @[1567,1581]@ hop_size = 256 @TO@ @type:argument@ @[1711,1725]@ hop_size = 275
+------------------UPD @type:number@ @[1578,1581]@ 256 @TO@ @type:number@ @[1722,1725]@ 275
+---------------INS @type:argument@ @[1757,1772]@ win_size = 1100 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------INS @type:operator@ @[1772,1773]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------INS @type:argument@ @[1968,1987]@ trim_fft_size = 512 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------INS @type:operator@ @[1987,1988]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------INS @type:argument@ @[1990,2009]@ trim_hop_size = 128 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------INS @type:operator@ @[2009,2010]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------INS @type:argument@ @[2012,2028]@ trim_top_db = 60 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------INS @type:operator@ @[2028,2029]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+---------------UPD @type:argument@ @[2046,2065]@ min_level_db =- 100 @TO@ @type:argument@ @[2401,2420]@ min_level_db = -100
+------------------UPD @type:factor@ @[2060,2065]@ - 100 @TO@ @type:factor@ @[2416,2420]@ -100
+---------------UPD @type:argument@ @[2088,2098]@ fmin = 125 @TO@ @type:argument@ @[2443,2452]@ fmin = 25
+------------------UPD @type:number@ @[2095,2098]@ 125 @TO@ @type:number@ @[2450,2452]@ 25
+---------------UPD @type:argument@ @[3468,3494]@ prenet_layers = [256, 256] @TO@ @type:argument@ @[3822,3848]@ prenet_layers = [128, 128]
+------------------UPD @type:atom@ @[3484,3494]@ [256, 256] @TO@ @type:atom@ @[3838,3848]@ [128, 128]
+---------------------UPD @type:testlist_comp@ @[3485,3493]@ 256, 256 @TO@ @type:testlist_comp@ @[3839,3847]@ 128, 128
+------------------------UPD @type:number@ @[3485,3488]@ 256 @TO@ @type:number@ @[3839,3842]@ 128
+------------------------UPD @type:number@ @[3490,3493]@ 256 @TO@ @type:number@ @[3844,3847]@ 128
+---------------UPD @type:argument@ @[3597,3622]@ decoder_lstm_units = 1024 @TO@ @type:argument@ @[3951,3975]@ decoder_lstm_units = 512
+------------------UPD @type:number@ @[3618,3622]@ 1024 @TO@ @type:number@ @[3972,3975]@ 512
+---------------UPD @type:argument@ @[5886,5912]@ upsample_scales = [16, 16] @TO@ @type:argument@ @[6256,6284]@ upsample_scales = [11, 5, 5]
+------------------UPD @type:atom@ @[5904,5912]@ [16, 16] @TO@ @type:atom@ @[6274,6284]@ [11, 5, 5]
+---------------------UPD @type:testlist_comp@ @[5905,5911]@ 16, 16 @TO@ @type:testlist_comp@ @[6275,6283]@ 11, 5, 5
+------------------------UPD @type:number@ @[5905,5907]@ 16 @TO@ @type:number@ @[6275,6277]@ 11
+------------------------INS @type:number@ @[6279,6280]@ 5 @TO@ @type:testlist_comp@ @[5905,5911]@ 16, 16
+------------------------INS @type:operator@ @[6280,6281]@ , @TO@ @type:testlist_comp@ @[5905,5911]@ 16, 16
+------------------------UPD @type:number@ @[5909,5911]@ 16 @TO@ @type:number@ @[6282,6283]@ 5
+---------------UPD @type:argument@ @[6734,6758]@ tacotron_batch_size = 32 @TO@ @type:argument@ @[7106,7130]@ tacotron_batch_size = 48
+------------------UPD @type:number@ @[6756,6758]@ 32 @TO@ @type:number@ @[7128,7130]@ 48
+---------------UPD @type:argument@ @[6812,6838]@ tacotron_reg_weight = 1e-6 @TO@ @type:argument@ @[7184,7210]@ tacotron_reg_weight = 1e-5
+------------------UPD @type:number@ @[6834,6838]@ 1e-6 @TO@ @type:number@ @[7206,7210]@ 1e-5
+---------------UPD @type:argument@ @[7160,7186]@ tacotron_test_batches = 48 @TO@ @type:argument@ @[7532,7558]@ tacotron_test_batches = 32
+------------------UPD @type:number@ @[7184,7186]@ 48 @TO@ @type:number@ @[7556,7558]@ 32
+---------------UPD @type:argument@ @[8150,8169]@ natural_eval = True @TO@ @type:argument@ @[8521,8541]@ natural_eval = False
+---------------UPD @type:argument@ @[9485,9530]@ tacotron_teacher_forcing_decay_steps = 220000 @TO@ @type:argument@ @[9860,9905]@ tacotron_teacher_forcing_decay_steps = 280000
+------------------UPD @type:number@ @[9524,9530]@ 220000 @TO@ @type:number@ @[9899,9905]@ 280000
+
+
+MOV @type:return_stmt@ @[13650,13693]@ return 'Hyperparameters:\n' + '\n'.join(hp) @TO@ @type:suite@ @[13529,13694]@ values = hparams.values()
+	hp = ['  %s: %s' % (nam <text_longer_than_50>
+
+

@@ -1,0 +1,24 @@
+commit 1c99681ed94495f446399e247a8d63e07f28391c
+Author: wangtz <34290063+wangtz@users.noreply.github.com>
+Date:   Wed Jan 16 02:24:54 2019 +0800
+
+    Stop crashing at the end of training phase. (#6049)
+    
+    It currently fails with
+    TypeError: not all arguments converted during string formatting
+
+diff --git a/official/transformer/transformer_main.py b/official/transformer/transformer_main.py
+index c3b56012..3560308e 100644
+--- a/official/transformer/transformer_main.py
++++ b/official/transformer/transformer_main.py
+@@ -232,8 +232,8 @@ def evaluate_and_log_bleu(estimator, bleu_source, bleu_ref, vocab_file):
+   uncased_score, cased_score = translate_and_compute_bleu(
+       estimator, subtokenizer, bleu_source, bleu_ref)
+ 
+-  tf.logging.info("Bleu score (uncased):", uncased_score)
+-  tf.logging.info("Bleu score (cased):", cased_score)
++  tf.logging.info("Bleu score (uncased): %d", uncased_score)
++  tf.logging.info("Bleu score (cased): %d", cased_score)
+   return uncased_score, cased_score
+ 
+ 

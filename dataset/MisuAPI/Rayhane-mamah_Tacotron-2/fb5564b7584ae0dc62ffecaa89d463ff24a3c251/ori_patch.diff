@@ -1,0 +1,433 @@
+commit fb5564b7584ae0dc62ffecaa89d463ff24a3c251
+Author: Rayhane Mama <34689728+Rayhane-mamah@users.noreply.github.com>
+Date:   Fri May 25 15:27:31 2018 +0100
+
+    my hparams + faster attention + pitch loss fix
+
+diff --git a/datasets/audio.py b/datasets/audio.py
+index 04b89df..81b9793 100644
+--- a/datasets/audio.py
++++ b/datasets/audio.py
+@@ -33,8 +33,8 @@ def trim_silence(wav, hparams):
+ 
+ 	Useful for M-AILABS dataset if we choose to trim the extra 0.5 silence at beginning and end.
+ 	'''
+-	#Thanks @begeekmyfriend for pointing out the params contradiction. Should we set separate params for this function?
+-	return librosa.effects.trim(wav, frame_length=hparams.fft_size, hop_length=get_hop_size(hparams))[0]
++	#Thanks @begeekmyfriend and @lautjy for pointing out the params contradiction. These params are separate and tunable per dataset.
++	return librosa.effects.trim(wav, top_db= hparams.trim_top_db, frame_length=hparams.trim_fft_size, hop_length=hparams.trim_hop_size)[0]
+ 
+ def get_hop_size(hparams):
+ 	hop_size = hparams.hop_size
+@@ -74,7 +74,7 @@ def inv_linear_spectrogram(linear_spectrogram, hparams):
+ 		y = processor.istft(D).astype(np.float32)
+ 		return y
+ 	else:
+-		return _griffin_lim(S ** hparams.power)
++		return _griffin_lim(S ** hparams.power, hparams)
+ 	
+ 
+ def inv_mel_spectrogram(mel_spectrogram, hparams):
+@@ -92,11 +92,11 @@ def inv_mel_spectrogram(mel_spectrogram, hparams):
+ 		y = processor.istft(D).astype(np.float32)
+ 		return y
+ 	else:
+-		return _griffin_lim(S ** hparams.power)
++		return _griffin_lim(S ** hparams.power, hparams)
+ 
+ def _lws_processor(hparams):
+ 	import lws
+-	return lws.lws(hparams.fft_size, get_hop_size(hparams), mode="speech")
++	return lws.lws(hparams.n_fft, get_hop_size(hparams), fftsize=hparams.win_size, mode="speech")
+ 
+ def _griffin_lim(S, hparams):
+ 	'''librosa implementation of Griffin-Lim
+@@ -114,10 +114,10 @@ def _stft(y, hparams):
+ 	if hparams.use_lws:
+ 		return _lws_processor(hparams).stft(y).T
+ 	else:
+-		return librosa.stft(y=y, n_fft=hparams.fft_size, hop_length=get_hop_size(hparams))
++		return librosa.stft(y=y, n_fft=hparams.n_fft, hop_length=get_hop_size(hparams), win_length=hparams.win_size)
+ 
+ def _istft(y, hparams):
+-	return librosa.istft(y, hop_length=get_hop_size(hparams))
++	return librosa.istft(y, hop_length=get_hop_size(hparams), win_length=hparams.win_size)
+ 
+ def num_frames(length, fsize, fshift):
+ 	"""Compute number of time frames of spectrogram
+@@ -158,7 +158,7 @@ def _mel_to_linear(mel_spectrogram, hparams):
+ 
+ def _build_mel_basis(hparams):
+ 	assert hparams.fmax <= hparams.sample_rate // 2
+-	return librosa.filters.mel(hparams.sample_rate, hparams.fft_size, n_mels=hparams.num_mels,
++	return librosa.filters.mel(hparams.sample_rate, hparams.n_fft, n_mels=hparams.num_mels,
+ 							   fmin=hparams.fmin, fmax=hparams.fmax)
+ 
+ def _amp_to_db(x, hparams):
+diff --git a/datasets/preprocessor.py b/datasets/preprocessor.py
+index fb8706c..7643350 100644
+--- a/datasets/preprocessor.py
++++ b/datasets/preprocessor.py
+@@ -115,18 +115,19 @@ def _process_utterance(mel_dir, linear_dir, wav_dir, index, wav_path, text, hpar
+ 	assert linear_frames == mel_frames
+ 
+ 	#Ensure time resolution adjustement between audio and mel-spectrogram
+-	l, r = audio.pad_lr(wav, hparams.fft_size, audio.get_hop_size(hparams))
++	fft_size = hparams.n_fft if hparams.win_size is None else hparams.win_size
++	l, r = audio.pad_lr(wav, fft_size, audio.get_hop_size(hparams))
+ 
+ 	#Zero pad for quantized signal
+ 	out = np.pad(out, (l, r), mode='constant', constant_values=constant_values)
+-	time_steps = len(out)
+-	assert time_steps >= mel_frames * audio.get_hop_size(hparams)
++	assert len(out) >= mel_frames * audio.get_hop_size(hparams)
+ 
+ 	#time resolution adjustement
+ 	#ensure length of raw audio is multiple of hop size so that we can use
+ 	#transposed convolution to upsample
+ 	out = out[:mel_frames * audio.get_hop_size(hparams)]
+-	assert time_steps % audio.get_hop_size(hparams) == 0
++	assert len(out) % audio.get_hop_size(hparams) == 0
++	time_steps = len(out)
+ 
+ 	# Write the spectrogram and audio to disk
+ 	audio_filename = 'speech-audio-{:05d}.npy'.format(index)
+diff --git a/hparams.py b/hparams.py
+index 01d313c..cb59e2f 100644
+--- a/hparams.py
++++ b/hparams.py
+@@ -15,7 +15,7 @@ hparams = tf.contrib.training.HParams(
+ 
+ 	#Audio
+ 	num_mels = 80, #Number of mel-spectrogram channels and local conditioning dimensionality
+-	num_freq = 513, #only used when adding linear spectrograms post processing network
++	num_freq = 1025, # (= n_fft / 2 + 1) only used when adding linear spectrograms post processing network
+ 	rescale = True, #Whether to rescale audio prior to preprocessing
+ 	rescaling_max = 0.999, #Rescaling value
+ 	trim_silence = True, #Whether to clip silence in Audio (at beginning and end of audio only, not the middle)
+@@ -24,15 +24,22 @@ hparams = tf.contrib.training.HParams(
+ 
+ 	# Use LWS (https://github.com/Jonathan-LeRoux/lws) for STFT and phase reconstruction
+ 	# It's preferred to set True to use with https://github.com/r9y9/wavenet_vocoder
+-	use_lws=True,
++	# Does not work if n_ffit is not multiple of hop_size!!
++	use_lws=False,
+ 	silence_threshold=2, #silence threshold used for sound trimming for wavenet preprocessing
+ 
+ 	#Mel spectrogram
+-	fft_size = 1024,
+-	hop_size = 256,
++	n_fft = 2048, #Extra window size is filled with 0 paddings to match this parameter
++	hop_size = 275, #For 22050Hz, 275 ~= 12.5 ms
++	win_size = 1100, #For 22050Hz, 1100 ~= 50 ms (If None, win_size = n_fft)
+ 	sample_rate = 22050, #22050 Hz (corresponding to ljspeech dataset)
+ 	frame_shift_ms = None,
+ 
++	#M-AILABS (and other datasets) trim params
++	trim_fft_size = 512,
++	trim_hop_size = 128,
++	trim_top_db = 60,
++
+ 	#Mel and Linear spectrograms normalization/scaling and clipping
+ 	signal_normalization = True,
+ 	allow_clipping_in_normalization = True, #Only relevant if mel_normalization = True
+@@ -40,9 +47,9 @@ hparams = tf.contrib.training.HParams(
+ 	max_abs_value = 4., #max absolute value of data. If symmetric, data will be [-max, max] else [0, max] 
+ 
+ 	#Limits
+-	min_level_db =- 100,
++	min_level_db = -100,
+ 	ref_level_db = 20,
+-	fmin = 125, #Set this to 75 if your speaker is male! if female, 125 should help taking off noise. (To test depending on dataset)
++	fmin = 25, #Set this to 75 if your speaker is male! if female, 125 should help taking off noise. (To test depending on dataset)
+ 	fmax = 7600, 
+ 
+ 	#Griffin Lim
+@@ -67,9 +74,9 @@ hparams = tf.contrib.training.HParams(
+ 	attention_kernel = (31, ), #kernel size of attention convolution
+ 	cumulative_weights = True, #Whether to cumulate (sum) all previous attention weights or simply feed previous weights (Recommended: True)
+ 
+-	prenet_layers = [256, 256], #number of layers and number of units of prenet
++	prenet_layers = [128, 128], #number of layers and number of units of prenet
+ 	decoder_layers = 2, #number of decoder lstm layers
+-	decoder_lstm_units = 1024, #number of decoder lstm units on each layer
++	decoder_lstm_units = 512, #number of decoder lstm units on each layer
+ 	max_iters = 2500, #Max decoder steps during inference (Just for safety from infinite loop cases)
+ 
+ 	postnet_num_layers = 5, #number of postnet convolutional layers
+@@ -93,7 +100,7 @@ hparams = tf.contrib.training.HParams(
+ 	# discretized mixture of logistic distributions output, otherwise one-hot
+ 	# input and softmax output are assumed.
+ 	input_type="raw",
+-	quantize_channels=65536,  # 65536 (raw) or 256 (mulaw or mulaw-quantize) // number of classes = 256 <=> mu = 255
++	quantize_channels=65536,  # 65536 (16-bit) (raw) or 256 (8-bit) (mulaw or mulaw-quantize) // number of classes = 256 <=> mu = 255
+ 
+ 	log_scale_min=float(np.log(1e-14)), #Mixture of logistic distributions minimal log scale
+ 
+@@ -107,7 +114,7 @@ hparams = tf.contrib.training.HParams(
+ 
+ 	cin_channels = 80, #Set this to -1 to disable local conditioning, else it must be equal to num_mels!!
+ 	upsample_conditional_features = True, #Whether to repeat conditional features or upsample them (The latter is recommended)
+-	upsample_scales = [16, 16], #prod(scales) should be equal to hop size
++	upsample_scales = [11, 5, 5], #prod(scales) should be equal to hop size
+ 	freq_axis_kernel_size = 3,
+ 
+ 	gin_channels = -1, #Set this to -1 to disable global conditioning, Only used for multi speaker dataset
+@@ -121,12 +128,12 @@ hparams = tf.contrib.training.HParams(
+ 	tacotron_random_seed = 5339, #Determines initial graph and operations (i.e: model) random state for reproducibility
+ 	tacotron_swap_with_cpu = False, #Whether to use cpu as support to gpu for decoder computation (Not recommended: may cause major slowdowns! Only use when critical!)
+ 
+-	tacotron_batch_size = 32, #number of training samples on each training steps
+-	tacotron_reg_weight = 1e-6, #regularization weight (for l2 regularization)
++	tacotron_batch_size = 48, #number of training samples on each training steps
++	tacotron_reg_weight = 1e-5, #regularization weight (for L2 regularization)
+ 	tacotron_scale_regularization = False, #Whether to rescale regularization weight to adapt for outputs range (used when reg_weight is high and biasing the model)
+ 
+ 	tacotron_test_size = None, #% of data to keep as test data, if None, tacotron_test_batches must be not None
+-	tacotron_test_batches = 48, #number of test batches (For Ljspeech: 10% ~= 41 batches of 32 samples)
++	tacotron_test_batches = 32, #number of test batches (For Ljspeech: 10% ~= 41 batches of 32 samples)
+ 	tacotron_data_random_state=1234, #random state for train test split repeatability
+ 
+ 	tacotron_decay_learning_rate = True, #boolean, determines if the learning rate will follow an exponential decay
+@@ -142,8 +149,8 @@ hparams = tf.contrib.training.HParams(
+ 
+ 	tacotron_zoneout_rate = 0.1, #zoneout rate for all LSTM cells in the network
+ 	tacotron_dropout_rate = 0.5, #dropout rate for all convolutional layers + prenet
+-	
+-	natural_eval = True, #Whether to use 100% natural eval (to evaluate Curriculum Learning performance) or with same teacher-forcing ratio as training (just for overfit)
++
++	natural_eval = False, #Whether to use 100% natural eval (to evaluate Curriculum Learning performance) or with same teacher-forcing ratio as in training (just for overfit)
+ 
+ 	#Decoder RNN learning can take be done in one of two ways:
+ 	#	Teacher Forcing: vanilla teacher forcing (usually with ratio = 1). mode='constant'
+@@ -156,7 +163,7 @@ hparams = tf.contrib.training.HParams(
+ 	tacotron_teacher_forcing_init_ratio = 1., #initial teacher forcing ratio. Relevant if mode='scheduled'
+ 	tacotron_teacher_forcing_final_ratio = 0., #final teacher forcing ratio. Relevant if mode='scheduled'
+ 	tacotron_teacher_forcing_start_decay = 10000, #starting point of teacher forcing ratio decay. Relevant if mode='scheduled'
+-	tacotron_teacher_forcing_decay_steps = 220000, #Determines the teacher forcing ratio decay slope. Relevant if mode='scheduled'
++	tacotron_teacher_forcing_decay_steps = 280000, #Determines the teacher forcing ratio decay slope. Relevant if mode='scheduled'
+ 	tacotron_teacher_forcing_decay_alpha = 0., #teacher forcing ratio decay rate. Relevant if mode='scheduled'
+ 	###########################################################################################################################################
+ 
+@@ -226,4 +233,4 @@ hparams = tf.contrib.training.HParams(
+ def hparams_debug_string():
+ 	values = hparams.values()
+ 	hp = ['  %s: %s' % (name, values[name]) for name in sorted(values) if name != 'sentences']
+-	return 'Hyperparameters:\n' + '\n'.join(hp)
++	return 'Hyperparameters:\n' + '\n'.join(hp)
+\ No newline at end of file
+diff --git a/synthesize.py b/synthesize.py
+index 9f33135..fa3eb0b 100644
+--- a/synthesize.py
++++ b/synthesize.py
+@@ -3,6 +3,7 @@ from tacotron.synthesize import tacotron_synthesize
+ from wavenet_vocoder.synthesize import wavenet_synthesize
+ from infolog import log
+ from hparams import hparams
++from warnings import warn
+ import os
+ 
+ 
+@@ -69,7 +70,7 @@ def main():
+ 
+ 	if args.model in ('Both', 'Tacotron-2'):
+ 		if args.mode == 'live':
+-			raise ValueError('Impossible to generate live speech using Tacotron+WaveNet combo! (only eval allowed)')
++			warn('Requested a live evaluation with Tacotron-2, Wavenet will not be used!')
+ 		if args.mode == 'synthesis':
+ 			raise ValueError('I don\'t recommend running WaveNet on entire dataset.. The world might end before the synthesis :) (only eval allowed)')
+ 
+diff --git a/tacotron/models/attention.py b/tacotron/models/attention.py
+index 1db431e..c5de436 100644
+--- a/tacotron/models/attention.py
++++ b/tacotron/models/attention.py
+@@ -159,8 +159,8 @@ class LocationSensitiveAttention(BahdanauAttention):
+ 				name=name)
+ 
+ 		self.location_convolution = tf.layers.Conv1D(filters=hparams.attention_filters,
+-			kernel_size=hparams.attention_kernel, padding='same', use_bias=False, 
+-			name='location_features_convolution')
++			kernel_size=hparams.attention_kernel, padding='same', use_bias=True,
++			bias_initializer=tf.zeros_initializer(), name='location_features_convolution')
+ 		self.location_layer = tf.layers.Dense(units=num_units, use_bias=False, 
+ 			dtype=tf.float32, name='location_features_layer')
+ 		self._cumulate = cumulate_weights
+diff --git a/tacotron/models/tacotron.py b/tacotron/models/tacotron.py
+index 09083fc..09ef688 100644
+--- a/tacotron/models/tacotron.py
++++ b/tacotron/models/tacotron.py
+@@ -264,7 +264,7 @@ class Tacotron():
+ 			self.gradients = gradients
+ 			#Just for causion
+ 			#https://github.com/Rayhane-mamah/Tacotron-2/issues/11
+-			clipped_gradients, _ = tf.clip_by_global_norm(gradients, 0.5)
++			clipped_gradients, _ = tf.clip_by_global_norm(gradients, 1.)
+ 
+ 			# Add dependency on UPDATE_OPS; otherwise batchnorm won't work correctly. See:
+ 			# https://github.com/tensorflow/tensorflow/issues/1122
+diff --git a/tacotron/train.py b/tacotron/train.py
+index a26080d..3e17ce1 100644
+--- a/tacotron/train.py
++++ b/tacotron/train.py
+@@ -176,7 +176,7 @@ def train(log_dir, args, hparams):
+ 					step, time_window.average, loss, loss_window.average)
+ 				log(message, end='\r')
+ 
+-				if loss > 1000 or np.isnan(loss):
++				if np.isnan(loss):
+ 					log('Loss exploded to {:.5f} at step {}'.format(loss, step))
+ 					raise Exception('Loss exploded')
+ 
+diff --git a/train.py b/train.py
+index 7bd9a9a..37c58e3 100644
+--- a/train.py
++++ b/train.py
+@@ -53,11 +53,11 @@ def main():
+ 	parser.add_argument('--restore', type=bool, default=True, help='Set this to False to do a fresh training')
+ 	parser.add_argument('--summary_interval', type=int, default=250,
+ 		help='Steps between running summary ops')
+-	parser.add_argument('--checkpoint_interval', type=int, default=1000,
++	parser.add_argument('--checkpoint_interval', type=int, default=5000,
+ 		help='Steps between writing checkpoints')
+-	parser.add_argument('--eval_interval', type=int, default=5000,
++	parser.add_argument('--eval_interval', type=int, default=10000,
+ 		help='Steps between eval on test data')
+-	parser.add_argument('--tacotron_train_steps', type=int, default=320000, help='total number of tacotron training steps')
++	parser.add_argument('--tacotron_train_steps', type=int, default=160000, help='total number of tacotron training steps')
+ 	parser.add_argument('--wavenet_train_steps', type=int, default=360000, help='total number of wavenet training steps')
+ 	parser.add_argument('--tf_log_level', type=int, default=1, help='Tensorflow C++ log level.')
+ 	args = parser.parse_args()
+@@ -80,4 +80,4 @@ def main():
+ 
+ 
+ if __name__ == '__main__':
+-	main()
++	main()
+\ No newline at end of file
+diff --git a/wavenet_vocoder/models/modules.py b/wavenet_vocoder/models/modules.py
+index 65179a1..dfc9422 100644
+--- a/wavenet_vocoder/models/modules.py
++++ b/wavenet_vocoder/models/modules.py
+@@ -54,6 +54,7 @@ class Conv1d1x1(tf.layers.Conv1D):
+ 			self.paddings = None
+ 			self.use_bias = use_bias
+ 			self.paddings = padding
++			self.scope = scope
+ 
+ 	def set_mode(self, is_training):
+ 		self.training = is_training
+@@ -118,25 +119,26 @@ class Conv1d1x1(tf.layers.Conv1D):
+ 	def __call__(self, inputs):
+ 		'''During this call, we change to channel last scheme for a better generalization and easier bias computation
+ 		'''
+-		#Reshape to dilated conv mode (if this instance is of a dilated convolution)
+-		inputs_ = self._to_dilation(inputs)
++		with tf.variable_scope(self.scope):
++			#Reshape to dilated conv mode (if this instance is of a dilated convolution)
++			inputs_ = self._to_dilation(inputs)
+ 
+-		outputs_ = tf.nn.conv1d(inputs_, self.kernel,
+-			stride=1, padding='VALID', data_format='NWC')
++			outputs_ = tf.nn.conv1d(inputs_, self.kernel,
++				stride=1, padding='VALID', data_format='NWC')
+ 
+-		if self.use_bias:
+-			outputs_ = tf.nn.bias_add(outputs_, self.bias)
++			if self.use_bias:
++				outputs_ = tf.nn.bias_add(outputs_, self.bias)
+ 
+-		#Reshape back ((if this instance is of a dilated convolution))
+-		diff = tf.shape(outputs_)[1] * self.dilation_rate - tf.shape(inputs)[-1]
+-		outputs = self._from_dilation(outputs_, crop=diff)
++			#Reshape back ((if this instance is of a dilated convolution))
++			diff = tf.shape(outputs_)[1] * self.dilation_rate - tf.shape(inputs)[-1]
++			outputs = self._from_dilation(outputs_, crop=diff)
+ 
+-		#Make sure that outputs have same time steps as inputs
+-		#[batch_size, channels(filters), width]
+-		with tf.control_dependencies([tf.assert_equal(tf.shape(outputs)[-1], tf.shape(inputs)[-1])]):
+-			outputs = tf.identity(outputs, name='output_equal_input_time_assert')
++			#Make sure that outputs have same time steps as inputs
++			#[batch_size, channels(filters), width]
++			with tf.control_dependencies([tf.assert_equal(tf.shape(outputs)[-1], tf.shape(inputs)[-1])]):
++				outputs = tf.identity(outputs, name='output_equal_input_time_assert')
+ 
+-		return outputs
++			return outputs
+ 
+ 	def incremental_step(self, inputs):
+ 		'''At sequential inference times:
+@@ -144,39 +146,40 @@ class Conv1d1x1(tf.layers.Conv1D):
+ 
+ 		inputs: [batch_size, time_length, channels] ('NWC')! Channels last!
+ 		'''
+-		#input: [batch_size, time_length, channels]
+-		if self.training: 
+-			raise RuntimeError('incremental_step only supports eval mode')
+-
+-		#reshape weight
+-		weight = self._get_linearized_weight(inputs)
+-		kw = self.kernel.shape[0]
+-		dilation = self.dilation_rate
+-
+-		batch_size = tf.shape(inputs)[0]
+-		#Fast dilation
+-		#Similar to using tf FIFOQueue to schedule states of dilated convolutions
+-		if kw > 1:
+-			if self.convolution_queue is None:
+-				self.convolution_queue = tf.zeros((batch_size, (kw - 1) + (kw - 1) * (dilation - 1), tf.shape(inputs)[2]))
+-			else:
+-				#shift queue
+-				self.convolution_queue = self.convolution_queue[:, 1:, :]
+-
+-			#append next input
+-			self.convolution_queue = tf.concat([self.convolution_queue, tf.expand_dims(inputs[:, -1, :], axis=1)], axis=1)
+-			#self.convolution_queue[:, -1, :] = inputs[:, -1, :]
+-			inputs = self.convolution_queue
+-			if dilation > 1:
+-				inputs = inputs[:, 0::dilation, :]
+-
+-		#Compute step prediction
+-		output = tf.matmul(tf.reshape(inputs, [batch_size, -1]), weight)
+-		if self.use_bias:
+-			output = tf.nn.bias_add(output, self.bias)
+-
+-		#[batch_size, 1(time_step), channels(filters)]
+-		return tf.reshape(output, [batch_size, 1, self.filters])
++		with tf.variable_scope(self.scope):
++			#input: [batch_size, time_length, channels]
++			if self.training: 
++				raise RuntimeError('incremental_step only supports eval mode')
++
++			#reshape weight
++			weight = self._get_linearized_weight(inputs)
++			kw = self.kernel.shape[0]
++			dilation = self.dilation_rate
++
++			batch_size = tf.shape(inputs)[0]
++			#Fast dilation
++			#Similar to using tf FIFOQueue to schedule states of dilated convolutions
++			if kw > 1:
++				if self.convolution_queue is None:
++					self.convolution_queue = tf.zeros((batch_size, (kw - 1) + (kw - 1) * (dilation - 1), tf.shape(inputs)[2]))
++				else:
++					#shift queue
++					self.convolution_queue = self.convolution_queue[:, 1:, :]
++
++				#append next input
++				self.convolution_queue = tf.concat([self.convolution_queue, tf.expand_dims(inputs[:, -1, :], axis=1)], axis=1)
++				#self.convolution_queue[:, -1, :] = inputs[:, -1, :]
++				inputs = self.convolution_queue
++				if dilation > 1:
++					inputs = inputs[:, 0::dilation, :]
++
++			#Compute step prediction
++			output = tf.matmul(tf.reshape(inputs, [batch_size, -1]), weight)
++			if self.use_bias:
++				output = tf.nn.bias_add(output, self.bias)
++
++			#[batch_size, 1(time_step), channels(filters)]
++			return tf.reshape(output, [batch_size, 1, self.filters])
+ 
+ 	def _get_linearized_weight(self, inputs):
+ 		if self._linearized_weight is None:

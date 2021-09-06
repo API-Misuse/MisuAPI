@@ -1,0 +1,22 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:22:8 - error: Import "torch" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:23:6 - error: Import "torch.utils.tensorboard" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:25:6 - error: Import "horovod.spark.common" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:26:6 - error: Import "horovod.spark.common.util" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:27:6 - error: Import "horovod.spark.common.store" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:28:6 - error: Import "horovod.spark.torch.util" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:100:14 - error: Import "petastorm" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:101:14 - error: Import "petastorm.pytorch" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:102:16 - error: Import "torch" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:103:16 - error: Import "horovod.torch" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/680f0b2f0f0714646e3370f3fc53e1006de5430a/a/horovod/spark/torch/remote.py:373:59 - error: "_validate" is possibly unbound (reportUnboundVariable)
+11 errors, 0 warnings, 0 infos 
+Completed in 1.669sec
+
+time cost(in seconds): 1.8810474872589111

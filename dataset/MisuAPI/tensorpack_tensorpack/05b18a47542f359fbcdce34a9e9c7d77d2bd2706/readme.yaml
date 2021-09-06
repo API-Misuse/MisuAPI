@@ -1,0 +1,84 @@
+sha: 05b18a47542f359fbcdce34a9e9c7d77d2bd2706
+message: catch error in prefetch
+commit_log: "commit 05b18a47542f359fbcdce34a9e9c7d77d2bd2706\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Wed Dec 21 01:43:17 2016 -0500\n\n    catch error in prefetch"
+contained_keywords:
+- error
+commit_time: 2016-12-21 01:43:17 -0500
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/dataflow/prefetch.py
+  source_file: a/tensorpack/dataflow/prefetch.py
+  target_file: b/tensorpack/dataflow/prefetch.py
+  added: 10
+  removed: 5
+  add_line_no:
+  - - 152
+    - '        try:
+
+      '
+  - - 153
+    - '            for k in itertools.count():
+
+      '
+  - - 154
+    - '                if self._size > 0 and k >= self._size:
+
+      '
+  - - 155
+    - '                    break
+
+      '
+  - - 156
+    - '                dp = loads(self.socket.recv(copy=False).bytes)
+
+      '
+  - - 157
+    - '                yield dp
+
+      '
+  - - 158
+    - '        except zmq.ContextTerminated:
+
+      '
+  - - 159
+    - '            logger.info("ContextTerminated in Master Prefetch Process")
+
+      '
+  - - 160
+    - '        except:
+
+      '
+  - - 161
+    - '            raise
+
+      '
+  del_line_no:
+  - - null
+    - '        for k in itertools.count():
+
+      '
+  - - null
+    - '            if self._size > 0 and k >= self._size:
+
+      '
+  - - null
+    - '                break
+
+      '
+  - - null
+    - '            dp = loads(self.socket.recv(copy=False).bytes)
+
+      '
+  - - null
+    - '            yield dp
+
+      '

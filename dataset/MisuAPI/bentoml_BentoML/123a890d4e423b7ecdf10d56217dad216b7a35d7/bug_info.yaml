@@ -1,0 +1,47 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/bentoml/BentoML/pull/637
+  title: Fix issue with fastcore and ruamel-yaml
+  body: 'See details about the issue here: https://github.com/bentoml/BentoML/pull/596#issuecomment-624354686'
+sha: 123a890d4e423b7ecdf10d56217dad216b7a35d7
+message: Fix issue with fastcore and ruamel-yaml (#637)
+commit_log: "commit 123a890d4e423b7ecdf10d56217dad216b7a35d7\nAuthor: Chaoyu <paranoyang@gmail.com>\n\
+  Date:   Wed May 6 19:46:09 2020 -0700\n\n    Fix issue with fastcore and ruamel-yaml\
+  \ (#637)"
+contained_keywords:
+- fix
+- issue
+commit_time: 2020-05-06 19:46:09 -0700
+commit_author: Chaoyu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 84
+    - '        with open(filepath, ''wb'') as output_yaml:
+
+      '
+  - - 85
+    - '            self._yaml.dump(self._conda_env, output_yaml)
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '        output_yaml = Path(filepath)
+
+      '
+  - - null
+    - '        self._yaml.dump(self._conda_env, output_yaml)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: bentoml/service_env.py
+  removed: 2
+  source_file: a/bentoml/service_env.py
+  target_file: b/bentoml/service_env.py

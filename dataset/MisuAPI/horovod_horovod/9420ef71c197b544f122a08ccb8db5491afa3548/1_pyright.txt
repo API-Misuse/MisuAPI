@@ -1,0 +1,16 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:1:8 - error: Import "keras" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:2:8 - error: Import "keras.backend" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:5:8 - error: Import "horovod.tensorflow" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:160:38 - error: Operator "/" not supported for types "float" and "Unknown | None"
+    Operator "/" not supported for types "float" and "None" (reportGeneralTypeIssues)
+4 errors, 0 warnings, 0 infos 
+Completed in 0.998sec
+
+time cost(in seconds): 1.1846795082092285

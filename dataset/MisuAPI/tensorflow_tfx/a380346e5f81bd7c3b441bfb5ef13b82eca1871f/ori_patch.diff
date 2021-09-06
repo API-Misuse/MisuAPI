@@ -1,0 +1,21 @@
+commit a380346e5f81bd7c3b441bfb5ef13b82eca1871f
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Wed Nov 27 17:50:33 2019 -0800
+
+    Fix metric bug on Cifar10 pipeline example
+    
+    PiperOrigin-RevId: 282861034
+
+diff --git a/tfx/examples/cifar10/cifar10_utils.py b/tfx/examples/cifar10/cifar10_utils.py
+index fc96db0e..3e1673c0 100644
+--- a/tfx/examples/cifar10/cifar10_utils.py
++++ b/tfx/examples/cifar10/cifar10_utils.py
+@@ -98,7 +98,7 @@ def _keras_model_builder():
+   model.compile(
+       optimizer=tf.keras.optimizers.SGD(lr=0.0001, momentum=0.9),
+       loss='categorical_crossentropy',
+-      metric='accuracy')
++      metrics=[tf.keras.metrics.BinaryAccuracy(name='accuracy')])
+ 
+   absl.logging.info(model.summary())
+   return model

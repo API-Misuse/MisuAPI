@@ -1,0 +1,32 @@
+commit 5a48f0c232acef1a9e21a68ba1b047fdc4d4444a
+Author: jiyongjung <jiyongjung@google.com>
+Date:   Tue Jul 28 07:24:04 2020 -0700
+
+    Fixes wrong argument type of delete_blobs in GCS client library.
+    
+    delete_blobs() requires a list. We used to supply an iterator returned from list_blobs, but it stopped working in recent 1.30 release of GCS client package.
+    
+    PiperOrigin-RevId: 323567675
+
+--- a/tfx/orchestration/test_utils.py
++++ b/tfx/orchestration/test_utils.py
+@@ -99,5 +99,5 @@ def delete_gcs_files(gcp_project_id: str, bucket_name: str, path: str):
+   logging.info('Deleting files under GCS bucket path: %s', path)
+ 
+   with Timer('ListingAndDeletingFilesFromGCS'):
+-    blobs = bucket.list_blobs(prefix=path)
++    blobs = list(bucket.list_blobs(prefix=path))
+     bucket.delete_blobs(blobs)
+diff --git a/tfx/tools/cli/e2e/cli_kubeflow_e2e_test.py b/tfx/tools/cli/e2e/cli_kubeflow_e2e_test.py
+index 7c9fa366..1375b36d 100644
+--- a/tfx/tools/cli/e2e/cli_kubeflow_e2e_test.py
++++ b/tfx/tools/cli/e2e/cli_kubeflow_e2e_test.py
+@@ -185,7 +185,7 @@ class CliKubeflowEndToEndTest(tf.test.TestCase):
+     prefix = 'test_output/{}'.format(pipeline_name)
+     absl.logging.info(
+         'Deleting output under GCS bucket prefix: {}'.format(prefix))
+-    blobs = bucket.list_blobs(prefix=prefix)
++    blobs = list(bucket.list_blobs(prefix=prefix))
+     bucket.delete_blobs(blobs)
+ 
+   def _get_mysql_pod_name(self) -> Text:

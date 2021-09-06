@@ -1,0 +1,42 @@
+INS @type:simple_stmt@ @[8982,9178]@ res = threads.execute_function_multithreaded(_exec <text_longer_than_50> @TO@ @type:suite@ @[4292,9101]@ """
+    executes the jobs defined by run command o <text_longer_than_50>
+
+INS @type:simple_stmt@ @[8982,9178]@ res = threads.execute_function_multithreaded(_exec <text_longer_than_50> @TO@ @type:suite@ @[4292,9101]@ """
+    executes the jobs defined by run command o <text_longer_than_50>
+
+INS @type:expr_stmt@ @[8982,9177]@ res = threads.execute_function_multithreaded(_exec <text_longer_than_50> @TO@ @type:simple_stmt@ @[8982,9178]@ res = threads.execute_function_multithreaded(_exec <text_longer_than_50>
+
+INS @type:expr_stmt@ @[8982,9177]@ res = threads.execute_function_multithreaded(_exec <text_longer_than_50> @TO@ @type:simple_stmt@ @[8982,9178]@ res = threads.execute_function_multithreaded(_exec <text_longer_than_50>
+
+INS @type:for_stmt@ @[9183,9672]@ for name, value in sorted(res.items(), key=lambda  <text_longer_than_50> @TO@ @type:suite@ @[4292,9101]@ """
+    executes the jobs defined by run command o <text_longer_than_50>
+
+INS @type:for_stmt@ @[9183,9672]@ for name, value in sorted(res.items(), key=lambda  <text_longer_than_50> @TO@ @type:suite@ @[4292,9101]@ """
+    executes the jobs defined by run command o <text_longer_than_50>
+
+INS @type:suite@ @[9251,9672]@ exit_code, timestamp = value
+        if exit_code  <text_longer_than_50> @TO@ @type:for_stmt@ @[9183,9672]@ for name, value in sorted(res.items(), key=lambda  <text_longer_than_50>
+
+INS @type:suite@ @[9251,9672]@ exit_code, timestamp = value
+        if exit_code  <text_longer_than_50> @TO@ @type:for_stmt@ @[9183,9672]@ for name, value in sorted(res.items(), key=lambda  <text_longer_than_50>
+
+INS @type:if_stmt@ @[9297,9672]@ if exit_code != 0:
+            raise RuntimeError( <text_longer_than_50> @TO@ @type:suite@ @[9251,9672]@ exit_code, timestamp = value
+        if exit_code  <text_longer_than_50>
+
+INS @type:if_stmt@ @[9297,9672]@ if exit_code != 0:
+            raise RuntimeError( <text_longer_than_50> @TO@ @type:suite@ @[9251,9672]@ exit_code, timestamp = value
+        if exit_code  <text_longer_than_50>
+
+INS @type:suite@ @[9315,9672]@ raise RuntimeError('Gloo job detected that one or  <text_longer_than_50> @TO@ @type:if_stmt@ @[9297,9672]@ if exit_code != 0:
+            raise RuntimeError( <text_longer_than_50>
+
+INS @type:suite@ @[9315,9672]@ raise RuntimeError('Gloo job detected that one or  <text_longer_than_50> @TO@ @type:if_stmt@ @[9297,9672]@ if exit_code != 0:
+            raise RuntimeError( <text_longer_than_50>
+
+INS @type:testlist@ @[6406,6428]@ exit_code, time.time() @TO@ @type:return_stmt@ @[6361,6369]@ return 0
+
+UPD @type:atom_expr@ @[8923,9100]@ threads.execute_function_multithreaded(_exec_comma <text_longer_than_50> @TO@ @type:atom_expr@ @[8988,9177]@ threads.execute_function_multithreaded(_exec_comma <text_longer_than_50>
+
+MOV @type:atom_expr@ @[8923,9100]@ threads.execute_function_multithreaded(_exec_comma <text_longer_than_50> @TO@ @type:expr_stmt@ @[8982,9177]@ res = threads.execute_function_multithreaded(_exec <text_longer_than_50>
+

@@ -1,0 +1,72 @@
+sha: 258844720a9bccd326c7b33735f7f81c2d483630
+message: 'Fix segment_ops to use int32 when calling scatter_nd. This is needed because
+  scatter_nd does not support boolean updates when running on GPU.
+
+
+  PiperOrigin-RevId: 268456498'
+commit_log: "commit 258844720a9bccd326c7b33735f7f81c2d483630\nAuthor: Ashish Saxena\
+  \ <saxeas@google.com>\nDate:   Wed Sep 11 07:47:44 2019 -0700\n\n    Fix segment_ops\
+  \ to use int32 when calling scatter_nd. This is needed because scatter_nd does not\
+  \ support boolean updates when running on GPU.\n    \n    PiperOrigin-RevId: 268456498"
+contained_keywords:
+- fix
+commit_time: 2019-09-11 07:47:44 -0700
+commit_author: Ashish Saxena
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tf_quant_finance/math/segment_ops.py
+  source_file: a/tf_quant_finance/math/segment_ops.py
+  target_file: b/tf_quant_finance/math/segment_ops.py
+  added: 4
+  removed: 1
+  add_line_no:
+  - - 112
+    - '        # Unfortunately, scatter_nd doesn''t support bool on GPUs so we need
+      to
+
+      '
+  - - 113
+    - '        # do ints here and then convert to bool.
+
+      '
+  - - 114
+    - '        tf.reshape(tf.ones_like(fix_indices, dtype=tf.int32), [-1]),
+
+      '
+  - - 118
+    - '    needs_fix = tf.cast(needs_fix, dtype=tf.bool)
+
+      '
+  del_line_no:
+  - - null
+    - '        tf.reshape(tf.ones_like(fix_indices, dtype=tf.bool), [-1]),
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tf_quant_finance/rates/hagan_west/BUILD
+  source_file: a/tf_quant_finance/rates/hagan_west/BUILD
+  target_file: b/tf_quant_finance/rates/hagan_west/BUILD
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 36
+    - '    shard_count = 5,
+
+      '
+  del_line_no:
+  - - null
+    - '    shard_count = 3,
+
+      '

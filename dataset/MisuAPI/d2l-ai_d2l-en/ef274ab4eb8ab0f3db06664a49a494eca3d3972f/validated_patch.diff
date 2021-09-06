@@ -1,0 +1,48 @@
+commit ef274ab4eb8ab0f3db06664a49a494eca3d3972f
+Author: Aston Zhang <asv325@gmail.com>
+Date:   Tue Sep 1 17:58:31 2020 +0000
+
+    +improve Vocab, fix nli bert
+
+diff --git a/d2l/mxnet.py b/d2l/mxnet.py
+index 8c6a63d5..b1b79333 100644
+--- a/d2l/mxnet.py
++++ b/d2l/mxnet.py
+@@ -562,7 +564,8 @@ class Vocab:  #@save
+ # Defined in file: ./chapter_recurrent-neural-networks/text-preprocessing.md
+ def count_corpus(tokens):  #@save
+     """Count token frequencies."""
+-    if isinstance(tokens[0], list):
++    # Here `tokens` is a 1D list or 2D list
++    if len(tokens) == 0 or isinstance(tokens[0], list):
+         # Flatten a list of token lists into a list of tokens
+         tokens = [token for line in tokens for token in line]
+     return collections.Counter(tokens)
+diff --git a/d2l/tensorflow.py b/d2l/tensorflow.py
+index 751053e8..c2d2a2c5 100644
+--- a/d2l/tensorflow.py
++++ b/d2l/tensorflow.py
+@@ -586,7 +588,8 @@ class Vocab:  #@save
+ # Defined in file: ./chapter_recurrent-neural-networks/text-preprocessing.md
+ def count_corpus(tokens):  #@save
+     """Count token frequencies."""
+-    if isinstance(tokens[0], list):
++    # Here `tokens` is a 1D list or 2D list
++    if len(tokens) == 0 or isinstance(tokens[0], list):
+         # Flatten a list of token lists into a list of tokens
+         tokens = [token for line in tokens for token in line]
+     return collections.Counter(tokens)
+diff --git a/d2l/torch.py b/d2l/torch.py
+index 2ab05145..9c5d477f 100644
+--- a/d2l/torch.py
++++ b/d2l/torch.py
+@@ -593,7 +595,8 @@ class Vocab:  #@save
+ # Defined in file: ./chapter_recurrent-neural-networks/text-preprocessing.md
+ def count_corpus(tokens):  #@save
+     """Count token frequencies."""
+-    if isinstance(tokens[0], list):
++    # Here `tokens` is a 1D list or 2D list
++    if len(tokens) == 0 or isinstance(tokens[0], list):
+         # Flatten a list of token lists into a list of tokens
+         tokens = [token for line in tokens for token in line]
+     return collections.Counter(tokens)

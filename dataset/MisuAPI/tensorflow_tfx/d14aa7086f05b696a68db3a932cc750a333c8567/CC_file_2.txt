@@ -1,0 +1,5 @@
+MOV @type:simple_stmt@ @[7073,7111]@ filenames = fileio.glob(glob_pattern) @TO@ @type:suite@ @[5568,7535]@ """Read records from Examples artifact.
+
+    Curre <text_longer_than_50>
+
+

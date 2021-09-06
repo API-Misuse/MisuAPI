@@ -1,0 +1,47 @@
+UPD @type:with_stmt@ @[5016,12053]@ with tf.variable_scope(scope):
+        # compute a <text_longer_than_50> @TO@ @type:with_stmt@ @[4932,11894]@ with tf.variable_scope(scope):
+        # compute a <text_longer_than_50>
+---UPD @type:suite@ @[5046,12053]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50> @TO@ @type:suite@ @[4962,11894]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50>
+------UPD @type:with_stmt@ @[6357,11277]@ with tf.variable_scope('attention'):
+            i <text_longer_than_50> @TO@ @type:with_stmt@ @[5956,11118]@ with tf.variable_scope('attention'):
+            i <text_longer_than_50>
+---------UPD @type:suite@ @[6393,11277]@ if attention_type == "local":
+                # `l <text_longer_than_50> @TO@ @type:suite@ @[5992,11118]@ if attention_type == "local":
+                # `l <text_longer_than_50>
+------------UPD @type:if_stmt@ @[6406,11277]@ if attention_type == "local":
+                # `l <text_longer_than_50> @TO@ @type:if_stmt@ @[6005,11118]@ if attention_type == "local":
+                # `l <text_longer_than_50>
+---------------UPD @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50> @TO@ @type:suite@ @[6034,7091]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+------------------INS @type:if_stmt@ @[6231,6302]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+---------------------INS @type:suite@ @[6268,6302]@ q *= one_hot @TO@ @type:if_stmt@ @[6231,6302]@ if is_incremental_inference(context):
+             <text_longer_than_50>
+------------------------INS @type:simple_stmt@ @[6289,6302]@ q *= one_hot @TO@ @type:suite@ @[6268,6302]@ q *= one_hot
+---------------------------INS @type:expr_stmt@ @[6289,6301]@ q *= one_hot @TO@ @type:simple_stmt@ @[6289,6302]@ q *= one_hot
+------------------INS @type:simple_stmt@ @[6319,6967]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+------------------INS @type:if_stmt@ @[6984,7091]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+---------------------INS @type:suite@ @[7021,7091]@ a = mtf.gather(a, context.position - 1, dim_seq) @TO@ @type:if_stmt@ @[6984,7091]@ if is_incremental_inference(context):
+             <text_longer_than_50>
+------------------UPD @type:simple_stmt@ @[6632,7277]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:simple_stmt@ @[7042,7091]@ a = mtf.gather(a, context.position - 1, dim_seq)
+---------------------INS @type:expr_stmt@ @[7042,7090]@ a = mtf.gather(a, context.position - 1, dim_seq) @TO@ @type:simple_stmt@ @[6632,7277]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+------------------MOV @type:simple_stmt@ @[6632,7277]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:suite@ @[7021,7091]@ a = mtf.gather(a, context.position - 1, dim_seq)
+---------------------INS @type:expr_stmt@ @[7042,7090]@ a = mtf.gather(a, context.position - 1, dim_seq) @TO@ @type:simple_stmt@ @[6632,7277]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+---------------UPD @type:suite@ @[7321,11049]@ # TODO: the only use of context within attention i <text_longer_than_50> @TO@ @type:suite@ @[7136,10890]@ # TODO: the only use of context within attention i <text_longer_than_50>
+------------------UPD @type:simple_stmt@ @[7834,7929]@ broadcasted_bias = mtf.broadcast(bias, [dim_batch, <text_longer_than_50> @TO@ @type:simple_stmt@ @[7649,7770]@ broadcasted_bias = mtf.broadcast(bias, [dim_batch, <text_longer_than_50>
+---------------------UPD @type:expr_stmt@ @[7834,7928]@ broadcasted_bias = mtf.broadcast(bias, [dim_batch, <text_longer_than_50> @TO@ @type:expr_stmt@ @[7649,7769]@ broadcasted_bias = mtf.broadcast(bias, [dim_batch, <text_longer_than_50>
+------------------------INS @type:test@ @[7668,7769]@ mtf.broadcast(bias, [dim_batch, dim_heads, bias.sh <text_longer_than_50> @TO@ @type:expr_stmt@ @[7834,7928]@ broadcasted_bias = mtf.broadcast(bias, [dim_batch, <text_longer_than_50>
+------------------------MOV @type:atom_expr@ @[7853,7928]@ mtf.broadcast(bias, [dim_batch, dim_heads, bias.sh <text_longer_than_50> @TO@ @type:test@ @[7668,7769]@ mtf.broadcast(bias, [dim_batch, dim_heads, bias.sh <text_longer_than_50>
+------DEL @type:if_stmt@ @[5518,5914]@ if context is not None:
+            if context.mod <text_longer_than_50> @FROM@ @type:suite@ @[5046,12053]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50>
+------DEL @type:if_stmt@ @[6109,6261]@ if context is not None:
+            if context.mod <text_longer_than_50> @FROM@ @type:suite@ @[5046,12053]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50>

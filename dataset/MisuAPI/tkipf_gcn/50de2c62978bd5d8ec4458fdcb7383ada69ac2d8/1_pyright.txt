@@ -1,0 +1,17 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tkipf_gcn/50de2c62978bd5d8ec4458fdcb7383ada69ac2d8/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tkipf_gcn/50de2c62978bd5d8ec4458fdcb7383ada69ac2d8/a/gcn/utils.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tkipf_gcn/50de2c62978bd5d8ec4458fdcb7383ada69ac2d8/a/gcn/utils.py:3:8 - error: Import "networkx" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tkipf_gcn/50de2c62978bd5d8ec4458fdcb7383ada69ac2d8/a/gcn/utils.py:4:8 - error: Import "scipy.sparse" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tkipf_gcn/50de2c62978bd5d8ec4458fdcb7383ada69ac2d8/a/gcn/utils.py:5:6 - error: Import "scipy.sparse.linalg.eigen.arpack" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tkipf_gcn/50de2c62978bd5d8ec4458fdcb7383ada69ac2d8/a/gcn/utils.py:30:37 - error: Argument of type "TextIOWrapper" cannot be assigned to parameter "file" of type "IO[bytes]" in function "load"
+    TypeVar "AnyStr@IO" is invariant
+      "str" is incompatible with "bytes" (reportGeneralTypeIssues)
+4 errors, 0 warnings, 0 infos 
+Completed in 1.176sec
+
+time cost(in seconds): 1.3595192432403564

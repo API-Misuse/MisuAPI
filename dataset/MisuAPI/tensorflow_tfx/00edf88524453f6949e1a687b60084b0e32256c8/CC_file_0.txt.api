@@ -1,0 +1,56 @@
+INS @type:simple_stmt@ @[8401,8472]@ logging.info('No all required input are ready, aba <text_longer_than_50> @TO@ @type:suite@ @[8402,8568]@ return _PrepareExecutionResult(
+            execut <text_longer_than_50>
+
+INS @type:simple_stmt@ @[10607,10669]@ logging.info('An cached execusion %d is used.', ex <text_longer_than_50> @TO@ @type:suite@ @[10291,10779]@ # Publishes cache result
+        execution_publish <text_longer_than_50>
+
+INS @type:simple_stmt@ @[11070,11132]@ logging.info('Going to run a new execution %d', ex <text_longer_than_50> @TO@ @type:suite@ @[9668,11734]@ # 6. Check cached result
+      cache_context = cac <text_longer_than_50>
+
+INS @type:simple_stmt@ @[13479,13533]@ logging.info('Cleaning up stateless execution info <text_longer_than_50> @TO@ @type:suite@ @[13267,13333]@ # Clean up tmp dir
+    fileio.rmtree(execution_inf <text_longer_than_50>
+
+INS @type:simple_stmt@ @[13734,13787]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50> @TO@ @type:suite@ @[13429,13850]@ """Post execution clean up."""
+    # Clean up stat <text_longer_than_50>
+
+INS @type:simple_stmt@ @[13734,13787]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50> @TO@ @type:suite@ @[13429,13850]@ """Post execution clean up."""
+    # Clean up stat <text_longer_than_50>
+
+INS @type:atom_expr@ @[13734,13786]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50> @TO@ @type:simple_stmt@ @[13734,13787]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50>
+
+INS @type:atom_expr@ @[13734,13786]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50> @TO@ @type:simple_stmt@ @[13734,13787]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50>
+
+DEL @type:expr_stmt@ @[13700,13809]@ stateful_working_dir = os.path.abspath(
+        os <text_longer_than_50> @FROM@ @type:simple_stmt@ @[13700,13810]@ stateful_working_dir = os.path.abspath(
+        os <text_longer_than_50>
+
+UPD @type:atom_expr@ @[15211,15272]@ logging.debug('Running launcher for %s', self._pip <text_longer_than_50> @TO@ @type:atom_expr@ @[15240,15300]@ logging.info('Running launcher for %s', self._pipe <text_longer_than_50>
+
+INS @type:simple_stmt@ @[16400,16469]@ logging.info('Execution %d succeeded.', execution_ <text_longer_than_50> @TO@ @type:suite@ @[15990,16799]@ try:
+        executor_output = self._run_executor( <text_longer_than_50>
+
+UPD @type:atom_expr@ @[13748,13808]@ os.path.join(execution_info.stateful_working_dir,  <text_longer_than_50> @TO@ @type:atom_expr@ @[13791,13878]@ outputs_utils.remove_stateful_working_dir(
+        <text_longer_than_50>
+
+DEL @type:arglist@ @[13761,13807]@ execution_info.stateful_working_dir, os.pardir @FROM@ @type:trailer@ @[13760,13808]@ (execution_info.stateful_working_dir, os.pardir)
+
+DEL @type:trailer@ @[13755,13760]@ .join @FROM@ @type:atom_expr@ @[13748,13808]@ os.path.join(execution_info.stateful_working_dir,  <text_longer_than_50>
+
+MOV @type:atom_expr@ @[13748,13808]@ os.path.join(execution_info.stateful_working_dir,  <text_longer_than_50> @TO@ @type:simple_stmt@ @[13700,13810]@ stateful_working_dir = os.path.abspath(
+        os <text_longer_than_50>
+
+DEL @type:arglist@ @[13761,13807]@ execution_info.stateful_working_dir, os.pardir @FROM@ @type:trailer@ @[13760,13808]@ (execution_info.stateful_working_dir, os.pardir)
+
+DEL @type:trailer@ @[13755,13760]@ .join @FROM@ @type:atom_expr@ @[13748,13808]@ os.path.join(execution_info.stateful_working_dir,  <text_longer_than_50>
+
+MOV @type:name@ @[13700,13720]@ stateful_working_dir @TO@ @type:atom_expr@ @[13734,13786]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50>
+
+MOV @type:trailer@ @[13725,13730]@ .path @TO@ @type:atom_expr@ @[13734,13786]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50>
+
+MOV @type:trailer@ @[13730,13738]@ .abspath @TO@ @type:atom_expr@ @[13734,13786]@ logging.info('Cleaning up stateful execution info. <text_longer_than_50>
+
+MOV @type:atom_expr@ @[13761,13796]@ execution_info.stateful_working_dir @TO@ @type:trailer@ @[13760,13808]@ (execution_info.stateful_working_dir, os.pardir)
+
+DEL @type:simple_stmt@ @[13814,13850]@ fileio.rmtree(stateful_working_dir) @FROM@ @type:suite@ @[13429,13850]@ """Post execution clean up."""
+    # Clean up stat <text_longer_than_50>
+

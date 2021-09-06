@@ -1,0 +1,34 @@
+issues_cnt: 0
+sha: 217b22a86af8dac63b9c7b7c6f14f9d95d37cb7b
+message: 'fix: tf.nn.conv3d_transpose call arg'
+commit_log: "commit 217b22a86af8dac63b9c7b7c6f14f9d95d37cb7b\nAuthor: Martin Rajchl\
+  \ <m.rajchl@imperial.ac.uk>\nDate:   Fri Nov 17 14:59:17 2017 +0000\n\n    fix:\
+  \ tf.nn.conv3d_transpose call arg"
+contained_keywords:
+- fix
+commit_time: 2017-11-17 14:59:17 +0000
+commit_author: Martin Rajchl
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 119
+    - '        value=inputs,
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        inputs=inputs,
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: dltk/core/upsample.py
+  removed: 1
+  source_file: a/dltk/core/upsample.py
+  target_file: b/dltk/core/upsample.py

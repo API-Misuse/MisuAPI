@@ -1,0 +1,29 @@
+ 
+diff --git a/tfx/dsl/io/plugins/local.py b/tfx/dsl/io/plugins/local.py
+index 6e7c0264..f5a62b79 100644
+--- a/tfx/dsl/io/plugins/local.py
++++ b/tfx/dsl/io/plugins/local.py
+@@ -36,7 +36,10 @@ class LocalFilesystem(filesystem.Filesystem):
+ 
+   @staticmethod
+   def open(name: PathType, mode: Text = 'r') -> Any:
+-    return open(name, mode=mode)
++    try:
++      return open(name, mode=mode)
++    except FileNotFoundError as e:
++      raise filesystem.NotFoundError() from e
+ 
+   @staticmethod
+   def copy(src: PathType, dst: PathType, overwrite: bool = False) -> None:
+@@ -44,7 +47,10 @@ class LocalFilesystem(filesystem.Filesystem):
+       raise OSError(
+           ('Destination file %r already exists and argument `overwrite` is '
+            'false.') % dst)
+-    shutil.copyfile(src, dst)
++    try:
++      shutil.copyfile(src, dst)
++    except FileNotFoundError as e:
++      raise filesystem.NotFoundError() from e
+ 
+   @staticmethod
+   def exists(path: PathType) -> bool:

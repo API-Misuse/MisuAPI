@@ -1,0 +1,21 @@
+commit b81758c604eb9ac2daf8909fdffbe8b034e6eb57
+Author: Hao Feng <3140102270@zju.edu.cn>
+Date:   Wed Dec 19 16:49:22 2018 +0800
+
+    fix a bug cause Graph is finalized and cannot be modified like #449 (#1020)
+
+diff --git a/tensorpack/predict/multigpu.py b/tensorpack/predict/multigpu.py
+index f485ca48..55644180 100644
+--- a/tensorpack/predict/multigpu.py
++++ b/tensorpack/predict/multigpu.py
+@@ -45,8 +45,9 @@ class MultiTowerOfflinePredictor(OnlinePredictor):
+                     config.tower_func(*input.get_input_tensors())
+                     handles.append(config.tower_func.towers[-1])
+ 
++            config.session_init._setup_graph()
+             self.sess = config.session_creator.create_session()
+-            config.session_init.init(self.sess)
++            config.session_init._run_init(self.sess)
+ 
+             for h in handles:
+                 input_tensors = h.get_tensors(config.input_names)

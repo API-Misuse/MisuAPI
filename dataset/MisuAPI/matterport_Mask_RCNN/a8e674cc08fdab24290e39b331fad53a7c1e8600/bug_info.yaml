@@ -1,0 +1,91 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/matterport/Mask_RCNN/pull/1062
+  title: '[Bug fix] log cannot accept size 0 array'
+  body: "In current version of log(), when you pass a zero size array, it will throw\
+    \ an error:\r\n`ValueError: Unknown format code 'f' for object of type 'str'`.\r\
+    \nThis PR fixes it."
+issue_1:
+  html_url: https://github.com/matterport/Mask_RCNN/issues/1153
+  title: Extract features from various layers of MaskRCNN, such as ROI align features,
+    pyramid features [P1,P2,P3,P4,P5]
+  body: I need to receive the feature maps of every layer of mask RCNN to be used
+    as a deep feature for other classifier. How do I go about it? Any help or code
+    is much appreciated!
+sha: a8e674cc08fdab24290e39b331fad53a7c1e8600
+message: "[Bug fix]\n\nIn current version of log(), when you pass a zero size array,\
+  \ it will throw an error:\r\n`ValueError: Unknown format code 'f' for object of\
+  \ type 'str'`.\r\nThis PR fixes it."
+commit_log: "commit a8e674cc08fdab24290e39b331fad53a7c1e8600\nAuthor: keineahnung2345\
+  \ <mimifasosofamire1123@gmail.com>\nDate:   Wed Oct 24 17:28:15 2018 +0800\n\n \
+  \   [Bug fix]\n    \n    In current version of log(), when you pass a zero size\
+  \ array, it will throw an error:\n    `ValueError: Unknown format code 'f' for object\
+  \ of type 'str'`.\n    This PR fixes it."
+contained_keywords:
+- fix
+- fixes
+- valueerror
+- bug
+- error
+commit_time: 2018-10-24 17:28:15 +0800
+commit_author: keineahnung2345
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 44
+    - '        text += ("shape: {:20}  ".format(str(array.shape)))
+
+      '
+  - - 45
+    - '        if array.size:
+
+      '
+  - - 46
+    - '            text += ("min: {:10.5f}  max: {:10.5f}".format(array.min(),array.max()))
+
+      '
+  - - 47
+    - '        else:
+
+      '
+  - - 48
+    - '            text += ("min: {:10}  max: {:10}".format("",""))
+
+      '
+  - - 49
+    - '        text += "  {}".format(array.dtype)
+
+      '
+  added: 6
+  del_line_no:
+  - - null
+    - '        text += ("shape: {:20}  min: {:10.5f}  max: {:10.5f}  {}".format(
+
+      '
+  - - null
+    - '            str(array.shape),
+
+      '
+  - - null
+    - '            array.min() if array.size else "",
+
+      '
+  - - null
+    - '            array.max() if array.size else "",
+
+      '
+  - - null
+    - '            array.dtype))
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: mrcnn/model.py
+  removed: 5
+  source_file: a/mrcnn/model.py
+  target_file: b/mrcnn/model.py

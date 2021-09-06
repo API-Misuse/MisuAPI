@@ -1,0 +1,2 @@
+INS @type:simple_stmt@ @[36,119]@ sys.path.insert(0, os.path.abspath(os.path.join(os <text_longer_than_50> @TO@ @type:file_input@ @[0,0]@ 
+

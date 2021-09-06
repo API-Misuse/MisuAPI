@@ -1,0 +1,28 @@
+INS @type:if_stmt@ @[1028,1088]@ if resize is not None:
+            resize = shape2 <text_longer_than_50> @TO@ @type:suite@ @[549,1089]@ """
+        Args:
+            files (list): list o <text_longer_than_50>
+
+INS @type:if_stmt@ @[1028,1088]@ if resize is not None:
+            resize = shape2 <text_longer_than_50> @TO@ @type:suite@ @[549,1089]@ """
+        Args:
+            files (list): list o <text_longer_than_50>
+
+INS @type:suite@ @[1050,1088]@ resize = shape2d(resize) @TO@ @type:if_stmt@ @[1028,1088]@ if resize is not None:
+            resize = shape2 <text_longer_than_50>
+
+INS @type:suite@ @[1050,1088]@ resize = shape2d(resize) @TO@ @type:if_stmt@ @[1028,1088]@ if resize is not None:
+            resize = shape2 <text_longer_than_50>
+
+INS @type:simple_stmt@ @[1063,1088]@ resize = shape2d(resize) @TO@ @type:suite@ @[1050,1088]@ resize = shape2d(resize)
+
+INS @type:simple_stmt@ @[1063,1088]@ resize = shape2d(resize) @TO@ @type:suite@ @[1050,1088]@ resize = shape2d(resize)
+
+INS @type:expr_stmt@ @[1063,1087]@ resize = shape2d(resize) @TO@ @type:simple_stmt@ @[1063,1088]@ resize = shape2d(resize)
+
+INS @type:expr_stmt@ @[1063,1087]@ resize = shape2d(resize) @TO@ @type:simple_stmt@ @[1063,1088]@ resize = shape2d(resize)
+
+INS @type:name@ @[1110,1116]@ resize @TO@ @type:expr_stmt@ @[1028,1057]@ self.resize = shape2d(resize)
+
+MOV @type:atom_expr@ @[1042,1057]@ shape2d(resize) @TO@ @type:expr_stmt@ @[1063,1087]@ resize = shape2d(resize)
+

@@ -1,0 +1,223 @@
+commit 8c4a33d2d5ea46a6aa6e5d1a39e194055e56b783
+Author: Chaoyu <paranoyang@gmail.com>
+Date:   Wed Feb 26 17:44:25 2020 -0800
+
+    Support delete multiple bento at once and misc error handling (#546)
+    
+    * allow delete multiple bento
+    
+    * return proper error when bento service to be deleted is not found
+    
+    * raise proper exception when saving to same directory again
+    
+    * fail gracefully when BentoService files in target local repo have already been deleted
+
+diff --git a/bentoml/bundler/bundler.py b/bentoml/bundler/bundler.py
+index 7b41cbc..f2d5fef 100644
+--- a/bentoml/bundler/bundler.py
++++ b/bentoml/bundler/bundler.py
+@@ -79,7 +79,12 @@ def save_to_dir(bento_service, path, version=None):
+             )
+ 
+     module_base_path = os.path.join(path, bento_service.name)
+-    os.mkdir(module_base_path)
++    try:
++        os.mkdir(module_base_path)
++    except FileExistsError:
++        raise BentoMLException(
++            f"Existing module file found for BentoService {bento_service.name}"
++        )
+ 
+     # write README.md with custom BentoService's docstring if presented
+     saved_bundle_readme = DEFAULT_SAVED_BUNDLE_README.format(
+diff --git a/bentoml/cli/bento.py b/bentoml/cli/bento.py
+index 04e7abd..981b76f 100644
+--- a/bentoml/cli/bento.py
++++ b/bentoml/cli/bento.py
+@@ -15,7 +15,11 @@ import click
+ from google.protobuf.json_format import MessageToJson
+ from tabulate import tabulate
+ 
+-from bentoml.cli.click_utils import CLI_COLOR_ERROR, _echo, parse_bento_tag_callback
++from bentoml.cli.click_utils import (
++    CLI_COLOR_ERROR,
++    _echo,
++    parse_bento_tag_list_callback,
++)
+ from bentoml.cli.utils import humanfriendly_age_from_datetime
+ from bentoml.proto import status_pb2
+ from bentoml.utils import pb_to_yaml, status_pb_to_error_code_and_message
+@@ -171,41 +175,46 @@ def add_bento_sub_command(cli):
+         _print_bentos_info(list_bentos_result.bentos, output)
+ 
+     @cli.command()
+-    @click.argument("bento", type=click.STRING, callback=parse_bento_tag_callback)
++    @click.argument("bentos", type=click.STRING, callback=parse_bento_tag_list_callback)
+     @click.option(
+         '-y', '--yes', '--assume-yes', is_flag=True, help='Automatic yes to prompts'
+     )
+-    def delete(bento, yes):
++    def delete(bentos, yes):
+         """Delete saved BentoService.
+ 
+         BENTO is the target BentoService to be deleted, referenced by its name and
+         version in format of name:version. For example: "iris_classifier:v1.2.0"
++
++        `bentoml delete` command also supports deleting multiple saved BentoService at
++        once, by providing name version tag separated by ",", for example:
++
++        `bentoml delete iris_classifier:v1.2.0,my_svc:v1,my_svc2:v3`
+         """
+         yatai_client = YataiClient()
+-        name, version = bento.split(':')
+-        if not name and not version:
+-            _echo(
+-                'BentoService name or version is missing. Please provide in the '
+-                'format of name:version',
+-                CLI_COLOR_ERROR,
+-            )
+-            return
+-        if not yes and not click.confirm(
+-            f'Are you sure about delete {bento}? This will delete the BentoService '
+-            f'saved bundle files permanently'
+-        ):
+-            return
+-        result = yatai_client.repository.dangerously_delete_bento(
+-            name=name, version=version
+-        )
+-        if result.status.status_code != status_pb2.Status.OK:
+-            error_code, error_message = status_pb_to_error_code_and_message(
+-                result.status
+-            )
+-            _echo(
+-                f'Failed to delete Bento {name}:{version} '
+-                f'{error_code}:{error_message}',
+-                CLI_COLOR_ERROR,
++        for bento in bentos:
++            name, version = bento.split(':')
++            if not name and not version:
++                _echo(
++                    'BentoService name or version is missing. Please provide in the '
++                    'format of name:version',
++                    CLI_COLOR_ERROR,
++                )
++                return
++            if not yes and not click.confirm(
++                f'Are you sure about delete {bento}? This will delete the BentoService '
++                f'saved bundle files permanently'
++            ):
++                return
++            result = yatai_client.repository.dangerously_delete_bento(
++                name=name, version=version
+             )
+-            return
+-        _echo(f'BentoService {name}:{version} deleted')
++            if result.status.status_code != status_pb2.Status.OK:
++                error_code, error_message = status_pb_to_error_code_and_message(
++                    result.status
++                )
++                _echo(
++                    f'Failed to delete Bento {name}:{version} '
++                    f'{error_code}:{error_message}',
++                    CLI_COLOR_ERROR,
++                )
++            _echo(f'BentoService {name}:{version} deleted')
+diff --git a/bentoml/cli/click_utils.py b/bentoml/cli/click_utils.py
+index 0ad7ac3..8c0ef02 100644
+--- a/bentoml/cli/click_utils.py
++++ b/bentoml/cli/click_utils.py
+@@ -123,16 +123,32 @@ def conditional_argument(condition, *param_decls, **attrs):
+     return decorator
+ 
+ 
++def _is_valid_bento_tag(value):
++    return re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+-_]*$", value) is not None
++
++
+ def parse_bento_tag_callback(ctx, param, value):  # pylint: disable=unused-argument
+-    if re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+-_]*$", value) is None:
++    if not _is_valid_bento_tag(value):
+         raise click.BadParameter(
+             "Bad formatting. Please present in BentoName:Version, for example "
+             "iris_classifier:v1.2.0"
+         )
+-
+     return value
+ 
+ 
++def parse_bento_tag_list_callback(ctx, param, value):  # pylint: disable=unused-argument
++    bento_tags = value.split(",")
++    bento_tags = list(map(str.strip, bento_tags))
++    for bento_tag in bento_tags:
++        if not _is_valid_bento_tag(bento_tag):
++            raise click.BadParameter(
++                "Bad formatting. Please present in BentoName:Version, for example "
++                "\"iris_classifier:v1.2.0\". For list of BentoService, separate tags "
++                "by \",\", for example: \"my_service:v1,my_service:v2,classifier:v3\""
++            )
++    return bento_tags
++
++
+ def parse_labels_callback(ctx, param, value):  # pylint: disable=unused-argument
+     if not value:
+         return value
+diff --git a/bentoml/repository/__init__.py b/bentoml/repository/__init__.py
+index c5e7544..d6d892a 100644
+--- a/bentoml/repository/__init__.py
++++ b/bentoml/repository/__init__.py
+@@ -20,6 +20,7 @@ import os
+ import json
+ import shutil
+ import boto3
++import logging
+ from pathlib import Path
+ from abc import abstractmethod, ABCMeta
+ from urllib.parse import urlparse
+@@ -30,6 +31,9 @@ from bentoml.utils.s3 import is_s3_url
+ from bentoml.proto.repository_pb2 import BentoUri
+ 
+ 
++logger = logging.getLogger(__name__)
++
++
+ class BentoRepositoryBase(object):
+     """
+     BentoRepository is the interface for managing saved Bentos over file system or
+@@ -113,7 +117,15 @@ class _LocalBentoRepository(BentoRepositoryBase):
+ 
+     def dangerously_delete(self, bento_name, bento_version):
+         saved_path = os.path.join(self.base_path, bento_name, bento_version)
+-        return shutil.rmtree(saved_path)
++        try:
++            return shutil.rmtree(saved_path)
++        except FileNotFoundError:
++            logger.warning(
++                "BentoService %s:%s has already been deleted from local storage",
++                bento_name,
++                bento_version,
++            )
++            return
+ 
+ 
+ class _S3BentoRepository(BentoRepositoryBase):
+diff --git a/bentoml/yatai/yatai_service_impl.py b/bentoml/yatai/yatai_service_impl.py
+index e3f872e..841293d 100644
+--- a/bentoml/yatai/yatai_service_impl.py
++++ b/bentoml/yatai/yatai_service_impl.py
+@@ -309,6 +309,16 @@ class YataiService(YataiServicer):
+     def DangerouslyDeleteBento(self, request, context=None):
+         try:
+             # TODO: validate request
++            bento_metadata_pb = self.bento_metadata_store.get(
++                request.bento_name, request.bento_version
++            )
++            if not bento_metadata_pb:
++                msg = (
++                    f"BentoService {request.bento_name}:{request.bento_version} "
++                    f"has already been deleted"
++                )
++                return DangerouslyDeleteBentoResponse(status=Status.ABORTED(msg))
++
+             logger.debug(
+                 'Deleting BentoService %s:%s', request.bento_name, request.bento_version
+             )

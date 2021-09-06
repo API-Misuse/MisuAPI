@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[1148,1167]@ open(net_path, "r") @TO@ @type:atom_expr@ @[1148,1168]@ open(net_path, "rb")
+
+UPD @type:atom_expr@ @[1657,1676]@ open(filename, "w") @TO@ @type:atom_expr@ @[1658,1678]@ open(filename, "wb")
+

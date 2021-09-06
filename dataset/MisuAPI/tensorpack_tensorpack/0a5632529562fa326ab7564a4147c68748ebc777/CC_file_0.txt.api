@@ -1,0 +1,24 @@
+INS @type:try_stmt@ @[4494,5312]@ try:
+            while True:
+                msg = <text_longer_than_50> @TO@ @type:suite@ @[4432,5138]@ self.clients = defaultdict(self.ClientState)
+      <text_longer_than_50>
+
+INS @type:try_stmt@ @[4494,5312]@ try:
+            while True:
+                msg = <text_longer_than_50> @TO@ @type:suite@ @[4432,5138]@ self.clients = defaultdict(self.ClientState)
+      <text_longer_than_50>
+
+INS @type:suite@ @[4498,5211]@ while True:
+                msg = loads(self.c2s_s <text_longer_than_50> @TO@ @type:try_stmt@ @[4494,5312]@ try:
+            while True:
+                msg = <text_longer_than_50>
+
+INS @type:suite@ @[4498,5211]@ while True:
+                msg = loads(self.c2s_s <text_longer_than_50> @TO@ @type:try_stmt@ @[4494,5312]@ try:
+            while True:
+                msg = <text_longer_than_50>
+
+MOV @type:while_stmt@ @[4494,5138]@ while True:
+            msg = loads(self.c2s_socke <text_longer_than_50> @TO@ @type:suite@ @[4498,5211]@ while True:
+                msg = loads(self.c2s_s <text_longer_than_50>
+

@@ -1,0 +1,15 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/deezer_spleeter/55723cfa6296388ea1f584e2591f1d89e4c0afb6/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/deezer_spleeter/55723cfa6296388ea1f584e2591f1d89e4c0afb6/a/spleeter/commands/separate.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/deezer_spleeter/55723cfa6296388ea1f584e2591f1d89e4c0afb6/a/spleeter/commands/separate.py:23:6 - error: Import "..utils.audio.adapter" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/deezer_spleeter/55723cfa6296388ea1f584e2591f1d89e4c0afb6/a/spleeter/commands/separate.py:24:6 - error: Import "..utils.audio.convertor" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/deezer_spleeter/55723cfa6296388ea1f584e2591f1d89e4c0afb6/a/spleeter/commands/separate.py:25:6 - error: Import "..utils.estimator" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/deezer_spleeter/55723cfa6296388ea1f584e2591f1d89e4c0afb6/a/spleeter/commands/separate.py:26:6 - error: Import "..utils.tensor" could not be resolved (reportMissingImports)
+4 errors, 0 warnings, 0 infos 
+Completed in 1.102sec
+
+time cost(in seconds): 1.354203462600708

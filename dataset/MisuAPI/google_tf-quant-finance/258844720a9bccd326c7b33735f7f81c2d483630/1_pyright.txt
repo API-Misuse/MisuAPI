@@ -1,0 +1,12 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_tf-quant-finance/258844720a9bccd326c7b33735f7f81c2d483630/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_tf-quant-finance/258844720a9bccd326c7b33735f7f81c2d483630/a/tf_quant_finance/math/segment_ops.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_tf-quant-finance/258844720a9bccd326c7b33735f7f81c2d483630/a/tf_quant_finance/math/segment_ops.py:23:6 - error: Import "tf_quant_finance.math" could not be resolved (reportMissingImports)
+1 error, 0 warnings, 0 infos 
+Completed in 1.043sec
+
+time cost(in seconds): 1.2051079273223877

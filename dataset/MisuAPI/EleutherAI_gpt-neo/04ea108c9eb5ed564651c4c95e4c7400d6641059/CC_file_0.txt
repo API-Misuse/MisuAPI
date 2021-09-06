@@ -1,0 +1,11 @@
+UPD @type:simple_stmt@ @[2556,2598]@ resp = requests.get(uri, params, timeout) @TO@ @type:simple_stmt@ @[2556,2613]@ resp = requests.get(uri, params=params, timeout=ti <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2556,2597]@ resp = requests.get(uri, params, timeout) @TO@ @type:expr_stmt@ @[2556,2612]@ resp = requests.get(uri, params=params, timeout=ti <text_longer_than_50>
+------UPD @type:atom_expr@ @[2563,2597]@ requests.get(uri, params, timeout) @TO@ @type:atom_expr@ @[2563,2612]@ requests.get(uri, params=params, timeout=timeout)
+---------UPD @type:trailer@ @[2575,2597]@ (uri, params, timeout) @TO@ @type:trailer@ @[2575,2612]@ (uri, params=params, timeout=timeout)
+------------UPD @type:arglist@ @[2576,2596]@ uri, params, timeout @TO@ @type:arglist@ @[2576,2611]@ uri, params=params, timeout=timeout
+---------------INS @type:argument@ @[2581,2594]@ params=params @TO@ @type:arglist@ @[2576,2596]@ uri, params, timeout
+---------------INS @type:argument@ @[2596,2611]@ timeout=timeout @TO@ @type:arglist@ @[2576,2596]@ uri, params, timeout
+---------------MOV @type:name@ @[2581,2587]@ params @TO@ @type:argument@ @[2581,2594]@ params=params
+---------------MOV @type:name@ @[2589,2596]@ timeout @TO@ @type:argument@ @[2596,2611]@ timeout=timeout
+
+

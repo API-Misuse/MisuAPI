@@ -1,0 +1,65 @@
+sha: 35f3db2fb3a57545d89ea335dd880cb189451b27
+message: Fix bug of incompatibility in Python3
+commit_log: "commit 35f3db2fb3a57545d89ea335dd880cb189451b27\nAuthor: yihong <wmyw96@126.com>\n\
+  Date:   Sat May 6 01:18:21 2017 +0800\n\n    Fix bug of incompatibility in Python3"
+contained_keywords:
+- fix
+- bug
+commit_time: 2017-05-06 01:18:21 +0800
+commit_author: yihong
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/utils/dataset.py
+  source_file: a/examples/utils/dataset.py
+  target_file: b/examples/utils/dataset.py
+  added: 5
+  removed: 5
+  add_line_no:
+  - - 73
+    - '    train_set, valid_set, test_set = pickle.load(f, encoding=''latin1'')
+
+      '
+  - - 175
+    - '        with open(batch_file, ''rb'') as f:
+
+      '
+  - - 176
+    - '            data = pickle.load(f, encoding=''latin1'')
+
+      '
+  - - 183
+    - '    with open(test_batch_file, ''rb'') as f:
+
+      '
+  - - 184
+    - '        data = pickle.load(f, encoding=''latin1'')
+
+      '
+  del_line_no:
+  - - null
+    - '    train_set, valid_set, test_set = pickle.load(f)
+
+      '
+  - - null
+    - '        with open(batch_file, ''r'') as f:
+
+      '
+  - - null
+    - '            data = pickle.load(f)
+
+      '
+  - - null
+    - '    with open(test_batch_file, ''r'') as f:
+
+      '
+  - - null
+    - '        data = pickle.load(f)
+
+      '

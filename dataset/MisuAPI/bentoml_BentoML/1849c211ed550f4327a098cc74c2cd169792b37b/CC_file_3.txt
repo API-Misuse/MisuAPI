@@ -1,0 +1,38 @@
+UPD @type:try_stmt@ @[985,1112]@ try:
+    from pathlib import Path
+
+    Path().expa <text_longer_than_50> @TO@ @type:try_stmt@ @[985,1078]@ try:
+    import pathlib
+except (ImportError, Attri <text_longer_than_50>
+---UPD @type:suite@ @[989,1044]@ from pathlib import Path
+
+    Path().expanduser() @TO@ @type:suite@ @[989,1009]@ import pathlib
+------UPD @type:simple_stmt@ @[994,1019]@ from pathlib import Path @TO@ @type:simple_stmt@ @[994,1009]@ import pathlib
+---------INS @type:import_name@ @[994,1008]@ import pathlib @TO@ @type:simple_stmt@ @[994,1019]@ from pathlib import Path
+---------DEL @type:import_from@ @[994,1018]@ from pathlib import Path @FROM@ @type:simple_stmt@ @[994,1019]@ from pathlib import Path
+------DEL @type:simple_stmt@ @[1024,1044]@ Path().expanduser() @FROM@ @type:suite@ @[989,1044]@ from pathlib import Path
+
+    Path().expanduser()
+---UPD @type:suite@ @[1081,1112]@ from pathlib2 import Path @TO@ @type:suite@ @[1046,1078]@ import pathlib2 as pathlib
+------UPD @type:simple_stmt@ @[1086,1112]@ from pathlib2 import Path @TO@ @type:simple_stmt@ @[1051,1078]@ import pathlib2 as pathlib
+---------INS @type:import_name@ @[1051,1077]@ import pathlib2 as pathlib @TO@ @type:simple_stmt@ @[1086,1112]@ from pathlib2 import Path
+------------INS @type:dotted_as_name@ @[1058,1077]@ pathlib2 as pathlib @TO@ @type:import_name@ @[1051,1077]@ import pathlib2 as pathlib
+---------DEL @type:import_from@ @[1086,1111]@ from pathlib2 import Path @FROM@ @type:simple_stmt@ @[1086,1112]@ from pathlib2 import Path
+
+
+INS @type:simple_stmt@ @[1078,1098]@ Path = pathlib.Path @TO@ @type:file_input@ @[576,3235]@ from __future__ import absolute_import
+from __futu <text_longer_than_50>
+
+
+MOV @type:name@ @[999,1006]@ pathlib @TO@ @type:import_name@ @[994,1008]@ import pathlib
+
+
+MOV @type:name@ @[1091,1099]@ pathlib2 @TO@ @type:dotted_as_name@ @[1058,1077]@ pathlib2 as pathlib
+
+
+UPD @type:name@ @[1107,1111]@ Path @TO@ @type:name@ @[1070,1077]@ pathlib
+
+
+MOV @type:name@ @[1107,1111]@ Path @TO@ @type:dotted_as_name@ @[1058,1077]@ pathlib2 as pathlib
+
+

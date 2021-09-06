@@ -1,0 +1,57 @@
+INS @type:simple_stmt@ @[912,922]@ import os @TO@ @type:file_input@ @[749,4579]@ from __future__ import division
+from __future__ im <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[1219,4579]@ if __name__ == '__main__':
+
+    parser = NeonArgpa <text_longer_than_50> @TO@ @type:if_stmt@ @[1229,4819]@ if __name__ == '__main__':
+
+    parser = NeonArgpa <text_longer_than_50>
+---UPD @type:suite@ @[1245,4579]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50> @TO@ @type:suite@ @[1255,4819]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50>
+------INS @type:if_stmt@ @[2011,2195]@ if not os.path.exists(args.settings):
+        rais <text_longer_than_50> @TO@ @type:suite@ @[1245,4579]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50>
+---------INS @type:suite@ @[2115,2195]@ with open(args.settings, 'rb') as fp:
+             <text_longer_than_50> @TO@ @type:if_stmt@ @[2011,2195]@ if not os.path.exists(args.settings):
+        rais <text_longer_than_50>
+------INS @type:if_stmt@ @[2310,2502]@ if not os.path.exists(args.input):
+        raise E <text_longer_than_50> @TO@ @type:suite@ @[1245,4579]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50>
+---------INS @type:suite@ @[2402,2502]@ with open(args.input) as fp:
+            input_tex <text_longer_than_50> @TO@ @type:if_stmt@ @[2310,2502]@ if not os.path.exists(args.input):
+        raise E <text_longer_than_50>
+------UPD @type:if_stmt@ @[2350,3218]@ if mp['use_embeddings'] is True:
+        emb_model <text_longer_than_50> @TO@ @type:if_stmt@ @[2582,3458]@ if mp['use_embeddings'] is True:
+        emb_model <text_longer_than_50>
+---------UPD @type:suite@ @[2867,3218]@ x_vocab = mp['vocabs']['token']
+        for t in i <text_longer_than_50> @TO@ @type:suite@ @[3099,3458]@ x_vocab = mp.get('vocabs').get('token')
+        fo <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[2876,2908]@ x_vocab = mp['vocabs']['token'] @TO@ @type:simple_stmt@ @[3108,3148]@ x_vocab = mp.get('vocabs').get('token')
+---------------UPD @type:expr_stmt@ @[2876,2907]@ x_vocab = mp['vocabs']['token'] @TO@ @type:expr_stmt@ @[3108,3147]@ x_vocab = mp.get('vocabs').get('token')
+------------------UPD @type:atom_expr@ @[2886,2907]@ mp['vocabs']['token'] @TO@ @type:atom_expr@ @[3118,3147]@ mp.get('vocabs').get('token')
+---------------------INS @type:trailer@ @[3120,3124]@ .get @TO@ @type:atom_expr@ @[2886,2907]@ mp['vocabs']['token']
+---------------------INS @type:trailer@ @[3124,3134]@ ('vocabs') @TO@ @type:atom_expr@ @[2886,2907]@ mp['vocabs']['token']
+---------------------UPD @type:trailer@ @[2888,2898]@ ['vocabs'] @TO@ @type:trailer@ @[3134,3138]@ .get
+------------------------MOV @type:string@ @[2889,2897]@ 'vocabs' @TO@ @type:trailer@ @[3124,3134]@ ('vocabs')
+------------------------INS @type:name@ @[3135,3138]@ get @TO@ @type:trailer@ @[2888,2898]@ ['vocabs']
+---------------------UPD @type:trailer@ @[2898,2907]@ ['token'] @TO@ @type:trailer@ @[3138,3147]@ ('token')
+------UPD @type:with_stmt@ @[2001,2068]@ with open(args.settings, 'rb') as fp:
+        mp = <text_longer_than_50> @TO@ @type:with_stmt@ @[2124,2195]@ with open(args.settings, 'rb') as fp:
+             <text_longer_than_50>
+---------UPD @type:suite@ @[2038,2068]@ mp = pickle.load(fp) @TO@ @type:suite@ @[2161,2195]@ mp = pickle.load(fp)
+------MOV @type:with_stmt@ @[2001,2068]@ with open(args.settings, 'rb') as fp:
+        mp = <text_longer_than_50> @TO@ @type:suite@ @[2115,2195]@ with open(args.settings, 'rb') as fp:
+             <text_longer_than_50>
+---------UPD @type:suite@ @[2038,2068]@ mp = pickle.load(fp) @TO@ @type:suite@ @[2161,2195]@ mp = pickle.load(fp)
+------UPD @type:with_stmt@ @[2183,2270]@ with open(args.input) as fp:
+        input_texts = <text_longer_than_50> @TO@ @type:with_stmt@ @[2411,2502]@ with open(args.input) as fp:
+            input_tex <text_longer_than_50>
+---------UPD @type:suite@ @[2211,2270]@ input_texts = [t.strip() for t in fp.readlines()] @TO@ @type:suite@ @[2439,2502]@ input_texts = [t.strip() for t in fp.readlines()]
+------MOV @type:with_stmt@ @[2183,2270]@ with open(args.input) as fp:
+        input_texts = <text_longer_than_50> @TO@ @type:suite@ @[2402,2502]@ with open(args.input) as fp:
+            input_tex <text_longer_than_50>
+---------UPD @type:suite@ @[2211,2270]@ input_texts = [t.strip() for t in fp.readlines()] @TO@ @type:suite@ @[2439,2502]@ input_texts = [t.strip() for t in fp.readlines()]
+
+

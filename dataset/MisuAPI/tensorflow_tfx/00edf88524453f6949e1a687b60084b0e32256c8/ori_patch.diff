@@ -1,0 +1,196 @@
+commit 00edf88524453f6949e1a687b60084b0e32256c8
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Thu Dec 17 11:54:34 2020 -0800
+
+    When stateful_working_dir is not found when deleted, do a warning log and ignore the error.
+    
+    PiperOrigin-RevId: 348064925
+
+diff --git a/tfx/orchestration/portable/launcher.py b/tfx/orchestration/portable/launcher.py
+index fd8c8505..151c9db2 100644
+--- a/tfx/orchestration/portable/launcher.py
++++ b/tfx/orchestration/portable/launcher.py
+@@ -13,7 +13,6 @@
+ # limitations under the License.
+ """This module defines a generic Launcher for all TFleX nodes."""
+ 
+-import os
+ from typing import Any, Dict, List, Optional, Text, Type, TypeVar
+ 
+ from absl import logging
+@@ -190,6 +189,7 @@ class Launcher(object):
+       # is_execution_needed being false. No publish will happen so down stream
+       # nodes won't be triggered.
+       if input_artifacts is None:
++        logging.info('No all required input are ready, abandoning execution.')
+         return _PrepareExecutionResult(
+             execution_info=data_types.ExecutionInfo(),
+             contexts=contexts,
+@@ -243,6 +243,7 @@ class Launcher(object):
+             contexts=contexts,
+             execution_id=execution.id,
+             output_artifacts=cached_outputs)
++        logging.info('An cached execusion %d is used.', execution.id)
+         return _PrepareExecutionResult(
+             execution_info=data_types.ExecutionInfo(
+                 execution_id=execution.id),
+@@ -254,6 +255,7 @@ class Launcher(object):
+           self._pipeline_runtime_spec.pipeline_run_id.field_value.string_value)
+ 
+       # 8. Going to trigger executor.
++      logging.info('Going to run a new execution %d', execution.id)
+       return _PrepareExecutionResult(
+           execution_info=data_types.ExecutionInfo(
+               execution_id=execution.id,
+@@ -309,21 +311,16 @@ class Launcher(object):
+ 
+   def _clean_up_stateless_execution_info(
+       self, execution_info: data_types.ExecutionInfo):
++    logging.info('Cleaning up stateless execution info.')
+     # Clean up tmp dir
+     fileio.rmtree(execution_info.tmp_dir)
+ 
+   def _clean_up_stateful_execution_info(
+       self, execution_info: data_types.ExecutionInfo):
+     """Post execution clean up."""
+-    # Clean up stateful working dir
+-    # Note that:
+-    #  stateful_working_dir = (os.path.join(
+-    #    self._node_dir,
+-    #    self._pipeline_run_id,  <-- we want to clean from this level down.
+-    #    _STATEFUL_WORKING_DIR)
+-    stateful_working_dir = os.path.abspath(
+-        os.path.join(execution_info.stateful_working_dir, os.pardir))
+-    fileio.rmtree(stateful_working_dir)
++    logging.info('Cleaning up stateful execution info.')
++    outputs_utils.remove_stateful_working_dir(
++        execution_info.stateful_working_dir)
+ 
+   def _update_with_driver_output(self,
+                                  driver_output: driver_output_pb2.DriverOutput,
+@@ -354,7 +351,7 @@ class Launcher(object):
+     Raises:
+       Exception: If the executor fails.
+     """
+-    logging.debug('Running launcher for %s', self._pipeline_node)
++    logging.info('Running launcher for %s', self._pipeline_node)
+     if self._system_node_handler:
+       # If this is a system node, runs it and directly return.
+       return self._system_node_handler.run(self._mlmd_connection,
+@@ -378,6 +375,7 @@ class Launcher(object):
+       finally:
+         self._clean_up_stateless_execution_info(execution_info)
+ 
++      logging.info('Execution %d succeeded.', execution_info.execution_id)
+       self._clean_up_stateful_execution_info(execution_info)
+       logging.info('Publishing output artifacts %s for exeuction %s',
+                    execution_info.output_dict,
+diff --git a/tfx/orchestration/portable/outputs_utils.py b/tfx/orchestration/portable/outputs_utils.py
+index d287070e..65cd8063 100644
+--- a/tfx/orchestration/portable/outputs_utils.py
++++ b/tfx/orchestration/portable/outputs_utils.py
+@@ -19,7 +19,6 @@ import os
+ from typing import Dict, List, Optional, Text
+ 
+ from absl import logging
+-
+ from tfx import types
+ from tfx.dsl.io import fileio
+ from tfx.proto.orchestration import pipeline_pb2
+@@ -62,6 +61,31 @@ def remove_output_dirs(output_dict: Dict[Text, List[types.Artifact]]) -> None:
+         fileio.remove(artifact.uri)
+ 
+ 
++def remove_stateful_working_dir(stateful_working_dir: Text) -> None:
++  """Remove stateful_working_dir."""
++  # Clean up stateful working dir
++  # Note that:
++  # stateful_working_dir = os.path.join(
++  #    self._node_dir,
++  #    _SYSTEM,
++  #    _STATEFUL_WORKING_DIR, <-- we want to clean from this level down.
++  #    dir_suffix)
++  stateful_working_dir = os.path.abspath(
++      os.path.join(stateful_working_dir, os.pardir))
++  try:
++    fileio.rmtree(stateful_working_dir)
++  except Exception as e:  # pylint: disable=broad-except
++    if 'NotFoundError' in str(type(e)):
++      # TODO(b/175244977): This is a workaround to avoid introducing
++      # tensorflow dependency. Change this except block to use a generic
++      # NotFoundError once it is Defined in fileio.
++      logging.warning(
++          'stateful_working_dir %s is not found, not going to delete it.',
++          stateful_working_dir)
++    else:
++      raise
++
++
+ class OutputsResolver:
+   """This class has methods to handle launcher output related logic."""
+ 
+@@ -157,10 +181,17 @@ class OutputsResolver:
+     # retries of the same component run to provide better isolation between
+     # "retry" and "new execution". When it is available, introduce it into
+     # stateful working directory.
++    # NOTE: If this directory structure is changed, please update
++    # the remove_stateful_working_dir function in this file accordingly.
+     stateful_working_dir = os.path.join(self._node_dir, _SYSTEM,
+                                         _STATEFUL_WORKING_DIR,
+                                         dir_suffix)
+-    fileio.makedirs(stateful_working_dir)
++    try:
++      fileio.makedirs(stateful_working_dir)
++    except Exception:  # pylint: disable=broad-except
++      logging.exception('Failed to make stateful working dir: %s',
++                        stateful_working_dir)
++      raise
+     return stateful_working_dir
+ 
+   def make_tmp_dir(self, execution_id: int) -> Text:
+diff --git a/tfx/orchestration/portable/outputs_utils_test.py b/tfx/orchestration/portable/outputs_utils_test.py
+index c32e3b08..3ab022fc 100644
+--- a/tfx/orchestration/portable/outputs_utils_test.py
++++ b/tfx/orchestration/portable/outputs_utils_test.py
+@@ -13,6 +13,7 @@
+ # limitations under the License.
+ """Tests for tfx.orchestration.portable.output_utils."""
+ from absl.testing import parameterized
++import mock
+ import tensorflow as tf
+ from tfx.dsl.io import fileio
+ from tfx.orchestration.portable import outputs_utils
+@@ -143,7 +144,7 @@ class OutputUtilsTest(test_case_utils.TfxTest, parameterized.TestCase):
+         self._output_resolver().get_stateful_working_directory())
+     self.assertRegex(stateful_working_dir,
+                      '.*/test_node/.system/stateful_working_dir/test_run_0')
+-    fileio.exists(stateful_working_dir)
++    self.assertTrue(fileio.exists(stateful_working_dir))
+ 
+   @parameterized.parameters(pipeline_pb2.Pipeline.SYNC,
+                             pipeline_pb2.Pipeline.ASYNC)
+@@ -182,6 +183,24 @@ class OutputUtilsTest(test_case_utils.TfxTest, parameterized.TestCase):
+       for artifact in artifact_list:
+         self.assertFalse(fileio.exists(artifact.uri))
+ 
++  def testRemoveStatefulWorkingDirSucceeded(self):
++    stateful_working_dir = (
++        self._output_resolver().get_stateful_working_directory())
++    self.assertTrue(fileio.exists(stateful_working_dir))
++
++    outputs_utils.remove_stateful_working_dir(stateful_working_dir)
++    self.assertFalse(fileio.exists(stateful_working_dir))
++
++  def testRemoveStatefulWorkingDirNotFoundError(self):
++    # removing a nonexisting path is an noop
++    outputs_utils.remove_stateful_working_dir('/a/not/exist/path')
++
++  @mock.patch.object(fileio, 'rmtree')
++  def testRemoveStatefulWorkingDirOtherError(self, rmtree_fn):
++    rmtree_fn.side_effect = ValueError('oops')
++    with self.assertRaisesRegex(ValueError, 'oops'):
++      outputs_utils.remove_stateful_working_dir('/a/fake/path')
++
+ 
+ if __name__ == '__main__':
+   tf.test.main()

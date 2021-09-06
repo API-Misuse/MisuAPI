@@ -1,0 +1,42 @@
+MOV @type:simple_stmt@ @[542,604]@ assert bboxs.shape == (11, 5) and landmarks.shape  <text_longer_than_50> @TO@ @type:suite@ @[117,604]@ img_file, out_file = 'test.jpg', 'output.jpg'
+     <text_longer_than_50>
+---UPD @type:assert_stmt@ @[542,603]@ assert bboxs.shape == (11, 5) and landmarks.shape  <text_longer_than_50> @TO@ @type:assert_stmt@ @[554,653]@ assert bboxs1.shape == bboxs2.shape == (11, 5) and <text_longer_than_50>
+------UPD @type:and_test@ @[549,603]@ bboxs.shape == (11, 5) and landmarks.shape == (11, <text_longer_than_50> @TO@ @type:and_test@ @[561,653]@ bboxs1.shape == bboxs2.shape == (11, 5) and landma <text_longer_than_50>
+---------UPD @type:comparison@ @[549,571]@ bboxs.shape == (11, 5) @TO@ @type:comparison@ @[561,600]@ bboxs1.shape == bboxs2.shape == (11, 5)
+------------UPD @type:atom_expr@ @[549,560]@ bboxs.shape @TO@ @type:atom_expr@ @[561,573]@ bboxs1.shape
+---------------UPD @type:name@ @[549,554]@ bboxs @TO@ @type:name@ @[561,567]@ bboxs1
+------------INS @type:atom_expr@ @[577,589]@ bboxs2.shape @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+------------INS @type:operator@ @[590,592]@ == @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+---------UPD @type:comparison@ @[576,603]@ landmarks.shape == (11, 10) @TO@ @type:comparison@ @[605,653]@ landmarks1.shape == landmarks2.shape == (11, 10)
+------------UPD @type:atom_expr@ @[576,591]@ landmarks.shape @TO@ @type:atom_expr@ @[605,621]@ landmarks1.shape
+---------------UPD @type:name@ @[576,585]@ landmarks @TO@ @type:name@ @[605,615]@ landmarks1
+------------INS @type:atom_expr@ @[625,641]@ landmarks2.shape @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+------------INS @type:operator@ @[642,644]@ == @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+
+
+UPD @type:simple_stmt@ @[392,454]@ bboxs, landmarks = face_detection.predict(img_file <text_longer_than_50> @TO@ @type:simple_stmt@ @[392,456]@ bboxs1, landmarks1 = face_detection.predict(img_fi <text_longer_than_50>
+---UPD @type:expr_stmt@ @[392,453]@ bboxs, landmarks = face_detection.predict(img_file <text_longer_than_50> @TO@ @type:expr_stmt@ @[392,455]@ bboxs1, landmarks1 = face_detection.predict(img_fi <text_longer_than_50>
+------UPD @type:testlist_star_expr@ @[392,408]@ bboxs, landmarks @TO@ @type:testlist_star_expr@ @[392,410]@ bboxs1, landmarks1
+---------UPD @type:name@ @[392,397]@ bboxs @TO@ @type:name@ @[392,398]@ bboxs1
+---------UPD @type:name@ @[399,408]@ landmarks @TO@ @type:name@ @[400,410]@ landmarks1
+
+
+INS @type:simple_stmt@ @[496,550]@ bboxs2, landmarks2 = face_detection.predict(img_fi <text_longer_than_50> @TO@ @type:suite@ @[117,604]@ img_file, out_file = 'test.jpg', 'output.jpg'
+     <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[542,604]@ assert bboxs.shape == (11, 5) and landmarks.shape  <text_longer_than_50> @TO@ @type:simple_stmt@ @[554,654]@ assert bboxs1.shape == bboxs2.shape == (11, 5) and <text_longer_than_50>
+---UPD @type:assert_stmt@ @[542,603]@ assert bboxs.shape == (11, 5) and landmarks.shape  <text_longer_than_50> @TO@ @type:assert_stmt@ @[554,653]@ assert bboxs1.shape == bboxs2.shape == (11, 5) and <text_longer_than_50>
+------UPD @type:and_test@ @[549,603]@ bboxs.shape == (11, 5) and landmarks.shape == (11, <text_longer_than_50> @TO@ @type:and_test@ @[561,653]@ bboxs1.shape == bboxs2.shape == (11, 5) and landma <text_longer_than_50>
+---------UPD @type:comparison@ @[549,571]@ bboxs.shape == (11, 5) @TO@ @type:comparison@ @[561,600]@ bboxs1.shape == bboxs2.shape == (11, 5)
+------------UPD @type:atom_expr@ @[549,560]@ bboxs.shape @TO@ @type:atom_expr@ @[561,573]@ bboxs1.shape
+---------------UPD @type:name@ @[549,554]@ bboxs @TO@ @type:name@ @[561,567]@ bboxs1
+------------INS @type:atom_expr@ @[577,589]@ bboxs2.shape @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+------------INS @type:operator@ @[590,592]@ == @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+---------UPD @type:comparison@ @[576,603]@ landmarks.shape == (11, 10) @TO@ @type:comparison@ @[605,653]@ landmarks1.shape == landmarks2.shape == (11, 10)
+------------UPD @type:atom_expr@ @[576,591]@ landmarks.shape @TO@ @type:atom_expr@ @[605,621]@ landmarks1.shape
+---------------UPD @type:name@ @[576,585]@ landmarks @TO@ @type:name@ @[605,615]@ landmarks1
+------------INS @type:atom_expr@ @[625,641]@ landmarks2.shape @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+------------INS @type:operator@ @[642,644]@ == @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+
+

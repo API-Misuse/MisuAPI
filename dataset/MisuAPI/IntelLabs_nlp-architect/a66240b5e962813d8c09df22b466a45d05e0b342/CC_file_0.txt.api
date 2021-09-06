@@ -1,0 +1,46 @@
+INS @type:if_stmt@ @[2011,2195]@ if not os.path.exists(args.settings):
+        rais <text_longer_than_50> @TO@ @type:suite@ @[1245,4579]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50>
+
+INS @type:if_stmt@ @[2011,2195]@ if not os.path.exists(args.settings):
+        rais <text_longer_than_50> @TO@ @type:suite@ @[1245,4579]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50>
+
+INS @type:suite@ @[2115,2195]@ with open(args.settings, 'rb') as fp:
+             <text_longer_than_50> @TO@ @type:if_stmt@ @[2011,2195]@ if not os.path.exists(args.settings):
+        rais <text_longer_than_50>
+
+INS @type:suite@ @[2115,2195]@ with open(args.settings, 'rb') as fp:
+             <text_longer_than_50> @TO@ @type:if_stmt@ @[2011,2195]@ if not os.path.exists(args.settings):
+        rais <text_longer_than_50>
+
+INS @type:if_stmt@ @[2310,2502]@ if not os.path.exists(args.input):
+        raise E <text_longer_than_50> @TO@ @type:suite@ @[1245,4579]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50>
+
+INS @type:if_stmt@ @[2310,2502]@ if not os.path.exists(args.input):
+        raise E <text_longer_than_50> @TO@ @type:suite@ @[1245,4579]@ parser = NeonArgparser()
+    parser.add_argument(' <text_longer_than_50>
+
+INS @type:suite@ @[2402,2502]@ with open(args.input) as fp:
+            input_tex <text_longer_than_50> @TO@ @type:if_stmt@ @[2310,2502]@ if not os.path.exists(args.input):
+        raise E <text_longer_than_50>
+
+INS @type:suite@ @[2402,2502]@ with open(args.input) as fp:
+            input_tex <text_longer_than_50> @TO@ @type:if_stmt@ @[2310,2502]@ if not os.path.exists(args.input):
+        raise E <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2886,2907]@ mp['vocabs']['token'] @TO@ @type:atom_expr@ @[3118,3147]@ mp.get('vocabs').get('token')
+
+INS @type:trailer@ @[3120,3124]@ .get @TO@ @type:atom_expr@ @[2886,2907]@ mp['vocabs']['token']
+
+INS @type:trailer@ @[3124,3134]@ ('vocabs') @TO@ @type:atom_expr@ @[2886,2907]@ mp['vocabs']['token']
+
+MOV @type:with_stmt@ @[2001,2068]@ with open(args.settings, 'rb') as fp:
+        mp = <text_longer_than_50> @TO@ @type:suite@ @[2115,2195]@ with open(args.settings, 'rb') as fp:
+             <text_longer_than_50>
+
+MOV @type:with_stmt@ @[2183,2270]@ with open(args.input) as fp:
+        input_texts = <text_longer_than_50> @TO@ @type:suite@ @[2402,2502]@ with open(args.input) as fp:
+            input_tex <text_longer_than_50>
+

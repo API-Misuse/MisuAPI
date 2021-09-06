@@ -1,0 +1,33 @@
+UPD @type:with_stmt@ @[5071,9881]@ with tf.Graph().as_default(), tf.device('/cpu:0'): <text_longer_than_50> @TO@ @type:with_stmt@ @[5071,9964]@ with tf.Graph().as_default(), tf.device('/cpu:0'): <text_longer_than_50>
+---UPD @type:suite@ @[5121,9881]@ # Create a variable to count the number of train() <text_longer_than_50> @TO@ @type:suite@ @[5121,9964]@ # Create a variable to count the number of train() <text_longer_than_50>
+------INS @type:with_stmt@ @[6168,7059]@ with tf.variable_scope(tf.get_variable_scope()):
+  <text_longer_than_50> @TO@ @type:suite@ @[5121,9881]@ # Create a variable to count the number of train() <text_longer_than_50>
+---------INS @type:suite@ @[6216,7059]@ for i in xrange(FLAGS.num_gpus):
+        with tf.d <text_longer_than_50> @TO@ @type:with_stmt@ @[6168,7059]@ with tf.variable_scope(tf.get_variable_scope()):
+  <text_longer_than_50>
+------UPD @type:for_stmt@ @[6168,6976]@ for i in xrange(FLAGS.num_gpus):
+      with tf.dev <text_longer_than_50> @TO@ @type:for_stmt@ @[6223,7059]@ for i in xrange(FLAGS.num_gpus):
+        with tf.d <text_longer_than_50>
+---------UPD @type:suite@ @[6200,6976]@ with tf.device('/gpu:%d' % i):
+        with tf.nam <text_longer_than_50> @TO@ @type:suite@ @[6255,7059]@ with tf.device('/gpu:%d' % i):
+          with tf.n <text_longer_than_50>
+------------UPD @type:with_stmt@ @[6207,6976]@ with tf.device('/gpu:%d' % i):
+        with tf.nam <text_longer_than_50> @TO@ @type:with_stmt@ @[6264,7059]@ with tf.device('/gpu:%d' % i):
+          with tf.n <text_longer_than_50>
+---------------UPD @type:suite@ @[6237,6976]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50> @TO@ @type:suite@ @[6294,7059]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50>
+------------------UPD @type:with_stmt@ @[6246,6976]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50> @TO@ @type:with_stmt@ @[6305,7059]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50>
+---------------------UPD @type:suite@ @[6309,6976]@ # Calculate the loss for one tower of the CIFAR mo <text_longer_than_50> @TO@ @type:suite@ @[6368,7059]@ # Calculate the loss for one tower of the CIFAR mo <text_longer_than_50>
+------MOV @type:for_stmt@ @[6168,6976]@ for i in xrange(FLAGS.num_gpus):
+      with tf.dev <text_longer_than_50> @TO@ @type:suite@ @[6216,7059]@ for i in xrange(FLAGS.num_gpus):
+        with tf.d <text_longer_than_50>
+---------UPD @type:suite@ @[6200,6976]@ with tf.device('/gpu:%d' % i):
+        with tf.nam <text_longer_than_50> @TO@ @type:suite@ @[6255,7059]@ with tf.device('/gpu:%d' % i):
+          with tf.n <text_longer_than_50>
+------------UPD @type:with_stmt@ @[6207,6976]@ with tf.device('/gpu:%d' % i):
+        with tf.nam <text_longer_than_50> @TO@ @type:with_stmt@ @[6264,7059]@ with tf.device('/gpu:%d' % i):
+          with tf.n <text_longer_than_50>
+---------------UPD @type:suite@ @[6237,6976]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50> @TO@ @type:suite@ @[6294,7059]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50>
+------------------UPD @type:with_stmt@ @[6246,6976]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50> @TO@ @type:with_stmt@ @[6305,7059]@ with tf.name_scope('%s_%d' % (cifar10.TOWER_NAME,  <text_longer_than_50>
+---------------------UPD @type:suite@ @[6309,6976]@ # Calculate the loss for one tower of the CIFAR mo <text_longer_than_50> @TO@ @type:suite@ @[6368,7059]@ # Calculate the loss for one tower of the CIFAR mo <text_longer_than_50>
+
+

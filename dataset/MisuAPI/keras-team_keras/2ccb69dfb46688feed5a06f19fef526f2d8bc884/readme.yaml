@@ -1,0 +1,33 @@
+sha: 2ccb69dfb46688feed5a06f19fef526f2d8bc884
+message: Fix
+commit_log: "commit 2ccb69dfb46688feed5a06f19fef526f2d8bc884\nAuthor: Franc\u0327\
+  ois Chollet <francois.chollet@gmail.com>\nDate:   Sun Aug 25 09:06:58 2019 -0700\n\
+  \n    Fix"
+contained_keywords:
+- fix
+commit_time: 2019-08-25 09:06:58 -0700
+commit_author: "Franc\u0327ois Chollet"
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: keras/metrics.py
+  source_file: a/keras/metrics.py
+  target_file: b/keras/metrics.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 82
+    - '        with K.control_dependencies(update_op):  # For TF
+
+      '
+  del_line_no:
+  - - null
+    - '        with K.control_dependencies([update_op]):  # For TF
+
+      '

@@ -1,0 +1,100 @@
+issues_cnt: 0
+sha: 01ee67d6e0cc5e9d6ae5f07045024a638564fe78
+message: Fixing the tutorials on GPU and fixing a bad link in tutorial
+commit_log: "commit 01ee67d6e0cc5e9d6ae5f07045024a638564fe78\nAuthor: Eider Moore\
+  \ <eiderm@google.com>\nDate:   Wed Dec 9 21:47:20 2015 -0800\n\n    Fixing the tutorials\
+  \ on GPU and fixing a bad link in tutorial"
+contained_keywords:
+- fixing
+commit_time: 2015-12-09 21:47:20 -0800
+commit_author: Eider Moore
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  add_line_no:
+  - - 55
+    - '    # The embedding lookup must be placed on a cpu.
+
+      '
+  - - 56
+    - '    with tf.device(''/cpu:0''):
+
+      '
+  - - 57
+    - '      embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '    embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: prettytensor/tutorial/baby_names.py
+  removed: 1
+  source_file: a/prettytensor/tutorial/baby_names.py
+  target_file: b/prettytensor/tutorial/baby_names.py
+patched_file_1:
+  add_line_no:
+  - - 56
+    - '    # The embedding lookup must be placed on a cpu.
+
+      '
+  - - 57
+    - '    with tf.device(''/cpu:0''):
+
+      '
+  - - 58
+    - '      embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '    embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: prettytensor/tutorial/shakespeare.py
+  removed: 1
+  source_file: a/prettytensor/tutorial/shakespeare.py
+  target_file: b/prettytensor/tutorial/shakespeare.py
+patched_file_2:
+  add_line_no:
+  - - 46
+    - '    include_package_data=True,
+
+      '
+  - - 47
+    - '    package_data={
+
+      '
+  - - 48
+    - '        ''prettytensor'': [''tutorial/baby_names.csv'']
+
+      '
+  - - 49
+    - '        },
+
+      '
+  added: 4
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: setup.py
+  removed: 0
+  source_file: a/setup.py
+  target_file: b/setup.py

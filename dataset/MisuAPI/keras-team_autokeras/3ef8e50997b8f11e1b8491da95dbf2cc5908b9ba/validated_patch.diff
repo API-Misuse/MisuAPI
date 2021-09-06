@@ -1,0 +1,22 @@
+commit 3ef8e50997b8f11e1b8491da95dbf2cc5908b9ba
+Author: Haifeng <jhfjhfj1@gmail.com>
+Date:   Wed Dec 20 16:44:46 2017 -0600
+
+    bug fixed
+
+diff --git a/autokeras/classifier.py b/autokeras/classifier.py
+index ae58a27..098a85e 100644
+--- a/autokeras/classifier.py
++++ b/autokeras/classifier.py
+@@ -7,11 +7,12 @@ from sklearn.model_selection import train_test_split
+ def load_from_path(path=constant.DEFAULT_SAVE_PATH):
+-    classifier = pickle.load(os.path.join(path, 'config'))
++    classifier = pickle.load(open(os.path.join(path, 'config'), 'rb'))
++    classifier.path = path
+     return classifier
+ 
+@@ -60,21 +62,21 @@ class ClassifierBase:
+-            pickle.dump(self, os.path.join(self.path, 'config'))
++            pickle.dump(self, open(os.path.join(self.path, 'config'), 'wb'))
+ 
+

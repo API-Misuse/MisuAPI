@@ -1,0 +1,416 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/keras-team/autokeras/pull/216
+  title: Develop
+  body: bug fix
+sha: 48e16357e760b9851eeda66f74d4980e3013c299
+message: bug_fix
+commit_log: "commit 48e16357e760b9851eeda66f74d4980e3013c299\nAuthor: Haifeng Jin\
+  \ <jhfjhfj1@gmail.com>\nDate:   Tue Sep 25 03:18:20 2018 -0500\n\n    bug_fix"
+contained_keywords:
+- bug
+- fix
+commit_time: 2018-09-25 03:18:20 -0500
+commit_author: Haifeng Jin
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  add_line_no:
+  - - 10
+    - '
+
+      '
+  - - 11
+    - 'from scipy import linalg
+
+      '
+  - - 12
+    - 'from scipy.linalg import cholesky, cho_solve, solve_triangular, LinAlgError
+
+      '
+  - - 14
+    - 'from sklearn.metrics.pairwise import rbf_kernel
+
+      '
+  - - 96
+    - '        temp_distance_matrix = np.concatenate((up_k, down_k), axis=0)
+
+      '
+  - - 97
+    - '        k_matrix = bourgain_embedding_matrix(temp_distance_matrix)
+
+      '
+  - - 102
+    - '        try:
+
+      '
+  - - 103
+    - '            self._l_matrix = cholesky(k_matrix, lower=True)  # Line 2
+
+      '
+  - - 104
+    - '        except LinAlgError:
+
+      '
+  - - 105
+    - '            return self
+
+      '
+  - - 106
+    - '
+
+      '
+  - - 109
+    - '        self._distance_matrix = temp_distance_matrix
+
+      '
+  - - 126
+    - '        k_matrix = bourgain_embedding_matrix(self._distance_matrix)
+
+      '
+  - - 137
+    - '        k_trans = np.exp(-np.power(self.edit_distance_matrix(self.kernel_lambda,
+      train_x, self._x), 2))
+
+      '
+  - - 204
+    - '    return rbf_kernel(distort_elements, distort_elements)
+
+      '
+  - - 324
+    - '
+
+      '
+  - - 325
+    - '
+
+      '
+  - - 326
+    - 'def to_nearest_pd(k_matrix):
+
+      '
+  - - 327
+    - '    """Find the nearest positive-definite matrix to input
+
+      '
+  - - 328
+    - '
+
+      '
+  - - 329
+    - '    A Python/Numpy port of John D''Errico''s `nearestSPD` MATLAB code [1],
+      which
+
+      '
+  - - 330
+    - '    credits [2].
+
+      '
+  - - 331
+    - '
+
+      '
+  - - 332
+    - '    [1] https://www.mathworks.com/matlabcentral/fileexchange/42885-nearestspd
+
+      '
+  - - 333
+    - '
+
+      '
+  - - 334
+    - '    [2] N.J. Higham, "Computing a nearest symmetric positive semidefinite
+
+      '
+  - - 335
+    - '    matrix" (1988): https://doi.org/10.1016/0024-3795(88)90223-6
+
+      '
+  - - 336
+    - '    """
+
+      '
+  - - 337
+    - '
+
+      '
+  - - 338
+    - '    temp = is_pd(k_matrix)
+
+      '
+  - - 339
+    - '    if temp is not None:
+
+      '
+  - - 340
+    - '        return temp
+
+      '
+  - - 341
+    - '
+
+      '
+  - - 342
+    - '    b = (k_matrix + k_matrix.T) / 2
+
+      '
+  - - 343
+    - '    _, s, v = linalg.svd(b)
+
+      '
+  - - 344
+    - '
+
+      '
+  - - 345
+    - '    H = np.dot(v.T, np.dot(np.diag(s), v))
+
+      '
+  - - 346
+    - '
+
+      '
+  - - 347
+    - '    a2 = (b + H) / 2
+
+      '
+  - - 348
+    - '
+
+      '
+  - - 349
+    - '    a3 = (a2 + a2.T) / 2
+
+      '
+  - - 350
+    - '
+
+      '
+  - - 351
+    - '    temp = is_pd(a3)
+
+      '
+  - - 352
+    - '    if temp is not None:
+
+      '
+  - - 353
+    - '        return temp
+
+      '
+  - - 354
+    - '
+
+      '
+  - - 355
+    - '    spacing = np.spacing(linalg.norm(k_matrix))
+
+      '
+  - - 356
+    - '    # The above is different from [1]. It appears that MATLAB''s `chol` Cholesky
+
+      '
+  - - 357
+    - '    # decomposition will accept matrixes with exactly 0-eigenvalue, whereas
+
+      '
+  - - 358
+    - '    # Numpy''s will not. So where [1] uses `eps(mineig)` (where `eps` is Matlab
+
+      '
+  - - 359
+    - '    # for `np.spacing`), we use the above definition. CAVEAT: our `spacing`
+
+      '
+  - - 360
+    - '    # will be much larger than [1]''s `eps(mineig)`, since `mineig` is usually
+      on
+
+      '
+  - - 361
+    - '    # the order of 1e-16, and `eps(1e-16)` is on the order of 1e-34, whereas
+
+      '
+  - - 362
+    - '    # `spacing` will, for Gaussian random matrixes of small dimension, be on
+
+      '
+  - - 363
+    - '    # othe order of 1e-16. In practice, both ways converge, as the unit test
+
+      '
+  - - 364
+    - '    # below suggests.
+
+      '
+  - - 365
+    - '    I = np.eye(k_matrix.shape[0])
+
+      '
+  - - 366
+    - '    k = 1
+
+      '
+  - - 367
+    - '    while True:
+
+      '
+  - - 368
+    - '        temp = is_pd(a3)
+
+      '
+  - - 369
+    - '        if temp is not None:
+
+      '
+  - - 370
+    - '            break
+
+      '
+  - - 371
+    - '        mineig = np.min(np.real(linalg.eigvals(a3)))
+
+      '
+  - - 372
+    - '        a3 += I * (-mineig * k ** 2 + spacing)
+
+      '
+  - - 373
+    - '        k += 1
+
+      '
+  - - 374
+    - '        print(k)
+
+      '
+  - - 375
+    - '
+
+      '
+  - - 376
+    - '    return temp
+
+      '
+  - - 377
+    - '
+
+      '
+  - - 378
+    - '
+
+      '
+  - - 379
+    - 'def is_pd(b):
+
+      '
+  - - 380
+    - '    """Returns true when input is positive-definite, via Cholesky"""
+
+      '
+  - - 381
+    - '    try:
+
+      '
+  - - 382
+    - '        return cholesky(b, lower=True)
+
+      '
+  - - 383
+    - '    except LinAlgError:
+
+      '
+  - - 384
+    - '        return None
+
+      '
+  added: 76
+  del_line_no:
+  - - null
+    - 'from scipy.linalg import cholesky, cho_solve, solve_triangular
+
+      '
+  - - null
+    - '        self._distance_matrix = np.concatenate((up_k, down_k), axis=0)
+
+      '
+  - - null
+    - '        distort_matrix = bourgain_embedding_matrix(self._distance_matrix)
+
+      '
+  - - null
+    - '        k_matrix = 1.0 / np.exp(np.power(distort_matrix, 2))
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        self._l_matrix = cholesky(k_matrix, lower=True)  # Line 2
+
+      '
+  - - null
+    - '        distort_matrix = bourgain_embedding_matrix(self._distance_matrix)
+
+      '
+  - - null
+    - '        k_matrix = 1.0 / np.exp(np.power(distort_matrix, 2))
+
+      '
+  - - null
+    - '        k_trans = 1.0 / np.exp(np.power(self.edit_distance_matrix(self.kernel_lambda,
+      train_x, self._x), 2))
+
+      '
+  - - null
+    - '    distort_matrix = np.zeros((n, n))
+
+      '
+  - - null
+    - '    for i in range(n):
+
+      '
+  - - null
+    - '        for j in range(i + 1, n):
+
+      '
+  - - null
+    - '            distort_matrix[i][j] = distort_matrix[j][i] = vector_distance(distort_elements[i],
+      distort_elements[j])
+
+      '
+  - - null
+    - '    return np.array(distort_matrix)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: autokeras/bayesian.py
+  removed: 14
+  source_file: a/autokeras/bayesian.py
+  target_file: b/autokeras/bayesian.py
+patched_file_1:
+  add_line_no:
+  - - 85
+    - '    clf.fit(train_x, train_y, 5)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    clf.fit(train_x, train_y, 15)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tests/test_image_supervised.py
+  removed: 1
+  source_file: a/tests/test_image_supervised.py
+  target_file: b/tests/test_image_supervised.py

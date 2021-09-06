@@ -1,0 +1,98 @@
+sha: e3fab2c54bcf92f54327e12f05469b01619f853d
+message: Fixed problem with non-existing model directory
+commit_log: "commit e3fab2c54bcf92f54327e12f05469b01619f853d\nAuthor: David Sandberg\
+  \ <david.o.sandberg@gmail.com>\nDate:   Sat Mar 5 11:21:28 2016 +0100\n\n    Fixed\
+  \ problem with non-existing model directory"
+contained_keywords:
+- fixed
+- problem
+commit_time: 2016-03-05 11:21:28 +0100
+commit_author: David Sandberg
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: facenet/src/facenet.py
+  source_file: a/facenet/src/facenet.py
+  target_file: b/facenet/src/facenet.py
+  added: 0
+  removed: 1
+  add_line_no: []
+  del_line_no:
+  - - null
+    - '    #dataset = [None] * nrof_classes
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: facenet/src/facenet_train.py
+  source_file: a/facenet/src/facenet_train.py
+  target_file: b/facenet/src/facenet_train.py
+  added: 4
+  removed: 9
+  add_line_no:
+  - - 57
+    - 'def main(argv=None):  # pylint: disable=unused-argument
+
+      '
+  - - 66
+    - '  if not os.path.isdir(model_dir):  # Create the model directory if it doesn''t
+      exist
+
+      '
+  - - 67
+    - '    os.mkdir(model_dir)
+
+      '
+  - - 178
+    - '      print(''Epoch: [%d][%d/%d]\tTime %.3f\ttripErr %2.3f'' % (epoch, batch_number,
+      FLAGS.epoch_size, duration, err))
+
+      '
+  del_line_no:
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def train():
+
+      '
+  - - null
+    - '      if (batch_number%20==0):
+
+      '
+  - - null
+    - '        print(''Epoch: [%d][%d/%d]\tTime %.3f\ttripErr %2.3f'' % (epoch, batch_number,
+      FLAGS.epoch_size, duration, err))
+
+      '
+  - - null
+    - '  xxx = 1
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def main(argv=None):  # pylint: disable=unused-argument
+
+      '
+  - - null
+    - '  train()
+
+      '
+  - - null
+    - '
+
+      '

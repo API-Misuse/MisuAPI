@@ -1,0 +1,249 @@
+INS @type:simple_stmt@ @[490,547]@ return exists(context) and context.mode == 'increm <text_longer_than_50> @TO@ @type:suite@ @[485,547]@ return exists(context) and context.mode == 'increm <text_longer_than_50>
+
+INS @type:simple_stmt@ @[490,547]@ return exists(context) and context.mode == 'increm <text_longer_than_50> @TO@ @type:suite@ @[485,547]@ return exists(context) and context.mode == 'increm <text_longer_than_50>
+
+INS @type:return_stmt@ @[490,546]@ return exists(context) and context.mode == 'increm <text_longer_than_50> @TO@ @type:simple_stmt@ @[490,547]@ return exists(context) and context.mode == 'increm <text_longer_than_50>
+
+INS @type:return_stmt@ @[490,546]@ return exists(context) and context.mode == 'increm <text_longer_than_50> @TO@ @type:simple_stmt@ @[490,547]@ return exists(context) and context.mode == 'increm <text_longer_than_50>
+
+INS @type:and_test@ @[497,546]@ exists(context) and context.mode == 'incremental' @TO@ @type:return_stmt@ @[490,546]@ return exists(context) and context.mode == 'increm <text_longer_than_50>
+
+INS @type:and_test@ @[497,546]@ exists(context) and context.mode == 'incremental' @TO@ @type:return_stmt@ @[490,546]@ return exists(context) and context.mode == 'increm <text_longer_than_50>
+
+UPD @type:atom_expr@ @[1219,1479]@ mtf.get_variable(x.mesh, 'g', [], initializer=tf.c <text_longer_than_50> @TO@ @type:atom_expr@ @[1359,1626]@ mtf.get_variable(x.mesh, 'g', [], initializer=tf.c <text_longer_than_50>
+
+UPD @type:atom_expr@ @[1454,1478]@ x.dtype.activation_dtype @TO@ @type:atom_expr@ @[1594,1625]@ variable_dtype.activation_dtype
+
+DEL @type:trailer@ @[1461,1478]@ .activation_dtype @FROM@ @type:atom_expr@ @[1454,1478]@ x.dtype.activation_dtype
+
+INS @type:if_stmt@ @[6231,6302]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+
+INS @type:if_stmt@ @[6231,6302]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+
+INS @type:suite@ @[6268,6302]@ q *= one_hot @TO@ @type:if_stmt@ @[6231,6302]@ if is_incremental_inference(context):
+             <text_longer_than_50>
+
+INS @type:simple_stmt@ @[6319,6967]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+
+INS @type:simple_stmt@ @[6319,6967]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+
+INS @type:if_stmt@ @[6984,7091]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+
+INS @type:if_stmt@ @[6984,7091]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[6435,7277]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+
+INS @type:suite@ @[7021,7091]@ a = mtf.gather(a, context.position - 1, dim_seq) @TO@ @type:if_stmt@ @[6984,7091]@ if is_incremental_inference(context):
+             <text_longer_than_50>
+
+INS @type:suite@ @[7021,7091]@ a = mtf.gather(a, context.position - 1, dim_seq) @TO@ @type:if_stmt@ @[6984,7091]@ if is_incremental_inference(context):
+             <text_longer_than_50>
+
+INS @type:expr_stmt@ @[7042,7090]@ a = mtf.gather(a, context.position - 1, dim_seq) @TO@ @type:simple_stmt@ @[6632,7277]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[6632,7277]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:suite@ @[7021,7091]@ a = mtf.gather(a, context.position - 1, dim_seq)
+
+INS @type:expr_stmt@ @[7042,7090]@ a = mtf.gather(a, context.position - 1, dim_seq) @TO@ @type:simple_stmt@ @[6632,7277]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+
+INS @type:test@ @[7668,7769]@ mtf.broadcast(bias, [dim_batch, dim_heads, bias.sh <text_longer_than_50> @TO@ @type:expr_stmt@ @[7834,7928]@ broadcasted_bias = mtf.broadcast(bias, [dim_batch, <text_longer_than_50>
+
+INS @type:test@ @[7668,7769]@ mtf.broadcast(bias, [dim_batch, dim_heads, bias.sh <text_longer_than_50> @TO@ @type:expr_stmt@ @[7834,7928]@ broadcasted_bias = mtf.broadcast(bias, [dim_batch, <text_longer_than_50>
+
+MOV @type:atom_expr@ @[7853,7928]@ mtf.broadcast(bias, [dim_batch, dim_heads, bias.sh <text_longer_than_50> @TO@ @type:test@ @[7668,7769]@ mtf.broadcast(bias, [dim_batch, dim_heads, bias.sh <text_longer_than_50>
+
+DEL @type:if_stmt@ @[5518,5914]@ if context is not None:
+            if context.mod <text_longer_than_50> @FROM@ @type:suite@ @[5046,12053]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50>
+
+DEL @type:if_stmt@ @[6109,6261]@ if context is not None:
+            if context.mod <text_longer_than_50> @FROM@ @type:suite@ @[5046,12053]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50>
+
+INS @type:atom_expr@ @[13096,13124]@ exists(params["moe_layers"]) @TO@ @type:and_test@ @[13248,13322]@ (params["moe_layers"] is not None) and (layer_num  <text_longer_than_50>
+
+INS @type:atom_expr@ @[13096,13124]@ exists(params["moe_layers"]) @TO@ @type:and_test@ @[13248,13322]@ (params["moe_layers"] is not None) and (layer_num  <text_longer_than_50>
+
+INS @type:trailer@ @[13102,13124]@ (params["moe_layers"]) @TO@ @type:atom_expr@ @[13096,13124]@ exists(params["moe_layers"])
+
+INS @type:trailer@ @[13102,13124]@ (params["moe_layers"]) @TO@ @type:atom_expr@ @[13096,13124]@ exists(params["moe_layers"])
+
+DEL @type:atom@ @[13248,13282]@ (params["moe_layers"] is not None) @FROM@ @type:and_test@ @[13248,13322]@ (params["moe_layers"] is not None) and (layer_num  <text_longer_than_50>
+
+INS @type:atom_expr@ @[16110,16144]@ exists(params["share_parameters"]) @TO@ @type:and_test@ @[16269,16346]@ params["share_parameters"] is not None and params[ <text_longer_than_50>
+
+INS @type:atom_expr@ @[16110,16144]@ exists(params["share_parameters"]) @TO@ @type:and_test@ @[16269,16346]@ params["share_parameters"] is not None and params[ <text_longer_than_50>
+
+INS @type:trailer@ @[16116,16144]@ (params["share_parameters"]) @TO@ @type:atom_expr@ @[16110,16144]@ exists(params["share_parameters"])
+
+INS @type:trailer@ @[16116,16144]@ (params["share_parameters"]) @TO@ @type:atom_expr@ @[16110,16144]@ exists(params["share_parameters"])
+
+DEL @type:comparison@ @[16269,16307]@ params["share_parameters"] is not None @FROM@ @type:and_test@ @[16269,16346]@ params["share_parameters"] is not None and params[ <text_longer_than_50>
+
+INS @type:if_stmt@ @[16597,16737]@ if is_incremental_inference(context):
+        x =  <text_longer_than_50> @TO@ @type:suite@ @[15960,22125]@ """A GPT style model implemented in mesh tensorflo <text_longer_than_50>
+
+INS @type:suite@ @[19429,19678]@ # positional embedding
+        if is_incremental_i <text_longer_than_50> @TO@ @type:with_stmt@ @[19411,19562]@ with tf.variable_scope('pos_embd'):
+        # posi <text_longer_than_50>
+
+INS @type:suite@ @[19429,19678]@ # positional embedding
+        if is_incremental_i <text_longer_than_50> @TO@ @type:with_stmt@ @[19411,19562]@ with tf.variable_scope('pos_embd'):
+        # posi <text_longer_than_50>
+
+INS @type:if_stmt@ @[19469,19678]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[19429,19678]@ # positional embedding
+        if is_incremental_i <text_longer_than_50>
+
+INS @type:if_stmt@ @[19469,19678]@ if is_incremental_inference(context):
+             <text_longer_than_50> @TO@ @type:suite@ @[19429,19678]@ # positional embedding
+        if is_incremental_i <text_longer_than_50>
+
+MOV @type:suite@ @[19446,19562]@ # positional embedding
+        h += mtf.gather(wpe <text_longer_than_50> @TO@ @type:if_stmt@ @[19469,19678]@ if is_incremental_inference(context):
+             <text_longer_than_50>
+
+UPD @type:atom_expr@ @[20015,20031]@ enumerate(pasts) @TO@ @type:atom_expr@ @[20086,20110]@ range(params["n_layer"])
+
+UPD @type:atom_expr@ @[20150,20450]@ block(params=params, scope=block_scope, past=past, <text_longer_than_50> @TO@ @type:atom_expr@ @[20229,20576]@ block(params=params, scope=block_scope, layer_num= <text_longer_than_50>
+
+INS @type:argument@ @[20370,20397]@ sequence_dim = sequence_dim @TO@ @type:arglist@ @[20156,20449]@ params=params, scope=block_scope, past=past, layer <text_longer_than_50>
+
+INS @type:operator@ @[20397,20398]@ , @TO@ @type:arglist@ @[20156,20449]@ params=params, scope=block_scope, past=past, layer <text_longer_than_50>
+
+DEL @type:argument@ @[20190,20199]@ past=past @FROM@ @type:arglist@ @[20156,20449]@ params=params, scope=block_scope, past=past, layer <text_longer_than_50>
+
+DEL @type:operator@ @[20199,20200]@ , @FROM@ @type:arglist@ @[20156,20449]@ params=params, scope=block_scope, past=past, layer <text_longer_than_50>
+
+DEL @type:exprlist@ @[20000,20011]@ layer, past @FROM@ @type:for_stmt@ @[19996,20570]@ for layer, past in enumerate(pasts):
+        # att <text_longer_than_50>
+
+INS @type:simple_stmt@ @[21101,21199]@ seq_dim = sequence_dim if not is_incremental_infer <text_longer_than_50> @TO@ @type:suite@ @[20841,21150]@ # layer normalize & affine transform
+        h = l <text_longer_than_50>
+
+UPD @type:atom_expr@ @[21078,21149]@ mtf.einsum([h, wte], output_shape=[batch_dim, sequ <text_longer_than_50> @TO@ @type:atom_expr@ @[21310,21376]@ mtf.einsum([h, wte], output_shape=[batch_dim, seq_ <text_longer_than_50>
+
+MOV @type:name@ @[20000,20005]@ layer @TO@ @type:for_stmt@ @[19996,20570]@ for layer, past in enumerate(pasts):
+        # att <text_longer_than_50>
+
+MOV @type:comparison@ @[5557,5586]@ context.mode == "incremental" @TO@ @type:and_test@ @[497,546]@ exists(context) and context.mode == 'incremental'
+
+INS @type:atom_expr@ @[5437,5470]@ is_incremental_inference(context) @TO@ @type:if_stmt@ @[5554,5914]@ if context.mode == "incremental":
+                 <text_longer_than_50>
+
+INS @type:atom_expr@ @[5437,5470]@ is_incremental_inference(context) @TO@ @type:if_stmt@ @[5554,5914]@ if context.mode == "incremental":
+                 <text_longer_than_50>
+
+INS @type:trailer@ @[5461,5470]@ (context) @TO@ @type:atom_expr@ @[5437,5470]@ is_incremental_inference(context)
+
+UPD @type:atom_expr@ @[5614,5708]@ mtf.one_hot(
+                    context.position, <text_longer_than_50> @TO@ @type:atom_expr@ @[5494,5571]@ mtf.one_hot(context.position - 1, dim_seq, dtype=v <text_longer_than_50>
+
+INS @type:arith_expr@ @[5506,5526]@ context.position - 1 @TO@ @type:arglist@ @[5647,5707]@ context.position, dim_seq, dtype=variable_dtype.ma <text_longer_than_50>
+
+INS @type:arith_expr@ @[5506,5526]@ context.position - 1 @TO@ @type:arglist@ @[5647,5707]@ context.position, dim_seq, dtype=variable_dtype.ma <text_longer_than_50>
+
+MOV @type:atom_expr@ @[5647,5663]@ context.position @TO@ @type:arith_expr@ @[5506,5526]@ context.position - 1
+
+MOV @type:if_stmt@ @[5554,5914]@ if context.mode == "incremental":
+                 <text_longer_than_50> @TO@ @type:suite@ @[5046,12053]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50>
+
+MOV @type:comparison@ @[5557,5586]@ context.mode == "incremental" @TO@ @type:and_test@ @[497,546]@ exists(context) and context.mode == 'incremental'
+
+INS @type:atom_expr@ @[5437,5470]@ is_incremental_inference(context) @TO@ @type:if_stmt@ @[5554,5914]@ if context.mode == "incremental":
+                 <text_longer_than_50>
+
+INS @type:atom_expr@ @[5437,5470]@ is_incremental_inference(context) @TO@ @type:if_stmt@ @[5554,5914]@ if context.mode == "incremental":
+                 <text_longer_than_50>
+
+INS @type:trailer@ @[5461,5470]@ (context) @TO@ @type:atom_expr@ @[5437,5470]@ is_incremental_inference(context)
+
+UPD @type:atom_expr@ @[5614,5708]@ mtf.one_hot(
+                    context.position, <text_longer_than_50> @TO@ @type:atom_expr@ @[5494,5571]@ mtf.one_hot(context.position - 1, dim_seq, dtype=v <text_longer_than_50>
+
+INS @type:arith_expr@ @[5506,5526]@ context.position - 1 @TO@ @type:arglist@ @[5647,5707]@ context.position, dim_seq, dtype=variable_dtype.ma <text_longer_than_50>
+
+INS @type:arith_expr@ @[5506,5526]@ context.position - 1 @TO@ @type:arglist@ @[5647,5707]@ context.position, dim_seq, dtype=variable_dtype.ma <text_longer_than_50>
+
+MOV @type:atom_expr@ @[5647,5663]@ context.position @TO@ @type:arith_expr@ @[5506,5526]@ context.position - 1
+
+DEL @type:or_test@ @[6148,6209]@ context.mode == "incremental" or context.mode == " <text_longer_than_50> @FROM@ @type:if_stmt@ @[6145,6261]@ if context.mode == "incremental" or context.mode = <text_longer_than_50>
+
+MOV @type:if_stmt@ @[6145,6261]@ if context.mode == "incremental" or context.mode = <text_longer_than_50> @TO@ @type:suite@ @[5046,12053]@ # compute attention inputs
+        dim_kv = mtf.Di <text_longer_than_50>
+
+DEL @type:or_test@ @[6148,6209]@ context.mode == "incremental" or context.mode == " <text_longer_than_50> @FROM@ @type:if_stmt@ @[6145,6261]@ if context.mode == "incremental" or context.mode = <text_longer_than_50>
+
+UPD @type:atom_expr@ @[13763,14050]@ attn(prenorm(x, 'norm_1', variable_dtype=variable_ <text_longer_than_50> @TO@ @type:atom_expr@ @[13605,13903]@ attn(prenorm(x, 'norm_1', variable_dtype=variable_ <text_longer_than_50>
+
+INS @type:argument@ @[13767,13787]@ dim_seq=sequence_dim @TO@ @type:arglist@ @[13768,14049]@ prenorm(x, 'norm_1', variable_dtype=variable_dtype <text_longer_than_50>
+
+INS @type:operator@ @[13787,13788]@ , @TO@ @type:arglist@ @[13768,14049]@ prenorm(x, 'norm_1', variable_dtype=variable_dtype <text_longer_than_50>
+
+DEL @type:argument@ @[13869,13878]@ past=past @FROM@ @type:arglist@ @[13768,14049]@ prenorm(x, 'norm_1', variable_dtype=variable_dtype <text_longer_than_50>
+
+DEL @type:operator@ @[13878,13879]@ , @FROM@ @type:arglist@ @[13768,14049]@ prenorm(x, 'norm_1', variable_dtype=variable_dtype <text_longer_than_50>
+
+UPD @type:atom_expr@ @[21162,21177]@ logits.shape[2] @TO@ @type:atom_expr@ @[21433,21449]@ logits.shape[-1]
+
+MOV @type:simple_stmt@ @[21155,21201]@ vdim = logits.shape[2]  # get vocab dimension @TO@ @type:suite@ @[21240,21827]@ labels = mtf_features["labels"]
+        z_loss = p <text_longer_than_50>
+
+UPD @type:atom_expr@ @[21162,21177]@ logits.shape[2] @TO@ @type:atom_expr@ @[21433,21449]@ logits.shape[-1]
+
+UPD @type:atom_expr@ @[6148,6160]@ context.mode @TO@ @type:atom_expr@ @[5797,5812]@ exists(context)
+
+MOV @type:atom_expr@ @[6148,6160]@ context.mode @TO@ @type:if_stmt@ @[6145,6261]@ if context.mode == "incremental" or context.mode = <text_longer_than_50>
+
+MOV @type:atom_expr@ @[19602,19619]@ params["n_layer"] @TO@ @type:trailer@ @[20024,20031]@ (pasts)
+
+MOV @type:name@ @[6112,6119]@ context @TO@ @type:atom_expr@ @[6148,6160]@ context.mode
+
+MOV @type:atom_expr@ @[13249,13269]@ params["moe_layers"] @TO@ @type:trailer@ @[13102,13124]@ (params["moe_layers"])
+
+MOV @type:atom_expr@ @[16269,16295]@ params["share_parameters"] @TO@ @type:trailer@ @[16116,16144]@ (params["share_parameters"])
+
+INS @type:name@ @[6319,6320]@ a @TO@ @type:expr_stmt@ @[6632,7276]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6636,7276]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[6323,6966]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50>
+
+INS @type:atom_expr@ @[6429,6439]@ k.shape[1] @TO@ @type:argument@ @[6731,6749]@ length_dim=dim_seq
+
+INS @type:atom_expr@ @[6429,6439]@ k.shape[1] @TO@ @type:argument@ @[6731,6749]@ length_dim=dim_seq
+
+INS @type:trailer@ @[6430,6436]@ .shape @TO@ @type:atom_expr@ @[6429,6439]@ k.shape[1]
+
+MOV @type:expr_stmt@ @[6632,7276]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:simple_stmt@ @[6319,6967]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+
+INS @type:name@ @[6319,6320]@ a @TO@ @type:expr_stmt@ @[6632,7276]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6636,7276]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[6323,6966]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50>
+
+INS @type:atom_expr@ @[6429,6439]@ k.shape[1] @TO@ @type:argument@ @[6731,6749]@ length_dim=dim_seq
+
+INS @type:atom_expr@ @[6429,6439]@ k.shape[1] @TO@ @type:argument@ @[6731,6749]@ length_dim=dim_seq
+
+INS @type:trailer@ @[6430,6436]@ .shape @TO@ @type:atom_expr@ @[6429,6439]@ k.shape[1]
+
+DEL @type:simple_stmt@ @[4600,4667]@ assert x.shape.ndims == 3  # Should be [batch, seq <text_longer_than_50> @FROM@ @type:suite@ @[4403,12053]@ # x :: [batch, seq, n_embd]
+    x_shape, dim_batch <text_longer_than_50>
+
+DEL @type:if_stmt@ @[4719,4847]@ if past is not None:
+        assert past.shape.ndi <text_longer_than_50> @FROM@ @type:suite@ @[4403,12053]@ # x :: [batch, seq, n_embd]
+    x_shape, dim_batch <text_longer_than_50>
+

@@ -1,0 +1,36 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:24:6 - error: Import "tfx" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:25:6 - error: Import "tfx.components.tuner" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:26:6 - error: Import "tfx.dsl.components.base" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:27:6 - error: Import "tfx.extensions.google_cloud_ai_platform" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:28:6 - error: Import "tfx.extensions.google_cloud_ai_platform.trainer" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:29:6 - error: Import "tfx.types" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:30:6 - error: Import "tfx.utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:82:58 - error: "copy" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:150:7 - error: Argument of type "Any | None" cannot be assigned to parameter "value" of type "str" in function "__setitem__"
+    Type "Any | None" cannot be assigned to type "str"
+      Type "None" cannot be assigned to type "str" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:197:7 - error: Argument of type "Any | None" cannot be assigned to parameter "value" of type "str" in function "__setitem__"
+    Type "Any | None" cannot be assigned to type "str"
+      Type "None" cannot be assigned to type "str" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py:198:7 - error: Argument of type "Any | None" cannot be assigned to parameter "value" of type "str" in function "__setitem__"
+    Type "Any | None" cannot be assigned to type "str"
+      Type "None" cannot be assigned to type "str" (reportGeneralTypeIssues)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py:21:8 - warning: Import "mock" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py:24:6 - error: Import "tfx.extensions.google_cloud_ai_platform.tuner" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py:25:6 - error: Import "tfx.proto" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py:26:6 - error: Import "tfx.utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py:27:6 - error: Import "tfx.utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f/a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py:102:5 - error: No overloads for "update" match the provided arguments
+    Argument types: (dict[str, Unknown]) (reportGeneralTypeIssues)
+16 errors, 1 warning, 0 infos 
+Completed in 1.439sec
+
+time cost(in seconds): 1.620995283126831

@@ -1,0 +1,10 @@
+UPD @type:for_stmt@ @[20787,21207]@ for path in paths.split(':'):
+    classes = os.lis <text_longer_than_50> @TO@ @type:for_stmt@ @[20787,21170]@ for path in paths.split(':'):
+    classes = os.lis <text_longer_than_50>
+---UPD @type:suite@ @[20816,21207]@ classes = os.listdir(path)
+    classes.sort()
+     <text_longer_than_50> @TO@ @type:suite@ @[20816,21170]@ classes = os.listdir(path)
+    classes.sort()
+     <text_longer_than_50>
+
+

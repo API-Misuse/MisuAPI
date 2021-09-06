@@ -1,0 +1,33 @@
+sha: 964a237b7a0f40091089d2809b03b0dd7ba19409
+message: fix airflow pipeline config kwargs
+commit_log: "commit 964a237b7a0f40091089d2809b03b0dd7ba19409\nAuthor: Gerard Casas\
+  \ Saez <gcasassaez@twitter.com>\nDate:   Thu May 7 16:54:38 2020 -0600\n\n    fix\
+  \ airflow pipeline config kwargs"
+contained_keywords:
+- fix
+commit_time: 2020-05-07 16:54:38 -0600
+commit_author: Gerard Casas Saez
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/orchestration/airflow/airflow_dag_runner.py
+  source_file: a/tfx/orchestration/airflow/airflow_dag_runner.py
+  target_file: b/tfx/orchestration/airflow/airflow_dag_runner.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 48
+    - '    super(AirflowPipelineConfig, self).__init__(**kwargs)
+
+      '
+  del_line_no:
+  - - null
+    - '    super(AirflowPipelineConfig, self).__init__(kwargs)
+
+      '

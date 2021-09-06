@@ -1,0 +1,21 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:34:6 - error: Import "scipy" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:35:6 - error: Import "sklearn.model_selection" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:36:6 - error: Import "scipy" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:336:28 - error: "learning_rate" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:438:23 - error: "ckpt_file" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:487:12 - error: "tpr" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:487:17 - error: "fpr" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:558:29 - error: "cmd" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:567:29 - error: "cmd" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/efc2f94dd1c6806aa249ba418aa118ce6f1165df/a/src/facenet.py:596:12 - error: "img_index" is possibly unbound (reportUnboundVariable)
+10 errors, 0 warnings, 0 infos 
+Completed in 1.91sec
+
+time cost(in seconds): 2.096191883087158

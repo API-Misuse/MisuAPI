@@ -1,0 +1,5 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/0a5632529562fa326ab7564a4147c68748ebc777/a/tensorpack/predict/concurrency.py: error: Duplicate module named "concurrency" (also at "/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/0a5632529562fa326ab7564a4147c68748ebc777/a/tensorpack/callbacks/concurrency.py")
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/0a5632529562fa326ab7564a4147c68748ebc777/a/tensorpack/predict/concurrency.py: note: Are you missing an __init__.py? Alternatively, consider using --exclude to avoid checking one of them.
+Found 1 error in 1 file (errors prevented further checking)
+
+time cost(in seconds): 0.2409043312072754

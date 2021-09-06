@@ -1,0 +1,17 @@
+UPD @type:for_stmt@ @[4186,4997]@ for grad_and_vars in zip(*tower_grads):
+    # Note <text_longer_than_50> @TO@ @type:for_stmt@ @[4186,4997]@ for grad_and_vars in zip(*tower_grads):
+    # Note <text_longer_than_50>
+---UPD @type:suite@ @[4225,4997]@ # Note that each grad_and_vars looks like the foll <text_longer_than_50> @TO@ @type:suite@ @[4225,4997]@ # Note that each grad_and_vars looks like the foll <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4654,4693]@ grad = tf.concat(axis=grads, values=0) @TO@ @type:simple_stmt@ @[4654,4693]@ grad = tf.concat(axis=0, values=grads)
+---------UPD @type:expr_stmt@ @[4654,4692]@ grad = tf.concat(axis=grads, values=0) @TO@ @type:expr_stmt@ @[4654,4692]@ grad = tf.concat(axis=0, values=grads)
+------------UPD @type:atom_expr@ @[4661,4692]@ tf.concat(axis=grads, values=0) @TO@ @type:atom_expr@ @[4661,4692]@ tf.concat(axis=0, values=grads)
+---------------UPD @type:trailer@ @[4670,4692]@ (axis=grads, values=0) @TO@ @type:trailer@ @[4670,4692]@ (axis=0, values=grads)
+------------------UPD @type:arglist@ @[4671,4691]@ axis=grads, values=0 @TO@ @type:arglist@ @[4671,4691]@ axis=0, values=grads
+---------------------UPD @type:argument@ @[4671,4681]@ axis=grads @TO@ @type:argument@ @[4671,4677]@ axis=0
+------------------------INS @type:number@ @[4676,4677]@ 0 @TO@ @type:argument@ @[4671,4681]@ axis=grads
+------------------------DEL @type:name@ @[4676,4681]@ grads @FROM@ @type:argument@ @[4671,4681]@ axis=grads
+---------------------UPD @type:argument@ @[4683,4691]@ values=0 @TO@ @type:argument@ @[4679,4691]@ values=grads
+------------------------INS @type:name@ @[4686,4691]@ grads @TO@ @type:argument@ @[4683,4691]@ values=0
+------------------------DEL @type:number@ @[4690,4691]@ 0 @FROM@ @type:argument@ @[4683,4691]@ values=0
+
+

@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[7549,7988]@ tf.layers.dense(inputs=x,
+                         <text_longer_than_50> @TO@ @type:atom_expr@ @[7549,7986]@ tf.layers.dense(inputs=x,
+                         <text_longer_than_50>
+

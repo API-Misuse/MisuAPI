@@ -1,0 +1,16 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/d1b13ec131af22b31d0ba999dae15a29991cfeae/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/d1b13ec131af22b31d0ba999dae15a29991cfeae/a/horovod/run/driver/driver_service.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/d1b13ec131af22b31d0ba999dae15a29991cfeae/a/horovod/run/driver/driver_service.py:23:6 - error: Import "horovod.run.util" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/d1b13ec131af22b31d0ba999dae15a29991cfeae/a/horovod/run/driver/driver_service.py:24:6 - error: Import "horovod.run.common.service" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/d1b13ec131af22b31d0ba999dae15a29991cfeae/a/horovod/run/driver/driver_service.py:25:6 - error: Import "horovod.run.common.util" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/d1b13ec131af22b31d0ba999dae15a29991cfeae/a/horovod/run/driver/driver_service.py:26:6 - error: Import "horovod.run.task" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/d1b13ec131af22b31d0ba999dae15a29991cfeae/a/horovod/run/driver/driver_service.py:228:75 - error: No parameter named "fn_cache" (reportGeneralTypeIssues)
+5 errors, 0 warnings, 0 infos 
+Completed in 1.197sec
+
+time cost(in seconds): 1.3682000637054443

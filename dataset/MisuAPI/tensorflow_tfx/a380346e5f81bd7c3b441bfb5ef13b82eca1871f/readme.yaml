@@ -1,0 +1,37 @@
+sha: a380346e5f81bd7c3b441bfb5ef13b82eca1871f
+message: 'Fix metric bug on Cifar10 pipeline example
+
+
+  PiperOrigin-RevId: 282861034'
+commit_log: "commit a380346e5f81bd7c3b441bfb5ef13b82eca1871f\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Wed Nov 27 17:50:33 2019 -0800\n\n    Fix metric bug on Cifar10 pipeline\
+  \ example\n    \n    PiperOrigin-RevId: 282861034"
+contained_keywords:
+- bug
+- fix
+commit_time: 2019-11-27 17:50:33 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/examples/cifar10/cifar10_utils.py
+  source_file: a/tfx/examples/cifar10/cifar10_utils.py
+  target_file: b/tfx/examples/cifar10/cifar10_utils.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 101
+    - '      metrics=[tf.keras.metrics.BinaryAccuracy(name=''accuracy'')])
+
+      '
+  del_line_no:
+  - - null
+    - '      metric=''accuracy'')
+
+      '

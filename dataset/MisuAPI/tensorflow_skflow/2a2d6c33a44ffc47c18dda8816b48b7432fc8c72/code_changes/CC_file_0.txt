@@ -1,0 +1,26 @@
+INS @type:if_stmt@ @[1540,1759]@ if isinstance(df, dd.DataFrame):
+        return dd <text_longer_than_50> @TO@ @type:suite@ @[1235,1607]@ """Construct the new task graph and make a new das <text_longer_than_50>
+---INS @type:suite@ @[1572,1651]@ return dd.DataFrame(merge(dsk, df.dask), name, df. <text_longer_than_50> @TO@ @type:if_stmt@ @[1540,1759]@ if isinstance(df, dd.DataFrame):
+        return dd <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1540,1607]@ return dd.DataFrame(merge(dsk, df.dask), name, col <text_longer_than_50> @TO@ @type:simple_stmt@ @[1581,1651]@ return dd.DataFrame(merge(dsk, df.dask), name, df. <text_longer_than_50>
+---UPD @type:return_stmt@ @[1540,1606]@ return dd.DataFrame(merge(dsk, df.dask), name, col <text_longer_than_50> @TO@ @type:return_stmt@ @[1581,1650]@ return dd.DataFrame(merge(dsk, df.dask), name, df. <text_longer_than_50>
+------UPD @type:atom_expr@ @[1547,1606]@ dd.DataFrame(merge(dsk, df.dask), name, columns, d <text_longer_than_50> @TO@ @type:atom_expr@ @[1588,1650]@ dd.DataFrame(merge(dsk, df.dask), name, df.columns <text_longer_than_50>
+---------UPD @type:trailer@ @[1559,1606]@ (merge(dsk, df.dask), name, columns, divisions) @TO@ @type:trailer@ @[1600,1650]@ (merge(dsk, df.dask), name, df.columns, divisions)
+------------UPD @type:arglist@ @[1560,1605]@ merge(dsk, df.dask), name, columns, divisions @TO@ @type:arglist@ @[1601,1649]@ merge(dsk, df.dask), name, df.columns, divisions
+---------------INS @type:atom_expr@ @[1628,1638]@ df.columns @TO@ @type:arglist@ @[1560,1605]@ merge(dsk, df.dask), name, columns, divisions
+------------------INS @type:trailer@ @[1630,1638]@ .columns @TO@ @type:atom_expr@ @[1628,1638]@ df.columns
+---------------MOV @type:name@ @[1587,1594]@ columns @TO@ @type:trailer@ @[1630,1638]@ .columns
+
+
+MOV @type:simple_stmt@ @[1540,1607]@ return dd.DataFrame(merge(dsk, df.dask), name, col <text_longer_than_50> @TO@ @type:suite@ @[1572,1651]@ return dd.DataFrame(merge(dsk, df.dask), name, df. <text_longer_than_50>
+---UPD @type:return_stmt@ @[1540,1606]@ return dd.DataFrame(merge(dsk, df.dask), name, col <text_longer_than_50> @TO@ @type:return_stmt@ @[1581,1650]@ return dd.DataFrame(merge(dsk, df.dask), name, df. <text_longer_than_50>
+------UPD @type:atom_expr@ @[1547,1606]@ dd.DataFrame(merge(dsk, df.dask), name, columns, d <text_longer_than_50> @TO@ @type:atom_expr@ @[1588,1650]@ dd.DataFrame(merge(dsk, df.dask), name, df.columns <text_longer_than_50>
+---------UPD @type:trailer@ @[1559,1606]@ (merge(dsk, df.dask), name, columns, divisions) @TO@ @type:trailer@ @[1600,1650]@ (merge(dsk, df.dask), name, df.columns, divisions)
+------------UPD @type:arglist@ @[1560,1605]@ merge(dsk, df.dask), name, columns, divisions @TO@ @type:arglist@ @[1601,1649]@ merge(dsk, df.dask), name, df.columns, divisions
+---------------INS @type:atom_expr@ @[1628,1638]@ df.columns @TO@ @type:arglist@ @[1560,1605]@ merge(dsk, df.dask), name, columns, divisions
+------------------INS @type:trailer@ @[1630,1638]@ .columns @TO@ @type:atom_expr@ @[1628,1638]@ df.columns
+---------------MOV @type:name@ @[1587,1594]@ columns @TO@ @type:trailer@ @[1630,1638]@ .columns
+
+

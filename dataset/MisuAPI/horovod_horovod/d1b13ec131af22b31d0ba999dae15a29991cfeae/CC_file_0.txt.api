@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[6198,6278]@ HorovodRunDriverService(
+        settings.num_host <text_longer_than_50> @TO@ @type:atom_expr@ @[6198,6279]@ HorovodRunDriverService(
+        settings.num_host <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6265,6277]@ settings.nic @TO@ @type:atom_expr@ @[6265,6278]@ settings.nics
+

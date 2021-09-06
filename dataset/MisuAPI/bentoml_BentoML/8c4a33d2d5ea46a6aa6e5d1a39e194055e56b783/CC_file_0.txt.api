@@ -1,0 +1,18 @@
+INS @type:try_stmt@ @[2858,3048]@ try:
+        os.mkdir(module_base_path)
+    except <text_longer_than_50> @TO@ @type:suite@ @[1662,6006]@ """Save given BentoService along with all its arti <text_longer_than_50>
+
+INS @type:try_stmt@ @[2858,3048]@ try:
+        os.mkdir(module_base_path)
+    except <text_longer_than_50> @TO@ @type:suite@ @[1662,6006]@ """Save given BentoService along with all its arti <text_longer_than_50>
+
+INS @type:suite@ @[2862,2898]@ os.mkdir(module_base_path) @TO@ @type:try_stmt@ @[2858,3048]@ try:
+        os.mkdir(module_base_path)
+    except <text_longer_than_50>
+
+INS @type:suite@ @[2862,2898]@ os.mkdir(module_base_path) @TO@ @type:try_stmt@ @[2858,3048]@ try:
+        os.mkdir(module_base_path)
+    except <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2858,2885]@ os.mkdir(module_base_path) @TO@ @type:suite@ @[2862,2898]@ os.mkdir(module_base_path)
+

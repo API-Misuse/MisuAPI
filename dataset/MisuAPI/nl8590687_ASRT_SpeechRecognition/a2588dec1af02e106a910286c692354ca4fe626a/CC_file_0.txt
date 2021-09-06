@@ -1,0 +1,69 @@
+UPD @type:if_stmt@ @[5469,6392]@ if(__name__=='__main__'):
+	
+	ml = ModelLanguage('m <text_longer_than_50> @TO@ @type:if_stmt@ @[5534,6495]@ if(__name__=='__main__'):
+	
+	ml = ModelLanguage('m <text_longer_than_50>
+---UPD @type:suite@ @[5494,6392]@ ml = ModelLanguage('model_language')
+	ml.LoadModel <text_longer_than_50> @TO@ @type:suite@ @[5559,6495]@ ml = ModelLanguage('model_language')
+	ml.LoadModel <text_longer_than_50>
+------INS @type:simple_stmt@ @[6376,6413]@ str_pinyin = ['da4', 'jia1', 'hao3'] @TO@ @type:suite@ @[5494,6392]@ ml = ModelLanguage('model_language')
+	ml.LoadModel <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[2214,3822]@ for i in range(num_pinyin):
+			#print(i)
+			ls = ' <text_longer_than_50> @TO@ @type:for_stmt@ @[2214,3887]@ for i in range(num_pinyin):
+			#print(i)
+			ls = ' <text_longer_than_50>
+---UPD @type:suite@ @[2241,3822]@ #print(i)
+			ls = ''
+			if(list_syllable[i] in sel <text_longer_than_50> @TO@ @type:suite@ @[2241,3887]@ #print(i)
+			ls = ''
+			if(list_syllable[i] in sel <text_longer_than_50>
+------UPD @type:if_stmt@ @[2438,3822]@ if(i == 0):
+				# 第一个字做初始处理
+				num_ls = len(ls)
+	 <text_longer_than_50> @TO@ @type:if_stmt@ @[2438,3887]@ if(i == 0):
+				# 第一个字做初始处理
+				num_ls = len(ls)
+	 <text_longer_than_50>
+---------UPD @type:suite@ @[2740,3822]@ # 开始处理紧跟在第一个字后面的字
+				list_words_2 = []
+				num_ls <text_longer_than_50> @TO@ @type:suite@ @[2740,3887]@ # 开始处理紧跟在第一个字后面的字
+				list_words_2 = []
+				num_ls <text_longer_than_50>
+------------UPD @type:for_stmt@ @[2856,3785]@ for j in range(0, num_ls_word):
+					
+					num_ls  <text_longer_than_50> @TO@ @type:for_stmt@ @[2856,3850]@ for j in range(0, num_ls_word):
+					
+					num_ls  <text_longer_than_50>
+---------------UPD @type:suite@ @[2887,3785]@ num_ls = len(ls)
+					for k in range(0, num_ls):
+	 <text_longer_than_50> @TO@ @type:suite@ @[2887,3850]@ num_ls = len(ls)
+					for k in range(0, num_ls):
+	 <text_longer_than_50>
+------------------UPD @type:for_stmt@ @[2921,3785]@ for k in range(0, num_ls):
+						tuple_word = ['', <text_longer_than_50> @TO@ @type:for_stmt@ @[2921,3850]@ for k in range(0, num_ls):
+						tuple_word = ['', <text_longer_than_50>
+---------------------UPD @type:suite@ @[2947,3785]@ tuple_word = ['',0.0]
+						tuple_word = list(list <text_longer_than_50> @TO@ @type:suite@ @[2947,3850]@ tuple_word = ['',0.0]
+						tuple_word = list(list <text_longer_than_50>
+------------------------UPD @type:if_stmt@ @[3289,3603]@ if(tmp_words in self.model2): # 判断它们是不是再状态转移表里
+			 <text_longer_than_50> @TO@ @type:if_stmt@ @[3289,3668]@ if(tmp_words in self.model2): # 判断它们是不是再状态转移表里
+			 <text_longer_than_50>
+---------------------------UPD @type:suite@ @[3335,3491]@ #print(tmp_words,tmp_words in self.model2)
+							 <text_longer_than_50> @TO@ @type:suite@ @[3335,3491]@ #print(tmp_words,tmp_words in self.model2)
+							 <text_longer_than_50>
+------------------------------UPD @type:simple_stmt@ @[3393,3491]@ tuple_word[1] = tuple_word[1] * float(self.model2[ <text_longer_than_50> @TO@ @type:simple_stmt@ @[3393,3491]@ tuple_word[1] = tuple_word[1] * float(self.model2[ <text_longer_than_50>
+---------------------------------UPD @type:expr_stmt@ @[3393,3490]@ tuple_word[1] = tuple_word[1] * float(self.model2[ <text_longer_than_50> @TO@ @type:expr_stmt@ @[3393,3490]@ tuple_word[1] = tuple_word[1] * float(self.model2[ <text_longer_than_50>
+------------------------------------UPD @type:term@ @[3409,3490]@ tuple_word[1] * float(self.model2[tmp_words]) / fl <text_longer_than_50> @TO@ @type:term@ @[3409,3490]@ tuple_word[1] * float(self.model2[tmp_words]) / fl <text_longer_than_50>
+---------------------------------------UPD @type:atom_expr@ @[3457,3490]@ float(self.model1[tmp_words[-1]]) @TO@ @type:atom_expr@ @[3457,3490]@ float(self.model1[tmp_words[-2]])
+------------------------------------------UPD @type:trailer@ @[3462,3490]@ (self.model1[tmp_words[-1]]) @TO@ @type:trailer@ @[3462,3490]@ (self.model1[tmp_words[-2]])
+---------------------------------------------UPD @type:atom_expr@ @[3463,3489]@ self.model1[tmp_words[-1]] @TO@ @type:atom_expr@ @[3463,3489]@ self.model1[tmp_words[-2]]
+------------------------------------------------UPD @type:trailer@ @[3474,3489]@ [tmp_words[-1]] @TO@ @type:trailer@ @[3474,3489]@ [tmp_words[-2]]
+---------------------------------------------------UPD @type:atom_expr@ @[3475,3488]@ tmp_words[-1] @TO@ @type:atom_expr@ @[3475,3488]@ tmp_words[-2]
+------------------------------------------------------UPD @type:trailer@ @[3484,3488]@ [-1] @TO@ @type:trailer@ @[3484,3488]@ [-2]
+---------------------------------------------------------UPD @type:factor@ @[3485,3487]@ -1 @TO@ @type:factor@ @[3485,3487]@ -2
+------------------------------------------------------------UPD @type:number@ @[3486,3487]@ 1 @TO@ @type:number@ @[3486,3487]@ 2
+
+

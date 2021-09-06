@@ -1,0 +1,48 @@
+issues_cnt: 0
+sha: 448895e4aaf6a9a9eaca40f5e127268fb67825f8
+message: fix moving summar name scope
+commit_log: "commit 448895e4aaf6a9a9eaca40f5e127268fb67825f8\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Sun Sep 24 02:39:46 2017 -0700\n\n    fix moving summar name scope"
+contained_keywords:
+- fix
+commit_time: 2017-09-24 02:39:46 -0700
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 245
+    - '        with tf.name_scope(None):
+
+      '
+  - - 246
+    - '            # cannot add it into colocate group -- will force everything to
+      cpus
+
+      '
+  - - 247
+    - '            tf.summary.scalar(name + ''-summary'', ema_op)    # write the EMA
+      value as a summary
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '        # cannot add it into colocate group -- will force everything to cpus
+
+      '
+  - - null
+    - '        tf.summary.scalar(name + ''-summary'', ema_op)    # write the EMA value
+      as a summary
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/tfutils/summary.py
+  removed: 2
+  source_file: a/tensorpack/tfutils/summary.py
+  target_file: b/tensorpack/tfutils/summary.py

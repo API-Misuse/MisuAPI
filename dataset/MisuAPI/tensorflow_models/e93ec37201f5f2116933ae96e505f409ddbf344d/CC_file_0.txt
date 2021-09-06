@@ -1,0 +1,21 @@
+UPD @type:simple_stmt@ @[9065,9169]@ loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_e <text_longer_than_50> @TO@ @type:simple_stmt@ @[9065,9183]@ loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_e <text_longer_than_50>
+---UPD @type:expr_stmt@ @[9065,9168]@ loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_e <text_longer_than_50> @TO@ @type:expr_stmt@ @[9065,9182]@ loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_e <text_longer_than_50>
+------UPD @type:atom_expr@ @[9072,9168]@ tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_ <text_longer_than_50> @TO@ @type:atom_expr@ @[9072,9182]@ tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_ <text_longer_than_50>
+---------UPD @type:trailer@ @[9086,9168]@ (tf.nn.sparse_softmax_cross_entropy_with_logits(
+  <text_longer_than_50> @TO@ @type:trailer@ @[9086,9182]@ (tf.nn.sparse_softmax_cross_entropy_with_logits(
+  <text_longer_than_50>
+------------UPD @type:atom_expr@ @[9087,9167]@ tf.nn.sparse_softmax_cross_entropy_with_logits(
+   <text_longer_than_50> @TO@ @type:atom_expr@ @[9087,9181]@ tf.nn.sparse_softmax_cross_entropy_with_logits(
+   <text_longer_than_50>
+---------------UPD @type:trailer@ @[9133,9167]@ (
+      logits, train_labels_node) @TO@ @type:trailer@ @[9133,9181]@ (
+      labels=train_labels_node, logits=logits)
+------------------UPD @type:arglist@ @[9141,9166]@ logits, train_labels_node @TO@ @type:arglist@ @[9141,9180]@ labels=train_labels_node, logits=logits
+---------------------INS @type:argument@ @[9141,9165]@ labels=train_labels_node @TO@ @type:arglist@ @[9141,9166]@ logits, train_labels_node
+---------------------INS @type:argument@ @[9167,9180]@ logits=logits @TO@ @type:arglist@ @[9141,9166]@ logits, train_labels_node
+---------------------UPD @type:name@ @[9141,9147]@ logits @TO@ @type:name@ @[9141,9147]@ labels
+---------------------MOV @type:name@ @[9141,9147]@ logits @TO@ @type:argument@ @[9141,9165]@ labels=train_labels_node
+---------------------UPD @type:name@ @[9149,9166]@ train_labels_node @TO@ @type:name@ @[9174,9180]@ logits
+---------------------MOV @type:name@ @[9149,9166]@ train_labels_node @TO@ @type:argument@ @[9167,9180]@ logits=logits
+
+

@@ -1,0 +1,8 @@
+UPD @type:simple_stmt@ @[26727,26792]@ shape = tf_dt.shape if tf_dt.shape.rank is not Non <text_longer_than_50> @TO@ @type:simple_stmt@ @[26727,26799]@ shape = tuple(tf_dt.shape) if tf_dt.shape.rank is  <text_longer_than_50>
+---UPD @type:expr_stmt@ @[26727,26791]@ shape = tf_dt.shape if tf_dt.shape.rank is not Non <text_longer_than_50> @TO@ @type:expr_stmt@ @[26727,26798]@ shape = tuple(tf_dt.shape) if tf_dt.shape.rank is  <text_longer_than_50>
+------UPD @type:test@ @[26735,26791]@ tf_dt.shape if tf_dt.shape.rank is not None else ( <text_longer_than_50> @TO@ @type:test@ @[26735,26798]@ tuple(tf_dt.shape) if tf_dt.shape.rank is not None <text_longer_than_50>
+---------INS @type:atom_expr@ @[26735,26753]@ tuple(tf_dt.shape) @TO@ @type:test@ @[26735,26791]@ tf_dt.shape if tf_dt.shape.rank is not None else ( <text_longer_than_50>
+------------INS @type:trailer@ @[26740,26753]@ (tf_dt.shape) @TO@ @type:atom_expr@ @[26735,26753]@ tuple(tf_dt.shape)
+---------MOV @type:atom_expr@ @[26735,26746]@ tf_dt.shape @TO@ @type:trailer@ @[26740,26753]@ (tf_dt.shape)
+
+

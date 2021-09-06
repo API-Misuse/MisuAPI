@@ -1,0 +1,131 @@
+commit f6067695ea541e2aa8a58e7d9785454945836b93
+Author: Travis Addair <tgaddair@gmail.com>
+Date:   Fri Mar 5 07:01:12 2021 -0800
+
+    Fixed race condition in PyTorch MNIST example (#2709)
+    
+    Signed-off-by: Travis Addair <tgaddair@gmail.com>
+
+diff --git a/examples/elastic/pytorch/pytorch_mnist_elastic.py b/examples/elastic/pytorch/pytorch_mnist_elastic.py
+index e08632a..5af7e2f 100644
+--- a/examples/elastic/pytorch/pytorch_mnist_elastic.py
++++ b/examples/elastic/pytorch/pytorch_mnist_elastic.py
+@@ -1,4 +1,7 @@
+ import argparse
++import os
++from filelock import FileLock
++
+ import torch.nn as nn
+ import torch.nn.functional as F
+ import torch.optim as optim
+@@ -48,13 +51,14 @@ if args.cuda:
+ torch.set_num_threads(1)
+ 
+ kwargs = {'num_workers': 1, 'pin_memory': True} if args.cuda else {}
+-data_dir = args.data_dir or f'data-{hvd.rank()}'
+-train_dataset = \
+-    datasets.MNIST(data_dir, train=True, download=True,
+-                   transform=transforms.Compose([
+-                       transforms.ToTensor(),
+-                       transforms.Normalize((0.1307,), (0.3081,))
+-                   ]))
++data_dir = args.data_dir or './data'
++with FileLock(os.path.expanduser("~/.horovod_lock")):
++    train_dataset = \
++        datasets.MNIST(data_dir, train=True, download=True,
++                       transform=transforms.Compose([
++                           transforms.ToTensor(),
++                           transforms.Normalize((0.1307,), (0.3081,))
++                       ]))
+ # Horovod: use DistributedSampler to partition the training data.
+ train_sampler = torch.utils.data.distributed.DistributedSampler(
+     train_dataset, num_replicas=hvd.size(), rank=hvd.rank())
+diff --git a/examples/pytorch/pytorch_mnist.py b/examples/pytorch/pytorch_mnist.py
+index 9167e37..907bdd3 100644
+--- a/examples/pytorch/pytorch_mnist.py
++++ b/examples/pytorch/pytorch_mnist.py
+@@ -1,4 +1,7 @@
+ import argparse
++import os
++from filelock import FileLock
++
+ import torch.multiprocessing as mp
+ import torch.nn as nn
+ import torch.nn.functional as F
+@@ -133,13 +136,15 @@ if __name__ == '__main__':
+             mp._supports_context and 'forkserver' in mp.get_all_start_methods()):
+         kwargs['multiprocessing_context'] = 'forkserver'
+ 
+-    data_dir = args.data_dir or f'data-{hvd.rank()}'
+-    train_dataset = \
+-        datasets.MNIST(data_dir, train=True, download=True,
+-                       transform=transforms.Compose([
+-                           transforms.ToTensor(),
+-                           transforms.Normalize((0.1307,), (0.3081,))
+-                       ]))
++    data_dir = args.data_dir or './data'
++    with FileLock(os.path.expanduser("~/.horovod_lock")):
++        train_dataset = \
++            datasets.MNIST(data_dir, train=True, download=True,
++                           transform=transforms.Compose([
++                               transforms.ToTensor(),
++                               transforms.Normalize((0.1307,), (0.3081,))
++                           ]))
++
+     # Horovod: use DistributedSampler to partition the training data.
+     train_sampler = torch.utils.data.distributed.DistributedSampler(
+         train_dataset, num_replicas=hvd.size(), rank=hvd.rank())
+diff --git a/examples/ray/basic_ray_elastic.py b/examples/ray/basic_ray_elastic.py
+index 15cda4b..ffd07b3 100644
+--- a/examples/ray/basic_ray_elastic.py
++++ b/examples/ray/basic_ray_elastic.py
+@@ -79,7 +79,7 @@ def load_data_mnist():
+     kwargs = {'num_workers': 0, 'pin_memory': True} if args.cuda else {}
+     data_dir = args.data_dir or './data'
+     from filelock import FileLock
+-    with FileLock(os.path.expanduser("~/.datalock")):
++    with FileLock(os.path.expanduser("~/.horovod_lock")):
+         train_dataset = \
+             datasets.MNIST(data_dir, train=True, download=True,
+                            transform=transforms.Compose([
+diff --git a/examples/ray/pytorch_ray_elastic.py b/examples/ray/pytorch_ray_elastic.py
+index bc387f4..ec89b4a 100644
+--- a/examples/ray/pytorch_ray_elastic.py
++++ b/examples/ray/pytorch_ray_elastic.py
+@@ -1,11 +1,13 @@
+ import argparse
++import os
++from filelock import FileLock
++
+ import torch.nn as nn
+ import torch.nn.functional as F
+ import torch.optim as optim
+ from torchvision import datasets, transforms
+ import torch.utils.data.distributed
+ import horovod.torch as hvd
+-import os
+ 
+ # Training settings
+ parser = argparse.ArgumentParser(description='PyTorch MNIST Example')
+@@ -120,13 +122,14 @@ def train_fn():
+     torch.set_num_threads(1)
+ 
+     kwargs = {'num_workers': 1, 'pin_memory': True} if args.cuda else {}
+-    data_dir = args.data_dir or f'data-{hvd.rank()}'
+-    train_dataset = \
+-        datasets.MNIST(data_dir, train=True, download=True,
+-                       transform=transforms.Compose([
+-                           transforms.ToTensor(),
+-                           transforms.Normalize((0.1307,), (0.3081,))
+-                       ]))
++    data_dir = args.data_dir or './data'
++    with FileLock(os.path.expanduser("~/.horovod_lock")):
++        train_dataset = \
++            datasets.MNIST(data_dir, train=True, download=True,
++                           transform=transforms.Compose([
++                               transforms.ToTensor(),
++                               transforms.Normalize((0.1307,), (0.3081,))
++                           ]))
+     # Horovod: use DistributedSampler to partition the training data.
+     train_sampler = torch.utils.data.distributed.DistributedSampler(
+         train_dataset, num_replicas=hvd.size(), rank=hvd.rank())

@@ -1,0 +1,1347 @@
+sha: 0888dbfadee6eb1169a185a8ede3882ac42d1a72
+message: "add faster sampling for global attention (#43)\n\n* add faster sampling\
+  \ for global attention\r\n\r\n* allow user to toggle slow sampling, in case fast\
+  \ sampling contains a bug\r\n\r\n* make fast sampling compatible with local attention\
+  \ by expanding and reducing queries before and after the local attention op\r\n\r\
+  \n* remove pasts variable, in favor of using contexts object\r\n\r\n* fix a bunch\
+  \ of broken things\r\n\r\n* remove use of reshapes in attention blocks"
+commit_log: "commit 0888dbfadee6eb1169a185a8ede3882ac42d1a72\nAuthor: Phil Wang <lucidrains@gmail.com>\n\
+  Date:   Sat Sep 12 10:51:58 2020 -0700\n\n    add faster sampling for global attention\
+  \ (#43)\n    \n    * add faster sampling for global attention\n    \n    * allow\
+  \ user to toggle slow sampling, in case fast sampling contains a bug\n    \n   \
+  \ * make fast sampling compatible with local attention by expanding and reducing\
+  \ queries before and after the local attention op\n    \n    * remove pasts variable,\
+  \ in favor of using contexts object\n    \n    * fix a bunch of broken things\n\
+  \    \n    * remove use of reshapes in attention blocks"
+contained_keywords:
+- fix
+- bug
+commit_time: 2020-09-12 10:51:58 -0700
+commit_author: Phil Wang
+added_files: 0
+removed_files: 0
+modified_files: 6
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: main.py
+  source_file: a/main.py
+  target_file: b/main.py
+  added: 2
+  removed: 0
+  add_line_no:
+  - - 34
+    - '    parser.add_argument(''--slow_sampling'', action=''store_true'')
+
+      '
+  - - 119
+    - '    params["slow_sampling"] = args.slow_sampling
+
+      '
+  del_line_no: []
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: model_fns.py
+  source_file: a/model_fns.py
+  target_file: b/model_fns.py
+  added: 6
+  removed: 4
+  add_line_no:
+  - - 126
+    - '
+
+      '
+  - - 127
+    - '        mtf_samples = sample_autoregressive(
+
+      '
+  - - 128
+    - '            inputs, other_features=other_features, params=params, variable_dtype=variable_dtype,
+
+      '
+  - - 129
+    - '            remove_partial_sequences=params["remove_partial_sequences"], stop_at_token=params["stop_at_token"])
+
+      '
+  - - 130
+    - '
+
+      '
+  - - 188
+    - '                    logits, loss, loss_batch = gpt2.model(mtf_features, other_features,
+      params, mesh, variable_dtype=variable_dtype, context=None)
+
+      '
+  del_line_no:
+  - - null
+    - '            mtf_samples = sample_autoregressive(
+
+      '
+  - - null
+    - '                inputs, other_features=other_features, params=params, variable_dtype=variable_dtype,
+
+      '
+  - - null
+    - '                remove_partial_sequences=params["remove_partial_sequences"],
+      stop_at_token=params["stop_at_token"])
+
+      '
+  - - null
+    - '                    logits, loss, loss_batch = gpt2.model(mtf_features, other_features,
+      params, mesh, variable_dtype=variable_dtype, past=None, context=None)
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: models/gpt2/gpt2.py
+  source_file: a/models/gpt2/gpt2.py
+  target_file: b/models/gpt2/gpt2.py
+  added: 52
+  removed: 43
+  add_line_no:
+  - - 14
+    - 'def exists(x):
+
+      '
+  - - 15
+    - '    return x is not None
+
+      '
+  - - 20
+    - 'def is_incremental_inference(context):
+
+      '
+  - - 21
+    - '    return exists(context) and context.mode == ''incremental''
+
+      '
+  - - 46
+    - '                    activation_dtype=variable_dtype.activation_dtype)
+
+      '
+  - - 110
+    - 'def attn(x, scope, n_state, *, layer_num, params, bias, dim_seq, memory_length_dim,
+      variable_dtype, context=None):
+
+      '
+  - - 112
+    - '    x_shape, dim_batch, *_, dim_embd, mesh = x.shape, *x.shape, x.mesh
+
+      '
+  - - 136
+    - '        if is_incremental_inference(context):
+
+      '
+  - - 137
+    - '            one_hot = mtf.one_hot(context.position - 1, dim_seq, dtype=variable_dtype.master_dtype)
+
+      '
+  - - 138
+    - '            inv_one_hot = 1.0 - one_hot
+
+      '
+  - - 139
+    - '            old_k, old_v = context.get_states(2)
+
+      '
+  - - 140
+    - '            k = old_k * inv_one_hot + k * one_hot
+
+      '
+  - - 141
+    - '            v = old_v * inv_one_hot + v * one_hot
+
+      '
+  - - 142
+    - '            bias = None
+
+      '
+  - - 143
+    - '
+
+      '
+  - - 144
+    - '        if exists(context):
+
+      '
+  - - 145
+    - '            context.record_new_states([k, v])
+
+      '
+  - - 156
+    - '                if is_incremental_inference(context):
+
+      '
+  - - 157
+    - '                    q *= one_hot
+
+      '
+  - - 158
+    - '
+
+      '
+  - - 161
+    - '                    length_dim=k.shape[1],  # TODO: should this be memory length?
+
+      '
+  - - 171
+    - '
+
+      '
+  - - 172
+    - '                if is_incremental_inference(context):
+
+      '
+  - - 173
+    - '                    a = mtf.gather(a, context.position - 1, dim_seq)
+
+      '
+  - - 174
+    - '
+
+      '
+  - - 184
+    - '                broadcasted_bias = mtf.broadcast(bias, [dim_batch, dim_heads,
+      bias.shape[-2], bias.shape[-1]]) if exists(bias) else None
+
+      '
+  - - 283
+    - 'def block(params, scope, layer_num, bias, sequence_dim, memory_length_dim,
+      variable_dtype, context=None):
+
+      '
+  - - 286
+    - '    use_moe = exists(params["moe_layers"]) and (layer_num in params["moe_layers"])
+
+      '
+  - - 302
+    - '            a, present = attn(prenorm(x, ''norm_1'', variable_dtype=variable_dtype,
+      params=params), ''attn'', nx, layer_num=layer_num,
+
+      '
+  - - 303
+    - '                              params=params, bias=bias, dim_seq=sequence_dim,
+      memory_length_dim=memory_length_dim,
+
+      '
+  - - 343
+    - 'def model(mtf_features, other_features, params, mesh, variable_dtype, context=None):
+
+      '
+  - - 349
+    - '    share_parameters = exists(params["share_parameters"]) and params["share_parameters"]
+      == True
+
+      '
+  - - 361
+    - '    if is_incremental_inference(context):
+
+      '
+  - - 362
+    - '        x = mtf.gather(x, context.position - 1, sequence_dim)
+
+      '
+  - - 363
+    - '        x = mtf.reshape(x, [batch_dim])
+
+      '
+  - - 364
+    - '
+
+      '
+  - - 408
+    - '
+
+      '
+  - - 411
+    - '        if is_incremental_inference(context):
+
+      '
+  - - 412
+    - '            h += mtf.gather(wpe, context.position - 1, wpe.shape[0])
+
+      '
+  - - 413
+    - '        else:
+
+      '
+  - - 414
+    - '            h += mtf.gather(wpe, mtf.range(mesh, sequence_dim, tf.int64), wpe.shape[0])
+
+      '
+  - - 426
+    - '    for layer in range(params["n_layer"]):
+
+      '
+  - - 430
+    - '        block_fn = block(params=params, scope=block_scope, layer_num=layer,
+
+      '
+  - - 431
+    - '                         bias=other_features["attn_bias"],
+
+      '
+  - - 432
+    - '                         sequence_dim = sequence_dim,
+
+      '
+  - - 433
+    - '                         memory_length_dim=other_features["memory_length_dim"],
+
+      '
+  - - 434
+    - '                         variable_dtype=variable_dtype,
+
+      '
+  - - 435
+    - '                         context=context)
+
+      '
+  - - 448
+    - '        seq_dim = sequence_dim if not is_incremental_inference(context) else
+      mtf.Dimension(''sequence'', 1)
+
+      '
+  - - 451
+    - '            logits = mtf.einsum([h, wte], output_shape=[batch_dim, seq_dim,
+      vocab_dim])
+
+      '
+  - - 454
+    - '        vdim = logits.shape[-1]  # get vocab dimension
+
+      '
+  - - 468
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - "                    activation_dtype=x.dtype.activation_dtype) \n"
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def attn(x, scope, n_state, *, layer_num, past, params, bias, memory_length_dim,
+      variable_dtype, context=None):
+
+      '
+  - - null
+    - '    x_shape, dim_batch, dim_seq, dim_embd, mesh = x.shape, *x.shape, x.mesh
+
+      '
+  - - null
+    - '    assert x.shape.ndims == 3  # Should be [batch, sequence, features]
+
+      '
+  - - null
+    - '    if past is not None:
+
+      '
+  - - null
+    - '        assert past.shape.ndims == 5  # Should be [batch, 2, heads, sequence,
+      features], where 2 is [k, v]
+
+      '
+  - - null
+    - '    assert past is None
+
+      '
+  - - null
+    - '        if context is not None:
+
+      '
+  - - null
+    - '            if context.mode == "incremental":
+
+      '
+  - - null
+    - '                one_hot = mtf.one_hot(
+
+      '
+  - - null
+    - '                    context.position, dim_seq, dtype=variable_dtype.master_dtype)
+
+      '
+  - - null
+    - '                inv_one_hot = 1.0 - one_hot
+
+      '
+  - - null
+    - '                old_k, old_v = context.get_states(2)
+
+      '
+  - - null
+    - '                k = old_k * inv_one_hot + k * one_hot
+
+      '
+  - - null
+    - '                v = old_v * inv_one_hot + v * one_hot
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '            # will probably need this later (related to masking) - not sure
+      how it works exactly for now
+
+      '
+  - - null
+    - '            # memory_position = mtf.range(context.mesh, memory_length, tf.int32)
+
+      '
+  - - null
+    - '        if context is not None:
+
+      '
+  - - null
+    - '            if context.mode == "incremental" or context.mode == "first_part":
+
+      '
+  - - null
+    - '                context.record_new_states([k, v])
+
+      '
+  - - null
+    - '                    length_dim=dim_seq,  # TODO: should this be memory length?
+
+      '
+  - - null
+    - '                broadcasted_bias = mtf.broadcast(bias, [dim_batch, dim_heads,
+      bias.shape[-2], bias.shape[-1]])
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def block(params, scope, past, layer_num, bias, memory_length_dim, variable_dtype,
+      context=None):
+
+      '
+  - - null
+    - '    use_moe = (params["moe_layers"] is not None) and (layer_num in params["moe_layers"])
+
+      '
+  - - null
+    - '            a, present = attn(prenorm(x, ''norm_1'', variable_dtype=variable_dtype,
+      params=params), ''attn'', nx, layer_num=layer_num, past=past,
+
+      '
+  - - null
+    - '                              params=params, bias=bias, memory_length_dim=memory_length_dim,
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def model(mtf_features, other_features, params, mesh, variable_dtype, past=None,
+      context=None):
+
+      '
+  - - null
+    - '    share_parameters = params["share_parameters"] is not None and params["share_parameters"]
+      == True
+
+      '
+  - - null
+    - '        h += mtf.gather(wpe, mtf.range(mesh, sequence_dim, tf.int64), wpe.shape[0])
+
+      '
+  - - null
+    - '    pasts = [None] * params["n_layer"]
+
+      '
+  - - null
+    - '    for layer, past in enumerate(pasts):
+
+      '
+  - - null
+    - '        block_fn = block(params=params, scope=block_scope, past=past, layer_num=layer,
+
+      '
+  - - null
+    - '                        bias=other_features["attn_bias"],
+
+      '
+  - - null
+    - '                        memory_length_dim=other_features["memory_length_dim"],
+
+      '
+  - - null
+    - '                        variable_dtype=variable_dtype,
+
+      '
+  - - null
+    - '                        context=context)
+
+      '
+  - - null
+    - '            logits = mtf.einsum([h, wte], output_shape=[batch_dim, sequence_dim,
+      vocab_dim])
+
+      '
+  - - null
+    - '    vdim = logits.shape[2]  # get vocab dimension
+
+      '
+  - - null
+    - '
+
+      '
+patched_file_3:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: optimizers.py
+  source_file: a/optimizers.py
+  target_file: b/optimizers.py
+  added: 3
+  removed: 5
+  add_line_no:
+  - - 18
+    - '    mesh = loss.mesh  # get mesh info from loss
+
+      '
+  - - 19
+    - '    graph = mesh.graph  # get graph info from mesh
+
+      '
+  - - 20
+    - '    global_step = tf.train.get_or_create_global_step() # get global step
+
+      '
+  del_line_no:
+  - - null
+    - '
+
+      '
+  - - null
+    - '    global_step = tf.train.get_or_create_global_step() # get global step
+
+      '
+  - - null
+    - '    mesh = loss.mesh  # get mesh info from loss
+
+      '
+  - - null
+    - '    graph = mesh.graph  # get graph info from mesh
+
+      '
+  - - null
+    - '
+
+      '
+patched_file_4:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: sample.py
+  source_file: a/sample.py
+  target_file: b/sample.py
+  added: 70
+  removed: 76
+  add_line_no:
+  - - 5
+    - 'from models.gpt2 import gpt2
+
+      '
+  - - 64
+    - '    slow_sampling = params.get(''slow_sampling'', False)
+
+      '
+  - - 81
+    - '
+
+      '
+  - - 82
+    - '    if not slow_sampling:
+
+      '
+  - - 83
+    - '        context_first_part = mtf_transformer.transformer.Context(
+
+      '
+  - - 84
+    - '            model=None,
+
+      '
+  - - 85
+    - '            mesh=inputs.mesh,
+
+      '
+  - - 86
+    - '            batch_dims=batch_dims,
+
+      '
+  - - 87
+    - '            length_dim=length_dim,
+
+      '
+  - - 88
+    - '            variable_dtype=variable_dtype,
+
+      '
+  - - 89
+    - '            mode="first_part",
+
+      '
+  - - 90
+    - '            position=length_range,
+
+      '
+  - - 91
+    - '            position_is_default=True,
+
+      '
+  - - 92
+    - '            new_states=[],
+
+      '
+  - - 93
+    - '            initial_position=initial_position,
+
+      '
+  - - 94
+    - '            sequence_id=None,
+
+      '
+  - - 95
+    - '            encoder_output=encoder_output,
+
+      '
+  - - 96
+    - '            encoder_sequence_id=encoder_sequence_id,
+
+      '
+  - - 97
+    - '            constant_states=[],
+
+      '
+  - - 98
+    - '            shared_params=shared_params,
+
+      '
+  - - 99
+    - '            encoder_layer_outputs=encoder_layer_outputs,
+
+      '
+  - - 100
+    - '            write_priority=write_priority,
+
+      '
+  - - 101
+    - '            read_priority=read_priority,
+
+      '
+  - - 102
+    - '            inputs=inputs,
+
+      '
+  - - 103
+    - '            encoder_inputs=encoder_inputs)
+
+      '
+  - - 104
+    - '
+
+      '
+  - - 105
+    - '        with tf.variable_scope(''gpt2''):
+
+      '
+  - - 106
+    - '            logits, _, _ = gpt2.model({''inputs'': inputs}, other_features,
+      params, inputs.mesh, variable_dtype = variable_dtype, context = context_first_part)
+
+      '
+  - - 107
+    - '
+
+      '
+  - - 108
+    - '        if not has_partial_sequences:
+
+      '
+  - - 109
+    - '            initial_states = [mtf.zeros_like(t) for t in context_first_part.new_states]
+
+      '
+  - - 110
+    - '        else:
+
+      '
+  - - 111
+    - '            initial_states = context_first_part.new_states
+
+      '
+  - - 112
+    - '    else:
+
+      '
+  - - 113
+    - '        initial_states = []
+
+      '
+  - - 143
+    - '
+
+      '
+  - - 144
+    - '        context = mtf_transformer.transformer.Context(
+
+      '
+  - - 145
+    - '            model=None,
+
+      '
+  - - 146
+    - '            mesh=inputs.mesh,
+
+      '
+  - - 147
+    - '            batch_dims=batch_dims,
+
+      '
+  - - 148
+    - '            length_dim=length_dim,
+
+      '
+  - - 149
+    - '            variable_dtype=variable_dtype,
+
+      '
+  - - 150
+    - '            mode="incremental",
+
+      '
+  - - 151
+    - '            position=position,
+
+      '
+  - - 152
+    - '            position_is_default=True,
+
+      '
+  - - 153
+    - '            states=states,
+
+      '
+  - - 154
+    - '            new_states=[],
+
+      '
+  - - 155
+    - '            initial_position=position,
+
+      '
+  - - 156
+    - '            sequence_id=None,
+
+      '
+  - - 157
+    - '            encoder_output=encoder_output,
+
+      '
+  - - 158
+    - '            encoder_sequence_id=encoder_sequence_id,
+
+      '
+  - - 159
+    - '            shared_params=shared_params,
+
+      '
+  - - 160
+    - '            encoder_layer_outputs=encoder_layer_outputs,
+
+      '
+  - - 161
+    - '            write_priority=write_priority,
+
+      '
+  - - 162
+    - '            read_priority=read_priority,
+
+      '
+  - - 163
+    - '            inputs=ids,
+
+      '
+  - - 164
+    - '            encoder_inputs=encoder_inputs) if not slow_sampling else None
+
+      '
+  - - 167
+    - '            logits, _, _ = gpt2.model({''inputs'': ids}, other_features, params,
+      inputs.mesh, variable_dtype=variable_dtype, context = context)
+
+      '
+  - - 184
+    - '
+
+      '
+  - - 185
+    - '        if slow_sampling:
+
+      '
+  - - 186
+    - '            ids_this_step = mtf.shift(ids_this_step, offset=1, dim=length_dim,
+      wrap=False)
+
+      '
+  - - 187
+    - '        else:
+
+      '
+  - - 188
+    - '            ids_this_step = mtf.reshape(ids_this_step, (batch_dims))
+
+      '
+  - - 189
+    - '
+
+      '
+  - - 194
+    - '        ret = [new_position, new_ids]
+
+      '
+  - - 195
+    - '        if context is not None:
+
+      '
+  - - 196
+    - '            ret += context.new_states
+
+      '
+  - - 197
+    - '        return ret
+
+      '
+  - - 198
+    - '
+
+      '
+  - - 199
+    - '    while_loop_inputs = [initial_position, inputs] + initial_states
+
+      '
+  del_line_no:
+  - - null
+    - '    context_first_part = mtf_transformer.transformer.Context(
+
+      '
+  - - null
+    - '        model=None,
+
+      '
+  - - null
+    - '        mesh=inputs.mesh,
+
+      '
+  - - null
+    - '        batch_dims=batch_dims,
+
+      '
+  - - null
+    - '        length_dim=length_dim,
+
+      '
+  - - null
+    - '        variable_dtype=variable_dtype,
+
+      '
+  - - null
+    - '        mode="first_part",
+
+      '
+  - - null
+    - '        position=length_range,
+
+      '
+  - - null
+    - '        position_is_default=True,
+
+      '
+  - - null
+    - '        new_states=[],
+
+      '
+  - - null
+    - '        initial_position=initial_position,
+
+      '
+  - - null
+    - '        sequence_id=None,
+
+      '
+  - - null
+    - '        encoder_output=encoder_output,
+
+      '
+  - - null
+    - '        encoder_sequence_id=encoder_sequence_id,
+
+      '
+  - - null
+    - '        constant_states=[],
+
+      '
+  - - null
+    - '        shared_params=shared_params,
+
+      '
+  - - null
+    - '        encoder_layer_outputs=encoder_layer_outputs,
+
+      '
+  - - null
+    - '        write_priority=write_priority,
+
+      '
+  - - null
+    - '        read_priority=read_priority,
+
+      '
+  - - null
+    - '        inputs=inputs,
+
+      '
+  - - null
+    - '        encoder_inputs=encoder_inputs)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '    from models.gpt2 import gpt2
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '    # with tf.variable_scope(''gpt2''):
+
+      '
+  - - null
+    - '    #     logits, _, _ = gpt2.model({''inputs'': inputs}, other_features, params,
+      inputs.mesh, context=context_first_part)
+
+      '
+  - - null
+    - '    # del logits
+
+      '
+  - - null
+    - '    # constant_states = context_first_part.constant_states
+
+      '
+  - - null
+    - '        # initial_states = [
+
+      '
+  - - null
+    - '        #     mtf.zeros_like(t) for t in context_first_part.new_states]
+
+      '
+  - - null
+    - '    else:
+
+      '
+  - - null
+    - '       initial_states = context_first_part.new_states
+
+      '
+  - - null
+    - '        nonlocal context_first_part
+
+      '
+  - - null
+    - '        # inputs_this_step = mtf.gather(ids, position - 1, length_dim)
+
+      '
+  - - null
+    - '        # # Setting proper bos_id for position == 0. No-op otherwise.
+
+      '
+  - - null
+    - '        # if bos_id:
+
+      '
+  - - null
+    - '        #     inputs_this_step += bos_id * mtf.ones_like(inputs_this_step)
+      * mtf.cast(
+
+      '
+  - - null
+    - '        #         mtf.equal(position, 0), tf.int32)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        # initial_position = mtf.reduce_sum(mtf.to_int32(mtf.not_equal(inputs,
+      0)), reduced_dim=length_dim)
+
+      '
+  - - null
+    - '        #
+
+      '
+  - - null
+    - '        # context = mtf_transformer.transformer.Context(
+
+      '
+  - - null
+    - '        #     model=None,
+
+      '
+  - - null
+    - '        #     mesh=inputs.mesh,
+
+      '
+  - - null
+    - '        #     batch_dims=batch_dims,
+
+      '
+  - - null
+    - '        #     length_dim=length_dim,
+
+      '
+  - - null
+    - '        #     variable_dtype=variable_dtype,
+
+      '
+  - - null
+    - '        #     mode="first_part",
+
+      '
+  - - null
+    - '        #     position=length_range,
+
+      '
+  - - null
+    - '        #     position_is_default=True,
+
+      '
+  - - null
+    - '        #     new_states=[],
+
+      '
+  - - null
+    - '        #     initial_position=position,
+
+      '
+  - - null
+    - '        #     sequence_id=None,
+
+      '
+  - - null
+    - '        #     encoder_output=encoder_output,
+
+      '
+  - - null
+    - '        #     encoder_sequence_id=encoder_sequence_id,
+
+      '
+  - - null
+    - '        #     constant_states=[],
+
+      '
+  - - null
+    - '        #     shared_params=shared_params,
+
+      '
+  - - null
+    - '        #     encoder_layer_outputs=encoder_layer_outputs,
+
+      '
+  - - null
+    - '        #     write_priority=write_priority,
+
+      '
+  - - null
+    - '        #     read_priority=read_priority,
+
+      '
+  - - null
+    - '        #     inputs=ids,
+
+      '
+  - - null
+    - '        #     encoder_inputs=encoder_inputs)
+
+      '
+  - - null
+    - '            logits, _, _ = gpt2.model({''inputs'': ids}, other_features, params,
+      inputs.mesh, variable_dtype=variable_dtype, context = None)
+
+      '
+  - - null
+    - '        # if never_end:
+
+      '
+  - - null
+    - '        #     logits += mtf.one_hot(
+
+      '
+  - - null
+    - '        #         mtf.constant(logits.mesh, stop_at_token, dtype=tf.int32),
+
+      '
+  - - null
+    - '        #         self.output_vocab_dim, on_value=-1e9, off_value=0.0,
+
+      '
+  - - null
+    - '        #         dtype=logits.dtype)
+
+      '
+  - - null
+    - '        # TBD whether this should be before or after never_end:
+
+      '
+  - - null
+    - '        # Note for adding top_p sampling in the future, in other code bases,
+      the
+
+      '
+  - - null
+    - '        # option to apply temperature is done before the top-k truncation.
+      This
+
+      '
+  - - null
+    - '        # implementation does this in the opposite order. For top-k this doesn''t
+
+      '
+  - - null
+    - '        # matter, but for top_p it will.
+
+      '
+  - - null
+    - '        ids_this_step = mtf.shift(ids_this_step, offset=1, dim=length_dim,
+      wrap=False)
+
+      '
+  - - null
+    - '        return [new_position, new_ids]
+
+      '
+  - - null
+    - '    while_loop_inputs = [initial_position, inputs]
+
+      '
+patched_file_5:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: test_models.py
+  source_file: a/test_models.py
+  target_file: b/test_models.py
+  added: 42
+  removed: 1
+  add_line_no:
+  - - 15
+    - 'from sample import sample_autoregressive
+
+      '
+  - - 16
+    - '
+
+      '
+  - - 95
+    - '
+
+      '
+  - - 96
+    - '
+
+      '
+  - - 97
+    - 'def test_sampling():
+
+      '
+  - - 98
+    - '    graph = mtf.Graph()
+
+      '
+  - - 99
+    - '    mesh = mtf.Mesh(graph, "my_mesh")
+
+      '
+  - - 100
+    - '
+
+      '
+  - - 101
+    - '    batch_dim = mtf.Dimension("batch", 1)
+
+      '
+  - - 102
+    - '    sequence_dim = mtf.Dimension("sequence", 1)
+
+      '
+  - - 103
+    - '
+
+      '
+  - - 104
+    - '    inputs = mtf.ones(mesh, mtf.Shape((batch_dim, sequence_dim)), tf.int32)
+
+      '
+  - - 105
+    - '    inputs = mtf.pad(inputs, [0, 3], sequence_dim.name)
+
+      '
+  - - 106
+    - '
+
+      '
+  - - 107
+    - '    # create mask
+
+      '
+  - - 108
+    - '
+
+      '
+  - - 109
+    - '    seq_len = params["n_ctx"]
+
+      '
+  - - 110
+    - '    num_mem_kv = params.get(''num_mem_kv'', 0)
+
+      '
+  - - 111
+    - '    length_dim = mtf.Dimension(''sequence'', seq_len)
+
+      '
+  - - 112
+    - '    memory_length_dim = mtf.Dimension(''memory_length'', seq_len + num_mem_kv)
+
+      '
+  - - 113
+    - '    embed_sequence_dim = mtf.Dimension(''embed_sequence'', seq_len)
+
+      '
+  - - 114
+    - '    embd_dim = mtf.Dimension("embd", params["n_embd"])
+
+      '
+  - - 115
+    - '    vocab_dim = mtf.Dimension("vocab", params["n_vocab"])
+
+      '
+  - - 116
+    - '
+
+      '
+  - - 117
+    - '    other_features = {}
+
+      '
+  - - 118
+    - '
+
+      '
+  - - 119
+    - '    other_features["attn_bias"] = biasmask_attn_weights(mesh, length_dim, memory_length_dim,
+      mtf.VariableDType(tf.float32))
+
+      '
+  - - 120
+    - '    other_features["embd_dim"] = embd_dim
+
+      '
+  - - 121
+    - '    other_features["vocab_dim"] = vocab_dim
+
+      '
+  - - 122
+    - '    other_features["embed_sequence_dim"] = embed_sequence_dim
+
+      '
+  - - 123
+    - '    other_features["memory_length_dim"] = memory_length_dim
+
+      '
+  - - 124
+    - '
+
+      '
+  - - 125
+    - '    params["mode"] = "predict"
+
+      '
+  - - 126
+    - '
+
+      '
+  - - 127
+    - '    with not_raises(Exception):
+
+      '
+  - - 128
+    - '        samples = sample_autoregressive(
+
+      '
+  - - 129
+    - '            inputs, other_features=other_features, params=params, variable_dtype=mtf.VariableDType(),
+
+      '
+  - - 130
+    - '            remove_partial_sequences=params["remove_partial_sequences"], stop_at_token=params["stop_at_token"])
+
+      '
+  - - 131
+    - '
+
+      '
+  - - 132
+    - '        mesh_impl = placement_mesh_impl.PlacementMeshImpl(shape=[], layout={},
+      devices=[""])
+
+      '
+  - - 133
+    - '        lowering = mtf.Lowering(graph, {mesh: mesh_impl})
+
+      '
+  - - 134
+    - '        samples = lowering.export_to_tf_tensor(samples)
+
+      '
+  del_line_no:
+  - - null
+    - '
+
+      '

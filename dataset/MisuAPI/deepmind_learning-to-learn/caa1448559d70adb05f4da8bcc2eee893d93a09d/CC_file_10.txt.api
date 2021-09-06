@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[4216,4238]@ dictionary.iteritems() @TO@ @type:atom_expr@ @[4216,4234]@ dictionary.items()
+
+UPD @type:atom_expr@ @[5732,5754]@ dictionary.iteritems() @TO@ @type:atom_expr@ @[5728,5746]@ dictionary.items()
+

@@ -1,0 +1,134 @@
+commit 6a88d04fcbcde4936a30af396e1c73c7e64d7b22
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Wed Oct 7 10:37:27 2020 -0700
+
+    Fixed no attribute 'ListFields' error.
+    
+    PiperOrigin-RevId: 335901027
+
+diff --git a/tfx/orchestration/portable/runtime_parameter_utils.py b/tfx/orchestration/portable/runtime_parameter_utils.py
+index c598c954..11d1f6d2 100644
+--- a/tfx/orchestration/portable/runtime_parameter_utils.py
++++ b/tfx/orchestration/portable/runtime_parameter_utils.py
+@@ -125,6 +125,9 @@ def substitute_runtime_parameter(
+   Returns:
+     None
+   """
++  if not hasattr(msg, 'ListFields'):
++    return
++
+   # If the message is a pipeline_pb2.Value instance, try to find an substitute
+   # with runtime parameter bindings.
+   if isinstance(msg, pipeline_pb2.Value):
+@@ -150,8 +153,7 @@ def substitute_runtime_parameter(
+     return
+ 
+   # For other cases, recursively call into sub-messages if any.
+-  fields = msg.ListFields()
+-  for field, sub_message in fields:
++  for field, sub_message in msg.ListFields():
+     # No-op for non-message types.
+     if field.type != descriptor.FieldDescriptor.TYPE_MESSAGE:
+       continue
+diff --git a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter.pbtxt b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter.pbtxt
+index 8aeb7ead..6bb8458f 100644
+--- a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter.pbtxt
++++ b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter.pbtxt
+@@ -41,5 +41,29 @@ nodes {
+         }
+       }
+     }
++    outputs {
++      outputs {
++        key: "examples"
++        value {
++          artifact_spec {
++            type {
++              name: "Examples"
++              properties {
++                key: "span"
++                value: INT
++              }
++              properties {
++                key: "split_names"
++                value: STRING
++              }
++              properties {
++                key: "version"
++                value: INT
++              }
++            }
++          }
++        }
++      }
++    }
+   }
+ }
+diff --git a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_partially_substituted.pbtxt b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_partially_substituted.pbtxt
+index 1c9a6cc6..4a02684a 100644
+--- a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_partially_substituted.pbtxt
++++ b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_partially_substituted.pbtxt
+@@ -36,5 +36,29 @@ nodes {
+         }
+       }
+     }
++    outputs {
++      outputs {
++        key: "examples"
++        value {
++          artifact_spec {
++            type {
++              name: "Examples"
++              properties {
++                key: "span"
++                value: INT
++              }
++              properties {
++                key: "split_names"
++                value: STRING
++              }
++              properties {
++                key: "version"
++                value: INT
++              }
++            }
++          }
++        }
++      }
++    }
+   }
+ }
+diff --git a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_substituted.pbtxt b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_substituted.pbtxt
+index 1317a7b5..451b0068 100644
+--- a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_substituted.pbtxt
++++ b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_substituted.pbtxt
+@@ -25,5 +25,29 @@ nodes {
+         }
+       }
+     }
++    outputs {
++      outputs {
++        key: "examples"
++        value {
++          artifact_spec {
++            type {
++              name: "Examples"
++              properties {
++                key: "span"
++                value: INT
++              }
++              properties {
++                key: "split_names"
++                value: STRING
++              }
++              properties {
++                key: "version"
++                value: INT
++              }
++            }
++          }
++        }
++      }
++    }
+   }
+ }

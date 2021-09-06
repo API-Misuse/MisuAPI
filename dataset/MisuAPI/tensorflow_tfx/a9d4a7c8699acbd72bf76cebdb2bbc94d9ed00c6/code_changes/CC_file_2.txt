@@ -1,0 +1,30 @@
+UPD @type:if_stmt@ @[3915,4641]@ if materialize:
+      self.assertNotEqual(
+        <text_longer_than_50> @TO@ @type:if_stmt@ @[3915,4655]@ if materialize:
+      self.assertNotEqual(
+        <text_longer_than_50>
+---UPD @type:suite@ @[3930,4449]@ self.assertNotEqual(
+          0,
+          len(
+  <text_longer_than_50> @TO@ @type:suite@ @[3930,4463]@ self.assertNotEqual(
+          0,
+          len(
+  <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4266,4449]@ self.assertGreater(
+        tf.io.gfile.GFile(os.p <text_longer_than_50> @TO@ @type:simple_stmt@ @[4266,4463]@ self.assertGreater(
+        tf.io.gfile.GFile(os.p <text_longer_than_50>
+---------UPD @type:atom_expr@ @[4266,4448]@ self.assertGreater(
+        tf.io.gfile.GFile(os.p <text_longer_than_50> @TO@ @type:atom_expr@ @[4266,4462]@ self.assertGreater(
+        tf.io.gfile.GFile(os.p <text_longer_than_50>
+------------UPD @type:trailer@ @[4284,4448]@ (
+        tf.io.gfile.GFile(os.path.join(self._tra <text_longer_than_50> @TO@ @type:trailer@ @[4284,4462]@ (
+        tf.io.gfile.GFile(os.path.join(self._tra <text_longer_than_50>
+---------------UPD @type:arglist@ @[4294,4447]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50> @TO@ @type:arglist@ @[4294,4461]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[4294,4366]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50> @TO@ @type:atom_expr@ @[4294,4373]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50>
+---------------------INS @type:trailer@ @[4366,4371]@ .size @TO@ @type:atom_expr@ @[4294,4366]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50>
+---------------------INS @type:trailer@ @[4371,4373]@ () @TO@ @type:atom_expr@ @[4294,4366]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[4376,4447]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50> @TO@ @type:atom_expr@ @[4383,4461]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50>
+---------------------INS @type:trailer@ @[4454,4459]@ .size @TO@ @type:atom_expr@ @[4376,4447]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50>
+---------------------INS @type:trailer@ @[4459,4461]@ () @TO@ @type:atom_expr@ @[4376,4447]@ tf.io.gfile.GFile(os.path.join(self._transformed_e <text_longer_than_50>
+
+

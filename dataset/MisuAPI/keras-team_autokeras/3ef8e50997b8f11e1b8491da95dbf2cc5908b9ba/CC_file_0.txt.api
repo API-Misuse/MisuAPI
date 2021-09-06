@@ -1,0 +1,134 @@
+INS @type:atom_expr@ @[400,453]@ pickle.load(open(os.path.join(path, 'config'), 'rb <text_longer_than_50> @TO@ @type:expr_stmt@ @[387,441]@ classifier = pickle.load(os.path.join(path, 'confi <text_longer_than_50>
+
+INS @type:atom_expr@ @[400,453]@ pickle.load(open(os.path.join(path, 'config'), 'rb <text_longer_than_50> @TO@ @type:expr_stmt@ @[387,441]@ classifier = pickle.load(os.path.join(path, 'confi <text_longer_than_50>
+
+INS @type:trailer@ @[411,453]@ (open(os.path.join(path, 'config'), 'rb')) @TO@ @type:atom_expr@ @[400,453]@ pickle.load(open(os.path.join(path, 'config'), 'rb <text_longer_than_50>
+
+INS @type:trailer@ @[411,453]@ (open(os.path.join(path, 'config'), 'rb')) @TO@ @type:atom_expr@ @[400,453]@ pickle.load(open(os.path.join(path, 'config'), 'rb <text_longer_than_50>
+
+UPD @type:atom_expr@ @[400,441]@ pickle.load(os.path.join(path, 'config')) @TO@ @type:atom_expr@ @[412,452]@ open(os.path.join(path, 'config'), 'rb')
+
+INS @type:arglist@ @[417,451]@ os.path.join(path, 'config'), 'rb' @TO@ @type:trailer@ @[411,441]@ (os.path.join(path, 'config'))
+
+INS @type:arglist@ @[417,451]@ os.path.join(path, 'config'), 'rb' @TO@ @type:trailer@ @[411,441]@ (os.path.join(path, 'config'))
+
+MOV @type:atom_expr@ @[412,440]@ os.path.join(path, 'config') @TO@ @type:arglist@ @[417,451]@ os.path.join(path, 'config'), 'rb'
+
+DEL @type:trailer@ @[406,411]@ .load @FROM@ @type:atom_expr@ @[400,441]@ pickle.load(os.path.join(path, 'config'))
+
+MOV @type:atom_expr@ @[400,441]@ pickle.load(os.path.join(path, 'config')) @TO@ @type:trailer@ @[411,453]@ (open(os.path.join(path, 'config'), 'rb'))
+
+INS @type:arglist@ @[417,451]@ os.path.join(path, 'config'), 'rb' @TO@ @type:trailer@ @[411,441]@ (os.path.join(path, 'config'))
+
+INS @type:arglist@ @[417,451]@ os.path.join(path, 'config'), 'rb' @TO@ @type:trailer@ @[411,441]@ (os.path.join(path, 'config'))
+
+MOV @type:atom_expr@ @[412,440]@ os.path.join(path, 'config') @TO@ @type:arglist@ @[417,451]@ os.path.join(path, 'config'), 'rb'
+
+DEL @type:trailer@ @[406,411]@ .load @FROM@ @type:atom_expr@ @[400,441]@ pickle.load(os.path.join(path, 'config'))
+
+INS @type:simple_stmt@ @[458,481]@ classifier.path = path @TO@ @type:suite@ @[382,464]@ classifier = pickle.load(os.path.join(path, 'confi <text_longer_than_50>
+
+INS @type:factor@ @[900,902]@ -1 @TO@ @type:expr_stmt@ @[836,862]@ self.current_iteration = 0
+
+INS @type:simple_stmt@ @[911,928]@ ensure_dir(path) @TO@ @type:suite@ @[580,863]@ self.y_encoder = None
+        self.model = None
+   <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2080,2133]@ range(self.current_iteration, constant.MAX_MODEL_N <text_longer_than_50> @TO@ @type:atom_expr@ @[2145,2202]@ range(self.current_iteration + 1, constant.MAX_MOD <text_longer_than_50>
+
+INS @type:arith_expr@ @[2151,2177]@ self.current_iteration + 1 @TO@ @type:arglist@ @[2086,2132]@ self.current_iteration, constant.MAX_MODEL_NUM
+
+INS @type:arith_expr@ @[2151,2177]@ self.current_iteration + 1 @TO@ @type:arglist@ @[2086,2132]@ self.current_iteration, constant.MAX_MODEL_NUM
+
+MOV @type:atom_expr@ @[2086,2108]@ self.current_iteration @TO@ @type:arith_expr@ @[2151,2177]@ self.current_iteration + 1
+
+INS @type:atom_expr@ @[2419,2470]@ model.save(os.path.join(self.path, str(i) + '.h5') <text_longer_than_50> @TO@ @type:simple_stmt@ @[2350,2377]@ model.save(str(i) + '.h5')
+
+INS @type:atom_expr@ @[2419,2470]@ model.save(os.path.join(self.path, str(i) + '.h5') <text_longer_than_50> @TO@ @type:simple_stmt@ @[2350,2377]@ model.save(str(i) + '.h5')
+
+INS @type:trailer@ @[2429,2470]@ (os.path.join(self.path, str(i) + '.h5')) @TO@ @type:atom_expr@ @[2419,2470]@ model.save(os.path.join(self.path, str(i) + '.h5') <text_longer_than_50>
+
+INS @type:trailer@ @[2429,2470]@ (os.path.join(self.path, str(i) + '.h5')) @TO@ @type:atom_expr@ @[2419,2470]@ model.save(os.path.join(self.path, str(i) + '.h5') <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2350,2376]@ model.save(str(i) + '.h5') @TO@ @type:atom_expr@ @[2430,2469]@ os.path.join(self.path, str(i) + '.h5')
+
+INS @type:trailer@ @[2437,2442]@ .join @TO@ @type:atom_expr@ @[2350,2376]@ model.save(str(i) + '.h5')
+
+INS @type:arglist@ @[2443,2468]@ self.path, str(i) + '.h5' @TO@ @type:trailer@ @[2360,2376]@ (str(i) + '.h5')
+
+INS @type:arglist@ @[2443,2468]@ self.path, str(i) + '.h5' @TO@ @type:trailer@ @[2360,2376]@ (str(i) + '.h5')
+
+MOV @type:arith_expr@ @[2361,2375]@ str(i) + '.h5' @TO@ @type:arglist@ @[2443,2468]@ self.path, str(i) + '.h5'
+
+MOV @type:atom_expr@ @[2350,2376]@ model.save(str(i) + '.h5') @TO@ @type:trailer@ @[2429,2470]@ (os.path.join(self.path, str(i) + '.h5'))
+
+INS @type:trailer@ @[2437,2442]@ .join @TO@ @type:atom_expr@ @[2350,2376]@ model.save(str(i) + '.h5')
+
+INS @type:arglist@ @[2443,2468]@ self.path, str(i) + '.h5' @TO@ @type:trailer@ @[2360,2376]@ (str(i) + '.h5')
+
+INS @type:arglist@ @[2443,2468]@ self.path, str(i) + '.h5' @TO@ @type:trailer@ @[2360,2376]@ (str(i) + '.h5')
+
+MOV @type:arith_expr@ @[2361,2375]@ str(i) + '.h5' @TO@ @type:arglist@ @[2443,2468]@ self.path, str(i) + '.h5'
+
+INS @type:atom_expr@ @[2667,2731]@ pickle.dump(self, open(os.path.join(self.path, 'co <text_longer_than_50> @TO@ @type:simple_stmt@ @[2573,2626]@ pickle.dump(self, os.path.join(self.path, 'config' <text_longer_than_50>
+
+INS @type:atom_expr@ @[2667,2731]@ pickle.dump(self, open(os.path.join(self.path, 'co <text_longer_than_50> @TO@ @type:simple_stmt@ @[2573,2626]@ pickle.dump(self, os.path.join(self.path, 'config' <text_longer_than_50>
+
+INS @type:trailer@ @[2678,2731]@ (self, open(os.path.join(self.path, 'config'), 'wb <text_longer_than_50> @TO@ @type:atom_expr@ @[2667,2731]@ pickle.dump(self, open(os.path.join(self.path, 'co <text_longer_than_50>
+
+INS @type:trailer@ @[2678,2731]@ (self, open(os.path.join(self.path, 'config'), 'wb <text_longer_than_50> @TO@ @type:atom_expr@ @[2667,2731]@ pickle.dump(self, open(os.path.join(self.path, 'co <text_longer_than_50>
+
+INS @type:arglist@ @[2679,2730]@ self, open(os.path.join(self.path, 'config'), 'wb' <text_longer_than_50> @TO@ @type:trailer@ @[2678,2731]@ (self, open(os.path.join(self.path, 'config'), 'wb <text_longer_than_50>
+
+INS @type:arglist@ @[2679,2730]@ self, open(os.path.join(self.path, 'config'), 'wb' <text_longer_than_50> @TO@ @type:trailer@ @[2678,2731]@ (self, open(os.path.join(self.path, 'config'), 'wb <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2573,2625]@ pickle.dump(self, os.path.join(self.path, 'config' <text_longer_than_50> @TO@ @type:atom_expr@ @[2685,2730]@ open(os.path.join(self.path, 'config'), 'wb')
+
+MOV @type:operator@ @[2589,2590]@ , @TO@ @type:arglist@ @[2585,2624]@ self, os.path.join(self.path, 'config')
+
+INS @type:string@ @[2725,2729]@ 'wb' @TO@ @type:arglist@ @[2585,2624]@ self, os.path.join(self.path, 'config')
+
+DEL @type:name@ @[2585,2589]@ self @FROM@ @type:arglist@ @[2585,2624]@ self, os.path.join(self.path, 'config')
+
+DEL @type:trailer@ @[2579,2584]@ .dump @FROM@ @type:atom_expr@ @[2573,2625]@ pickle.dump(self, os.path.join(self.path, 'config' <text_longer_than_50>
+
+MOV @type:atom_expr@ @[2573,2625]@ pickle.dump(self, os.path.join(self.path, 'config' <text_longer_than_50> @TO@ @type:arglist@ @[2679,2730]@ self, open(os.path.join(self.path, 'config'), 'wb' <text_longer_than_50>
+
+MOV @type:operator@ @[2589,2590]@ , @TO@ @type:arglist@ @[2585,2624]@ self, os.path.join(self.path, 'config')
+
+INS @type:string@ @[2725,2729]@ 'wb' @TO@ @type:arglist@ @[2585,2624]@ self, os.path.join(self.path, 'config')
+
+DEL @type:name@ @[2585,2589]@ self @FROM@ @type:arglist@ @[2585,2624]@ self, os.path.join(self.path, 'config')
+
+DEL @type:trailer@ @[2579,2584]@ .dump @FROM@ @type:atom_expr@ @[2573,2625]@ pickle.dump(self, os.path.join(self.path, 'config' <text_longer_than_50>
+
+INS @type:atom_expr@ @[2809,2887]@ load_model(os.path.join(self.path, str(self.histor <text_longer_than_50> @TO@ @type:expr_stmt@ @[2690,2751]@ self.model = load_model(self.history[-1]['model_id <text_longer_than_50>
+
+INS @type:atom_expr@ @[2809,2887]@ load_model(os.path.join(self.path, str(self.histor <text_longer_than_50> @TO@ @type:expr_stmt@ @[2690,2751]@ self.model = load_model(self.history[-1]['model_id <text_longer_than_50>
+
+INS @type:trailer@ @[2819,2887]@ (os.path.join(self.path, str(self.history[-1]['mod <text_longer_than_50> @TO@ @type:atom_expr@ @[2809,2887]@ load_model(os.path.join(self.path, str(self.histor <text_longer_than_50>
+
+INS @type:trailer@ @[2819,2887]@ (os.path.join(self.path, str(self.history[-1]['mod <text_longer_than_50> @TO@ @type:atom_expr@ @[2809,2887]@ load_model(os.path.join(self.path, str(self.histor <text_longer_than_50>
+
+INS @type:atom_expr@ @[2820,2886]@ os.path.join(self.path, str(self.history[-1]['mode <text_longer_than_50> @TO@ @type:trailer@ @[2819,2887]@ (os.path.join(self.path, str(self.history[-1]['mod <text_longer_than_50>
+
+INS @type:atom_expr@ @[2820,2886]@ os.path.join(self.path, str(self.history[-1]['mode <text_longer_than_50> @TO@ @type:trailer@ @[2819,2887]@ (os.path.join(self.path, str(self.history[-1]['mod <text_longer_than_50>
+
+INS @type:trailer@ @[2832,2886]@ (self.path, str(self.history[-1]['model_id']) + '. <text_longer_than_50> @TO@ @type:atom_expr@ @[2820,2886]@ os.path.join(self.path, str(self.history[-1]['mode <text_longer_than_50>
+
+INS @type:trailer@ @[2832,2886]@ (self.path, str(self.history[-1]['model_id']) + '. <text_longer_than_50> @TO@ @type:atom_expr@ @[2820,2886]@ os.path.join(self.path, str(self.history[-1]['mode <text_longer_than_50>
+
+INS @type:arglist@ @[2833,2885]@ self.path, str(self.history[-1]['model_id']) + '.h <text_longer_than_50> @TO@ @type:trailer@ @[2832,2886]@ (self.path, str(self.history[-1]['model_id']) + '. <text_longer_than_50>
+
+INS @type:arglist@ @[2833,2885]@ self.path, str(self.history[-1]['model_id']) + '.h <text_longer_than_50> @TO@ @type:trailer@ @[2832,2886]@ (self.path, str(self.history[-1]['model_id']) + '. <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2703,2751]@ load_model(self.history[-1]['model_id'] + '.h5') @TO@ @type:atom_expr@ @[2844,2877]@ str(self.history[-1]['model_id'])
+
+MOV @type:atom_expr@ @[2703,2751]@ load_model(self.history[-1]['model_id'] + '.h5') @TO@ @type:arith_expr@ @[2714,2750]@ self.history[-1]['model_id'] + '.h5'
+
+MOV @type:atom_expr@ @[2714,2742]@ self.history[-1]['model_id'] @TO@ @type:trailer@ @[2713,2751]@ (self.history[-1]['model_id'] + '.h5')
+
+MOV @type:arith_expr@ @[2714,2750]@ self.history[-1]['model_id'] + '.h5' @TO@ @type:arglist@ @[2833,2885]@ self.path, str(self.history[-1]['model_id']) + '.h <text_longer_than_50>
+
+MOV @type:atom_expr@ @[2714,2742]@ self.history[-1]['model_id'] @TO@ @type:trailer@ @[2713,2751]@ (self.history[-1]['model_id'] + '.h5')
+

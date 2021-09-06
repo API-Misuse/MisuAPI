@@ -1,0 +1,37 @@
+sha: e93ec37201f5f2116933ae96e505f409ddbf344d
+message: 'Fix xent call in mnist tutorial code
+
+
+  Fixes #857.'
+commit_log: "commit e93ec37201f5f2116933ae96e505f409ddbf344d\nAuthor: Martin Wicke\
+  \ <martin.wicke@gmail.com>\nDate:   Sun Jan 8 01:18:20 2017 -0800\n\n    Fix xent\
+  \ call in mnist tutorial code\n    \n    Fixes #857."
+contained_keywords:
+- fix
+- fixes
+commit_time: 2017-01-08 01:18:20 -0800
+commit_author: Martin Wicke
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tutorials/image/mnist/convolutional.py
+  source_file: a/tutorials/image/mnist/convolutional.py
+  target_file: b/tutorials/image/mnist/convolutional.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 231
+    - '      labels=train_labels_node, logits=logits))
+
+      '
+  del_line_no:
+  - - null
+    - '      logits, train_labels_node))
+
+      '

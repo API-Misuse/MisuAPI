@@ -1,0 +1,19 @@
+commit 6ba19a977509e911daaea2367cd0aaa62936b37e
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Sat Apr 1 22:40:54 2017 -0700
+
+    fix ctc_loss API (#215)
+
+diff --git a/examples/CTC-TIMIT/train-timit.py b/examples/CTC-TIMIT/train-timit.py
+index bd8cce42..d3e1cc36 100755
+--- a/examples/CTC-TIMIT/train-timit.py
++++ b/examples/CTC-TIMIT/train-timit.py
+@@ -56,7 +56,7 @@ class Model(ModelDesc):
+                                 W_init=tf.truncated_normal_initializer(stddev=0.01))
+         logits = tf.reshape(logits, (BATCH, -1, NR_CLASS))
+ 
+-        loss = tf.nn.ctc_loss(logits, label, seqlen, time_major=False)
++        loss = tf.nn.ctc_loss(label, logits, seqlen, time_major=False)
+ 
+         self.cost = tf.reduce_mean(loss, name='cost')
+ 

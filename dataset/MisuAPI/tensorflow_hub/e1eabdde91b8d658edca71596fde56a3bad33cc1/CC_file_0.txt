@@ -1,0 +1,7 @@
+UPD @type:simple_stmt@ @[2021,2048]@ parsed[4] = urlencode(qsl) @TO@ @type:simple_stmt@ @[2221,2253]@ parsed[4] = str(urlencode(qsl))
+---UPD @type:expr_stmt@ @[2021,2047]@ parsed[4] = urlencode(qsl) @TO@ @type:expr_stmt@ @[2221,2252]@ parsed[4] = str(urlencode(qsl))
+------INS @type:atom_expr@ @[2233,2252]@ str(urlencode(qsl)) @TO@ @type:expr_stmt@ @[2021,2047]@ parsed[4] = urlencode(qsl)
+---------INS @type:trailer@ @[2236,2252]@ (urlencode(qsl)) @TO@ @type:atom_expr@ @[2233,2252]@ str(urlencode(qsl))
+------MOV @type:atom_expr@ @[2033,2047]@ urlencode(qsl) @TO@ @type:trailer@ @[2236,2252]@ (urlencode(qsl))
+
+

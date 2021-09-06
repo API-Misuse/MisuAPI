@@ -1,0 +1,9 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/04ea108c9eb5ed564651c4c95e4c7400d6641059/a/run_experiment.py:2: error: Cannot find implementation or library stub for module named "sacred"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/04ea108c9eb5ed564651c4c95e4c7400d6641059/a/run_experiment.py:2: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/04ea108c9eb5ed564651c4c95e4c7400d6641059/a/run_experiment.py:11: error: Library stubs not installed for "requests" (or incompatible with Python 3.6)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/04ea108c9eb5ed564651c4c95e4c7400d6641059/a/run_experiment.py:11: note: Hint: "python3 -m pip install types-requests"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/04ea108c9eb5ed564651c4c95e4c7400d6641059/a/run_experiment.py:11: note: (or run "mypy --install-types" to install all missing stub packages)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/04ea108c9eb5ed564651c4c95e4c7400d6641059/a/run_experiment.py:13: error: Cannot find implementation or library stub for module named "configs"
+Found 3 errors in 1 file (checked 1 source file)
+
+time cost(in seconds): 1.8578195571899414

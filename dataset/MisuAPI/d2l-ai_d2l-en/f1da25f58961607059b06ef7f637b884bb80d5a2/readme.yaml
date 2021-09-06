@@ -1,0 +1,53 @@
+sha: f1da25f58961607059b06ef7f637b884bb80d5a2
+message: fix evaluate loss (#921)
+commit_log: "commit f1da25f58961607059b06ef7f637b884bb80d5a2\nAuthor: Anirudh <anirudhdagar6@gmail.com>\n\
+  Date:   Tue Jun 2 03:28:01 2020 +0530\n\n    fix evaluate loss (#921)"
+contained_keywords:
+- fix
+commit_time: 2020-06-02 03:28:01 +0530
+commit_author: Anirudh
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: chapter_multilayer-perceptrons/underfit-overfit.md
+  source_file: a/chapter_multilayer-perceptrons/underfit-overfit.md
+  target_file: b/chapter_multilayer-perceptrons/underfit-overfit.md
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 501
+    - '        l = loss(net(X), y.reshape(-1, 1))
+
+      '
+  del_line_no:
+  - - null
+    - '        l = loss(net(X), y)
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: d2l/torch.py
+  source_file: a/d2l/torch.py
+  target_file: b/d2l/torch.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 337
+    - '        l = loss(net(X), y.reshape(-1, 1))
+
+      '
+  del_line_no:
+  - - null
+    - '        l = loss(net(X), y)
+
+      '

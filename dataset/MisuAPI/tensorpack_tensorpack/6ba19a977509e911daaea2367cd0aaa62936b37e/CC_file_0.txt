@@ -1,0 +1,9 @@
+UPD @type:simple_stmt@ @[1956,2019]@ loss = tf.nn.ctc_loss(logits, label, seqlen, time_ <text_longer_than_50> @TO@ @type:simple_stmt@ @[1956,2019]@ loss = tf.nn.ctc_loss(label, logits, seqlen, time_ <text_longer_than_50>
+---UPD @type:expr_stmt@ @[1956,2018]@ loss = tf.nn.ctc_loss(logits, label, seqlen, time_ <text_longer_than_50> @TO@ @type:expr_stmt@ @[1956,2018]@ loss = tf.nn.ctc_loss(label, logits, seqlen, time_ <text_longer_than_50>
+------UPD @type:atom_expr@ @[1963,2018]@ tf.nn.ctc_loss(logits, label, seqlen, time_major=F <text_longer_than_50> @TO@ @type:atom_expr@ @[1963,2018]@ tf.nn.ctc_loss(label, logits, seqlen, time_major=F <text_longer_than_50>
+---------UPD @type:trailer@ @[1977,2018]@ (logits, label, seqlen, time_major=False) @TO@ @type:trailer@ @[1977,2018]@ (label, logits, seqlen, time_major=False)
+------------UPD @type:arglist@ @[1978,2017]@ logits, label, seqlen, time_major=False @TO@ @type:arglist@ @[1978,2017]@ label, logits, seqlen, time_major=False
+---------------MOV @type:operator@ @[1984,1985]@ , @TO@ @type:arglist@ @[1978,2017]@ logits, label, seqlen, time_major=False
+---------------MOV @type:name@ @[1978,1984]@ logits @TO@ @type:arglist@ @[1978,2017]@ logits, label, seqlen, time_major=False
+
+

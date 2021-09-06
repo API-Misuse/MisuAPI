@@ -1,0 +1,48 @@
+UPD @type:atom_expr@ @[263,284]@ self.values.append(v) @TO@ @type:atom_expr@ @[282,304]@ self._values.append(v)
+
+UPD @type:atom_expr@ @[315,326]@ self.values @TO@ @type:atom_expr@ @[335,347]@ self._values
+
+UPD @type:atom_expr@ @[805,813]@ self.tot @TO@ @type:atom_expr@ @[840,849]@ self._tot
+
+UPD @type:atom_expr@ @[826,835]@ self.corr @TO@ @type:atom_expr@ @[862,871]@ self._cnt
+
+UPD @type:atom_expr@ @[882,890]@ self.tot @TO@ @type:atom_expr@ @[917,926]@ self._tot
+
+UPD @type:atom_expr@ @[906,915]@ self.corr @TO@ @type:atom_expr@ @[942,951]@ self._cnt
+
+UPD @type:atom_expr@ @[383,399]@ len(self.values) @TO@ @type:atom_expr@ @[404,421]@ len(self._values)
+
+UPD @type:atom_expr@ @[387,398]@ self.values @TO@ @type:atom_expr@ @[408,420]@ self._values
+
+UPD @type:atom_expr@ @[453,469]@ len(self.values) @TO@ @type:atom_expr@ @[475,492]@ len(self._values)
+
+UPD @type:atom_expr@ @[457,468]@ self.values @TO@ @type:atom_expr@ @[479,491]@ self._values
+
+UPD @type:atom_expr@ @[485,505]@ np.mean(self.values) @TO@ @type:atom_expr@ @[508,529]@ np.mean(self._values)
+
+UPD @type:atom_expr@ @[493,504]@ self.values @TO@ @type:atom_expr@ @[516,528]@ self._values
+
+UPD @type:atom_expr@ @[555,571]@ len(self.values) @TO@ @type:atom_expr@ @[579,596]@ len(self._values)
+
+UPD @type:atom_expr@ @[559,570]@ self.values @TO@ @type:atom_expr@ @[583,595]@ self._values
+
+UPD @type:atom_expr@ @[587,606]@ np.sum(self.values) @TO@ @type:atom_expr@ @[612,632]@ np.sum(self._values)
+
+UPD @type:atom_expr@ @[594,605]@ self.values @TO@ @type:atom_expr@ @[619,631]@ self._values
+
+UPD @type:atom_expr@ @[656,672]@ len(self.values) @TO@ @type:atom_expr@ @[682,699]@ len(self._values)
+
+UPD @type:atom_expr@ @[660,671]@ self.values @TO@ @type:atom_expr@ @[686,698]@ self._values
+
+UPD @type:atom_expr@ @[688,704]@ max(self.values) @TO@ @type:atom_expr@ @[715,732]@ max(self._values)
+
+UPD @type:atom_expr@ @[692,703]@ self.values @TO@ @type:atom_expr@ @[719,731]@ self._values
+
+UPD @type:atom_expr@ @[974,982]@ self.tot @TO@ @type:atom_expr@ @[1006,1015]@ self._tot
+
+UPD @type:atom_expr@ @[1025,1034]@ self.corr @TO@ @type:atom_expr@ @[1058,1067]@ self._cnt
+
+UPD @type:atom_expr@ @[1043,1051]@ self.tot @TO@ @type:atom_expr@ @[1076,1085]@ self._tot
+
+UPD @type:atom_expr@ @[1103,1111]@ self.tot @TO@ @type:atom_expr@ @[1137,1146]@ self._tot
+

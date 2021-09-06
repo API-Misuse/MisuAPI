@@ -1,0 +1,17 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/LanguageModel.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/LanguageModel.py:182:15 - error: "pinyin" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/LanguageModel.py:242:20 - error: "str_pinyin" is not defined (reportUndefinedVariable)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/asrserver.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/asrserver.py:10:8 - error: Import "keras" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/asrserver.py:11:6 - error: Import "SpeechModel24" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/asrserver.py:12:6 - error: Import "LanguageModel" could not be resolved (reportMissingImports)
+5 errors, 0 warnings, 0 infos 
+Completed in 1.313sec
+
+time cost(in seconds): 1.4585754871368408

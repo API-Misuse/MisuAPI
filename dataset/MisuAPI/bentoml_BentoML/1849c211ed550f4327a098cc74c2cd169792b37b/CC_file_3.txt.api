@@ -1,0 +1,7 @@
+DEL @type:simple_stmt@ @[1024,1044]@ Path().expanduser() @FROM@ @type:suite@ @[989,1044]@ from pathlib import Path
+
+    Path().expanduser()
+
+INS @type:simple_stmt@ @[1078,1098]@ Path = pathlib.Path @TO@ @type:file_input@ @[576,3235]@ from __future__ import absolute_import
+from __futu <text_longer_than_50>
+

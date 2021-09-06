@@ -1,0 +1,14 @@
+UPD @type:with_stmt@ @[3294,4433]@ with self.graph.as_default():
+            input_te <text_longer_than_50> @TO@ @type:with_stmt@ @[3294,4485]@ with self.graph.as_default():
+            input_te <text_longer_than_50>
+---UPD @type:suite@ @[3323,4433]@ input_tensors = []
+            output_tensors = [] <text_longer_than_50> @TO@ @type:suite@ @[3323,4485]@ input_tensors = []
+            output_tensors = [] <text_longer_than_50>
+------INS @type:simple_stmt@ @[4205,4240]@ config.session_init._setup_graph() @TO@ @type:suite@ @[3323,4433]@ input_tensors = []
+            output_tensors = [] <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4264,4295]@ config.session_init.init(sess) @TO@ @type:simple_stmt@ @[4311,4347]@ config.session_init._run_init(sess)
+---------UPD @type:atom_expr@ @[4264,4294]@ config.session_init.init(sess) @TO@ @type:atom_expr@ @[4311,4346]@ config.session_init._run_init(sess)
+------------UPD @type:trailer@ @[4283,4288]@ .init @TO@ @type:trailer@ @[4330,4340]@ ._run_init
+---------------UPD @type:name@ @[4284,4288]@ init @TO@ @type:name@ @[4331,4340]@ _run_init
+
+

@@ -1,0 +1,18 @@
+UPD @type:simple_stmt@ @[6189,6279]@ driver = HorovodRunDriverService(
+        settings <text_longer_than_50> @TO@ @type:simple_stmt@ @[6189,6280]@ driver = HorovodRunDriverService(
+        settings <text_longer_than_50>
+---UPD @type:expr_stmt@ @[6189,6278]@ driver = HorovodRunDriverService(
+        settings <text_longer_than_50> @TO@ @type:expr_stmt@ @[6189,6279]@ driver = HorovodRunDriverService(
+        settings <text_longer_than_50>
+------UPD @type:atom_expr@ @[6198,6278]@ HorovodRunDriverService(
+        settings.num_host <text_longer_than_50> @TO@ @type:atom_expr@ @[6198,6279]@ HorovodRunDriverService(
+        settings.num_host <text_longer_than_50>
+---------UPD @type:trailer@ @[6221,6278]@ (
+        settings.num_hosts, settings.key, settin <text_longer_than_50> @TO@ @type:trailer@ @[6221,6279]@ (
+        settings.num_hosts, settings.key, settin <text_longer_than_50>
+------------UPD @type:arglist@ @[6231,6277]@ settings.num_hosts, settings.key, settings.nic @TO@ @type:arglist@ @[6231,6278]@ settings.num_hosts, settings.key, settings.nics
+---------------UPD @type:atom_expr@ @[6265,6277]@ settings.nic @TO@ @type:atom_expr@ @[6265,6278]@ settings.nics
+------------------UPD @type:trailer@ @[6273,6277]@ .nic @TO@ @type:trailer@ @[6273,6278]@ .nics
+---------------------UPD @type:name@ @[6274,6277]@ nic @TO@ @type:name@ @[6274,6278]@ nics
+
+

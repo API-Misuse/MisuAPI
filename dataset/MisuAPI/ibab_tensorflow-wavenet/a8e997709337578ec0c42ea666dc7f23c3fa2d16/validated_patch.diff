@@ -1,0 +1,25 @@
+commit a8e997709337578ec0c42ea666dc7f23c3fa2d16
+Author: mecab <masafumi.orz@gmail.com>
+Date:   Sat Sep 17 03:41:05 2016 +0900
+
+    Add casting to supress CUDA_ERROR_ILLEGAL_ADDRESS in generating results. (#20)
+    
+    It is tentative workaround. Calculating softmax of float32 255x255 matrix
+    causes CUDA_ERROR_ILLEGAL_ADDRESS somehow. We can keep away from the fail
+    by casting to float64.
+    
+    Fundamental solution is needed. See #13 for the discussion.
+
+diff --git a/wavenet.py b/wavenet.py
+index dfd9ae0..c817351 100644
+--- a/wavenet.py
++++ b/wavenet.py
+@@ -170,7 +170,7 @@ class WaveNet(object):
+             encoded = self._one_hot(waveform)
+             raw_output = self._create_network(encoded)
+             out = tf.reshape(raw_output, [-1, self.channels])
+-            proba = tf.nn.softmax(out)
++            proba = tf.nn.softmax(tf.cast(out, tf.float64))
+             last = tf.slice(proba, [tf.shape(proba)[0] - 1, 0], [1, self.channels])
+             return tf.reshape(last, [-1])
+ 

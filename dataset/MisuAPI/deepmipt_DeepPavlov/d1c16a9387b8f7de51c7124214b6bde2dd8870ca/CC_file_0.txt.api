@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[6531,6623]@ tf.layers.dense(input_units, activation=tf.sigmoid <text_longer_than_50> @TO@ @type:atom_expr@ @[6531,6626]@ tf.layers.dense(input_units, 1, activation=tf.sigm <text_longer_than_50>
+
+INS @type:number@ @[6560,6561]@ 1 @TO@ @type:arglist@ @[6547,6622]@ input_units, activation=tf.sigmoid, kernel_initial <text_longer_than_50>
+
+INS @type:operator@ @[6561,6562]@ , @TO@ @type:arglist@ @[6547,6622]@ input_units, activation=tf.sigmoid, kernel_initial <text_longer_than_50>
+

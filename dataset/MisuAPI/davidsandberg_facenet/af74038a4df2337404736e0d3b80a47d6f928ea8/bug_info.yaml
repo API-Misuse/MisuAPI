@@ -1,0 +1,179 @@
+issues_cnt: 0
+sha: af74038a4df2337404736e0d3b80a47d6f928ea8
+message: Closing session to fix problem with memory leak in test cases
+commit_log: "commit af74038a4df2337404736e0d3b80a47d6f928ea8\nAuthor: David Sandberg\
+  \ <david.o.sandberg@gmail.com>\nDate:   Sat Mar 11 20:06:56 2017 +0100\n\n    Closing\
+  \ session to fix problem with memory leak in test cases"
+contained_keywords:
+- problem
+- fix
+commit_time: 2017-03-11 20:06:56 +0100
+commit_author: David Sandberg
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  add_line_no:
+  - - 179
+    - '        coord = tf.train.Coordinator()
+
+      '
+  - - 180
+    - '        tf.train.start_queue_runners(coord=coord, sess=sess)
+
+      '
+  - - 208
+    - '    sess.close()
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '        tf.train.start_queue_runners(sess=sess)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/facenet_train.py
+  removed: 1
+  source_file: a/src/facenet_train.py
+  target_file: b/src/facenet_train.py
+patched_file_1:
+  add_line_no:
+  - - 41
+    - 'import h5py
+
+      '
+  - - 217
+    - '        coord = tf.train.Coordinator()
+
+      '
+  - - 218
+    - '        tf.train.start_queue_runners(coord=coord, sess=sess)
+
+      '
+  - - 244
+    - '    sess.close()
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - 'import h5py
+
+      '
+  - - null
+    - '        tf.train.start_queue_runners(sess=sess)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/facenet_train_classifier.py
+  removed: 2
+  source_file: a/src/facenet_train_classifier.py
+  target_file: b/src/facenet_train_classifier.py
+patched_file_2:
+  add_line_no:
+  - - 38
+    - 'def memory_usage_psutil():
+
+      '
+  - - 39
+    - '    # return the memory usage in MB
+
+      '
+  - - 40
+    - '    import psutil
+
+      '
+  - - 41
+    - '    process = psutil.Process(os.getpid())
+
+      '
+  - - 42
+    - '    mem = process.memory_info()[0] / float(2 ** 20)
+
+      '
+  - - 43
+    - '    return mem
+
+      '
+  - - 44
+    - '
+
+      '
+  - - 57
+    - '        print(''Memory utilization (SetUpClass): %.3f MB'' % memory_usage_psutil())
+
+      '
+  - - 64
+    - "        \n"
+  - - 65
+    - '    def tearDown(self):
+
+      '
+  - - 66
+    - '        print(''Memory utilization (TearDown): %.3f MB'' % memory_usage_psutil())
+
+      '
+  - - 67
+    - '
+
+      '
+  - - 104
+    - '    # test_evaluate_on_lfw
+
+      '
+  - - 105
+    - "    \n"
+  - - 139
+    - " \n"
+  - - 156
+    - " \n"
+  - - 174
+    - " \n"
+  - - 181
+    - " \n"
+  - - 190
+    - " \n"
+  added: 19
+  del_line_no:
+  - - null
+    - '    @unittest.skip("Skip this test case for now")
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: test/train_test.py
+  removed: 6
+  source_file: a/test/train_test.py
+  target_file: b/test/train_test.py

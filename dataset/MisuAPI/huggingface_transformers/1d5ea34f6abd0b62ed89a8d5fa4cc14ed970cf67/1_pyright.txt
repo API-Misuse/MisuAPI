@@ -1,0 +1,20 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:24:6 - error: Import "tqdm.auto" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:26:6 - error: Import ".trainer_utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:27:6 - error: Import ".training_args" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:28:6 - error: Import ".utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:76:43 - error: Expression of type "None" cannot be assigned to declared type "List[Dict[str, float]]"
+    Type "None" cannot be assigned to type "List[Dict[str, float]]" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:436:31 - error: "update" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:446:33 - error: "close" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67/a/src/transformers/trainer_callback.py:456:31 - error: "close" is not a known member of "None" (reportOptionalMemberAccess)
+8 errors, 0 warnings, 0 infos 
+Completed in 1.503sec
+
+time cost(in seconds): 1.7115178108215332

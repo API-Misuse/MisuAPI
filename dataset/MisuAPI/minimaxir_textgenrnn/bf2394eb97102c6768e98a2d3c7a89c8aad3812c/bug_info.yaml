@@ -1,0 +1,49 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/minimaxir/textgenrnn/pull/105
+  title: 'unicode characters using python 3 '
+  body: "Enables unicode characters using python 3 and saving generated text directly\
+    \ to file. \r\n```def generate_to_file(self, destination_path, **kwargs):``` function\r\
+    \n\r\nRelated to #80 "
+issue_1:
+  html_url: https://github.com/minimaxir/textgenrnn/pull/165
+  title: Migrate to Tensorflow Keras to support TF2.1
+  body: This will use native Tensorflow Keras and supports Tensorflow 2.1
+sha: bf2394eb97102c6768e98a2d3c7a89c8aad3812c
+message: 'Fixes generate_to_file using unicode characters
+
+
+  Fixes generate_to_file using unicode characters by adding encoding="utf-8" in the
+  open command.'
+commit_log: "commit bf2394eb97102c6768e98a2d3c7a89c8aad3812c\nAuthor: Bruno Afonso\
+  \ <bafonso@gmail.com>\nDate:   Thu Jan 31 16:43:24 2019 -0500\n\n    Fixes generate_to_file\
+  \ using unicode characters\n    \n    Fixes generate_to_file using unicode characters\
+  \ by adding encoding=\"utf-8\" in the open command."
+contained_keywords:
+- fixes
+commit_time: 2019-01-31 16:43:24 -0500
+commit_author: Bruno Afonso
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 343
+    - '        with open(destination_path, ''w'', encoding="utf-8") as f:
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        with open(destination_path, ''w'') as f:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: textgenrnn/textgenrnn.py
+  removed: 1
+  source_file: a/textgenrnn/textgenrnn.py
+  target_file: b/textgenrnn/textgenrnn.py

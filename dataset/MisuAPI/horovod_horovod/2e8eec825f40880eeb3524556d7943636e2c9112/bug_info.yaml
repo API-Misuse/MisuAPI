@@ -1,0 +1,49 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/horovod/horovod/pull/1721
+  title: 'Add userguide for AdaSum '
+  body: "This PR adds a userguide for using Adasum. \r\nThis userguide introduces\
+    \ the algorithm and has instructions on using Adasum with different hardware \r\
+    \n and configurations.\r\nThis also includes a small example optimization problem\
+    \ to better understand the difference between Averaging and Adasum, helping in\
+    \ understanding the benefits of the algorithm.  "
+issue_1:
+  html_url: https://github.com/horovod/horovod/pull/1698
+  title: Fix tests_required in setup.py
+  body: ''
+sha: 2e8eec825f40880eeb3524556d7943636e2c9112
+message: 'Fix tests_required in setup.py (#1698)
+
+
+  Signed-off-by: Enrico Minack <github@enrico.minack.dev>'
+commit_log: "commit 2e8eec825f40880eeb3524556d7943636e2c9112\nAuthor: Enrico Minack\
+  \ <github@enrico.minack.dev>\nDate:   Wed Mar 11 22:32:15 2020 +0100\n\n    Fix\
+  \ tests_required in setup.py (#1698)\n    \n    Signed-off-by: Enrico Minack <github@enrico.minack.dev>"
+contained_keywords:
+- fix
+commit_time: 2020-03-11 22:32:15 +0100
+commit_author: Enrico Minack
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 1540
+    - '      tests_require=test_require_list,
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '      test_requires=test_require_list,
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: setup.py
+  removed: 1
+  source_file: a/setup.py
+  target_file: b/setup.py

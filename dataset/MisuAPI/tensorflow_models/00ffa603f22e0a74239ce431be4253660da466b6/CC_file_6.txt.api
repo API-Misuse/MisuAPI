@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[4661,4692]@ tf.concat(axis=grads, values=0) @TO@ @type:atom_expr@ @[4661,4692]@ tf.concat(axis=0, values=grads)
+

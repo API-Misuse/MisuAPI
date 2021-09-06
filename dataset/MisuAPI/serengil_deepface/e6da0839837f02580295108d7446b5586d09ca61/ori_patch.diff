@@ -1,0 +1,39 @@
+commit e6da0839837f02580295108d7446b5586d09ca61
+Author: Şefik Serangil <sefik.serengil@softtech.com.tr>
+Date:   Sun Sep 27 09:11:05 2020 +0300
+
+    issue 100 - if detected face has 0 in some dimension
+
+diff --git a/deepface/commons/functions.py b/deepface/commons/functions.py
+index e1fa305..df535d7 100644
+--- a/deepface/commons/functions.py
++++ b/deepface/commons/functions.py
+@@ -450,16 +450,23 @@ def preprocess_face(img, target_size=(224, 224), grayscale = False, enforce_dete
+ 	
+ 	#img might be path, base64 or numpy array. Convert it to numpy whatever it is.
+ 	img = load_image(img)
+-	
+-	#--------------------------
+-	
+-	#we will align base image instead of detected face not have black pixels
++	base_img = img.copy()
+ 	
+ 	img = detect_face(img = img, detector_backend = detector_backend, grayscale = grayscale, enforce_detection = enforce_detection)
+-	img = align_face(img = img, detector_backend = detector_backend)
+ 	
+ 	#--------------------------
+ 	
++	if img.shape[0] > 0 and img.shape[1] > 0:
++		img = align_face(img = img, detector_backend = detector_backend)
++	else:
++		
++		if enforce_detection == True:
++			raise ValueError("Detected face shape is ", img.shape,". Consider to set enforce_detection argument to False.")
++		else: #restore base image 
++			img = base_img.copy()
++		
++	#--------------------------
++	
+ 	#post-processing
+ 	if grayscale == True:
+ 		img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

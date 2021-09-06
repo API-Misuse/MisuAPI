@@ -1,0 +1,53 @@
+commit a9d4a7c8699acbd72bf76cebdb2bbc94d9ed00c6
+Author: tinally <tinally@google.com>
+Date:   Thu Aug 13 18:28:02 2020 -0400
+
+    small fix
+
+diff --git a/tfx/components/transform/component.py b/tfx/components/transform/component.py
+index 94f12343..1487bb1e 100644
+--- a/tfx/components/transform/component.py
++++ b/tfx/components/transform/component.py
+@@ -83,8 +83,9 @@ class Transform(base_component.BaseComponent):
+ 
+     Args:
+       examples: A Channel of type `standard_artifacts.Examples` (required).
+-        This should contain the two splits 'train' and 'eval' if custom splits
+-        is not specified in splits_config.
++        This should contain custom splits specified in splits_config. If
++        custom split is not provided, this should contain two splits 'train'
++        and 'eval'.
+       schema: A Channel of type `standard_artifacts.Schema`. This should
+         contain a single schema artifact.
+       module_file: The file path to a python module file, from which the
+diff --git a/tfx/components/transform/executor.py b/tfx/components/transform/executor.py
+index 51af4f2a..98de3a92 100644
+--- a/tfx/components/transform/executor.py
++++ b/tfx/components/transform/executor.py
+@@ -297,8 +297,9 @@ class Executor(base_executor.BaseExecutor):
+         - transform_output: Output of 'tf.Transform', which includes an exported
+           Tensorflow graph suitable for both training and serving;
+         - transformed_examples: Materialized transformed examples, which
+-          includes both 'train' and 'eval' splits if custom splits is not
+-          specified in splits_config.
++          includes transform_splits as specified in splits_config. If custom
++          split is not provided, this should include both 'train' and 'eval'
++          splits.
+       exec_properties: A dict of execution properties, including:
+         - module_file: The file path to a python module file, from which the
+           'preprocessing_fn' function will be loaded.
+diff --git a/tfx/components/transform/executor_test.py b/tfx/components/transform/executor_test.py
+index 58b30e84..10a19dfd 100644
+--- a/tfx/components/transform/executor_test.py
++++ b/tfx/components/transform/executor_test.py
+@@ -124,8 +124,8 @@ class ExecutorTest(tft_unit.TransformTestCase):
+               tf.io.gfile.listdir(
+                   os.path.join(self._transformed_examples.uri, 'eval'))))
+       self.assertGreater(
+-        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'train')),
+-        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'eval')))
++        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'train')).size(),
++        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, 'eval')).size())
+     else:
+       # there should not be transformed data under _output_data_dir.
+       self.assertEqual(['transformed_graph'],

@@ -1,0 +1,7 @@
+UPD @type:simple_stmt@ @[4995,5023]@ g = Reader(f).stream_data() @TO@ @type:simple_stmt@ @[4995,5037]@ g = Reader(f).stream_data(threaded=False)
+---UPD @type:expr_stmt@ @[4995,5022]@ g = Reader(f).stream_data() @TO@ @type:expr_stmt@ @[4995,5036]@ g = Reader(f).stream_data(threaded=False)
+------UPD @type:atom_expr@ @[4999,5022]@ Reader(f).stream_data() @TO@ @type:atom_expr@ @[4999,5036]@ Reader(f).stream_data(threaded=False)
+---------UPD @type:trailer@ @[5020,5022]@ () @TO@ @type:trailer@ @[5020,5036]@ (threaded=False)
+------------INS @type:argument@ @[5021,5035]@ threaded=False @TO@ @type:trailer@ @[5020,5022]@ ()
+
+

@@ -1,0 +1,11 @@
+INS @type:if_stmt@ @[10473,10587]@ if exec_properties.get('splits_config'):
+      jso <text_longer_than_50> @TO@ @type:suite@ @[8566,13888]@ """TensorFlow Transform executor entrypoint.
+
+     <text_longer_than_50>
+---INS @type:suite@ @[10513,10587]@ json_format.Parse(exec_properties['splits_config'] <text_longer_than_50> @TO@ @type:if_stmt@ @[10473,10587]@ if exec_properties.get('splits_config'):
+      jso <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[10473,10540]@ json_format.Parse(exec_properties['splits_config'] <text_longer_than_50> @TO@ @type:suite@ @[10513,10587]@ json_format.Parse(exec_properties['splits_config'] <text_longer_than_50>
+
+

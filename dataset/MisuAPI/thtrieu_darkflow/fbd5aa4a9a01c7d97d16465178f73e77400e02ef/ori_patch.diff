@@ -1,0 +1,72 @@
+commit fbd5aa4a9a01c7d97d16465178f73e77400e02ef
+Author: thtrieu <thtrieu@apcs.vn>
+Date:   Mon Nov 28 22:25:40 2016 +0700
+
+    fix loss
+
+diff --git a/configs/process.py b/configs/process.py
+index bf916fa..77e5461 100644
+--- a/configs/process.py
++++ b/configs/process.py
+@@ -43,9 +43,12 @@ def parser(model):
+ 				layer[line.split('=')[0]] = i
+ 			except:
+ 				if line == str(): continue
+-				key = _parse(line, 0)
+-				val = _parse(line, 1)
+-				layer[key] = val
++				try: #
++					key = _parse(line, 0)
++					val = _parse(line, 1)
++					layer[key] = val
++				except:
++					pass
+ 
+ 	meta = layer # last layer contains meta info
+ 	meta['model'] = model
+@@ -126,7 +129,7 @@ def cfg_yielder(model, binary):
+ 	flat = False # flag for 1st dense layer
+ 	conv = '.conv.' in weightf
+ 	for i, d in enumerate(layers):
+-
++		
+ 		if conv and i > last_convo: break
+ 		if d['type'] == '[convolutional]':
+ 			mult = (d['size'] == 3) 
+diff --git a/tfnet/tfop.py b/tfnet/tfop.py
+index d71cc7b..daf5303 100644
+--- a/tfnet/tfop.py
++++ b/tfnet/tfop.py
+@@ -45,6 +45,7 @@ class tfop(object):
+ 			if val is None: # darknet is partially loaded
+ 				args = [self.lay.wshape[var], 0., 1e-2]
+ 				val = tf.truncated_normal(*args)
++
+ 			self.lay.w[var] = tf.Variable(val, name = sig)
+ 		
+ 		for ph in self.lay.h: # placeholders
+@@ -82,8 +83,6 @@ class convolutional(tfop):
+ 		self.out = tf.nn.bias_add(temp, self.lay.w['biases'])
+ 
+ 	def batchnorm(self, l, x): 
+-		#return x
+-
+ 		return tf.nn.batch_normalization(
+ 			x = x, mean = l.w['mean'], offset = None, 
+ 			variance = l.w['var'], scale = l.w['scale'], 
+diff --git a/tfnet/yolo/train.py b/tfnet/yolo/train.py
+index 0434b02..9202077 100644
+--- a/tfnet/yolo/train.py
++++ b/tfnet/yolo/train.py
+@@ -208,9 +208,9 @@ def loss(net):
+     confs = tf.mul(best_box, _confs)
+ 
+     # take care of the weight terms
+-    weight_con = snoob*(1.-best_box) + sconf*best_box
++    weight_con = snoob * (1. - confs) + sconf * confs
+     conid = tf.mul(_conid, weight_con)
+-    weight_coo = tf.concat(3, 4 * [tf.expand_dims(best_box, -1)])
++    weight_coo = tf.concat(3, 4 * [tf.expand_dims(confs, -1)])
+     cooid = tf.mul(_cooid, scoor * weight_coo)
+     proid = sprob * _proid
+ 

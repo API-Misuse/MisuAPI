@@ -1,0 +1,25 @@
+commit 8b3503054f70353ab91a2b9c43fce5bb10e6b4af
+Author: Anirudh <anirudhdagar6@gmail.com>
+Date:   Sat Jul 25 13:38:51 2020 +0530
+
+    [PyTorch] Fix evaluate_loss (#1245)
+    
+    * [PyTorch] Bug fix eval_loss; reshape is required in chapters later
+    
+    * [PyTorch] update
+
+diff --git a/d2l/torch.py b/d2l/torch.py
+index f746572a..09818458 100644
+--- a/d2l/torch.py
++++ b/d2l/torch.py
+@@ -347,7 +347,9 @@ def evaluate_loss(net, data_iter, loss):  #@save
+     """Evaluate the loss of a model on the given dataset."""
+     metric = d2l.Accumulator(2)  # Sum of losses, no. of examples
+     for X, y in data_iter:
+-        l = loss(net(X), y)
++        out = net(X)
++        y = d2l.reshape(y, out.shape)
++        l = loss(out, y)
+         metric.add(d2l.reduce_sum(l), d2l.size(l))
+     return metric[0] / metric[1]
+ 

@@ -1,0 +1,32 @@
+INS @type:simple_stmt@ @[8444,8475]@ coord = tf.train.Coordinator() @TO@ @type:suite@ @[3165,10036]@ tf.set_random_seed(args.seed)
+        global_step  <text_longer_than_50>
+
+INS @type:simple_stmt@ @[8444,8475]@ coord = tf.train.Coordinator() @TO@ @type:suite@ @[3165,10036]@ tf.set_random_seed(args.seed)
+        global_step  <text_longer_than_50>
+
+INS @type:expr_stmt@ @[8444,8474]@ coord = tf.train.Coordinator() @TO@ @type:simple_stmt@ @[8444,8475]@ coord = tf.train.Coordinator()
+
+INS @type:expr_stmt@ @[8444,8474]@ coord = tf.train.Coordinator() @TO@ @type:simple_stmt@ @[8444,8475]@ coord = tf.train.Coordinator()
+
+INS @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator() @TO@ @type:expr_stmt@ @[8444,8474]@ coord = tf.train.Coordinator()
+
+INS @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator() @TO@ @type:expr_stmt@ @[8444,8474]@ coord = tf.train.Coordinator()
+
+INS @type:trailer@ @[8460,8472]@ .Coordinator @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+
+UPD @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess) @TO@ @type:atom_expr@ @[8483,8535]@ tf.train.start_queue_runners(coord=coord, sess=ses <text_longer_than_50>
+
+INS @type:name@ @[8483,8485]@ tf @TO@ @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess)
+
+INS @type:trailer@ @[8485,8491]@ .train @TO@ @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess)
+
+INS @type:trailer@ @[8491,8511]@ .start_queue_runners @TO@ @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess)
+
+MOV @type:name@ @[8444,8446]@ tf @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+
+MOV @type:trailer@ @[8446,8452]@ .train @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+
+MOV @type:trailer@ @[8452,8472]@ .start_queue_runners @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+
+INS @type:simple_stmt@ @[10093,10106]@ sess.close() @TO@ @type:suite@ @[1690,10058]@ network = importlib.import_module(args.model_def,  <text_longer_than_50>
+

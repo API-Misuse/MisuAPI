@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[7449,8364]@ tf.train.MonitoredTrainingSession(master=task_spec <text_longer_than_50> @TO@ @type:atom_expr@ @[7444,8361]@ tf.train.MonitoredTrainingSession(master=task_spec <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7490,7506]@ task_spec.target @TO@ @type:atom_expr@ @[7485,7503]@ task_spec.target()
+
+INS @type:trailer@ @[7494,7501]@ .target @TO@ @type:atom_expr@ @[7490,7506]@ task_spec.target
+

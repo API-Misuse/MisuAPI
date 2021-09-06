@@ -1,0 +1,14 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/123a890d4e423b7ecdf10d56217dad216b7a35d7/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/123a890d4e423b7ecdf10d56217dad216b7a35d7/a/bentoml/service_env.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/123a890d4e423b7ecdf10d56217dad216b7a35d7/a/bentoml/service_env.py:26:6 - error: Import "ruamel.yaml" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/123a890d4e423b7ecdf10d56217dad216b7a35d7/a/bentoml/service_env.py:28:6 - error: Import "bentoml.configuration" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/bentoml_BentoML/123a890d4e423b7ecdf10d56217dad216b7a35d7/a/bentoml/service_env.py:29:6 - error: Import "bentoml.utils.pip_pkg" could not be resolved (reportMissingImports)
+3 errors, 0 warnings, 0 infos 
+Completed in 1.586sec
+
+time cost(in seconds): 1.739743947982788

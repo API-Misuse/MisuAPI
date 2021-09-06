@@ -1,0 +1,3 @@
+location: a/src/facenet_train.py:172
+patch_location: b/src/facenet_train.py:172
+api: tf.Session

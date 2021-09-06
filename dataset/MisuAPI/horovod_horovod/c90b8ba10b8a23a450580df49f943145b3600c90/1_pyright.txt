@@ -1,0 +1,20 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/horovod/run/gloo_run.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/horovod/run/gloo_run.py:32:6 - error: Import "horovod.run.common.util" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/horovod/run/gloo_run.py:33:6 - error: Import "horovod.run.rendezvous.http_server" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/horovod/run/gloo_run.py:34:6 - error: Import "horovod.run.util" could not be resolved (reportMissingImports)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/test/test_common.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/test/test_common.py:24:6 - error: Import "horovod.common.util" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/test/test_common.py:52:20 - error: Import "horovod.tensorflow" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/test/test_common.py:61:20 - error: Import "horovod.torch" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/test/test_common.py:70:20 - error: Import "horovod.mxnet" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/c90b8ba10b8a23a450580df49f943145b3600c90/a/test/test_common.py:46:13 - error: Argument missing for parameter "second" (reportGeneralTypeIssues)
+8 errors, 0 warnings, 0 infos 
+Completed in 1.797sec
+
+time cost(in seconds): 1.9881386756896973

@@ -1,0 +1,21 @@
+commit 4c7c7f7e530ee8f5b8d9b80b38ff4dbf8e4176fe
+Author: MaCan <macanv1@hotmail.com>
+Date:   Tue Dec 18 10:30:52 2018 +0800
+
+    Update bert_lstm_ner.py
+    
+    predict result save file bug
+
+diff --git a/bert_lstm_ner.py b/bert_lstm_ner.py
+index 78c50f9..43942b7 100644
+--- a/bert_lstm_ner.py
++++ b/bert_lstm_ner.py
+@@ -799,7 +799,7 @@ def main(_):
+         from conlleval import return_report
+         eval_result = return_report(output_predict_file)
+         print(''.join(eval_result))
+-        with codecs.open(os.path.join(FLAGS.output_dir, 'entity_level_predicted_result.txt')) as fd:
++        with codecs.open(os.path.join(FLAGS.output_dir, 'entity_level_predicted_result.txt'), 'a', encoding='utf-8') as fd:
+             fd.write(''.join(eval_result))
+ 
+ 

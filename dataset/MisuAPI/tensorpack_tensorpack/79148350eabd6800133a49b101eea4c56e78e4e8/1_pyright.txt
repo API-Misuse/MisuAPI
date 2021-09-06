@@ -1,0 +1,16 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/79148350eabd6800133a49b101eea4c56e78e4e8/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/79148350eabd6800133a49b101eea4c56e78e4e8/a/tensorpack/predict/multigpu.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/79148350eabd6800133a49b101eea4c56e78e4e8/a/tensorpack/predict/multigpu.py:6:6 - error: Import "..utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/79148350eabd6800133a49b101eea4c56e78e4e8/a/tensorpack/predict/multigpu.py:7:6 - error: Import "..graph_builder.model_desc" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/79148350eabd6800133a49b101eea4c56e78e4e8/a/tensorpack/predict/multigpu.py:8:6 - error: Import "..input_source" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/79148350eabd6800133a49b101eea4c56e78e4e8/a/tensorpack/predict/multigpu.py:9:6 - error: Import "..tfutils.tower" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/79148350eabd6800133a49b101eea4c56e78e4e8/a/tensorpack/predict/multigpu.py:10:6 - error: Import ".base" could not be resolved (reportMissingImports)
+5 errors, 0 warnings, 0 infos 
+Completed in 0.846sec
+
+time cost(in seconds): 1.0195002555847168

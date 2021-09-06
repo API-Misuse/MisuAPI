@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[2563,2597]@ requests.get(uri, params, timeout) @TO@ @type:atom_expr@ @[2563,2612]@ requests.get(uri, params=params, timeout=timeout)
+

@@ -1,0 +1,19 @@
+commit c23c1d94b490dd1f9fc0c08838801c3666e7bc4c
+Author: AbhinavTuli <abhinav.tuli99@gmail.com>
+Date:   Fri Dec 25 00:36:05 2020 +0530
+
+    fixing from_tensorflow
+
+diff --git a/hub/api/dataset.py b/hub/api/dataset.py
+index b3786cb..33403e0 100644
+--- a/hub/api/dataset.py
++++ b/hub/api/dataset.py
+@@ -757,7 +757,7 @@ class Dataset:
+ 
+         def TensorSpec_to_hub(tf_dt):
+             dt = tf_dt.dtype.name if tf_dt.dtype.name != "string" else "object"
+-            shape = tf_dt.shape if tf_dt.shape.rank is not None else (None,)
++            shape = tuple(tf_dt.shape) if tf_dt.shape.rank is not None else (None,)
+             return Tensor(shape=shape, dtype=dt)
+ 
+         def dict_to_hub(tf_dt):

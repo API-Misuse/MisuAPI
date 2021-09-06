@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[7905,8270]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[7905,8401]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50>
+

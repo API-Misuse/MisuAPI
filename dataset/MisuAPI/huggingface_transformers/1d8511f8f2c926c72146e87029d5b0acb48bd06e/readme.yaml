@@ -1,0 +1,33 @@
+sha: 1d8511f8f2c926c72146e87029d5b0acb48bd06e
+message: FIX small bugs in `run_classifier_pytorch.py`
+commit_log: "commit 1d8511f8f2c926c72146e87029d5b0acb48bd06e\nAuthor: VictorSanh <victorsanh@gmail.com>\n\
+  Date:   Fri Nov 2 01:12:52 2018 -0400\n\n    FIX small bugs in `run_classifier_pytorch.py`"
+contained_keywords:
+- bugs
+- fix
+commit_time: 2018-11-02 01:12:52 -0400
+commit_author: VictorSanh
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: run_classifier_pytorch.py
+  source_file: a/run_classifier_pytorch.py
+  target_file: b/run_classifier_pytorch.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 515
+    - '        for epoch in range(int(args.num_train_epochs)):
+
+      '
+  del_line_no:
+  - - null
+    - '        for epoch in range(args.num_train_epochs):
+
+      '

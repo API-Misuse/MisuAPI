@@ -1,0 +1,10 @@
+UPD @type:simple_stmt@ @[1394,1439]@ times = np.linspace(0.0, years, 365 * years) @TO@ @type:simple_stmt@ @[1394,1444]@ times = np.linspace(0.0, years, int(365 * years))
+---UPD @type:expr_stmt@ @[1394,1438]@ times = np.linspace(0.0, years, 365 * years) @TO@ @type:expr_stmt@ @[1394,1443]@ times = np.linspace(0.0, years, int(365 * years))
+------UPD @type:atom_expr@ @[1402,1438]@ np.linspace(0.0, years, 365 * years) @TO@ @type:atom_expr@ @[1402,1443]@ np.linspace(0.0, years, int(365 * years))
+---------UPD @type:trailer@ @[1413,1438]@ (0.0, years, 365 * years) @TO@ @type:trailer@ @[1413,1443]@ (0.0, years, int(365 * years))
+------------UPD @type:arglist@ @[1414,1437]@ 0.0, years, 365 * years @TO@ @type:arglist@ @[1414,1442]@ 0.0, years, int(365 * years)
+---------------INS @type:atom_expr@ @[1426,1442]@ int(365 * years) @TO@ @type:arglist@ @[1414,1437]@ 0.0, years, 365 * years
+------------------INS @type:trailer@ @[1429,1442]@ (365 * years) @TO@ @type:atom_expr@ @[1426,1442]@ int(365 * years)
+---------------MOV @type:term@ @[1426,1437]@ 365 * years @TO@ @type:trailer@ @[1429,1442]@ (365 * years)
+
+

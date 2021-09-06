@@ -1,0 +1,36 @@
+sha: 2e8eec825f40880eeb3524556d7943636e2c9112
+message: 'Fix tests_required in setup.py (#1698)
+
+
+  Signed-off-by: Enrico Minack <github@enrico.minack.dev>'
+commit_log: "commit 2e8eec825f40880eeb3524556d7943636e2c9112\nAuthor: Enrico Minack\
+  \ <github@enrico.minack.dev>\nDate:   Wed Mar 11 22:32:15 2020 +0100\n\n    Fix\
+  \ tests_required in setup.py (#1698)\n    \n    Signed-off-by: Enrico Minack <github@enrico.minack.dev>"
+contained_keywords:
+- fix
+commit_time: 2020-03-11 22:32:15 +0100
+commit_author: Enrico Minack
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: setup.py
+  source_file: a/setup.py
+  target_file: b/setup.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 1540
+    - '      tests_require=test_require_list,
+
+      '
+  del_line_no:
+  - - null
+    - '      test_requires=test_require_list,
+
+      '

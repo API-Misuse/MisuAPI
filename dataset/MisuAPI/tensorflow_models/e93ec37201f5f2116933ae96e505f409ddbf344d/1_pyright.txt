@@ -1,0 +1,16 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/e93ec37201f5f2116933ae96e505f409ddbf344d/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/e93ec37201f5f2116933ae96e505f409ddbf344d/a/tutorials/image/mnist/convolutional.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/e93ec37201f5f2116933ae96e505f409ddbf344d/a/tutorials/image/mnist/convolutional.py:33:6 - warning: Import "six.moves" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/e93ec37201f5f2116933ae96e505f409ddbf344d/a/tutorials/image/mnist/convolutional.py:34:6 - warning: Import "six.moves" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/e93ec37201f5f2116933ae96e505f409ddbf344d/a/tutorials/image/mnist/convolutional.py:56:12 - error: "use_fp16" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/e93ec37201f5f2116933ae96e505f409ddbf344d/a/tutorials/image/mnist/convolutional.py:122:12 - error: "self_test" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/e93ec37201f5f2116933ae96e505f409ddbf344d/a/tutorials/image/mnist/convolutional.py:319:14 - error: "self_test" is not a known member of "None" (reportOptionalMemberAccess)
+3 errors, 2 warnings, 0 infos 
+Completed in 1.695sec
+
+time cost(in seconds): 1.8967292308807373

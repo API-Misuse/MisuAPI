@@ -1,0 +1,42 @@
+INS @type:if_stmt@ @[2944,3092]@ if self.FLAGS.summary is not None:
+			self.summary <text_longer_than_50> @TO@ @type:suite@ @[2486,3371]@ cfg = dict({
+			'allow_soft_placement': False,
+			 <text_longer_than_50>
+
+INS @type:if_stmt@ @[2944,3092]@ if self.FLAGS.summary is not None:
+			self.summary <text_longer_than_50> @TO@ @type:suite@ @[2486,3371]@ cfg = dict({
+			'allow_soft_placement': False,
+			 <text_longer_than_50>
+
+INS @type:suite@ @[2978,3092]@ self.summary_op = tf.summary.merge_all()
+			self.w <text_longer_than_50> @TO@ @type:if_stmt@ @[2944,3092]@ if self.FLAGS.summary is not None:
+			self.summary <text_longer_than_50>
+
+INS @type:suite@ @[2978,3092]@ self.summary_op = tf.summary.merge_all()
+			self.w <text_longer_than_50> @TO@ @type:if_stmt@ @[2944,3092]@ if self.FLAGS.summary is not None:
+			self.summary <text_longer_than_50>
+
+INS @type:if_stmt@ @[3375,3452]@ if self.FLAGS.summary is not None:
+			self.writer. <text_longer_than_50> @TO@ @type:suite@ @[2486,3371]@ cfg = dict({
+			'allow_soft_placement': False,
+			 <text_longer_than_50>
+
+INS @type:if_stmt@ @[3375,3452]@ if self.FLAGS.summary is not None:
+			self.writer. <text_longer_than_50> @TO@ @type:suite@ @[2486,3371]@ cfg = dict({
+			'allow_soft_placement': False,
+			 <text_longer_than_50>
+
+INS @type:suite@ @[3409,3452]@ self.writer.add_graph(self.sess.graph) @TO@ @type:if_stmt@ @[3375,3452]@ if self.FLAGS.summary is not None:
+			self.writer. <text_longer_than_50>
+
+INS @type:suite@ @[3409,3452]@ self.writer.add_graph(self.sess.graph) @TO@ @type:if_stmt@ @[3375,3452]@ if self.FLAGS.summary is not None:
+			self.writer. <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2942,2983]@ self.summary_op = tf.summary.merge_all() @TO@ @type:suite@ @[2978,3092]@ self.summary_op = tf.summary.merge_all()
+			self.w <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2985,3051]@ self.writer = tf.summary.FileWriter(self.FLAGS.sum <text_longer_than_50> @TO@ @type:suite@ @[2978,3092]@ self.summary_op = tf.summary.merge_all()
+			self.w <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3332,3371]@ self.writer.add_graph(self.sess.graph) @TO@ @type:suite@ @[3409,3452]@ self.writer.add_graph(self.sess.graph)
+

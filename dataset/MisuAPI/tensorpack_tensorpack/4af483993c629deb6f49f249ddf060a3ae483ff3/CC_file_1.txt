@@ -1,0 +1,34 @@
+UPD @type:for_stmt@ @[2111,2444]@ for k in range(size):
+            dt = data_holder <text_longer_than_50> @TO@ @type:for_stmt@ @[2111,2755]@ for k in range(size):
+            dt = data_holder <text_longer_than_50>
+---UPD @type:suite@ @[2132,2444]@ dt = data_holder[0][k]
+            if type(dt) in  <text_longer_than_50> @TO@ @type:suite@ @[2132,2755]@ dt = data_holder[0][k]
+            if type(dt) in  <text_longer_than_50>
+------INS @type:try_stmt@ @[2364,2755]@ try:
+                result.append(
+               <text_longer_than_50> @TO@ @type:suite@ @[2132,2444]@ dt = data_holder[0][k]
+            if type(dt) in  <text_longer_than_50>
+---------INS @type:suite@ @[2368,2469]@ result.append(
+                    np.array([x[k]  <text_longer_than_50> @TO@ @type:try_stmt@ @[2364,2755]@ try:
+                result.append(
+               <text_longer_than_50>
+------UPD @type:simple_stmt@ @[2364,2444]@ result.append(
+                np.array([x[k] for  <text_longer_than_50> @TO@ @type:simple_stmt@ @[2385,2469]@ result.append(
+                    np.array([x[k]  <text_longer_than_50>
+---------UPD @type:atom_expr@ @[2364,2443]@ result.append(
+                np.array([x[k] for  <text_longer_than_50> @TO@ @type:atom_expr@ @[2385,2468]@ result.append(
+                    np.array([x[k]  <text_longer_than_50>
+------------UPD @type:trailer@ @[2377,2443]@ (
+                np.array([x[k] for x in data_hol <text_longer_than_50> @TO@ @type:trailer@ @[2398,2468]@ (
+                    np.array([x[k] for x in data <text_longer_than_50>
+------MOV @type:simple_stmt@ @[2364,2444]@ result.append(
+                np.array([x[k] for  <text_longer_than_50> @TO@ @type:suite@ @[2368,2469]@ result.append(
+                    np.array([x[k]  <text_longer_than_50>
+---------UPD @type:atom_expr@ @[2364,2443]@ result.append(
+                np.array([x[k] for  <text_longer_than_50> @TO@ @type:atom_expr@ @[2385,2468]@ result.append(
+                    np.array([x[k]  <text_longer_than_50>
+------------UPD @type:trailer@ @[2377,2443]@ (
+                np.array([x[k] for x in data_hol <text_longer_than_50> @TO@ @type:trailer@ @[2398,2468]@ (
+                    np.array([x[k] for x in data <text_longer_than_50>
+
+

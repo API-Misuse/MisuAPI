@@ -1,0 +1,230 @@
+sha: ae72d77a8c5fb19a0920b71fa632a67e8eb38436
+message: 'Fix usage of HOROVOD_MIXED_INSTALL env var in tests. (#2151)
+
+
+  Signed-off-by: Josh Romero <joshr@nvidia.com>'
+commit_log: "commit ae72d77a8c5fb19a0920b71fa632a67e8eb38436\nAuthor: romerojosh <joshr@nvidia.com>\n\
+  Date:   Fri Jul 31 06:48:15 2020 -0700\n\n    Fix usage of HOROVOD_MIXED_INSTALL\
+  \ env var in tests. (#2151)\n    \n    Signed-off-by: Josh Romero <joshr@nvidia.com>"
+contained_keywords:
+- fix
+commit_time: 2020-07-31 06:48:15 -0700
+commit_author: romerojosh
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: test/test_mxnet.py
+  source_file: a/test/test_mxnet.py
+  target_file: b/test/test_mxnet.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 216
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  del_line_no:
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: test/test_tensorflow.py
+  source_file: a/test/test_tensorflow.py
+  target_file: b/test/test_tensorflow.py
+  added: 20
+  removed: 20
+  add_line_no:
+  - - 255
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 293
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 334
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 383
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 470
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 564
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 606
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 686
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 783
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 1150
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 1243
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 1262
+    - '            tensor = tf.ones([17] * dim) * rank
+
+      '
+  - - 1263
+    - '            root_tensor = tf.ones([17] * dim) * root_rank
+
+      '
+  - - 1264
+    - '            if dtype == tf.bool:
+
+      '
+  - - 1265
+    - '                tensor = tensor % 2
+
+      '
+  - - 1266
+    - '                root_tensor = root_tensor % 2
+
+      '
+  - - 1267
+    - '            tensor = tf.cast(tensor, dtype=dtype)
+
+      '
+  - - 1268
+    - '            root_tensor = tf.cast(root_tensor, dtype=dtype)
+
+      '
+  - - 1373
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  - - 1579
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  del_line_no:
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '                tensor = tf.ones([17] * dim) * rank
+
+      '
+  - - null
+    - '                root_tensor = tf.ones([17] * dim) * root_rank
+
+      '
+  - - null
+    - '                if dtype == tf.bool:
+
+      '
+  - - null
+    - '                    tensor = tensor % 2
+
+      '
+  - - null
+    - '                    root_tensor = root_tensor % 2
+
+      '
+  - - null
+    - '                tensor = tf.cast(tensor, dtype=dtype)
+
+      '
+  - - null
+    - '                root_tensor = tf.cast(root_tensor, dtype=dtype)
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: test/test_torch.py
+  source_file: a/test/test_torch.py
+  target_file: b/test/test_torch.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 390
+    - '        if int(os.environ.get(''HOROVOD_MIXED_INSTALL'', 0)):
+
+      '
+  del_line_no:
+  - - null
+    - '        if os.environ.get(''HOROVOD_MIXED_INSTALL''):
+
+      '

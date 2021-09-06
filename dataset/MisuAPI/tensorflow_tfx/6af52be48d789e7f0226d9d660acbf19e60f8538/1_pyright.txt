@@ -1,0 +1,14 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/6af52be48d789e7f0226d9d660acbf19e60f8538/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/6af52be48d789e7f0226d9d660acbf19e60f8538/a/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/6af52be48d789e7f0226d9d660acbf19e60f8538/a/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py:27:6 - error: Import "tfx.orchestration" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/6af52be48d789e7f0226d9d660acbf19e60f8538/a/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py:28:6 - error: Import "tfx.utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/6af52be48d789e7f0226d9d660acbf19e60f8538/a/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py:30:6 - error: Import "ml_metadata.proto" could not be resolved (reportMissingImports)
+3 errors, 0 warnings, 0 infos 
+Completed in 1.099sec
+
+time cost(in seconds): 1.325850248336792

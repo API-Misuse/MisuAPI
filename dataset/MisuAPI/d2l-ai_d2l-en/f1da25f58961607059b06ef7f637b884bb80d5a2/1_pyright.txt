@@ -1,0 +1,65 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:9:6 - error: Import "matplotlib" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:10:6 - error: Import "IPython" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:12:8 - error: Import "torch" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:13:8 - error: Import "torchvision" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:14:6 - error: Import "torch" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:15:6 - error: Import "torch.nn" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:16:6 - error: Import "torch.utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:17:6 - error: Import "torchvision" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:20:8 - error: Import "pandas" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:50:9 - error: Cannot access member "plt" for type "ModuleType"
+    Member "plt" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:76:34 - error: Cannot access member "plt" for type "ModuleType"
+    Member "plt" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:173:19 - error: Cannot access member "plt" for type "ModuleType"
+    Member "plt" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:277:13 - error: Cannot access member "use_svg_display" for type "ModuleType"
+    Member "use_svg_display" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:278:35 - error: Cannot access member "plt" for type "ModuleType"
+    Member "plt" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:282:40 - error: Cannot access member "set_axes" for type "ModuleType"
+    Member "set_axes" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:326:17 - error: Cannot access member "get_fashion_mnist_labels" for type "ModuleType"
+    Member "get_fashion_mnist_labels" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:326:42 - error: "y" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:327:17 - error: Cannot access member "get_fashion_mnist_labels" for type "ModuleType"
+    Member "get_fashion_mnist_labels" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:327:46 - error: "X" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:329:9 - error: Cannot access member "show_images" for type "ModuleType"
+    Member "show_images" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:329:21 - error: "X" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:335:18 - error: Cannot access member "Accumulator" for type "ModuleType"
+    Member "Accumulator" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:370:9 - error: "warnings" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:375:9 - error: "requests" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:387:9 - error: Cannot access member "mkdir_if_not_exist" for type "ModuleType"
+    Member "mkdir_if_not_exist" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:460:18 - error: Cannot access member "Accumulator" for type "ModuleType"
+    Member "Accumulator" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:463:24 - error: Cannot access member "accuracy" for type "ModuleType"
+    Member "accuracy" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:469:26 - error: Cannot access member "try_gpu" for type "ModuleType"
+    Member "try_gpu" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:479:20 - error: Cannot access member "Animator" for type "ModuleType"
+    Member "Animator" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:481:17 - error: Cannot access member "Timer" for type "ModuleType"
+    Member "Timer" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:483:22 - error: Cannot access member "Accumulator" for type "ModuleType"
+    Member "Accumulator" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:494:46 - error: Cannot access member "accuracy" for type "ModuleType"
+    Member "accuracy" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:503:9 - error: "train_loss" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:503:21 - error: "train_acc" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:503:32 - error: "test_acc" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/d2l-ai_d2l-en/f1da25f58961607059b06ef7f637b884bb80d5a2/a/d2l/torch.py:505:9 - error: "metric" is possibly unbound (reportUnboundVariable)
+36 errors, 0 warnings, 0 infos 
+Completed in 1.753sec
+
+time cost(in seconds): 2.044288158416748

@@ -1,0 +1,32 @@
+INS @type:if_stmt@ @[4633,4763]@ if not path.exists(_path_to_model):
+               <text_longer_than_50> @TO@ @type:suite@ @[4182,4999]@ nlp = SpacyInstance(model='en_core_web_sm',
+       <text_longer_than_50>
+
+INS @type:if_stmt@ @[4633,4763]@ if not path.exists(_path_to_model):
+               <text_longer_than_50> @TO@ @type:suite@ @[4182,4999]@ nlp = SpacyInstance(model='en_core_web_sm',
+       <text_longer_than_50>
+
+INS @type:suite@ @[4668,4763]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50> @TO@ @type:if_stmt@ @[4633,4763]@ if not path.exists(_path_to_model):
+               <text_longer_than_50>
+
+INS @type:suite@ @[4668,4763]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50> @TO@ @type:if_stmt@ @[4633,4763]@ if not path.exists(_path_to_model):
+               <text_longer_than_50>
+
+INS @type:if_stmt@ @[4848,4984]@ if not path.exists(_path_to_params):
+              <text_longer_than_50> @TO@ @type:suite@ @[4182,4999]@ nlp = SpacyInstance(model='en_core_web_sm',
+       <text_longer_than_50>
+
+INS @type:if_stmt@ @[4848,4984]@ if not path.exists(_path_to_params):
+              <text_longer_than_50> @TO@ @type:suite@ @[4182,4999]@ nlp = SpacyInstance(model='en_core_web_sm',
+       <text_longer_than_50>
+
+INS @type:suite@ @[4884,4984]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50> @TO@ @type:if_stmt@ @[4848,4984]@ if not path.exists(_path_to_params):
+              <text_longer_than_50>
+
+INS @type:suite@ @[4884,4984]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50> @TO@ @type:if_stmt@ @[4848,4984]@ if not path.exists(_path_to_params):
+              <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4633,4711]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50> @TO@ @type:suite@ @[4668,4763]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4796,4879]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50> @TO@ @type:suite@ @[4884,4984]@ download_unlicensed_file(nlp_chunker_url, chunker_ <text_longer_than_50>
+

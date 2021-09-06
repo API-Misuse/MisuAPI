@@ -1,0 +1,14 @@
+UPD @type:simple_stmt@ @[14,65]@ from typing import Any, Dict, NamedTuple, Optional @TO@ @type:simple_stmt@ @[14,78]@ from typing import Any, Dict, List, NamedTuple, Op <text_longer_than_50>
+---UPD @type:import_from@ @[14,64]@ from typing import Any, Dict, NamedTuple, Optional @TO@ @type:import_from@ @[14,77]@ from typing import Any, Dict, List, NamedTuple, Op <text_longer_than_50>
+------UPD @type:import_as_names@ @[33,64]@ Any, Dict, NamedTuple, Optional @TO@ @type:import_as_names@ @[33,77]@ Any, Dict, List, NamedTuple, Optional, Union
+---------MOV @type:name@ @[44,54]@ NamedTuple @TO@ @type:import_as_names@ @[33,64]@ Any, Dict, NamedTuple, Optional
+---------INS @type:name@ @[44,48]@ List @TO@ @type:import_as_names@ @[33,64]@ Any, Dict, NamedTuple, Optional
+---------INS @type:operator@ @[60,61]@ , @TO@ @type:import_as_names@ @[33,64]@ Any, Dict, NamedTuple, Optional
+---------INS @type:operator@ @[70,71]@ , @TO@ @type:import_as_names@ @[33,64]@ Any, Dict, NamedTuple, Optional
+---------INS @type:name@ @[72,77]@ Union @TO@ @type:import_as_names@ @[33,64]@ Any, Dict, NamedTuple, Optional
+
+
+INS @type:simple_stmt@ @[98,111]@ import torch @TO@ @type:file_input@ @[0,3797]@ import random
+from typing import Any, Dict, NamedT <text_longer_than_50>
+
+

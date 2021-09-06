@@ -1,0 +1,8 @@
+UPD @type:atom_expr@ @[7004,7170]@ tf.layers.Conv1D(filters=hparams.attention_filters <text_longer_than_50> @TO@ @type:atom_expr@ @[7004,7209]@ tf.layers.Conv1D(filters=hparams.attention_filters <text_longer_than_50>
+
+INS @type:argument@ @[7131,7170]@ bias_initializer=tf.zeros_initializer() @TO@ @type:arglist@ @[7021,7169]@ filters=hparams.attention_filters,
+			kernel_size= <text_longer_than_50>
+
+INS @type:operator@ @[7170,7171]@ , @TO@ @type:arglist@ @[7021,7169]@ filters=hparams.attention_filters,
+			kernel_size= <text_longer_than_50>
+

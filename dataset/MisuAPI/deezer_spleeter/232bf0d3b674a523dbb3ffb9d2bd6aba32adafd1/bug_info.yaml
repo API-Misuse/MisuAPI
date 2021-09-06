@@ -1,0 +1,95 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/deezer/spleeter/pull/529
+  title: Spleeter 2.1.0
+  body: "Mostly code cleaning and transition to modern Python, including:\r\n\r\n\
+    - [x] Python type annotations\r\n- [x] Docstring refactor\r\n- [X] FFMpeg time\
+    \ formatting fix\r\n- [X] Switch from `requests` to `httpx` with _HTTP/2_ support\
+    \ for model downloading\r\n- [x] Switch from `argparse` to `typer`\r\n- [x] Various\
+    \ code design clean up\r\n"
+sha: 232bf0d3b674a523dbb3ffb9d2bd6aba32adafd1
+message: "\U0001F41B  fix AUTO backend support"
+commit_log: "commit 232bf0d3b674a523dbb3ffb9d2bd6aba32adafd1\nAuthor: Faylixe <felix.voituret@gmail.com>\n\
+  Date:   Tue Dec 8 12:48:15 2020 +0100\n\n    \U0001F41B  fix AUTO backend support"
+contained_keywords:
+- fix
+commit_time: 2020-12-08 12:48:15 +0100
+commit_author: Faylixe
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  add_line_no:
+  - - 40
+    - '""" CLI application. """
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '""" """
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: spleeter/__main__.py
+  removed: 1
+  source_file: a/spleeter/__main__.py
+  target_file: b/spleeter/__main__.py
+patched_file_1:
+  add_line_no:
+  - - 336
+    - '        if backend == STFTBackend.AUTO:
+
+      '
+  - - 337
+    - '            if len(tf.config.list_physical_devices(''GPU'')):
+
+      '
+  - - 338
+    - '                backend = STFTBackend.TENSORFLOW
+
+      '
+  - - 339
+    - '            else:
+
+      '
+  - - 340
+    - '                backend = STFTBackend.LIBROSA
+
+      '
+  added: 5
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: spleeter/separator.py
+  removed: 0
+  source_file: a/spleeter/separator.py
+  target_file: b/spleeter/separator.py
+patched_file_2:
+  add_line_no:
+  - - 96
+    - '        with open(''useless_config.json'', ''w'') as stream:
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        with open(''useless_config.json'') as stream:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tests/test_train.py
+  removed: 1
+  source_file: a/tests/test_train.py
+  target_file: b/tests/test_train.py

@@ -1,0 +1,22 @@
+INS @type:if_stmt@ @[2457,2704]@ if target_image is not None or os.path.exists(
+    <text_longer_than_50> @TO@ @type:suite@ @[2082,2492]@ target_image = None
+      skaffold_cmd = None
+     <text_longer_than_50>
+
+INS @type:if_stmt@ @[2457,2704]@ if target_image is not None or os.path.exists(
+    <text_longer_than_50> @TO@ @type:suite@ @[2082,2492]@ target_image = None
+      skaffold_cmd = None
+     <text_longer_than_50>
+
+INS @type:suite@ @[2560,2704]@ target_image = self._build_pipeline_image(target_i <text_longer_than_50> @TO@ @type:if_stmt@ @[2457,2704]@ if target_image is not None or os.path.exists(
+    <text_longer_than_50>
+
+INS @type:suite@ @[2560,2704]@ target_image = self._build_pipeline_image(target_i <text_longer_than_50> @TO@ @type:if_stmt@ @[2457,2704]@ if target_image is not None or os.path.exists(
+    <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2359,2429]@ target_image = self._build_pipeline_image(target_i <text_longer_than_50> @TO@ @type:suite@ @[2560,2704]@ target_image = self._build_pipeline_image(target_i <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2435,2492]@ os.environ[labels.KUBEFLOW_TFX_IMAGE_ENV] = target <text_longer_than_50> @TO@ @type:suite@ @[2560,2704]@ target_image = self._build_pipeline_image(target_i <text_longer_than_50>
+
+INS @type:simple_stmt@ @[2829,2835]@ raise @TO@ @type:suite@ @[2561,2611]@ click.echo('No container image is built.')
+

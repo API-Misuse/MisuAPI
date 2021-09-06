@@ -1,0 +1,9 @@
+UPD @type:simple_stmt@ @[136,212]@ loss = tf.nn.softmax_cross_entropy_with_logits(log <text_longer_than_50> @TO@ @type:simple_stmt@ @[136,212]@ loss = tf.nn.softmax_cross_entropy_with_logits(log <text_longer_than_50>
+---UPD @type:expr_stmt@ @[136,211]@ loss = tf.nn.softmax_cross_entropy_with_logits(log <text_longer_than_50> @TO@ @type:expr_stmt@ @[136,211]@ loss = tf.nn.softmax_cross_entropy_with_logits(log <text_longer_than_50>
+------UPD @type:atom_expr@ @[143,211]@ tf.nn.softmax_cross_entropy_with_logits(logits=pre <text_longer_than_50> @TO@ @type:atom_expr@ @[143,211]@ tf.nn.softmax_cross_entropy_with_logits(logits=pre <text_longer_than_50>
+---------UPD @type:trailer@ @[182,211]@ (logits=preds, lables=labels) @TO@ @type:trailer@ @[182,211]@ (logits=preds, labels=labels)
+------------UPD @type:arglist@ @[183,210]@ logits=preds, lables=labels @TO@ @type:arglist@ @[183,210]@ logits=preds, labels=labels
+---------------UPD @type:argument@ @[197,210]@ lables=labels @TO@ @type:argument@ @[197,210]@ labels=labels
+------------------UPD @type:name@ @[197,203]@ lables @TO@ @type:name@ @[197,203]@ labels
+
+

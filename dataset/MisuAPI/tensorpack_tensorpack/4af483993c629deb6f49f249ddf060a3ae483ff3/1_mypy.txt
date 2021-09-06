@@ -1,0 +1,4 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/4af483993c629deb6f49f249ddf060a3ae483ff3/a/tensorpack/utils/rect.py:104: error: Missing parentheses in call to 'print'. Did you mean print(img)?
+Found 1 error in 1 file (errors prevented further checking)
+
+time cost(in seconds): 0.24784183502197266

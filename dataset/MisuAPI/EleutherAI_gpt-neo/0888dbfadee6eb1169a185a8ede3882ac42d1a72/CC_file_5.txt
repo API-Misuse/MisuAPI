@@ -1,0 +1,6 @@
+INS @type:simple_stmt@ @[339,380]@ from sample import sample_autoregressive @TO@ @type:file_input@ @[0,2709]@ import pytest
+import traceback
+import logging
+from <text_longer_than_50>
+
+

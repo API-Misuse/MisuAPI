@@ -1,0 +1,13 @@
+INS @type:simple_stmt@ @[3413,3494]@ return re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0 <text_longer_than_50> @TO@ @type:suite@ @[3408,3494]@ return re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0 <text_longer_than_50>
+---INS @type:return_stmt@ @[3413,3493]@ return re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0 <text_longer_than_50> @TO@ @type:simple_stmt@ @[3413,3494]@ return re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0 <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[3465,3700]@ if re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+ <text_longer_than_50> @TO@ @type:if_stmt@ @[3584,3780]@ if not _is_valid_bento_tag(value):
+        raise c <text_longer_than_50>
+---INS @type:not_test@ @[3587,3617]@ not _is_valid_bento_tag(value) @TO@ @type:if_stmt@ @[3465,3700]@ if re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+ <text_longer_than_50>
+---UPD @type:comparison@ @[3468,3537]@ re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+-_] <text_longer_than_50> @TO@ @type:comparison@ @[3420,3493]@ re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+-_] <text_longer_than_50>
+------INS @type:comp_op@ @[3482,3488]@ is not @TO@ @type:comparison@ @[3468,3537]@ re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+-_] <text_longer_than_50>
+---MOV @type:comparison@ @[3468,3537]@ re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+-_] <text_longer_than_50> @TO@ @type:return_stmt@ @[3413,3493]@ return re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0 <text_longer_than_50>
+------INS @type:comp_op@ @[3482,3488]@ is not @TO@ @type:comparison@ @[3468,3537]@ re.match(r"^[A-Za-z_][A-Za-z_0-9]*:[A-Za-z0-9.+-_] <text_longer_than_50>
+
+

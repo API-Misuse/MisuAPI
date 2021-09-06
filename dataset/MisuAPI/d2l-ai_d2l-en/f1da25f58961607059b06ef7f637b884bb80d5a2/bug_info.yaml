@@ -1,0 +1,72 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/d2l-ai/d2l-en/pull/921
+  title: fix evaluate loss
+  body: "*Description of changes:*\r\nThis PR fixes how loss is calculated in the\
+    \ function `evaluate_loss` for pytorch. This specific function is used in chapters\
+    \ later in the notebook as well which require this specific fix.\r\n\r\n\r\nBy\
+    \ submitting this pull request, I confirm that you can use, modify,\r\ncopy, and\
+    \ redistribute this contribution, under the terms of your\r\nchoice.\r\n"
+issue_1:
+  html_url: https://github.com/d2l-ai/d2l-en/pull/1092
+  title: Release 0.14.0
+  body: "**Merging this PR means we will update both d2l.ai and upload d2l to pypi**\r\
+    \n\r\nIt contains all changes since 0.8.0, mainly pytorch/tensorflow porting for\
+    \ the first 8 chapters.\r\n\r\nWe bumped from 0.8.0 to 0.14.0 to align the version\
+    \ numbers of the notebooks (0.8) and d2l package (0.13.2). This misalignment is\
+    \ the main reason causes error for a user to run a notebook.\r\n\r\n\r\nBy submitting\
+    \ this pull request, I confirm that you can use, modify,\r\ncopy, and redistribute\
+    \ this contribution, under the terms of your\r\nchoice.\r\n"
+sha: f1da25f58961607059b06ef7f637b884bb80d5a2
+message: fix evaluate loss (#921)
+commit_log: "commit f1da25f58961607059b06ef7f637b884bb80d5a2\nAuthor: Anirudh <anirudhdagar6@gmail.com>\n\
+  Date:   Tue Jun 2 03:28:01 2020 +0530\n\n    fix evaluate loss (#921)"
+contained_keywords:
+- fix
+commit_time: 2020-06-02 03:28:01 +0530
+commit_author: Anirudh
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  add_line_no:
+  - - 501
+    - '        l = loss(net(X), y.reshape(-1, 1))
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        l = loss(net(X), y)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: chapter_multilayer-perceptrons/underfit-overfit.md
+  removed: 1
+  source_file: a/chapter_multilayer-perceptrons/underfit-overfit.md
+  target_file: b/chapter_multilayer-perceptrons/underfit-overfit.md
+patched_file_1:
+  add_line_no:
+  - - 337
+    - '        l = loss(net(X), y.reshape(-1, 1))
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        l = loss(net(X), y)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: d2l/torch.py
+  removed: 1
+  source_file: a/d2l/torch.py
+  target_file: b/d2l/torch.py

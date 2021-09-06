@@ -1,0 +1,18 @@
+commit 48e16357e760b9851eeda66f74d4980e3013c299
+Author: Haifeng Jin <jhfjhfj1@gmail.com>
+Date:   Tue Sep 25 03:18:20 2018 -0500
+
+    bug_fix
+
+diff --git a/autokeras/bayesian.py b/autokeras/bayesian.py
+index 66e5b1d..d05d5bb 100644
+--- a/autokeras/bayesian.py
++++ b/autokeras/bayesian.py
+@@ -90,17 +93,20 @@ class IncrementalGaussianProcess:
+ 
++        try:
++            self._l_matrix = cholesky(k_matrix, lower=True)  # Line 2
++        except LinAlgError:
++            return self
++
+

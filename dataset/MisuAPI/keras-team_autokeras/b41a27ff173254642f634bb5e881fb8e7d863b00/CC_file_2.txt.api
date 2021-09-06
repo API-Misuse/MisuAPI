@@ -1,0 +1,30 @@
+MOV @type:simple_stmt@ @[542,604]@ assert bboxs.shape == (11, 5) and landmarks.shape  <text_longer_than_50> @TO@ @type:suite@ @[117,604]@ img_file, out_file = 'test.jpg', 'output.jpg'
+     <text_longer_than_50>
+
+UPD @type:atom_expr@ @[549,560]@ bboxs.shape @TO@ @type:atom_expr@ @[561,573]@ bboxs1.shape
+
+INS @type:atom_expr@ @[577,589]@ bboxs2.shape @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+
+INS @type:operator@ @[590,592]@ == @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+
+UPD @type:atom_expr@ @[576,591]@ landmarks.shape @TO@ @type:atom_expr@ @[605,621]@ landmarks1.shape
+
+INS @type:atom_expr@ @[625,641]@ landmarks2.shape @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+
+INS @type:operator@ @[642,644]@ == @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+
+INS @type:simple_stmt@ @[496,550]@ bboxs2, landmarks2 = face_detection.predict(img_fi <text_longer_than_50> @TO@ @type:suite@ @[117,604]@ img_file, out_file = 'test.jpg', 'output.jpg'
+     <text_longer_than_50>
+
+UPD @type:atom_expr@ @[549,560]@ bboxs.shape @TO@ @type:atom_expr@ @[561,573]@ bboxs1.shape
+
+INS @type:atom_expr@ @[577,589]@ bboxs2.shape @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+
+INS @type:operator@ @[590,592]@ == @TO@ @type:comparison@ @[549,571]@ bboxs.shape == (11, 5)
+
+UPD @type:atom_expr@ @[576,591]@ landmarks.shape @TO@ @type:atom_expr@ @[605,621]@ landmarks1.shape
+
+INS @type:atom_expr@ @[625,641]@ landmarks2.shape @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+
+INS @type:operator@ @[642,644]@ == @TO@ @type:comparison@ @[576,603]@ landmarks.shape == (11, 10)
+

@@ -1,0 +1,19 @@
+commit d1c16a9387b8f7de51c7124214b6bde2dd8870ca
+Author: Mikhail Arkhipov <akrhipov@yahoo.com>
+Date:   Thu Jan 11 16:15:36 2018 +0300
+
+    fix: Highway network layer fixed
+
+diff --git a/deeppavlov/models/ner/layers.py b/deeppavlov/models/ner/layers.py
+index eb1de795..dfbcd20a 100644
+--- a/deeppavlov/models/ner/layers.py
++++ b/deeppavlov/models/ner/layers.py
+@@ -163,7 +163,7 @@ def highway_convolutional_network(input_units,
+                                  kernel_initializer=xavier_initializer())
+         if use_batch_norm:
+             units = tf.layers.batch_normalization(units, training=training_ph)
+-        sigmoid_gate = tf.layers.dense(input_units, activation=tf.sigmoid, kernel_initializer=xavier_initializer())
++        sigmoid_gate = tf.layers.dense(input_units, 1, activation=tf.sigmoid, kernel_initializer=xavier_initializer())
+         input_units = sigmoid_gate * input_units + (1 - sigmoid_gate) * units
+         input_units = tf.nn.relu(input_units)
+     return input_units

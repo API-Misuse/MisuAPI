@@ -1,0 +1,84 @@
+commit 01d340adfaea70ea0997931c92c498a5a18c7435
+Author: Teven <teven.lescao@gmail.com>
+Date:   Tue Sep 8 16:00:56 2020 +0200
+
+    Floating-point operations logging in trainer (#6768)
+    
+    * neFLOs calculation, logging, and reloading (#1)
+    
+    * testing distributed consecutive batches
+    
+    * fixed AttributeError from DataParallel
+    
+    * removed verbosity
+    
+    * rotate with use_mtime=True
+    
+    * removed print
+    
+    * fixed interaction with gradient accumulation
+    
+    * indent formatting
+    
+    * distributed neflo counting
+    
+    * fixed typo
+    
+    * fixed typo
+    
+    * mean distributed losses
+    
+    * exporting log history
+    
+    * moved a few functions
+    
+    * floating_point_ops clarification for transformers with parameter-reuse
+    
+    * code quality
+    
+    * double import
+    
+    * made flo estimation more task-agnostic
+    
+    * only logging flos if computed
+    
+    * code quality
+    
+    * unused import
+    
+    * Update src/transformers/trainer.py
+    
+    Co-authored-by: Sylvain Gugger <35901082+sgugger@users.noreply.github.com>
+    
+    * Update src/transformers/modeling_utils.py
+    
+    Co-authored-by: Sylvain Gugger <35901082+sgugger@users.noreply.github.com>
+    
+    * Sylvain review
+    
+    * Update src/transformers/modeling_utils.py
+    
+    Co-authored-by: Sylvain Gugger <35901082+sgugger@users.noreply.github.com>
+    
+    * black
+    
+    Co-authored-by: Sylvain Gugger <35901082+sgugger@users.noreply.github.com>
+
+diff --git a/src/transformers/trainer.py b/src/transformers/trainer.py
+index aa320773a..68c049643 100755
+--- a/src/transformers/trainer.py
++++ b/src/transformers/trainer.py
+@@ -461,7 +466,11 @@ class Trainer:
+             logger.info(
+                 'Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"'
+             )
+-            combined_dict = {**self.model.config.to_dict(), **self.args.to_sanitized_dict()}
++            try:
++                combined_dict = {**self.model.config.to_dict(), **self.args.to_sanitized_dict()}
++            except AttributeError:
++                # in case the model has no config
++                combined_dict = {**self.args.to_sanitized_dict()}
+             wandb.init(
+                 project=os.getenv("WANDB_PROJECT", "huggingface"), config=combined_dict, name=self.args.run_name
+             )
+

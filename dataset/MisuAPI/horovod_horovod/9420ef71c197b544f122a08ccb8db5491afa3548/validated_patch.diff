@@ -1,0 +1,25 @@
+commit 9420ef71c197b544f122a08ccb8db5491afa3548
+Author: Alex Sergeev <alexander.sergeev@live.com>
+Date:   Thu Nov 9 15:53:22 2017 -0800
+
+    Bugfix: Initialize MetricAverageCallback variables (#85)
+
+diff --git a/horovod/__init__.py b/horovod/__init__.py
+index e754a83..85b551d 100644
+--- a/horovod/__init__.py
++++ b/horovod/__init__.py
+@@ -1 +1 @@
+-__version__ = '0.10.1'
++__version__ = '0.10.2'
+diff --git a/horovod/keras/callbacks.py b/horovod/keras/callbacks.py
+index 22f4643..0ba07f6 100644
+--- a/horovod/keras/callbacks.py
++++ b/horovod/keras/callbacks.py
+@@ -61,6 +61,7 @@ class MetricAverageCallback(keras.callbacks.Callback):
+     def _make_variable(self, metric, value):
+         with tf.name_scope('MetricAverageCallback'):
+             var = tf.Variable(value, name=metric)
++            K.get_session().run(var.initializer)
+             allreduce_op = hvd.allreduce(var, device_dense=self.device)
+             return var, allreduce_op
+ 

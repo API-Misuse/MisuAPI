@@ -1,0 +1,10 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e9d4e8eca95829e5607236fa30a0556b40813f62/a/src/align/detect_face.py:29: error: Library stubs not installed for "six" (or incompatible with Python 3.6)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e9d4e8eca95829e5607236fa30a0556b40813f62/a/src/align/detect_face.py:29: note: Hint: "python3 -m pip install types-six"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e9d4e8eca95829e5607236fa30a0556b40813f62/a/src/align/detect_face.py:29: note: (or run "mypy --install-types" to install all missing stub packages)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e9d4e8eca95829e5607236fa30a0556b40813f62/a/src/align/detect_face.py:29: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e9d4e8eca95829e5607236fa30a0556b40813f62/a/src/align/detect_face.py:31: error: Skipping analyzing "numpy": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e9d4e8eca95829e5607236fa30a0556b40813f62/a/src/align/detect_face.py:32: error: Skipping analyzing "tensorflow": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/davidsandberg_facenet/e9d4e8eca95829e5607236fa30a0556b40813f62/a/src/align/detect_face.py:34: error: Cannot find implementation or library stub for module named "cv2"
+Found 4 errors in 1 file (checked 1 source file)
+
+time cost(in seconds): 0.502373218536377

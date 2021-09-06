@@ -1,0 +1,37 @@
+issues_cnt: 0
+sha: 4a9399527d52873a4e3fa3b6205188c0d73fe997
+message: 'Fix np,linspace argument in heston_model_test.
+
+
+  PiperOrigin-RevId: 287168346'
+commit_log: "commit 4a9399527d52873a4e3fa3b6205188c0d73fe997\nAuthor: Cyril Chimisov\
+  \ <cyrilchimisov@google.com>\nDate:   Thu Dec 26 02:48:33 2019 -0800\n\n    Fix\
+  \ np,linspace argument in heston_model_test.\n    \n    PiperOrigin-RevId: 287168346"
+contained_keywords:
+- fix
+commit_time: 2019-12-26 02:48:33 -0800
+commit_author: Cyril Chimisov
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 41
+    - '    times = np.linspace(0.0, years, int(365 * years))
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    times = np.linspace(0.0, years, 365 * years)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tf_quant_finance/experimental/models_v2/heston_model_test.py
+  removed: 1
+  source_file: a/tf_quant_finance/experimental/models_v2/heston_model_test.py
+  target_file: b/tf_quant_finance/experimental/models_v2/heston_model_test.py

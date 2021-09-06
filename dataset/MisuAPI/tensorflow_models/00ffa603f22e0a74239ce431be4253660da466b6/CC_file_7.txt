@@ -1,0 +1,16 @@
+UPD @type:simple_stmt@ @[5248,5315]@ output = tf.reshape(tf.concat(axis=outputs, values <text_longer_than_50> @TO@ @type:simple_stmt@ @[5248,5315]@ output = tf.reshape(tf.concat(axis=1, values=outpu <text_longer_than_50>
+---UPD @type:expr_stmt@ @[5248,5314]@ output = tf.reshape(tf.concat(axis=outputs, values <text_longer_than_50> @TO@ @type:expr_stmt@ @[5248,5314]@ output = tf.reshape(tf.concat(axis=1, values=outpu <text_longer_than_50>
+------UPD @type:atom_expr@ @[5257,5314]@ tf.reshape(tf.concat(axis=outputs, values=1), [-1, <text_longer_than_50> @TO@ @type:atom_expr@ @[5257,5314]@ tf.reshape(tf.concat(axis=1, values=outputs), [-1, <text_longer_than_50>
+---------UPD @type:trailer@ @[5267,5314]@ (tf.concat(axis=outputs, values=1), [-1, size]) @TO@ @type:trailer@ @[5267,5314]@ (tf.concat(axis=1, values=outputs), [-1, size])
+------------UPD @type:arglist@ @[5268,5313]@ tf.concat(axis=outputs, values=1), [-1, size] @TO@ @type:arglist@ @[5268,5313]@ tf.concat(axis=1, values=outputs), [-1, size]
+---------------UPD @type:atom_expr@ @[5268,5301]@ tf.concat(axis=outputs, values=1) @TO@ @type:atom_expr@ @[5268,5301]@ tf.concat(axis=1, values=outputs)
+------------------UPD @type:trailer@ @[5277,5301]@ (axis=outputs, values=1) @TO@ @type:trailer@ @[5277,5301]@ (axis=1, values=outputs)
+---------------------UPD @type:arglist@ @[5278,5300]@ axis=outputs, values=1 @TO@ @type:arglist@ @[5278,5300]@ axis=1, values=outputs
+------------------------UPD @type:argument@ @[5278,5290]@ axis=outputs @TO@ @type:argument@ @[5278,5284]@ axis=1
+---------------------------INS @type:number@ @[5283,5284]@ 1 @TO@ @type:argument@ @[5278,5290]@ axis=outputs
+---------------------------DEL @type:name@ @[5283,5290]@ outputs @FROM@ @type:argument@ @[5278,5290]@ axis=outputs
+------------------------UPD @type:argument@ @[5292,5300]@ values=1 @TO@ @type:argument@ @[5286,5300]@ values=outputs
+---------------------------INS @type:name@ @[5293,5300]@ outputs @TO@ @type:argument@ @[5292,5300]@ values=1
+---------------------------DEL @type:number@ @[5299,5300]@ 1 @FROM@ @type:argument@ @[5292,5300]@ values=1
+
+

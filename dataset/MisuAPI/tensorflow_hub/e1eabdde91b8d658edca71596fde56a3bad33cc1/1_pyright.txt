@@ -1,0 +1,16 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_hub/e1eabdde91b8d658edca71596fde56a3bad33cc1/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_hub/e1eabdde91b8d658edca71596fde56a3bad33cc1/a/tensorflow_hub/compressed_module_resolver.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_hub/e1eabdde91b8d658edca71596fde56a3bad33cc1/a/tensorflow_hub/compressed_module_resolver.py:28:10 - error: Import "urllib2" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_hub/e1eabdde91b8d658edca71596fde56a3bad33cc1/a/tensorflow_hub/compressed_module_resolver.py:30:10 - error: Import "urlparse" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_hub/e1eabdde91b8d658edca71596fde56a3bad33cc1/a/tensorflow_hub/compressed_module_resolver.py:35:6 - error: Import "tensorflow_hub" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_hub/e1eabdde91b8d658edca71596fde56a3bad33cc1/a/tensorflow_hub/compressed_module_resolver.py:29:22 - error: "urlencode" is unknown import symbol (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_hub/e1eabdde91b8d658edca71596fde56a3bad33cc1/a/tensorflow_hub/compressed_module_resolver.py:86:40 - error: Argument to class must be a base class (reportGeneralTypeIssues)
+5 errors, 0 warnings, 0 infos 
+Completed in 1.068sec
+
+time cost(in seconds): 1.268038034439087

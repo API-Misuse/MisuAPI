@@ -1,0 +1,19 @@
+commit 2ccb69dfb46688feed5a06f19fef526f2d8bc884
+Author: François Chollet <francois.chollet@gmail.com>
+Date:   Sun Aug 25 09:06:58 2019 -0700
+
+    Fix
+
+diff --git a/keras/metrics.py b/keras/metrics.py
+index 7584ba9c..553c5d40 100644
+--- a/keras/metrics.py
++++ b/keras/metrics.py
+@@ -79,7 +79,7 @@ class Metric(Layer):
+             raise RuntimeError(
+                 'Metric calling only supported with TensorFlow backend.')
+         update_op = self.update_state(*args, **kwargs)
+-        with K.control_dependencies([update_op]):  # For TF
++        with K.control_dependencies(update_op):  # For TF
+             return self.result()
+ 
+     def get_config(self):

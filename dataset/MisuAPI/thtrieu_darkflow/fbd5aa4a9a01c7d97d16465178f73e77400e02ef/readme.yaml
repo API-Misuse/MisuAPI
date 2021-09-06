@@ -1,0 +1,100 @@
+sha: fbd5aa4a9a01c7d97d16465178f73e77400e02ef
+message: fix loss
+commit_log: "commit fbd5aa4a9a01c7d97d16465178f73e77400e02ef\nAuthor: thtrieu <thtrieu@apcs.vn>\n\
+  Date:   Mon Nov 28 22:25:40 2016 +0700\n\n    fix loss"
+contained_keywords:
+- fix
+commit_time: 2016-11-28 22:25:40 +0700
+commit_author: thtrieu
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: configs/process.py
+  source_file: a/configs/process.py
+  target_file: b/configs/process.py
+  added: 7
+  removed: 4
+  add_line_no:
+  - - 46
+    - "\t\t\t\ttry: #\n"
+  - - 47
+    - "\t\t\t\t\tkey = _parse(line, 0)\n"
+  - - 48
+    - "\t\t\t\t\tval = _parse(line, 1)\n"
+  - - 49
+    - "\t\t\t\t\tlayer[key] = val\n"
+  - - 50
+    - "\t\t\t\texcept:\n"
+  - - 51
+    - "\t\t\t\t\tpass\n"
+  - - 132
+    - "\t\t\n"
+  del_line_no:
+  - - null
+    - "\t\t\t\tkey = _parse(line, 0)\n"
+  - - null
+    - "\t\t\t\tval = _parse(line, 1)\n"
+  - - null
+    - "\t\t\t\tlayer[key] = val\n"
+  - - null
+    - '
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfnet/tfop.py
+  source_file: a/tfnet/tfop.py
+  target_file: b/tfnet/tfop.py
+  added: 1
+  removed: 2
+  add_line_no:
+  - - 48
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - "\t\t#return x\n"
+  - - null
+    - '
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfnet/yolo/train.py
+  source_file: a/tfnet/yolo/train.py
+  target_file: b/tfnet/yolo/train.py
+  added: 2
+  removed: 2
+  add_line_no:
+  - - 211
+    - '    weight_con = snoob * (1. - confs) + sconf * confs
+
+      '
+  - - 213
+    - '    weight_coo = tf.concat(3, 4 * [tf.expand_dims(confs, -1)])
+
+      '
+  del_line_no:
+  - - null
+    - '    weight_con = snoob*(1.-best_box) + sconf*best_box
+
+      '
+  - - null
+    - '    weight_coo = tf.concat(3, 4 * [tf.expand_dims(best_box, -1)])
+
+      '

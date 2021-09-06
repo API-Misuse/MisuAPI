@@ -1,0 +1,45 @@
+UPD @type:if_stmt@ @[4010,4517]@ if METHOD != 'Double':
+            # DQN
+          <text_longer_than_50> @TO@ @type:if_stmt@ @[4010,4560]@ if METHOD != 'Double':
+            # DQN
+          <text_longer_than_50>
+---UPD @type:suite@ @[4133,4517]@ # Double-DQN
+            tf.get_variable_scope().r <text_longer_than_50> @TO@ @type:suite@ @[4133,4560]@ # Double-DQN
+            sc = tf.get_variable_scop <text_longer_than_50>
+------INS @type:simple_stmt@ @[4171,4200]@ sc = tf.get_variable_scope() @TO@ @type:suite@ @[4133,4517]@ # Double-DQN
+            tf.get_variable_scope().r <text_longer_than_50>
+---------INS @type:expr_stmt@ @[4171,4199]@ sc = tf.get_variable_scope() @TO@ @type:simple_stmt@ @[4171,4200]@ sc = tf.get_variable_scope()
+------------INS @type:atom_expr@ @[4176,4199]@ tf.get_variable_scope() @TO@ @type:expr_stmt@ @[4171,4199]@ sc = tf.get_variable_scope()
+------INS @type:with_stmt@ @[4212,4326]@ with tf.variable_scope(sc, reuse=True):
+           <text_longer_than_50> @TO@ @type:suite@ @[4133,4517]@ # Double-DQN
+            tf.get_variable_scope().r <text_longer_than_50>
+---------INS @type:suite@ @[4251,4326]@ next_predict_value = self._get_DQN_prediction(next <text_longer_than_50> @TO@ @type:with_stmt@ @[4212,4326]@ with tf.variable_scope(sc, reuse=True):
+           <text_longer_than_50>
+------MOV @type:simple_stmt@ @[4225,4283]@ next_predict_value = self._get_DQN_prediction(next <text_longer_than_50> @TO@ @type:suite@ @[4251,4326]@ next_predict_value = self._get_DQN_prediction(next <text_longer_than_50>
+------DEL @type:simple_stmt@ @[4171,4213]@ tf.get_variable_scope().reuse_variables() @FROM@ @type:suite@ @[4133,4517]@ # Double-DQN
+            tf.get_variable_scope().r <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[4171,4212]@ tf.get_variable_scope().reuse_variables() @TO@ @type:atom_expr@ @[4217,4250]@ tf.variable_scope(sc, reuse=True)
+---INS @type:name@ @[4217,4219]@ tf @TO@ @type:atom_expr@ @[4171,4212]@ tf.get_variable_scope().reuse_variables()
+---UPD @type:trailer@ @[4194,4210]@ .reuse_variables @TO@ @type:trailer@ @[4219,4234]@ .variable_scope
+------UPD @type:name@ @[4195,4210]@ reuse_variables @TO@ @type:name@ @[4220,4234]@ variable_scope
+---UPD @type:trailer@ @[4210,4212]@ () @TO@ @type:trailer@ @[4234,4250]@ (sc, reuse=True)
+------INS @type:arglist@ @[4235,4249]@ sc, reuse=True @TO@ @type:trailer@ @[4210,4212]@ ()
+---MOV @type:name@ @[4171,4173]@ tf @TO@ @type:atom_expr@ @[4176,4199]@ tf.get_variable_scope()
+---MOV @type:trailer@ @[4173,4192]@ .get_variable_scope @TO@ @type:atom_expr@ @[4176,4199]@ tf.get_variable_scope()
+---MOV @type:trailer@ @[4192,4194]@ () @TO@ @type:atom_expr@ @[4176,4199]@ tf.get_variable_scope()
+
+
+MOV @type:atom_expr@ @[4171,4212]@ tf.get_variable_scope().reuse_variables() @TO@ @type:with_stmt@ @[4212,4326]@ with tf.variable_scope(sc, reuse=True):
+           <text_longer_than_50>
+---INS @type:name@ @[4217,4219]@ tf @TO@ @type:atom_expr@ @[4171,4212]@ tf.get_variable_scope().reuse_variables()
+---UPD @type:trailer@ @[4194,4210]@ .reuse_variables @TO@ @type:trailer@ @[4219,4234]@ .variable_scope
+------UPD @type:name@ @[4195,4210]@ reuse_variables @TO@ @type:name@ @[4220,4234]@ variable_scope
+---UPD @type:trailer@ @[4210,4212]@ () @TO@ @type:trailer@ @[4234,4250]@ (sc, reuse=True)
+------INS @type:arglist@ @[4235,4249]@ sc, reuse=True @TO@ @type:trailer@ @[4210,4212]@ ()
+---MOV @type:name@ @[4171,4173]@ tf @TO@ @type:atom_expr@ @[4176,4199]@ tf.get_variable_scope()
+---MOV @type:trailer@ @[4173,4192]@ .get_variable_scope @TO@ @type:atom_expr@ @[4176,4199]@ tf.get_variable_scope()
+---MOV @type:trailer@ @[4192,4194]@ () @TO@ @type:atom_expr@ @[4176,4199]@ tf.get_variable_scope()
+
+

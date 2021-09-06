@@ -1,0 +1,6 @@
+INS @type:if_stmt@ @[2784,3251]@ if os.path.isfile("executor_id"):
+    with open("e <text_longer_than_50> @TO@ @type:suite@ @[2696,3251]@ """Read worker id from a local file in the executo <text_longer_than_50>
+
+INS @type:if_stmt@ @[2784,3251]@ if os.path.isfile("executor_id"):
+    with open("e <text_longer_than_50> @TO@ @type:suite@ @[2696,3251]@ """Read worker id from a local file in the executo <text_longer_than_50>
+

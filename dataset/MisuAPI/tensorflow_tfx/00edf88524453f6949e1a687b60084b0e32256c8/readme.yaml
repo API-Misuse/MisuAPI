@@ -1,0 +1,360 @@
+sha: 00edf88524453f6949e1a687b60084b0e32256c8
+message: 'When stateful_working_dir is not found when deleted, do a warning log and
+  ignore the error.
+
+
+  PiperOrigin-RevId: 348064925'
+commit_log: "commit 00edf88524453f6949e1a687b60084b0e32256c8\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Thu Dec 17 11:54:34 2020 -0800\n\n    When stateful_working_dir is not found\
+  \ when deleted, do a warning log and ignore the error.\n    \n    PiperOrigin-RevId:\
+  \ 348064925"
+contained_keywords:
+- error
+commit_time: 2020-12-17 11:54:34 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/launcher.py
+  source_file: a/tfx/orchestration/portable/launcher.py
+  target_file: b/tfx/orchestration/portable/launcher.py
+  added: 9
+  removed: 11
+  add_line_no:
+  - - 192
+    - '        logging.info(''No all required input are ready, abandoning execution.'')
+
+      '
+  - - 246
+    - '        logging.info(''An cached execusion %d is used.'', execution.id)
+
+      '
+  - - 258
+    - '      logging.info(''Going to run a new execution %d'', execution.id)
+
+      '
+  - - 314
+    - '    logging.info(''Cleaning up stateless execution info.'')
+
+      '
+  - - 321
+    - '    logging.info(''Cleaning up stateful execution info.'')
+
+      '
+  - - 322
+    - '    outputs_utils.remove_stateful_working_dir(
+
+      '
+  - - 323
+    - '        execution_info.stateful_working_dir)
+
+      '
+  - - 354
+    - '    logging.info(''Running launcher for %s'', self._pipeline_node)
+
+      '
+  - - 378
+    - '      logging.info(''Execution %d succeeded.'', execution_info.execution_id)
+
+      '
+  del_line_no:
+  - - null
+    - 'import os
+
+      '
+  - - null
+    - '    # Clean up stateful working dir
+
+      '
+  - - null
+    - '    # Note that:
+
+      '
+  - - null
+    - '    #  stateful_working_dir = (os.path.join(
+
+      '
+  - - null
+    - '    #    self._node_dir,
+
+      '
+  - - null
+    - '    #    self._pipeline_run_id,  <-- we want to clean from this level down.
+
+      '
+  - - null
+    - '    #    _STATEFUL_WORKING_DIR)
+
+      '
+  - - null
+    - '    stateful_working_dir = os.path.abspath(
+
+      '
+  - - null
+    - '        os.path.join(execution_info.stateful_working_dir, os.pardir))
+
+      '
+  - - null
+    - '    fileio.rmtree(stateful_working_dir)
+
+      '
+  - - null
+    - '    logging.debug(''Running launcher for %s'', self._pipeline_node)
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/outputs_utils.py
+  source_file: a/tfx/orchestration/portable/outputs_utils.py
+  target_file: b/tfx/orchestration/portable/outputs_utils.py
+  added: 33
+  removed: 2
+  add_line_no:
+  - - 64
+    - 'def remove_stateful_working_dir(stateful_working_dir: Text) -> None:
+
+      '
+  - - 65
+    - '  """Remove stateful_working_dir."""
+
+      '
+  - - 66
+    - '  # Clean up stateful working dir
+
+      '
+  - - 67
+    - '  # Note that:
+
+      '
+  - - 68
+    - '  # stateful_working_dir = os.path.join(
+
+      '
+  - - 69
+    - '  #    self._node_dir,
+
+      '
+  - - 70
+    - '  #    _SYSTEM,
+
+      '
+  - - 71
+    - '  #    _STATEFUL_WORKING_DIR, <-- we want to clean from this level down.
+
+      '
+  - - 72
+    - '  #    dir_suffix)
+
+      '
+  - - 73
+    - '  stateful_working_dir = os.path.abspath(
+
+      '
+  - - 74
+    - '      os.path.join(stateful_working_dir, os.pardir))
+
+      '
+  - - 75
+    - '  try:
+
+      '
+  - - 76
+    - '    fileio.rmtree(stateful_working_dir)
+
+      '
+  - - 77
+    - '  except Exception as e:  # pylint: disable=broad-except
+
+      '
+  - - 78
+    - '    if ''NotFoundError'' in str(type(e)):
+
+      '
+  - - 79
+    - '      # TODO(b/175244977): This is a workaround to avoid introducing
+
+      '
+  - - 80
+    - '      # tensorflow dependency. Change this except block to use a generic
+
+      '
+  - - 81
+    - '      # NotFoundError once it is Defined in fileio.
+
+      '
+  - - 82
+    - '      logging.warning(
+
+      '
+  - - 83
+    - '          ''stateful_working_dir %s is not found, not going to delete it.'',
+
+      '
+  - - 84
+    - '          stateful_working_dir)
+
+      '
+  - - 85
+    - '    else:
+
+      '
+  - - 86
+    - '      raise
+
+      '
+  - - 87
+    - '
+
+      '
+  - - 88
+    - '
+
+      '
+  - - 184
+    - '    # NOTE: If this directory structure is changed, please update
+
+      '
+  - - 185
+    - '    # the remove_stateful_working_dir function in this file accordingly.
+
+      '
+  - - 189
+    - '    try:
+
+      '
+  - - 190
+    - '      fileio.makedirs(stateful_working_dir)
+
+      '
+  - - 191
+    - '    except Exception:  # pylint: disable=broad-except
+
+      '
+  - - 192
+    - '      logging.exception(''Failed to make stateful working dir: %s'',
+
+      '
+  - - 193
+    - '                        stateful_working_dir)
+
+      '
+  - - 194
+    - '      raise
+
+      '
+  del_line_no:
+  - - null
+    - '
+
+      '
+  - - null
+    - '    fileio.makedirs(stateful_working_dir)
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/outputs_utils_test.py
+  source_file: a/tfx/orchestration/portable/outputs_utils_test.py
+  target_file: b/tfx/orchestration/portable/outputs_utils_test.py
+  added: 20
+  removed: 1
+  add_line_no:
+  - - 16
+    - 'import mock
+
+      '
+  - - 147
+    - '    self.assertTrue(fileio.exists(stateful_working_dir))
+
+      '
+  - - 186
+    - '  def testRemoveStatefulWorkingDirSucceeded(self):
+
+      '
+  - - 187
+    - '    stateful_working_dir = (
+
+      '
+  - - 188
+    - '        self._output_resolver().get_stateful_working_directory())
+
+      '
+  - - 189
+    - '    self.assertTrue(fileio.exists(stateful_working_dir))
+
+      '
+  - - 190
+    - '
+
+      '
+  - - 191
+    - '    outputs_utils.remove_stateful_working_dir(stateful_working_dir)
+
+      '
+  - - 192
+    - '    self.assertFalse(fileio.exists(stateful_working_dir))
+
+      '
+  - - 193
+    - '
+
+      '
+  - - 194
+    - '  def testRemoveStatefulWorkingDirNotFoundError(self):
+
+      '
+  - - 195
+    - '    # removing a nonexisting path is an noop
+
+      '
+  - - 196
+    - '    outputs_utils.remove_stateful_working_dir(''/a/not/exist/path'')
+
+      '
+  - - 197
+    - '
+
+      '
+  - - 198
+    - '  @mock.patch.object(fileio, ''rmtree'')
+
+      '
+  - - 199
+    - '  def testRemoveStatefulWorkingDirOtherError(self, rmtree_fn):
+
+      '
+  - - 200
+    - '    rmtree_fn.side_effect = ValueError(''oops'')
+
+      '
+  - - 201
+    - '    with self.assertRaisesRegex(ValueError, ''oops''):
+
+      '
+  - - 202
+    - '      outputs_utils.remove_stateful_working_dir(''/a/fake/path'')
+
+      '
+  - - 203
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - '    fileio.exists(stateful_working_dir)
+
+      '

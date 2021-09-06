@@ -1,0 +1,24 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:3:8 - error: Import "pandas" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:4:6 - error: Import "keras.preprocessing.image" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:5:6 - error: Import "keras.applications.imagenet_utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:6:6 - error: Import "keras.preprocessing" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:7:8 - error: Import "cv2" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:9:8 - error: Import "gdown" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:12:6 - warning: Import "PIL" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:18:8 - error: Import "keras" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:20:6 - error: Import "deepface.commons" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:253:10 - error: Import "dlib" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:278:8 - error: Import "mtcnn" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:418:10 - error: Import "dlib" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/serengil_deepface/e6da0839837f02580295108d7446b5586d09ca61/a/deepface/commons/functions.py:434:8 - error: Import "mtcnn" could not be resolved (reportMissingImports)
+12 errors, 1 warning, 0 infos 
+Completed in 2.12sec
+
+time cost(in seconds): 2.3203678131103516

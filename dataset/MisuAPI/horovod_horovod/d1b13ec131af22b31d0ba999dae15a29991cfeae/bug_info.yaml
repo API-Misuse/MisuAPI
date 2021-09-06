@@ -1,0 +1,116 @@
+issues_cnt: 3
+issue_0:
+  html_url: https://github.com/horovod/horovod/pull/1902
+  title: Fixed usage of settings.nics to use the new parameter name
+  body: "Fixes #1851.  This occurrence was missed during a rename in #1808.\r\n\r\n\
+    Signed-off-by: Travis Addair <taddair@uber.com>"
+issue_1:
+  html_url: https://github.com/horovod/horovod/issues/1920
+  title: hvd.load_model not properly wrapping optimizer in tf.keras 1.15
+  body: "**Environment:**\r\n1. Framework: tf.keras\r\n2. Framework version: TF 1.15.0\r\
+    \n3. Horovod version: 0.19.0\r\n4. MPI version: cray-mpich/7.7.10\r\n5. CUDA version:\
+    \ n/a\r\n6. NCCL version: n/a\r\n7. Python version: 3.7.4\r\n8. OS and version:\
+    \ Cray linux based on SLES 15\r\n9. GCC version: 7.3.0\r\n\r\n**Checklist:**\r\
+    \n1. Did you search issues to find if somebody asked this question before? Oui\r\
+    \n2. If your question is about hang, did you read [this doc](https://github.com/horovod/horovod/blob/master/docs/running.rst)?\
+    \ n/a\r\n3. If your question is about docker, did you read [this doc](https://github.com/horovod/horovod/blob/master/docs/docker.rst)?\
+    \ n/a\r\n4. Did you check if you question is answered in the [troubleshooting\
+    \ guide](https://github.com/horovod/horovod/blob/master/docs/troubleshooting.rst)?\
+    \ Oui oui\r\n\r\n**Bug report:**\r\nPlease describe erroneous behavior you're\
+    \ observing and steps to reproduce it.\r\n\r\nI've been noticing bad training\
+    \ results when resuming from checkpoint with `hvd.load_model`. I tracked it down\
+    \ to diverging worker models, and noticed that my model optimizers from `hvd.load_model`\
+    \ were not properly wrapped in the horovod DistributedOptimizer. I believe it's\
+    \ a bug in this logic that determines all optimizer classes to wrap right here:\r\
+    \nhttps://github.com/horovod/horovod/blob/d1b13ec131af22b31d0ba999dae15a29991cfeae/horovod/_keras/__init__.py#L113\r\
+    \n\r\nThis part:\r\n\r\n    horovod_objects = {\r\n        subclass.__name__.lower():\
+    \ wrap_optimizer(subclass)\r\n        for subclass in keras.optimizers.Optimizer.__subclasses__()\r\
+    \n        if subclass.__module__ == keras.optimizers.Optimizer.__module__\r\n\
+    \    }\r\n\r\nThis check on the subclass module matching Optimizer module doesn't\
+    \ work in TF 1.15. E.g., for the SGD optimizer, the class module (the LHS) is\
+    \ actually\r\n\r\n    In [9]: tensorflow.python.keras.optimizer_v2.gradient_descent.SGD.__module__\r\
+    \n    Out[9]: 'tensorflow.python.keras.optimizer_v2.gradient_descent'\r\n\r\n\
+    whereas the RHS is\r\n\r\n    In [10]: tf.keras.optimizers.Optimizer.__module__\r\
+    \n    Out[10]: 'tensorflow.python.keras.optimizer_v2.optimizer_v2\u2019\r\n\r\n\
+    I have for now implemented a workaround in my code that just removes the module\
+    \ equality comparison and confirm that my optimizers are correctly being wrapped\
+    \ in DistributedOptimizer.\r\n\r\nI don't have a suggestion for how to fix this\
+    \ in Horovod. Presumably the module paths are inconsistent across Keras and TF\
+    \ versions :("
+issue_2:
+  html_url: https://github.com/horovod/horovod/issues/1921
+  title: Keras LR callbacks have unintended behavior when resuming from checkpoint
+  body: "**Environment:**\r\n1. Framework: tf.keras\r\n2. Framework version: TF 1.15.0\r\
+    \n3. Horovod version: 0.19.0\r\n4. MPI version: cray-mpich/7.7.10\r\n5. CUDA version:\
+    \ n/a\r\n6. NCCL version: n/a\r\n7. Python version: 3.7.4\r\n8. OS and version:\
+    \ Cray linux based on SLES 15\r\n9. GCC version: 7.3.0\r\n\r\n**Checklist:**\r\
+    \n1. Did you search issues to find if somebody asked this question before? yes\r\
+    \n2. If your question is about hang, did you read [this doc](https://github.com/horovod/horovod/blob/master/docs/running.rst)?\
+    \ n/a\r\n3. If your question is about docker, did you read [this doc](https://github.com/horovod/horovod/blob/master/docs/docker.rst)?\
+    \ n/a\r\n4. Did you check if you question is answered in the [troubleshooting\
+    \ guide](https://github.com/horovod/horovod/blob/master/docs/troubleshooting.rst)?\
+    \ yes\r\n\r\n**Bug report:**\r\nPlease describe erroneous behavior you're observing\
+    \ and steps to reproduce it.\r\n\r\nThere is a problem with the Keras learning\
+    \ rate callbacks (inheriting from `LearningRateScheduleCallbackImpl`) as implemented\
+    \ when using checkpoints and resuming training. This class pulls the `initial_lr`\
+    \ from the model optimizer in `on_train_begin`:\r\nhttps://github.com/horovod/horovod/blob/d1b13ec131af22b31d0ba999dae15a29991cfeae/horovod/_keras/callbacks.py#L137\r\
+    \nAll LR (and momentum) modifications are done with respect to that initial learning\
+    \ rate and the current epoch (or batch). However, if one is writing a checkpoint,\
+    \ the current modified learning rate and momentum are written to the checkpoint\
+    \ file. Then, upon loading that checkpoint and resuming training with the LR callback,\
+    \ it pulls the _modified_ LR as its new `initial_lr`. Unless the user takes care\
+    \ to reset the optimizer's LR (and momentum) after loading from checkpoint and\
+    \ before training, the original schedule applied will not produce the intended\
+    \ schedule. The Keras Imagenet resnet50 example is affected by this, for instance:\r\
+    \nhttps://github.com/horovod/horovod/blob/master/examples/keras_imagenet_resnet50.py\r\
+    \n\r\nIn contrast, the LR scheduler in Keras (and tf.keras) is implemented such\
+    \ that modifications depend on the _current_ learning rate. This slightly different\
+    \ approach is therefore not affected by the checkpoint resume issue. It doesn't\
+    \ have any momentum correction, though.\r\nhttps://github.com/tensorflow/tensorflow/blob/bab74a15d9ad6bb9066b3e31d601d6a45b1cb221/tensorflow/python/keras/callbacks.py#L1349\r\
+    \n\r\nI think there are a couple of possible reasonable solutions. One is to change\
+    \ the multiplier logic to match that of the Keras LR scheduler so that the new\
+    \ LR is a result of the multiplier times the current LR. This logic change would\
+    \ likely break folks' code, though. Another possible solution is to allow (or\
+    \ require!) the user to set the initial LR in the callback constructor. This way\
+    \ I can ensure that it is always set to the correct, intended value. Finally,\
+    \ as I alluded to above, the user can reset their optimizer LR (and appropriately\
+    \ scale the momentum) after loading from checkpoint and before training. However,\
+    \ I consider this a workaround rather than a solution.\r\n\r\nI'm hoping I explained\
+    \ it clearly enough that I don't need a MWE, but I can provide one if required."
+sha: d1b13ec131af22b31d0ba999dae15a29991cfeae
+message: 'Fixed usage of settings.nics to use the new parameter name (#1902)
+
+
+  Signed-off-by: Travis Addair <taddair@uber.com>'
+commit_log: "commit d1b13ec131af22b31d0ba999dae15a29991cfeae\nAuthor: Travis Addair\
+  \ <taddair@uber.com>\nDate:   Thu Apr 23 16:25:57 2020 -0700\n\n    Fixed usage\
+  \ of settings.nics to use the new parameter name (#1902)\n    \n    Signed-off-by:\
+  \ Travis Addair <taddair@uber.com>"
+contained_keywords:
+- fixed
+commit_time: 2020-04-23 16:25:57 -0700
+commit_author: Travis Addair
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 148
+    - '        settings.num_hosts, settings.key, settings.nics)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        settings.num_hosts, settings.key, settings.nic)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: horovod/run/driver/driver_service.py
+  removed: 1
+  source_file: a/horovod/run/driver/driver_service.py
+  target_file: b/horovod/run/driver/driver_service.py

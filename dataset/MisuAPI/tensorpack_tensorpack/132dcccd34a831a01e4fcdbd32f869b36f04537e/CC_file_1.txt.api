@@ -1,0 +1,32 @@
+INS @type:try_stmt@ @[1501,1836]@ try:
+            self.saver.save(
+                 <text_longer_than_50> @TO@ @type:suite@ @[1492,1762]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50>
+
+INS @type:try_stmt@ @[1501,1836]@ try:
+            self.saver.save(
+                 <text_longer_than_50> @TO@ @type:suite@ @[1492,1762]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50>
+
+INS @type:suite@ @[1505,1712]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50> @TO@ @type:try_stmt@ @[1501,1836]@ try:
+            self.saver.save(
+                 <text_longer_than_50>
+
+INS @type:suite@ @[1505,1712]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50> @TO@ @type:try_stmt@ @[1501,1836]@ try:
+            self.saver.save(
+                 <text_longer_than_50>
+
+UPD @type:atom_expr@ @[1501,1678]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50> @TO@ @type:atom_expr@ @[1518,1711]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[1501,1679]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50> @TO@ @type:suite@ @[1505,1712]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50>
+
+UPD @type:atom_expr@ @[1501,1678]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50> @TO@ @type:atom_expr@ @[1518,1711]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50>
+

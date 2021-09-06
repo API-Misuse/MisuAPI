@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[1963,2018]@ tf.nn.ctc_loss(logits, label, seqlen, time_major=F <text_longer_than_50> @TO@ @type:atom_expr@ @[1963,2018]@ tf.nn.ctc_loss(label, logits, seqlen, time_major=F <text_longer_than_50>
+

@@ -1,0 +1,16 @@
+UPD @type:for_stmt@ @[11484,11676]@ for X, y in data_iter:
+        l = loss(net(X), y) <text_longer_than_50> @TO@ @type:for_stmt@ @[11484,11691]@ for X, y in data_iter:
+        l = loss(net(X), y. <text_longer_than_50>
+---UPD @type:suite@ @[11506,11676]@ l = loss(net(X), y)
+        if l.nelement() != 1:
+ <text_longer_than_50> @TO@ @type:suite@ @[11506,11691]@ l = loss(net(X), y.reshape(-1, 1))
+        if l.ne <text_longer_than_50>
+------UPD @type:simple_stmt@ @[11515,11535]@ l = loss(net(X), y) @TO@ @type:simple_stmt@ @[11515,11550]@ l = loss(net(X), y.reshape(-1, 1))
+---------UPD @type:expr_stmt@ @[11515,11534]@ l = loss(net(X), y) @TO@ @type:expr_stmt@ @[11515,11549]@ l = loss(net(X), y.reshape(-1, 1))
+------------UPD @type:atom_expr@ @[11519,11534]@ loss(net(X), y) @TO@ @type:atom_expr@ @[11519,11549]@ loss(net(X), y.reshape(-1, 1))
+---------------UPD @type:trailer@ @[11523,11534]@ (net(X), y) @TO@ @type:trailer@ @[11523,11549]@ (net(X), y.reshape(-1, 1))
+------------------UPD @type:arglist@ @[11524,11533]@ net(X), y @TO@ @type:arglist@ @[11524,11548]@ net(X), y.reshape(-1, 1)
+---------------------INS @type:atom_expr@ @[11532,11548]@ y.reshape(-1, 1) @TO@ @type:arglist@ @[11524,11533]@ net(X), y
+---------------------MOV @type:name@ @[11532,11533]@ y @TO@ @type:atom_expr@ @[11532,11548]@ y.reshape(-1, 1)
+
+

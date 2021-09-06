@@ -1,0 +1,7 @@
+UPD @type:simple_stmt@ @[2669,2699]@ clf.fit(train_x, train_y, 15) @TO@ @type:simple_stmt@ @[2669,2698]@ clf.fit(train_x, train_y, 5)
+---UPD @type:atom_expr@ @[2669,2698]@ clf.fit(train_x, train_y, 15) @TO@ @type:atom_expr@ @[2669,2697]@ clf.fit(train_x, train_y, 5)
+------UPD @type:trailer@ @[2676,2698]@ (train_x, train_y, 15) @TO@ @type:trailer@ @[2676,2697]@ (train_x, train_y, 5)
+---------UPD @type:arglist@ @[2677,2697]@ train_x, train_y, 15 @TO@ @type:arglist@ @[2677,2696]@ train_x, train_y, 5
+------------UPD @type:number@ @[2695,2697]@ 15 @TO@ @type:number@ @[2695,2696]@ 5
+
+

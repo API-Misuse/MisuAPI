@@ -1,0 +1,107 @@
+sha: a9d4a7c8699acbd72bf76cebdb2bbc94d9ed00c6
+message: small fix
+commit_log: "commit a9d4a7c8699acbd72bf76cebdb2bbc94d9ed00c6\nAuthor: tinally <tinally@google.com>\n\
+  Date:   Thu Aug 13 18:28:02 2020 -0400\n\n    small fix"
+contained_keywords:
+- fix
+commit_time: 2020-08-13 18:28:02 -0400
+commit_author: tinally
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/components/transform/component.py
+  source_file: a/tfx/components/transform/component.py
+  target_file: b/tfx/components/transform/component.py
+  added: 3
+  removed: 2
+  add_line_no:
+  - - 86
+    - '        This should contain custom splits specified in splits_config. If
+
+      '
+  - - 87
+    - '        custom split is not provided, this should contain two splits ''train''
+
+      '
+  - - 88
+    - '        and ''eval''.
+
+      '
+  del_line_no:
+  - - null
+    - '        This should contain the two splits ''train'' and ''eval'' if custom
+      splits
+
+      '
+  - - null
+    - '        is not specified in splits_config.
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/components/transform/executor.py
+  source_file: a/tfx/components/transform/executor.py
+  target_file: b/tfx/components/transform/executor.py
+  added: 3
+  removed: 2
+  add_line_no:
+  - - 300
+    - '          includes transform_splits as specified in splits_config. If custom
+
+      '
+  - - 301
+    - '          split is not provided, this should include both ''train'' and ''eval''
+
+      '
+  - - 302
+    - '          splits.
+
+      '
+  del_line_no:
+  - - null
+    - '          includes both ''train'' and ''eval'' splits if custom splits is not
+
+      '
+  - - null
+    - '          specified in splits_config.
+
+      '
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/components/transform/executor_test.py
+  source_file: a/tfx/components/transform/executor_test.py
+  target_file: b/tfx/components/transform/executor_test.py
+  added: 2
+  removed: 2
+  add_line_no:
+  - - 127
+    - '        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, ''train'')).size(),
+
+      '
+  - - 128
+    - '        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, ''eval'')).size())
+
+      '
+  del_line_no:
+  - - null
+    - '        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, ''train'')),
+
+      '
+  - - null
+    - '        tf.io.gfile.GFile(os.path.join(self._transformed_examples.uri, ''eval'')))
+
+      '

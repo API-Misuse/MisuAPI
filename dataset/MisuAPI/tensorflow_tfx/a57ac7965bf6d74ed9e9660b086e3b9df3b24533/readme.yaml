@@ -1,0 +1,36 @@
+sha: a57ac7965bf6d74ed9e9660b086e3b9df3b24533
+message: small fix
+commit_log: "commit a57ac7965bf6d74ed9e9660b086e3b9df3b24533\nAuthor: tinally <tinally@google.com>\n\
+  Date:   Fri Jul 24 14:42:43 2020 -0400\n\n    small fix"
+contained_keywords:
+- fix
+commit_time: 2020-07-24 14:42:43 -0400
+commit_author: tinally
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/components/transform/executor.py
+  source_file: a/tfx/components/transform/executor.py
+  target_file: b/tfx/components/transform/executor.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 307
+    - '    if exec_properties.get(''splits_config''):
+
+      '
+  - - 308
+    - '      json_format.Parse(exec_properties[''splits_config''], splits_config)
+
+      '
+  del_line_no:
+  - - null
+    - '    json_format.Parse(exec_properties[''splits_config''], splits_config)
+
+      '

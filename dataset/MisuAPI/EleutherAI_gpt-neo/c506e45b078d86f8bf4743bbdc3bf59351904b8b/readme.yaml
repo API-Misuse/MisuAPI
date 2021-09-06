@@ -1,0 +1,30 @@
+sha: c506e45b078d86f8bf4743bbdc3bf59351904b8b
+message: 'Fix AttributeError: ''Tensor'' object has no attribute ''numpy'''
+commit_log: "commit c506e45b078d86f8bf4743bbdc3bf59351904b8b\nAuthor: Leo Gao <54557097+leogao2@users.noreply.github.com>\n\
+  Date:   Mon Feb 8 19:58:58 2021 -0700\n\n    Fix AttributeError: 'Tensor' object\
+  \ has no attribute 'numpy'"
+contained_keywords:
+- fix
+- attributeerror
+commit_time: 2021-02-08 19:58:58 -0700
+commit_author: Leo Gao
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: scripts/convert_gpt.py
+  source_file: a/scripts/convert_gpt.py
+  target_file: b/scripts/convert_gpt.py
+  added: 1
+  removed: 0
+  add_line_no:
+  - - 27
+    - '        tf.enable_eager_execution()
+
+      '
+  del_line_no: []

@@ -1,0 +1,68 @@
+sha: 50de2c62978bd5d8ec4458fdcb7383ada69ac2d8
+message: Fix python 3.5 data loading
+commit_log: "commit 50de2c62978bd5d8ec4458fdcb7383ada69ac2d8\nAuthor: Thomas Kipf\
+  \ <thomas.kipf@gmail.com>\nDate:   Wed Feb 8 19:29:00 2017 +0100\n\n    Fix python\
+  \ 3.5 data loading"
+contained_keywords:
+- fix
+commit_time: 2017-02-08 19:29:00 +0100
+commit_author: Thomas Kipf
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: gcn/utils.py
+  source_file: a/gcn/utils.py
+  target_file: b/gcn/utils.py
+  added: 6
+  removed: 4
+  add_line_no:
+  - - 29
+    - '        with open("data/ind.{}.{}".format(dataset_str, names[i]), ''rb'') as
+      f:
+
+      '
+  - - 30
+    - '            if sys.version_info > (3, 0):
+
+      '
+  - - 31
+    - '                objects.append(pkl.load(f, encoding=''latin1''))
+
+      '
+  - - 32
+    - '            else:
+
+      '
+  - - 33
+    - '                objects.append(pkl.load(f))
+
+      '
+  - - 34
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - '        if sys.version_info > (3, 0):
+
+      '
+  - - null
+    - '            objects.append(pkl.load(open("data/ind.{}.{}".format(dataset_str,
+      names[i])), encoding=''latin1''))
+
+      '
+  - - null
+    - '        else:
+
+      '
+  - - null
+    - '            objects.append(pkl.load(open("data/ind.{}.{}".format(dataset_str,
+      names[i]))))
+
+      '

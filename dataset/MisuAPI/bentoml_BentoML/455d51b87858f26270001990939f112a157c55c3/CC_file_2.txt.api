@@ -1,0 +1,68 @@
+UPD @type:atom_expr@ @[9874,10106]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[9770,9969]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+
+DEL @type:atom_expr@ @[9899,9918]@ self.zipkin_api_url @FROM@ @type:arglist@ @[9899,10096]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+
+DEL @type:operator@ @[9918,9919]@ , @FROM@ @type:arglist@ @[9899,10096]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+
+UPD @type:atom_expr@ @[11349,11500]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[11212,11318]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+
+DEL @type:atom_expr@ @[11374,11393]@ self.zipkin_api_url @FROM@ @type:arglist@ @[11374,11490]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+
+DEL @type:operator@ @[11393,11394]@ , @FROM@ @type:arglist@ @[11374,11490]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+
+INS @type:if_stmt@ @[11345,11420]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50> @TO@ @type:suite@ @[11514,11976]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50>
+
+INS @type:if_stmt@ @[11345,11420]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50> @TO@ @type:suite@ @[11514,11976]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50>
+
+INS @type:suite@ @[11358,11420]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:if_stmt@ @[11345,11420]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+
+INS @type:suite@ @[11358,11420]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:if_stmt@ @[11345,11420]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[11527,11572]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:suite@ @[11358,11420]@ headers.update(make_http_headers(trace_ctx))
+
+UPD @type:atom_expr@ @[12586,12739]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[12434,12542]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+
+DEL @type:atom_expr@ @[12611,12630]@ self.zipkin_api_url @FROM@ @type:arglist@ @[12611,12729]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+
+DEL @type:operator@ @[12630,12631]@ , @FROM@ @type:arglist@ @[12611,12729]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+
+INS @type:if_stmt@ @[12569,12644]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50> @TO@ @type:suite@ @[12753,13911]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50>
+
+INS @type:if_stmt@ @[12569,12644]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50> @TO@ @type:suite@ @[12753,13911]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50>
+
+INS @type:suite@ @[12582,12644]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:if_stmt@ @[12569,12644]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+
+INS @type:suite@ @[12582,12644]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:if_stmt@ @[12569,12644]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[12766,12811]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:suite@ @[12582,12644]@ headers.update(make_http_headers(trace_ctx))
+
+DEL @type:simple_stmt@ @[6606,6643]@ self.zipkin_api_url = zipkin_api_url @FROM@ @type:suite@ @[6086,7427]@ self.outbound_unix_socket = outbound_unix_socket
+  <text_longer_than_50>
+

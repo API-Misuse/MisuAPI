@@ -1,0 +1,30 @@
+INS @type:simple_stmt@ @[894,923]@ from six.moves import xrange @TO@ @type:file_input@ @[656,7575]@ """Tests for L2L meta-optimizer."""
+
+from __future <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1945,1980]@ torch_final_x = np.array([0.8559]) @TO@ @type:simple_stmt@ @[1974,1997]@ torch_final_x = 0.8559
+---UPD @type:expr_stmt@ @[1945,1979]@ torch_final_x = np.array([0.8559]) @TO@ @type:expr_stmt@ @[1974,1996]@ torch_final_x = 0.8559
+------DEL @type:atom_expr@ @[1961,1979]@ np.array([0.8559]) @FROM@ @type:expr_stmt@ @[1945,1979]@ torch_final_x = np.array([0.8559])
+
+
+UPD @type:with_stmt@ @[6479,6835]@ with self.test_session(graph=g1) as sess:
+      se <text_longer_than_50> @TO@ @type:with_stmt@ @[6496,6886]@ with self.test_session(graph=g1) as sess:
+      se <text_longer_than_50>
+---UPD @type:suite@ @[6520,6835]@ sess.run(tf.global_variables_initializer())
+       <text_longer_than_50> @TO@ @type:suite@ @[6537,6886]@ sess.run(tf.global_variables_initializer())
+       <text_longer_than_50>
+------UPD @type:simple_stmt@ @[6675,6731]@ net_path = optimizer.save(sess, path=tmp_dir).keys <text_longer_than_50> @TO@ @type:simple_stmt@ @[6692,6741]@ save_result = optimizer.save(sess, path=tmp_dir)
+---------UPD @type:expr_stmt@ @[6675,6730]@ net_path = optimizer.save(sess, path=tmp_dir).keys <text_longer_than_50> @TO@ @type:expr_stmt@ @[6692,6740]@ save_result = optimizer.save(sess, path=tmp_dir)
+------------UPD @type:name@ @[6675,6683]@ net_path @TO@ @type:name@ @[6692,6703]@ save_result
+------------UPD @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0] @TO@ @type:atom_expr@ @[6706,6740]@ optimizer.save(sess, path=tmp_dir)
+---------------DEL @type:trailer@ @[6720,6725]@ .keys @FROM@ @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0]
+---------------DEL @type:trailer@ @[6725,6727]@ () @FROM@ @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0]
+---------------DEL @type:trailer@ @[6727,6730]@ [0] @FROM@ @type:atom_expr@ @[6686,6730]@ optimizer.save(sess, path=tmp_dir).keys()[0]
+------INS @type:simple_stmt@ @[6747,6782]@ net_path = next(iter(save_result)) @TO@ @type:suite@ @[6520,6835]@ sess.run(tf.global_variables_initializer())
+       <text_longer_than_50>
+
+
+MOV @type:number@ @[1971,1977]@ 0.8559 @TO@ @type:expr_stmt@ @[1945,1979]@ torch_final_x = np.array([0.8559])
+
+

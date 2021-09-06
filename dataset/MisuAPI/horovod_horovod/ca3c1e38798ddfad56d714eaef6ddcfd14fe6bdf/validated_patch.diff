@@ -1,0 +1,21 @@
+commit ca3c1e38798ddfad56d714eaef6ddcfd14fe6bdf
+Author: Alex Sergeev <alexander.sergeev@live.com>
+Date:   Fri Feb 22 14:15:01 2019 -0800
+
+    Bugfix PyTorch ImageNet example (#853)
+    
+    Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>
+
+diff --git a/examples/pytorch_imagenet_resnet50.py b/examples/pytorch_imagenet_resnet50.py
+index 6465ce7..a4c8252 100644
+--- a/examples/pytorch_imagenet_resnet50.py
++++ b/examples/pytorch_imagenet_resnet50.py
+@@ -176,7 +176,7 @@ def train(epoch):
+                 output = model(data_batch)
+                 train_accuracy.update(accuracy(output, target_batch))
+                 loss = F.cross_entropy(output, target_batch)
+-                train_loss.update(loss.item())
++                train_loss.update(loss)
+                 # Average gradients among sub-batches
+                 loss.div_(math.ceil(float(len(data)) / args.batch_size))
+                 loss.backward()

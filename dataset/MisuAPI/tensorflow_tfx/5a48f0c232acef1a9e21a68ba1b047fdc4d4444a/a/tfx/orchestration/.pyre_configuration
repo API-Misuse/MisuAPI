@@ -1,0 +1,6 @@
+{
+  "source_directories": [
+    "."
+  ],
+  "taint_models_path": "/home/apr/env/miniconda3/envs/tf/lib"
+}

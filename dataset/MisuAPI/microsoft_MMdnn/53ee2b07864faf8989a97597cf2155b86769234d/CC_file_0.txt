@@ -1,0 +1,11 @@
+UPD @type:if_stmt@ @[10592,12728]@ if cls.download(architecture_, path):
+             <text_longer_than_50> @TO@ @type:if_stmt@ @[10592,12729]@ if cls.download(architecture_, path):
+             <text_longer_than_50>
+---UPD @type:suite@ @[10629,12689]@ import numpy as np
+            func = TestKit.prep <text_longer_than_50> @TO@ @type:suite@ @[10629,12690]@ import numpy as np
+            func = TestKit.prep <text_longer_than_50>
+------UPD @type:if_stmt@ @[10826,12689]@ if is_frozen:
+                tf_model_path = cls. <text_longer_than_50> @TO@ @type:if_stmt@ @[10826,12690]@ if is_frozen:
+                tf_model_path = cls. <text_longer_than_50>
+
+

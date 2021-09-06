@@ -1,0 +1,54 @@
+INS @type:simple_stmt@ @[4997,5117]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50> @TO@ @type:suite@ @[4984,5179]@ assert name == 'train', 'Bounding box only availab <text_longer_than_50>
+
+INS @type:simple_stmt@ @[4997,5117]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50> @TO@ @type:suite@ @[4984,5179]@ assert name == 'train', 'Bounding box only availab <text_longer_than_50>
+
+INS @type:expr_stmt@ @[4997,5116]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50> @TO@ @type:simple_stmt@ @[4997,5117]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50>
+
+INS @type:expr_stmt@ @[4997,5116]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50> @TO@ @type:simple_stmt@ @[4997,5117]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50>
+
+INS @type:test@ @[5005,5116]@ os.path.join(dir, 'bbox') if not \
+                <text_longer_than_50> @TO@ @type:expr_stmt@ @[4997,5116]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50>
+
+INS @type:test@ @[5005,5116]@ os.path.join(dir, 'bbox') if not \
+                <text_longer_than_50> @TO@ @type:expr_stmt@ @[4997,5116]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5090,5178]@ ILSVRC12.get_training_bbox(
+                    os <text_longer_than_50> @TO@ @type:atom_expr@ @[5222,5269]@ ILSVRC12.get_training_bbox(bbdir, self.imglist)
+
+INS @type:name@ @[5249,5254]@ bbdir @TO@ @type:arglist@ @[5138,5177]@ os.path.join(dir, 'bbox'), self.imglist
+
+INS @type:arith_expr@ @[6298,6311]@ im.shape[1]-1 @TO@ @type:testlist_comp@ @[6207,6217]@ 0, 0, 1, 1
+
+INS @type:arith_expr@ @[6298,6311]@ im.shape[1]-1 @TO@ @type:testlist_comp@ @[6207,6217]@ 0, 0, 1, 1
+
+INS @type:arith_expr@ @[6313,6326]@ im.shape[0]-1 @TO@ @type:testlist_comp@ @[6207,6217]@ 0, 0, 1, 1
+
+INS @type:arith_expr@ @[6313,6326]@ im.shape[0]-1 @TO@ @type:testlist_comp@ @[6207,6217]@ 0, 0, 1, 1
+
+MOV @type:number@ @[6213,6214]@ 1 @TO@ @type:arith_expr@ @[6298,6311]@ im.shape[1]-1
+
+MOV @type:number@ @[6216,6217]@ 1 @TO@ @type:arith_expr@ @[6313,6326]@ im.shape[0]-1
+
+MOV @type:atom_expr@ @[5138,5163]@ os.path.join(dir, 'bbox') @TO@ @type:test@ @[5005,5116]@ os.path.join(dir, 'bbox') if not \
+                <text_longer_than_50>
+
+DEL @type:simple_stmt@ @[6709,6727]@ box[0] /= size[0] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+
+DEL @type:simple_stmt@ @[6739,6757]@ box[1] /= size[1] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+
+DEL @type:simple_stmt@ @[6769,6787]@ box[2] /= size[0] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+
+DEL @type:simple_stmt@ @[6799,6817]@ box[3] /= size[1] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+

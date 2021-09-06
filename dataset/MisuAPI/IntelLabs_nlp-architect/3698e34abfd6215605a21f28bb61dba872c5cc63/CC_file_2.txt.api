@@ -1,0 +1,12 @@
+INS @type:suite@ @[2669,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50> @TO@ @type:if_stmt@ @[2506,2835]@ if connectivity == WikipediaSearchMethod.ONLINE:
+  <text_longer_than_50>
+
+INS @type:suite@ @[2669,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50> @TO@ @type:if_stmt@ @[2506,2835]@ if connectivity == WikipediaSearchMethod.ONLINE:
+  <text_longer_than_50>
+
+INS @type:if_stmt@ @[2682,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50> @TO@ @type:suite@ @[2669,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50>
+
+INS @type:if_stmt@ @[2682,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50> @TO@ @type:suite@ @[2669,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50>
+
+MOV @type:suite@ @[2658,2713]@ self.pywiki_impl = WikiOffline(wiki_file) @TO@ @type:if_stmt@ @[2682,2995]@ if wiki_file is not None and os.path.isdir(wiki_fi <text_longer_than_50>
+

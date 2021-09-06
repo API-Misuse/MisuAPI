@@ -1,0 +1,5 @@
+INS @type:if_stmt@ @[4818,4864]@ if not hasattr(msg, 'ListFields'):
+    return @TO@ @type:suite@ @[4416,6549]@ """Utility function to substitute runtime paramete <text_longer_than_50>
+
+
+

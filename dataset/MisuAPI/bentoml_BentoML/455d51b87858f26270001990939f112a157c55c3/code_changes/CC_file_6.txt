@@ -1,0 +1,293 @@
+UPD @type:simple_stmt@ @[686,713]@ from bentoml import config @TO@ @type:simple_stmt@ @[615,670]@ from dependency_injector.wiring import Provide, in <text_longer_than_50>
+---UPD @type:import_from@ @[686,712]@ from bentoml import config @TO@ @type:import_from@ @[615,669]@ from dependency_injector.wiring import Provide, in <text_longer_than_50>
+------INS @type:dotted_name@ @[620,646]@ dependency_injector.wiring @TO@ @type:import_from@ @[686,712]@ from bentoml import config
+------INS @type:import_as_names@ @[654,669]@ Provide, inject @TO@ @type:import_from@ @[686,712]@ from bentoml import config
+------UPD @type:name@ @[691,698]@ bentoml @TO@ @type:name@ @[640,646]@ wiring
+------MOV @type:name@ @[691,698]@ bentoml @TO@ @type:dotted_name@ @[620,646]@ dependency_injector.wiring
+------UPD @type:name@ @[706,712]@ config @TO@ @type:name@ @[663,669]@ inject
+------MOV @type:name@ @[706,712]@ config @TO@ @type:import_as_names@ @[654,669]@ Provide, inject
+
+
+INS @type:simple_stmt@ @[671,733]@ from bentoml.configuration.containers import Bento <text_longer_than_50> @TO@ @type:file_input@ @[647,2112]@ from contextlib import contextmanager
+
+from bentom <text_longer_than_50>
+---INS @type:import_from@ @[671,732]@ from bentoml.configuration.containers import Bento <text_longer_than_50> @TO@ @type:simple_stmt@ @[671,733]@ from bentoml.configuration.containers import Bento <text_longer_than_50>
+
+
+UPD @type:name@ @[715,729]@ ZIPKIN_API_URL @TO@ @type:name@ @[716,732]@ BentoMLContainer
+
+
+MOV @type:name@ @[715,729]@ ZIPKIN_API_URL @TO@ @type:import_from@ @[671,732]@ from bentoml.configuration.containers import Bento <text_longer_than_50>
+
+
+UPD @type:operator@ @[730,731]@ = @TO@ @type:operator@ @[735,736]@ @
+
+
+MOV @type:operator@ @[730,731]@ = @TO@ @type:decorator@ @[735,743]@ @inject
+
+
+UPD @type:simple_stmt@ @[978,1052]@ """
+    synchronous tracing function, will choose  <text_longer_than_50> @TO@ @type:simple_stmt@ @[1110,1200]@ """
+    synchronous tracing function, will choose  <text_longer_than_50>
+---UPD @type:string@ @[978,1051]@ """
+    synchronous tracing function, will choose  <text_longer_than_50> @TO@ @type:string@ @[1110,1199]@ """
+    synchronous tracing function, will choose  <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[1057,1423]@ if ZIPKIN_API_URL:
+        from bentoml.tracing.tr <text_longer_than_50> @TO@ @type:if_stmt@ @[1205,1583]@ if zipkin_api_url:
+        from bentoml.tracing.zi <text_longer_than_50>
+---UPD @type:name@ @[1060,1074]@ ZIPKIN_API_URL @TO@ @type:name@ @[1208,1222]@ zipkin_api_url
+---UPD @type:suite@ @[1075,1178]@ from bentoml.tracing.trace import trace as _trace
+ <text_longer_than_50> @TO@ @type:suite@ @[1223,1330]@ from bentoml.tracing.zipkin import trace as _trace <text_longer_than_50>
+------UPD @type:simple_stmt@ @[1084,1134]@ from bentoml.tracing.trace import trace as _trace @TO@ @type:simple_stmt@ @[1232,1283]@ from bentoml.tracing.zipkin import trace as _trace
+---------UPD @type:import_from@ @[1084,1133]@ from bentoml.tracing.trace import trace as _trace @TO@ @type:import_from@ @[1232,1282]@ from bentoml.tracing.zipkin import trace as _trace
+------------UPD @type:dotted_name@ @[1089,1110]@ bentoml.tracing.trace @TO@ @type:dotted_name@ @[1237,1259]@ bentoml.tracing.zipkin
+---------------UPD @type:name@ @[1105,1110]@ trace @TO@ @type:name@ @[1253,1259]@ zipkin
+------UPD @type:simple_stmt@ @[1143,1178]@ new_args = [ZIPKIN_API_URL, *args] @TO@ @type:simple_stmt@ @[1292,1330]@ kwargs['server_url'] = zipkin_api_url
+---------UPD @type:expr_stmt@ @[1143,1177]@ new_args = [ZIPKIN_API_URL, *args] @TO@ @type:expr_stmt@ @[1292,1329]@ kwargs['server_url'] = zipkin_api_url
+------------INS @type:atom_expr@ @[1292,1312]@ kwargs['server_url'] @TO@ @type:expr_stmt@ @[1143,1177]@ new_args = [ZIPKIN_API_URL, *args]
+------------UPD @type:name@ @[1143,1151]@ new_args @TO@ @type:name@ @[1292,1298]@ kwargs
+------------MOV @type:name@ @[1143,1151]@ new_args @TO@ @type:atom_expr@ @[1292,1312]@ kwargs['server_url']
+------------DEL @type:atom@ @[1154,1177]@ [ZIPKIN_API_URL, *args] @FROM@ @type:expr_stmt@ @[1143,1177]@ new_args = [ZIPKIN_API_URL, *args]
+---UPD @type:name@ @[1188,1214]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:name@ @[1340,1366]@ opentracing_server_address
+---UPD @type:suite@ @[1215,1383]@ from bentoml.tracing.opentrace import trace as _tr <text_longer_than_50> @TO@ @type:suite@ @[1367,1538]@ from bentoml.tracing.opentrace import trace as _tr <text_longer_than_50>
+------UPD @type:simple_stmt@ @[1287,1334]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args] @TO@ @type:simple_stmt@ @[1439,1489]@ kwargs['server_url'] = opentracing_server_address
+---------UPD @type:expr_stmt@ @[1287,1333]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args] @TO@ @type:expr_stmt@ @[1439,1488]@ kwargs['server_url'] = opentracing_server_address
+------------INS @type:atom_expr@ @[1439,1459]@ kwargs['server_url'] @TO@ @type:expr_stmt@ @[1287,1333]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+------------UPD @type:name@ @[1287,1295]@ new_args @TO@ @type:name@ @[1439,1445]@ kwargs
+------------MOV @type:name@ @[1287,1295]@ new_args @TO@ @type:atom_expr@ @[1439,1459]@ kwargs['server_url']
+------------DEL @type:atom@ @[1298,1333]@ [OPENTRACING_SERVER_ADDRESS, *args] @FROM@ @type:expr_stmt@ @[1287,1333]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+------UPD @type:simple_stmt@ @[1342,1383]@ kwargs['port'] = OPENTRACING_SERVER_PORT @TO@ @type:simple_stmt@ @[1497,1538]@ kwargs['port'] = opentracing_server_port
+---------UPD @type:expr_stmt@ @[1342,1382]@ kwargs['port'] = OPENTRACING_SERVER_PORT @TO@ @type:expr_stmt@ @[1497,1537]@ kwargs['port'] = opentracing_server_port
+------------UPD @type:name@ @[1359,1382]@ OPENTRACING_SERVER_PORT @TO@ @type:name@ @[1514,1537]@ opentracing_server_port
+---UPD @type:suite@ @[1393,1423]@ yield
+        return @TO@ @type:suite@ @[1548,1583]@ yield None
+        return
+------UPD @type:simple_stmt@ @[1402,1408]@ yield @TO@ @type:simple_stmt@ @[1557,1568]@ yield None
+---------INS @type:yield_expr@ @[1557,1567]@ yield None @TO@ @type:simple_stmt@ @[1402,1408]@ yield
+
+
+UPD @type:with_stmt@ @[1428,1491]@ with _trace(*new_args, **kwargs) as scope:
+        <text_longer_than_50> @TO@ @type:with_stmt@ @[1588,1640]@ with _trace(**kwargs) as scope:
+        yield scop <text_longer_than_50>
+---UPD @type:with_item@ @[1433,1469]@ _trace(*new_args, **kwargs) as scope @TO@ @type:with_item@ @[1593,1618]@ _trace(**kwargs) as scope
+------UPD @type:atom_expr@ @[1433,1460]@ _trace(*new_args, **kwargs) @TO@ @type:atom_expr@ @[1593,1609]@ _trace(**kwargs)
+---------UPD @type:trailer@ @[1439,1460]@ (*new_args, **kwargs) @TO@ @type:trailer@ @[1599,1609]@ (**kwargs)
+------------DEL @type:arglist@ @[1440,1459]@ *new_args, **kwargs @FROM@ @type:trailer@ @[1439,1460]@ (*new_args, **kwargs)
+
+
+UPD @type:simple_stmt@ @[1558,1633]@ """
+    asynchronous tracing function, will choose <text_longer_than_50> @TO@ @type:simple_stmt@ @[2034,2125]@ """
+    asynchronous tracing function, will choose <text_longer_than_50>
+---UPD @type:string@ @[1558,1632]@ """
+    asynchronous tracing function, will choose <text_longer_than_50> @TO@ @type:string@ @[2034,2124]@ """
+    asynchronous tracing function, will choose <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[1637,2027]@ if ZIPKIN_API_URL:
+        from bentoml.tracing.tr <text_longer_than_50> @TO@ @type:if_stmt@ @[2129,2531]@ if zipkin_api_url:
+        from bentoml.tracing.zi <text_longer_than_50>
+---UPD @type:name@ @[1640,1654]@ ZIPKIN_API_URL @TO@ @type:name@ @[2132,2146]@ zipkin_api_url
+---UPD @type:suite@ @[1655,1770]@ from bentoml.tracing.trace import async_trace as _ <text_longer_than_50> @TO@ @type:suite@ @[2147,2266]@ from bentoml.tracing.zipkin import async_trace as  <text_longer_than_50>
+------UPD @type:simple_stmt@ @[1664,1726]@ from bentoml.tracing.trace import async_trace as _ <text_longer_than_50> @TO@ @type:simple_stmt@ @[2156,2219]@ from bentoml.tracing.zipkin import async_trace as  <text_longer_than_50>
+---------UPD @type:import_from@ @[1664,1725]@ from bentoml.tracing.trace import async_trace as _ <text_longer_than_50> @TO@ @type:import_from@ @[2156,2218]@ from bentoml.tracing.zipkin import async_trace as  <text_longer_than_50>
+------------UPD @type:dotted_name@ @[1669,1690]@ bentoml.tracing.trace @TO@ @type:dotted_name@ @[2161,2183]@ bentoml.tracing.zipkin
+---------------UPD @type:name@ @[1685,1690]@ trace @TO@ @type:name@ @[2177,2183]@ zipkin
+------UPD @type:simple_stmt@ @[1735,1770]@ new_args = [ZIPKIN_API_URL, *args] @TO@ @type:simple_stmt@ @[2228,2266]@ kwargs['server_url'] = zipkin_api_url
+---------UPD @type:expr_stmt@ @[1735,1769]@ new_args = [ZIPKIN_API_URL, *args] @TO@ @type:expr_stmt@ @[2228,2265]@ kwargs['server_url'] = zipkin_api_url
+------------INS @type:atom_expr@ @[2228,2248]@ kwargs['server_url'] @TO@ @type:expr_stmt@ @[1735,1769]@ new_args = [ZIPKIN_API_URL, *args]
+------------UPD @type:name@ @[1735,1743]@ new_args @TO@ @type:name@ @[2228,2234]@ kwargs
+------------MOV @type:name@ @[1735,1743]@ new_args @TO@ @type:atom_expr@ @[2228,2248]@ kwargs['server_url']
+------------DEL @type:atom@ @[1746,1769]@ [ZIPKIN_API_URL, *args] @FROM@ @type:expr_stmt@ @[1735,1769]@ new_args = [ZIPKIN_API_URL, *args]
+---UPD @type:name@ @[1780,1806]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:name@ @[2276,2302]@ opentracing_server_address
+---UPD @type:suite@ @[1807,1987]@ from bentoml.tracing.opentrace import async_trace  <text_longer_than_50> @TO@ @type:suite@ @[2303,2486]@ from bentoml.tracing.opentrace import async_trace  <text_longer_than_50>
+------UPD @type:simple_stmt@ @[1891,1938]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args] @TO@ @type:simple_stmt@ @[2387,2437]@ kwargs['server_url'] = opentracing_server_address
+---------UPD @type:expr_stmt@ @[1891,1937]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args] @TO@ @type:expr_stmt@ @[2387,2436]@ kwargs['server_url'] = opentracing_server_address
+------------INS @type:atom_expr@ @[2387,2407]@ kwargs['server_url'] @TO@ @type:expr_stmt@ @[1891,1937]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+------------UPD @type:name@ @[1891,1899]@ new_args @TO@ @type:name@ @[2387,2393]@ kwargs
+------------MOV @type:name@ @[1891,1899]@ new_args @TO@ @type:atom_expr@ @[2387,2407]@ kwargs['server_url']
+------------DEL @type:atom@ @[1902,1937]@ [OPENTRACING_SERVER_ADDRESS, *args] @FROM@ @type:expr_stmt@ @[1891,1937]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+------UPD @type:simple_stmt@ @[1946,1987]@ kwargs['port'] = OPENTRACING_SERVER_PORT @TO@ @type:simple_stmt@ @[2445,2486]@ kwargs['port'] = opentracing_server_port
+---------UPD @type:expr_stmt@ @[1946,1986]@ kwargs['port'] = OPENTRACING_SERVER_PORT @TO@ @type:expr_stmt@ @[2445,2485]@ kwargs['port'] = opentracing_server_port
+------------UPD @type:name@ @[1963,1986]@ OPENTRACING_SERVER_PORT @TO@ @type:name@ @[2462,2485]@ opentracing_server_port
+---UPD @type:suite@ @[1997,2027]@ yield
+        return @TO@ @type:suite@ @[2496,2531]@ yield None
+        return
+------UPD @type:simple_stmt@ @[2006,2012]@ yield @TO@ @type:simple_stmt@ @[2505,2516]@ yield None
+---------INS @type:yield_expr@ @[2505,2515]@ yield None @TO@ @type:simple_stmt@ @[2006,2012]@ yield
+
+
+UPD @type:with_stmt@ @[2032,2101]@ with _async_trace(*new_args, **kwargs) as scope:
+  <text_longer_than_50> @TO@ @type:with_stmt@ @[2536,2594]@ with _async_trace(**kwargs) as scope:
+        yiel <text_longer_than_50>
+---UPD @type:with_item@ @[2037,2079]@ _async_trace(*new_args, **kwargs) as scope @TO@ @type:with_item@ @[2541,2572]@ _async_trace(**kwargs) as scope
+------UPD @type:atom_expr@ @[2037,2070]@ _async_trace(*new_args, **kwargs) @TO@ @type:atom_expr@ @[2541,2563]@ _async_trace(**kwargs)
+---------UPD @type:trailer@ @[2049,2070]@ (*new_args, **kwargs) @TO@ @type:trailer@ @[2553,2563]@ (**kwargs)
+------------DEL @type:arglist@ @[2050,2069]@ *new_args, **kwargs @FROM@ @type:trailer@ @[2049,2070]@ (*new_args, **kwargs)
+
+
+UPD @type:atom_expr@ @[732,771]@ config("tracing").get("zipkin_api_url") @TO@ @type:atom_expr@ @[796,851]@ Provide[BentoMLContainer.config.tracing.zipkin_api <text_longer_than_50>
+---UPD @type:trailer@ @[738,749]@ ("tracing") @TO@ @type:trailer@ @[820,827]@ .config
+------DEL @type:string@ @[739,748]@ "tracing" @FROM@ @type:trailer@ @[738,749]@ ("tracing")
+---MOV @type:trailer@ @[738,749]@ ("tracing") @TO@ @type:atom_expr@ @[804,850]@ BentoMLContainer.config.tracing.zipkin_api_url
+------DEL @type:string@ @[739,748]@ "tracing" @FROM@ @type:trailer@ @[738,749]@ ("tracing")
+---UPD @type:trailer@ @[749,753]@ .get @TO@ @type:trailer@ @[827,835]@ .tracing
+------UPD @type:name@ @[750,753]@ get @TO@ @type:name@ @[828,835]@ tracing
+---MOV @type:trailer@ @[749,753]@ .get @TO@ @type:atom_expr@ @[804,850]@ BentoMLContainer.config.tracing.zipkin_api_url
+------UPD @type:name@ @[750,753]@ get @TO@ @type:name@ @[828,835]@ tracing
+---UPD @type:trailer@ @[753,771]@ ("zipkin_api_url") @TO@ @type:trailer@ @[835,850]@ .zipkin_api_url
+------DEL @type:string@ @[754,770]@ "zipkin_api_url" @FROM@ @type:trailer@ @[753,771]@ ("zipkin_api_url")
+---MOV @type:trailer@ @[753,771]@ ("zipkin_api_url") @TO@ @type:atom_expr@ @[804,850]@ BentoMLContainer.config.tracing.zipkin_api_url
+------DEL @type:string@ @[754,770]@ "zipkin_api_url" @FROM@ @type:trailer@ @[753,771]@ ("zipkin_api_url")
+---MOV @type:name@ @[732,738]@ config @TO@ @type:trailer@ @[738,749]@ ("tracing")
+
+
+MOV @type:atom_expr@ @[732,771]@ config("tracing").get("zipkin_api_url") @TO@ @type:param@ @[774,852]@ zipkin_api_url: str = Provide[BentoMLContainer.con <text_longer_than_50>
+---UPD @type:trailer@ @[738,749]@ ("tracing") @TO@ @type:trailer@ @[820,827]@ .config
+------DEL @type:string@ @[739,748]@ "tracing" @FROM@ @type:trailer@ @[738,749]@ ("tracing")
+---MOV @type:trailer@ @[738,749]@ ("tracing") @TO@ @type:atom_expr@ @[804,850]@ BentoMLContainer.config.tracing.zipkin_api_url
+------DEL @type:string@ @[739,748]@ "tracing" @FROM@ @type:trailer@ @[738,749]@ ("tracing")
+---UPD @type:trailer@ @[749,753]@ .get @TO@ @type:trailer@ @[827,835]@ .tracing
+------UPD @type:name@ @[750,753]@ get @TO@ @type:name@ @[828,835]@ tracing
+---MOV @type:trailer@ @[749,753]@ .get @TO@ @type:atom_expr@ @[804,850]@ BentoMLContainer.config.tracing.zipkin_api_url
+------UPD @type:name@ @[750,753]@ get @TO@ @type:name@ @[828,835]@ tracing
+---UPD @type:trailer@ @[753,771]@ ("zipkin_api_url") @TO@ @type:trailer@ @[835,850]@ .zipkin_api_url
+------DEL @type:string@ @[754,770]@ "zipkin_api_url" @FROM@ @type:trailer@ @[753,771]@ ("zipkin_api_url")
+---MOV @type:trailer@ @[753,771]@ ("zipkin_api_url") @TO@ @type:atom_expr@ @[804,850]@ BentoMLContainer.config.tracing.zipkin_api_url
+------DEL @type:string@ @[754,770]@ "zipkin_api_url" @FROM@ @type:trailer@ @[753,771]@ ("zipkin_api_url")
+---MOV @type:name@ @[732,738]@ config @TO@ @type:trailer@ @[738,749]@ ("tracing")
+
+
+MOV @type:operator@ @[799,800]@ = @TO@ @type:param@ @[857,973]@ opentracing_server_address: str = Provide[
+        <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[801,852]@ config("tracing").get("opentracing_server_address" <text_longer_than_50> @TO@ @type:atom_expr@ @[891,972]@ Provide[
+        BentoMLContainer.config.tracing.o <text_longer_than_50>
+---UPD @type:trailer@ @[807,818]@ ("tracing") @TO@ @type:trailer@ @[924,931]@ .config
+------DEL @type:string@ @[808,817]@ "tracing" @FROM@ @type:trailer@ @[807,818]@ ("tracing")
+---MOV @type:trailer@ @[807,818]@ ("tracing") @TO@ @type:atom_expr@ @[908,966]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[808,817]@ "tracing" @FROM@ @type:trailer@ @[807,818]@ ("tracing")
+---UPD @type:trailer@ @[818,822]@ .get @TO@ @type:trailer@ @[931,939]@ .tracing
+------UPD @type:name@ @[819,822]@ get @TO@ @type:name@ @[932,939]@ tracing
+---MOV @type:trailer@ @[818,822]@ .get @TO@ @type:atom_expr@ @[908,966]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------UPD @type:name@ @[819,822]@ get @TO@ @type:name@ @[932,939]@ tracing
+---UPD @type:trailer@ @[822,852]@ ("opentracing_server_address") @TO@ @type:trailer@ @[939,966]@ .opentracing_server_address
+------DEL @type:string@ @[823,851]@ "opentracing_server_address" @FROM@ @type:trailer@ @[822,852]@ ("opentracing_server_address")
+---MOV @type:trailer@ @[822,852]@ ("opentracing_server_address") @TO@ @type:atom_expr@ @[908,966]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[823,851]@ "opentracing_server_address" @FROM@ @type:trailer@ @[822,852]@ ("opentracing_server_address")
+---MOV @type:name@ @[801,807]@ config @TO@ @type:trailer@ @[807,818]@ ("tracing")
+
+
+MOV @type:atom_expr@ @[801,852]@ config("tracing").get("opentracing_server_address" <text_longer_than_50> @TO@ @type:param@ @[857,973]@ opentracing_server_address: str = Provide[
+        <text_longer_than_50>
+---UPD @type:trailer@ @[807,818]@ ("tracing") @TO@ @type:trailer@ @[924,931]@ .config
+------DEL @type:string@ @[808,817]@ "tracing" @FROM@ @type:trailer@ @[807,818]@ ("tracing")
+---MOV @type:trailer@ @[807,818]@ ("tracing") @TO@ @type:atom_expr@ @[908,966]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[808,817]@ "tracing" @FROM@ @type:trailer@ @[807,818]@ ("tracing")
+---UPD @type:trailer@ @[818,822]@ .get @TO@ @type:trailer@ @[931,939]@ .tracing
+------UPD @type:name@ @[819,822]@ get @TO@ @type:name@ @[932,939]@ tracing
+---MOV @type:trailer@ @[818,822]@ .get @TO@ @type:atom_expr@ @[908,966]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------UPD @type:name@ @[819,822]@ get @TO@ @type:name@ @[932,939]@ tracing
+---UPD @type:trailer@ @[822,852]@ ("opentracing_server_address") @TO@ @type:trailer@ @[939,966]@ .opentracing_server_address
+------DEL @type:string@ @[823,851]@ "opentracing_server_address" @FROM@ @type:trailer@ @[822,852]@ ("opentracing_server_address")
+---MOV @type:trailer@ @[822,852]@ ("opentracing_server_address") @TO@ @type:atom_expr@ @[908,966]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[823,851]@ "opentracing_server_address" @FROM@ @type:trailer@ @[822,852]@ ("opentracing_server_address")
+---MOV @type:name@ @[801,807]@ config @TO@ @type:trailer@ @[807,818]@ ("tracing")
+
+
+MOV @type:operator@ @[877,878]@ = @TO@ @type:param@ @[978,1088]@ opentracing_server_port: str = Provide[
+        Be <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[879,927]@ config("tracing").get("opentracing_server_port") @TO@ @type:atom_expr@ @[1009,1087]@ Provide[
+        BentoMLContainer.config.tracing.o <text_longer_than_50>
+---UPD @type:trailer@ @[885,896]@ ("tracing") @TO@ @type:trailer@ @[1042,1049]@ .config
+------DEL @type:string@ @[886,895]@ "tracing" @FROM@ @type:trailer@ @[885,896]@ ("tracing")
+---MOV @type:trailer@ @[885,896]@ ("tracing") @TO@ @type:atom_expr@ @[1026,1081]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[886,895]@ "tracing" @FROM@ @type:trailer@ @[885,896]@ ("tracing")
+---UPD @type:trailer@ @[896,900]@ .get @TO@ @type:trailer@ @[1049,1057]@ .tracing
+------UPD @type:name@ @[897,900]@ get @TO@ @type:name@ @[1050,1057]@ tracing
+---MOV @type:trailer@ @[896,900]@ .get @TO@ @type:atom_expr@ @[1026,1081]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------UPD @type:name@ @[897,900]@ get @TO@ @type:name@ @[1050,1057]@ tracing
+---UPD @type:trailer@ @[900,927]@ ("opentracing_server_port") @TO@ @type:trailer@ @[1057,1081]@ .opentracing_server_port
+------DEL @type:string@ @[901,926]@ "opentracing_server_port" @FROM@ @type:trailer@ @[900,927]@ ("opentracing_server_port")
+---MOV @type:trailer@ @[900,927]@ ("opentracing_server_port") @TO@ @type:atom_expr@ @[1026,1081]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[901,926]@ "opentracing_server_port" @FROM@ @type:trailer@ @[900,927]@ ("opentracing_server_port")
+---MOV @type:name@ @[879,885]@ config @TO@ @type:trailer@ @[885,896]@ ("tracing")
+
+
+MOV @type:atom_expr@ @[879,927]@ config("tracing").get("opentracing_server_port") @TO@ @type:param@ @[978,1088]@ opentracing_server_port: str = Provide[
+        Be <text_longer_than_50>
+---UPD @type:trailer@ @[885,896]@ ("tracing") @TO@ @type:trailer@ @[1042,1049]@ .config
+------DEL @type:string@ @[886,895]@ "tracing" @FROM@ @type:trailer@ @[885,896]@ ("tracing")
+---MOV @type:trailer@ @[885,896]@ ("tracing") @TO@ @type:atom_expr@ @[1026,1081]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[886,895]@ "tracing" @FROM@ @type:trailer@ @[885,896]@ ("tracing")
+---UPD @type:trailer@ @[896,900]@ .get @TO@ @type:trailer@ @[1049,1057]@ .tracing
+------UPD @type:name@ @[897,900]@ get @TO@ @type:name@ @[1050,1057]@ tracing
+---MOV @type:trailer@ @[896,900]@ .get @TO@ @type:atom_expr@ @[1026,1081]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------UPD @type:name@ @[897,900]@ get @TO@ @type:name@ @[1050,1057]@ tracing
+---UPD @type:trailer@ @[900,927]@ ("opentracing_server_port") @TO@ @type:trailer@ @[1057,1081]@ .opentracing_server_port
+------DEL @type:string@ @[901,926]@ "opentracing_server_port" @FROM@ @type:trailer@ @[900,927]@ ("opentracing_server_port")
+---MOV @type:trailer@ @[900,927]@ ("opentracing_server_port") @TO@ @type:atom_expr@ @[1026,1081]@ BentoMLContainer.config.tracing.opentracing_server <text_longer_than_50>
+------DEL @type:string@ @[901,926]@ "opentracing_server_port" @FROM@ @type:trailer@ @[900,927]@ ("opentracing_server_port")
+---MOV @type:name@ @[879,885]@ config @TO@ @type:trailer@ @[885,896]@ ("tracing")
+
+
+UPD @type:name@ @[772,798]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:name@ @[885,888]@ str
+
+
+MOV @type:name@ @[772,798]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:tfpdef@ @[857,888]@ opentracing_server_address: str
+
+
+UPD @type:name@ @[853,876]@ OPENTRACING_SERVER_PORT @TO@ @type:name@ @[1003,1006]@ str
+
+
+MOV @type:name@ @[853,876]@ OPENTRACING_SERVER_PORT @TO@ @type:tfpdef@ @[978,1006]@ opentracing_server_port: str
+
+
+UPD @type:name@ @[1155,1169]@ ZIPKIN_API_URL @TO@ @type:name@ @[1315,1329]@ zipkin_api_url
+
+
+MOV @type:name@ @[1155,1169]@ ZIPKIN_API_URL @TO@ @type:expr_stmt@ @[1143,1177]@ new_args = [ZIPKIN_API_URL, *args]
+
+
+UPD @type:name@ @[1299,1325]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:name@ @[1462,1488]@ opentracing_server_address
+
+
+MOV @type:name@ @[1299,1325]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:expr_stmt@ @[1287,1333]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+
+
+UPD @type:argument@ @[1440,1449]@ *new_args @TO@ @type:argument@ @[1600,1608]@ **kwargs
+---UPD @type:operator@ @[1440,1441]@ * @TO@ @type:operator@ @[1600,1602]@ **
+---UPD @type:name@ @[1441,1449]@ new_args @TO@ @type:name@ @[1602,1608]@ kwargs
+
+
+MOV @type:argument@ @[1440,1449]@ *new_args @TO@ @type:trailer@ @[1439,1460]@ (*new_args, **kwargs)
+---UPD @type:operator@ @[1440,1441]@ * @TO@ @type:operator@ @[1600,1602]@ **
+---UPD @type:name@ @[1441,1449]@ new_args @TO@ @type:name@ @[1602,1608]@ kwargs
+
+
+UPD @type:name@ @[1747,1761]@ ZIPKIN_API_URL @TO@ @type:name@ @[2251,2265]@ zipkin_api_url
+
+
+MOV @type:name@ @[1747,1761]@ ZIPKIN_API_URL @TO@ @type:expr_stmt@ @[1735,1769]@ new_args = [ZIPKIN_API_URL, *args]
+
+
+UPD @type:name@ @[1903,1929]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:name@ @[2410,2436]@ opentracing_server_address
+
+
+MOV @type:name@ @[1903,1929]@ OPENTRACING_SERVER_ADDRESS @TO@ @type:expr_stmt@ @[1891,1937]@ new_args = [OPENTRACING_SERVER_ADDRESS, *args]
+
+
+UPD @type:argument@ @[2050,2059]@ *new_args @TO@ @type:argument@ @[2554,2562]@ **kwargs
+---UPD @type:operator@ @[2050,2051]@ * @TO@ @type:operator@ @[2554,2556]@ **
+---UPD @type:name@ @[2051,2059]@ new_args @TO@ @type:name@ @[2556,2562]@ kwargs
+
+
+MOV @type:argument@ @[2050,2059]@ *new_args @TO@ @type:trailer@ @[2049,2070]@ (*new_args, **kwargs)
+---UPD @type:operator@ @[2050,2051]@ * @TO@ @type:operator@ @[2554,2556]@ **
+---UPD @type:name@ @[2051,2059]@ new_args @TO@ @type:name@ @[2556,2562]@ kwargs
+
+

@@ -1,0 +1,25 @@
+commit c39be02589d9cfa08b673d2bae20cde160305c8a
+Author: David Sandberg <david.o.sandberg@gmail.com>
+Date:   Sat Jun 18 19:06:30 2016 +0200
+
+    Fixed bug in get_dataset when there are files in the root dataset
+    directory
+
+diff --git a/facenet/src/facenet.py b/facenet/src/facenet.py
+index 3f2ae0c..949af11 100644
+--- a/facenet/src/facenet.py
++++ b/facenet/src/facenet.py
+@@ -568,9 +568,10 @@ def get_dataset(paths):
+     for i in range(nrof_classes):
+       class_name = classes[i]
+       facedir = os.path.join(path_exp, class_name)
+-      images = os.listdir(facedir)
+-      image_paths = map(lambda x: os.path.join(facedir,x), images)
+-      dataset.append(ImageClass(class_name, image_paths))
++      if os.path.isdir(facedir):
++        images = os.listdir(facedir)
++        image_paths = map(lambda x: os.path.join(facedir,x), images)
++        dataset.append(ImageClass(class_name, image_paths))
+ 
+   return dataset
+ 

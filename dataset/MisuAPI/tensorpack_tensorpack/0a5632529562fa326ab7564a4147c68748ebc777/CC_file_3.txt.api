@@ -1,0 +1,14 @@
+INS @type:simple_stmt@ @[1074,1108]@ self._stop_at_last = stop_at_last @TO@ @type:suite@ @[394,710]@ """
+        Args:
+            startable(list): lis <text_longer_than_50>
+
+UPD @type:atom_expr@ @[748,852]@ logger.info("Starting " +
+                    ', ' <text_longer_than_50> @TO@ @type:atom_expr@ @[1146,1241]@ logger.info("Starting " +
+                    ', ' <text_longer_than_50>
+
+DEL @type:operator@ @[843,844]@ + @FROM@ @type:arith_expr@ @[760,851]@ "Starting " +
+                    ', '.join([k.nam <text_longer_than_50>
+
+DEL @type:string@ @[845,851]@ ' ...' @FROM@ @type:arith_expr@ @[760,851]@ "Starting " +
+                    ', '.join([k.nam <text_longer_than_50>
+

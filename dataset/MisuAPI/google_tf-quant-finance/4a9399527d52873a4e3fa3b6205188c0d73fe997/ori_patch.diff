@@ -1,0 +1,21 @@
+commit 4a9399527d52873a4e3fa3b6205188c0d73fe997
+Author: Cyril Chimisov <cyrilchimisov@google.com>
+Date:   Thu Dec 26 02:48:33 2019 -0800
+
+    Fix np,linspace argument in heston_model_test.
+    
+    PiperOrigin-RevId: 287168346
+
+diff --git a/tf_quant_finance/experimental/models_v2/heston_model_test.py b/tf_quant_finance/experimental/models_v2/heston_model_test.py
+index a03e44a..6ccc948 100644
+--- a/tf_quant_finance/experimental/models_v2/heston_model_test.py
++++ b/tf_quant_finance/experimental/models_v2/heston_model_test.py
+@@ -38,7 +38,7 @@ class HestonModelTest(tf.test.TestCase):
+         kappa=1.0, theta=theta, epsilon=0.00001,
+         rho=-0.0, dtype=np.float64)
+     years = 1.0
+-    times = np.linspace(0.0, years, 365 * years)
++    times = np.linspace(0.0, years, int(365 * years))
+     num_samples = 2
+     paths = process.sample_paths(
+         times,

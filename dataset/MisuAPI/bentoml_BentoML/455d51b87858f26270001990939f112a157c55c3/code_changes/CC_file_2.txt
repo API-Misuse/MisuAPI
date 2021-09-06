@@ -1,0 +1,131 @@
+INS @type:simple_stmt@ @[1128,1168]@ from bentoml.tracing import async_trace @TO@ @type:file_input@ @[576,14870]@ import asyncio
+import functools
+import logging
+imp <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1128,1193]@ from bentoml.tracing.trace import async_trace, mak <text_longer_than_50> @TO@ @type:simple_stmt@ @[1168,1221]@ from bentoml.tracing.zipkin import make_http_heade <text_longer_than_50>
+---UPD @type:import_from@ @[1128,1192]@ from bentoml.tracing.trace import async_trace, mak <text_longer_than_50> @TO@ @type:import_from@ @[1168,1220]@ from bentoml.tracing.zipkin import make_http_heade <text_longer_than_50>
+------UPD @type:dotted_name@ @[1133,1154]@ bentoml.tracing.trace @TO@ @type:dotted_name@ @[1173,1195]@ bentoml.tracing.zipkin
+---------UPD @type:name@ @[1149,1154]@ trace @TO@ @type:name@ @[1189,1195]@ zipkin
+------DEL @type:import_as_names@ @[1162,1192]@ async_trace, make_http_headers @FROM@ @type:import_from@ @[1128,1192]@ from bentoml.tracing.trace import async_trace, mak <text_longer_than_50>
+
+
+MOV @type:name@ @[1175,1192]@ make_http_headers @TO@ @type:import_from@ @[1128,1192]@ from bentoml.tracing.trace import async_trace, mak <text_longer_than_50>
+
+
+UPD @type:async_stmt@ @[9816,11128]@ async def request_dispatcher(self, request):
+      <text_longer_than_50> @TO@ @type:async_stmt@ @[9712,10991]@ async def request_dispatcher(self, request):
+      <text_longer_than_50>
+---UPD @type:funcdef@ @[9822,11128]@ def request_dispatcher(self, request):
+        wit <text_longer_than_50> @TO@ @type:funcdef@ @[9718,10991]@ def request_dispatcher(self, request):
+        wit <text_longer_than_50>
+------UPD @type:suite@ @[9860,11128]@ with async_trace(
+            self.zipkin_api_url, <text_longer_than_50> @TO@ @type:suite@ @[9756,10991]@ with async_trace(
+            service_name=self.__ <text_longer_than_50>
+---------UPD @type:with_stmt@ @[9869,11108]@ with async_trace(
+            self.zipkin_api_url, <text_longer_than_50> @TO@ @type:with_stmt@ @[9765,10971]@ with async_trace(
+            service_name=self.__ <text_longer_than_50>
+------------UPD @type:atom_expr@ @[9874,10106]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[9770,9969]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+---------------UPD @type:trailer@ @[9885,10106]@ (
+            self.zipkin_api_url,
+            ser <text_longer_than_50> @TO@ @type:trailer@ @[9781,9969]@ (
+            service_name=self.__class__.__name__ <text_longer_than_50>
+------------------UPD @type:arglist@ @[9899,10096]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50> @TO@ @type:arglist@ @[9795,9959]@ service_name=self.__class__.__name__,
+             <text_longer_than_50>
+---------------------DEL @type:atom_expr@ @[9899,9918]@ self.zipkin_api_url @FROM@ @type:arglist@ @[9899,10096]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+---------------------DEL @type:operator@ @[9918,9919]@ , @FROM@ @type:arglist@ @[9899,10096]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+
+
+UPD @type:async_stmt@ @[11133,12088]@ async def relay_handler(self, request):
+        da <text_longer_than_50> @TO@ @type:async_stmt@ @[10996,11936]@ async def relay_handler(self, request):
+        da <text_longer_than_50>
+---UPD @type:funcdef@ @[11139,12088]@ def relay_handler(self, request):
+        data = a <text_longer_than_50> @TO@ @type:funcdef@ @[11002,11936]@ def relay_handler(self, request):
+        data = a <text_longer_than_50>
+------UPD @type:suite@ @[11172,12088]@ data = await request.read()
+        headers = dict <text_longer_than_50> @TO@ @type:suite@ @[11035,11936]@ data = await request.read()
+        headers = dict <text_longer_than_50>
+---------UPD @type:with_stmt@ @[11344,11976]@ with async_trace(
+            self.zipkin_api_url, <text_longer_than_50> @TO@ @type:with_stmt@ @[11207,11824]@ with async_trace(
+            service_name=self.__ <text_longer_than_50>
+------------UPD @type:with_item@ @[11349,11513]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:with_item@ @[11212,11331]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+---------------UPD @type:atom_expr@ @[11349,11500]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[11212,11318]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+------------------UPD @type:trailer@ @[11360,11500]@ (
+            self.zipkin_api_url,
+            ser <text_longer_than_50> @TO@ @type:trailer@ @[11223,11318]@ (
+            service_name=self.__class__.__name__ <text_longer_than_50>
+---------------------UPD @type:arglist@ @[11374,11490]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50> @TO@ @type:arglist@ @[11237,11308]@ service_name=self.__class__.__name__, span_name=f" <text_longer_than_50>
+------------------------DEL @type:atom_expr@ @[11374,11393]@ self.zipkin_api_url @FROM@ @type:arglist@ @[11374,11490]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+------------------------DEL @type:operator@ @[11393,11394]@ , @FROM@ @type:arglist@ @[11374,11490]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+------------UPD @type:suite@ @[11514,11976]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50> @TO@ @type:suite@ @[11332,11824]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+---------------INS @type:if_stmt@ @[11345,11420]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50> @TO@ @type:suite@ @[11514,11976]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50>
+------------------INS @type:suite@ @[11358,11420]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:if_stmt@ @[11345,11420]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+---------------MOV @type:simple_stmt@ @[11527,11572]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:suite@ @[11358,11420]@ headers.update(make_http_headers(trace_ctx))
+
+
+UPD @type:async_stmt@ @[12093,13911]@ async def _batch_handler_template(self, requests,  <text_longer_than_50> @TO@ @type:async_stmt@ @[11941,13744]@ async def _batch_handler_template(self, requests,  <text_longer_than_50>
+---UPD @type:funcdef@ @[12099,13911]@ def _batch_handler_template(self, requests, api_ro <text_longer_than_50> @TO@ @type:funcdef@ @[11947,13744]@ def _batch_handler_template(self, requests, api_ro <text_longer_than_50>
+------UPD @type:suite@ @[12154,13911]@ '''
+        batch request handler
+        params:
+ <text_longer_than_50> @TO@ @type:suite@ @[12002,13744]@ '''
+        batch request handler
+        params:
+ <text_longer_than_50>
+---------UPD @type:with_stmt@ @[12581,13911]@ with async_trace(
+            self.zipkin_api_url, <text_longer_than_50> @TO@ @type:with_stmt@ @[12429,13744]@ with async_trace(
+            service_name=self.__ <text_longer_than_50>
+------------UPD @type:with_item@ @[12586,12752]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:with_item@ @[12434,12555]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+---------------UPD @type:atom_expr@ @[12586,12739]@ async_trace(
+            self.zipkin_api_url,
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[12434,12542]@ async_trace(
+            service_name=self.__class <text_longer_than_50>
+------------------UPD @type:trailer@ @[12597,12739]@ (
+            self.zipkin_api_url,
+            ser <text_longer_than_50> @TO@ @type:trailer@ @[12445,12542]@ (
+            service_name=self.__class__.__name__ <text_longer_than_50>
+---------------------UPD @type:arglist@ @[12611,12729]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50> @TO@ @type:arglist@ @[12459,12532]@ service_name=self.__class__.__name__, span_name=f" <text_longer_than_50>
+------------------------DEL @type:atom_expr@ @[12611,12630]@ self.zipkin_api_url @FROM@ @type:arglist@ @[12611,12729]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+------------------------DEL @type:operator@ @[12630,12631]@ , @FROM@ @type:arglist@ @[12611,12729]@ self.zipkin_api_url,
+            service_name=self <text_longer_than_50>
+------------UPD @type:suite@ @[12753,13911]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50> @TO@ @type:suite@ @[12556,13744]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+---------------INS @type:if_stmt@ @[12569,12644]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50> @TO@ @type:suite@ @[12753,13911]@ headers.update(make_http_headers(trace_ctx))
+      <text_longer_than_50>
+------------------INS @type:suite@ @[12582,12644]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:if_stmt@ @[12569,12644]@ if trace_ctx:
+                headers.update(make_ <text_longer_than_50>
+---------------MOV @type:simple_stmt@ @[12766,12811]@ headers.update(make_http_headers(trace_ctx)) @TO@ @type:suite@ @[12582,12644]@ headers.update(make_http_headers(trace_ctx))
+
+
+DEL @type:simple_stmt@ @[6606,6643]@ self.zipkin_api_url = zipkin_api_url @FROM@ @type:suite@ @[6086,7427]@ self.outbound_unix_socket = outbound_unix_socket
+  <text_longer_than_50>
+
+

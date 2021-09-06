@@ -1,0 +1,6 @@
+INS @type:simple_stmt@ @[660,670]@ import os @TO@ @type:file_input@ @[575,5876]@ """Entrypoint for invoking TFX components in Kubef <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[4239,4286]@ fileio.makedirs(os.path.dirname(metadata_uri)) @TO@ @type:suite@ @[1535,4325]@ """Selects a particular executor and run it based  <text_longer_than_50>
+
+

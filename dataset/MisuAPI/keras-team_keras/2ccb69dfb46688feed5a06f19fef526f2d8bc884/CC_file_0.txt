@@ -1,0 +1,10 @@
+UPD @type:with_stmt@ @[2685,2770]@ with K.control_dependencies([update_op]):  # For T <text_longer_than_50> @TO@ @type:with_stmt@ @[2685,2768]@ with K.control_dependencies(update_op):  # For TF
+ <text_longer_than_50>
+---UPD @type:atom_expr@ @[2690,2725]@ K.control_dependencies([update_op]) @TO@ @type:atom_expr@ @[2690,2723]@ K.control_dependencies(update_op)
+------UPD @type:trailer@ @[2712,2725]@ ([update_op]) @TO@ @type:trailer@ @[2712,2723]@ (update_op)
+---------DEL @type:atom@ @[2713,2724]@ [update_op] @FROM@ @type:trailer@ @[2712,2725]@ ([update_op])
+
+
+MOV @type:name@ @[2714,2723]@ update_op @TO@ @type:trailer@ @[2712,2725]@ ([update_op])
+
+

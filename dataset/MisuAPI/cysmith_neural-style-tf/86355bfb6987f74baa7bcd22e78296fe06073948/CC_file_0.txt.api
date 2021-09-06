@@ -1,0 +1,80 @@
+DEL @type:simple_stmt@ @[30766,30773]@ main() @FROM@ @type:suite@ @[30763,30773]@ main()
+
+UPD @type:atom_expr@ @[17829,17882]@ cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float <text_longer_than_50> @TO@ @type:atom_expr@ @[17842,17876]@ cv2.imread(path, cv2.IMREAD_COLOR)
+
+MOV @type:trailer@ @[17870,17882]@ (np.float32) @TO@ @type:atom_expr@ @[17910,17932]@ img.astype(np.float32)
+
+DEL @type:trailer@ @[17863,17870]@ .astype @FROM@ @type:atom_expr@ @[17829,17882]@ cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float <text_longer_than_50>
+
+INS @type:simple_stmt@ @[17879,17902]@ check_image(img, path) @TO@ @type:suite@ @[17806,17932]@ # bgr image
+  img = cv2.imread(path, cv2.IMREAD_CO <text_longer_than_50>
+
+INS @type:simple_stmt@ @[17904,17933]@ img = img.astype(np.float32) @TO@ @type:suite@ @[17806,17932]@ # bgr image
+  img = cv2.imread(path, cv2.IMREAD_CO <text_longer_than_50>
+
+INS @type:simple_stmt@ @[17904,17933]@ img = img.astype(np.float32) @TO@ @type:suite@ @[17806,17932]@ # bgr image
+  img = cv2.imread(path, cv2.IMREAD_CO <text_longer_than_50>
+
+INS @type:expr_stmt@ @[17904,17932]@ img = img.astype(np.float32) @TO@ @type:simple_stmt@ @[17904,17933]@ img = img.astype(np.float32)
+
+INS @type:expr_stmt@ @[17904,17932]@ img = img.astype(np.float32) @TO@ @type:simple_stmt@ @[17904,17933]@ img = img.astype(np.float32)
+
+INS @type:atom_expr@ @[17910,17932]@ img.astype(np.float32) @TO@ @type:expr_stmt@ @[17904,17932]@ img = img.astype(np.float32)
+
+INS @type:atom_expr@ @[17910,17932]@ img.astype(np.float32) @TO@ @type:expr_stmt@ @[17904,17932]@ img = img.astype(np.float32)
+
+UPD @type:atom_expr@ @[21952,22121]@ tf.contrib.opt.ScipyOptimizerInterface(
+      loss <text_longer_than_50> @TO@ @type:atom_expr@ @[22105,22267]@ tf.contrib.opt.ScipyOptimizerInterface(
+      loss <text_longer_than_50>
+
+UPD @type:atom_expr@ @[25016,25069]@ cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float <text_longer_than_50> @TO@ @type:atom_expr@ @[25162,25196]@ cv2.imread(path, cv2.IMREAD_COLOR)
+
+MOV @type:trailer@ @[25057,25069]@ (np.float32) @TO@ @type:atom_expr@ @[25230,25252]@ img.astype(np.float32)
+
+DEL @type:trailer@ @[25050,25057]@ .astype @FROM@ @type:atom_expr@ @[25016,25069]@ cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float <text_longer_than_50>
+
+INS @type:simple_stmt@ @[25199,25222]@ check_image(img, path) @TO@ @type:suite@ @[24935,25445]@ path = os.path.join(args.content_img_dir, content_ <text_longer_than_50>
+
+INS @type:simple_stmt@ @[25224,25253]@ img = img.astype(np.float32) @TO@ @type:suite@ @[24935,25445]@ path = os.path.join(args.content_img_dir, content_ <text_longer_than_50>
+
+INS @type:simple_stmt@ @[25224,25253]@ img = img.astype(np.float32) @TO@ @type:suite@ @[24935,25445]@ path = os.path.join(args.content_img_dir, content_ <text_longer_than_50>
+
+INS @type:expr_stmt@ @[25224,25252]@ img = img.astype(np.float32) @TO@ @type:simple_stmt@ @[25224,25253]@ img = img.astype(np.float32)
+
+INS @type:expr_stmt@ @[25224,25252]@ img = img.astype(np.float32) @TO@ @type:simple_stmt@ @[25224,25253]@ img = img.astype(np.float32)
+
+INS @type:atom_expr@ @[25230,25252]@ img.astype(np.float32) @TO@ @type:expr_stmt@ @[25224,25252]@ img = img.astype(np.float32)
+
+INS @type:atom_expr@ @[25230,25252]@ img.astype(np.float32) @TO@ @type:expr_stmt@ @[25224,25252]@ img = img.astype(np.float32)
+
+UPD @type:atom_expr@ @[25651,25704]@ cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float <text_longer_than_50> @TO@ @type:atom_expr@ @[25834,25868]@ cv2.imread(path, cv2.IMREAD_COLOR)
+
+MOV @type:trailer@ @[25692,25704]@ (np.float32) @TO@ @type:atom_expr@ @[25906,25928]@ img.astype(np.float32)
+
+DEL @type:trailer@ @[25685,25692]@ .astype @FROM@ @type:atom_expr@ @[25651,25704]@ cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float <text_longer_than_50>
+
+INS @type:simple_stmt@ @[25873,25896]@ check_image(img, path) @TO@ @type:suite@ @[25569,25842]@ path = os.path.join(args.style_imgs_dir, style_fn) <text_longer_than_50>
+
+INS @type:simple_stmt@ @[25900,25929]@ img = img.astype(np.float32) @TO@ @type:suite@ @[25569,25842]@ path = os.path.join(args.style_imgs_dir, style_fn) <text_longer_than_50>
+
+INS @type:simple_stmt@ @[25900,25929]@ img = img.astype(np.float32) @TO@ @type:suite@ @[25569,25842]@ path = os.path.join(args.style_imgs_dir, style_fn) <text_longer_than_50>
+
+INS @type:expr_stmt@ @[25900,25928]@ img = img.astype(np.float32) @TO@ @type:simple_stmt@ @[25900,25929]@ img = img.astype(np.float32)
+
+INS @type:expr_stmt@ @[25900,25928]@ img = img.astype(np.float32) @TO@ @type:simple_stmt@ @[25900,25929]@ img = img.astype(np.float32)
+
+INS @type:atom_expr@ @[25906,25928]@ img.astype(np.float32) @TO@ @type:expr_stmt@ @[25900,25928]@ img = img.astype(np.float32)
+
+INS @type:atom_expr@ @[25906,25928]@ img.astype(np.float32) @TO@ @type:expr_stmt@ @[25900,25928]@ img = img.astype(np.float32)
+
+INS @type:simple_stmt@ @[26470,26493]@ check_image(img, path) @TO@ @type:suite@ @[26142,26385]@ path = os.path.join(args.content_img_dir, mask_img <text_longer_than_50>
+
+UPD @type:atom_expr@ @[26563,26613]@ os.path.join(args.video_output_dir, prev_frame_fn) @TO@ @type:atom_expr@ @[26790,26829]@ os.path.join(args.video_output_dir, fn)
+
+UPD @type:atom_expr@ @[26622,26667]@ cv2.imread(prev_frame_path, cv2.IMREAD_COLOR) @TO@ @type:atom_expr@ @[26838,26872]@ cv2.imread(path, cv2.IMREAD_COLOR)
+
+INS @type:simple_stmt@ @[26875,26898]@ check_image(img, path) @TO@ @type:suite@ @[26412,26681]@ # previously stylized frame
+  prev_frame = frame - <text_longer_than_50>
+
+MOV @type:atom_expr@ @[30766,30772]@ main() @TO@ @type:suite@ @[30763,30773]@ main()
+

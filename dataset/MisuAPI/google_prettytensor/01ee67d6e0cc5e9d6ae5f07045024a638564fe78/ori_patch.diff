@@ -1,0 +1,51 @@
+commit 01ee67d6e0cc5e9d6ae5f07045024a638564fe78
+Author: Eider Moore <eiderm@google.com>
+Date:   Wed Dec 9 21:47:20 2015 -0800
+
+    Fixing the tutorials on GPU and fixing a bad link in tutorial
+
+diff --git a/prettytensor/tutorial/baby_names.py b/prettytensor/tutorial/baby_names.py
+index 92a6146..f86e7a9 100644
+--- a/prettytensor/tutorial/baby_names.py
++++ b/prettytensor/tutorial/baby_names.py
+@@ -52,7 +52,9 @@ def create_model(text_in,
+                  phase=pt.Phase.train):
+   """Creates a model for running baby names."""
+   with pt.defaults_scope(phase=phase, l2loss=0.00001):
+-    embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
++    # The embedding lookup must be placed on a cpu.
++    with tf.device('/cpu:0'):
++      embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
+     # We need to cleave the sequence because sequence lstm expect each
+     # timestep to be in its own Tensor.
+     lstm = (embedded.cleave_sequence(timesteps).sequence_lstm(CHARS))
+diff --git a/prettytensor/tutorial/shakespeare.py b/prettytensor/tutorial/shakespeare.py
+index 12aac29..5be90aa 100644
+--- a/prettytensor/tutorial/shakespeare.py
++++ b/prettytensor/tutorial/shakespeare.py
+@@ -53,7 +53,9 @@ def create_model(text_in, timesteps, phase):
+     The logits.
+   """
+   with pt.defaults_scope(activation_fn=tf.nn.relu, l2loss=0.00001):
+-    embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
++    # The embedding lookup must be placed on a cpu.
++    with tf.device('/cpu:0'):
++      embedded = text_in.embedding_lookup(CHARS, [EMBEDDING_SIZE])
+     # Because the sequence LSTM expects each timestep to be its own Tensor,
+     # we need to cleave the sequence.
+     # Below we can build a stacked 2 layer LSTM by just chaining them together.
+diff --git a/setup.py b/setup.py
+index 43ef285..ae0bdae 100644
+--- a/setup.py
++++ b/setup.py
+@@ -43,6 +43,10 @@ setup(
+     author_email='opensource@google.com',
+     # Contained modules and scripts.
+     packages=find_packages(),
++    include_package_data=True,
++    package_data={
++        'prettytensor': ['tutorial/baby_names.csv']
++        },
+     entry_points={
+         'console_scripts': CONSOLE_SCRIPTS
+         },

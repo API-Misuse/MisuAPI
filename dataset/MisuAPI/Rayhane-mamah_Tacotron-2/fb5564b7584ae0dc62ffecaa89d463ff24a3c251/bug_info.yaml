@@ -1,0 +1,622 @@
+issues_cnt: 5
+issue_0:
+  html_url: https://github.com/Rayhane-mamah/Tacotron-2/issues/4
+  title: Implementation Status and planned TODOs
+  body: "this umbrella issue tracks my current progress and discuss priority of planned\
+    \ TODOs. It has been closed since all objectives are hit.\r\n\r\n# Goal\r\n\r\n\
+    - [x]  achieve a high quality human-like text to speech synthesizer based on DeepMind's\
+    \ paper\r\n- [x]  provide a pre-trained Tacotron-2 model (Training.. checking\
+    \ this still)\r\n\r\n# Model\r\n\r\n## Feature Prediction Model (Done)\r\n\r\n\
+    - [x] Convolutional-RNN encoder block\r\n- [x] Autoregressive decoder\r\n- [x]\
+    \ Location Sensitive Attention (+ smoothing option)\r\n- [x] Dynamic stop token\
+    \ prediction\r\n- [x] LSTM + Zoneout\r\n- [x] reduction factor (not used in the\
+    \ T2 paper)\r\n\r\n## Wavenet vocoder conditioned on Mel-Spectrogram (Done)\r\n\
+    \r\n- [x] 1D dilated convolution\r\n- [x] Local conditioning\r\n- [x] Global conditioning\r\
+    \n- [x] Upsampling network (by transposed convolutions)\r\n- [x] Mixture of logistic\
+    \ distributions\r\n- [x] Gaussian distribution for waveforms modeling\r\n- [x]\
+    \ Exponential Moving Average (train + synthesis)\r\n\r\n# Scripts\r\n\r\n- [x]\
+    \ Feature prediction model: training\r\n- [x] Feature prediction model: natural\
+    \ synthesis\r\n- [x] Feature prediction model: ground-truth aligned synthesis\
+    \ \r\n- [x] Wavenet vocoder model: training (ground truth Mel-Spectrograms)\r\n\
+    - [x] Wavenet vocoder model: training (ground truth aligned Mel-Spectrograms)\r\
+    \n- [x] Wavenet vocoder model: waveforms synthesis\r\n- [x] Global model: synthesis\
+    \ (from text to waveforms)\r\n\r\n# Extra (optional):\r\n\r\n- [x] Griffin-Lim\
+    \ (as an alternative vocoder)\r\n- [x] Reduction factor (speed up training, reduce\
+    \ model complexity + better alignment)\r\n- [x] Curriculum-Learning for RNN Natural\
+    \ synthesis. [paper](https://arxiv.org/pdf/1506.03099.pdf)\r\n- [x] Post processing\
+    \ network for Linear Spectrogram mapping\r\n- [x] Wavenet with Gaussian distribution\
+    \ ([reference](https://arxiv.org/pdf/1807.07281.pdf))\r\n\r\n## Notes:\r\n\r\n\
+    All models in this repository will be implemented in Tensorflow on a first stage,\
+    \ so in case you want to use a Wavenet vocoder implemented in Pytorch you can\
+    \ refer to [this repository](https://github.com/r9y9/wavenet_vocoder) that shows\
+    \ very promising results."
+issue_1:
+  html_url: https://github.com/Rayhane-mamah/Tacotron-2/issues/55
+  title: adding padding to inputs, targets at wavemet_vocoder.feeder.py seems wrong
+  body: "wavenet_vocoder.feeder.py add padding to inputs and targets by this code\
+    \ :\r\n\r\nhttps://github.com/Rayhane-mamah/Tacotron-2/blob/fb5564b7584ae0dc62ffecaa89d463ff24a3c251/wavenet_vocoder/feeder.py#L364-L368\r\
+    \n\r\nI think valid padding value should be 'silence', which is `0.0` for raw\
+    \ input mode, `0.0=mulaw(0, 256)` for mulaw, `128=mulaw_quantize(0, 256)` for\
+    \ mulaw quantization.\r\n\r\nWhen `input_type=\"mulaw-quantize\"`, `zeros([256])`\
+    \ is padded to `inputs`, not `one_hot(128, 256)` and `0` is padded to `targets`,\
+    \ not `128`."
+issue_2:
+  html_url: https://github.com/Rayhane-mamah/Tacotron-2/issues/51
+  title: Use bias or not as variable?
+  body: I would like to ask why you did not use bias in attention [convolution](https://github.com/Rayhane-mamah/Tacotron-2/blob/master/tacotron/models/attention.py#L162)
+    and [dense](https://github.com/Rayhane-mamah/Tacotron-2/blob/master/tacotron/models/attention.py#L164)
+    layer while added one in [_location_sensitive_score](https://github.com/Rayhane-mamah/Tacotron-2/blob/master/tacotron/models/attention.py#L69)
+    that in my experience does help convergence https://github.com/keithito/tacotron/issues/170#issuecomment-390873725.
+issue_3:
+  html_url: https://github.com/Rayhane-mamah/Tacotron-2/issues/53
+  title: Problems on Chinese mandarin using latest model
+  body: "Hi, Rayhane-mamah,\r\nThanks for sharing the code. \r\nI have some problems\
+    \ on it,can you give some advices?\r\nI found that when I used tocatron_batch_size\
+    \ = 32 outputs_per_step = 1,(use \"Both\")my traning rate is about 7 sec/step.\
+    \ It is normal?It means it will take about 622 hours to reach 320k, which is defalut\
+    \ steps limit.I found in issues 18 that @begeekmyfriend used old model and rate\
+    \ is about 1sec/step,which I think it is comfortable.I didn't change your parameters\
+    \ except use predict_linear = True,sample_rate and cleaners,I use a professional\
+    \ P40 card, It used about 16G of memory,so it shouldn't be a problem.May I ask\
+    \ you about the speed of your model when you are traning?\r\nLook forward to your\
+    \ feedback"
+issue_4:
+  html_url: https://github.com/Rayhane-mamah/Tacotron-2/issues/52
+  title: Where is the wavenet input "tacotron_output/gta/map.txt"?
+  body: "I have trained out a `Tacotron` model and  the directory structure is as\
+    \ follows:\r\n\ttacotron_output\r\n\t\u251C\u2500\u2500eval\r\n\t\u2502      \
+    \        \u251C\u2500\u2500map.txt\r\n\t\u2502              \u2514\u2500\u2500\
+    *.npy\r\n\t\u2514\u2500\u2500logs-eval\r\n\t\t        \u251C\u2500\u2500plots\r\
+    \n\t\t        \u2514\u2500\u2500wavs\r\nAnd then I wanted to train the `WaveNet`\
+    \ model but it confused me that I need the input `tacotron_output/gta/map.txt`.\
+    \ Where can I find it? Is it `tacotron_output/eval/map.txt`? But the matadata\
+    \ fetched in the feeder seemed not the proper one."
+sha: fb5564b7584ae0dc62ffecaa89d463ff24a3c251
+message: my hparams + faster attention + pitch loss fix
+commit_log: "commit fb5564b7584ae0dc62ffecaa89d463ff24a3c251\nAuthor: Rayhane Mama\
+  \ <34689728+Rayhane-mamah@users.noreply.github.com>\nDate:   Fri May 25 15:27:31\
+  \ 2018 +0100\n\n    my hparams + faster attention + pitch loss fix"
+contained_keywords:
+- fix
+commit_time: 2018-05-25 15:27:31 +0100
+commit_author: Rayhane Mama
+added_files: 0
+removed_files: 0
+modified_files: 9
+patched_file_0:
+  add_line_no:
+  - - 36
+    - "\t#Thanks @begeekmyfriend and @lautjy for pointing out the params contradiction.\
+      \ These params are separate and tunable per dataset.\n"
+  - - 37
+    - "\treturn librosa.effects.trim(wav, top_db= hparams.trim_top_db, frame_length=hparams.trim_fft_size,\
+      \ hop_length=hparams.trim_hop_size)[0]\n"
+  - - 77
+    - "\t\treturn _griffin_lim(S ** hparams.power, hparams)\n"
+  - - 95
+    - "\t\treturn _griffin_lim(S ** hparams.power, hparams)\n"
+  - - 99
+    - "\treturn lws.lws(hparams.n_fft, get_hop_size(hparams), fftsize=hparams.win_size,\
+      \ mode=\"speech\")\n"
+  - - 117
+    - "\t\treturn librosa.stft(y=y, n_fft=hparams.n_fft, hop_length=get_hop_size(hparams),\
+      \ win_length=hparams.win_size)\n"
+  - - 120
+    - "\treturn librosa.istft(y, hop_length=get_hop_size(hparams), win_length=hparams.win_size)\n"
+  - - 161
+    - "\treturn librosa.filters.mel(hparams.sample_rate, hparams.n_fft, n_mels=hparams.num_mels,\n"
+  added: 8
+  del_line_no:
+  - - null
+    - "\t#Thanks @begeekmyfriend for pointing out the params contradiction. Should\
+      \ we set separate params for this function?\n"
+  - - null
+    - "\treturn librosa.effects.trim(wav, frame_length=hparams.fft_size, hop_length=get_hop_size(hparams))[0]\n"
+  - - null
+    - "\t\treturn _griffin_lim(S ** hparams.power)\n"
+  - - null
+    - "\t\treturn _griffin_lim(S ** hparams.power)\n"
+  - - null
+    - "\treturn lws.lws(hparams.fft_size, get_hop_size(hparams), mode=\"speech\")\n"
+  - - null
+    - "\t\treturn librosa.stft(y=y, n_fft=hparams.fft_size, hop_length=get_hop_size(hparams))\n"
+  - - null
+    - "\treturn librosa.istft(y, hop_length=get_hop_size(hparams))\n"
+  - - null
+    - "\treturn librosa.filters.mel(hparams.sample_rate, hparams.fft_size, n_mels=hparams.num_mels,\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: datasets/audio.py
+  removed: 8
+  source_file: a/datasets/audio.py
+  target_file: b/datasets/audio.py
+patched_file_1:
+  add_line_no:
+  - - 118
+    - "\tfft_size = hparams.n_fft if hparams.win_size is None else hparams.win_size\n"
+  - - 119
+    - "\tl, r = audio.pad_lr(wav, fft_size, audio.get_hop_size(hparams))\n"
+  - - 123
+    - "\tassert len(out) >= mel_frames * audio.get_hop_size(hparams)\n"
+  - - 129
+    - "\tassert len(out) % audio.get_hop_size(hparams) == 0\n"
+  - - 130
+    - "\ttime_steps = len(out)\n"
+  added: 5
+  del_line_no:
+  - - null
+    - "\tl, r = audio.pad_lr(wav, hparams.fft_size, audio.get_hop_size(hparams))\n"
+  - - null
+    - "\ttime_steps = len(out)\n"
+  - - null
+    - "\tassert time_steps >= mel_frames * audio.get_hop_size(hparams)\n"
+  - - null
+    - "\tassert time_steps % audio.get_hop_size(hparams) == 0\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: datasets/preprocessor.py
+  removed: 4
+  source_file: a/datasets/preprocessor.py
+  target_file: b/datasets/preprocessor.py
+patched_file_2:
+  add_line_no:
+  - - 18
+    - "\tnum_freq = 1025, # (= n_fft / 2 + 1) only used when adding linear spectrograms\
+      \ post processing network\n"
+  - - 27
+    - "\t# Does not work if n_ffit is not multiple of hop_size!!\n"
+  - - 28
+    - "\tuse_lws=False,\n"
+  - - 32
+    - "\tn_fft = 2048, #Extra window size is filled with 0 paddings to match this\
+      \ parameter\n"
+  - - 33
+    - "\thop_size = 275, #For 22050Hz, 275 ~= 12.5 ms\n"
+  - - 34
+    - "\twin_size = 1100, #For 22050Hz, 1100 ~= 50 ms (If None, win_size = n_fft)\n"
+  - - 38
+    - "\t#M-AILABS (and other datasets) trim params\n"
+  - - 39
+    - "\ttrim_fft_size = 512,\n"
+  - - 40
+    - "\ttrim_hop_size = 128,\n"
+  - - 41
+    - "\ttrim_top_db = 60,\n"
+  - - 42
+    - '
+
+      '
+  - - 50
+    - "\tmin_level_db = -100,\n"
+  - - 52
+    - "\tfmin = 25, #Set this to 75 if your speaker is male! if female, 125 should\
+      \ help taking off noise. (To test depending on dataset)\n"
+  - - 77
+    - "\tprenet_layers = [128, 128], #number of layers and number of units of prenet\n"
+  - - 79
+    - "\tdecoder_lstm_units = 512, #number of decoder lstm units on each layer\n"
+  - - 103
+    - "\tquantize_channels=65536,  # 65536 (16-bit) (raw) or 256 (8-bit) (mulaw or\
+      \ mulaw-quantize) // number of classes = 256 <=> mu = 255\n"
+  - - 117
+    - "\tupsample_scales = [11, 5, 5], #prod(scales) should be equal to hop size\n"
+  - - 131
+    - "\ttacotron_batch_size = 48, #number of training samples on each training steps\n"
+  - - 132
+    - "\ttacotron_reg_weight = 1e-5, #regularization weight (for L2 regularization)\n"
+  - - 136
+    - "\ttacotron_test_batches = 32, #number of test batches (For Ljspeech: 10% ~=\
+      \ 41 batches of 32 samples)\n"
+  - - 152
+    - '
+
+      '
+  - - 153
+    - "\tnatural_eval = False, #Whether to use 100% natural eval (to evaluate Curriculum\
+      \ Learning performance) or with same teacher-forcing ratio as in training (just\
+      \ for overfit)\n"
+  - - 166
+    - "\ttacotron_teacher_forcing_decay_steps = 280000, #Determines the teacher forcing\
+      \ ratio decay slope. Relevant if mode='scheduled'\n"
+  - - 236
+    - "\treturn 'Hyperparameters:\\n' + '\\n'.join(hp)\n"
+  added: 24
+  del_line_no:
+  - - null
+    - "\tnum_freq = 513, #only used when adding linear spectrograms post processing\
+      \ network\n"
+  - - null
+    - "\tuse_lws=True,\n"
+  - - null
+    - "\tfft_size = 1024,\n"
+  - - null
+    - "\thop_size = 256,\n"
+  - - null
+    - "\tmin_level_db =- 100,\n"
+  - - null
+    - "\tfmin = 125, #Set this to 75 if your speaker is male! if female, 125 should\
+      \ help taking off noise. (To test depending on dataset)\n"
+  - - null
+    - "\tprenet_layers = [256, 256], #number of layers and number of units of prenet\n"
+  - - null
+    - "\tdecoder_lstm_units = 1024, #number of decoder lstm units on each layer\n"
+  - - null
+    - "\tquantize_channels=65536,  # 65536 (raw) or 256 (mulaw or mulaw-quantize)\
+      \ // number of classes = 256 <=> mu = 255\n"
+  - - null
+    - "\tupsample_scales = [16, 16], #prod(scales) should be equal to hop size\n"
+  - - null
+    - "\ttacotron_batch_size = 32, #number of training samples on each training steps\n"
+  - - null
+    - "\ttacotron_reg_weight = 1e-6, #regularization weight (for l2 regularization)\n"
+  - - null
+    - "\ttacotron_test_batches = 48, #number of test batches (For Ljspeech: 10% ~=\
+      \ 41 batches of 32 samples)\n"
+  - - null
+    - "\t\n"
+  - - null
+    - "\tnatural_eval = True, #Whether to use 100% natural eval (to evaluate Curriculum\
+      \ Learning performance) or with same teacher-forcing ratio as training (just\
+      \ for overfit)\n"
+  - - null
+    - "\ttacotron_teacher_forcing_decay_steps = 220000, #Determines the teacher forcing\
+      \ ratio decay slope. Relevant if mode='scheduled'\n"
+  - - null
+    - "\treturn 'Hyperparameters:\\n' + '\\n'.join(hp)\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: hparams.py
+  removed: 17
+  source_file: a/hparams.py
+  target_file: b/hparams.py
+patched_file_3:
+  add_line_no:
+  - - 6
+    - 'from warnings import warn
+
+      '
+  - - 73
+    - "\t\t\twarn('Requested a live evaluation with Tacotron-2, Wavenet will not be\
+      \ used!')\n"
+  added: 2
+  del_line_no:
+  - - null
+    - "\t\t\traise ValueError('Impossible to generate live speech using Tacotron+WaveNet\
+      \ combo! (only eval allowed)')\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: synthesize.py
+  removed: 1
+  source_file: a/synthesize.py
+  target_file: b/synthesize.py
+patched_file_4:
+  add_line_no:
+  - - 162
+    - "\t\t\tkernel_size=hparams.attention_kernel, padding='same', use_bias=True,\n"
+  - - 163
+    - "\t\t\tbias_initializer=tf.zeros_initializer(), name='location_features_convolution')\n"
+  added: 2
+  del_line_no:
+  - - null
+    - "\t\t\tkernel_size=hparams.attention_kernel, padding='same', use_bias=False,\
+      \ \n"
+  - - null
+    - "\t\t\tname='location_features_convolution')\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tacotron/models/attention.py
+  removed: 2
+  source_file: a/tacotron/models/attention.py
+  target_file: b/tacotron/models/attention.py
+patched_file_5:
+  add_line_no:
+  - - 267
+    - "\t\t\tclipped_gradients, _ = tf.clip_by_global_norm(gradients, 1.)\n"
+  added: 1
+  del_line_no:
+  - - null
+    - "\t\t\tclipped_gradients, _ = tf.clip_by_global_norm(gradients, 0.5)\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tacotron/models/tacotron.py
+  removed: 1
+  source_file: a/tacotron/models/tacotron.py
+  target_file: b/tacotron/models/tacotron.py
+patched_file_6:
+  add_line_no:
+  - - 179
+    - "\t\t\t\tif np.isnan(loss):\n"
+  added: 1
+  del_line_no:
+  - - null
+    - "\t\t\t\tif loss > 1000 or np.isnan(loss):\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tacotron/train.py
+  removed: 1
+  source_file: a/tacotron/train.py
+  target_file: b/tacotron/train.py
+patched_file_7:
+  add_line_no:
+  - - 56
+    - "\tparser.add_argument('--checkpoint_interval', type=int, default=5000,\n"
+  - - 58
+    - "\tparser.add_argument('--eval_interval', type=int, default=10000,\n"
+  - - 60
+    - "\tparser.add_argument('--tacotron_train_steps', type=int, default=160000, help='total\
+      \ number of tacotron training steps')\n"
+  - - 83
+    - "\tmain()\n"
+  added: 4
+  del_line_no:
+  - - null
+    - "\tparser.add_argument('--checkpoint_interval', type=int, default=1000,\n"
+  - - null
+    - "\tparser.add_argument('--eval_interval', type=int, default=5000,\n"
+  - - null
+    - "\tparser.add_argument('--tacotron_train_steps', type=int, default=320000, help='total\
+      \ number of tacotron training steps')\n"
+  - - null
+    - "\tmain()\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: train.py
+  removed: 4
+  source_file: a/train.py
+  target_file: b/train.py
+patched_file_8:
+  add_line_no:
+  - - 57
+    - "\t\t\tself.scope = scope\n"
+  - - 122
+    - "\t\twith tf.variable_scope(self.scope):\n"
+  - - 123
+    - "\t\t\t#Reshape to dilated conv mode (if this instance is of a dilated convolution)\n"
+  - - 124
+    - "\t\t\tinputs_ = self._to_dilation(inputs)\n"
+  - - 126
+    - "\t\t\toutputs_ = tf.nn.conv1d(inputs_, self.kernel,\n"
+  - - 127
+    - "\t\t\t\tstride=1, padding='VALID', data_format='NWC')\n"
+  - - 129
+    - "\t\t\tif self.use_bias:\n"
+  - - 130
+    - "\t\t\t\toutputs_ = tf.nn.bias_add(outputs_, self.bias)\n"
+  - - 132
+    - "\t\t\t#Reshape back ((if this instance is of a dilated convolution))\n"
+  - - 133
+    - "\t\t\tdiff = tf.shape(outputs_)[1] * self.dilation_rate - tf.shape(inputs)[-1]\n"
+  - - 134
+    - "\t\t\toutputs = self._from_dilation(outputs_, crop=diff)\n"
+  - - 136
+    - "\t\t\t#Make sure that outputs have same time steps as inputs\n"
+  - - 137
+    - "\t\t\t#[batch_size, channels(filters), width]\n"
+  - - 138
+    - "\t\t\twith tf.control_dependencies([tf.assert_equal(tf.shape(outputs)[-1],\
+      \ tf.shape(inputs)[-1])]):\n"
+  - - 139
+    - "\t\t\t\toutputs = tf.identity(outputs, name='output_equal_input_time_assert')\n"
+  - - 141
+    - "\t\t\treturn outputs\n"
+  - - 149
+    - "\t\twith tf.variable_scope(self.scope):\n"
+  - - 150
+    - "\t\t\t#input: [batch_size, time_length, channels]\n"
+  - - 151
+    - "\t\t\tif self.training: \n"
+  - - 152
+    - "\t\t\t\traise RuntimeError('incremental_step only supports eval mode')\n"
+  - - 153
+    - '
+
+      '
+  - - 154
+    - "\t\t\t#reshape weight\n"
+  - - 155
+    - "\t\t\tweight = self._get_linearized_weight(inputs)\n"
+  - - 156
+    - "\t\t\tkw = self.kernel.shape[0]\n"
+  - - 157
+    - "\t\t\tdilation = self.dilation_rate\n"
+  - - 158
+    - '
+
+      '
+  - - 159
+    - "\t\t\tbatch_size = tf.shape(inputs)[0]\n"
+  - - 160
+    - "\t\t\t#Fast dilation\n"
+  - - 161
+    - "\t\t\t#Similar to using tf FIFOQueue to schedule states of dilated convolutions\n"
+  - - 162
+    - "\t\t\tif kw > 1:\n"
+  - - 163
+    - "\t\t\t\tif self.convolution_queue is None:\n"
+  - - 164
+    - "\t\t\t\t\tself.convolution_queue = tf.zeros((batch_size, (kw - 1) + (kw - 1)\
+      \ * (dilation - 1), tf.shape(inputs)[2]))\n"
+  - - 165
+    - "\t\t\t\telse:\n"
+  - - 166
+    - "\t\t\t\t\t#shift queue\n"
+  - - 167
+    - "\t\t\t\t\tself.convolution_queue = self.convolution_queue[:, 1:, :]\n"
+  - - 168
+    - '
+
+      '
+  - - 169
+    - "\t\t\t\t#append next input\n"
+  - - 170
+    - "\t\t\t\tself.convolution_queue = tf.concat([self.convolution_queue, tf.expand_dims(inputs[:,\
+      \ -1, :], axis=1)], axis=1)\n"
+  - - 171
+    - "\t\t\t\t#self.convolution_queue[:, -1, :] = inputs[:, -1, :]\n"
+  - - 172
+    - "\t\t\t\tinputs = self.convolution_queue\n"
+  - - 173
+    - "\t\t\t\tif dilation > 1:\n"
+  - - 174
+    - "\t\t\t\t\tinputs = inputs[:, 0::dilation, :]\n"
+  - - 175
+    - '
+
+      '
+  - - 176
+    - "\t\t\t#Compute step prediction\n"
+  - - 177
+    - "\t\t\toutput = tf.matmul(tf.reshape(inputs, [batch_size, -1]), weight)\n"
+  - - 178
+    - "\t\t\tif self.use_bias:\n"
+  - - 179
+    - "\t\t\t\toutput = tf.nn.bias_add(output, self.bias)\n"
+  - - 180
+    - '
+
+      '
+  - - 181
+    - "\t\t\t#[batch_size, 1(time_step), channels(filters)]\n"
+  - - 182
+    - "\t\t\treturn tf.reshape(output, [batch_size, 1, self.filters])\n"
+  added: 50
+  del_line_no:
+  - - null
+    - "\t\t#Reshape to dilated conv mode (if this instance is of a dilated convolution)\n"
+  - - null
+    - "\t\tinputs_ = self._to_dilation(inputs)\n"
+  - - null
+    - "\t\toutputs_ = tf.nn.conv1d(inputs_, self.kernel,\n"
+  - - null
+    - "\t\t\tstride=1, padding='VALID', data_format='NWC')\n"
+  - - null
+    - "\t\tif self.use_bias:\n"
+  - - null
+    - "\t\t\toutputs_ = tf.nn.bias_add(outputs_, self.bias)\n"
+  - - null
+    - "\t\t#Reshape back ((if this instance is of a dilated convolution))\n"
+  - - null
+    - "\t\tdiff = tf.shape(outputs_)[1] * self.dilation_rate - tf.shape(inputs)[-1]\n"
+  - - null
+    - "\t\toutputs = self._from_dilation(outputs_, crop=diff)\n"
+  - - null
+    - "\t\t#Make sure that outputs have same time steps as inputs\n"
+  - - null
+    - "\t\t#[batch_size, channels(filters), width]\n"
+  - - null
+    - "\t\twith tf.control_dependencies([tf.assert_equal(tf.shape(outputs)[-1], tf.shape(inputs)[-1])]):\n"
+  - - null
+    - "\t\t\toutputs = tf.identity(outputs, name='output_equal_input_time_assert')\n"
+  - - null
+    - "\t\treturn outputs\n"
+  - - null
+    - "\t\t#input: [batch_size, time_length, channels]\n"
+  - - null
+    - "\t\tif self.training: \n"
+  - - null
+    - "\t\t\traise RuntimeError('incremental_step only supports eval mode')\n"
+  - - null
+    - '
+
+      '
+  - - null
+    - "\t\t#reshape weight\n"
+  - - null
+    - "\t\tweight = self._get_linearized_weight(inputs)\n"
+  - - null
+    - "\t\tkw = self.kernel.shape[0]\n"
+  - - null
+    - "\t\tdilation = self.dilation_rate\n"
+  - - null
+    - '
+
+      '
+  - - null
+    - "\t\tbatch_size = tf.shape(inputs)[0]\n"
+  - - null
+    - "\t\t#Fast dilation\n"
+  - - null
+    - "\t\t#Similar to using tf FIFOQueue to schedule states of dilated convolutions\n"
+  - - null
+    - "\t\tif kw > 1:\n"
+  - - null
+    - "\t\t\tif self.convolution_queue is None:\n"
+  - - null
+    - "\t\t\t\tself.convolution_queue = tf.zeros((batch_size, (kw - 1) + (kw - 1)\
+      \ * (dilation - 1), tf.shape(inputs)[2]))\n"
+  - - null
+    - "\t\t\telse:\n"
+  - - null
+    - "\t\t\t\t#shift queue\n"
+  - - null
+    - "\t\t\t\tself.convolution_queue = self.convolution_queue[:, 1:, :]\n"
+  - - null
+    - '
+
+      '
+  - - null
+    - "\t\t\t#append next input\n"
+  - - null
+    - "\t\t\tself.convolution_queue = tf.concat([self.convolution_queue, tf.expand_dims(inputs[:,\
+      \ -1, :], axis=1)], axis=1)\n"
+  - - null
+    - "\t\t\t#self.convolution_queue[:, -1, :] = inputs[:, -1, :]\n"
+  - - null
+    - "\t\t\tinputs = self.convolution_queue\n"
+  - - null
+    - "\t\t\tif dilation > 1:\n"
+  - - null
+    - "\t\t\t\tinputs = inputs[:, 0::dilation, :]\n"
+  - - null
+    - '
+
+      '
+  - - null
+    - "\t\t#Compute step prediction\n"
+  - - null
+    - "\t\toutput = tf.matmul(tf.reshape(inputs, [batch_size, -1]), weight)\n"
+  - - null
+    - "\t\tif self.use_bias:\n"
+  - - null
+    - "\t\t\toutput = tf.nn.bias_add(output, self.bias)\n"
+  - - null
+    - '
+
+      '
+  - - null
+    - "\t\t#[batch_size, 1(time_step), channels(filters)]\n"
+  - - null
+    - "\t\treturn tf.reshape(output, [batch_size, 1, self.filters])\n"
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: wavenet_vocoder/models/modules.py
+  removed: 47
+  source_file: a/wavenet_vocoder/models/modules.py
+  target_file: b/wavenet_vocoder/models/modules.py

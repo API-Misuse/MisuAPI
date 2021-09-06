@@ -1,0 +1,20 @@
+commit 55723cfa6296388ea1f584e2591f1d89e4c0afb6
+Author: Félix Voituret <fvoituret@deezer.com>
+Date:   Wed Nov 6 18:46:33 2019 +0100
+
+    fix: pool managment
+
+diff --git a/spleeter/commands/separate.py b/spleeter/commands/separate.py
+index 25b9226..71eed2d 100644
+--- a/spleeter/commands/separate.py
++++ b/spleeter/commands/separate.py
+@@ -147,8 +147,8 @@ def process_audio(
+                 audio_adapter.save,
+                 (filename, waveform, sample_rate, codec))
+     # Wait for everything to be written
+-    pool.join()
+     pool.close()
++    pool.join()
+ 
+ 
+ def entrypoint(arguments, params):

@@ -1,0 +1,4 @@
+INS @type:simple_stmt@ @[891,919]@ tf.enable_eager_execution() @TO@ @type:suite@ @[831,883]@ import re
+
+        import tensorflow as tf
+

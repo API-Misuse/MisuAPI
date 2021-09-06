@@ -1,0 +1,21 @@
+UPD @type:simple_stmt@ @[2907,3052]@ model.compile(
+      optimizer=tf.keras.optimizers <text_longer_than_50> @TO@ @type:simple_stmt@ @[2907,3093]@ model.compile(
+      optimizer=tf.keras.optimizers <text_longer_than_50>
+---UPD @type:atom_expr@ @[2907,3051]@ model.compile(
+      optimizer=tf.keras.optimizers <text_longer_than_50> @TO@ @type:atom_expr@ @[2907,3092]@ model.compile(
+      optimizer=tf.keras.optimizers <text_longer_than_50>
+------UPD @type:trailer@ @[2920,3051]@ (
+      optimizer=tf.keras.optimizers.SGD(lr=0.000 <text_longer_than_50> @TO@ @type:trailer@ @[2920,3092]@ (
+      optimizer=tf.keras.optimizers.SGD(lr=0.000 <text_longer_than_50>
+---------UPD @type:arglist@ @[2928,3050]@ optimizer=tf.keras.optimizers.SGD(lr=0.0001, momen <text_longer_than_50> @TO@ @type:arglist@ @[2928,3091]@ optimizer=tf.keras.optimizers.SGD(lr=0.0001, momen <text_longer_than_50>
+------------UPD @type:argument@ @[3033,3050]@ metric='accuracy' @TO@ @type:argument@ @[3033,3091]@ metrics=[tf.keras.metrics.BinaryAccuracy(name='acc <text_longer_than_50>
+---------------UPD @type:name@ @[3033,3039]@ metric @TO@ @type:name@ @[3033,3040]@ metrics
+---------------INS @type:operator@ @[3040,3041]@ = @TO@ @type:argument@ @[3033,3050]@ metric='accuracy'
+---------------INS @type:atom@ @[3041,3091]@ [tf.keras.metrics.BinaryAccuracy(name='accuracy')] @TO@ @type:argument@ @[3033,3050]@ metric='accuracy'
+------------------INS @type:atom_expr@ @[3042,3090]@ tf.keras.metrics.BinaryAccuracy(name='accuracy') @TO@ @type:atom@ @[3041,3091]@ [tf.keras.metrics.BinaryAccuracy(name='accuracy')]
+---------------------INS @type:trailer@ @[3073,3090]@ (name='accuracy') @TO@ @type:atom_expr@ @[3042,3090]@ tf.keras.metrics.BinaryAccuracy(name='accuracy')
+------------------------INS @type:argument@ @[3074,3089]@ name='accuracy' @TO@ @type:trailer@ @[3073,3090]@ (name='accuracy')
+---------------MOV @type:operator@ @[3039,3040]@ = @TO@ @type:argument@ @[3074,3089]@ name='accuracy'
+---------------MOV @type:string@ @[3040,3050]@ 'accuracy' @TO@ @type:argument@ @[3074,3089]@ name='accuracy'
+
+

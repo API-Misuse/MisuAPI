@@ -1,0 +1,20 @@
+UPD @type:atom_expr@ @[525,559]@ pd.DataFrame(columns=self.actions) @TO@ @type:atom_expr@ @[555,607]@ pd.DataFrame(columns=self.actions).astype('float32 <text_longer_than_50>
+
+INS @type:trailer@ @[589,596]@ .astype @TO@ @type:atom_expr@ @[525,559]@ pd.DataFrame(columns=self.actions)
+
+INS @type:trailer@ @[596,607]@ ('float32') @TO@ @type:atom_expr@ @[525,559]@ pd.DataFrame(columns=self.actions)
+
+UPD @type:atom_expr@ @[781,812]@ self.q_table.ix[observation, :] @TO@ @type:atom_expr@ @[892,924]@ self.q_table.loc[observation, :]
+
+UPD @type:atom_expr@ @[1195,1216]@ self.q_table.ix[s, a] @TO@ @type:atom_expr@ @[1343,1365]@ self.q_table.loc[s, a]
+
+UPD @type:atom_expr@ @[1286,1314]@ self.q_table.ix[s_, :].max() @TO@ @type:atom_expr@ @[1435,1464]@ self.q_table.loc[s_, :].max()
+
+UPD @type:atom_expr@ @[1418,1439]@ self.q_table.ix[s, a] @TO@ @type:atom_expr@ @[1568,1590]@ self.q_table.loc[s, a]
+
+UPD @type:atom_expr@ @[2720,2772]@ np.random.choice(self.database.ix[s].dropna().inde <text_longer_than_50> @TO@ @type:atom_expr@ @[2871,2924]@ np.random.choice(self.database.loc[s].dropna().ind <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2737,2771]@ self.database.ix[s].dropna().index @TO@ @type:atom_expr@ @[2888,2923]@ self.database.loc[s].dropna().index
+
+UPD @type:atom_expr@ @[2871,2893]@ self.database.ix[s, a] @TO@ @type:atom_expr@ @[3023,3046]@ self.database.loc[s, a]
+

@@ -1,0 +1,15 @@
+INS @type:if_stmt@ @[4818,4864]@ if not hasattr(msg, 'ListFields'):
+    return @TO@ @type:suite@ @[4416,6549]@ """Utility function to substitute runtime paramete <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[5843,6549]@ for field, sub_message in fields:
+    # No-op for  <text_longer_than_50> @TO@ @type:for_stmt@ @[5864,6580]@ for field, sub_message in msg.ListFields():
+    #  <text_longer_than_50>
+---DEL @type:name@ @[5869,5875]@ fields @FROM@ @type:for_stmt@ @[5843,6549]@ for field, sub_message in fields:
+    # No-op for  <text_longer_than_50>
+
+
+MOV @type:atom_expr@ @[5824,5840]@ msg.ListFields() @TO@ @type:for_stmt@ @[5843,6549]@ for field, sub_message in fields:
+    # No-op for  <text_longer_than_50>
+
+

@@ -1,0 +1,14 @@
+UPD @type:if_stmt@ @[18584,18695]@ if state.is_local_process_zero:
+            self.p <text_longer_than_50> @TO@ @type:if_stmt@ @[18584,18747]@ if state.is_local_process_zero:
+            if sel <text_longer_than_50>
+---UPD @type:suite@ @[18615,18695]@ self.prediction_bar.close()
+            self.predi <text_longer_than_50> @TO@ @type:suite@ @[18615,18747]@ if self.prediction_bar is not None:
+               <text_longer_than_50>
+------INS @type:if_stmt@ @[18628,18708]@ if self.prediction_bar is not None:
+               <text_longer_than_50> @TO@ @type:suite@ @[18615,18695]@ self.prediction_bar.close()
+            self.predi <text_longer_than_50>
+---------INS @type:suite@ @[18663,18708]@ self.prediction_bar.close() @TO@ @type:if_stmt@ @[18628,18708]@ if self.prediction_bar is not None:
+               <text_longer_than_50>
+------MOV @type:simple_stmt@ @[18628,18656]@ self.prediction_bar.close() @TO@ @type:suite@ @[18663,18708]@ self.prediction_bar.close()
+
+

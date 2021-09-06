@@ -1,0 +1,46 @@
+issues_cnt: 0
+sha: 8ad7e2b442c5ab1758a3790fb9ba8e4ee28b613a
+message: 'fix scope bug in DQN. fix #108'
+commit_log: "commit 8ad7e2b442c5ab1758a3790fb9ba8e4ee28b613a\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Tue Jan 17 11:34:11 2017 -0500\n\n    fix scope bug in DQN. fix #108"
+contained_keywords:
+- fix
+- bug
+commit_time: 2017-01-17 11:34:11 -0500
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 127
+    - '            sc = tf.get_variable_scope()
+
+      '
+  - - 128
+    - '            with tf.variable_scope(sc, reuse=True):
+
+      '
+  - - 129
+    - '                next_predict_value = self._get_DQN_prediction(next_state)
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '            tf.get_variable_scope().reuse_variables()
+
+      '
+  - - null
+    - '            next_predict_value = self._get_DQN_prediction(next_state)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: examples/DeepQNetwork/DQN.py
+  removed: 2
+  source_file: a/examples/DeepQNetwork/DQN.py
+  target_file: b/examples/DeepQNetwork/DQN.py

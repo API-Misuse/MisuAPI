@@ -1,0 +1,10 @@
+INS @type:suite@ @[2170,2407]@ if wn_file is not None and os.path.isdir(wn_file): <text_longer_than_50> @TO@ @type:if_stmt@ @[1994,2217]@ if self.connectivity == OnlineOROfflineMethod.ONLI <text_longer_than_50>
+
+INS @type:suite@ @[2170,2407]@ if wn_file is not None and os.path.isdir(wn_file): <text_longer_than_50> @TO@ @type:if_stmt@ @[1994,2217]@ if self.connectivity == OnlineOROfflineMethod.ONLI <text_longer_than_50>
+
+INS @type:if_stmt@ @[2183,2407]@ if wn_file is not None and os.path.isdir(wn_file): <text_longer_than_50> @TO@ @type:suite@ @[2170,2407]@ if wn_file is not None and os.path.isdir(wn_file): <text_longer_than_50>
+
+INS @type:if_stmt@ @[2183,2407]@ if wn_file is not None and os.path.isdir(wn_file): <text_longer_than_50> @TO@ @type:suite@ @[2170,2407]@ if wn_file is not None and os.path.isdir(wn_file): <text_longer_than_50>
+
+MOV @type:suite@ @[2160,2217]@ self.wordnet_impl = WordnetOffline(wn_file) @TO@ @type:if_stmt@ @[2183,2407]@ if wn_file is not None and os.path.isdir(wn_file): <text_longer_than_50>
+

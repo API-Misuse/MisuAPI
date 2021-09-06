@@ -1,0 +1,66 @@
+sha: 16592837d65092202dda001d09192e39b82139c7
+message: 'Fix g++ autodetection in cases when some of the system flags are not defined
+  (#1234)
+
+
+  Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>'
+commit_log: "commit 16592837d65092202dda001d09192e39b82139c7\nAuthor: Alex Sergeev\
+  \ <alexander.sergeev@live.com>\nDate:   Sat Jul 20 22:11:48 2019 -0700\n\n    Fix\
+  \ g++ autodetection in cases when some of the system flags are not defined (#1234)\n\
+  \    \n    Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>"
+contained_keywords:
+- fix
+commit_time: 2019-07-20 22:11:48 -0700
+commit_author: Alex Sergeev
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: setup.py
+  source_file: a/setup.py
+  target_file: b/setup.py
+  added: 6
+  removed: 3
+  add_line_no:
+  - - 757
+    - '            if cflags:
+
+      '
+  - - 758
+    - '                cflags = cflags.replace(k, v)
+
+      '
+  - - 759
+    - '            if cppflags:
+
+      '
+  - - 760
+    - '                cppflags = cppflags.replace(k, v)
+
+      '
+  - - 761
+    - '            if ldshared:
+
+      '
+  - - 762
+    - '                ldshared = ldshared.replace(k, v)
+
+      '
+  del_line_no:
+  - - null
+    - '            cflags = cflags.replace(k, v)
+
+      '
+  - - null
+    - '            cppflags = cppflags.replace(k, v)
+
+      '
+  - - null
+    - '            ldshared = ldshared.replace(k, v)
+
+      '

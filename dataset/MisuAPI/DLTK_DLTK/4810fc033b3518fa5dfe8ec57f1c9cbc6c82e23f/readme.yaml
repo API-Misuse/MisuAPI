@@ -1,0 +1,33 @@
+sha: 4810fc033b3518fa5dfe8ec57f1c9cbc6c82e23f
+message: 'fix: dense layer argument to units'
+commit_log: "commit 4810fc033b3518fa5dfe8ec57f1c9cbc6c82e23f\nAuthor: Martin Rajchl\
+  \ <m.rajchl@imperial.ac.uk>\nDate:   Fri Nov 17 13:28:02 2017 +0000\n\n    fix:\
+  \ dense layer argument to units"
+contained_keywords:
+- fix
+commit_time: 2017-11-17 13:28:02 +0000
+commit_author: Martin Rajchl
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: dltk/networks/gan/dcgan.py
+  source_file: a/dltk/networks/gan/dcgan.py
+  target_file: b/dltk/networks/gan/dcgan.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 199
+    - '                        units=1,
+
+      '
+  del_line_no:
+  - - null
+    - '                        filters=1,
+
+      '

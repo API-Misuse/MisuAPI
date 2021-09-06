@@ -1,0 +1,209 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/models/pull/911
+  title: Fix bugs and API usage on cifar10 and cifar10_multi_gpu_train
+  body: "Make the cifar10 example (especially, multi_gpu_train) work in the recent\
+    \ master version. This PR includes two updates:\r\n\r\n- Replace `tf.mul` (which\
+    \ was removed) with `tf.multiply` (#901).\r\n- Correct the usage of variable_scope\
+    \ around the part multi-gpu model construction, so that \"reuse\" on the variable\
+    \ scope becomes not leaky (tensorflow/tensorflow#6220)."
+sha: 9d96e9fe2b40f0da266261e2200cfc3c27f97b87
+message: 'Wrap the cifar10 multigpu model construction part with a variable_scope
+
+
+  Without the new variable_scope, creating apply_gradient_op raises
+
+  an error that additional moving average or slot variables could not
+
+  be created. This is because of the ''leaky reuse'' of variable scope,
+
+  so we correct the problem by explicitly introducing a new variable scope.
+
+
+  Related issues: tensorflow/models#901, tensorflow/tensorflow#6220'
+commit_log: "commit 9d96e9fe2b40f0da266261e2200cfc3c27f97b87\nAuthor: Jongwook Choi\
+  \ <wookayin@gmail.com>\nDate:   Tue Jan 17 11:03:09 2017 +0900\n\n    Wrap the cifar10\
+  \ multigpu model construction part with a variable_scope\n    \n    Without the\
+  \ new variable_scope, creating apply_gradient_op raises\n    an error that additional\
+  \ moving average or slot variables could not\n    be created. This is because of\
+  \ the 'leaky reuse' of variable scope,\n    so we correct the problem by explicitly\
+  \ introducing a new variable scope.\n    \n    Related issues: tensorflow/models#901,\
+  \ tensorflow/tensorflow#6220"
+contained_keywords:
+- problem
+- error
+- issues
+commit_time: 2017-01-17 11:03:09 +0900
+commit_author: Jongwook Choi
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 165
+    - '    with tf.variable_scope(tf.get_variable_scope()):
+
+      '
+  - - 166
+    - '      for i in xrange(FLAGS.num_gpus):
+
+      '
+  - - 167
+    - '        with tf.device(''/gpu:%d'' % i):
+
+      '
+  - - 168
+    - '          with tf.name_scope(''%s_%d'' % (cifar10.TOWER_NAME, i)) as scope:
+
+      '
+  - - 169
+    - '            # Calculate the loss for one tower of the CIFAR model. This function
+
+      '
+  - - 170
+    - '            # constructs the entire CIFAR model but shares the variables across
+
+      '
+  - - 171
+    - '            # all towers.
+
+      '
+  - - 172
+    - '            loss = tower_loss(scope)
+
+      '
+  - - 173
+    - '
+
+      '
+  - - 174
+    - '            # Reuse variables for the next tower.
+
+      '
+  - - 175
+    - '            tf.get_variable_scope().reuse_variables()
+
+      '
+  - - 176
+    - '
+
+      '
+  - - 177
+    - '            # Retain the summaries from the final tower.
+
+      '
+  - - 178
+    - '            summaries = tf.get_collection(tf.GraphKeys.SUMMARIES, scope)
+
+      '
+  - - 179
+    - '
+
+      '
+  - - 180
+    - '            # Calculate the gradients for the batch of data on this CIFAR tower.
+
+      '
+  - - 181
+    - '            grads = opt.compute_gradients(loss)
+
+      '
+  - - 182
+    - '
+
+      '
+  - - 183
+    - '            # Keep track of the gradients across all towers.
+
+      '
+  - - 184
+    - '            tower_grads.append(grads)
+
+      '
+  added: 20
+  del_line_no:
+  - - null
+    - '    for i in xrange(FLAGS.num_gpus):
+
+      '
+  - - null
+    - '      with tf.device(''/gpu:%d'' % i):
+
+      '
+  - - null
+    - '        with tf.name_scope(''%s_%d'' % (cifar10.TOWER_NAME, i)) as scope:
+
+      '
+  - - null
+    - '          # Calculate the loss for one tower of the CIFAR model. This function
+
+      '
+  - - null
+    - '          # constructs the entire CIFAR model but shares the variables across
+
+      '
+  - - null
+    - '          # all towers.
+
+      '
+  - - null
+    - '          loss = tower_loss(scope)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '          # Reuse variables for the next tower.
+
+      '
+  - - null
+    - '          tf.get_variable_scope().reuse_variables()
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '          # Retain the summaries from the final tower.
+
+      '
+  - - null
+    - '          summaries = tf.get_collection(tf.GraphKeys.SUMMARIES, scope)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '          # Calculate the gradients for the batch of data on this CIFAR tower.
+
+      '
+  - - null
+    - '          grads = opt.compute_gradients(loss)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '          # Keep track of the gradients across all towers.
+
+      '
+  - - null
+    - '          tower_grads.append(grads)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tutorials/image/cifar10/cifar10_multi_gpu_train.py
+  removed: 19
+  source_file: a/tutorials/image/cifar10/cifar10_multi_gpu_train.py
+  target_file: b/tutorials/image/cifar10/cifar10_multi_gpu_train.py

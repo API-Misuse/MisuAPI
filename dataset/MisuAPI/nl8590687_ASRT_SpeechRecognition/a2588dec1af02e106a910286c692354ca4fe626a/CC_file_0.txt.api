@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[3457,3490]@ float(self.model1[tmp_words[-1]]) @TO@ @type:atom_expr@ @[3457,3490]@ float(self.model1[tmp_words[-2]])
+
+UPD @type:atom_expr@ @[3463,3489]@ self.model1[tmp_words[-1]] @TO@ @type:atom_expr@ @[3463,3489]@ self.model1[tmp_words[-2]]
+
+UPD @type:atom_expr@ @[3475,3488]@ tmp_words[-1] @TO@ @type:atom_expr@ @[3475,3488]@ tmp_words[-2]
+

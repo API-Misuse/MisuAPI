@@ -1,0 +1,20 @@
+UPD @type:for_stmt@ @[12175,12277]@ for X, y in data_iter:
+        l = loss(net(X), y) <text_longer_than_50> @TO@ @type:for_stmt@ @[12175,12333]@ for X, y in data_iter:
+        out = net(X)
+       <text_longer_than_50>
+---UPD @type:suite@ @[12197,12277]@ l = loss(net(X), y)
+        metric.add(d2l.reduce_ <text_longer_than_50> @TO@ @type:suite@ @[12197,12333]@ out = net(X)
+        y = d2l.reshape(y, out.shape) <text_longer_than_50>
+------UPD @type:simple_stmt@ @[12206,12226]@ l = loss(net(X), y) @TO@ @type:simple_stmt@ @[12206,12219]@ out = net(X)
+---------UPD @type:expr_stmt@ @[12206,12225]@ l = loss(net(X), y) @TO@ @type:expr_stmt@ @[12206,12218]@ out = net(X)
+------------UPD @type:name@ @[12206,12207]@ l @TO@ @type:name@ @[12206,12209]@ out
+------------DEL @type:atom_expr@ @[12210,12225]@ loss(net(X), y) @FROM@ @type:expr_stmt@ @[12206,12225]@ l = loss(net(X), y)
+------INS @type:simple_stmt@ @[12227,12257]@ y = d2l.reshape(y, out.shape) @TO@ @type:suite@ @[12197,12277]@ l = loss(net(X), y)
+        metric.add(d2l.reduce_ <text_longer_than_50>
+------INS @type:simple_stmt@ @[12265,12282]@ l = loss(out, y) @TO@ @type:suite@ @[12197,12277]@ l = loss(net(X), y)
+        metric.add(d2l.reduce_ <text_longer_than_50>
+
+
+MOV @type:atom_expr@ @[12215,12221]@ net(X) @TO@ @type:expr_stmt@ @[12206,12225]@ l = loss(net(X), y)
+
+

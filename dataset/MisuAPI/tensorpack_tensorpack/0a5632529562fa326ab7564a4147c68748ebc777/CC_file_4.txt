@@ -1,0 +1,18 @@
+UPD @type:simple_stmt@ @[198,234]@ from ..utils.concurrency import DIE @TO@ @type:simple_stmt@ @[181,234]@ from ..utils.concurrency import DIE, StoppableThre <text_longer_than_50>
+---UPD @type:import_from@ @[198,233]@ from ..utils.concurrency import DIE @TO@ @type:import_from@ @[181,233]@ from ..utils.concurrency import DIE, StoppableThre <text_longer_than_50>
+------INS @type:import_as_names@ @[213,233]@ DIE, StoppableThread @TO@ @type:import_from@ @[198,233]@ from ..utils.concurrency import DIE
+------MOV @type:name@ @[230,233]@ DIE @TO@ @type:import_as_names@ @[213,233]@ DIE, StoppableThread
+
+
+UPD @type:while_stmt@ @[3199,3792]@ while True:
+            batched, futures = self.fe <text_longer_than_50> @TO@ @type:while_stmt@ @[3197,3804]@ while not self.stopped():
+            batched, fut <text_longer_than_50>
+---INS @type:not_test@ @[3203,3221]@ not self.stopped() @TO@ @type:while_stmt@ @[3199,3792]@ while True:
+            batched, futures = self.fe <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[134,151]@ import threading @FROM@ @type:file_input@ @[111,5963]@ import multiprocessing
+import threading
+import six <text_longer_than_50>
+
+

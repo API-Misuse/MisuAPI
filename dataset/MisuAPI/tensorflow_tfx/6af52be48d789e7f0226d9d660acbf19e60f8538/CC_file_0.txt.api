@@ -1,0 +1,31 @@
+UPD @type:atom_expr@ @[1678,1746]@ metadata_connection.store.get_events_by_execution_ <text_longer_than_50> @TO@ @type:atom_expr@ @[1781,1856]@ metadata_connection.store.get_events_by_execution_ <text_longer_than_50>
+
+INS @type:if_stmt@ @[2335,2444]@ if not component_id or not output_key:
+      raise <text_longer_than_50> @TO@ @type:suite@ @[2002,2299]@ src_uri = artifact.uri
+    artifact_properties = a <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2224,2268]@ os.path.join(output_dir, component_id, name) @TO@ @type:atom_expr@ @[2459,2509]@ os.path.join(output_dir, component_id, output_key)
+
+UPD @type:atom_expr@ @[3653,3732]@ max(
+      pipeline_run_contexts, key=lambda c: c. <text_longer_than_50> @TO@ @type:atom_expr@ @[3956,4051]@ max(pipeline_run_contexts,
+                        <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5694,5752]@ _get_latest_executions(metadata_connection, pipeli <text_longer_than_50> @TO@ @type:atom_expr@ @[6052,6152]@ _get_latest_executions(metadata_connection,
+       <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5932,6020]@ ValueError(
+            'run_id {} is not recorded <text_longer_than_50> @TO@ @type:atom_expr@ @[6332,6420]@ ValueError(
+            "run_id {} is not recorded <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5956,6019]@ 'run_id {} is not recorded in the MLMD metadata'.f <text_longer_than_50> @TO@ @type:atom_expr@ @[6356,6419]@ "run_id {} is not recorded in the MLMD metadata".f <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6097,6195]@ _get_paths(metadata_connection, execution_ids,
+    <text_longer_than_50> @TO@ @type:atom_expr@ @[6497,6635]@ _get_paths(metadata_connection,
+                   <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6253,6307]@ FileNotFoundError('{} does not exist'.format(src_u <text_longer_than_50> @TO@ @type:atom_expr@ @[6693,6747]@ FileNotFoundError("{} does not exist".format(src_u <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6271,6306]@ '{} does not exist'.format(src_uri) @TO@ @type:atom_expr@ @[6711,6746]@ "{} does not exist".format(src_uri)
+
+UPD @type:atom_expr@ @[6355,6406]@ logging.info('Pipeline Recorded at %s', output_dir <text_longer_than_50> @TO@ @type:atom_expr@ @[6795,6846]@ logging.info("Pipeline Recorded at %s", output_dir <text_longer_than_50>
+

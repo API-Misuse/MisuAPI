@@ -1,0 +1,8 @@
+INS @type:simple_stmt@ @[1486,1546]@ parser.add_argument('--slow_sampling', action='sto <text_longer_than_50> @TO@ @type:suite@ @[848,8997]@ # Parse command line arguments
+    parser = argpar <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[4804,4849]@ params["slow_sampling"] = args.slow_sampling @TO@ @type:suite@ @[848,8997]@ # Parse command line arguments
+    parser = argpar <text_longer_than_50>
+
+

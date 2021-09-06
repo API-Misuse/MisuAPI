@@ -1,0 +1,19 @@
+INS @type:if_stmt@ @[1737,2170]@ if vo_file is not None and os.path.isfile(vo_file) <text_longer_than_50> @TO@ @type:suite@ @[1343,2045]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+
+INS @type:if_stmt@ @[1737,2170]@ if vo_file is not None and os.path.isfile(vo_file) <text_longer_than_50> @TO@ @type:suite@ @[1343,2045]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+
+INS @type:suite@ @[1788,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1737,2170]@ if vo_file is not None and os.path.isfile(vo_file) <text_longer_than_50>
+
+INS @type:suite@ @[1788,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1737,2170]@ if vo_file is not None and os.path.isfile(vo_file) <text_longer_than_50>
+
+MOV @type:if_stmt@ @[1727,1926]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:suite@ @[1788,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[1934,1985]@ logger.info('Verb Ocean module lead successfully') @TO@ @type:suite@ @[1788,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+

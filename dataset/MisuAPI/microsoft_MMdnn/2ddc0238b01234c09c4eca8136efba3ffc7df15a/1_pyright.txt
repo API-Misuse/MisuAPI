@@ -1,0 +1,24 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:12:8 - error: Import "caffe" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:13:6 - error: Import "caffe" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:14:6 - error: Import "caffe" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:15:6 - error: Import "mmdnn.conversion.common.IR.IR_graph" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:16:8 - error: Import "mmdnn.conversion.common.IR.graph_pb2" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:17:6 - error: Import "mmdnn.conversion.common.IR.graph_pb2" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:18:6 - error: Import "mmdnn.conversion.common.DataStructure.emitter" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:19:6 - error: Import "mmdnn.conversion.common.utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:219:21 - error: "shape_to_list" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:240:17 - error: "shape_to_list" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:298:17 - error: "shape_to_list" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:408:17 - error: "shape_to_list" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_MMdnn/2ddc0238b01234c09c4eca8136efba3ffc7df15a/a/mmdnn/conversion/caffe/caffe_emitter.py:488:21 - error: "shape_to_list" is not defined (reportUndefinedVariable)
+13 errors, 0 warnings, 0 infos 
+Completed in 1.285sec
+
+time cost(in seconds): 1.5417766571044922

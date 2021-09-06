@@ -1,0 +1,15 @@
+INS @type:simple_stmt@ @[0,10]@ import os @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[10,21]@ import sys @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[21,35]@ import pytest @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[36,119]@ sys.path.insert(0, os.path.abspath(os.path.join(os <text_longer_than_50> @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[119,148]@ import bentoml  # noqa: E402 @TO@ @type:file_input@ @[0,0]@
+
+

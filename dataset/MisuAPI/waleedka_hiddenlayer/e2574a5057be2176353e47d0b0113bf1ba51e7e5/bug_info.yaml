@@ -1,0 +1,37 @@
+issues_cnt: 0
+sha: e2574a5057be2176353e47d0b0113bf1ba51e7e5
+message: 'Fix in history_canvas.py
+
+
+  Pass metrics to draw_plot() as a list rather than separate parameters.'
+commit_log: "commit e2574a5057be2176353e47d0b0113bf1ba51e7e5\nAuthor: Waleed <waleed.abdulla@gmail.com>\n\
+  Date:   Sun Nov 11 16:22:51 2018 -0800\n\n    Fix in history_canvas.py\n    \n \
+  \   Pass metrics to draw_plot() as a list rather than separate parameters."
+contained_keywords:
+- fix
+commit_time: 2018-11-11 16:22:51 -0800
+commit_author: Waleed
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 43
+    - '            c.draw_plot([h["loss"], h["accuracy"]])
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '            c.draw_plot(h["loss"], h["accuracy"])
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: demos/history_canvas.py
+  removed: 1
+  source_file: a/demos/history_canvas.py
+  target_file: b/demos/history_canvas.py

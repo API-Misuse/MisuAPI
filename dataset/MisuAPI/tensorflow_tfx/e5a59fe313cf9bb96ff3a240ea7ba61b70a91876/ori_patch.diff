@@ -1,0 +1,48 @@
+commit e5a59fe313cf9bb96ff3a240ea7ba61b70a91876
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Thu Nov 21 17:18:16 2019 -0800
+
+    Raise the exception when container builder fails.
+    
+    PiperOrigin-RevId: 281867664
+
+diff --git a/RELEASE.md b/RELEASE.md
+index 78b34702..07a63b66 100644
+--- a/RELEASE.md
++++ b/RELEASE.md
+@@ -14,6 +14,7 @@
+ *   Performance improvements for the Transform Component (for its statistics
+     generation).
+ *   Depended on `pyarrow>=0.14,<0.15`.
++*   Raise exceptions when container building fails.
+ 
+ ### Deprecations
+ 
+diff --git a/tfx/tools/cli/handler/kubeflow_handler.py b/tfx/tools/cli/handler/kubeflow_handler.py
+index 0a76076e..86f91a09 100644
+--- a/tfx/tools/cli/handler/kubeflow_handler.py
++++ b/tfx/tools/cli/handler/kubeflow_handler.py
+@@ -31,6 +31,7 @@ import tensorflow as tf
+ 
+ from tfx.tools.cli import labels
+ from tfx.tools.cli.container_builder import builder
++# Standard Imports.third_party.tfx.tools.cli.container_builder.labels as container_builder_labels
+ from tfx.tools.cli.handler import base_handler
+ from tfx.utils import io_utils
+ 
+@@ -70,10 +71,13 @@ class KubeflowHandler(base_handler.BaseHandler):
+         target_image = self.flags_dict[labels.TARGET_IMAGE]
+       if labels.SKAFFOLD_CMD in self.flags_dict:
+         skaffold_cmd = self.flags_dict[labels.SKAFFOLD_CMD]
+-      target_image = self._build_pipeline_image(target_image, skaffold_cmd)
+-      os.environ[labels.KUBEFLOW_TFX_IMAGE_ENV] = target_image
++      if target_image is not None or os.path.exists(
++          container_builder_labels.BUILD_SPEC_FILENAME):
++        target_image = self._build_pipeline_image(target_image, skaffold_cmd)
++        os.environ[labels.KUBEFLOW_TFX_IMAGE_ENV] = target_image
+     except (ValueError, subprocess.CalledProcessError, RuntimeError):
+       click.echo('No container image is built.')
++      raise
+     else:
+       click.echo('New container image is built. Target image is available in '
+                  'the build spec file.')

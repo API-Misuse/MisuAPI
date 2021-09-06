@@ -1,0 +1,35 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/EleutherAI/gpt-neo/pull/129
+  title: 'Fix AttributeError: ''Tensor'' object has no attribute ''numpy'''
+  body: ''
+sha: c506e45b078d86f8bf4743bbdc3bf59351904b8b
+message: 'Fix AttributeError: ''Tensor'' object has no attribute ''numpy'''
+commit_log: "commit c506e45b078d86f8bf4743bbdc3bf59351904b8b\nAuthor: Leo Gao <54557097+leogao2@users.noreply.github.com>\n\
+  Date:   Mon Feb 8 19:58:58 2021 -0700\n\n    Fix AttributeError: 'Tensor' object\
+  \ has no attribute 'numpy'"
+contained_keywords:
+- fix
+- attributeerror
+commit_time: 2021-02-08 19:58:58 -0700
+commit_author: Leo Gao
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 27
+    - '        tf.enable_eager_execution()
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: scripts/convert_gpt.py
+  removed: 0
+  source_file: a/scripts/convert_gpt.py
+  target_file: b/scripts/convert_gpt.py

@@ -1,0 +1,43 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/horovod/horovod/pull/2683
+  title: 'Fix bug in checking sample_weights, #2680'
+  body: "Fixes #2680\r\n\r\nthis line\r\nif sample_weights:\r\nshould change to\r\n\
+    if sample_weights is not None:\r\n\r\notherwise it complains about\r\nRuntimeError:\
+    \ bool value of Tensor with more than one value is ambiguous.\r\n"
+sha: 680f0b2f0f0714646e3370f3fc53e1006de5430a
+message: 'fix_sample_weights (#2683)
+
+
+  Signed-off-by: Peng Zhang <pengz@uber.com>'
+commit_log: "commit 680f0b2f0f0714646e3370f3fc53e1006de5430a\nAuthor: Peng Zhang <irasit@users.noreply.github.com>\n\
+  Date:   Mon Feb 22 13:57:47 2021 -0800\n\n    fix_sample_weights (#2683)\n    \n\
+  \    Signed-off-by: Peng Zhang <pengz@uber.com>"
+contained_keywords:
+- fix
+commit_time: 2021-02-22 13:57:47 -0800
+commit_author: Peng Zhang
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 268
+    - '                            if sample_weights is not None:
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '                            if sample_weights:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: horovod/spark/torch/remote.py
+  removed: 1
+  source_file: a/horovod/spark/torch/remote.py
+  target_file: b/horovod/spark/torch/remote.py

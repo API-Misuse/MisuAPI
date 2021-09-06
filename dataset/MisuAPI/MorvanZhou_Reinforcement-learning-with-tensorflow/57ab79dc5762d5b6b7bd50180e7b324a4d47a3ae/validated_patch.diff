@@ -1,0 +1,18 @@
+commit 57ab79dc5762d5b6b7bd50180e7b324a4d47a3ae
+Author: Min Kyung Lee <minke7@naver.com>
+Date:   Wed Feb 12 21:32:33 2020 +0900
+
+    [revised] .ix to .loc and [add] .astype for .argmax() typeerror
+
+diff --git a/contents/11_Dyna_Q/RL_brain.py b/contents/11_Dyna_Q/RL_brain.py
+index 2fb39aa..23fa6fc 100644
+--- a/contents/11_Dyna_Q/RL_brain.py
++++ b/contents/11_Dyna_Q/RL_brain.py
+@@ -15,16 +15,23 @@ class QLearningTable:
+         self.lr = learning_rate
+         self.gamma = reward_decay
+         self.epsilon = e_greedy
+-        self.q_table = pd.DataFrame(columns=self.actions)
++
++        ## argmax type error
++        self.q_table = pd.DataFrame(columns=self.actions).astype('float32')

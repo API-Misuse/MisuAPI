@@ -1,0 +1,25 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:24:6 - error: Import "nni.tuner" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:29:8 - error: Import "json_tricks" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:33:6 - error: Import "smac.utils.io.cmd_reader" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:34:6 - error: Import "smac.scenario.scenario" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:35:6 - error: Import "smac.facade.smac_facade" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:36:6 - error: Import "smac.facade.roar_facade" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:37:6 - error: Import "smac.facade.epils_facade" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:133:47 - error: "solver" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:150:30 - error: "nni_smac_receive_first_run" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:153:30 - error: "nni_smac_receive_runs" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:169:48 - error: "nni_smac_start" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:174:44 - error: "nni_smac_request_challengers" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:189:52 - error: "nni_smac_start" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/microsoft_nni/8e732f2cf67e4a36196a48b1cb0368d58ff86afe/a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py:194:44 - error: "nni_smac_request_challengers" is not a known member of "None" (reportOptionalMemberAccess)
+14 errors, 0 warnings, 0 infos 
+Completed in 1.55sec
+
+time cost(in seconds): 1.7162272930145264

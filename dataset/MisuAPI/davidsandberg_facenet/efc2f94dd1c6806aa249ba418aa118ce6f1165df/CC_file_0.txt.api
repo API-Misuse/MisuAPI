@@ -1,0 +1,14 @@
+INS @type:with_stmt@ @[3028,3136]@ with tf.control_dependencies([centers]):
+        l <text_longer_than_50> @TO@ @type:suite@ @[2470,3112]@ """Center loss based on the paper "A Discriminativ <text_longer_than_50>
+
+INS @type:with_stmt@ @[3028,3136]@ with tf.control_dependencies([centers]):
+        l <text_longer_than_50> @TO@ @type:suite@ @[2470,3112]@ """Center loss based on the paper "A Discriminativ <text_longer_than_50>
+
+INS @type:suite@ @[3068,3136]@ loss = tf.reduce_mean(tf.square(features - centers <text_longer_than_50> @TO@ @type:with_stmt@ @[3028,3136]@ with tf.control_dependencies([centers]):
+        l <text_longer_than_50>
+
+INS @type:suite@ @[3068,3136]@ loss = tf.reduce_mean(tf.square(features - centers <text_longer_than_50> @TO@ @type:with_stmt@ @[3028,3136]@ with tf.control_dependencies([centers]):
+        l <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3028,3087]@ loss = tf.reduce_mean(tf.square(features - centers <text_longer_than_50> @TO@ @type:suite@ @[3068,3136]@ loss = tf.reduce_mean(tf.square(features - centers <text_longer_than_50>
+

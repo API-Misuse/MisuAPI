@@ -1,0 +1,24 @@
+INS @type:try_stmt@ @[1917,2185]@ try:
+            with open(tmp_filename, 'w') as f <text_longer_than_50> @TO@ @type:suite@ @[1862,2043]@ tmp_filename = self.filename + '.tmp'
+        with <text_longer_than_50>
+---INS @type:suite@ @[1921,2068]@ with open(tmp_filename, 'w') as f:
+                <text_longer_than_50> @TO@ @type:try_stmt@ @[1917,2185]@ try:
+            with open(tmp_filename, 'w') as f <text_longer_than_50>
+
+
+UPD @type:with_stmt@ @[1917,1996]@ with open(tmp_filename, 'w') as f:
+            jso <text_longer_than_50> @TO@ @type:with_stmt@ @[1934,2017]@ with open(tmp_filename, 'w') as f:
+                <text_longer_than_50>
+---UPD @type:suite@ @[1951,1996]@ json.dump(self.stat_history, f) @TO@ @type:suite@ @[1968,2017]@ json.dump(self.stat_history, f)
+
+
+MOV @type:with_stmt@ @[1917,1996]@ with open(tmp_filename, 'w') as f:
+            jso <text_longer_than_50> @TO@ @type:suite@ @[1921,2068]@ with open(tmp_filename, 'w') as f:
+                <text_longer_than_50>
+---UPD @type:suite@ @[1951,1996]@ json.dump(self.stat_history, f) @TO@ @type:suite@ @[1968,2017]@ json.dump(self.stat_history, f)
+
+
+MOV @type:simple_stmt@ @[2004,2043]@ os.rename(tmp_filename, self.filename) @TO@ @type:suite@ @[1921,2068]@ with open(tmp_filename, 'w') as f:
+                <text_longer_than_50>
+
+

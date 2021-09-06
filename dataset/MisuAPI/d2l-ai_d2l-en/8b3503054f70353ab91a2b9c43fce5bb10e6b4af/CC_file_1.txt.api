@@ -1,0 +1,10 @@
+DEL @type:atom_expr@ @[12210,12225]@ loss(net(X), y) @FROM@ @type:expr_stmt@ @[12206,12225]@ l = loss(net(X), y)
+
+INS @type:simple_stmt@ @[12227,12257]@ y = d2l.reshape(y, out.shape) @TO@ @type:suite@ @[12197,12277]@ l = loss(net(X), y)
+        metric.add(d2l.reduce_ <text_longer_than_50>
+
+INS @type:simple_stmt@ @[12265,12282]@ l = loss(out, y) @TO@ @type:suite@ @[12197,12277]@ l = loss(net(X), y)
+        metric.add(d2l.reduce_ <text_longer_than_50>
+
+MOV @type:atom_expr@ @[12215,12221]@ net(X) @TO@ @type:expr_stmt@ @[12206,12225]@ l = loss(net(X), y)
+

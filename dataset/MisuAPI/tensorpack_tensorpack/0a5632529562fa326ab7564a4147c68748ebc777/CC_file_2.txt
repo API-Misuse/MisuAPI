@@ -1,0 +1,20 @@
+UPD @type:with_stmt@ @[518,616]@ with G.gradient_override_map({"Floor": "Identity"} <text_longer_than_50> @TO@ @type:with_stmt@ @[518,610]@ with G.gradient_override_map({"Round": "Identity"} <text_longer_than_50>
+---UPD @type:atom_expr@ @[523,569]@ G.gradient_override_map({"Floor": "Identity"}) @TO@ @type:atom_expr@ @[523,569]@ G.gradient_override_map({"Round": "Identity"})
+------UPD @type:trailer@ @[546,569]@ ({"Floor": "Identity"}) @TO@ @type:trailer@ @[546,569]@ ({"Round": "Identity"})
+---------UPD @type:atom@ @[547,568]@ {"Floor": "Identity"} @TO@ @type:atom@ @[547,568]@ {"Round": "Identity"}
+------------UPD @type:dictorsetmaker@ @[548,567]@ "Floor": "Identity" @TO@ @type:dictorsetmaker@ @[548,567]@ "Round": "Identity"
+---------------UPD @type:string@ @[548,555]@ "Floor" @TO@ @type:string@ @[548,555]@ "Round"
+---UPD @type:suite@ @[570,616]@ return tf.floor(x * n + 0.5) / n @TO@ @type:suite@ @[570,610]@ return tf.round(x * n) / n
+------UPD @type:simple_stmt@ @[583,616]@ return tf.floor(x * n + 0.5) / n @TO@ @type:simple_stmt@ @[583,610]@ return tf.round(x * n) / n
+---------UPD @type:return_stmt@ @[583,615]@ return tf.floor(x * n + 0.5) / n @TO@ @type:return_stmt@ @[583,609]@ return tf.round(x * n) / n
+------------UPD @type:term@ @[590,615]@ tf.floor(x * n + 0.5) / n @TO@ @type:term@ @[590,609]@ tf.round(x * n) / n
+---------------UPD @type:atom_expr@ @[590,611]@ tf.floor(x * n + 0.5) @TO@ @type:atom_expr@ @[590,605]@ tf.round(x * n)
+------------------UPD @type:trailer@ @[592,598]@ .floor @TO@ @type:trailer@ @[592,598]@ .round
+---------------------UPD @type:name@ @[593,598]@ floor @TO@ @type:name@ @[593,598]@ round
+------------------UPD @type:trailer@ @[598,611]@ (x * n + 0.5) @TO@ @type:trailer@ @[598,605]@ (x * n)
+---------------------DEL @type:arith_expr@ @[599,610]@ x * n + 0.5 @FROM@ @type:trailer@ @[598,611]@ (x * n + 0.5)
+
+
+MOV @type:term@ @[599,604]@ x * n @TO@ @type:trailer@ @[598,611]@ (x * n + 0.5)
+
+

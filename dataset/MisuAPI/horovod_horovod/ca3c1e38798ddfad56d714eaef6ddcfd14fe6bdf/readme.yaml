@@ -1,0 +1,36 @@
+sha: ca3c1e38798ddfad56d714eaef6ddcfd14fe6bdf
+message: 'Bugfix PyTorch ImageNet example (#853)
+
+
+  Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>'
+commit_log: "commit ca3c1e38798ddfad56d714eaef6ddcfd14fe6bdf\nAuthor: Alex Sergeev\
+  \ <alexander.sergeev@live.com>\nDate:   Fri Feb 22 14:15:01 2019 -0800\n\n    Bugfix\
+  \ PyTorch ImageNet example (#853)\n    \n    Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>"
+contained_keywords:
+- bugfix
+commit_time: 2019-02-22 14:15:01 -0800
+commit_author: Alex Sergeev
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/pytorch_imagenet_resnet50.py
+  source_file: a/examples/pytorch_imagenet_resnet50.py
+  target_file: b/examples/pytorch_imagenet_resnet50.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 179
+    - '                train_loss.update(loss)
+
+      '
+  del_line_no:
+  - - null
+    - '                train_loss.update(loss.item())
+
+      '

@@ -1,0 +1,27 @@
+UPD @type:if_stmt@ @[4778,5251]@ if event['headers']['Content-Type'] == 'applicatio <text_longer_than_50> @TO@ @type:if_stmt@ @[4778,5243]@ if event['headers']['Content-Type'] == 'applicatio <text_longer_than_50>
+---UPD @type:suite@ @[5042,5251]@ return {
+                "statusCode": 400,
+       <text_longer_than_50> @TO@ @type:suite@ @[5042,5243]@ return {
+                "statusCode": 400,
+       <text_longer_than_50>
+------UPD @type:simple_stmt@ @[5055,5251]@ return {
+                "statusCode": 400,
+       <text_longer_than_50> @TO@ @type:simple_stmt@ @[5055,5243]@ return {
+                "statusCode": 400,
+       <text_longer_than_50>
+---------UPD @type:return_stmt@ @[5055,5250]@ return {
+                "statusCode": 400,
+       <text_longer_than_50> @TO@ @type:return_stmt@ @[5055,5242]@ return {
+                "statusCode": 400,
+       <text_longer_than_50>
+------------UPD @type:atom@ @[5062,5250]@ {
+                "statusCode": 400,
+              <text_longer_than_50> @TO@ @type:atom@ @[5062,5242]@ {
+                "statusCode": 400,
+              <text_longer_than_50>
+---------------UPD @type:dictorsetmaker@ @[5080,5236]@ "statusCode": 400,
+                "body": "Reques <text_longer_than_50> @TO@ @type:dictorsetmaker@ @[5080,5228]@ "statusCode": 400,
+                "body": "Reques <text_longer_than_50>
+------------------UPD @type:strings@ @[5123,5236]@ "Request content-type not supported, only applicat <text_longer_than_50> @TO@ @type:strings@ @[5123,5228]@ "Request content-type not supported, only applicat <text_longer_than_50>
+
+

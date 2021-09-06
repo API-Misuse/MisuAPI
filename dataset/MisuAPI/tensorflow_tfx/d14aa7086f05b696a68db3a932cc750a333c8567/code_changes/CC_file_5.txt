@@ -1,0 +1,14 @@
+INS @type:try_stmt@ @[1205,1326]@ try:
+      return open(name, mode=mode)
+    except <text_longer_than_50> @TO@ @type:suite@ @[1200,1326]@ try:
+      return open(name, mode=mode)
+    except <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[1594,1712]@ try:
+      shutil.copyfile(src, dst)
+    except Fi <text_longer_than_50> @TO@ @type:suite@ @[1325,1528]@ if not overwrite and os.path.exists(dst):
+      ra <text_longer_than_50>
+---INS @type:suite@ @[1598,1631]@ shutil.copyfile(src, dst) @TO@ @type:try_stmt@ @[1594,1712]@ try:
+      shutil.copyfile(src, dst)
+    except Fi <text_longer_than_50>

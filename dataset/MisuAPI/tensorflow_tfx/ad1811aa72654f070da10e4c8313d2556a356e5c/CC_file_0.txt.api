@@ -1,0 +1,18 @@
+MOV @type:simple_stmt@ @[10675,10738]@ json_format.Parse(json.dumps(dict_data['artifact'] <text_longer_than_50> @TO@ @type:suite@ @[10437,11003]@ module_name = dict_data['__artifact_class_module__ <text_longer_than_50>
+
+INS @type:try_stmt@ @[10951,11544]@ try:
+      artifact_cls = getattr(importlib.import <text_longer_than_50> @TO@ @type:suite@ @[10437,11003]@ module_name = dict_data['__artifact_class_module__ <text_longer_than_50>
+
+INS @type:try_stmt@ @[10951,11544]@ try:
+      artifact_cls = getattr(importlib.import <text_longer_than_50> @TO@ @type:suite@ @[10437,11003]@ module_name = dict_data['__artifact_class_module__ <text_longer_than_50>
+
+INS @type:suite@ @[10955,11065]@ artifact_cls = getattr(importlib.import_module(mod <text_longer_than_50> @TO@ @type:try_stmt@ @[10951,11544]@ try:
+      artifact_cls = getattr(importlib.import <text_longer_than_50>
+
+INS @type:suite@ @[10955,11065]@ artifact_cls = getattr(importlib.import_module(mod <text_longer_than_50> @TO@ @type:try_stmt@ @[10951,11544]@ try:
+      artifact_cls = getattr(importlib.import <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[10553,10626]@ artifact_cls = getattr(importlib.import_module(mod <text_longer_than_50> @TO@ @type:suite@ @[10955,11065]@ artifact_cls = getattr(importlib.import_module(mod <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[10873,10897]@ result = artifact_cls() @TO@ @type:suite@ @[10955,11065]@ artifact_cls = getattr(importlib.import_module(mod <text_longer_than_50>
+

@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[5257,5314]@ tf.reshape(tf.concat(axis=outputs, values=1), [-1, <text_longer_than_50> @TO@ @type:atom_expr@ @[5257,5314]@ tf.reshape(tf.concat(axis=1, values=outputs), [-1, <text_longer_than_50>
+
+UPD @type:atom_expr@ @[5268,5301]@ tf.concat(axis=outputs, values=1) @TO@ @type:atom_expr@ @[5268,5301]@ tf.concat(axis=1, values=outputs)
+

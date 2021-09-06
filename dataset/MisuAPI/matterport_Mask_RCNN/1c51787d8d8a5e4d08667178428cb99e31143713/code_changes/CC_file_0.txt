@@ -1,0 +1,13 @@
+UPD @type:if_stmt@ @[11406,11596]@ if info["source"] == "coco":
+            return "h <text_longer_than_50> @TO@ @type:if_stmt@ @[11406,11590]@ if info["source"] == "coco":
+            return "h <text_longer_than_50>
+---UPD @type:suite@ @[11526,11596]@ super(CocoDataset, self).image_reference(self, ima <text_longer_than_50> @TO@ @type:suite@ @[11526,11590]@ super(CocoDataset, self).image_reference(image_id)
+------UPD @type:simple_stmt@ @[11539,11596]@ super(CocoDataset, self).image_reference(self, ima <text_longer_than_50> @TO@ @type:simple_stmt@ @[11539,11590]@ super(CocoDataset, self).image_reference(image_id)
+---------UPD @type:atom_expr@ @[11539,11595]@ super(CocoDataset, self).image_reference(self, ima <text_longer_than_50> @TO@ @type:atom_expr@ @[11539,11589]@ super(CocoDataset, self).image_reference(image_id)
+------------UPD @type:trailer@ @[11579,11595]@ (self, image_id) @TO@ @type:trailer@ @[11579,11589]@ (image_id)
+---------------DEL @type:arglist@ @[11580,11594]@ self, image_id @FROM@ @type:trailer@ @[11579,11595]@ (self, image_id)
+
+
+MOV @type:name@ @[11586,11594]@ image_id @TO@ @type:trailer@ @[11579,11595]@ (self, image_id)
+
+

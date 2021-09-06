@@ -1,0 +1,12 @@
+UPD @type:simple_stmt@ @[8974,10949]@ """TensorFlow Transform executor entrypoint.
+
+     <text_longer_than_50> @TO@ @type:simple_stmt@ @[8974,11009]@ """TensorFlow Transform executor entrypoint.
+
+     <text_longer_than_50>
+---UPD @type:string@ @[8974,10948]@ """TensorFlow Transform executor entrypoint.
+
+     <text_longer_than_50> @TO@ @type:string@ @[8974,11008]@ """TensorFlow Transform executor entrypoint.
+
+     <text_longer_than_50>
+
+

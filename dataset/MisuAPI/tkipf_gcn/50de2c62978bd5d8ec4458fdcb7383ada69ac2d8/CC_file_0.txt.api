@@ -1,0 +1,112 @@
+INS @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:if_stmt@ @[616,861]@ if sys.version_info > (3, 0):
+            objects. <text_longer_than_50>
+
+INS @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:if_stmt@ @[616,861]@ if sys.version_info > (3, 0):
+            objects. <text_longer_than_50>
+
+INS @type:simple_stmt@ @[744,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1'))
+
+INS @type:simple_stmt@ @[744,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1'))
+
+UPD @type:atom_expr@ @[658,755]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50> @TO@ @type:atom_expr@ @[744,790]@ objects.append(pkl.load(f, encoding='latin1'))
+
+UPD @type:atom_expr@ @[673,754]@ pkl.load(open("data/ind.{}.{}".format(dataset_str, <text_longer_than_50> @TO@ @type:atom_expr@ @[759,789]@ pkl.load(f, encoding='latin1')
+
+INS @type:arglist@ @[768,788]@ f, encoding='latin1' @TO@ @type:trailer@ @[681,754]@ (open("data/ind.{}.{}".format(dataset_str, names[i <text_longer_than_50>
+
+MOV @type:atom_expr@ @[658,755]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50> @TO@ @type:simple_stmt@ @[744,791]@ objects.append(pkl.load(f, encoding='latin1'))
+
+UPD @type:atom_expr@ @[673,754]@ pkl.load(open("data/ind.{}.{}".format(dataset_str, <text_longer_than_50> @TO@ @type:atom_expr@ @[759,789]@ pkl.load(f, encoding='latin1')
+
+INS @type:arglist@ @[768,788]@ f, encoding='latin1' @TO@ @type:trailer@ @[681,754]@ (open("data/ind.{}.{}".format(dataset_str, names[i <text_longer_than_50>
+
+MOV @type:suite@ @[607,861]@ if sys.version_info > (3, 0):
+            objects. <text_longer_than_50> @TO@ @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50>
+
+INS @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:if_stmt@ @[616,861]@ if sys.version_info > (3, 0):
+            objects. <text_longer_than_50>
+
+INS @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:if_stmt@ @[616,861]@ if sys.version_info > (3, 0):
+            objects. <text_longer_than_50>
+
+INS @type:simple_stmt@ @[744,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1'))
+
+INS @type:simple_stmt@ @[744,791]@ objects.append(pkl.load(f, encoding='latin1')) @TO@ @type:suite@ @[727,791]@ objects.append(pkl.load(f, encoding='latin1'))
+
+UPD @type:atom_expr@ @[658,755]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50> @TO@ @type:atom_expr@ @[744,790]@ objects.append(pkl.load(f, encoding='latin1'))
+
+UPD @type:atom_expr@ @[673,754]@ pkl.load(open("data/ind.{}.{}".format(dataset_str, <text_longer_than_50> @TO@ @type:atom_expr@ @[759,789]@ pkl.load(f, encoding='latin1')
+
+INS @type:arglist@ @[768,788]@ f, encoding='latin1' @TO@ @type:trailer@ @[681,754]@ (open("data/ind.{}.{}".format(dataset_str, names[i <text_longer_than_50>
+
+MOV @type:atom_expr@ @[658,755]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50> @TO@ @type:simple_stmt@ @[744,791]@ objects.append(pkl.load(f, encoding='latin1'))
+
+UPD @type:atom_expr@ @[673,754]@ pkl.load(open("data/ind.{}.{}".format(dataset_str, <text_longer_than_50> @TO@ @type:atom_expr@ @[759,789]@ pkl.load(f, encoding='latin1')
+
+INS @type:arglist@ @[768,788]@ f, encoding='latin1' @TO@ @type:trailer@ @[681,754]@ (open("data/ind.{}.{}".format(dataset_str, names[i <text_longer_than_50>
+
+INS @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50> @TO@ @type:suite@ @[769,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50>
+
+INS @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50> @TO@ @type:suite@ @[769,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50>
+
+INS @type:with_item@ @[621,684]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50> @TO@ @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50>
+
+INS @type:with_item@ @[621,684]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50> @TO@ @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50>
+
+DEL @type:simple_stmt@ @[782,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50> @FROM@ @type:suite@ @[769,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50>
+
+MOV @type:suite@ @[769,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50> @TO@ @type:for_stmt@ @[580,861]@ for i in range(len(names)):
+        if sys.version <text_longer_than_50>
+
+INS @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50> @TO@ @type:suite@ @[769,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50>
+
+INS @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50> @TO@ @type:suite@ @[769,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50>
+
+INS @type:with_item@ @[621,684]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50> @TO@ @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50>
+
+INS @type:with_item@ @[621,684]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50> @TO@ @type:with_stmt@ @[616,853]@ with open("data/ind.{}.{}".format(dataset_str, nam <text_longer_than_50>
+
+DEL @type:simple_stmt@ @[782,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50> @FROM@ @type:suite@ @[769,861]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50>
+
+UPD @type:atom_expr@ @[682,734]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50> @TO@ @type:atom_expr@ @[621,679]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50>
+
+MOV @type:atom_expr@ @[687,733]@ "data/ind.{}.{}".format(dataset_str, names[i]) @TO@ @type:arglist@ @[682,753]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50>
+
+MOV @type:atom_expr@ @[682,734]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50> @TO@ @type:with_item@ @[621,684]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50>
+
+MOV @type:atom_expr@ @[687,733]@ "data/ind.{}.{}".format(dataset_str, names[i]) @TO@ @type:arglist@ @[682,753]@ open("data/ind.{}.{}".format(dataset_str, names[i] <text_longer_than_50>
+
+UPD @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i]) @TO@ @type:atom_expr@ @[825,852]@ objects.append(pkl.load(f))
+
+MOV @type:trailer@ @[827,834]@ .format @TO@ @type:atom_expr@ @[840,851]@ pkl.load(f)
+
+DEL @type:string@ @[811,827]@ "data/ind.{}.{}" @FROM@ @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i])
+
+DEL @type:trailer@ @[834,857]@ (dataset_str, names[i]) @FROM@ @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i])
+
+MOV @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i]) @TO@ @type:simple_stmt@ @[658,756]@ objects.append(pkl.load(open("data/ind.{}.{}".form <text_longer_than_50>
+
+MOV @type:trailer@ @[827,834]@ .format @TO@ @type:atom_expr@ @[840,851]@ pkl.load(f)
+
+DEL @type:string@ @[811,827]@ "data/ind.{}.{}" @FROM@ @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i])
+
+DEL @type:trailer@ @[834,857]@ (dataset_str, names[i]) @FROM@ @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i])
+
+MOV @type:name@ @[782,789]@ objects @TO@ @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i])
+
+MOV @type:trailer@ @[789,796]@ .append @TO@ @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i])
+
+INS @type:atom_expr@ @[840,851]@ pkl.load(f) @TO@ @type:trailer@ @[853,856]@ [i]
+
+INS @type:atom_expr@ @[840,851]@ pkl.load(f) @TO@ @type:trailer@ @[853,856]@ [i]
+
+MOV @type:trailer@ @[853,856]@ [i] @TO@ @type:atom_expr@ @[811,857]@ "data/ind.{}.{}".format(dataset_str, names[i])
+
+INS @type:atom_expr@ @[840,851]@ pkl.load(f) @TO@ @type:trailer@ @[853,856]@ [i]
+
+INS @type:atom_expr@ @[840,851]@ pkl.load(f) @TO@ @type:trailer@ @[853,856]@ [i]
+
+MOV @type:name@ @[797,800]@ pkl @TO@ @type:atom_expr@ @[840,851]@ pkl.load(f)
+
+MOV @type:trailer@ @[800,805]@ .load @TO@ @type:atom_expr@ @[840,851]@ pkl.load(f)
+

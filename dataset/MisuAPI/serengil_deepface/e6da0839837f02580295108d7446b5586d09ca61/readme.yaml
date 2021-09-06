@@ -1,0 +1,60 @@
+sha: e6da0839837f02580295108d7446b5586d09ca61
+message: issue 100 - if detected face has 0 in some dimension
+commit_log: "commit e6da0839837f02580295108d7446b5586d09ca61\nAuthor: \u015Eefik Serangil\
+  \ <sefik.serengil@softtech.com.tr>\nDate:   Sun Sep 27 09:11:05 2020 +0300\n\n \
+  \   issue 100 - if detected face has 0 in some dimension"
+contained_keywords:
+- issue
+commit_time: 2020-09-27 09:11:05 +0300
+commit_author: "\u015Eefik Serangil"
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: deepface/commons/functions.py
+  source_file: a/deepface/commons/functions.py
+  target_file: b/deepface/commons/functions.py
+  added: 12
+  removed: 5
+  add_line_no:
+  - - 453
+    - "\tbase_img = img.copy()\n"
+  - - 459
+    - "\tif img.shape[0] > 0 and img.shape[1] > 0:\n"
+  - - 460
+    - "\t\timg = align_face(img = img, detector_backend = detector_backend)\n"
+  - - 461
+    - "\telse:\n"
+  - - 462
+    - "\t\t\n"
+  - - 463
+    - "\t\tif enforce_detection == True:\n"
+  - - 464
+    - "\t\t\traise ValueError(\"Detected face shape is \", img.shape,\". Consider\
+      \ to set enforce_detection argument to False.\")\n"
+  - - 465
+    - "\t\telse: #restore base image \n"
+  - - 466
+    - "\t\t\timg = base_img.copy()\n"
+  - - 467
+    - "\t\t\n"
+  - - 468
+    - "\t#--------------------------\n"
+  - - 469
+    - "\t\n"
+  del_line_no:
+  - - null
+    - "\t\n"
+  - - null
+    - "\t#--------------------------\n"
+  - - null
+    - "\t\n"
+  - - null
+    - "\t#we will align base image instead of detected face not have black pixels\n"
+  - - null
+    - "\timg = align_face(img = img, detector_backend = detector_backend)\n"

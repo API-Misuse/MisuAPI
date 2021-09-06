@@ -1,0 +1,24 @@
+UPD @type:simple_stmt@ @[61868,63417]@ setup(name='horovod',
+      version=__version__,
+  <text_longer_than_50> @TO@ @type:simple_stmt@ @[61868,63417]@ setup(name='horovod',
+      version=__version__,
+  <text_longer_than_50>
+---UPD @type:atom_expr@ @[61868,63416]@ setup(name='horovod',
+      version=__version__,
+  <text_longer_than_50> @TO@ @type:atom_expr@ @[61868,63416]@ setup(name='horovod',
+      version=__version__,
+  <text_longer_than_50>
+------UPD @type:trailer@ @[61873,63416]@ (name='horovod',
+      version=__version__,
+       <text_longer_than_50> @TO@ @type:trailer@ @[61873,63416]@ (name='horovod',
+      version=__version__,
+       <text_longer_than_50>
+---------UPD @type:arglist@ @[61874,63415]@ name='horovod',
+      version=__version__,
+      p <text_longer_than_50> @TO@ @type:arglist@ @[61874,63415]@ name='horovod',
+      version=__version__,
+      p <text_longer_than_50>
+------------UPD @type:argument@ @[63062,63093]@ test_requires=test_require_list @TO@ @type:argument@ @[63062,63093]@ tests_require=test_require_list
+---------------UPD @type:name@ @[63062,63075]@ test_requires @TO@ @type:name@ @[63062,63075]@ tests_require
+
+

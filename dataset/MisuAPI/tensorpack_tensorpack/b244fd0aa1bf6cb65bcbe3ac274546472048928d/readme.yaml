@@ -1,0 +1,69 @@
+sha: b244fd0aa1bf6cb65bcbe3ac274546472048928d
+message: bugfix
+commit_log: "commit b244fd0aa1bf6cb65bcbe3ac274546472048928d\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Mon May 14 02:36:00 2018 -0600\n\n    bugfix"
+contained_keywords:
+- bugfix
+commit_time: 2018-05-14 02:36:00 -0600
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/FasterRCNN/model.py
+  source_file: a/examples/FasterRCNN/model.py
+  target_file: b/examples/FasterRCNN/model.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 102
+    - '    label_loss = tf.reduce_sum(label_loss) * (1. / config.RPN_BATCH_PER_IM)
+
+      '
+  del_line_no:
+  - - null
+    - '    label_loss = label_loss * (1. / config.RPN_BATCH_PER_IM)
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/FasterRCNN/train.py
+  source_file: a/examples/FasterRCNN/train.py
+  target_file: b/examples/FasterRCNN/train.py
+  added: 5
+  removed: 1
+  add_line_no:
+  - - 505
+    - '        try:
+
+      '
+  - - 506
+    - '            scores = print_evaluation_scores(output_file)
+
+      '
+  - - 507
+    - '        except Exception:
+
+      '
+  - - 508
+    - '            logger.exception("Exception in COCO evaluation.")
+
+      '
+  - - 509
+    - '            scores = {}
+
+      '
+  del_line_no:
+  - - null
+    - '        scores = print_evaluation_scores(output_file)
+
+      '

@@ -1,0 +1,164 @@
+commit 132dcccd34a831a01e4fcdbd32f869b36f04537e
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Fri Jun 17 14:36:16 2016 -0700
+
+    handle disk error
+
+diff --git a/examples/char-rnn/README.md b/examples/char-rnn/README.md
+index 9313210b..d9b87000 100644
+--- a/examples/char-rnn/README.md
++++ b/examples/char-rnn/README.md
+@@ -115,3 +115,5 @@ weston, improving neural grammatical model flow images is allows belief networks
+ generating neural networks, there is not the initial particular marked pseudo-cameral rnns
+ sophett, pattern wlth designs for faster than the inference in deep learning. in nips (most),
+ ```
++
++See [blog of Andrej Karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) for more interesting stories on this topic.
+diff --git a/tensorpack/callbacks/common.py b/tensorpack/callbacks/common.py
+index 15db9864..9cd2f081 100644
+--- a/tensorpack/callbacks/common.py
++++ b/tensorpack/callbacks/common.py
+@@ -49,11 +49,14 @@ class ModelSaver(Callback):
+         return var_dict
+ 
+     def _trigger_epoch(self):
+-        self.saver.save(
+-            tf.get_default_session(),
+-            self.path,
+-            global_step=self.global_step,
+-            write_meta_graph=not self.meta_graph_written)
++        try:
++            self.saver.save(
++                tf.get_default_session(),
++                self.path,
++                global_step=self.global_step,
++                write_meta_graph=not self.meta_graph_written)
++        except Exception:   # disk error sometimes..
++            logger.exception("Exception in ModelSaver.trigger_epoch!")
+         if not self.meta_graph_written:
+             self.meta_graph_written = True
+ 
+diff --git a/tensorpack/callbacks/summary.py b/tensorpack/callbacks/summary.py
+index f1600ef0..db120292 100644
+--- a/tensorpack/callbacks/summary.py
++++ b/tensorpack/callbacks/summary.py
+@@ -69,9 +69,12 @@ class StatHolder(object):
+ 
+     def _write_stat(self):
+         tmp_filename = self.filename + '.tmp'
+-        with open(tmp_filename, 'w') as f:
+-            json.dump(self.stat_history, f)
+-        os.rename(tmp_filename, self.filename)
++        try:
++            with open(tmp_filename, 'w') as f:
++                json.dump(self.stat_history, f)
++            os.rename(tmp_filename, self.filename)
++        except IOError: # disk error sometimes..
++            logger.exception("Exception in StatHolder.finalize()!")
+ 
+ class StatPrinter(Callback):
+     """
+diff --git a/tensorpack/train/trainer.py b/tensorpack/train/trainer.py
+index 9fe4ea17..b72e17a7 100644
+--- a/tensorpack/train/trainer.py
++++ b/tensorpack/train/trainer.py
+@@ -91,7 +91,10 @@ class EnqueueThread(threading.Thread):
+             except Exception:
+                 logger.exception("Exception in EnqueueThread:")
+             finally:
+-                self.sess.run(self.close_op)
++                try:
++                    self.sess.run(self.close_op)
++                except RuntimeError:    # session already closed
++                    pass
+                 self.coord.request_stop()
+                 logger.info("Enqueue Thread Exited.")
+ 
+diff --git a/tensorpack/utils/stat.py b/tensorpack/utils/stat.py
+index d636c6f2..7e600bf0 100644
+--- a/tensorpack/utils/stat.py
++++ b/tensorpack/utils/stat.py
+@@ -3,59 +3,63 @@
+ # Author: Yuxin Wu <ppwwyyxx@gmail.com>
+ import numpy as np
+ 
+-__all__ = ['StatCounter', 'Accuracy', 'BinaryStatistics']
++__all__ = ['StatCounter', 'Accuracy', 'BinaryStatistics', 'RatioStatistics']
+ 
+ class StatCounter(object):
+     def __init__(self):
+         self.reset()
+ 
+     def feed(self, v):
+-        self.values.append(v)
++        self._values.append(v)
+ 
+     def reset(self):
+-        self.values = []
++        self._values = []
+ 
+     @property
+     def count(self):
+-        return len(self.values)
++        return len(self._values)
+ 
+     @property
+     def average(self):
+-        assert len(self.values)
+-        return np.mean(self.values)
++        assert len(self._values)
++        return np.mean(self._values)
+ 
+     @property
+     def sum(self):
+-        assert len(self.values)
+-        return np.sum(self.values)
++        assert len(self._values)
++        return np.sum(self._values)
+ 
+     @property
+     def max(self):
+-        assert len(self.values)
+-        return max(self.values)
++        assert len(self._values)
++        return max(self._values)
+ 
+-class Accuracy(object):
++class RatioStatistics(object):
+     def __init__(self):
+         self.reset()
+ 
+     def reset(self):
+-        self.tot = 0
+-        self.corr = 0
++        self._tot = 0
++        self._cnt = 0
+ 
+-    def feed(self, corr, tot=1):
+-        self.tot += tot
+-        self.corr += corr
++    def feed(self, cnt, tot=1):
++        self._tot += tot
++        self._cnt += cnt
+ 
+     @property
+-    def accuracy(self):
+-        if self.tot == 0:
++    def ratio(self):
++        if self._tot == 0:
+             return 0
+-        return self.corr * 1.0 / self.tot
++        return self._cnt * 1.0 / self._tot
+ 
+     @property
+     def count(self):
+-        return self.tot
++        return self._tot
+ 
++class Accuracy(RatioStatistics):
++    @property
++    def accuracy(self):
++        return self.ratio
+ 
+ class BinaryStatistics(object):
+     """

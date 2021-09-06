@@ -1,0 +1,26 @@
+INS @type:suite@ @[3719,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50> @TO@ @type:if_stmt@ @[3521,3758]@ if isinstance(result, pd.DataFrame):
+            r <text_longer_than_50>
+
+INS @type:suite@ @[3719,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50> @TO@ @type:if_stmt@ @[3521,3758]@ if isinstance(result, pd.DataFrame):
+            r <text_longer_than_50>
+
+INS @type:try_stmt@ @[3732,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50> @TO@ @type:suite@ @[3719,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50>
+
+INS @type:try_stmt@ @[3732,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50> @TO@ @type:suite@ @[3719,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50>
+
+MOV @type:suite@ @[3719,3758]@ return json.dumps(result) @TO@ @type:try_stmt@ @[3732,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50>
+

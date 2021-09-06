@@ -1,0 +1,24 @@
+commit 001a260214ba34f36e149bbd24f7f5d6a6634500
+Author: g21589 <g21589@gmail.com>
+Date:   Thu Jun 15 02:12:54 2017 +0800
+
+    Fixed the device specification for dequeue (#1480)
+    
+    This patch assigns dequeue node to inputs_device. And nolonger shows
+    "Ignoring device specification /device:GPU:X for node
+    'clone_X/fifo_queue_Dequeue'" message.
+
+diff --git a/slim/train_image_classifier.py b/slim/train_image_classifier.py
+index 57049a1a..21180edb 100755
+--- a/slim/train_image_classifier.py
++++ b/slim/train_image_classifier.py
+@@ -450,7 +450,8 @@ def main(_):
+     ####################
+     def clone_fn(batch_queue):
+       """Allows data parallelism by creating multiple clones of network_fn."""
+-      images, labels = batch_queue.dequeue()
++      with tf.device(deploy_config.inputs_device()):
++        images, labels = batch_queue.dequeue()
+       logits, end_points = network_fn(images)
+ 
+       #############################

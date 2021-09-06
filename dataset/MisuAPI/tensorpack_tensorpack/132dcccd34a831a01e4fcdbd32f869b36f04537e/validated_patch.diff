@@ -1,0 +1,66 @@
+commit 132dcccd34a831a01e4fcdbd32f869b36f04537e
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Fri Jun 17 14:36:16 2016 -0700
+
+    handle disk error
+
+diff --git a/tensorpack/callbacks/common.py b/tensorpack/callbacks/common.py
+index 15db9864..9cd2f081 100644
+--- a/tensorpack/callbacks/common.py
++++ b/tensorpack/callbacks/common.py
+@@ -49,11 +49,14 @@ class ModelSaver(Callback):
+         return var_dict
+ 
+     def _trigger_epoch(self):
+-        self.saver.save(
+-            tf.get_default_session(),
+-            self.path,
+-            global_step=self.global_step,
+-            write_meta_graph=not self.meta_graph_written)
++        try:
++            self.saver.save(
++                tf.get_default_session(),
++                self.path,
++                global_step=self.global_step,
++                write_meta_graph=not self.meta_graph_written)
++        except Exception:   # disk error sometimes..
++            logger.exception("Exception in ModelSaver.trigger_epoch!")
+         if not self.meta_graph_written:
+             self.meta_graph_written = True
+ 
+diff --git a/tensorpack/callbacks/summary.py b/tensorpack/callbacks/summary.py
+index f1600ef0..db120292 100644
+--- a/tensorpack/callbacks/summary.py
++++ b/tensorpack/callbacks/summary.py
+@@ -69,9 +69,12 @@ class StatHolder(object):
+ 
+     def _write_stat(self):
+         tmp_filename = self.filename + '.tmp'
+-        with open(tmp_filename, 'w') as f:
+-            json.dump(self.stat_history, f)
+-        os.rename(tmp_filename, self.filename)
++        try:
++            with open(tmp_filename, 'w') as f:
++                json.dump(self.stat_history, f)
++            os.rename(tmp_filename, self.filename)
++        except IOError: # disk error sometimes..
++            logger.exception("Exception in StatHolder.finalize()!")
+ 
+ class StatPrinter(Callback):
+     """
+diff --git a/tensorpack/train/trainer.py b/tensorpack/train/trainer.py
+index 9fe4ea17..b72e17a7 100644
+--- a/tensorpack/train/trainer.py
++++ b/tensorpack/train/trainer.py
+@@ -91,7 +91,10 @@ class EnqueueThread(threading.Thread):
+             except Exception:
+                 logger.exception("Exception in EnqueueThread:")
+             finally:
+-                self.sess.run(self.close_op)
++                try:
++                    self.sess.run(self.close_op)
++                except RuntimeError:    # session already closed
++                    pass
+                 self.coord.request_stop()
+                 logger.info("Enqueue Thread Exited.")
+

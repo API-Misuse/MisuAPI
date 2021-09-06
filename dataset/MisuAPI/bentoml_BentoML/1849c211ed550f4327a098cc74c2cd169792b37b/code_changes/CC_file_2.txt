@@ -1,0 +1,24 @@
+UPD @type:if_stmt@ @[3425,3852]@ if output_format == "str":
+        return str(resu <text_longer_than_50> @TO@ @type:if_stmt@ @[3425,4022]@ if output_format == "str":
+        return str(resu <text_longer_than_50>
+---UPD @type:suite@ @[3512,3758]@ if isinstance(result, pd.DataFrame):
+            r <text_longer_than_50> @TO@ @type:suite@ @[3512,3928]@ if isinstance(result, pd.DataFrame):
+            r <text_longer_than_50>
+------UPD @type:if_stmt@ @[3521,3758]@ if isinstance(result, pd.DataFrame):
+            r <text_longer_than_50> @TO@ @type:if_stmt@ @[3521,3928]@ if isinstance(result, pd.DataFrame):
+            r <text_longer_than_50>
+---------INS @type:suite@ @[3719,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50> @TO@ @type:if_stmt@ @[3521,3758]@ if isinstance(result, pd.DataFrame):
+            r <text_longer_than_50>
+------------INS @type:try_stmt@ @[3732,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50> @TO@ @type:suite@ @[3719,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50>
+---------UPD @type:suite@ @[3719,3758]@ return json.dumps(result) @TO@ @type:suite@ @[3736,3779]@ return json.dumps(result)
+---------MOV @type:suite@ @[3719,3758]@ return json.dumps(result) @TO@ @type:try_stmt@ @[3732,3928]@ try:
+                return json.dumps(result)
+    <text_longer_than_50>
+
+

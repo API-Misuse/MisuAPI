@@ -1,0 +1,46 @@
+UPD @type:atom_expr@ @[292,356]@ ms.LoadModel(modelpath + 'speech_model24_e_0_step_ <text_longer_than_50> @TO@ @type:atom_expr@ @[292,360]@ ms.LoadModel(modelpath + 'm24/speech_model24_e_0_s <text_longer_than_50>
+
+INS @type:if_stmt@ @[1509,1637]@ if(token != 'qwertasd'):
+			buf = '403'
+			print(b <text_longer_than_50> @TO@ @type:suite@ @[813,1981]@ '''
+		处理通过POST方式传递过来并接收的语音数据
+		通过语音模型和语言模型计算得到语音识别 <text_longer_than_50>
+
+INS @type:if_stmt@ @[1672,1741]@ if(len(wavs)>0):
+			r = self.recognize([wavs], fs) <text_longer_than_50> @TO@ @type:suite@ @[813,1981]@ '''
+		处理通过POST方式传递过来并接收的语音数据
+		通过语音模型和语言模型计算得到语音识别 <text_longer_than_50>
+
+INS @type:if_stmt@ @[1672,1741]@ if(len(wavs)>0):
+			r = self.recognize([wavs], fs) <text_longer_than_50> @TO@ @type:suite@ @[813,1981]@ '''
+		处理通过POST方式传递过来并接收的语音数据
+		通过语音模型和语言模型计算得到语音识别 <text_longer_than_50>
+
+INS @type:suite@ @[1688,1723]@ r = self.recognize([wavs], fs) @TO@ @type:if_stmt@ @[1672,1741]@ if(len(wavs)>0):
+			r = self.recognize([wavs], fs) <text_longer_than_50>
+
+INS @type:suite@ @[1688,1723]@ r = self.recognize([wavs], fs) @TO@ @type:if_stmt@ @[1672,1741]@ if(len(wavs)>0):
+			r = self.recognize([wavs], fs) <text_longer_than_50>
+
+INS @type:simple_stmt@ @[2112,2123]@ print(buf) @TO@ @type:suite@ @[813,1981]@ '''
+		处理通过POST方式传递过来并接收的语音数据
+		通过语音模型和语言模型计算得到语音识别 <text_longer_than_50>
+
+INS @type:try_stmt@ @[2229,2418]@ try:
+			r_speech = ms.RecognizeSpeech(wavs, fs)
+		 <text_longer_than_50> @TO@ @type:suite@ @[2219,2436]@ r=''
+		try:
+			r_speech = ms.RecognizeSpeech(wavs, <text_longer_than_50>
+
+INS @type:try_stmt@ @[2229,2418]@ try:
+			r_speech = ms.RecognizeSpeech(wavs, fs)
+		 <text_longer_than_50> @TO@ @type:suite@ @[2219,2436]@ r=''
+		try:
+			r_speech = ms.RecognizeSpeech(wavs, <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[1519,1550]@ r = self.recognize([wavs], fs) @TO@ @type:suite@ @[1688,1723]@ r = self.recognize([wavs], fs)
+
+INS @type:simple_stmt@ @[2280,2296]@ print(r_speech) @TO@ @type:suite@ @[2015,2137]@ r_speech = ms.RecognizeSpeech(wavs, fs)
+		
+		str_p <text_longer_than_50>
+

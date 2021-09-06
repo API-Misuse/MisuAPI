@@ -1,0 +1,10 @@
+UPD @type:with_stmt@ @[14193,14308]@ with open(destination_path, 'w') as f:
+            <text_longer_than_50> @TO@ @type:with_stmt@ @[14193,14326]@ with open(destination_path, 'w', encoding="utf-8") <text_longer_than_50>
+---UPD @type:with_item@ @[14198,14230]@ open(destination_path, 'w') as f @TO@ @type:with_item@ @[14198,14248]@ open(destination_path, 'w', encoding="utf-8") as f
+------UPD @type:atom_expr@ @[14198,14225]@ open(destination_path, 'w') @TO@ @type:atom_expr@ @[14198,14243]@ open(destination_path, 'w', encoding="utf-8")
+---------UPD @type:trailer@ @[14202,14225]@ (destination_path, 'w') @TO@ @type:trailer@ @[14202,14243]@ (destination_path, 'w', encoding="utf-8")
+------------UPD @type:arglist@ @[14203,14224]@ destination_path, 'w' @TO@ @type:arglist@ @[14203,14242]@ destination_path, 'w', encoding="utf-8"
+---------------INS @type:operator@ @[14224,14225]@ , @TO@ @type:arglist@ @[14203,14224]@ destination_path, 'w'
+---------------INS @type:argument@ @[14226,14242]@ encoding="utf-8" @TO@ @type:arglist@ @[14203,14224]@ destination_path, 'w'
+
+

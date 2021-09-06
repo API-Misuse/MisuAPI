@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[143,211]@ tf.nn.softmax_cross_entropy_with_logits(logits=pre <text_longer_than_50> @TO@ @type:atom_expr@ @[143,211]@ tf.nn.softmax_cross_entropy_with_logits(logits=pre <text_longer_than_50>
+

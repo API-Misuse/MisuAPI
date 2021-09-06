@@ -1,0 +1,42 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:5:6 - error: Import ".ops" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:6:6 - error: Import ".ops" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:7:6 - error: Import ".framework" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:8:6 - error: Import "dark.darknet" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:3:15 - error: "help" is unknown import symbol (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:4:15 - error: "flow" is unknown import symbol (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:13:16 - error: Expression of type "(self: dict[Unknown, Unknown], k: Unknown, v: Unknown) -> None" cannot be assigned to declared type "(self: object, name: str, value: Any) -> None"
+    Type "(self: dict[Unknown, Unknown], k: Unknown, v: Unknown) -> None" cannot be assigned to type "(self: object, name: str, value: Any) -> None"
+      Parameter 1: type "object" cannot be assigned to type "dict[Unknown, Unknown]"
+        "object" is incompatible with "dict[Unknown, Unknown]"
+      Parameter name mismatch: "name" versus "k"
+      Parameter name mismatch: "value" versus "v" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:14:16 - error: Expression of type "(self: dict[Unknown, Unknown], v: Unknown) -> None" cannot be assigned to declared type "(self: object, name: str) -> None"
+    Type "(self: dict[Unknown, Unknown], v: Unknown) -> None" cannot be assigned to type "(self: object, name: str) -> None"
+      Parameter 1: type "object" cannot be assigned to type "dict[Unknown, Unknown]"
+        "object" is incompatible with "dict[Unknown, Unknown]"
+      Parameter name mismatch: "name" versus "v" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:68:26 - error: Cannot access member "verbalise" for type "dotdict"
+    Member "verbalise" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:96:28 - error: Cannot access member "gpu" for type "dotdict"
+    Member "gpu" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:104:4 - error: Argument of type "dict[str, int]" cannot be assigned to parameter "v" of type "bool" in function "__setitem__"
+    "dict[str, int]" is incompatible with "bool" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:106:17 - error: Cannot access member "train" for type "dotdict"
+    Member "train" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:109:50 - error: Cannot access member "summary" for type "dotdict"
+    Member "summary" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:116:29 - error: Cannot access member "keep" for type "dotdict"
+    Member "keep" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9/a/net/build.py:117:17 - error: Cannot access member "load" for type "dotdict"
+    Member "load" is unknown (reportGeneralTypeIssues)
+15 errors, 0 warnings, 0 infos 
+Completed in 1.088sec
+
+time cost(in seconds): 1.280266523361206

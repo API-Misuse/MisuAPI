@@ -1,0 +1,34 @@
+UPD @type:with_stmt@ @[6947,8818]@ with tf.variable_scope(scope):
+        dim_qkv = m <text_longer_than_50> @TO@ @type:with_stmt@ @[6947,8949]@ with tf.variable_scope(scope):
+        dim_qkv = m <text_longer_than_50>
+---UPD @type:suite@ @[6977,8818]@ dim_qkv = mtf.Dimension("qkv", n_state.size * 3)
+  <text_longer_than_50> @TO@ @type:suite@ @[6977,8949]@ dim_qkv = mtf.Dimension("qkv", n_state.size * 3)
+  <text_longer_than_50>
+------UPD @type:if_stmt@ @[7761,8653]@ if params["local"]:
+            # `local_attention <text_longer_than_50> @TO@ @type:if_stmt@ @[7761,8784]@ if params["local"]:
+            # `local_attention <text_longer_than_50>
+---------UPD @type:suite@ @[7780,8271]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50> @TO@ @type:suite@ @[7780,8402]@ # `local_attention_1d` has built in autoregressive <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[7901,8271]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:simple_stmt@ @[7901,8402]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+---------------UPD @type:expr_stmt@ @[7901,8270]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50> @TO@ @type:expr_stmt@ @[7901,8401]@ a = mtf_transformer.attention.local_attention_1d(
+ <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[7905,8270]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[7905,8401]@ mtf_transformer.attention.local_attention_1d(
+     <text_longer_than_50>
+---------------------UPD @type:trailer@ @[7949,8270]@ (
+                q, k, v,
+                length_ <text_longer_than_50> @TO@ @type:trailer@ @[7949,8401]@ (
+                q, k, v,
+                length_ <text_longer_than_50>
+------------------------UPD @type:arglist@ @[7967,8122]@ q, k, v,
+                length_dim=dim_seq,
+      <text_longer_than_50> @TO@ @type:arglist@ @[7967,8158]@ q, k, v,
+                length_dim=dim_seq,
+      <text_longer_than_50>
+---------------------------INS @type:argument@ @[8139,8158]@ attention_kwargs={} @TO@ @type:arglist@ @[7967,8122]@ q, k, v,
+                length_dim=dim_seq,
+      <text_longer_than_50>
+
+

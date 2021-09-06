@@ -1,0 +1,42 @@
+UPD @type:simple_stmt@ @[2970,3030]@ data = [[0, 0, 0.0], [0, 1, 1.0], [1, 0, 1.0], [1, <text_longer_than_50> @TO@ @type:simple_stmt@ @[2970,3050]@ data = [[0, 0, 0.0, 0.1], [0, 1, 1.0, 0.2], [1, 0, <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2970,3029]@ data = [[0, 0, 0.0], [0, 1, 1.0], [1, 0, 1.0], [1, <text_longer_than_50> @TO@ @type:expr_stmt@ @[2970,3049]@ data = [[0, 0, 0.0, 0.1], [0, 1, 1.0, 0.2], [1, 0, <text_longer_than_50>
+------UPD @type:atom@ @[2977,3029]@ [[0, 0, 0.0], [0, 1, 1.0], [1, 0, 1.0], [1, 1, 0.0 <text_longer_than_50> @TO@ @type:atom@ @[2977,3049]@ [[0, 0, 0.0, 0.1], [0, 1, 1.0, 0.2], [1, 0, 1.0, 0 <text_longer_than_50>
+---------UPD @type:testlist_comp@ @[2978,3028]@ [0, 0, 0.0], [0, 1, 1.0], [1, 0, 1.0], [1, 1, 0.0] @TO@ @type:testlist_comp@ @[2978,3048]@ [0, 0, 0.0, 0.1], [0, 1, 1.0, 0.2], [1, 0, 1.0, 0. <text_longer_than_50>
+------------UPD @type:atom@ @[2978,2989]@ [0, 0, 0.0] @TO@ @type:atom@ @[2978,2994]@ [0, 0, 0.0, 0.1]
+---------------UPD @type:testlist_comp@ @[2979,2988]@ 0, 0, 0.0 @TO@ @type:testlist_comp@ @[2979,2993]@ 0, 0, 0.0, 0.1
+------------------INS @type:operator@ @[2988,2989]@ , @TO@ @type:testlist_comp@ @[2979,2988]@ 0, 0, 0.0
+------------------INS @type:number@ @[2990,2993]@ 0.1 @TO@ @type:testlist_comp@ @[2979,2988]@ 0, 0, 0.0
+------------UPD @type:atom@ @[2991,3002]@ [0, 1, 1.0] @TO@ @type:atom@ @[2996,3012]@ [0, 1, 1.0, 0.2]
+---------------UPD @type:testlist_comp@ @[2992,3001]@ 0, 1, 1.0 @TO@ @type:testlist_comp@ @[2997,3011]@ 0, 1, 1.0, 0.2
+------------------INS @type:operator@ @[3006,3007]@ , @TO@ @type:testlist_comp@ @[2992,3001]@ 0, 1, 1.0
+------------------INS @type:number@ @[3008,3011]@ 0.2 @TO@ @type:testlist_comp@ @[2992,3001]@ 0, 1, 1.0
+------------UPD @type:atom@ @[3004,3015]@ [1, 0, 1.0] @TO@ @type:atom@ @[3014,3030]@ [1, 0, 1.0, 0.3]
+---------------UPD @type:testlist_comp@ @[3005,3014]@ 1, 0, 1.0 @TO@ @type:testlist_comp@ @[3015,3029]@ 1, 0, 1.0, 0.3
+------------------INS @type:operator@ @[3024,3025]@ , @TO@ @type:testlist_comp@ @[3005,3014]@ 1, 0, 1.0
+------------------INS @type:number@ @[3026,3029]@ 0.3 @TO@ @type:testlist_comp@ @[3005,3014]@ 1, 0, 1.0
+------------UPD @type:atom@ @[3017,3028]@ [1, 1, 0.0] @TO@ @type:atom@ @[3032,3048]@ [1, 1, 0.0, 0.4]
+---------------UPD @type:testlist_comp@ @[3018,3027]@ 1, 1, 0.0 @TO@ @type:testlist_comp@ @[3033,3047]@ 1, 1, 0.0, 0.4
+------------------INS @type:operator@ @[3042,3043]@ , @TO@ @type:testlist_comp@ @[3018,3027]@ 1, 1, 0.0
+------------------INS @type:number@ @[3044,3047]@ 0.4 @TO@ @type:testlist_comp@ @[3018,3027]@ 1, 1, 0.0
+
+
+UPD @type:simple_stmt@ @[3034,3205]@ schema = StructType([StructField('x1', IntegerType <text_longer_than_50> @TO@ @type:simple_stmt@ @[3054,3286]@ schema = StructType([StructField('x1', IntegerType <text_longer_than_50>
+---UPD @type:expr_stmt@ @[3034,3204]@ schema = StructType([StructField('x1', IntegerType <text_longer_than_50> @TO@ @type:expr_stmt@ @[3054,3285]@ schema = StructType([StructField('x1', IntegerType <text_longer_than_50>
+------UPD @type:atom_expr@ @[3043,3204]@ StructType([StructField('x1', IntegerType()),
+     <text_longer_than_50> @TO@ @type:atom_expr@ @[3063,3285]@ StructType([StructField('x1', IntegerType()),
+     <text_longer_than_50>
+---------UPD @type:trailer@ @[3053,3204]@ ([StructField('x1', IntegerType()),
+               <text_longer_than_50> @TO@ @type:trailer@ @[3073,3285]@ ([StructField('x1', IntegerType()),
+               <text_longer_than_50>
+------------UPD @type:atom@ @[3054,3203]@ [StructField('x1', IntegerType()),
+                <text_longer_than_50> @TO@ @type:atom@ @[3074,3284]@ [StructField('x1', IntegerType()),
+                <text_longer_than_50>
+---------------UPD @type:testlist_comp@ @[3055,3202]@ StructField('x1', IntegerType()),
+                 <text_longer_than_50> @TO@ @type:testlist_comp@ @[3075,3283]@ StructField('x1', IntegerType()),
+                 <text_longer_than_50>
+------------------INS @type:operator@ @[3222,3223]@ , @TO@ @type:testlist_comp@ @[3055,3202]@ StructField('x1', IntegerType()),
+                 <text_longer_than_50>
+------------------INS @type:atom_expr@ @[3249,3283]@ StructField('weight', FloatType()) @TO@ @type:testlist_comp@ @[3055,3202]@ StructField('x1', IntegerType()),
+                 <text_longer_than_50>
+
+

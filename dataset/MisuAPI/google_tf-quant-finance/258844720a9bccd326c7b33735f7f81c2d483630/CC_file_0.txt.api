@@ -1,0 +1,24 @@
+UPD @type:atom_expr@ @[4789,4919]@ tf.scatter_nd(
+        fix_indices,
+        tf.res <text_longer_than_50> @TO@ @type:atom_expr@ @[4789,5048]@ tf.scatter_nd(
+        fix_indices,
+        # Unfo <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4833,4891]@ tf.reshape(tf.ones_like(fix_indices, dtype=tf.bool <text_longer_than_50> @TO@ @type:atom_expr@ @[4961,5020]@ tf.reshape(tf.ones_like(fix_indices, dtype=tf.int3 <text_longer_than_50>
+
+INS @type:atom_expr@ @[4972,5013]@ tf.ones_like(fix_indices, dtype=tf.int32) @TO@ @type:arglist@ @[4844,4890]@ tf.ones_like(fix_indices, dtype=tf.bool), [-1]
+
+INS @type:simple_stmt@ @[5193,5239]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool) @TO@ @type:suite@ @[3435,5450]@ x = tf.convert_to_tensor(x, dtype=dtype)
+    raw_d <text_longer_than_50>
+
+INS @type:simple_stmt@ @[5193,5239]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool) @TO@ @type:suite@ @[3435,5450]@ x = tf.convert_to_tensor(x, dtype=dtype)
+    raw_d <text_longer_than_50>
+
+INS @type:expr_stmt@ @[5193,5238]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool) @TO@ @type:simple_stmt@ @[5193,5239]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool)
+
+INS @type:expr_stmt@ @[5193,5238]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool) @TO@ @type:simple_stmt@ @[5193,5239]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool)
+
+UPD @type:atom_expr@ @[4844,4884]@ tf.ones_like(fix_indices, dtype=tf.bool) @TO@ @type:atom_expr@ @[5205,5238]@ tf.cast(needs_fix, dtype=tf.bool)
+
+MOV @type:atom_expr@ @[4844,4884]@ tf.ones_like(fix_indices, dtype=tf.bool) @TO@ @type:expr_stmt@ @[5193,5238]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool)
+

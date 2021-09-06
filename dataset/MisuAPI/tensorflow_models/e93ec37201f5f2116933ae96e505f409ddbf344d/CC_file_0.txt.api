@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[9072,9168]@ tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_ <text_longer_than_50> @TO@ @type:atom_expr@ @[9072,9182]@ tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_ <text_longer_than_50>
+
+UPD @type:atom_expr@ @[9087,9167]@ tf.nn.sparse_softmax_cross_entropy_with_logits(
+   <text_longer_than_50> @TO@ @type:atom_expr@ @[9087,9181]@ tf.nn.sparse_softmax_cross_entropy_with_logits(
+   <text_longer_than_50>
+

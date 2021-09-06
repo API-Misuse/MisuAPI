@@ -1,0 +1,535 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/models/pull/1063
+  title: Converted the models repo to TF 1.0 using the upgrade script
+  body: ''
+sha: 00ffa603f22e0a74239ce431be4253660da466b6
+message: Manually fixed many occurrences of tf.concat
+commit_log: "commit 00ffa603f22e0a74239ce431be4253660da466b6\nAuthor: Neal Wu <neal@nealwu.com>\n\
+  Date:   Thu Feb 23 14:59:56 2017 -0800\n\n    Manually fixed many occurrences of\
+  \ tf.concat"
+contained_keywords:
+- fixed
+commit_time: 2017-02-23 14:59:56 -0800
+commit_author: Neal Wu
+added_files: 0
+removed_files: 0
+modified_files: 8
+patched_file_0:
+  add_line_no:
+  - - 267
+    - '        tf.concat(axis=1, values=initial_state, name="initial_state")
+
+      '
+  - - 281
+    - '        tf.concat(axis=1, values=state_tuple, name="state")
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '        tf.concat(axis=initial_state, values=1, name="initial_state")
+
+      '
+  - - null
+    - '        tf.concat(axis=state_tuple, values=1, name="state")
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: im2txt/im2txt/show_and_tell_model.py
+  removed: 2
+  source_file: a/im2txt/im2txt/show_and_tell_model.py
+  target_file: b/im2txt/im2txt/show_and_tell_model.py
+patched_file_1:
+  add_line_no:
+  - - 125
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch5x5, branch3x3dbl,
+      branch_pool])
+
+      '
+  - - 141
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch5x5, branch3x3dbl,
+      branch_pool])
+
+      '
+  - - 157
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch5x5, branch3x3dbl,
+      branch_pool])
+
+      '
+  - - 170
+    - '          net = tf.concat(axis=3, values=[branch3x3, branch3x3dbl, branch_pool])
+
+      '
+  - - 189
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl,
+      branch_pool])
+
+      '
+  - - 208
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl,
+      branch_pool])
+
+      '
+  - - 227
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl,
+      branch_pool])
+
+      '
+  - - 246
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch7x7, branch7x7dbl,
+      branch_pool])
+
+      '
+  - - 279
+    - '          net = tf.concat(axis=3, values=[branch3x3, branch7x7x3, branch_pool])
+
+      '
+  - - 287
+    - '            branch3x3 = tf.concat(axis=3,values=[ops.conv2d(branch3x3, 384,
+      [1, 3]),
+
+      '
+  - - 288
+    - '                                                 ops.conv2d(branch3x3, 384,
+      [3, 1])])
+
+      '
+  - - 292
+    - '            branch3x3dbl = tf.concat(axis=3, values=[ops.conv2d(branch3x3dbl,
+      384, [1, 3]),
+
+      '
+  - - 293
+    - '                                                     ops.conv2d(branch3x3dbl,
+      384, [3, 1])])
+
+      '
+  - - 297
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch3x3, branch3x3dbl,
+      branch_pool])
+
+      '
+  - - 305
+    - '            branch3x3 = tf.concat(axis=3, values=[ops.conv2d(branch3x3, 384,
+      [1, 3]),
+
+      '
+  - - 306
+    - '                                                  ops.conv2d(branch3x3, 384,
+      [3, 1])])
+
+      '
+  - - 310
+    - '            branch3x3dbl = tf.concat(axis=3, values=[ops.conv2d(branch3x3dbl,
+      384, [1, 3]),
+
+      '
+  - - 311
+    - '                                                     ops.conv2d(branch3x3dbl,
+      384, [3, 1])])
+
+      '
+  - - 315
+    - '          net = tf.concat(axis=3, values=[branch1x1, branch3x3, branch3x3dbl,
+      branch_pool])
+
+      '
+  added: 19
+  del_line_no:
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch3x3, branch3x3dbl, branch_pool], values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch3x3, branch7x7x3, branch_pool], values=3)
+
+      '
+  - - null
+    - '            branch3x3 = tf.concat(axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+
+      '
+  - - null
+    - '                                   ops.conv2d(branch3x3, 384, [3, 1])], values=3)
+
+      '
+  - - null
+    - '            branch3x3dbl = tf.concat(axis=[ops.conv2d(branch3x3dbl, 384, [1,
+      3]),
+
+      '
+  - - null
+    - '                                      ops.conv2d(branch3x3dbl, 384, [3, 1])],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch3x3, branch3x3dbl, branch_pool],
+      values=3)
+
+      '
+  - - null
+    - '            branch3x3 = tf.concat(axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+
+      '
+  - - null
+    - '                                   ops.conv2d(branch3x3, 384, [3, 1])], values=3)
+
+      '
+  - - null
+    - '            branch3x3dbl = tf.concat(axis=[ops.conv2d(branch3x3dbl, 384, [1,
+      3]),
+
+      '
+  - - null
+    - '                                      ops.conv2d(branch3x3dbl, 384, [3, 1])],
+      values=3)
+
+      '
+  - - null
+    - '          net = tf.concat(axis=[branch1x1, branch3x3, branch3x3dbl, branch_pool],
+      values=3)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: inception/inception/slim/inception_model.py
+  removed: 19
+  source_file: a/inception/inception/slim/inception_model.py
+  target_file: b/inception/inception/slim/inception_model.py
+patched_file_2:
+  add_line_no:
+  - - 334
+    - '    concated = tf.concat(axis=1, values=[indices, labels])
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    concated = tf.concat(axis=[indices, labels], values=1)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: inception/inception/slim/ops.py
+  removed: 1
+  source_file: a/inception/inception/slim/ops.py
+  target_file: b/inception/inception/slim/ops.py
+patched_file_3:
+  add_line_no:
+  - - 39
+    - '      arg = tf.concat(axis=3, values=args)
+
+      '
+  - - 74
+    - '  return tf.concat(axis=1, values=[slice1, selected, slice2])
+
+      '
+  - - 81
+    - '  return tf.concat(axis=1, values=[slice1, selected, slice2])
+
+      '
+  - - 224
+    - '  all_beam_idx = tf.reshape(tf.transpose(tf.concat(axis=1, values=all_beam_idx),
+      [1, 0]),
+
+      '
+  - - 226
+    - '  top_beam, top_beam_idx = tf.nn.top_k(tf.concat(axis=1, values=all_beam_vals),
+      k=beam_size)
+
+      '
+  - - 239
+    - '  new_tensors = [tf.concat(axis=0, values=t) for t in reordered]
+
+      '
+  - - 240
+    - '  top_out_idx = tf.concat(axis=0, values=top_out_idx)
+
+      '
+  - - 413
+    - '      output = tf.concat(axis=1, values=[output] * height)
+
+      '
+  - - 422
+    - '        mem = tf.concat(axis=2, values=[mem] * height)
+
+      '
+  - - 462
+    - '              embedded_targets_tn = tf.concat(axis=2, values=[embedded_targets_tn]
+      * height)
+
+      '
+  - - 508
+    - '              concatenated = tf.reshape(tf.concat(axis=1, values=[cell_inp,
+      attn_res]),
+
+      '
+  - - 522
+    - '                    tf.concat(axis=1, values=[output, res]), height * nmaps,
+      name="rnnmem")
+
+      '
+  - - 529
+    - '            dec_inp = tf.concat(axis=1, values=[dec_zero, gpu_targets])
+
+      '
+  - - 576
+    - '            tgts = tf.concat(axis=1, values=[embedded_targets_tn] * beam_size)
+
+      '
+  - - 578
+    - '            step = tf.concat(axis=0, values=[step] * beam_size)
+
+      '
+  - - 657
+    - '    self.after_enc_step = tf.concat(axis=0, values=self.after_enc_step)  #
+      Concat GPUs.
+
+      '
+  - - 670
+    - '    self.out_idx = tf.concat(axis=0, values=gpu_out_idx)
+
+      '
+  - - 673
+    - '    self.outputs = [tf.concat(axis=1, values=[gpu_outputs[g] for g in xrange(num_gpus)])]
+
+      '
+  added: 18
+  del_line_no:
+  - - null
+    - '      arg = tf.concat(axis=args, values=3)
+
+      '
+  - - null
+    - '  return tf.concat(axis=[slice1, selected, slice2], values=1)
+
+      '
+  - - null
+    - '  return tf.concat(axis=[slice1, selected, slice2], values=1)
+
+      '
+  - - null
+    - '  all_beam_idx = tf.reshape(tf.transpose(tf.concat(axis=all_beam_idx, values=1),
+      [1, 0]),
+
+      '
+  - - null
+    - '  top_beam, top_beam_idx = tf.nn.top_k(tf.concat(axis=all_beam_vals, values=1),
+      k=beam_size)
+
+      '
+  - - null
+    - '  new_tensors = [tf.concat(axis=t, values=0) for t in reordered]
+
+      '
+  - - null
+    - '  top_out_idx = tf.concat(axis=top_out_idx, values=0)
+
+      '
+  - - null
+    - '      output = tf.concat(axis=[output] * height, values=1)
+
+      '
+  - - null
+    - '        mem = tf.concat(axis=[mem] * height, values=2)
+
+      '
+  - - null
+    - '              embedded_targets_tn = tf.concat(axis=[embedded_targets_tn] *
+      height, values=2)
+
+      '
+  - - null
+    - '              concatenated = tf.reshape(tf.concat(axis=[cell_inp, attn_res],
+      values=1),
+
+      '
+  - - null
+    - '                    tf.concat(axis=[output, res], values=1), height * nmaps,
+      name="rnnmem")
+
+      '
+  - - null
+    - '            dec_inp = tf.concat(axis=[dec_zero, gpu_targets], values=1)
+
+      '
+  - - null
+    - '            tgts = tf.concat(axis=[embedded_targets_tn] * beam_size, values=1)
+
+      '
+  - - null
+    - '            step = tf.concat(axis=[step] * beam_size, values=0)
+
+      '
+  - - null
+    - '    self.after_enc_step = tf.concat(axis=self.after_enc_step, values=0)  #
+      Concat GPUs.
+
+      '
+  - - null
+    - '    self.out_idx = tf.concat(axis=gpu_out_idx, values=0)
+
+      '
+  - - null
+    - '    self.outputs = [tf.concat(axis=[gpu_outputs[g] for g in xrange(num_gpus)],
+      values=1)]
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: neural_gpu/neural_gpu.py
+  removed: 18
+  source_file: a/neural_gpu/neural_gpu.py
+  target_file: b/neural_gpu/neural_gpu.py
+patched_file_4:
+  add_line_no:
+  - - 138
+    - '  sparse_indices = tf.concat(axis=1, values=[tf.expand_dims(sparse_local_row,
+      1),
+
+      '
+  - - 139
+    - '                                             tf.expand_dims(sparse_local_col,
+      1)])
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '  sparse_indices = tf.concat(axis=[tf.expand_dims(sparse_local_row, 1),
+
+      '
+  - - null
+    - '                              tf.expand_dims(sparse_local_col, 1)], values=1)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: swivel/swivel.py
+  removed: 2
+  source_file: a/swivel/swivel.py
+  target_file: b/swivel/swivel.py
+patched_file_5:
+  add_line_no:
+  - - 72
+    - '    broadcast_weights_shape = tf.concat(axis=0, values=[tf.shape(weights),
+      [1]])
+
+      '
+  - - 333
+    - '    last_layer = tf.concat(axis=1, values=embeddings)
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '    broadcast_weights_shape = tf.concat(axis=[tf.shape(weights), [1]], values=0)
+
+      '
+  - - null
+    - '    last_layer = tf.concat(axis=embeddings, values=1)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: syntaxnet/syntaxnet/graph_builder.py
+  removed: 2
+  source_file: a/syntaxnet/syntaxnet/graph_builder.py
+  target_file: b/syntaxnet/syntaxnet/graph_builder.py
+patched_file_6:
+  add_line_no:
+  - - 127
+    - '    grad = tf.concat(axis=0, values=grads)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    grad = tf.concat(axis=grads, values=0)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tutorials/image/cifar10/cifar10_multi_gpu_train.py
+  removed: 1
+  source_file: a/tutorials/image/cifar10/cifar10_multi_gpu_train.py
+  target_file: b/tutorials/image/cifar10/cifar10_multi_gpu_train.py
+patched_file_7:
+  add_line_no:
+  - - 149
+    - '    output = tf.reshape(tf.concat(axis=1, values=outputs), [-1, size])
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    output = tf.reshape(tf.concat(axis=outputs, values=1), [-1, size])
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tutorials/rnn/ptb/ptb_word_lm.py
+  removed: 1
+  source_file: a/tutorials/rnn/ptb/ptb_word_lm.py
+  target_file: b/tutorials/rnn/ptb/ptb_word_lm.py

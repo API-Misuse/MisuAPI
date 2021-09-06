@@ -1,0 +1,16 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/001a260214ba34f36e149bbd24f7f5d6a6634500/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/001a260214ba34f36e149bbd24f7f5d6a6634500/a/slim/train_image_classifier.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/001a260214ba34f36e149bbd24f7f5d6a6634500/a/slim/train_image_classifier.py:23:6 - error: Import "datasets" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/001a260214ba34f36e149bbd24f7f5d6a6634500/a/slim/train_image_classifier.py:24:6 - error: Import "deployment" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/001a260214ba34f36e149bbd24f7f5d6a6634500/a/slim/train_image_classifier.py:25:6 - error: Import "nets" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/001a260214ba34f36e149bbd24f7f5d6a6634500/a/slim/train_image_classifier.py:26:6 - error: Import "preprocessing" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/001a260214ba34f36e149bbd24f7f5d6a6634500/a/slim/train_image_classifier.py:523:43 - error: "apply" is not a known member of "None" (reportOptionalMemberAccess)
+5 errors, 0 warnings, 0 infos 
+Completed in 1.13sec
+
+time cost(in seconds): 1.3037493228912354

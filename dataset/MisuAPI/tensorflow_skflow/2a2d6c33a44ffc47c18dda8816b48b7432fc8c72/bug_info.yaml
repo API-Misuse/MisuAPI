@@ -1,0 +1,46 @@
+issues_cnt: 0
+sha: 2a2d6c33a44ffc47c18dda8816b48b7432fc8c72
+message: '* Get around with bug in dask'
+commit_log: "commit 2a2d6c33a44ffc47c18dda8816b48b7432fc8c72\nAuthor: terrytangyuan\
+  \ <terrytangyuan@gmail.com>\nDate:   Fri Jan 15 18:58:52 2016 -0600\n\n    * Get\
+  \ around with bug in dask"
+contained_keywords:
+- bug
+commit_time: 2016-01-15 18:58:52 -0600
+commit_author: terrytangyuan
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 47
+    - '    if isinstance(df, dd.DataFrame):
+
+      '
+  - - 48
+    - '        return dd.DataFrame(merge(dsk, df.dask), name, df.columns, divisions)
+
+      '
+  - - 49
+    - '    elif isinstance(df, dd.Series):
+
+      '
+  - - 50
+    - '        return dd.Series(merge(dsk, df.dask), name, df.name, divisions)
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - '    return dd.DataFrame(merge(dsk, df.dask), name, columns, divisions)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: skflow/io/dask_io.py
+  removed: 1
+  source_file: a/skflow/io/dask_io.py
+  target_file: b/skflow/io/dask_io.py

@@ -1,0 +1,18 @@
+commit c506e45b078d86f8bf4743bbdc3bf59351904b8b
+Author: Leo Gao <54557097+leogao2@users.noreply.github.com>
+Date:   Mon Feb 8 19:58:58 2021 -0700
+
+    Fix AttributeError: 'Tensor' object has no attribute 'numpy'
+
+diff --git a/scripts/convert_gpt.py b/scripts/convert_gpt.py
+index ff00040..a45ea9b 100644
+--- a/scripts/convert_gpt.py
++++ b/scripts/convert_gpt.py
+@@ -24,6 +24,7 @@ def load_tf_weights_in_gpt2(model, gpt2_checkpoint_path):
+         import re
+ 
+         import tensorflow as tf
++        tf.enable_eager_execution()
+     except ImportError:
+         logger.error(
+             "Loading a TensorFlow model in PyTorch, requires TensorFlow to be installed. Please see "

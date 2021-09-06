@@ -1,0 +1,31 @@
+commit 80b0d4447470f6fe637897dece66dc53c0b8cbe7
+Author: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>
+Date:   Wed Jan 6 13:23:37 2021 -0800
+
+    Fixed the component entrypoint, so that it creates the parent directory for the output metadata file before trying to write the data.
+    Otherwise the code fails since the directory does not exist inside the container.
+    
+    PiperOrigin-RevId: 350415630
+
+
+diff --git a/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor.py b/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor.py
+index 38ee6f18..d7d709c8 100644
+--- a/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor.py
++++ b/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor.py
+@@ -14,6 +14,7 @@
+ """Entrypoint for invoking TFX components in Kubeflow V2 runner."""
+ 
+ import argparse
++import os
+ from typing import List
+ 
+ from absl import logging
+@@ -95,6 +96,7 @@ def _run_executor(args: argparse.Namespace, beam_args: List[str]) -> None:
+       outputs, name_from_id).items():
+     executor_output.artifacts[k].CopyFrom(v)
+ 
++  fileio.makedirs(os.path.dirname(metadata_uri))
+   fileio.open(metadata_uri,
+               'wb').write(json_format.MessageToJson(executor_output))
+ 
+

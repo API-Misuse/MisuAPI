@@ -1,0 +1,35 @@
+UPD @type:with_stmt@ @[3136,10036]@ with tf.Graph().as_default():
+        tf.set_rando <text_longer_than_50> @TO@ @type:with_stmt@ @[3136,10088]@ with tf.Graph().as_default():
+        tf.set_rando <text_longer_than_50>
+---UPD @type:suite@ @[3165,10036]@ tf.set_random_seed(args.seed)
+        global_step  <text_longer_than_50> @TO@ @type:suite@ @[3165,10088]@ tf.set_random_seed(args.seed)
+        global_step  <text_longer_than_50>
+------INS @type:simple_stmt@ @[8444,8475]@ coord = tf.train.Coordinator() @TO@ @type:suite@ @[3165,10036]@ tf.set_random_seed(args.seed)
+        global_step  <text_longer_than_50>
+---------INS @type:expr_stmt@ @[8444,8474]@ coord = tf.train.Coordinator() @TO@ @type:simple_stmt@ @[8444,8475]@ coord = tf.train.Coordinator()
+------------INS @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator() @TO@ @type:expr_stmt@ @[8444,8474]@ coord = tf.train.Coordinator()
+---------------INS @type:trailer@ @[8460,8472]@ .Coordinator @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+------UPD @type:simple_stmt@ @[8444,8484]@ tf.train.start_queue_runners(sess=sess) @TO@ @type:simple_stmt@ @[8483,8536]@ tf.train.start_queue_runners(coord=coord, sess=ses <text_longer_than_50>
+---------UPD @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess) @TO@ @type:atom_expr@ @[8483,8535]@ tf.train.start_queue_runners(coord=coord, sess=ses <text_longer_than_50>
+------------INS @type:name@ @[8483,8485]@ tf @TO@ @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess)
+------------INS @type:trailer@ @[8485,8491]@ .train @TO@ @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess)
+------------INS @type:trailer@ @[8491,8511]@ .start_queue_runners @TO@ @type:atom_expr@ @[8444,8483]@ tf.train.start_queue_runners(sess=sess)
+------------UPD @type:trailer@ @[8472,8483]@ (sess=sess) @TO@ @type:trailer@ @[8511,8535]@ (coord=coord, sess=sess)
+---------------INS @type:arglist@ @[8512,8534]@ coord=coord, sess=sess @TO@ @type:trailer@ @[8472,8483]@ (sess=sess)
+------------------INS @type:argument@ @[8512,8523]@ coord=coord @TO@ @type:arglist@ @[8512,8534]@ coord=coord, sess=sess
+---------------MOV @type:argument@ @[8473,8482]@ sess=sess @TO@ @type:arglist@ @[8512,8534]@ coord=coord, sess=sess
+------------------MOV @type:operator@ @[8477,8478]@ = @TO@ @type:argument@ @[8512,8523]@ coord=coord
+------------------INS @type:operator@ @[8529,8530]@ = @TO@ @type:argument@ @[8473,8482]@ sess=sess
+------------MOV @type:name@ @[8444,8446]@ tf @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+------------MOV @type:trailer@ @[8446,8452]@ .train @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+------------UPD @type:trailer@ @[8452,8472]@ .start_queue_runners @TO@ @type:trailer@ @[8472,8474]@ ()
+---------------UPD @type:name@ @[8453,8472]@ start_queue_runners @TO@ @type:name@ @[8461,8472]@ Coordinator
+---------------MOV @type:name@ @[8453,8472]@ start_queue_runners @TO@ @type:trailer@ @[8460,8472]@ .Coordinator
+------------MOV @type:trailer@ @[8452,8472]@ .start_queue_runners @TO@ @type:atom_expr@ @[8452,8474]@ tf.train.Coordinator()
+---------------UPD @type:name@ @[8453,8472]@ start_queue_runners @TO@ @type:name@ @[8461,8472]@ Coordinator
+---------------MOV @type:name@ @[8453,8472]@ start_queue_runners @TO@ @type:trailer@ @[8460,8472]@ .Coordinator
+
+
+INS @type:simple_stmt@ @[10093,10106]@ sess.close() @TO@ @type:suite@ @[1690,10058]@ network = importlib.import_module(args.model_def,  <text_longer_than_50>
+
+

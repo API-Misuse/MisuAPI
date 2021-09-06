@@ -1,0 +1,72 @@
+commit 3698e34abfd6215605a21f28bb61dba872c5cc63
+Author: Alon Eirew <alon.eirew@intel.com>
+Date:   Sat Nov 10 14:12:13 2018 +0200
+
+    better handle resource error messages when files not given or not it path
+
+diff --git a/nlp_architect/data/cdc_resources/relations/referent_dict_relation_extraction.py b/nlp_architect/data/cdc_resources/relations/referent_dict_relation_extraction.py
+index b143398..aed0df9 100644
+--- a/nlp_architect/data/cdc_resources/relations/referent_dict_relation_extraction.py
++++ b/nlp_architect/data/cdc_resources/relations/referent_dict_relation_extraction.py
+@@ -15,6 +15,7 @@
+ # ******************************************************************************
+ 
+ import logging
++import os
+ from typing import Dict, List, Set
+ 
+ from nlp_architect.common.cdc.mention_data import MentionDataLight
+@@ -38,11 +39,15 @@ class ReferentDictRelationExtraction(RelationExtraction):
+             ref_dict (required): str Location of referent dictionary file to work with
+         """
+         logger.info('Loading ReferentDict module')
+-        if method == OnlineOROfflineMethod.OFFLINE:
+-            self.ref_dict = load_json_file(ref_dict)
+-        elif method == OnlineOROfflineMethod.ONLINE:
+-            self.ref_dict = self.load_reference_dict(ref_dict)
+-        logger.info('ReferentDict module lead successfully')
++        if ref_dict is not None and os.path.isfile(ref_dict):
++            if method == OnlineOROfflineMethod.OFFLINE:
++                self.ref_dict = load_json_file(ref_dict)
++            elif method == OnlineOROfflineMethod.ONLINE:
++                self.ref_dict = self.load_reference_dict(ref_dict)
++            logger.info('ReferentDict module lead successfully')
++        else:
++            raise FileNotFoundError('Referent Dict file not found or not in path..')
++
+         super(ReferentDictRelationExtraction, self).__init__()
+ 
+     def extract_all_relations(self, mention_x: MentionDataLight,
+diff --git a/nlp_architect/data/cdc_resources/relations/verbocean_relation_extraction.py b/nlp_architect/data/cdc_resources/relations/verbocean_relation_extraction.py
+index 0b4ea92..49f319d 100644
+--- a/nlp_architect/data/cdc_resources/relations/verbocean_relation_extraction.py
++++ b/nlp_architect/data/cdc_resources/relations/verbocean_relation_extraction.py
+@@ -15,6 +15,7 @@
+ # ******************************************************************************
+ 
+ import logging
++import os
+ from typing import Dict, Set
+ 
+ from nlp_architect.common.cdc.mention_data import MentionDataLight
+@@ -38,11 +39,14 @@ class VerboceanRelationExtraction(RelationExtraction):
+             vo_file (required): str Location of VerbOcean file to work with
+         """
+         logger.info('Loading Verb Ocean module')
+-        if method == OnlineOROfflineMethod.OFFLINE:
+-            self.vo = load_json_file(vo_file)
+-        elif method == OnlineOROfflineMethod.ONLINE:
+-            self.vo = self.load_verbocean_file(vo_file)
+-        logger.info('Verb Ocean module lead successfully')
++        if vo_file is not None and os.path.isfile(vo_file):
++            if method == OnlineOROfflineMethod.OFFLINE:
++                self.vo = load_json_file(vo_file)
++            elif method == OnlineOROfflineMethod.ONLINE:
++                self.vo = self.load_verbocean_file(vo_file)
++            logger.info('Verb Ocean module lead successfully')
++        else:
++            raise FileNotFoundError('VerbOcean file not found or not in path..')
+         super(VerboceanRelationExtraction, self).__init__()
+ 
+     def extract_all_relations(self, mention_x: MentionDataLight,
+

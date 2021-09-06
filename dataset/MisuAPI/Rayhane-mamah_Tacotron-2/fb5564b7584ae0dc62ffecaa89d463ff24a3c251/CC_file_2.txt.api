@@ -1,0 +1,39 @@
+UPD @type:atom_expr@ @[83,13500]@ tf.contrib.training.HParams(
+	# Comma-separated li <text_longer_than_50> @TO@ @type:atom_expr@ @[83,13875]@ tf.contrib.training.HParams(
+	# Comma-separated li <text_longer_than_50>
+
+INS @type:argument@ @[1757,1772]@ win_size = 1100 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+INS @type:operator@ @[1772,1773]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+INS @type:argument@ @[1968,1987]@ trim_fft_size = 512 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+INS @type:operator@ @[1987,1988]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+INS @type:argument@ @[1990,2009]@ trim_hop_size = 128 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+INS @type:operator@ @[2009,2010]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+INS @type:argument@ @[2012,2028]@ trim_top_db = 60 @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+INS @type:operator@ @[2028,2029]@ , @TO@ @type:arglist@ @[285,13496]@ cleaners='english_cleaners',
+
+	#Hardware setup (TO <text_longer_than_50>
+
+MOV @type:return_stmt@ @[13650,13693]@ return 'Hyperparameters:\n' + '\n'.join(hp) @TO@ @type:suite@ @[13529,13694]@ values = hparams.values()
+	hp = ['  %s: %s' % (nam <text_longer_than_50>
+

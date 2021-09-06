@@ -1,0 +1,124 @@
+UPD @type:atom_expr@ @[10168,10191]@ self.ds_wrap.get_data() @TO@ @type:atom_expr@ @[10119,10137]@ self.ds.get_data()
+
+INS @type:suite@ @[10244,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50> @TO@ @type:for_stmt@ @[10254,10344]@ for _ in range(self.q.maxlen - len(self.q)):
+      <text_longer_than_50>
+
+INS @type:suite@ @[10244,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50> @TO@ @type:for_stmt@ @[10254,10344]@ for _ in range(self.q.maxlen - len(self.q)):
+      <text_longer_than_50>
+
+INS @type:try_stmt@ @[10257,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50> @TO@ @type:suite@ @[10244,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50>
+
+INS @type:try_stmt@ @[10257,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50> @TO@ @type:suite@ @[10244,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50>
+
+INS @type:suite@ @[10344,10439]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50> @TO@ @type:try_stmt@ @[10257,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50>
+
+INS @type:suite@ @[10344,10439]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50> @TO@ @type:try_stmt@ @[10257,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50>
+
+MOV @type:suite@ @[10298,10344]@ self.q.append(next(self.ds_itr)) @TO@ @type:try_stmt@ @[10257,10439]@ try:
+                self.q.append(next(self.ds_it <text_longer_than_50>
+
+INS @type:try_stmt@ @[10594,10881]@ try:
+                    self.q.append(next(self.d <text_longer_than_50> @TO@ @type:suite@ @[10459,10639]@ yield self.q.popleft()
+                self.q.appe <text_longer_than_50>
+
+INS @type:try_stmt@ @[10594,10881]@ try:
+                    self.q.append(next(self.d <text_longer_than_50> @TO@ @type:suite@ @[10459,10639]@ yield self.q.popleft()
+                self.q.appe <text_longer_than_50>
+
+INS @type:suite@ @[10598,10652]@ self.q.append(next(self.ds_itr)) @TO@ @type:try_stmt@ @[10594,10881]@ try:
+                    self.q.append(next(self.d <text_longer_than_50>
+
+INS @type:suite@ @[10598,10652]@ self.q.append(next(self.ds_itr)) @TO@ @type:try_stmt@ @[10594,10881]@ try:
+                    self.q.append(next(self.d <text_longer_than_50>
+
+INS @type:except_clause@ @[10668,10688]@ except StopIteration @TO@ @type:try_stmt@ @[10594,10881]@ try:
+                    self.q.append(next(self.d <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[10515,10548]@ self.q.append(next(self.ds_itr)) @TO@ @type:suite@ @[10598,10652]@ self.q.append(next(self.ds_itr))
+
+DEL @type:if_stmt@ @[10589,10639]@ if cnt == self.size():
+                    return @FROM@ @type:suite@ @[10459,10639]@ yield self.q.popleft()
+                self.q.appe <text_longer_than_50>
+
+INS @type:atom_expr@ @[10361,10438]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50> @TO@ @type:simple_stmt@ @[10352,10360]@ cnt = 0
+
+INS @type:atom_expr@ @[10361,10438]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50> @TO@ @type:simple_stmt@ @[10352,10360]@ cnt = 0
+
+INS @type:trailer@ @[10367,10373]@ .error @TO@ @type:atom_expr@ @[10361,10438]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50>
+
+INS @type:atom_expr@ @[10361,10438]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50> @TO@ @type:simple_stmt@ @[10352,10360]@ cnt = 0
+
+INS @type:atom_expr@ @[10361,10438]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50> @TO@ @type:simple_stmt@ @[10352,10360]@ cnt = 0
+
+INS @type:trailer@ @[10367,10373]@ .error @TO@ @type:atom_expr@ @[10361,10438]@ logger.error("LocallyShuffleData: cache_size is la <text_longer_than_50>
+
+INS @type:simple_stmt@ @[10760,10785]@ self.rng.shuffle(self.q) @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:simple_stmt@ @[10760,10785]@ self.rng.shuffle(self.q) @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:for_stmt@ @[10805,10854]@ for v in self.q:
+                        yield v @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:for_stmt@ @[10805,10854]@ for v in self.q:
+                        yield v @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:suite@ @[10821,10854]@ yield v @TO@ @type:for_stmt@ @[10805,10854]@ for v in self.q:
+                        yield v
+
+MOV @type:suite@ @[10611,10639]@ return @TO@ @type:try_stmt@ @[10594,10881]@ try:
+                    self.q.append(next(self.d <text_longer_than_50>
+
+INS @type:simple_stmt@ @[10760,10785]@ self.rng.shuffle(self.q) @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:simple_stmt@ @[10760,10785]@ self.rng.shuffle(self.q) @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:for_stmt@ @[10805,10854]@ for v in self.q:
+                        yield v @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:for_stmt@ @[10805,10854]@ for v in self.q:
+                        yield v @TO@ @type:suite@ @[10611,10639]@ return
+
+INS @type:suite@ @[10821,10854]@ yield v @TO@ @type:for_stmt@ @[10805,10854]@ for v in self.q:
+                        yield v
+
+UPD @type:atom_expr@ @[10599,10610]@ self.size() @TO@ @type:atom_expr@ @[10760,10784]@ self.rng.shuffle(self.q)
+
+INS @type:trailer@ @[10764,10768]@ .rng @TO@ @type:atom_expr@ @[10599,10610]@ self.size()
+
+INS @type:trailer@ @[10776,10784]@ (self.q) @TO@ @type:atom_expr@ @[10599,10610]@ self.size()
+
+INS @type:trailer@ @[10776,10784]@ (self.q) @TO@ @type:atom_expr@ @[10599,10610]@ self.size()
+
+INS @type:atom_expr@ @[10777,10783]@ self.q @TO@ @type:trailer@ @[10776,10784]@ (self.q)
+
+INS @type:atom_expr@ @[10777,10783]@ self.q @TO@ @type:trailer@ @[10776,10784]@ (self.q)
+
+MOV @type:trailer@ @[10608,10610]@ () @TO@ @type:atom_expr@ @[10777,10783]@ self.q
+
+MOV @type:atom_expr@ @[10599,10610]@ self.size() @TO@ @type:simple_stmt@ @[10760,10785]@ self.rng.shuffle(self.q)
+
+INS @type:trailer@ @[10764,10768]@ .rng @TO@ @type:atom_expr@ @[10599,10610]@ self.size()
+
+INS @type:trailer@ @[10776,10784]@ (self.q) @TO@ @type:atom_expr@ @[10599,10610]@ self.size()
+
+INS @type:trailer@ @[10776,10784]@ (self.q) @TO@ @type:atom_expr@ @[10599,10610]@ self.size()
+
+INS @type:atom_expr@ @[10777,10783]@ self.q @TO@ @type:trailer@ @[10776,10784]@ (self.q)
+
+INS @type:atom_expr@ @[10777,10783]@ self.q @TO@ @type:trailer@ @[10776,10784]@ (self.q)
+
+MOV @type:trailer@ @[10608,10610]@ () @TO@ @type:atom_expr@ @[10777,10783]@ self.q
+
+MOV @type:name@ @[10592,10595]@ cnt @TO@ @type:atom_expr@ @[10599,10610]@ self.size()
+
+DEL @type:simple_stmt@ @[10105,10146]@ self.ds_wrap = RepeatedData(self.ds, -1) @FROM@ @type:suite@ @[10018,10221]@ ProxyDataFlow.reset_state(self)
+        RNGDataFlo <text_longer_than_50>
+

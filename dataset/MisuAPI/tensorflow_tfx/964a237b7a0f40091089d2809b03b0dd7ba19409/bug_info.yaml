@@ -1,0 +1,68 @@
+issues_cnt: 3
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/1761
+  title: 'PR #1753: Fix airflow pipeline config kwargs'
+  body: "PR #1753: Fix airflow pipeline config kwargs\n\nPlease approve this CL. It\
+    \ will be submitted automatically, and its GitHub pull request will be marked\
+    \ as merged.\n\nImported from GitHub PR #1753\n\nWhenever you need to change an\
+    \ AirflowPipelineConfig (other than `airflow_dag_config`) then its passed as a\
+    \ dict into support_component_launchers.\n\nThis unrolls the `kwargs` argument\
+    \ such that it overwrites the correct arguments.\n\nCopybara import of the project:\n\
+    \n  - 964a237b7a0f40091089d2809b03b0dd7ba19409 fix airflow pipeline config kwargs\
+    \ by Gerard Casas Saez <gcasassaez@twitter.com>\n  - 8d0c1f7751ded0586d4030d38bb934f7082b4ce5\
+    \ Merge 964a237b7a0f40091089d2809b03b0dd7ba19409 into 1250d... by Gerard Casas\
+    \ Saez <casassg@users.noreply.github.com>\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/tensorflow/tfx/pull/1753\
+    \ from casassg:gcasassaez/fix_airflow_pipeline_config 964a237b7a0f40091089d2809b03b0dd7ba19409\n"
+issue_1:
+  html_url: https://github.com/tensorflow/tfx/pull/1756
+  title: 'PR #1753: Fix airflow pipeline config kwargs'
+  body: "PR #1753: Fix airflow pipeline config kwargs\n\nPlease approve this CL. It\
+    \ will be submitted automatically, and its GitHub pull request will be marked\
+    \ as merged.\n\nImported from GitHub PR #1753\n\nWhenever you need to change an\
+    \ AirflowPipelineConfig (other than `airflow_dag_config`) then its passed as a\
+    \ dict into support_component_launchers.\n\nThis unrolls the `kwargs` argument\
+    \ such that it overwrites the correct arguments.\n\nCopybara import of the project:\n\
+    \n  - 964a237b7a0f40091089d2809b03b0dd7ba19409 fix airflow pipeline config kwargs\
+    \ by Gerard Casas Saez <gcasassaez@twitter.com>\n  - 8d0c1f7751ded0586d4030d38bb934f7082b4ce5\
+    \ Merge 964a237b7a0f40091089d2809b03b0dd7ba19409 into 1250d... by Gerard Casas\
+    \ Saez <casassg@users.noreply.github.com>\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/tensorflow/tfx/pull/1753\
+    \ from casassg:gcasassaez/fix_airflow_pipeline_config 964a237b7a0f40091089d2809b03b0dd7ba19409\n"
+issue_2:
+  html_url: https://github.com/tensorflow/tfx/pull/1753
+  title: Fix airflow pipeline config kwargs
+  body: "Whenever you need to change an AirflowPipelineConfig (other than `airflow_dag_config`)\
+    \ then its passed as a dict into support_component_launchers.\r\n\r\nThis unrolls\
+    \ the `kwargs` argument such that it overwrites the correct arguments."
+sha: 964a237b7a0f40091089d2809b03b0dd7ba19409
+message: fix airflow pipeline config kwargs
+commit_log: "commit 964a237b7a0f40091089d2809b03b0dd7ba19409\nAuthor: Gerard Casas\
+  \ Saez <gcasassaez@twitter.com>\nDate:   Thu May 7 16:54:38 2020 -0600\n\n    fix\
+  \ airflow pipeline config kwargs"
+contained_keywords:
+- fix
+commit_time: 2020-05-07 16:54:38 -0600
+commit_author: Gerard Casas Saez
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 48
+    - '    super(AirflowPipelineConfig, self).__init__(**kwargs)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    super(AirflowPipelineConfig, self).__init__(kwargs)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/airflow/airflow_dag_runner.py
+  removed: 1
+  source_file: a/tfx/orchestration/airflow/airflow_dag_runner.py
+  target_file: b/tfx/orchestration/airflow/airflow_dag_runner.py

@@ -1,0 +1,16 @@
+diff --git a/bentoml/handlers/base_handlers.py b/bentoml/handlers/base_handlers.py
+index f47ce7e..cab4dc7 100644
+--- a/bentoml/handlers/base_handlers.py
++++ b/bentoml/handlers/base_handlers.py
+@@ -110,6 +110,10 @@ def get_output_str(result, output_format, output_orient="records"):
+         elif isinstance(result, np.ndarray):
+             return json.dumps(result.tolist())
+         else:
+-            return json.dumps(result)
++            try:
++                return json.dumps(result)
++            except (TypeError, OverflowError):
++                # when result is not JSON serializable
++                return json.dumps(str(result))
+     else:
+         raise ValueError("Output format {} is not supported".format(output_format))

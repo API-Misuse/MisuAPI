@@ -1,0 +1,22 @@
+
+UPD @type:for_stmt@ @[1912,2299]@ for artifact in metadata_connection.store.get_arti <text_longer_than_50> @TO@ @type:for_stmt@ @[2028,2540]@ for artifact in metadata_connection.store.get_arti <text_longer_than_50>
+---UPD @type:suite@ @[2002,2299]@ src_uri = artifact.uri
+    artifact_properties = a <text_longer_than_50> @TO@ @type:suite@ @[2118,2540]@ src_uri = artifact.uri
+    artifact_properties = a <text_longer_than_50>
+------UPD @type:simple_stmt@ @[2161,2209]@ name = artifact_properties['name'].string_value @TO@ @type:simple_stmt@ @[2277,2331]@ output_key = artifact_properties['name'].string_va <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[2161,2208]@ name = artifact_properties['name'].string_value @TO@ @type:expr_stmt@ @[2277,2330]@ output_key = artifact_properties['name'].string_va <text_longer_than_50>
+------------UPD @type:name@ @[2161,2165]@ name @TO@ @type:name@ @[2277,2287]@ output_key
+------INS @type:if_stmt@ @[2335,2444]@ if not component_id or not output_key:
+      raise <text_longer_than_50> @TO@ @type:suite@ @[2002,2299]@ src_uri = artifact.uri
+    artifact_properties = a <text_longer_than_50>
+------UPD @type:simple_stmt@ @[2213,2269]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50> @TO@ @type:simple_stmt@ @[2448,2510]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[2213,2268]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50> @TO@ @type:expr_stmt@ @[2448,2509]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50>
+------------UPD @type:atom_expr@ @[2224,2268]@ os.path.join(output_dir, component_id, name) @TO@ @type:atom_expr@ @[2459,2509]@ os.path.join(output_dir, component_id, output_key)
+---------------UPD @type:trailer@ @[2236,2268]@ (output_dir, component_id, name) @TO@ @type:trailer@ @[2471,2509]@ (output_dir, component_id, output_key)
+------------------UPD @type:arglist@ @[2237,2267]@ output_dir, component_id, name @TO@ @type:arglist@ @[2472,2508]@ output_dir, component_id, output_key
+---------------------UPD @type:name@ @[2263,2267]@ name @TO@ @type:name@ @[2498,2508]@ output_key
+
+
+
+
+

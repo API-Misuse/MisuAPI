@@ -1,0 +1,6 @@
+INS @type:simple_stmt@ @[1578,1613]@ config.session_init._setup_graph() @TO@ @type:suite@ @[885,1983]@ handles = []
+
+            input = PlaceholderInput <text_longer_than_50>
+
+UPD @type:atom_expr@ @[1642,1677]@ config.session_init.init(self.sess) @TO@ @type:atom_expr@ @[1689,1729]@ config.session_init._run_init(self.sess)
+

@@ -1,0 +1,14 @@
+INS @type:try_stmt@ @[22071,22246]@ try:
+            scores = print_evaluation_scores( <text_longer_than_50> @TO@ @type:suite@ @[21779,22204]@ all_results = eval_coco(self.df, lambda img: detec <text_longer_than_50>
+
+INS @type:try_stmt@ @[22071,22246]@ try:
+            scores = print_evaluation_scores( <text_longer_than_50> @TO@ @type:suite@ @[21779,22204]@ all_results = eval_coco(self.df, lambda img: detec <text_longer_than_50>
+
+INS @type:suite@ @[22075,22134]@ scores = print_evaluation_scores(output_file) @TO@ @type:try_stmt@ @[22071,22246]@ try:
+            scores = print_evaluation_scores( <text_longer_than_50>
+
+INS @type:suite@ @[22075,22134]@ scores = print_evaluation_scores(output_file) @TO@ @type:try_stmt@ @[22071,22246]@ try:
+            scores = print_evaluation_scores( <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[22071,22117]@ scores = print_evaluation_scores(output_file) @TO@ @type:suite@ @[22075,22134]@ scores = print_evaluation_scores(output_file)
+

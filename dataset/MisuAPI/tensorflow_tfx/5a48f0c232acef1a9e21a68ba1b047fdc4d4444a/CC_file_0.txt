@@ -1,0 +1,4 @@
+DEL @type:simple_stmt@ @[8159,8210]@ self._assert_infra_validator_passed(pipeline_name) @FROM@ @type:suite@ @[7726,8210]@ """End-to-End test for simple pipeline."""
+    pip <text_longer_than_50>
+
+

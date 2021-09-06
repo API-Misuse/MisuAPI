@@ -1,0 +1,27 @@
+UPD @type:with_stmt@ @[5844,13087]@ with tf.Session(config=config) as sess:
+		try:
+			 <text_longer_than_50> @TO@ @type:with_stmt@ @[5844,13072]@ with tf.Session(config=config) as sess:
+		try:
+			 <text_longer_than_50>
+---UPD @type:suite@ @[5883,13087]@ try:
+			summary_writer = tf.summary.FileWriter(log <text_longer_than_50> @TO@ @type:suite@ @[5883,13072]@ try:
+			summary_writer = tf.summary.FileWriter(log <text_longer_than_50>
+------UPD @type:try_stmt@ @[5886,13087]@ try:
+			summary_writer = tf.summary.FileWriter(log <text_longer_than_50> @TO@ @type:try_stmt@ @[5886,13072]@ try:
+			summary_writer = tf.summary.FileWriter(log <text_longer_than_50>
+---------UPD @type:suite@ @[5890,12962]@ summary_writer = tf.summary.FileWriter(log_dir, se <text_longer_than_50> @TO@ @type:suite@ @[5890,12947]@ summary_writer = tf.summary.FileWriter(log_dir, se <text_longer_than_50>
+------------UPD @type:while_stmt@ @[6706,12848]@ while not coord.should_stop() and step < args.taco <text_longer_than_50> @TO@ @type:while_stmt@ @[6706,12833]@ while not coord.should_stop() and step < args.taco <text_longer_than_50>
+---------------UPD @type:suite@ @[6773,12848]@ start_time = time.time()
+				step, loss, opt = ses <text_longer_than_50> @TO@ @type:suite@ @[6773,12833]@ start_time = time.time()
+				step, loss, opt = ses <text_longer_than_50>
+------------------UPD @type:if_stmt@ @[7129,7267]@ if loss > 1000 or np.isnan(loss):
+					log('Loss e <text_longer_than_50> @TO@ @type:if_stmt@ @[7129,7252]@ if np.isnan(loss):
+					log('Loss exploded to {:.5 <text_longer_than_50>
+---------------------DEL @type:or_test@ @[7132,7161]@ loss > 1000 or np.isnan(loss) @FROM@ @type:if_stmt@ @[7129,7267]@ if loss > 1000 or np.isnan(loss):
+					log('Loss e <text_longer_than_50>
+
+
+MOV @type:atom_expr@ @[7147,7161]@ np.isnan(loss) @TO@ @type:if_stmt@ @[7129,7267]@ if loss > 1000 or np.isnan(loss):
+					log('Loss e <text_longer_than_50>
+
+

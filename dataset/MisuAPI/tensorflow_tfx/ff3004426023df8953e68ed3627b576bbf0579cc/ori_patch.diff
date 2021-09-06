@@ -1,0 +1,38 @@
+commit ff3004426023df8953e68ed3627b576bbf0579cc
+Author: tfx-team <tensorflow-extended-team@google.com>
+Date:   Tue Mar 5 13:41:13 2019 -0800
+
+    Fix calling get() on None.
+    
+    PiperOrigin-RevId: 236912303
+
+diff --git a/tfx/components/pusher/executor.py b/tfx/components/pusher/executor.py
+index 1965d579..a78807e2 100644
+--- a/tfx/components/pusher/executor.py
++++ b/tfx/components/pusher/executor.py
+@@ -45,7 +45,7 @@ class Executor(base_executor.BaseExecutor):
+           include the model in this push execution if the model was pushed.
+       exec_properties: A dict of execution properties, including:
+         - push_destination: JSON string of pusher_pb2.PushDestination instance,
+-            providing instruction of destination to push model.
++          providing instruction of destination to push model.
+ 
+     Returns:
+       None
+@@ -97,9 +97,10 @@ class Executor(base_executor.BaseExecutor):
+     model_push.set_int_custom_property('pushed_model_id', model_export.id)
+     tf.logging.info('Model pushed to %s.', serving_path)
+ 
+-    cmle_serving_args = exec_properties.get('custom_config',
+-                                            {}).get('cmle_serving_args')
+-    if cmle_serving_args is not None:
+-      return cmle_runner.deploy_model_for_serving(serving_path, model_version,
+-                                                  cmle_serving_args,
+-                                                  exec_properties['log_root'])
++    if exec_properties.get('custom_config'):
++      cmle_serving_args = exec_properties.get('custom_config',
++                                              {}).get('cmle_serving_args')
++      if cmle_serving_args is not None:
++        return cmle_runner.deploy_model_for_serving(serving_path, model_version,
++                                                    cmle_serving_args,
++                                                    exec_properties['log_root'])

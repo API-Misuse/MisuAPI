@@ -1,0 +1,34 @@
+INS @type:string@ @[3287,3295]@ './data' @TO@ @type:or_test@ @[3239,3276]@ args.data_dir or f'data-{hvd.rank()}'
+
+DEL @type:fstring@ @[3256,3276]@ f'data-{hvd.rank()}' @FROM@ @type:or_test@ @[3239,3276]@ args.data_dir or f'data-{hvd.rank()}'
+
+INS @type:with_stmt@ @[3300,3661]@ with FileLock(os.path.expanduser("~/.horovod_lock" <text_longer_than_50> @TO@ @type:suite@ @[2761,8381]@ # Horovod: initialize library.
+    hvd.init()
+     <text_longer_than_50>
+
+INS @type:with_stmt@ @[3300,3661]@ with FileLock(os.path.expanduser("~/.horovod_lock" <text_longer_than_50> @TO@ @type:suite@ @[2761,8381]@ # Horovod: initialize library.
+    hvd.init()
+     <text_longer_than_50>
+
+INS @type:suite@ @[3353,3661]@ train_dataset = \
+            datasets.MNIST(data_ <text_longer_than_50> @TO@ @type:with_stmt@ @[3300,3661]@ with FileLock(os.path.expanduser("~/.horovod_lock" <text_longer_than_50>
+
+INS @type:suite@ @[3353,3661]@ train_dataset = \
+            datasets.MNIST(data_ <text_longer_than_50> @TO@ @type:with_stmt@ @[3300,3661]@ with FileLock(os.path.expanduser("~/.horovod_lock" <text_longer_than_50>
+
+UPD @type:atom_expr@ @[3307,3559]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50> @TO@ @type:atom_expr@ @[3392,3660]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50>
+
+UPD @type:atom_expr@ @[3392,3558]@ transforms.Compose([
+                           tr <text_longer_than_50> @TO@ @type:atom_expr@ @[3481,3659]@ transforms.Compose([
+                              <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3281,3560]@ train_dataset = \
+        datasets.MNIST(data_dir, <text_longer_than_50> @TO@ @type:suite@ @[3353,3661]@ train_dataset = \
+            datasets.MNIST(data_ <text_longer_than_50>
+
+UPD @type:atom_expr@ @[3307,3559]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50> @TO@ @type:atom_expr@ @[3392,3660]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50>
+
+UPD @type:atom_expr@ @[3392,3558]@ transforms.Compose([
+                           tr <text_longer_than_50> @TO@ @type:atom_expr@ @[3481,3659]@ transforms.Compose([
+                              <text_longer_than_50>
+

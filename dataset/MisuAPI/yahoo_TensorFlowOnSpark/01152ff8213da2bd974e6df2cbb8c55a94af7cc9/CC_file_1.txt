@@ -1,0 +1,13 @@
+INS @type:if_stmt@ @[2784,3251]@ if os.path.isfile("executor_id"):
+    with open("e <text_longer_than_50> @TO@ @type:suite@ @[2696,3251]@ """Read worker id from a local file in the executo <text_longer_than_50>
+
+
+UPD @type:with_stmt@ @[2784,2845]@ with open("executor_id", "r") as f:
+    return int <text_longer_than_50> @TO@ @type:with_stmt@ @[2822,2885]@ with open("executor_id", "r") as f:
+      return i <text_longer_than_50>
+---UPD @type:suite@ @[2819,2845]@ return int(f.read()) @TO@ @type:suite@ @[2857,2885]@ return int(f.read())
+
+
+DEL @type:simple_stmt@ @[2699,2782]@ """Read worker id from a local file in the executo <text_longer_than_50> @FROM@ @type:suite@ @[2696,2845]@ """Read worker id from a local file in the executo <text_longer_than_50>
+
+

@@ -1,0 +1,27 @@
+INS @type:simple_stmt@ @[576,615]@ from __future__ import absolute_import @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[615,647]@ from __future__ import division @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[647,685]@ from __future__ import print_function @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[686,696]@ import os @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[696,710]@ import shutil @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[710,725]@ import logging @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[726,760]@ from bentoml.utils import pathlib @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[760,839]@ from bentoml.artifact import BentoServiceArtifact, <text_longer_than_50> @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[841,878]@ logger = logging.getLogger(__name__) @TO@ @type:file_input@ @[0,0]@
+
+

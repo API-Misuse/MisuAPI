@@ -1,0 +1,19 @@
+commit 232bf0d3b674a523dbb3ffb9d2bd6aba32adafd1
+Author: Faylixe <felix.voituret@gmail.com>
+Date:   Tue Dec 8 12:48:15 2020 +0100
+
+    🐛  fix AUTO backend support
+
+diff --git a/tests/test_train.py b/tests/test_train.py
+index 3c63b40..7c4bc48 100644
+--- a/tests/test_train.py
++++ b/tests/test_train.py
+@@ -93,7 +93,7 @@ def test_train():
+         TRAIN_CONFIG['model_dir'] = join(path, 'model')
+         TRAIN_CONFIG['training_cache'] = join(path, 'cache', 'training')
+         TRAIN_CONFIG['validation_cache'] = join(path, 'cache', 'validation')
+-        with open('useless_config.json') as stream:
++        with open('useless_config.json', 'w') as stream:
+             json.dump(TRAIN_CONFIG, stream)
+         # execute training
+         result = runner.invoke(spleeter, [

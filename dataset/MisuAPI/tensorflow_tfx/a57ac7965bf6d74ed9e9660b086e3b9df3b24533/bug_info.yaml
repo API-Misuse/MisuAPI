@@ -1,0 +1,87 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/2394
+  title: 'PR #2212: Support Custom Split Config for Transform Component'
+  body: "PR #2212: Support Custom Split Config for Transform Component\n\nPlease approve\
+    \ this CL. It will be submitted automatically, and its GitHub pull request will\
+    \ be marked as merged.\n\nImported from GitHub PR #2212\n\n# Support custom split\
+    \ config for Transform component by creating transform.proto and adding splits_config\
+    \ param.\n\nCopybara import of the project:\n\n  - 297eb2fa8002e57c05ac5c1505df01351dc8b7e0\
+    \ created Transform proto and added SplitsConfig by tinally <tinally@google.com>\n\
+    \  - 66fc6607998f3ec0e8611a2e90df079483862a83 added a unit test for splits_config\
+    \ by tinally <tinally@google.com>\n  - a9ae086ed92fc418e913d9b9b3847a58be48be96\
+    \ updated comments for custom splits by tinally <tinally@google.com>\n  - a57ac7965bf6d74ed9e9660b086e3b9df3b24533\
+    \ small fix by tinally <tinally@google.com>\n  - e3e7b7d990356fc9e52c1d37ebd2899769c2b53c\
+    \ merge and resolve conflicts by tinally <tinally@google.com>\n  - ff787b18049ff1daa0d6444424b442f0457796ee\
+    \ pylint fix by tinally <tinally@google.com>\n  - 12748a426dbce46079936978b5413a6527d91f49\
+    \ fixed issues addressed in recent feedback by tinally <tinally@google.com>\n\
+    \  - 96594c615883f8e93e07db6f1ff53bacbee1d684 fixed unit test by tinally <tinally@google.com>\n\
+    \  - 8cd099962af8a28919f341fd90ae35f61f9ba56d allow transform_splits to be empty\
+    \ by tinally <tinally@google.com>\n  - b8022b4d4c220f13c64a4082f365d295d9ab8414\
+    \ fixed pylint issues by tinally <tinally@google.com>\n  - 09a548439a0d3817ed0c64ce8044bea0a46af36f\
+    \ updated comments by tinally <tinally@google.com>\n  - 9395a6fe7b612458666c43d2015f310a7eacd37e\
+    \ merge and resolve conflicts by tinally <tinally@google.com>\n  - 071b50961641a8645921f12c7075cee7658eea6a\
+    \ fixed issues addressed in recent feedback by tinally <tinally@google.com>\n\
+    \  - 98dcdcfc55882b8f3a947074ae344b88134cfedf merge and resolve conflicts by tinally\
+    \ <tinally@google.com>\n  - 53a43f0ce1a88170fb3afaee2126e2235ffbb740 merge and\
+    \ resolve conflicts by tinally <tinally@google.com>\n  - 6bdbdbb92703486ab9a34cf8027bae287e29d908\
+    \ updated unit test by tinally <tinally@google.com>\n  - e31da42d016cffd68e2e36cc171d28412d64200c\
+    \ small fix by tinally <tinally@google.com>\n  - 6985fecd1264483e4b55b381774ad9db14cdaa19\
+    \ updated comments by tinally <tinally@google.com>\n  - 0217f3e0d347e4c3fb97fd6c2bb9b402e6f82a65\
+    \ merge and resolve conflicts by tinally <tinally@google.com>\n  - 4acb1b91dd3c983a0053ccd540fca5326cd88306\
+    \ fixed comments by tinally <tinally@google.com>\n  - 3f76b2659b8b5455b15aa06743656cd1a645238d\
+    \ added empty transform_splits test by tinally <tinally@google.com>\n  - 3d8eae9927fc671b6c331657ab359ae149dcc0fe\
+    \ Merge branch 'master' of https://github.com/tensorflow/tf... by tinally <tinally@google.com>\n\
+    \  - 916a73794883e0fbf533a8d564db511b23bcdf64 updated csv example gen testdata\
+    \ by tinally <tinally@google.com>\n  - a9d4a7c8699acbd72bf76cebdb2bbc94d9ed00c6\
+    \ small fix by tinally <tinally@google.com>\n  - b2f14590a5a27518acb0ef6dc62a6e989a9be79c\
+    \ updated namings in splits_config in proto by tinally <tinally@google.com>\n\
+    \  - 5596263e935f038bec41e1fded0b950a6e13e212 Merge branch 'master' of https://github.com/tensorflow/tf...\
+    \ by tinally <tinally@google.com>\n  - 403770a8653756e8ebf25285cd88c0e8a8f3fe35\
+    \ revert testdata and changed camelCase to snake_case by tinally <tinally@google.com>\n\
+    \  - 4658eaa389fb192f45e62632faa7ec5f106652c8 pylint fix by tinally <tinally@google.com>\n\
+    \  - 8db5ee77b017b9290fdeae719bec1c49a730fb80 merge and resolve conflicts by tinally\
+    \ <tinally@google.com>\n  - 38cd1ec5424746a8987b1bdca64ccd050395c019 Merge 8db5ee77b017b9290fdeae719bec1c49a730fb80\
+    \ into d92ed... by tinally <tinally7@gmail.com>\n\nCOPYBARA_INTEGRATE_REVIEW=https://github.com/tensorflow/tfx/pull/2212\
+    \ from tinally:transform 8db5ee77b017b9290fdeae719bec1c49a730fb80\n"
+issue_1:
+  html_url: https://github.com/tensorflow/tfx/pull/2212
+  title: Support Custom Split Config for Transform Component
+  body: '# Support custom split config for Transform component by creating transform.proto
+    and adding splits_config param.'
+sha: a57ac7965bf6d74ed9e9660b086e3b9df3b24533
+message: small fix
+commit_log: "commit a57ac7965bf6d74ed9e9660b086e3b9df3b24533\nAuthor: tinally <tinally@google.com>\n\
+  Date:   Fri Jul 24 14:42:43 2020 -0400\n\n    small fix"
+contained_keywords:
+- fix
+commit_time: 2020-07-24 14:42:43 -0400
+commit_author: tinally
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 307
+    - '    if exec_properties.get(''splits_config''):
+
+      '
+  - - 308
+    - '      json_format.Parse(exec_properties[''splits_config''], splits_config)
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '    json_format.Parse(exec_properties[''splits_config''], splits_config)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/components/transform/executor.py
+  removed: 1
+  source_file: a/tfx/components/transform/executor.py
+  target_file: b/tfx/components/transform/executor.py

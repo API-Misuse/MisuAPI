@@ -1,0 +1,10 @@
+INS @type:if_stmt@ @[3033,3140]@ if not os.path.isdir(model_dir):  # Create the mod <text_longer_than_50> @TO@ @type:suite@ @[2700,5986]@ if FLAGS.model_name:
+    subdir = FLAGS.model_name <text_longer_than_50>
+
+DEL @type:if_stmt@ @[8107,8251]@ if (batch_number%20==0):
+        print('Epoch: [%d <text_longer_than_50> @FROM@ @type:suite@ @[7591,8284]@ start_time = time.time()
+      batch = facenet.get <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[8140,8251]@ print('Epoch: [%d][%d/%d]\tTime %.3f\ttripErr %2.3 <text_longer_than_50> @TO@ @type:suite@ @[7591,8284]@ start_time = time.time()
+      batch = facenet.get <text_longer_than_50>
+

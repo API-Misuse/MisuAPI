@@ -1,0 +1,6 @@
+INS @type:atom_expr@ @[4104,4129]@ tf.reduce_sum(label_loss) @TO@ @type:term@ @[4104,4147]@ label_loss * (1. / config.RPN_BATCH_PER_IM)
+
+INS @type:atom_expr@ @[4104,4129]@ tf.reduce_sum(label_loss) @TO@ @type:term@ @[4104,4147]@ label_loss * (1. / config.RPN_BATCH_PER_IM)
+
+INS @type:trailer@ @[4117,4129]@ (label_loss) @TO@ @type:atom_expr@ @[4104,4129]@ tf.reduce_sum(label_loss)
+

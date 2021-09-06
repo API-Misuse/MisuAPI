@@ -1,0 +1,18 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py:12:6 - error: Import "tqdm" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py:15:6 - error: Import ".concurrency" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py:175:14 - error: Import "ipykernel" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py:14:15 - error: "logger" is unknown import symbol (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py:161:32 - error: "f_back" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py:162:16 - error: "f_code" is not a known member of "None" (reportOptionalMemberAccess)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/5b019098e25d1af76e5947b524dec27439bd0b9b/a/tensorpack/utils/utils.py:162:38 - error: "f_lineno" is not a known member of "None" (reportOptionalMemberAccess)
+7 errors, 0 warnings, 0 infos 
+Completed in 1.3sec
+
+time cost(in seconds): 1.4449195861816406

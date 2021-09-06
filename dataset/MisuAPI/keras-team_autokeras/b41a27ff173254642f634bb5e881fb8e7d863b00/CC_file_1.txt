@@ -1,0 +1,11 @@
+INS @type:simple_stmt@ @[916,987]@ """A class to predict faces using the MTCNN pre-tr <text_longer_than_50> @TO@ @type:suite@ @[911,1626]@ def __init__(self):
+        super(FaceDetectionPre <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[1526,2224]@ """Predicts faces in an image.
+
+        Args:
+     <text_longer_than_50> @TO@ @type:suite@ @[1442,1626]@ if not os.path.exists(img_path):
+            raise <text_longer_than_50>
+
+

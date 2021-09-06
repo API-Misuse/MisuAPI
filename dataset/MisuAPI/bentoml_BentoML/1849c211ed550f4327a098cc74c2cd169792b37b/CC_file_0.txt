@@ -1,0 +1,28 @@
+INS @type:simple_stmt@ @[1360,1441]@ from bentoml.artifact.tf_savedmodel_artifact impor <text_longer_than_50> @TO@ @type:file_input@ @[576,1671]@ from __future__ import absolute_import
+from __futu <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1361,1671]@ __all__ = [
+    "BentoServiceArtifact",
+    "Bento <text_longer_than_50> @TO@ @type:simple_stmt@ @[1442,1788]@ __all__ = [
+    "BentoServiceArtifact",
+    "Bento <text_longer_than_50>
+---UPD @type:expr_stmt@ @[1361,1670]@ __all__ = [
+    "BentoServiceArtifact",
+    "Bento <text_longer_than_50> @TO@ @type:expr_stmt@ @[1442,1787]@ __all__ = [
+    "BentoServiceArtifact",
+    "Bento <text_longer_than_50>
+------UPD @type:atom@ @[1371,1670]@ [
+    "BentoServiceArtifact",
+    "BentoServiceArt <text_longer_than_50> @TO@ @type:atom@ @[1452,1787]@ [
+    "BentoServiceArtifact",
+    "BentoServiceArt <text_longer_than_50>
+---------UPD @type:testlist_comp@ @[1377,1668]@ "BentoServiceArtifact",
+    "BentoServiceArtifactW <text_longer_than_50> @TO@ @type:testlist_comp@ @[1458,1785]@ "BentoServiceArtifact",
+    "BentoServiceArtifactW <text_longer_than_50>
+------------INS @type:operator@ @[1748,1749]@ , @TO@ @type:testlist_comp@ @[1377,1668]@ "BentoServiceArtifact",
+    "BentoServiceArtifactW <text_longer_than_50>
+------------INS @type:string@ @[1754,1784]@ "TensorflowSavedModelArtifact" @TO@ @type:testlist_comp@ @[1377,1668]@ "BentoServiceArtifact",
+    "BentoServiceArtifactW <text_longer_than_50>
+
+

@@ -1,0 +1,23 @@
+commit 1d5ea34f6abd0b62ed89a8d5fa4cc14ed970cf67
+Author: Jonathan Chang <31893406+cccntu@users.noreply.github.com>
+Date:   Mon Oct 12 04:45:12 2020 -0700
+
+    Fix trainer callback (#7720)
+    
+    Fix a bug that happends when subclassing Trainer and
+    overwriting evaluate() without calling prediciton_loop()
+
+diff --git a/src/transformers/trainer_callback.py b/src/transformers/trainer_callback.py
+index bc14d99f2..c3057f882 100644
+--- a/src/transformers/trainer_callback.py
++++ b/src/transformers/trainer_callback.py
+@@ -443,7 +443,8 @@ class ProgressCallback(TrainerCallback):
+ 
+     def on_evaluate(self, args, state, control, **kwargs):
+         if state.is_local_process_zero:
+-            self.prediction_bar.close()
++            if self.prediction_bar is not None:
++                self.prediction_bar.close()
+             self.prediction_bar = None
+ 
+     def on_log(self, args, state, control, logs=None, **kwargs):

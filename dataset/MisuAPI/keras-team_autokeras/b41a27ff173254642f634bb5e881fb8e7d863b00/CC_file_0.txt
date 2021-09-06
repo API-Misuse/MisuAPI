@@ -1,0 +1,9 @@
+INS @type:if_stmt@ @[19843,19937]@ if output_file_path is not None:
+        vis_face( <text_longer_than_50> @TO@ @type:suite@ @[19527,19924]@ pnet, rnet, onet = create_mtcnn_net(pnet_path, rne <text_longer_than_50>
+---INS @type:suite@ @[19875,19937]@ vis_face(img_bg, bboxs, output_file_path, landmark <text_longer_than_50> @TO@ @type:if_stmt@ @[19843,19937]@ if output_file_path is not None:
+        vis_face( <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[19843,19896]@ vis_face(img_bg, bboxs, output_file_path, landmark <text_longer_than_50> @TO@ @type:suite@ @[19875,19937]@ vis_face(img_bg, bboxs, output_file_path, landmark <text_longer_than_50>
+
+

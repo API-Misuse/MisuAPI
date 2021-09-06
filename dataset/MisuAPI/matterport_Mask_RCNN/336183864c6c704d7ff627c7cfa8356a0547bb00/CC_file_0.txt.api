@@ -1,0 +1,4 @@
+INS @type:if_stmt@ @[15385,15471]@ if m.size == 0:
+            raise Exception("Inval <text_longer_than_50> @TO@ @type:suite@ @[15285,15511]@ m = mask[:, :, i]
+        y1, x1, y2, x2 = bbox[i] <text_longer_than_50>
+

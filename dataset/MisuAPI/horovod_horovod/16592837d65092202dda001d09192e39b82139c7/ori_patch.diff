@@ -1,0 +1,28 @@
+commit 16592837d65092202dda001d09192e39b82139c7
+Author: Alex Sergeev <alexander.sergeev@live.com>
+Date:   Sat Jul 20 22:11:48 2019 -0700
+
+    Fix g++ autodetection in cases when some of the system flags are not defined (#1234)
+    
+    Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>
+
+diff --git a/setup.py b/setup.py
+index d899f08..05b5573 100644
+--- a/setup.py
++++ b/setup.py
+@@ -754,9 +754,12 @@ def remove_offensive_gcc_compiler_options(compiler_version):
+         ldshared = get_config_var('LDSHARED')
+ 
+         for k, v in offensive_replacements.items():
+-            cflags = cflags.replace(k, v)
+-            cppflags = cppflags.replace(k, v)
+-            ldshared = ldshared.replace(k, v)
++            if cflags:
++                cflags = cflags.replace(k, v)
++            if cppflags:
++                cppflags = cppflags.replace(k, v)
++            if ldshared:
++                ldshared = ldshared.replace(k, v)
+ 
+         return cflags, cppflags, ldshared
+ 

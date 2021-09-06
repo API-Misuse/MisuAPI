@@ -1,0 +1,33 @@
+sha: 16553fd759e70d93824407f18cdea419703d85d4
+message: Fix typo for named argument
+commit_log: "commit 16553fd759e70d93824407f18cdea419703d85d4\nAuthor: Thomas Kipf\
+  \ <tkipf@users.noreply.github.com>\nDate:   Mon Feb 20 10:11:05 2017 +0100\n\n \
+  \   Fix typo for named argument"
+contained_keywords:
+- fix
+commit_time: 2017-02-20 10:11:05 +0100
+commit_author: Thomas Kipf
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: gcn/metrics.py
+  source_file: a/gcn/metrics.py
+  target_file: b/gcn/metrics.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 6
+    - '    loss = tf.nn.softmax_cross_entropy_with_logits(logits=preds, labels=labels)
+
+      '
+  del_line_no:
+  - - null
+    - '    loss = tf.nn.softmax_cross_entropy_with_logits(logits=preds, lables=labels)
+
+      '

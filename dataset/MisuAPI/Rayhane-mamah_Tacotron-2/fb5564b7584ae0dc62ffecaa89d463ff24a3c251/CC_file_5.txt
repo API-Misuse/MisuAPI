@@ -1,0 +1,14 @@
+UPD @type:with_stmt@ @[11260,12359]@ with tf.variable_scope('optimizer') as scope:
+			h <text_longer_than_50> @TO@ @type:with_stmt@ @[11260,12358]@ with tf.variable_scope('optimizer') as scope:
+			h <text_longer_than_50>
+---UPD @type:suite@ @[11305,12359]@ hp = self._hparams
+			if hp.tacotron_decay_learnin <text_longer_than_50> @TO@ @type:suite@ @[11305,12358]@ hp = self._hparams
+			if hp.tacotron_decay_learnin <text_longer_than_50>
+------UPD @type:simple_stmt@ @[11968,12030]@ clipped_gradients, _ = tf.clip_by_global_norm(grad <text_longer_than_50> @TO@ @type:simple_stmt@ @[11968,12029]@ clipped_gradients, _ = tf.clip_by_global_norm(grad <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[11968,12029]@ clipped_gradients, _ = tf.clip_by_global_norm(grad <text_longer_than_50> @TO@ @type:expr_stmt@ @[11968,12028]@ clipped_gradients, _ = tf.clip_by_global_norm(grad <text_longer_than_50>
+------------UPD @type:atom_expr@ @[11991,12029]@ tf.clip_by_global_norm(gradients, 0.5) @TO@ @type:atom_expr@ @[11991,12028]@ tf.clip_by_global_norm(gradients, 1.)
+---------------UPD @type:trailer@ @[12013,12029]@ (gradients, 0.5) @TO@ @type:trailer@ @[12013,12028]@ (gradients, 1.)
+------------------UPD @type:arglist@ @[12014,12028]@ gradients, 0.5 @TO@ @type:arglist@ @[12014,12027]@ gradients, 1.
+---------------------UPD @type:number@ @[12025,12028]@ 0.5 @TO@ @type:number@ @[12025,12027]@ 1.
+
+

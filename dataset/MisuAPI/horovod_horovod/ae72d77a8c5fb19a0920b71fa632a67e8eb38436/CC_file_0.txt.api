@@ -1,0 +1,12 @@
+UPD @type:atom_expr@ @[8067,8106]@ os.environ.get('HOROVOD_MIXED_INSTALL') @TO@ @type:atom_expr@ @[8067,8114]@ int(os.environ.get('HOROVOD_MIXED_INSTALL', 0))
+
+INS @type:atom_expr@ @[8071,8113]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[8081,8106]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:atom_expr@ @[8071,8113]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:trailer@ @[8081,8106]@ ('HOROVOD_MIXED_INSTALL')
+
+INS @type:trailer@ @[8085,8113]@ ('HOROVOD_MIXED_INSTALL', 0) @TO@ @type:atom_expr@ @[8071,8113]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[8069,8077]@ .environ @TO@ @type:atom_expr@ @[8071,8113]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+
+MOV @type:trailer@ @[8077,8081]@ .get @TO@ @type:atom_expr@ @[8071,8113]@ os.environ.get('HOROVOD_MIXED_INSTALL', 0)
+

@@ -1,0 +1,38 @@
+sha: 4c7c7f7e530ee8f5b8d9b80b38ff4dbf8e4176fe
+message: 'Update bert_lstm_ner.py
+
+
+  predict result save file bug'
+commit_log: "commit 4c7c7f7e530ee8f5b8d9b80b38ff4dbf8e4176fe\nAuthor: MaCan <macanv1@hotmail.com>\n\
+  Date:   Tue Dec 18 10:30:52 2018 +0800\n\n    Update bert_lstm_ner.py\n    \n  \
+  \  predict result save file bug"
+contained_keywords:
+- bug
+commit_time: 2018-12-18 10:30:52 +0800
+commit_author: MaCan
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: bert_lstm_ner.py
+  source_file: a/bert_lstm_ner.py
+  target_file: b/bert_lstm_ner.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 802
+    - '        with codecs.open(os.path.join(FLAGS.output_dir, ''entity_level_predicted_result.txt''),
+      ''a'', encoding=''utf-8'') as fd:
+
+      '
+  del_line_no:
+  - - null
+    - '        with codecs.open(os.path.join(FLAGS.output_dir, ''entity_level_predicted_result.txt''))
+      as fd:
+
+      '

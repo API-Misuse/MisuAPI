@@ -1,0 +1,3 @@
+INS @type:comparison@ @[12937,12963]@ sample_weights is not None @TO@ @type:if_stmt@ @[12934,13024]@ if sample_weights:
+                                <text_longer_than_50>
+

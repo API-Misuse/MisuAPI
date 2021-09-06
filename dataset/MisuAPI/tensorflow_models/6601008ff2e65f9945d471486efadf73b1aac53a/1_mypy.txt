@@ -1,0 +1,4 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/6601008ff2e65f9945d471486efadf73b1aac53a/a/neural_programmer/neural_programmer.py:116: error: Missing parentheses in call to 'print'. Did you mean print("dev set accuracy   after ", i, " : ", gc / num_examples)?
+Found 1 error in 1 file (errors prevented further checking)
+
+time cost(in seconds): 0.23581647872924805

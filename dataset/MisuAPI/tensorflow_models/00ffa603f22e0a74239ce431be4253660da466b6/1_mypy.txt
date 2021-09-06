@@ -1,0 +1,4 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/00ffa603f22e0a74239ce431be4253660da466b6/a/neural_gpu/neural_gpu.py:501: error: invalid syntax
+Found 1 error in 1 file (errors prevented further checking)
+
+time cost(in seconds): 0.2995171546936035

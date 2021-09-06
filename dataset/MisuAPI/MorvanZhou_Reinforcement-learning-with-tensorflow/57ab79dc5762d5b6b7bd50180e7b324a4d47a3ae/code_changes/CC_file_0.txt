@@ -1,0 +1,65 @@
+UPD @type:simple_stmt@ @[510,560]@ self.q_table = pd.DataFrame(columns=self.actions) @TO@ @type:simple_stmt@ @[540,608]@ self.q_table = pd.DataFrame(columns=self.actions). <text_longer_than_50>
+---UPD @type:expr_stmt@ @[510,559]@ self.q_table = pd.DataFrame(columns=self.actions) @TO@ @type:expr_stmt@ @[540,607]@ self.q_table = pd.DataFrame(columns=self.actions). <text_longer_than_50>
+------UPD @type:atom_expr@ @[525,559]@ pd.DataFrame(columns=self.actions) @TO@ @type:atom_expr@ @[555,607]@ pd.DataFrame(columns=self.actions).astype('float32 <text_longer_than_50>
+---------INS @type:trailer@ @[589,596]@ .astype @TO@ @type:atom_expr@ @[525,559]@ pd.DataFrame(columns=self.actions)
+---------INS @type:trailer@ @[596,607]@ ('float32') @TO@ @type:atom_expr@ @[525,559]@ pd.DataFrame(columns=self.actions)
+
+
+UPD @type:if_stmt@ @[682,1083]@ if np.random.uniform() < self.epsilon:
+            <text_longer_than_50> @TO@ @type:if_stmt@ @[730,1230]@ if np.random.uniform() < self.epsilon:
+            <text_longer_than_50>
+---UPD @type:suite@ @[720,982]@ # choose best action
+            state_action = se <text_longer_than_50> @TO@ @type:suite@ @[768,1127]@ # choose best action
+
+
+            # state_action  <text_longer_than_50>
+------UPD @type:simple_stmt@ @[766,813]@ state_action = self.q_table.ix[observation, :] @TO@ @type:simple_stmt@ @[877,958]@ state_action = self.q_table.loc[observation, :]    <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[766,812]@ state_action = self.q_table.ix[observation, :] @TO@ @type:expr_stmt@ @[877,924]@ state_action = self.q_table.loc[observation, :]
+------------UPD @type:atom_expr@ @[781,812]@ self.q_table.ix[observation, :] @TO@ @type:atom_expr@ @[892,924]@ self.q_table.loc[observation, :]
+---------------UPD @type:trailer@ @[793,796]@ .ix @TO@ @type:trailer@ @[904,908]@ .loc
+------------------UPD @type:name@ @[794,796]@ ix @TO@ @type:name@ @[905,908]@ loc
+
+
+UPD @type:simple_stmt@ @[1183,1217]@ q_predict = self.q_table.ix[s, a] @TO@ @type:simple_stmt@ @[1331,1366]@ q_predict = self.q_table.loc[s, a]
+---UPD @type:expr_stmt@ @[1183,1216]@ q_predict = self.q_table.ix[s, a] @TO@ @type:expr_stmt@ @[1331,1365]@ q_predict = self.q_table.loc[s, a]
+------UPD @type:atom_expr@ @[1195,1216]@ self.q_table.ix[s, a] @TO@ @type:atom_expr@ @[1343,1365]@ self.q_table.loc[s, a]
+---------UPD @type:trailer@ @[1207,1210]@ .ix @TO@ @type:trailer@ @[1355,1359]@ .loc
+------------UPD @type:name@ @[1208,1210]@ ix @TO@ @type:name@ @[1356,1359]@ loc
+
+
+UPD @type:if_stmt@ @[1225,1410]@ if s_ != 'terminal':
+            q_target = r + se <text_longer_than_50> @TO@ @type:if_stmt@ @[1374,1560]@ if s_ != 'terminal':
+            q_target = r + se <text_longer_than_50>
+---UPD @type:suite@ @[1245,1345]@ q_target = r + self.gamma * self.q_table.ix[s_, :] <text_longer_than_50> @TO@ @type:suite@ @[1394,1495]@ q_target = r + self.gamma * self.q_table.loc[s_, : <text_longer_than_50>
+------UPD @type:simple_stmt@ @[1258,1345]@ q_target = r + self.gamma * self.q_table.ix[s_, :] <text_longer_than_50> @TO@ @type:simple_stmt@ @[1407,1495]@ q_target = r + self.gamma * self.q_table.loc[s_, : <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[1258,1314]@ q_target = r + self.gamma * self.q_table.ix[s_, :] <text_longer_than_50> @TO@ @type:expr_stmt@ @[1407,1464]@ q_target = r + self.gamma * self.q_table.loc[s_, : <text_longer_than_50>
+------------UPD @type:arith_expr@ @[1269,1314]@ r + self.gamma * self.q_table.ix[s_, :].max() @TO@ @type:arith_expr@ @[1418,1464]@ r + self.gamma * self.q_table.loc[s_, :].max()
+---------------UPD @type:term@ @[1273,1314]@ self.gamma * self.q_table.ix[s_, :].max() @TO@ @type:term@ @[1422,1464]@ self.gamma * self.q_table.loc[s_, :].max()
+------------------UPD @type:atom_expr@ @[1286,1314]@ self.q_table.ix[s_, :].max() @TO@ @type:atom_expr@ @[1435,1464]@ self.q_table.loc[s_, :].max()
+---------------------UPD @type:trailer@ @[1298,1301]@ .ix @TO@ @type:trailer@ @[1447,1451]@ .loc
+------------------------UPD @type:name@ @[1299,1301]@ ix @TO@ @type:name@ @[1448,1451]@ loc
+
+
+UPD @type:simple_stmt@ @[1418,1486]@ self.q_table.ix[s, a] += self.lr * (q_target - q_p <text_longer_than_50> @TO@ @type:simple_stmt@ @[1568,1637]@ self.q_table.loc[s, a] += self.lr * (q_target - q_ <text_longer_than_50>
+---UPD @type:expr_stmt@ @[1418,1475]@ self.q_table.ix[s, a] += self.lr * (q_target - q_p <text_longer_than_50> @TO@ @type:expr_stmt@ @[1568,1626]@ self.q_table.loc[s, a] += self.lr * (q_target - q_ <text_longer_than_50>
+------UPD @type:atom_expr@ @[1418,1439]@ self.q_table.ix[s, a] @TO@ @type:atom_expr@ @[1568,1590]@ self.q_table.loc[s, a]
+---------UPD @type:trailer@ @[1430,1433]@ .ix @TO@ @type:trailer@ @[1580,1584]@ .loc
+------------UPD @type:name@ @[1431,1433]@ ix @TO@ @type:name@ @[1581,1584]@ loc
+
+
+UPD @type:simple_stmt@ @[2716,2804]@ a = np.random.choice(self.database.ix[s].dropna(). <text_longer_than_50> @TO@ @type:simple_stmt@ @[2867,2956]@ a = np.random.choice(self.database.loc[s].dropna() <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2716,2772]@ a = np.random.choice(self.database.ix[s].dropna(). <text_longer_than_50> @TO@ @type:expr_stmt@ @[2867,2924]@ a = np.random.choice(self.database.loc[s].dropna() <text_longer_than_50>
+------UPD @type:atom_expr@ @[2720,2772]@ np.random.choice(self.database.ix[s].dropna().inde <text_longer_than_50> @TO@ @type:atom_expr@ @[2871,2924]@ np.random.choice(self.database.loc[s].dropna().ind <text_longer_than_50>
+---------UPD @type:trailer@ @[2736,2772]@ (self.database.ix[s].dropna().index) @TO@ @type:trailer@ @[2887,2924]@ (self.database.loc[s].dropna().index)
+------------UPD @type:atom_expr@ @[2737,2771]@ self.database.ix[s].dropna().index @TO@ @type:atom_expr@ @[2888,2923]@ self.database.loc[s].dropna().index
+---------------UPD @type:trailer@ @[2750,2753]@ .ix @TO@ @type:trailer@ @[2901,2905]@ .loc
+------------------UPD @type:name@ @[2751,2753]@ ix @TO@ @type:name@ @[2902,2905]@ loc
+
+
+UPD @type:simple_stmt@ @[2863,2894]@ r, s_ = self.database.ix[s, a] @TO@ @type:simple_stmt@ @[3015,3047]@ r, s_ = self.database.loc[s, a]
+---UPD @type:expr_stmt@ @[2863,2893]@ r, s_ = self.database.ix[s, a] @TO@ @type:expr_stmt@ @[3015,3046]@ r, s_ = self.database.loc[s, a]
+------UPD @type:atom_expr@ @[2871,2893]@ self.database.ix[s, a] @TO@ @type:atom_expr@ @[3023,3046]@ self.database.loc[s, a]
+---------UPD @type:trailer@ @[2884,2887]@ .ix @TO@ @type:trailer@ @[3036,3040]@ .loc
+------------UPD @type:name@ @[2885,2887]@ ix @TO@ @type:name@ @[3037,3040]@ loc
+
+

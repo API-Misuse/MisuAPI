@@ -1,0 +1,12 @@
+INS @type:try_stmt@ @[4957,5315]@ try:
+            for k in itertools.count():
+      <text_longer_than_50> @TO@ @type:suite@ @[4948,5315]@ try:
+            for k in itertools.count():
+      <text_longer_than_50>
+
+INS @type:try_stmt@ @[4957,5315]@ try:
+            for k in itertools.count():
+      <text_longer_than_50> @TO@ @type:suite@ @[4948,5315]@ try:
+            for k in itertools.count():
+      <text_longer_than_50>
+

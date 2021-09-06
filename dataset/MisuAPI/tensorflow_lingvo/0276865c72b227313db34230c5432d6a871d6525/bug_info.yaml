@@ -1,0 +1,35 @@
+issues_cnt: 0
+sha: 0276865c72b227313db34230c5432d6a871d6525
+message: 'Adds tf.io.gfile.makedirs(self._program_dir) to avoid write failures for
+  model_analysis.txt.
+
+
+  PiperOrigin-RevId: 350977378'
+commit_log: "commit 0276865c72b227313db34230c5432d6a871d6525\nAuthor: Ruoming Pang\
+  \ <rpang@google.com>\nDate:   Sat Jan 9 21:17:39 2021 -0800\n\n    Adds tf.io.gfile.makedirs(self._program_dir)\
+  \ to avoid write failures for model_analysis.txt.\n    \n    PiperOrigin-RevId:\
+  \ 350977378"
+contained_keywords:
+- failures
+commit_time: 2021-01-09 21:17:39 -0800
+commit_author: Ruoming Pang
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 93
+    - '    tf.io.gfile.makedirs(self._program_dir)
+
+      '
+  added: 1
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: lingvo/core/program.py
+  removed: 0
+  source_file: a/lingvo/core/program.py
+  target_file: b/lingvo/core/program.py

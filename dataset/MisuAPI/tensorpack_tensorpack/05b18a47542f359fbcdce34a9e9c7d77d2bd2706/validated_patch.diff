@@ -1,0 +1,32 @@
+commit 05b18a47542f359fbcdce34a9e9c7d77d2bd2706
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Wed Dec 21 01:43:17 2016 -0500
+
+    catch error in prefetch
+
+diff --git a/tensorpack/dataflow/prefetch.py b/tensorpack/dataflow/prefetch.py
+index 6a6fdd1e..d90d41b2 100644
+--- a/tensorpack/dataflow/prefetch.py
++++ b/tensorpack/dataflow/prefetch.py
+@@ -149,11 +149,16 @@ class PrefetchDataZMQ(ProxyDataFlow):
+         start_proc_mask_signal(self.procs)
+ 
+     def get_data(self):
+-        for k in itertools.count():
+-            if self._size > 0 and k >= self._size:
+-                break
+-            dp = loads(self.socket.recv(copy=False).bytes)
+-            yield dp
++        try:
++            for k in itertools.count():
++                if self._size > 0 and k >= self._size:
++                    break
++                dp = loads(self.socket.recv(copy=False).bytes)
++                yield dp
++        except zmq.ContextTerminated:
++            logger.info("ContextTerminated in Master Prefetch Process")
++        except:
++            raise
+ 
+     def reset_state(self):
+         # do nothing. all ds are reset once and only once in spawned processes

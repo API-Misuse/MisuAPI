@@ -1,0 +1,8 @@
+UPD @type:simple_stmt@ @[3018,3044]@ img = img.astype('uint8') @TO@ @type:simple_stmt@ @[3018,3061]@ img = np.clip(img, 0, 255).astype('uint8')
+---UPD @type:expr_stmt@ @[3018,3043]@ img = img.astype('uint8') @TO@ @type:expr_stmt@ @[3018,3060]@ img = np.clip(img, 0, 255).astype('uint8')
+------UPD @type:atom_expr@ @[3024,3043]@ img.astype('uint8') @TO@ @type:atom_expr@ @[3024,3060]@ np.clip(img, 0, 255).astype('uint8')
+---------UPD @type:name@ @[3024,3027]@ img @TO@ @type:name@ @[3024,3026]@ np
+---------INS @type:trailer@ @[3026,3031]@ .clip @TO@ @type:atom_expr@ @[3024,3043]@ img.astype('uint8')
+---------INS @type:trailer@ @[3031,3044]@ (img, 0, 255) @TO@ @type:atom_expr@ @[3024,3043]@ img.astype('uint8')
+
+

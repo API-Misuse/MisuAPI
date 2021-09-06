@@ -1,0 +1,31 @@
+INS @type:simple_stmt@ @[596,649]@ """Tests for tfx.dsl.io.plugins.tensorflow_gfile." <text_longer_than_50> @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[650,689]@ from __future__ import absolute_import @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[689,721]@ from __future__ import division @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[721,759]@ from __future__ import print_function @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[760,770]@ import os @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[770,786]@ import tempfile @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[787,811]@ import tensorflow as tf @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[812,860]@ from tfx.dsl.io.filesystem import NotFoundError @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:simple_stmt@ @[860,929]@ from tfx.dsl.io.plugins.tensorflow_gfile import Te <text_longer_than_50> @TO@ @type:file_input@ @[0,0]@
+
+
+INS @type:if_stmt@ @[2317,2361]@ if __name__ == '__main__':
+  tf.test.main() @TO@ @type:file_input@ @[0,0]@
+
+

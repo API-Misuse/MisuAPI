@@ -1,0 +1,10 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/c506e45b078d86f8bf4743bbdc3bf59351904b8b/a/scripts/convert_gpt.py:3: error: Skipping analyzing "numpy": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/c506e45b078d86f8bf4743bbdc3bf59351904b8b/a/scripts/convert_gpt.py:3: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/c506e45b078d86f8bf4743bbdc3bf59351904b8b/a/scripts/convert_gpt.py:5: error: Cannot find implementation or library stub for module named "torch"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/c506e45b078d86f8bf4743bbdc3bf59351904b8b/a/scripts/convert_gpt.py:6: error: Cannot find implementation or library stub for module named "torch.nn"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/c506e45b078d86f8bf4743bbdc3bf59351904b8b/a/scripts/convert_gpt.py:7: error: Cannot find implementation or library stub for module named "transformers"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/c506e45b078d86f8bf4743bbdc3bf59351904b8b/a/scripts/convert_gpt.py:9: error: Cannot find implementation or library stub for module named "transformers.utils"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/EleutherAI_gpt-neo/c506e45b078d86f8bf4743bbdc3bf59351904b8b/a/scripts/convert_gpt.py:26: error: Skipping analyzing "tensorflow": found module but no type hints or library stubs
+Found 6 errors in 1 file (checked 1 source file)
+
+time cost(in seconds): 1.9003167152404785

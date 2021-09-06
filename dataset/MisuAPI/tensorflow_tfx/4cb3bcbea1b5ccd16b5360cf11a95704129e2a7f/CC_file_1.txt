@@ -1,0 +1,56 @@
+INS @type:with_stmt@ @[4583,4728]@ with self.assertRaises(ValueError):
+      executor <text_longer_than_50> @TO@ @type:suite@ @[4475,4728]@ executor = ai_platform_tuner_executor.Executor()
+  <text_longer_than_50>
+---INS @type:suite@ @[4618,4728]@ executor.Do(self._inputs, self._outputs,
+          <text_longer_than_50> @TO@ @type:with_stmt@ @[4583,4728]@ with self.assertRaises(ValueError):
+      executor <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[2493,2766]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50> @TO@ @type:simple_stmt@ @[4625,4728]@ executor.Do(self._inputs, self._outputs,
+          <text_longer_than_50>
+---UPD @type:atom_expr@ @[2493,2765]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50> @TO@ @type:atom_expr@ @[4625,4727]@ executor.Do(self._inputs, self._outputs,
+          <text_longer_than_50>
+------UPD @type:name@ @[2493,2497]@ self @TO@ @type:name@ @[4625,4633]@ executor
+------UPD @type:trailer@ @[2497,2509]@ .mock_runner @TO@ @type:trailer@ @[4633,4636]@ .Do
+---------UPD @type:name@ @[2498,2509]@ mock_runner @TO@ @type:name@ @[4634,4636]@ Do
+------UPD @type:trailer@ @[2547,2765]@ (
+        self._inputs, self._outputs, self._seria <text_longer_than_50> @TO@ @type:trailer@ @[4636,4727]@ (self._inputs, self._outputs,
+                  se <text_longer_than_50>
+---------UPD @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50> @TO@ @type:arglist@ @[4637,4726]@ self._inputs, self._outputs,
+                  sel <text_longer_than_50>
+------------DEL @type:operator@ @[2628,2629]@ , @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:atom_expr@ @[2638,2663]@ self._executor_class_path @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:operator@ @[2663,2664]@ , @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:atom@ @[2665,2754]@ {
+            'project': self._project_id,
+        <text_longer_than_50> @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:operator@ @[2754,2755]@ , @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:atom_expr@ @[2756,2764]@ mock.ANY @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------DEL @type:trailer@ @[2509,2528]@ .start_aip_training @FROM@ @type:atom_expr@ @[2493,2765]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50>
+------DEL @type:trailer@ @[2528,2547]@ .assert_called_with @FROM@ @type:atom_expr@ @[2493,2765]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[2493,2766]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50> @TO@ @type:suite@ @[4618,4728]@ executor.Do(self._inputs, self._outputs,
+          <text_longer_than_50>
+---UPD @type:atom_expr@ @[2493,2765]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50> @TO@ @type:atom_expr@ @[4625,4727]@ executor.Do(self._inputs, self._outputs,
+          <text_longer_than_50>
+------UPD @type:name@ @[2493,2497]@ self @TO@ @type:name@ @[4625,4633]@ executor
+------UPD @type:trailer@ @[2497,2509]@ .mock_runner @TO@ @type:trailer@ @[4633,4636]@ .Do
+---------UPD @type:name@ @[2498,2509]@ mock_runner @TO@ @type:name@ @[4634,4636]@ Do
+------UPD @type:trailer@ @[2547,2765]@ (
+        self._inputs, self._outputs, self._seria <text_longer_than_50> @TO@ @type:trailer@ @[4636,4727]@ (self._inputs, self._outputs,
+                  se <text_longer_than_50>
+---------UPD @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50> @TO@ @type:arglist@ @[4637,4726]@ self._inputs, self._outputs,
+                  sel <text_longer_than_50>
+------------DEL @type:operator@ @[2628,2629]@ , @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:atom_expr@ @[2638,2663]@ self._executor_class_path @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:operator@ @[2663,2664]@ , @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:atom@ @[2665,2754]@ {
+            'project': self._project_id,
+        <text_longer_than_50> @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:operator@ @[2754,2755]@ , @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------------DEL @type:atom_expr@ @[2756,2764]@ mock.ANY @FROM@ @type:arglist@ @[2557,2764]@ self._inputs, self._outputs, self._serialize_custo <text_longer_than_50>
+------DEL @type:trailer@ @[2509,2528]@ .start_aip_training @FROM@ @type:atom_expr@ @[2493,2765]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50>
+------DEL @type:trailer@ @[2528,2547]@ .assert_called_with @FROM@ @type:atom_expr@ @[2493,2765]@ self.mock_runner.start_aip_training.assert_called_ <text_longer_than_50>
+
+

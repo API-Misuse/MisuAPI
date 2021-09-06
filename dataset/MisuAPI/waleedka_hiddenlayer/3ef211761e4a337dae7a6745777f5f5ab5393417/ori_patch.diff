@@ -1,0 +1,19 @@
+commit 3ef211761e4a337dae7a6745777f5f5ab5393417
+Author: Phil Ferriere <pferriere@hotmail.com>
+Date:   Tue Nov 6 10:00:13 2018 -0800
+
+    Fix spelling "doted" -> "dotted"
+
+diff --git a/hiddenlayer/graph.py b/hiddenlayer/graph.py
+index ffe7d48..db61a8a 100644
+--- a/hiddenlayer/graph.py
++++ b/hiddenlayer/graph.py
+@@ -321,7 +321,7 @@ class Graph():
+                  fontsize=self.theme["font_size"],
+                  fontcolor=self.theme["font_color"],
+                  fontname=self.theme["font_name"])
+-        dot.attr("edge", style="doted", 
++        dot.attr("edge", style="dotted", 
+                  color=self.theme["outline_color"],
+                  fontsize=self.theme["font_size"],
+                  fontcolor=self.theme["font_color"],

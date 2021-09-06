@@ -1,0 +1,14 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/a380346e5f81bd7c3b441bfb5ef13b82eca1871f/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/a380346e5f81bd7c3b441bfb5ef13b82eca1871f/a/tfx/examples/cifar10/cifar10_utils.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/a380346e5f81bd7c3b441bfb5ef13b82eca1871f/a/tfx/examples/cifar10/cifar10_utils.py:26:8 - error: Import "tensorflow_model_analysis" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/a380346e5f81bd7c3b441bfb5ef13b82eca1871f/a/tfx/examples/cifar10/cifar10_utils.py:27:8 - error: Import "tensorflow_transform" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/a380346e5f81bd7c3b441bfb5ef13b82eca1871f/a/tfx/examples/cifar10/cifar10_utils.py:28:6 - error: Import "tensorflow_transform.tf_metadata" could not be resolved (reportMissingImports)
+3 errors, 0 warnings, 0 infos 
+Completed in 1.048sec
+
+time cost(in seconds): 1.2923884391784668

@@ -1,0 +1,147 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/huggingface/transformers/pull/4333
+  title: Clarification of model upload instructions
+  body: "## What changed\r\n\r\nIn the `README.md`, I specified two details in the\
+    \ model upload part:\r\n- added `folder` to the `./path/to/pretrained_model/`\
+    \ just to make sure it is straightforward\r\n- added a comment line specifying\
+    \ that the configuration file should be entitled `config.json` for the model to\
+    \ appear on the website. Linked with [this issue](https://github.com/huggingface/transformers/issues/4322)\
+    \ I raised. \r\n\r\nThis [website page](https://huggingface.co/transformers/model_sharing.html)\
+    \ should also be modified accordingly but I wasn't sure where to include the changes.\
+    \ \r\n\r\n## Additional potential improvements\r\n\r\n- One extra thing I thought\
+    \ of was to specify what kind of model files is accepted when mentioning the folder\
+    \ but I didn't have information on that. My upload with PyTorch weights went smoothly.\
+    \ What about TF weights? Does uploading only the three TF model files work? Is\
+    \ that the case for TF1 and TF2 weights?\r\n- One minor improvement could also\
+    \ be to mention earlier that the model name on hugging face will be the same as\
+    \ the name of the uploaded folder. In my case, I read this after uploading the\
+    \ folder and I had to delete the files on S3 and re-upload with a new folder name\
+    \ that suited me better.\r\n\r\n\r\n"
+issue_1:
+  html_url: https://github.com/huggingface/transformers/pull/4410
+  title: Remove pytorch codes in Class TFXLNetMainLayer
+  body: This PR removes pytorch codes in Class TFXLNetMainLayer.
+sha: 1d690289898bb4e7f69034333483c687d601015d
+message: fix (#4410)
+commit_log: "commit 1d690289898bb4e7f69034333483c687d601015d\nAuthor: ZhuBaohe <ehoabuhz@gmail.com>\n\
+  Date:   Tue May 26 20:51:28 2020 +0800\n\n    fix (#4410)"
+contained_keywords:
+- fix
+commit_time: 2020-05-26 20:51:28 +0800
+commit_author: ZhuBaohe
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 589
+    - '            if mlen > 0:
+
+      '
+  - - 590
+    - '                mems_mask = tf.zeros([shape_list(data_mask)[0], mlen, bsz],
+      dtype=dtype_float)
+
+      '
+  - - 591
+    - '                data_mask = tf.concat([mems_mask, data_mask], axis=1)
+
+      '
+  - - 602
+    - '            if mlen > 0:
+
+      '
+  - - 603
+    - '                non_tgt_mask = tf.concat([tf.zeros([qlen, mlen], dtype=dtype_float),
+      non_tgt_mask], axis=-1)
+
+      '
+  - - 626
+    - '            if mlen > 0:
+
+      '
+  - - 627
+    - '                mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32)
+
+      '
+  - - 628
+    - '                cat_ids = tf.concat([mem_pad, token_type_ids], 0)
+
+      '
+  - - 629
+    - '            else:
+
+      '
+  - - 630
+    - '                cat_ids = token_type_ids
+
+      '
+  - - 648
+    - '            raise NotImplementedError
+
+      '
+  added: 11
+  del_line_no:
+  - - null
+    - '            mems_mask = tf.zeros([shape_list(data_mask)[0], mlen, bsz], dtype=dtype_float)
+
+      '
+  - - null
+    - '            data_mask = tf.concat([mems_mask, data_mask], axis=1)
+
+      '
+  - - null
+    - '            non_tgt_mask = tf.concat([tf.zeros([qlen, mlen], dtype=dtype_float),
+      non_tgt_mask], axis=-1)
+
+      '
+  - - null
+    - '            mem_pad = tf.zeros([mlen, bsz], dtype=tf.int32)
+
+      '
+  - - null
+    - '            cat_ids = tf.concat([mem_pad, token_type_ids], 0)
+
+      '
+  - - null
+    - '            if head_mask.dim() == 1:
+
+      '
+  - - null
+    - '                head_mask = head_mask.unsqueeze(0).unsqueeze(0).unsqueeze(0).unsqueeze(0)
+
+      '
+  - - null
+    - '                head_mask = head_mask.expand(self.n_layer, -1, -1, -1, -1)
+
+      '
+  - - null
+    - '            elif head_mask.dim() == 2:
+
+      '
+  - - null
+    - '                head_mask = head_mask.unsqueeze(1).unsqueeze(1).unsqueeze(1)
+
+      '
+  - - null
+    - '            head_mask = head_mask.to(
+
+      '
+  - - null
+    - '                dtype=next(self.parameters()).dtype
+
+      '
+  - - null
+    - '            )  # switch to fload if need + fp16 compatibility
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/transformers/modeling_tf_xlnet.py
+  removed: 13
+  source_file: a/src/transformers/modeling_tf_xlnet.py
+  target_file: b/src/transformers/modeling_tf_xlnet.py

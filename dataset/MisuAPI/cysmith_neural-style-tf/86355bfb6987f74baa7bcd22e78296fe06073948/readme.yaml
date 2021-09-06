@@ -1,0 +1,151 @@
+sha: 86355bfb6987f74baa7bcd22e78296fe06073948
+message: Added error checking for input images as per request.
+commit_log: "commit 86355bfb6987f74baa7bcd22e78296fe06073948\nAuthor: cam <cameron@ideum.com>\n\
+  Date:   Mon Oct 24 22:03:11 2016 -0600\n\n    Added error checking for input images\
+  \ as per request."
+contained_keywords:
+- error
+commit_time: 2016-10-24 22:03:11 -0600
+commit_author: cam
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: neural_style.py
+  source_file: a/neural_style.py
+  target_file: b/neural_style.py
+  added: 22
+  removed: 10
+  add_line_no:
+  - - 6
+    - 'import errno
+
+      '
+  - - 490
+    - '  img = cv2.imread(path, cv2.IMREAD_COLOR)
+
+      '
+  - - 491
+    - '  check_image(img, path)
+
+      '
+  - - 492
+    - '  img = img.astype(np.float32)
+
+      '
+  - - 546
+    - '  return [float(i) / sum(weights) for i in weights]
+
+      '
+  - - 552
+    - 'def check_image(img, path):
+
+      '
+  - - 553
+    - '  if img is None:
+
+      '
+  - - 554
+    - '    raise OSError(errno.ENOENT, "No such file", path)
+
+      '
+  - - 555
+    - '
+
+      '
+  - - 634
+    - '      loss, method=''L-BFGS-B'',
+
+      '
+  - - 715
+    - '  img = cv2.imread(path, cv2.IMREAD_COLOR)
+
+      '
+  - - 716
+    - '  check_image(img, path)
+
+      '
+  - - 717
+    - '  img = img.astype(np.float32)
+
+      '
+  - - 736
+    - '    img = cv2.imread(path, cv2.IMREAD_COLOR)
+
+      '
+  - - 737
+    - '    check_image(img, path)
+
+      '
+  - - 738
+    - '    img = img.astype(np.float32)
+
+      '
+  - - 753
+    - '  check_image(img, path)
+
+      '
+  - - 762
+    - '  fn = args.content_frame_frmt.format(str(prev_frame).zfill(4))
+
+      '
+  - - 763
+    - '  path = os.path.join(args.video_output_dir, fn)
+
+      '
+  - - 764
+    - '  img = cv2.imread(path, cv2.IMREAD_COLOR)
+
+      '
+  - - 765
+    - '  check_image(img, path)
+
+      '
+  - - 868
+    - '  main()
+
+      '
+  del_line_no:
+  - - null
+    - '  img = cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float32)
+
+      '
+  - - null
+    - '  return [float(i)/sum(weights) for i in weights]
+
+      '
+  - - null
+    - "      loss, \n"
+  - - null
+    - '      method=''L-BFGS-B'',
+
+      '
+  - - null
+    - '  img = cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float32)
+
+      '
+  - - null
+    - '    img = cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float32)
+
+      '
+  - - null
+    - '  prev_frame_fn = args.content_frame_frmt.format(str(prev_frame).zfill(4))
+
+      '
+  - - null
+    - '  prev_frame_path = os.path.join(args.video_output_dir, prev_frame_fn)
+
+      '
+  - - null
+    - '  img = cv2.imread(prev_frame_path, cv2.IMREAD_COLOR)
+
+      '
+  - - null
+    - '  main()
+
+      '

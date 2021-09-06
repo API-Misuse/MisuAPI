@@ -1,0 +1,19 @@
+commit 336183864c6c704d7ff627c7cfa8356a0547bb00
+Author: Waleed Abdulla <waleed.abdulla@gmail.com>
+Date:   Mon Nov 13 05:39:11 2017 -0800
+
+    Better error message when bbox is missing.
+
+diff --git a/utils.py b/utils.py
+index 95498af..4b66bc5 100644
+--- a/utils.py
++++ b/utils.py
+@@ -433,6 +433,8 @@ def minimize_mask(bbox, mask, mini_shape):
+         m = mask[:, :, i]
+         y1, x1, y2, x2 = bbox[i][:4]
+         m = m[y1:y2, x1:x2]
++        if m.size == 0:
++            raise Exception("Invalid bounding box with area of zero")
+         m = scipy.misc.imresize(m.astype(float), mini_shape, interp='bilinear')
+         mini_mask[:, :, i] = np.where(m >= 128, 1, 0)
+     return mini_mask

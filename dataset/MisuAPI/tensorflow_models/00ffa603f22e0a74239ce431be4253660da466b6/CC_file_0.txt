@@ -1,0 +1,28 @@
+UPD @type:with_stmt@ @[9219,10992]@ with tf.variable_scope("lstm", initializer=self.in <text_longer_than_50> @TO@ @type:with_stmt@ @[9219,10992]@ with tf.variable_scope("lstm", initializer=self.in <text_longer_than_50>
+---UPD @type:suite@ @[9294,10992]@ # Feed the image embeddings to set the initial LST <text_longer_than_50> @TO@ @type:suite@ @[9294,10992]@ # Feed the image embeddings to set the initial LST <text_longer_than_50>
+------UPD @type:if_stmt@ @[9638,10992]@ if self.mode == "inference":
+        # In inferenc <text_longer_than_50> @TO@ @type:if_stmt@ @[9638,10992]@ if self.mode == "inference":
+        # In inferenc <text_longer_than_50>
+---------UPD @type:suite@ @[9666,10449]@ # In inference mode, use concatenated states for c <text_longer_than_50> @TO@ @type:suite@ @[9666,10449]@ # In inference mode, use concatenated states for c <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[9775,9837]@ tf.concat(axis=initial_state, values=1, name="init <text_longer_than_50> @TO@ @type:simple_stmt@ @[9775,9837]@ tf.concat(axis=1, values=initial_state, name="init <text_longer_than_50>
+---------------UPD @type:atom_expr@ @[9775,9836]@ tf.concat(axis=initial_state, values=1, name="init <text_longer_than_50> @TO@ @type:atom_expr@ @[9775,9836]@ tf.concat(axis=1, values=initial_state, name="init <text_longer_than_50>
+------------------UPD @type:trailer@ @[9784,9836]@ (axis=initial_state, values=1, name="initial_state <text_longer_than_50> @TO@ @type:trailer@ @[9784,9836]@ (axis=1, values=initial_state, name="initial_state <text_longer_than_50>
+---------------------UPD @type:arglist@ @[9785,9835]@ axis=initial_state, values=1, name="initial_state" @TO@ @type:arglist@ @[9785,9835]@ axis=1, values=initial_state, name="initial_state"
+------------------------UPD @type:argument@ @[9785,9803]@ axis=initial_state @TO@ @type:argument@ @[9785,9791]@ axis=1
+---------------------------INS @type:number@ @[9790,9791]@ 1 @TO@ @type:argument@ @[9785,9803]@ axis=initial_state
+---------------------------DEL @type:name@ @[9790,9803]@ initial_state @FROM@ @type:argument@ @[9785,9803]@ axis=initial_state
+------------------------UPD @type:argument@ @[9805,9813]@ values=1 @TO@ @type:argument@ @[9793,9813]@ values=initial_state
+---------------------------INS @type:name@ @[9800,9813]@ initial_state @TO@ @type:argument@ @[9805,9813]@ values=1
+---------------------------DEL @type:number@ @[9812,9813]@ 1 @FROM@ @type:argument@ @[9805,9813]@ values=1
+------------UPD @type:simple_stmt@ @[10397,10449]@ tf.concat(axis=state_tuple, values=1, name="state" <text_longer_than_50> @TO@ @type:simple_stmt@ @[10397,10449]@ tf.concat(axis=1, values=state_tuple, name="state" <text_longer_than_50>
+---------------UPD @type:atom_expr@ @[10397,10448]@ tf.concat(axis=state_tuple, values=1, name="state" <text_longer_than_50> @TO@ @type:atom_expr@ @[10397,10448]@ tf.concat(axis=1, values=state_tuple, name="state" <text_longer_than_50>
+------------------UPD @type:trailer@ @[10406,10448]@ (axis=state_tuple, values=1, name="state") @TO@ @type:trailer@ @[10406,10448]@ (axis=1, values=state_tuple, name="state")
+---------------------UPD @type:arglist@ @[10407,10447]@ axis=state_tuple, values=1, name="state" @TO@ @type:arglist@ @[10407,10447]@ axis=1, values=state_tuple, name="state"
+------------------------UPD @type:argument@ @[10407,10423]@ axis=state_tuple @TO@ @type:argument@ @[10407,10413]@ axis=1
+---------------------------INS @type:number@ @[10412,10413]@ 1 @TO@ @type:argument@ @[10407,10423]@ axis=state_tuple
+---------------------------DEL @type:name@ @[10412,10423]@ state_tuple @FROM@ @type:argument@ @[10407,10423]@ axis=state_tuple
+------------------------UPD @type:argument@ @[10425,10433]@ values=1 @TO@ @type:argument@ @[10415,10433]@ values=state_tuple
+---------------------------INS @type:name@ @[10422,10433]@ state_tuple @TO@ @type:argument@ @[10425,10433]@ values=1
+---------------------------DEL @type:number@ @[10432,10433]@ 1 @FROM@ @type:argument@ @[10425,10433]@ values=1
+
+

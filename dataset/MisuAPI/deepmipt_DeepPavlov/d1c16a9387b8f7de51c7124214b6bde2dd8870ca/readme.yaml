@@ -1,0 +1,36 @@
+sha: d1c16a9387b8f7de51c7124214b6bde2dd8870ca
+message: 'fix: Highway network layer fixed'
+commit_log: "commit d1c16a9387b8f7de51c7124214b6bde2dd8870ca\nAuthor: Mikhail Arkhipov\
+  \ <akrhipov@yahoo.com>\nDate:   Thu Jan 11 16:15:36 2018 +0300\n\n    fix: Highway\
+  \ network layer fixed"
+contained_keywords:
+- fix
+- fixed
+commit_time: 2018-01-11 16:15:36 +0300
+commit_author: Mikhail Arkhipov
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: deeppavlov/models/ner/layers.py
+  source_file: a/deeppavlov/models/ner/layers.py
+  target_file: b/deeppavlov/models/ner/layers.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 166
+    - '        sigmoid_gate = tf.layers.dense(input_units, 1, activation=tf.sigmoid,
+      kernel_initializer=xavier_initializer())
+
+      '
+  del_line_no:
+  - - null
+    - '        sigmoid_gate = tf.layers.dense(input_units, activation=tf.sigmoid,
+      kernel_initializer=xavier_initializer())
+
+      '

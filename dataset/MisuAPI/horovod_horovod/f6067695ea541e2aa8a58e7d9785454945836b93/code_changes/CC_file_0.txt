@@ -1,0 +1,88 @@
+INS @type:simple_stmt@ @[16,26]@ import os @TO@ @type:file_input@ @[0,7646]@ import argparse
+import torch.nn as nn
+import torch <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[26,56]@ from filelock import FileLock @TO@ @type:file_input@ @[0,7646]@ import argparse
+import torch.nn as nn
+import torch <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[2254,2303]@ data_dir = args.data_dir or f'data-{hvd.rank()}' @TO@ @type:simple_stmt@ @[2295,2332]@ data_dir = args.data_dir or './data'
+---UPD @type:expr_stmt@ @[2254,2302]@ data_dir = args.data_dir or f'data-{hvd.rank()}' @TO@ @type:expr_stmt@ @[2295,2331]@ data_dir = args.data_dir or './data'
+------UPD @type:or_test@ @[2265,2302]@ args.data_dir or f'data-{hvd.rank()}' @TO@ @type:or_test@ @[2306,2331]@ args.data_dir or './data'
+---------INS @type:string@ @[2323,2331]@ './data' @TO@ @type:or_test@ @[2265,2302]@ args.data_dir or f'data-{hvd.rank()}'
+---------DEL @type:fstring@ @[2282,2302]@ f'data-{hvd.rank()}' @FROM@ @type:or_test@ @[2265,2302]@ args.data_dir or f'data-{hvd.rank()}'
+
+
+INS @type:with_stmt@ @[2332,2669]@ with FileLock(os.path.expanduser("~/.horovod_lock" <text_longer_than_50> @TO@ @type:file_input@ @[0,7646]@ import argparse
+import torch.nn as nn
+import torch <text_longer_than_50>
+---INS @type:suite@ @[2385,2669]@ train_dataset = \
+        datasets.MNIST(data_dir, <text_longer_than_50> @TO@ @type:with_stmt@ @[2332,2669]@ with FileLock(os.path.expanduser("~/.horovod_lock" <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[2303,2562]@ train_dataset = \
+    datasets.MNIST(data_dir, tra <text_longer_than_50> @TO@ @type:simple_stmt@ @[2390,2669]@ train_dataset = \
+        datasets.MNIST(data_dir, <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2303,2561]@ train_dataset = \
+    datasets.MNIST(data_dir, tra <text_longer_than_50> @TO@ @type:expr_stmt@ @[2390,2668]@ train_dataset = \
+        datasets.MNIST(data_dir, <text_longer_than_50>
+------UPD @type:atom_expr@ @[2325,2561]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50> @TO@ @type:atom_expr@ @[2416,2668]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50>
+---------UPD @type:trailer@ @[2339,2561]@ (data_dir, train=True, download=True,
+             <text_longer_than_50> @TO@ @type:trailer@ @[2430,2668]@ (data_dir, train=True, download=True,
+             <text_longer_than_50>
+------------UPD @type:arglist@ @[2340,2560]@ data_dir, train=True, download=True,
+              <text_longer_than_50> @TO@ @type:arglist@ @[2431,2667]@ data_dir, train=True, download=True,
+              <text_longer_than_50>
+---------------UPD @type:argument@ @[2396,2560]@ transform=transforms.Compose([
+                    <text_longer_than_50> @TO@ @type:argument@ @[2491,2667]@ transform=transforms.Compose([
+                    <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[2406,2560]@ transforms.Compose([
+                       transf <text_longer_than_50> @TO@ @type:atom_expr@ @[2501,2667]@ transforms.Compose([
+                           tr <text_longer_than_50>
+---------------------UPD @type:trailer@ @[2424,2560]@ ([
+                       transforms.ToTensor(),
+  <text_longer_than_50> @TO@ @type:trailer@ @[2519,2667]@ ([
+                           transforms.ToTensor( <text_longer_than_50>
+------------------------UPD @type:atom@ @[2425,2559]@ [
+                       transforms.ToTensor(),
+   <text_longer_than_50> @TO@ @type:atom@ @[2520,2666]@ [
+                           transforms.ToTensor() <text_longer_than_50>
+---------------------------UPD @type:testlist_comp@ @[2450,2538]@ transforms.ToTensor(),
+                       tran <text_longer_than_50> @TO@ @type:testlist_comp@ @[2549,2641]@ transforms.ToTensor(),
+                            <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[2303,2562]@ train_dataset = \
+    datasets.MNIST(data_dir, tra <text_longer_than_50> @TO@ @type:suite@ @[2385,2669]@ train_dataset = \
+        datasets.MNIST(data_dir, <text_longer_than_50>
+---UPD @type:expr_stmt@ @[2303,2561]@ train_dataset = \
+    datasets.MNIST(data_dir, tra <text_longer_than_50> @TO@ @type:expr_stmt@ @[2390,2668]@ train_dataset = \
+        datasets.MNIST(data_dir, <text_longer_than_50>
+------UPD @type:atom_expr@ @[2325,2561]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50> @TO@ @type:atom_expr@ @[2416,2668]@ datasets.MNIST(data_dir, train=True, download=True <text_longer_than_50>
+---------UPD @type:trailer@ @[2339,2561]@ (data_dir, train=True, download=True,
+             <text_longer_than_50> @TO@ @type:trailer@ @[2430,2668]@ (data_dir, train=True, download=True,
+             <text_longer_than_50>
+------------UPD @type:arglist@ @[2340,2560]@ data_dir, train=True, download=True,
+              <text_longer_than_50> @TO@ @type:arglist@ @[2431,2667]@ data_dir, train=True, download=True,
+              <text_longer_than_50>
+---------------UPD @type:argument@ @[2396,2560]@ transform=transforms.Compose([
+                    <text_longer_than_50> @TO@ @type:argument@ @[2491,2667]@ transform=transforms.Compose([
+                    <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[2406,2560]@ transforms.Compose([
+                       transf <text_longer_than_50> @TO@ @type:atom_expr@ @[2501,2667]@ transforms.Compose([
+                           tr <text_longer_than_50>
+---------------------UPD @type:trailer@ @[2424,2560]@ ([
+                       transforms.ToTensor(),
+  <text_longer_than_50> @TO@ @type:trailer@ @[2519,2667]@ ([
+                           transforms.ToTensor( <text_longer_than_50>
+------------------------UPD @type:atom@ @[2425,2559]@ [
+                       transforms.ToTensor(),
+   <text_longer_than_50> @TO@ @type:atom@ @[2520,2666]@ [
+                           transforms.ToTensor() <text_longer_than_50>
+---------------------------UPD @type:testlist_comp@ @[2450,2538]@ transforms.ToTensor(),
+                       tran <text_longer_than_50> @TO@ @type:testlist_comp@ @[2549,2641]@ transforms.ToTensor(),
+                            <text_longer_than_50>
+
+

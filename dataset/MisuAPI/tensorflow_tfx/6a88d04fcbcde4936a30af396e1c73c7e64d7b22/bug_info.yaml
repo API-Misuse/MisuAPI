@@ -1,0 +1,387 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/2612
+  title: Fixed no attribute 'ListFields' error.
+  body: 'Fixed no attribute ''ListFields'' error.
+
+    '
+sha: 6a88d04fcbcde4936a30af396e1c73c7e64d7b22
+message: 'Fixed no attribute ''ListFields'' error.
+
+
+  PiperOrigin-RevId: 335901027'
+commit_log: "commit 6a88d04fcbcde4936a30af396e1c73c7e64d7b22\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Wed Oct 7 10:37:27 2020 -0700\n\n    Fixed no attribute 'ListFields' error.\n\
+  \    \n    PiperOrigin-RevId: 335901027"
+contained_keywords:
+- error
+- fixed
+commit_time: 2020-10-07 10:37:27 -0700
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 4
+patched_file_0:
+  add_line_no:
+  - - 128
+    - '  if not hasattr(msg, ''ListFields''):
+
+      '
+  - - 129
+    - '    return
+
+      '
+  - - 130
+    - '
+
+      '
+  - - 156
+    - '  for field, sub_message in msg.ListFields():
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - '  fields = msg.ListFields()
+
+      '
+  - - null
+    - '  for field, sub_message in fields:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/runtime_parameter_utils.py
+  removed: 2
+  source_file: a/tfx/orchestration/portable/runtime_parameter_utils.py
+  target_file: b/tfx/orchestration/portable/runtime_parameter_utils.py
+patched_file_1:
+  add_line_no:
+  - - 44
+    - '    outputs {
+
+      '
+  - - 45
+    - '      outputs {
+
+      '
+  - - 46
+    - '        key: "examples"
+
+      '
+  - - 47
+    - '        value {
+
+      '
+  - - 48
+    - '          artifact_spec {
+
+      '
+  - - 49
+    - '            type {
+
+      '
+  - - 50
+    - '              name: "Examples"
+
+      '
+  - - 51
+    - '              properties {
+
+      '
+  - - 52
+    - '                key: "span"
+
+      '
+  - - 53
+    - '                value: INT
+
+      '
+  - - 54
+    - '              }
+
+      '
+  - - 55
+    - '              properties {
+
+      '
+  - - 56
+    - '                key: "split_names"
+
+      '
+  - - 57
+    - '                value: STRING
+
+      '
+  - - 58
+    - '              }
+
+      '
+  - - 59
+    - '              properties {
+
+      '
+  - - 60
+    - '                key: "version"
+
+      '
+  - - 61
+    - '                value: INT
+
+      '
+  - - 62
+    - '              }
+
+      '
+  - - 63
+    - '            }
+
+      '
+  - - 64
+    - '          }
+
+      '
+  - - 65
+    - '        }
+
+      '
+  - - 66
+    - '      }
+
+      '
+  - - 67
+    - '    }
+
+      '
+  added: 24
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter.pbtxt
+  removed: 0
+  source_file: a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter.pbtxt
+  target_file: b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter.pbtxt
+patched_file_2:
+  add_line_no:
+  - - 39
+    - '    outputs {
+
+      '
+  - - 40
+    - '      outputs {
+
+      '
+  - - 41
+    - '        key: "examples"
+
+      '
+  - - 42
+    - '        value {
+
+      '
+  - - 43
+    - '          artifact_spec {
+
+      '
+  - - 44
+    - '            type {
+
+      '
+  - - 45
+    - '              name: "Examples"
+
+      '
+  - - 46
+    - '              properties {
+
+      '
+  - - 47
+    - '                key: "span"
+
+      '
+  - - 48
+    - '                value: INT
+
+      '
+  - - 49
+    - '              }
+
+      '
+  - - 50
+    - '              properties {
+
+      '
+  - - 51
+    - '                key: "split_names"
+
+      '
+  - - 52
+    - '                value: STRING
+
+      '
+  - - 53
+    - '              }
+
+      '
+  - - 54
+    - '              properties {
+
+      '
+  - - 55
+    - '                key: "version"
+
+      '
+  - - 56
+    - '                value: INT
+
+      '
+  - - 57
+    - '              }
+
+      '
+  - - 58
+    - '            }
+
+      '
+  - - 59
+    - '          }
+
+      '
+  - - 60
+    - '        }
+
+      '
+  - - 61
+    - '      }
+
+      '
+  - - 62
+    - '    }
+
+      '
+  added: 24
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_partially_substituted.pbtxt
+  removed: 0
+  source_file: a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_partially_substituted.pbtxt
+  target_file: b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_partially_substituted.pbtxt
+patched_file_3:
+  add_line_no:
+  - - 28
+    - '    outputs {
+
+      '
+  - - 29
+    - '      outputs {
+
+      '
+  - - 30
+    - '        key: "examples"
+
+      '
+  - - 31
+    - '        value {
+
+      '
+  - - 32
+    - '          artifact_spec {
+
+      '
+  - - 33
+    - '            type {
+
+      '
+  - - 34
+    - '              name: "Examples"
+
+      '
+  - - 35
+    - '              properties {
+
+      '
+  - - 36
+    - '                key: "span"
+
+      '
+  - - 37
+    - '                value: INT
+
+      '
+  - - 38
+    - '              }
+
+      '
+  - - 39
+    - '              properties {
+
+      '
+  - - 40
+    - '                key: "split_names"
+
+      '
+  - - 41
+    - '                value: STRING
+
+      '
+  - - 42
+    - '              }
+
+      '
+  - - 43
+    - '              properties {
+
+      '
+  - - 44
+    - '                key: "version"
+
+      '
+  - - 45
+    - '                value: INT
+
+      '
+  - - 46
+    - '              }
+
+      '
+  - - 47
+    - '            }
+
+      '
+  - - 48
+    - '          }
+
+      '
+  - - 49
+    - '        }
+
+      '
+  - - 50
+    - '      }
+
+      '
+  - - 51
+    - '    }
+
+      '
+  added: 24
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_substituted.pbtxt
+  removed: 0
+  source_file: a/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_substituted.pbtxt
+  target_file: b/tfx/orchestration/portable/testdata/pipeline_with_runtime_parameter_substituted.pbtxt

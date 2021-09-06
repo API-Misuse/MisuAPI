@@ -1,0 +1,8 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:7: error: Skipping analyzing "numpy": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:7: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:8: error: Cannot find implementation or library stub for module named "general_function.file_wav"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:10: error: Cannot find implementation or library stub for module named "python_speech_features"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:16: error: Cannot find implementation or library stub for module named "scipy.fftpack"
+Found 4 errors in 1 file (checked 1 source file)
+
+time cost(in seconds): 1.7690250873565674

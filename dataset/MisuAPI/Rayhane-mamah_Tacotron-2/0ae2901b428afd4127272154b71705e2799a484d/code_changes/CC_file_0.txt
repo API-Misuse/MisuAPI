@@ -1,0 +1,23 @@
+UPD @type:for_stmt@ @[17648,18126]@ for i in range(hp.tacotron_num_gpus):
+			#  Device <text_longer_than_50> @TO@ @type:for_stmt@ @[17648,18126]@ for i in range(hp.tacotron_num_gpus):
+			#  Device <text_longer_than_50>
+---UPD @type:suite@ @[17685,18126]@ #  Device placement
+			with tf.device(tf.train.rep <text_longer_than_50> @TO@ @type:suite@ @[17685,18126]@ #  Device placement
+			with tf.device(tf.train.rep <text_longer_than_50>
+------UPD @type:with_stmt@ @[17712,18126]@ with tf.device(tf.train.replica_device_setter(ps_t <text_longer_than_50> @TO@ @type:with_stmt@ @[17712,18126]@ with tf.device(tf.train.replica_device_setter(ps_t <text_longer_than_50>
+---------UPD @type:suite@ @[17814,18126]@ with tf.variable_scope('optimizer') as scope:
+				 <text_longer_than_50> @TO@ @type:suite@ @[17814,18126]@ with tf.variable_scope('optimizer') as scope:
+				 <text_longer_than_50>
+------------UPD @type:with_stmt@ @[17819,18126]@ with tf.variable_scope('optimizer') as scope:
+				 <text_longer_than_50> @TO@ @type:with_stmt@ @[17819,18126]@ with tf.variable_scope('optimizer') as scope:
+				 <text_longer_than_50>
+---------------UPD @type:suite@ @[17864,18126]@ update_vars = [v for v in self.all_vars if not ('i <text_longer_than_50> @TO@ @type:suite@ @[17864,18126]@ update_vars = [v for v in self.all_vars if not ('i <text_longer_than_50>
+------------------UPD @type:simple_stmt@ @[18005,18087]@ gradients = optimizer.compute_gradients(self.tower <text_longer_than_50> @TO@ @type:simple_stmt@ @[18005,18087]@ gradients = optimizer.compute_gradients(self.tower <text_longer_than_50>
+---------------------UPD @type:expr_stmt@ @[18005,18086]@ gradients = optimizer.compute_gradients(self.tower <text_longer_than_50> @TO@ @type:expr_stmt@ @[18005,18086]@ gradients = optimizer.compute_gradients(self.tower <text_longer_than_50>
+------------------------UPD @type:atom_expr@ @[18017,18086]@ optimizer.compute_gradients(self.tower_loss[i], li <text_longer_than_50> @TO@ @type:atom_expr@ @[18017,18086]@ optimizer.compute_gradients(self.tower_loss[i], va <text_longer_than_50>
+---------------------------UPD @type:trailer@ @[18044,18086]@ (self.tower_loss[i], list_var=update_vars) @TO@ @type:trailer@ @[18044,18086]@ (self.tower_loss[i], var_list=update_vars)
+------------------------------UPD @type:arglist@ @[18045,18085]@ self.tower_loss[i], list_var=update_vars @TO@ @type:arglist@ @[18045,18085]@ self.tower_loss[i], var_list=update_vars
+---------------------------------UPD @type:argument@ @[18065,18085]@ list_var=update_vars @TO@ @type:argument@ @[18065,18085]@ var_list=update_vars
+------------------------------------UPD @type:name@ @[18065,18073]@ list_var @TO@ @type:name@ @[18065,18073]@ var_list
+
+

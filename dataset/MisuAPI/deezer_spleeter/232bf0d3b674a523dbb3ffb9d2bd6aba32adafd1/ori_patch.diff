@@ -1,0 +1,48 @@
+commit 232bf0d3b674a523dbb3ffb9d2bd6aba32adafd1
+Author: Faylixe <felix.voituret@gmail.com>
+Date:   Tue Dec 8 12:48:15 2020 +0100
+
+    🐛  fix AUTO backend support
+
+diff --git a/spleeter/__main__.py b/spleeter/__main__.py
+index 9048097..757b3da 100644
+--- a/spleeter/__main__.py
++++ b/spleeter/__main__.py
+@@ -37,7 +37,7 @@ from typer import Exit, Typer
+ # pylint: enable=import-error
+ 
+ spleeter: Typer = Typer()
+-""" """
++""" CLI application. """
+ 
+ 
+ @spleeter.command()
+diff --git a/spleeter/separator.py b/spleeter/separator.py
+index 7381e5e..bf7e1dc 100644
+--- a/spleeter/separator.py
++++ b/spleeter/separator.py
+@@ -333,6 +333,11 @@ class Separator(object):
+                     (Optional) string describing the waveform (e.g. filename).
+         """
+         backend: str = self._params['stft_backend']
++        if backend == STFTBackend.AUTO:
++            if len(tf.config.list_physical_devices('GPU')):
++                backend = STFTBackend.TENSORFLOW
++            else:
++                backend = STFTBackend.LIBROSA
+         if backend == STFTBackend.TENSORFLOW:
+             return self._separate_tensorflow(waveform, audio_descriptor)
+         elif backend == STFTBackend.LIBROSA:
+diff --git a/tests/test_train.py b/tests/test_train.py
+index 3c63b40..7c4bc48 100644
+--- a/tests/test_train.py
++++ b/tests/test_train.py
+@@ -93,7 +93,7 @@ def test_train():
+         TRAIN_CONFIG['model_dir'] = join(path, 'model')
+         TRAIN_CONFIG['training_cache'] = join(path, 'cache', 'training')
+         TRAIN_CONFIG['validation_cache'] = join(path, 'cache', 'validation')
+-        with open('useless_config.json') as stream:
++        with open('useless_config.json', 'w') as stream:
+             json.dump(TRAIN_CONFIG, stream)
+         # execute training
+         result = runner.invoke(spleeter, [

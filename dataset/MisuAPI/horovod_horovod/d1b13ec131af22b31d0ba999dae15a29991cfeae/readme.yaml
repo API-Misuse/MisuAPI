@@ -1,0 +1,37 @@
+sha: d1b13ec131af22b31d0ba999dae15a29991cfeae
+message: 'Fixed usage of settings.nics to use the new parameter name (#1902)
+
+
+  Signed-off-by: Travis Addair <taddair@uber.com>'
+commit_log: "commit d1b13ec131af22b31d0ba999dae15a29991cfeae\nAuthor: Travis Addair\
+  \ <taddair@uber.com>\nDate:   Thu Apr 23 16:25:57 2020 -0700\n\n    Fixed usage\
+  \ of settings.nics to use the new parameter name (#1902)\n    \n    Signed-off-by:\
+  \ Travis Addair <taddair@uber.com>"
+contained_keywords:
+- fixed
+commit_time: 2020-04-23 16:25:57 -0700
+commit_author: Travis Addair
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: horovod/run/driver/driver_service.py
+  source_file: a/horovod/run/driver/driver_service.py
+  target_file: b/horovod/run/driver/driver_service.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 148
+    - '        settings.num_hosts, settings.key, settings.nics)
+
+      '
+  del_line_no:
+  - - null
+    - '        settings.num_hosts, settings.key, settings.nic)
+
+      '

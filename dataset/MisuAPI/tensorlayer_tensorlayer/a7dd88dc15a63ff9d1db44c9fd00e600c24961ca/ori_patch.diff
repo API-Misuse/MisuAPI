@@ -1,0 +1,19 @@
+commit a7dd88dc15a63ff9d1db44c9fd00e600c24961ca
+Author: jorgemf <jorgemf@gmail.com>
+Date:   Wed Dec 6 11:42:17 2017 +0100
+
+    fixed bug and formatting
+
+diff --git a/tensorlayer/distributed.py b/tensorlayer/distributed.py
+index 95dd3331..dffc6c73 100644
+--- a/tensorlayer/distributed.py
++++ b/tensorlayer/distributed.py
+@@ -170,7 +169,7 @@ def DistributedSession(task_spec=None,
+     - `MonitoredTrainingSession <https://www.tensorflow.org/api_docs/python/tf/train
+     /MonitoredTrainingSession>`_
+     """
+-    return tf.train.MonitoredTrainingSession(master=task_spec.target,
++    return tf.train.MonitoredTrainingSession(master=task_spec.target(),
+                                              is_chief=task_spec.is_master(),
+                                              checkpoint_dir=checkpoint_dir,
+                                              scaffold=scaffold,

@@ -1,0 +1,13 @@
+INS @type:simple_stmt@ @[1099,1136]@ logger = logging.getLogger(__name__) @TO@ @type:file_input@ @[748,5079]@ from typing import List, Set
+
+from nlp_architect.c <text_longer_than_50>
+
+INS @type:if_stmt@ @[1490,1782]@ if wd_file is not None and os.path.isfile(wd_file) <text_longer_than_50> @TO@ @type:suite@ @[1217,1829]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+
+INS @type:if_stmt@ @[1490,1782]@ if wd_file is not None and os.path.isfile(wd_file) <text_longer_than_50> @TO@ @type:suite@ @[1217,1829]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[1505,1544]@ super(WithinDocCoref, self).__init__() @TO@ @type:suite@ @[1217,1829]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+

@@ -1,0 +1,331 @@
+INS @type:simple_stmt@ @[15,27]@ import json @TO@ @type:file_input@ @[0,63736]@ import inspect
+import math
+import os
+import re
+imp <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1127,1345]@ from .trainer_utils import (
+    PREFIX_CHECKPOINT <text_longer_than_50> @TO@ @type:simple_stmt@ @[1139,1416]@ from .trainer_utils import (
+    PREFIX_CHECKPOINT <text_longer_than_50>
+---UPD @type:import_from@ @[1127,1344]@ from .trainer_utils import (
+    PREFIX_CHECKPOINT <text_longer_than_50> @TO@ @type:import_from@ @[1139,1415]@ from .trainer_utils import (
+    PREFIX_CHECKPOINT <text_longer_than_50>
+------UPD @type:import_as_names@ @[1160,1342]@ PREFIX_CHECKPOINT_DIR,
+    BestRun,
+    EvalPredic <text_longer_than_50> @TO@ @type:import_as_names@ @[1172,1413]@ PREFIX_CHECKPOINT_DIR,
+    BestRun,
+    EvalPredic <text_longer_than_50>
+---------INS @type:name@ @[1345,1374]@ distributed_broadcast_scalars @TO@ @type:import_as_names@ @[1160,1342]@ PREFIX_CHECKPOINT_DIR,
+    BestRun,
+    EvalPredic <text_longer_than_50>
+---------INS @type:operator@ @[1374,1375]@ , @TO@ @type:import_as_names@ @[1160,1342]@ PREFIX_CHECKPOINT_DIR,
+    BestRun,
+    EvalPredic <text_longer_than_50>
+---------INS @type:name@ @[1380,1398]@ distributed_concat @TO@ @type:import_as_names@ @[1160,1342]@ PREFIX_CHECKPOINT_DIR,
+    BestRun,
+    EvalPredic <text_longer_than_50>
+---------INS @type:operator@ @[1398,1399]@ , @TO@ @type:import_as_names@ @[1160,1342]@ PREFIX_CHECKPOINT_DIR,
+    BestRun,
+    EvalPredic <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[4623,4773]@ assert (
+            len(indices) == self.num_samp <text_longer_than_50> @TO@ @type:simple_stmt@ @[4694,4840]@ assert (
+            len(indices) == self.num_samp <text_longer_than_50>
+---UPD @type:assert_stmt@ @[4623,4772]@ assert (
+            len(indices) == self.num_samp <text_longer_than_50> @TO@ @type:assert_stmt@ @[4694,4839]@ assert (
+            len(indices) == self.num_samp <text_longer_than_50>
+------UPD @type:fstring@ @[4688,4772]@ f"Indices length {len(indices)} and and sample num <text_longer_than_50> @TO@ @type:fstring@ @[4759,4839]@ f"Indices length {len(indices)} and sample number  <text_longer_than_50>
+---------UPD @type:fstring_string@ @[4719,4742]@ and and sample number @TO@ @type:fstring_string@ @[4790,4809]@ and sample number
+
+
+INS @type:simple_stmt@ @[10255,10277]@ self.log_history = [] @TO@ @type:suite@ @[8666,12574]@ :
+        if args is None:
+            logger.info <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[12498,12521]@ self.total_flos = None @TO@ @type:suite@ @[8666,12574]@ :
+        if args is None:
+            logger.info <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[20695,21453]@ if self.is_world_process_zero():
+            logge <text_longer_than_50> @TO@ @type:if_stmt@ @[20823,21753]@ if self.is_world_process_zero():
+            logge <text_longer_than_50>
+---UPD @type:suite@ @[20727,21453]@ :
+            logger.info(
+                'Automa <text_longer_than_50> @TO@ @type:suite@ @[20855,21753]@ :
+            logger.info(
+                'Automa <text_longer_than_50>
+------INS @type:try_stmt@ @[21022,21275]@ try:
+                combined_dict = {**self.model <text_longer_than_50> @TO@ @type:suite@ @[20727,21453]@ :
+            logger.info(
+                'Automa <text_longer_than_50>
+---------INS @type:suite@ @[21026,21124]@ :
+                combined_dict = {**self.model.co <text_longer_than_50> @TO@ @type:try_stmt@ @[21022,21275]@ try:
+                combined_dict = {**self.model <text_longer_than_50>
+------MOV @type:simple_stmt@ @[20894,20975]@ combined_dict = {**self.model.config.to_dict(), ** <text_longer_than_50> @TO@ @type:suite@ @[21026,21124]@ :
+                combined_dict = {**self.model.co <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[31018,31038]@ self.total_flos = 0 @TO@ @type:suite@ @[26427,39250]@ :
+        """
+        Main training entry point.
+
+ <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[30845,31864]@ if model_path is not None:
+            # set globa <text_longer_than_50> @TO@ @type:if_stmt@ @[31173,32420]@ if model_path is not None:
+            # set globa <text_longer_than_50>
+---UPD @type:suite@ @[30871,31864]@ :
+            # set global_step to global_step of  <text_longer_than_50> @TO@ @type:suite@ @[31199,32420]@ :
+            # set global_step to global_step of  <text_longer_than_50>
+------UPD @type:try_stmt@ @[30970,31864]@ try:
+                self.global_step = int(model_ <text_longer_than_50> @TO@ @type:try_stmt@ @[31298,32420]@ try:
+                self.global_step = int(model_ <text_longer_than_50>
+---------UPD @type:suite@ @[30974,31741]@ :
+                self.global_step = int(model_pat <text_longer_than_50> @TO@ @type:suite@ @[31302,32261]@ :
+                self.global_step = int(model_pat <text_longer_than_50>
+------------INS @type:simple_stmt@ @[31407,31464]@ self.total_flos = getattr(model.config, "total_flo <text_longer_than_50> @TO@ @type:suite@ @[30974,31741]@ :
+                self.global_step = int(model_pat <text_longer_than_50>
+------------INS @type:simple_stmt@ @[32046,32148]@ logger.info("  Continuing training from %d non-emb <text_longer_than_50> @TO@ @type:suite@ @[30974,31741]@ :
+                self.global_step = int(model_pat <text_longer_than_50>
+---------UPD @type:suite@ @[31771,31864]@ :
+                self.global_step = 0
+            <text_longer_than_50> @TO@ @type:suite@ @[32291,32420]@ :
+                self.global_step = 0
+            <text_longer_than_50>
+------------INS @type:simple_stmt@ @[32345,32365]@ self.total_flos = 0 @TO@ @type:suite@ @[31771,31864]@ :
+                self.global_step = 0
+            <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[32184,38818]@ for epoch in range(epochs_trained, int(np.ceil(num <text_longer_than_50> @TO@ @type:for_stmt@ @[32740,39455]@ for epoch in range(epochs_trained, int(np.ceil(num <text_longer_than_50>
+---UPD @type:suite@ @[32251,38818]@ :
+            if isinstance(train_dataloader, Data <text_longer_than_50> @TO@ @type:suite@ @[32807,39455]@ :
+            if isinstance(train_dataloader, Data <text_longer_than_50>
+------UPD @type:for_stmt@ @[33012,38108]@ for step, inputs in enumerate(epoch_iterator):
+
+   <text_longer_than_50> @TO@ @type:for_stmt@ @[33568,38745]@ for step, inputs in enumerate(epoch_iterator):
+
+   <text_longer_than_50>
+---------UPD @type:suite@ @[33058,38108]@ :
+
+                # Skip past any already trained <text_longer_than_50> @TO@ @type:suite@ @[33614,38745]@ :
+
+                # Skip past any already trained <text_longer_than_50>
+------------INS @type:simple_stmt@ @[33950,34001]@ self.total_flos += self.floating_point_ops(inputs) @TO@ @type:suite@ @[33058,38108]@ :
+
+                # Skip past any already trained <text_longer_than_50>
+------------UPD @type:if_stmt@ @[33395,37956]@ if (step + 1) % self.args.gradient_accumulation_st <text_longer_than_50> @TO@ @type:if_stmt@ @[34018,38593]@ if (step + 1) % self.args.gradient_accumulation_st <text_longer_than_50>
+---------------UPD @type:suite@ @[33717,37956]@ :
+                    if self.args.fp16 and _use_n <text_longer_than_50> @TO@ @type:suite@ @[34340,38593]@ :
+                    if self.args.fp16 and _use_n <text_longer_than_50>
+------------------UPD @type:if_stmt@ @[35918,37956]@ if self.args.save_steps > 0 and self.global_step % <text_longer_than_50> @TO@ @type:if_stmt@ @[36541,38593]@ if self.args.save_steps > 0 and self.global_step % <text_longer_than_50>
+---------------------UPD @type:suite@ @[35995,37956]@ :
+                        # In all cases (even dis <text_longer_than_50> @TO@ @type:suite@ @[36618,38593]@ :
+                        # In all cases (even dis <text_longer_than_50>
+------------------------UPD @type:if_stmt@ @[37246,37334]@ if self.is_world_process_zero():
+                  <text_longer_than_50> @TO@ @type:if_stmt@ @[37869,37971]@ if self.is_world_process_zero():
+                  <text_longer_than_50>
+---------------------------UPD @type:suite@ @[37278,37334]@ :
+                            self._rotate_checkpo <text_longer_than_50> @TO@ @type:suite@ @[37901,37971]@ :
+                            self._rotate_checkpo <text_longer_than_50>
+------------------------------UPD @type:simple_stmt@ @[37307,37334]@ self._rotate_checkpoints() @TO@ @type:simple_stmt@ @[37930,37971]@ self._rotate_checkpoints(use_mtime=True)
+---------------------------------UPD @type:atom_expr@ @[37307,37333]@ self._rotate_checkpoints( @TO@ @type:atom_expr@ @[37930,37970]@ self._rotate_checkpoints(use_mtime=True
+------------------------------------UPD @type:trailer@ @[37331,37333]@ s( @TO@ @type:trailer@ @[37954,37970]@ s(use_mtime=True
+---------------------------------------INS @type:argument@ @[37955,37969]@ (use_mtime=Tru @TO@ @type:trailer@ @[37331,37333]@ s(
+
+
+INS @type:if_stmt@ @[45456,45769]@ if self.total_flos is not None:
+            if sel <text_longer_than_50> @TO@ @type:suite@ @[44005,46219]@ :
+        """
+        Log :obj:`logs` on the vario <text_longer_than_50>
+
+
+INS @type:if_stmt@ @[47077,47154]@ if self.is_world_process_zero():
+            self. <text_longer_than_50> @TO@ @type:suite@ @[44005,46219]@ :
+        """
+        Log :obj:`logs` on the vario <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[51385,51544]@ if xm.is_master_ordinal():
+            os.makedirs <text_longer_than_50> @TO@ @type:if_stmt@ @[52428,52744]@ if xm.is_master_ordinal():
+            os.makedirs <text_longer_than_50>
+---UPD @type:suite@ @[51411,51544]@ :
+            os.makedirs(output_dir, exist_ok=Tru <text_longer_than_50> @TO@ @type:suite@ @[52454,52744]@ :
+            os.makedirs(output_dir, exist_ok=Tru <text_longer_than_50>
+------INS @type:simple_stmt@ @[52599,52744]@ json.dump(
+                self.log_history, open( <text_longer_than_50> @TO@ @type:suite@ @[51411,51544]@ :
+            os.makedirs(output_dir, exist_ok=Tru <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[53073,53092]@ self._store_flos() @TO@ @type:suite@ @[51226,52006]@ :
+        output_dir = output_dir if output_dir is <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[53769,53788]@ self._store_flos() @TO@ @type:suite@ @[52061,52839]@ :
+        output_dir = output_dir if output_dir is <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[54101,54238]@ json.dump(
+            self.log_history, open(os.p <text_longer_than_50> @TO@ @type:suite@ @[52061,52839]@ :
+        output_dir = output_dir if output_dir is <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[58708,59321]@ for inputs in tqdm(dataloader, desc=description, d <text_longer_than_50> @TO@ @type:for_stmt@ @[60518,61093]@ for inputs in tqdm(dataloader, desc=description, d <text_longer_than_50>
+---UPD @type:suite@ @[58779,59321]@ :
+            loss, logits, labels = self.predicti <text_longer_than_50> @TO@ @type:suite@ @[60589,61093]@ :
+            loss, logits, labels = self.predicti <text_longer_than_50>
+------UPD @type:if_stmt@ @[58990,59065]@ if loss is not None:
+                eval_losses.a <text_longer_than_50> @TO@ @type:if_stmt@ @[60760,60837]@ if loss is not None:
+                eval_losses.e <text_longer_than_50>
+---------UPD @type:suite@ @[59010,59065]@ :
+                eval_losses.append(loss * batch_ <text_longer_than_50> @TO@ @type:suite@ @[60780,60837]@ :
+                eval_losses.extend([loss] * batc <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[59027,59065]@ eval_losses.append(loss * batch_size) @TO@ @type:simple_stmt@ @[60797,60837]@ eval_losses.extend([loss] * batch_size)
+---------------UPD @type:atom_expr@ @[59027,59064]@ eval_losses.append(loss * batch_size @TO@ @type:atom_expr@ @[60797,60836]@ eval_losses.extend([loss] * batch_size
+------------------UPD @type:trailer@ @[59038,59045]@ s.appen @TO@ @type:trailer@ @[60808,60815]@ s.exten
+---------------------UPD @type:name@ @[59039,59045]@ .appen @TO@ @type:name@ @[60809,60815]@ .exten
+------------------UPD @type:trailer@ @[59045,59064]@ d(loss * batch_size @TO@ @type:trailer@ @[60815,60836]@ d([loss] * batch_size
+---------------------UPD @type:term@ @[59046,59063]@ (loss * batch_siz @TO@ @type:term@ @[60816,60835]@ ([loss] * batch_siz
+------------------------INS @type:atom@ @[60816,60822]@ ([loss @TO@ @type:term@ @[59046,59063]@ (loss * batch_siz
+------------------------UPD @type:name@ @[59046,59050]@ (los @TO@ @type:name@ @[60817,60821]@ [los
+------------------------MOV @type:name@ @[59046,59050]@ (los @TO@ @type:atom@ @[60816,60822]@ ([loss
+------DEL @type:simple_stmt@ @[58950,58978]@ samples_count += batch_size @FROM@ @type:suite@ @[58779,59321]@ :
+            loss, logits, labels = self.predicti <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[59490,60557]@ if self.args.local_rank != -1:
+            # In di <text_longer_than_50> @TO@ @type:if_stmt@ @[61262,62319]@ if self.args.local_rank != -1:
+            # In di <text_longer_than_50>
+---UPD @type:suite@ @[59520,59886]@ :
+            # In distributed mode, concatenate a <text_longer_than_50> @TO@ @type:suite@ @[61292,61648]@ :
+            # In distributed mode, concatenate a <text_longer_than_50>
+------UPD @type:if_stmt@ @[59608,59735]@ if preds is not None:
+                preds = self <text_longer_than_50> @TO@ @type:if_stmt@ @[61380,61502]@ if preds is not None:
+                preds = dist <text_longer_than_50>
+---------UPD @type:suite@ @[59629,59735]@ :
+                preds = self.distributed_concat( <text_longer_than_50> @TO@ @type:suite@ @[61401,61502]@ :
+                preds = distributed_concat(preds <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[59646,59735]@ preds = self.distributed_concat(preds, num_total_e <text_longer_than_50> @TO@ @type:simple_stmt@ @[61418,61502]@ preds = distributed_concat(preds, num_total_exampl <text_longer_than_50>
+---------------UPD @type:expr_stmt@ @[59646,59734]@ preds = self.distributed_concat(preds, num_total_e <text_longer_than_50> @TO@ @type:expr_stmt@ @[61418,61501]@ preds = distributed_concat(preds, num_total_exampl <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[59654,59734]@ self.distributed_concat(preds, num_total_examples= <text_longer_than_50> @TO@ @type:atom_expr@ @[61426,61501]@ distributed_concat(preds, num_total_examples=self. <text_longer_than_50>
+---------------------UPD @type:name@ @[59654,59658]@ sel @TO@ @type:name@ @[61426,61444]@ distributed_conca
+---------------------DEL @type:trailer@ @[59658,59677]@ f.distributed_conca @FROM@ @type:atom_expr@ @[59654,59734]@ self.distributed_concat(preds, num_total_examples= <text_longer_than_50>
+------UPD @type:if_stmt@ @[59747,59886]@ if label_ids is not None:
+                label_id <text_longer_than_50> @TO@ @type:if_stmt@ @[61514,61648]@ if label_ids is not None:
+                label_id <text_longer_than_50>
+---------UPD @type:suite@ @[59772,59886]@ :
+                label_ids = self.distributed_con <text_longer_than_50> @TO@ @type:suite@ @[61539,61648]@ :
+                label_ids = distributed_concat(l <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[59789,59886]@ label_ids = self.distributed_concat(label_ids, num <text_longer_than_50> @TO@ @type:simple_stmt@ @[61556,61648]@ label_ids = distributed_concat(label_ids, num_tota <text_longer_than_50>
+---------------UPD @type:expr_stmt@ @[59789,59885]@ label_ids = self.distributed_concat(label_ids, num <text_longer_than_50> @TO@ @type:expr_stmt@ @[61556,61647]@ label_ids = distributed_concat(label_ids, num_tota <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[59801,59885]@ self.distributed_concat(label_ids, num_total_examp <text_longer_than_50> @TO@ @type:atom_expr@ @[61568,61647]@ distributed_concat(label_ids, num_total_examples=s <text_longer_than_50>
+---------------------UPD @type:name@ @[59801,59805]@ sel @TO@ @type:name@ @[61568,61586]@ distributed_conca
+---------------------DEL @type:trailer@ @[59805,59824]@ f.distributed_conca @FROM@ @type:atom_expr@ @[59801,59885]@ self.distributed_concat(label_ids, num_total_examp <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[61016,61112]@ if len(eval_losses) > 0:
+            metrics["eval <text_longer_than_50> @TO@ @type:if_stmt@ @[62778,63152]@ if len(eval_losses) > 0:
+            if self.args. <text_longer_than_50>
+---INS @type:suite@ @[62802,63152]@ :
+            if self.args.local_rank != -1:
+      <text_longer_than_50> @TO@ @type:if_stmt@ @[61016,61112]@ if len(eval_losses) > 0:
+            metrics["eval <text_longer_than_50>
+------INS @type:if_stmt@ @[62815,63152]@ if self.args.local_rank != -1:
+                met <text_longer_than_50> @TO@ @type:suite@ @[62802,63152]@ :
+            if self.args.local_rank != -1:
+      <text_longer_than_50>
+---------INS @type:suite@ @[62845,63074]@ :
+                metrics["eval_loss"] = (
+        <text_longer_than_50> @TO@ @type:if_stmt@ @[62815,63152]@ if self.args.local_rank != -1:
+                met <text_longer_than_50>
+------------INS @type:simple_stmt@ @[62862,63074]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50> @TO@ @type:suite@ @[62845,63074]@ :
+                metrics["eval_loss"] = (
+        <text_longer_than_50>
+---------------INS @type:expr_stmt@ @[62862,63073]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50> @TO@ @type:simple_stmt@ @[62862,63074]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50>
+------------------INS @type:atom@ @[62885,63073]@ (
+                    distributed_broadcast_scalar <text_longer_than_50> @TO@ @type:expr_stmt@ @[62862,63073]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50>
+---------------------INS @type:atom_expr@ @[62907,63055]@ distributed_broadcast_scalars(eval_losses, num_tot <text_longer_than_50> @TO@ @type:atom@ @[62885,63073]@ (
+                    distributed_broadcast_scalar <text_longer_than_50>
+------------------------INS @type:trailer@ @[62936,62999]@ s(eval_losses, num_total_examples=self.num_example <text_longer_than_50> @TO@ @type:atom_expr@ @[62907,63055]@ distributed_broadcast_scalars(eval_losses, num_tot <text_longer_than_50>
+---------------------------INS @type:arglist@ @[62937,62998]@ (eval_losses, num_total_examples=self.num_examples <text_longer_than_50> @TO@ @type:trailer@ @[62936,62999]@ s(eval_losses, num_total_examples=self.num_example <text_longer_than_50>
+------------------------------INS @type:argument@ @[62950,62998]@ num_total_examples=self.num_examples(dataloader @TO@ @type:arglist@ @[62937,62998]@ (eval_losses, num_total_examples=self.num_examples <text_longer_than_50>
+---------------------------------INS @type:atom_expr@ @[62969,62998]@ =self.num_examples(dataloader @TO@ @type:argument@ @[62950,62998]@ num_total_examples=self.num_examples(dataloader
+---UPD @type:suite@ @[61040,61112]@ :
+            metrics["eval_loss"] = np.sum(eval_l <text_longer_than_50> @TO@ @type:suite@ @[63091,63152]@ :
+                metrics["eval_loss"] = np.mean(e <text_longer_than_50>
+------UPD @type:simple_stmt@ @[61053,61112]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50> @TO@ @type:simple_stmt@ @[63108,63152]@ metrics["eval_loss"] = np.mean(eval_losses)
+---------UPD @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50> @TO@ @type:expr_stmt@ @[63108,63151]@ metrics["eval_loss"] = np.mean(eval_losses
+------------MOV @type:atom_expr@ @[61053,61073]@ metrics["eval_loss" @TO@ @type:expr_stmt@ @[62862,63073]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50>
+------------MOV @type:operator@ @[61074,61075]@  @TO@ @type:expr_stmt@ @[62862,63073]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50>
+------------INS @type:atom_expr@ @[63131,63151]@ np.mean(eval_losses @TO@ @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50>
+---------------INS @type:trailer@ @[63138,63151]@ n(eval_losses @TO@ @type:atom_expr@ @[63131,63151]@ np.mean(eval_losses
+------------DEL @type:term@ @[61076,61111]@ np.sum(eval_losses) / samples_coun @FROM@ @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50>
+---MOV @type:suite@ @[61040,61112]@ :
+            metrics["eval_loss"] = np.sum(eval_l <text_longer_than_50> @TO@ @type:if_stmt@ @[62815,63152]@ if self.args.local_rank != -1:
+                met <text_longer_than_50>
+------UPD @type:simple_stmt@ @[61053,61112]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50> @TO@ @type:simple_stmt@ @[63108,63152]@ metrics["eval_loss"] = np.mean(eval_losses)
+---------UPD @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50> @TO@ @type:expr_stmt@ @[63108,63151]@ metrics["eval_loss"] = np.mean(eval_losses
+------------MOV @type:atom_expr@ @[61053,61073]@ metrics["eval_loss" @TO@ @type:expr_stmt@ @[62862,63073]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50>
+------------MOV @type:operator@ @[61074,61075]@  @TO@ @type:expr_stmt@ @[62862,63073]@ metrics["eval_loss"] = (
+                    distr <text_longer_than_50>
+------------INS @type:atom_expr@ @[63131,63151]@ np.mean(eval_losses @TO@ @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50>
+---------------INS @type:trailer@ @[63138,63151]@ n(eval_losses @TO@ @type:atom_expr@ @[63131,63151]@ np.mean(eval_losses
+------------DEL @type:term@ @[61076,61111]@ np.sum(eval_losses) / samples_coun @FROM@ @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50>
+
+
+MOV @type:comparison@ @[61496,61522]@ self.args.local_rank != - @TO@ @type:if_stmt@ @[62815,63152]@ if self.args.local_rank != -1:
+                met <text_longer_than_50>
+
+
+UPD @type:atom_expr@ @[61076,61095]@ np.sum(eval_losses @TO@ @type:atom_expr@ @[63108,63128]@ metrics["eval_loss"
+---UPD @type:name@ @[61076,61078]@ n @TO@ @type:name@ @[63108,63115]@ metric
+---INS @type:trailer@ @[63115,63128]@ s["eval_loss" @TO@ @type:atom_expr@ @[61076,61095]@ np.sum(eval_losses
+---UPD @type:trailer@ @[61078,61082]@ p.su @TO@ @type:trailer@ @[62973,62986]@ f.num_example
+------UPD @type:name@ @[61079,61082]@ .su @TO@ @type:name@ @[62974,62986]@ .num_example
+---MOV @type:trailer@ @[61078,61082]@ p.su @TO@ @type:atom_expr@ @[62969,62998]@ =self.num_examples(dataloader
+------UPD @type:name@ @[61079,61082]@ .su @TO@ @type:name@ @[62974,62986]@ .num_example
+---UPD @type:trailer@ @[61082,61095]@ m(eval_losses @TO@ @type:trailer@ @[62986,62998]@ s(dataloader
+------UPD @type:name@ @[61083,61094]@ (eval_losse @TO@ @type:name@ @[62987,62997]@ (dataloade
+---MOV @type:trailer@ @[61082,61095]@ m(eval_losses @TO@ @type:atom_expr@ @[62969,62998]@ =self.num_examples(dataloader
+------UPD @type:name@ @[61083,61094]@ (eval_losse @TO@ @type:name@ @[62987,62997]@ (dataloade
+
+
+MOV @type:atom_expr@ @[61076,61095]@ np.sum(eval_losses @TO@ @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50>
+---UPD @type:name@ @[61076,61078]@ n @TO@ @type:name@ @[63108,63115]@ metric
+---INS @type:trailer@ @[63115,63128]@ s["eval_loss" @TO@ @type:atom_expr@ @[61076,61095]@ np.sum(eval_losses
+---UPD @type:trailer@ @[61078,61082]@ p.su @TO@ @type:trailer@ @[62973,62986]@ f.num_example
+------UPD @type:name@ @[61079,61082]@ .su @TO@ @type:name@ @[62974,62986]@ .num_example
+---MOV @type:trailer@ @[61078,61082]@ p.su @TO@ @type:atom_expr@ @[62969,62998]@ =self.num_examples(dataloader
+------UPD @type:name@ @[61079,61082]@ .su @TO@ @type:name@ @[62974,62986]@ .num_example
+---UPD @type:trailer@ @[61082,61095]@ m(eval_losses @TO@ @type:trailer@ @[62986,62998]@ s(dataloader
+------UPD @type:name@ @[61083,61094]@ (eval_losse @TO@ @type:name@ @[62987,62997]@ (dataloade
+---MOV @type:trailer@ @[61082,61095]@ m(eval_losses @TO@ @type:atom_expr@ @[62969,62998]@ =self.num_examples(dataloader
+------UPD @type:name@ @[61083,61094]@ (eval_losse @TO@ @type:name@ @[62987,62997]@ (dataloade
+
+
+MOV @type:operator@ @[61096,61097]@  @TO@ @type:expr_stmt@ @[61053,61111]@ metrics["eval_loss"] = np.sum(eval_losses) / sampl <text_longer_than_50>
+
+
+UPD @type:name@ @[61098,61111]@ samples_coun @TO@ @type:name@ @[63139,63150]@ (eval_losse
+
+
+MOV @type:name@ @[61098,61111]@ samples_coun @TO@ @type:trailer@ @[63138,63151]@ n(eval_losses
+
+
+DEL @type:simple_stmt@ @[58682,58700]@ samples_count = 0 @FROM@ @type:suite@ @[56975,61383]@ :
+        """
+        Prediction/evaluation loop,  <text_longer_than_50>
+
+

@@ -1,0 +1,73 @@
+commit 455d51b87858f26270001990939f112a157c55c3
+Author: Chaoyu <paranoyang@gmail.com>
+Date:   Tue Mar 16 06:58:53 2021 -0700
+
+    Install tracing dependencies in docker base image (#1504)
+    
+    * updates
+    
+    * Update __init__.py
+    
+    * Update marshal.py
+    
+    * updates
+    
+    * updates
+    
+    * set configs in `bentoml run`
+    
+    * fix marshal trace ctx call
+
+
+
+diff --git a/bentoml/marshal/marshal.py b/bentoml/marshal/marshal.py
+index 9929d08..fa4338a 100644
+--- a/bentoml/marshal/marshal.py
++++ b/bentoml/marshal/marshal.py
+@@ -29,7 +29,8 @@ from bentoml.marshal.dispatcher import CorkDispatcher, NonBlockSema
+ from bentoml.marshal.utils import DataLoader
+ from bentoml.saved_bundle import load_bento_service_metadata
+ from bentoml.saved_bundle.config import DEFAULT_MAX_BATCH_SIZE, DEFAULT_MAX_LATENCY
+-from bentoml.tracing.trace import async_trace, make_http_headers
++from bentoml.tracing import async_trace
++from bentoml.tracing.zipkin import make_http_headers
+ from bentoml.types import HTTPRequest, HTTPResponse
+ 
+ 
+@@ -282,11 +280,10 @@ class MarshalService:
+         url = request.url.with_host(self.outbound_host).with_port(self.outbound_port)
+ 
+         with async_trace(
+-            self.zipkin_api_url,
+-            service_name=self.__class__.__name__,
+-            span_name=f"[2]{url.path} relay",
++            service_name=self.__class__.__name__, span_name=f"[2]{url.path} relay",
+         ) as trace_ctx:
+-            headers.update(make_http_headers(trace_ctx))
++            if trace_ctx:
++                headers.update(make_http_headers(trace_ctx))
+             try:
+                 client = self.get_client()
+                 async with client.request(
+@@ -313,11 +310,10 @@ class MarshalService:
+         api_url = f"http://{self.outbound_host}:{self.outbound_port}/{api_route}"
+ 
+         with async_trace(
+-            self.zipkin_api_url,
+-            service_name=self.__class__.__name__,
+-            span_name=f"[2]merged {api_route}",
++            service_name=self.__class__.__name__, span_name=f"[2]merged {api_route}",
+         ) as trace_ctx:
+-            headers.update(make_http_headers(trace_ctx))
++            if trace_ctx:
++                headers.update(make_http_headers(trace_ctx))
+             reqs_s = DataLoader.merge_requests(requests)
+             try:
+                 client = self.get_client()
+
+         def api_func_with_tracing():
+             with trace(
+-                request.headers, service_name=self.__class__.__name__,
++                request_headers=request.headers, service_name=self.__class__.__name__,
+             ):
+                 return api_func()

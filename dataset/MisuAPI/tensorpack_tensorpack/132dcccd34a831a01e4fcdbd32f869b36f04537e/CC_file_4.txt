@@ -1,0 +1,140 @@
+UPD @type:simple_stmt@ @[100,158]@ __all__ = ['StatCounter', 'Accuracy', 'BinaryStati <text_longer_than_50> @TO@ @type:simple_stmt@ @[100,177]@ __all__ = ['StatCounter', 'Accuracy', 'BinaryStati <text_longer_than_50>
+---UPD @type:expr_stmt@ @[100,157]@ __all__ = ['StatCounter', 'Accuracy', 'BinaryStati <text_longer_than_50> @TO@ @type:expr_stmt@ @[100,176]@ __all__ = ['StatCounter', 'Accuracy', 'BinaryStati <text_longer_than_50>
+------UPD @type:atom@ @[110,157]@ ['StatCounter', 'Accuracy', 'BinaryStatistics'] @TO@ @type:atom@ @[110,176]@ ['StatCounter', 'Accuracy', 'BinaryStatistics', 'R <text_longer_than_50>
+---------UPD @type:testlist_comp@ @[111,156]@ 'StatCounter', 'Accuracy', 'BinaryStatistics' @TO@ @type:testlist_comp@ @[111,175]@ 'StatCounter', 'Accuracy', 'BinaryStatistics', 'Ra <text_longer_than_50>
+------------INS @type:operator@ @[156,157]@ , @TO@ @type:testlist_comp@ @[111,156]@ 'StatCounter', 'Accuracy', 'BinaryStatistics'
+------------INS @type:string@ @[158,175]@ 'RatioStatistics' @TO@ @type:testlist_comp@ @[111,156]@ 'StatCounter', 'Accuracy', 'BinaryStatistics'
+
+
+UPD @type:simple_stmt@ @[263,285]@ self.values.append(v) @TO@ @type:simple_stmt@ @[282,305]@ self._values.append(v)
+---UPD @type:atom_expr@ @[263,284]@ self.values.append(v) @TO@ @type:atom_expr@ @[282,304]@ self._values.append(v)
+------UPD @type:trailer@ @[267,274]@ .values @TO@ @type:trailer@ @[286,294]@ ._values
+---------UPD @type:name@ @[268,274]@ values @TO@ @type:name@ @[287,294]@ _values
+
+
+UPD @type:simple_stmt@ @[315,332]@ self.values = [] @TO@ @type:simple_stmt@ @[335,353]@ self._values = []
+---UPD @type:expr_stmt@ @[315,331]@ self.values = [] @TO@ @type:expr_stmt@ @[335,352]@ self._values = []
+------UPD @type:atom_expr@ @[315,326]@ self.values @TO@ @type:atom_expr@ @[335,347]@ self._values
+---------UPD @type:trailer@ @[319,326]@ .values @TO@ @type:trailer@ @[339,347]@ ._values
+------------UPD @type:name@ @[320,326]@ values @TO@ @type:name@ @[340,347]@ _values
+
+
+UPD @type:simple_stmt@ @[805,818]@ self.tot = 0 @TO@ @type:simple_stmt@ @[840,854]@ self._tot = 0
+---UPD @type:expr_stmt@ @[805,817]@ self.tot = 0 @TO@ @type:expr_stmt@ @[840,853]@ self._tot = 0
+------UPD @type:atom_expr@ @[805,813]@ self.tot @TO@ @type:atom_expr@ @[840,849]@ self._tot
+---------UPD @type:trailer@ @[809,813]@ .tot @TO@ @type:trailer@ @[844,849]@ ._tot
+------------UPD @type:name@ @[810,813]@ tot @TO@ @type:name@ @[845,849]@ _tot
+
+
+UPD @type:simple_stmt@ @[826,840]@ self.corr = 0 @TO@ @type:simple_stmt@ @[862,876]@ self._cnt = 0
+---UPD @type:expr_stmt@ @[826,839]@ self.corr = 0 @TO@ @type:expr_stmt@ @[862,875]@ self._cnt = 0
+------UPD @type:atom_expr@ @[826,835]@ self.corr @TO@ @type:atom_expr@ @[862,871]@ self._cnt
+---------UPD @type:trailer@ @[830,835]@ .corr @TO@ @type:trailer@ @[866,871]@ ._cnt
+------------UPD @type:name@ @[831,835]@ corr @TO@ @type:name@ @[867,871]@ _cnt
+
+
+UPD @type:simple_stmt@ @[882,898]@ self.tot += tot @TO@ @type:simple_stmt@ @[917,934]@ self._tot += tot
+---UPD @type:expr_stmt@ @[882,897]@ self.tot += tot @TO@ @type:expr_stmt@ @[917,933]@ self._tot += tot
+------UPD @type:atom_expr@ @[882,890]@ self.tot @TO@ @type:atom_expr@ @[917,926]@ self._tot
+---------UPD @type:trailer@ @[886,890]@ .tot @TO@ @type:trailer@ @[921,926]@ ._tot
+------------UPD @type:name@ @[887,890]@ tot @TO@ @type:name@ @[922,926]@ _tot
+
+
+UPD @type:simple_stmt@ @[906,924]@ self.corr += corr @TO@ @type:simple_stmt@ @[942,959]@ self._cnt += cnt
+---UPD @type:expr_stmt@ @[906,923]@ self.corr += corr @TO@ @type:expr_stmt@ @[942,958]@ self._cnt += cnt
+------UPD @type:atom_expr@ @[906,915]@ self.corr @TO@ @type:atom_expr@ @[942,951]@ self._cnt
+---------UPD @type:trailer@ @[910,915]@ .corr @TO@ @type:trailer@ @[946,951]@ ._cnt
+------------UPD @type:name@ @[911,915]@ corr @TO@ @type:name@ @[947,951]@ _cnt
+------UPD @type:name@ @[919,923]@ corr @TO@ @type:name@ @[955,958]@ cnt
+
+
+UPD @type:simple_stmt@ @[376,400]@ return len(self.values) @TO@ @type:simple_stmt@ @[397,422]@ return len(self._values)
+---UPD @type:return_stmt@ @[376,399]@ return len(self.values) @TO@ @type:return_stmt@ @[397,421]@ return len(self._values)
+------UPD @type:atom_expr@ @[383,399]@ len(self.values) @TO@ @type:atom_expr@ @[404,421]@ len(self._values)
+---------UPD @type:trailer@ @[386,399]@ (self.values) @TO@ @type:trailer@ @[407,421]@ (self._values)
+------------UPD @type:atom_expr@ @[387,398]@ self.values @TO@ @type:atom_expr@ @[408,420]@ self._values
+---------------UPD @type:trailer@ @[391,398]@ .values @TO@ @type:trailer@ @[412,420]@ ._values
+------------------UPD @type:name@ @[392,398]@ values @TO@ @type:name@ @[413,420]@ _values
+
+
+UPD @type:simple_stmt@ @[446,470]@ assert len(self.values) @TO@ @type:simple_stmt@ @[468,493]@ assert len(self._values)
+---UPD @type:assert_stmt@ @[446,469]@ assert len(self.values) @TO@ @type:assert_stmt@ @[468,492]@ assert len(self._values)
+------UPD @type:atom_expr@ @[453,469]@ len(self.values) @TO@ @type:atom_expr@ @[475,492]@ len(self._values)
+---------UPD @type:trailer@ @[456,469]@ (self.values) @TO@ @type:trailer@ @[478,492]@ (self._values)
+------------UPD @type:atom_expr@ @[457,468]@ self.values @TO@ @type:atom_expr@ @[479,491]@ self._values
+---------------UPD @type:trailer@ @[461,468]@ .values @TO@ @type:trailer@ @[483,491]@ ._values
+------------------UPD @type:name@ @[462,468]@ values @TO@ @type:name@ @[484,491]@ _values
+
+
+UPD @type:simple_stmt@ @[478,506]@ return np.mean(self.values) @TO@ @type:simple_stmt@ @[501,530]@ return np.mean(self._values)
+---UPD @type:return_stmt@ @[478,505]@ return np.mean(self.values) @TO@ @type:return_stmt@ @[501,529]@ return np.mean(self._values)
+------UPD @type:atom_expr@ @[485,505]@ np.mean(self.values) @TO@ @type:atom_expr@ @[508,529]@ np.mean(self._values)
+---------UPD @type:trailer@ @[492,505]@ (self.values) @TO@ @type:trailer@ @[515,529]@ (self._values)
+------------UPD @type:atom_expr@ @[493,504]@ self.values @TO@ @type:atom_expr@ @[516,528]@ self._values
+---------------UPD @type:trailer@ @[497,504]@ .values @TO@ @type:trailer@ @[520,528]@ ._values
+------------------UPD @type:name@ @[498,504]@ values @TO@ @type:name@ @[521,528]@ _values
+
+
+UPD @type:simple_stmt@ @[548,572]@ assert len(self.values) @TO@ @type:simple_stmt@ @[572,597]@ assert len(self._values)
+---UPD @type:assert_stmt@ @[548,571]@ assert len(self.values) @TO@ @type:assert_stmt@ @[572,596]@ assert len(self._values)
+------UPD @type:atom_expr@ @[555,571]@ len(self.values) @TO@ @type:atom_expr@ @[579,596]@ len(self._values)
+---------UPD @type:trailer@ @[558,571]@ (self.values) @TO@ @type:trailer@ @[582,596]@ (self._values)
+------------UPD @type:atom_expr@ @[559,570]@ self.values @TO@ @type:atom_expr@ @[583,595]@ self._values
+---------------UPD @type:trailer@ @[563,570]@ .values @TO@ @type:trailer@ @[587,595]@ ._values
+------------------UPD @type:name@ @[564,570]@ values @TO@ @type:name@ @[588,595]@ _values
+
+
+UPD @type:simple_stmt@ @[580,607]@ return np.sum(self.values) @TO@ @type:simple_stmt@ @[605,633]@ return np.sum(self._values)
+---UPD @type:return_stmt@ @[580,606]@ return np.sum(self.values) @TO@ @type:return_stmt@ @[605,632]@ return np.sum(self._values)
+------UPD @type:atom_expr@ @[587,606]@ np.sum(self.values) @TO@ @type:atom_expr@ @[612,632]@ np.sum(self._values)
+---------UPD @type:trailer@ @[593,606]@ (self.values) @TO@ @type:trailer@ @[618,632]@ (self._values)
+------------UPD @type:atom_expr@ @[594,605]@ self.values @TO@ @type:atom_expr@ @[619,631]@ self._values
+---------------UPD @type:trailer@ @[598,605]@ .values @TO@ @type:trailer@ @[623,631]@ ._values
+------------------UPD @type:name@ @[599,605]@ values @TO@ @type:name@ @[624,631]@ _values
+
+
+UPD @type:simple_stmt@ @[649,673]@ assert len(self.values) @TO@ @type:simple_stmt@ @[675,700]@ assert len(self._values)
+---UPD @type:assert_stmt@ @[649,672]@ assert len(self.values) @TO@ @type:assert_stmt@ @[675,699]@ assert len(self._values)
+------UPD @type:atom_expr@ @[656,672]@ len(self.values) @TO@ @type:atom_expr@ @[682,699]@ len(self._values)
+---------UPD @type:trailer@ @[659,672]@ (self.values) @TO@ @type:trailer@ @[685,699]@ (self._values)
+------------UPD @type:atom_expr@ @[660,671]@ self.values @TO@ @type:atom_expr@ @[686,698]@ self._values
+---------------UPD @type:trailer@ @[664,671]@ .values @TO@ @type:trailer@ @[690,698]@ ._values
+------------------UPD @type:name@ @[665,671]@ values @TO@ @type:name@ @[691,698]@ _values
+
+
+UPD @type:simple_stmt@ @[681,705]@ return max(self.values) @TO@ @type:simple_stmt@ @[708,733]@ return max(self._values)
+---UPD @type:return_stmt@ @[681,704]@ return max(self.values) @TO@ @type:return_stmt@ @[708,732]@ return max(self._values)
+------UPD @type:atom_expr@ @[688,704]@ max(self.values) @TO@ @type:atom_expr@ @[715,732]@ max(self._values)
+---------UPD @type:trailer@ @[691,704]@ (self.values) @TO@ @type:trailer@ @[718,732]@ (self._values)
+------------UPD @type:atom_expr@ @[692,703]@ self.values @TO@ @type:atom_expr@ @[719,731]@ self._values
+---------------UPD @type:trailer@ @[696,703]@ .values @TO@ @type:trailer@ @[723,731]@ ._values
+------------------UPD @type:name@ @[697,703]@ values @TO@ @type:name@ @[724,731]@ _values
+
+
+UPD @type:if_stmt@ @[971,1010]@ if self.tot == 0:
+            return 0 @TO@ @type:if_stmt@ @[1003,1043]@ if self._tot == 0:
+            return 0
+---UPD @type:comparison@ @[974,987]@ self.tot == 0 @TO@ @type:comparison@ @[1006,1020]@ self._tot == 0
+------UPD @type:atom_expr@ @[974,982]@ self.tot @TO@ @type:atom_expr@ @[1006,1015]@ self._tot
+---------UPD @type:trailer@ @[978,982]@ .tot @TO@ @type:trailer@ @[1010,1015]@ ._tot
+------------UPD @type:name@ @[979,982]@ tot @TO@ @type:name@ @[1011,1015]@ _tot
+
+
+UPD @type:simple_stmt@ @[1018,1052]@ return self.corr * 1.0 / self.tot @TO@ @type:simple_stmt@ @[1051,1086]@ return self._cnt * 1.0 / self._tot
+---UPD @type:return_stmt@ @[1018,1051]@ return self.corr * 1.0 / self.tot @TO@ @type:return_stmt@ @[1051,1085]@ return self._cnt * 1.0 / self._tot
+------UPD @type:term@ @[1025,1051]@ self.corr * 1.0 / self.tot @TO@ @type:term@ @[1058,1085]@ self._cnt * 1.0 / self._tot
+---------UPD @type:atom_expr@ @[1025,1034]@ self.corr @TO@ @type:atom_expr@ @[1058,1067]@ self._cnt
+------------UPD @type:trailer@ @[1029,1034]@ .corr @TO@ @type:trailer@ @[1062,1067]@ ._cnt
+---------------UPD @type:name@ @[1030,1034]@ corr @TO@ @type:name@ @[1063,1067]@ _cnt
+---------UPD @type:atom_expr@ @[1043,1051]@ self.tot @TO@ @type:atom_expr@ @[1076,1085]@ self._tot
+------------UPD @type:trailer@ @[1047,1051]@ .tot @TO@ @type:trailer@ @[1080,1085]@ ._tot
+---------------UPD @type:name@ @[1048,1051]@ tot @TO@ @type:name@ @[1081,1085]@ _tot
+
+
+UPD @type:simple_stmt@ @[1096,1112]@ return self.tot @TO@ @type:simple_stmt@ @[1130,1147]@ return self._tot
+---UPD @type:return_stmt@ @[1096,1111]@ return self.tot @TO@ @type:return_stmt@ @[1130,1146]@ return self._tot
+------UPD @type:atom_expr@ @[1103,1111]@ self.tot @TO@ @type:atom_expr@ @[1137,1146]@ self._tot
+---------UPD @type:trailer@ @[1107,1111]@ .tot @TO@ @type:trailer@ @[1141,1146]@ ._tot
+------------UPD @type:name@ @[1108,1111]@ tot @TO@ @type:name@ @[1142,1146]@ _tot
+
+

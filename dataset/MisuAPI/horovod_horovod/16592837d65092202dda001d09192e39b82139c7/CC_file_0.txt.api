@@ -1,0 +1,48 @@
+INS @type:if_stmt@ @[29127,29184]@ if cflags:
+                cflags = cflags.replace <text_longer_than_50> @TO@ @type:suite@ @[29114,29249]@ cflags = cflags.replace(k, v)
+            cppflags <text_longer_than_50>
+
+INS @type:if_stmt@ @[29127,29184]@ if cflags:
+                cflags = cflags.replace <text_longer_than_50> @TO@ @type:suite@ @[29114,29249]@ cflags = cflags.replace(k, v)
+            cppflags <text_longer_than_50>
+
+INS @type:suite@ @[29137,29184]@ cflags = cflags.replace(k, v) @TO@ @type:if_stmt@ @[29127,29184]@ if cflags:
+                cflags = cflags.replace <text_longer_than_50>
+
+INS @type:suite@ @[29137,29184]@ cflags = cflags.replace(k, v) @TO@ @type:if_stmt@ @[29127,29184]@ if cflags:
+                cflags = cflags.replace <text_longer_than_50>
+
+INS @type:if_stmt@ @[29196,29259]@ if cppflags:
+                cppflags = cppflags.r <text_longer_than_50> @TO@ @type:suite@ @[29114,29249]@ cflags = cflags.replace(k, v)
+            cppflags <text_longer_than_50>
+
+INS @type:if_stmt@ @[29196,29259]@ if cppflags:
+                cppflags = cppflags.r <text_longer_than_50> @TO@ @type:suite@ @[29114,29249]@ cflags = cflags.replace(k, v)
+            cppflags <text_longer_than_50>
+
+INS @type:suite@ @[29208,29259]@ cppflags = cppflags.replace(k, v) @TO@ @type:if_stmt@ @[29196,29259]@ if cppflags:
+                cppflags = cppflags.r <text_longer_than_50>
+
+INS @type:suite@ @[29208,29259]@ cppflags = cppflags.replace(k, v) @TO@ @type:if_stmt@ @[29196,29259]@ if cppflags:
+                cppflags = cppflags.r <text_longer_than_50>
+
+INS @type:if_stmt@ @[29271,29334]@ if ldshared:
+                ldshared = ldshared.r <text_longer_than_50> @TO@ @type:suite@ @[29114,29249]@ cflags = cflags.replace(k, v)
+            cppflags <text_longer_than_50>
+
+INS @type:if_stmt@ @[29271,29334]@ if ldshared:
+                ldshared = ldshared.r <text_longer_than_50> @TO@ @type:suite@ @[29114,29249]@ cflags = cflags.replace(k, v)
+            cppflags <text_longer_than_50>
+
+INS @type:suite@ @[29283,29334]@ ldshared = ldshared.replace(k, v) @TO@ @type:if_stmt@ @[29271,29334]@ if ldshared:
+                ldshared = ldshared.r <text_longer_than_50>
+
+INS @type:suite@ @[29283,29334]@ ldshared = ldshared.replace(k, v) @TO@ @type:if_stmt@ @[29271,29334]@ if ldshared:
+                ldshared = ldshared.r <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[29127,29157]@ cflags = cflags.replace(k, v) @TO@ @type:suite@ @[29137,29184]@ cflags = cflags.replace(k, v)
+
+MOV @type:simple_stmt@ @[29169,29203]@ cppflags = cppflags.replace(k, v) @TO@ @type:suite@ @[29208,29259]@ cppflags = cppflags.replace(k, v)
+
+MOV @type:simple_stmt@ @[29215,29249]@ ldshared = ldshared.replace(k, v) @TO@ @type:suite@ @[29283,29334]@ ldshared = ldshared.replace(k, v)
+

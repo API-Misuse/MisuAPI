@@ -1,0 +1,3 @@
+location: a/tacotron/models/tacotron.py:380
+patch_location: b/tacotron/models/tacotron.py:380
+api: optimizer.compute_gradients   

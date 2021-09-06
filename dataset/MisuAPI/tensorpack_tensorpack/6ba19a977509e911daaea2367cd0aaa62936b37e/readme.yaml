@@ -1,0 +1,32 @@
+sha: 6ba19a977509e911daaea2367cd0aaa62936b37e
+message: fix ctc_loss API (#215)
+commit_log: "commit 6ba19a977509e911daaea2367cd0aaa62936b37e\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Sat Apr 1 22:40:54 2017 -0700\n\n    fix ctc_loss API (#215)"
+contained_keywords:
+- fix
+commit_time: 2017-04-01 22:40:54 -0700
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: examples/CTC-TIMIT/train-timit.py
+  source_file: a/examples/CTC-TIMIT/train-timit.py
+  target_file: b/examples/CTC-TIMIT/train-timit.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 59
+    - '        loss = tf.nn.ctc_loss(label, logits, seqlen, time_major=False)
+
+      '
+  del_line_no:
+  - - null
+    - '        loss = tf.nn.ctc_loss(logits, label, seqlen, time_major=False)
+
+      '

@@ -1,0 +1,70 @@
+UPD @type:atom_expr@ @[5244,5319]@ tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[5244,5319]@ tf.concat(axis=3, values=[branch1x1, branch5x5, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6121,6196]@ tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[6121,6196]@ tf.concat(axis=3, values=[branch1x1, branch5x5, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[6998,7073]@ tf.concat(axis=[branch1x1, branch5x5, branch3x3dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[6998,7073]@ tf.concat(axis=3, values=[branch1x1, branch5x5, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7776,7840]@ tf.concat(axis=[branch3x3, branch3x3dbl, branch_po <text_longer_than_50> @TO@ @type:atom_expr@ @[7776,7840]@ tf.concat(axis=3, values=[branch3x3, branch3x3dbl, <text_longer_than_50>
+
+UPD @type:atom_expr@ @[8837,8912]@ tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[8837,8912]@ tf.concat(axis=3, values=[branch1x1, branch7x7, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[9910,9985]@ tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[9910,9985]@ tf.concat(axis=3, values=[branch1x1, branch7x7, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[10983,11058]@ tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[10983,11058]@ tf.concat(axis=3, values=[branch1x1, branch7x7, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[12056,12131]@ tf.concat(axis=[branch1x1, branch7x7, branch7x7dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[12056,12131]@ tf.concat(axis=3, values=[branch1x1, branch7x7, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[13926,13989]@ tf.concat(axis=[branch3x3, branch7x7x3, branch_poo <text_longer_than_50> @TO@ @type:atom_expr@ @[13926,13989]@ tf.concat(axis=3, values=[branch3x3, branch7x7x3,  <text_longer_than_50>
+
+UPD @type:atom_expr@ @[14346,14479]@ tf.concat(axis=[ops.conv2d(branch3x3, 384, [1, 3]) <text_longer_than_50> @TO@ @type:atom_expr@ @[14346,14492]@ tf.concat(axis=3,values=[ops.conv2d(branch3x3, 384 <text_longer_than_50>
+
+MOV @type:argument@ @[14356,14468]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50> @TO@ @type:arglist@ @[14356,14478]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50>
+
+INS @type:argument@ @[14356,14362]@ axis=3 @TO@ @type:arglist@ @[14356,14478]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50>
+
+DEL @type:argument@ @[14470,14478]@ values=3 @FROM@ @type:arglist@ @[14356,14478]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50>
+
+UPD @type:atom_expr@ @[14678,14820]@ tf.concat(axis=[ops.conv2d(branch3x3dbl, 384, [1,  <text_longer_than_50> @TO@ @type:atom_expr@ @[14691,14848]@ tf.concat(axis=3, values=[ops.conv2d(branch3x3dbl, <text_longer_than_50>
+
+MOV @type:argument@ @[14688,14809]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50> @TO@ @type:arglist@ @[14688,14819]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50>
+
+INS @type:argument@ @[14701,14707]@ axis=3 @TO@ @type:arglist@ @[14688,14819]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50>
+
+DEL @type:argument@ @[14811,14819]@ values=3 @FROM@ @type:arglist@ @[14688,14819]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50>
+
+UPD @type:atom_expr@ @[15001,15076]@ tf.concat(axis=[branch1x1, branch3x3, branch3x3dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[15029,15104]@ tf.concat(axis=3, values=[branch1x1, branch3x3, br <text_longer_than_50>
+
+UPD @type:atom_expr@ @[15432,15565]@ tf.concat(axis=[ops.conv2d(branch3x3, 384, [1, 3]) <text_longer_than_50> @TO@ @type:atom_expr@ @[15460,15608]@ tf.concat(axis=3, values=[ops.conv2d(branch3x3, 38 <text_longer_than_50>
+
+MOV @type:argument@ @[15442,15554]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50> @TO@ @type:arglist@ @[15442,15564]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50>
+
+INS @type:argument@ @[15470,15476]@ axis=3 @TO@ @type:arglist@ @[15442,15564]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50>
+
+DEL @type:argument@ @[15556,15564]@ values=3 @FROM@ @type:arglist@ @[15442,15564]@ axis=[ops.conv2d(branch3x3, 384, [1, 3]),
+         <text_longer_than_50>
+
+UPD @type:atom_expr@ @[15764,15906]@ tf.concat(axis=[ops.conv2d(branch3x3dbl, 384, [1,  <text_longer_than_50> @TO@ @type:atom_expr@ @[15807,15964]@ tf.concat(axis=3, values=[ops.conv2d(branch3x3dbl, <text_longer_than_50>
+
+MOV @type:argument@ @[15774,15895]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50> @TO@ @type:arglist@ @[15774,15905]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50>
+
+INS @type:argument@ @[15817,15823]@ axis=3 @TO@ @type:arglist@ @[15774,15905]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50>
+
+DEL @type:argument@ @[15897,15905]@ values=3 @FROM@ @type:arglist@ @[15774,15905]@ axis=[ops.conv2d(branch3x3dbl, 384, [1, 3]),
+      <text_longer_than_50>
+
+UPD @type:atom_expr@ @[16087,16162]@ tf.concat(axis=[branch1x1, branch3x3, branch3x3dbl <text_longer_than_50> @TO@ @type:atom_expr@ @[16145,16220]@ tf.concat(axis=3, values=[branch1x1, branch3x3, br <text_longer_than_50>
+

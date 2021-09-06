@@ -1,0 +1,38 @@
+sha: b81758c604eb9ac2daf8909fdffbe8b034e6eb57
+message: 'fix a bug cause Graph is finalized and cannot be modified like #449 (#1020)'
+commit_log: "commit b81758c604eb9ac2daf8909fdffbe8b034e6eb57\nAuthor: Hao Feng <3140102270@zju.edu.cn>\n\
+  Date:   Wed Dec 19 16:49:22 2018 +0800\n\n    fix a bug cause Graph is finalized\
+  \ and cannot be modified like #449 (#1020)"
+contained_keywords:
+- fix
+- bug
+commit_time: 2018-12-19 16:49:22 +0800
+commit_author: Hao Feng
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/predict/multigpu.py
+  source_file: a/tensorpack/predict/multigpu.py
+  target_file: b/tensorpack/predict/multigpu.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 48
+    - '            config.session_init._setup_graph()
+
+      '
+  - - 50
+    - '            config.session_init._run_init(self.sess)
+
+      '
+  del_line_no:
+  - - null
+    - '            config.session_init.init(self.sess)
+
+      '

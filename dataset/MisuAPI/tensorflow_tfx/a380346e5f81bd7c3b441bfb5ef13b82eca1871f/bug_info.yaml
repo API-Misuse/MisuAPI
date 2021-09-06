@@ -1,0 +1,57 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/1001
+  title: Fix metric bug on Cifar10 pipeline example
+  body: Fix metric bug on Cifar10 pipeline example
+issue_1:
+  html_url: https://github.com/tensorflow/tfx/issues/1002
+  title: Kubeflow Local Example --> Metadata TypeError
+  body: "I experience a TypeError with the Taxi Kubeflow Local Example ([link](https://github.com/tensorflow/tfx/blob/master/tfx/examples/chicago_taxi_pipeline/taxi_pipeline_kubeflow_local.py)).\r\
+    \n\r\nI run into the following error of the csvexamplegen component: \r\n```\r\
+    \nTraceback (most recent call last):\r\n  File \"/tfx-src/tfx/orchestration/kubeflow/container_entrypoint.py\"\
+    , line 321, in <module>\r\n    main()\r\n  File \"/tfx-src/tfx/orchestration/kubeflow/container_entrypoint.py\"\
+    , line 295, in main\r\n    connection_config = _get_metadata_connection_config(kubeflow_metadata_config)\r\
+    \n  File \"/tfx-src/tfx/orchestration/kubeflow/container_entrypoint.py\", line\
+    \ 71, in _get_metadata_connection_config\r\n    kubeflow_metadata_config.mysql_db_service_host)\r\
+    \nTypeError: None has type NoneType, but expected one of: bytes, unicode\r\n```\r\
+    \n\r\nAs far as I can see, the example configures a metadata-config, so I dont\
+    \ understand why it doesn't work. \r\nIs there anything special I need to deploy\
+    \ in addition or maybe I am using the wrong version of the libaries (tfx==0.15.0,\
+    \ kfp==0.1.36)?\r\n\r\nThanks\r\nMarcel\r\n"
+sha: a380346e5f81bd7c3b441bfb5ef13b82eca1871f
+message: 'Fix metric bug on Cifar10 pipeline example
+
+
+  PiperOrigin-RevId: 282861034'
+commit_log: "commit a380346e5f81bd7c3b441bfb5ef13b82eca1871f\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Wed Nov 27 17:50:33 2019 -0800\n\n    Fix metric bug on Cifar10 pipeline\
+  \ example\n    \n    PiperOrigin-RevId: 282861034"
+contained_keywords:
+- bug
+- fix
+commit_time: 2019-11-27 17:50:33 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 101
+    - '      metrics=[tf.keras.metrics.BinaryAccuracy(name=''accuracy'')])
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '      metric=''accuracy'')
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/examples/cifar10/cifar10_utils.py
+  removed: 1
+  source_file: a/tfx/examples/cifar10/cifar10_utils.py
+  target_file: b/tfx/examples/cifar10/cifar10_utils.py

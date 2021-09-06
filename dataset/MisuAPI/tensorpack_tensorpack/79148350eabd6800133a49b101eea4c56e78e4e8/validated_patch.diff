@@ -1,0 +1,20 @@
+commit 79148350eabd6800133a49b101eea4c56e78e4e8
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Wed Dec 19 00:49:59 2018 -0800
+
+    fix a similar issue like #1020
+
+diff --git a/tensorpack/predict/multigpu.py b/tensorpack/predict/multigpu.py
+index 55644180..fb342000 100644
+--- a/tensorpack/predict/multigpu.py
++++ b/tensorpack/predict/multigpu.py
+@@ -114,7 +114,8 @@ class DataParallelOfflinePredictor(OnlinePredictor):
+                     input_tensors.extend(h.get_tensors(config.input_names))
+                     output_tensors.extend(h.get_tensors(config.output_names))
+ 
++            config.session_init._setup_graph()
+             sess = config.session_creator.create_session()
+-            config.session_init.init(sess)
++            config.session_init._run_init(sess)
+             super(DataParallelOfflinePredictor, self).__init__(
+                 input_tensors, output_tensors, config.return_input, sess)

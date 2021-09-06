@@ -1,0 +1,30 @@
+INS @type:simple_stmt@ @[764,774]@ import os @TO@ @type:file_input@ @[749,4921]@ import logging
+from typing import Dict, Set
+
+from  <text_longer_than_50>
+
+
+INS @type:if_stmt@ @[1737,2170]@ if vo_file is not None and os.path.isfile(vo_file) <text_longer_than_50> @TO@ @type:suite@ @[1343,2045]@ """
+        Extract Relation between two mentions  <text_longer_than_50>
+---INS @type:suite@ @[1788,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1737,2170]@ if vo_file is not None and os.path.isfile(vo_file) <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[1727,1926]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:if_stmt@ @[1801,2012]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+---UPD @type:suite@ @[1770,1817]@ self.vo = load_json_file(vo_file) @TO@ @type:suite@ @[1844,1895]@ self.vo = load_json_file(vo_file)
+---UPD @type:suite@ @[1869,1926]@ self.vo = self.load_verbocean_file(vo_file) @TO@ @type:suite@ @[1951,2012]@ self.vo = self.load_verbocean_file(vo_file)
+
+
+MOV @type:if_stmt@ @[1727,1926]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50> @TO@ @type:suite@ @[1788,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+---UPD @type:suite@ @[1770,1817]@ self.vo = load_json_file(vo_file) @TO@ @type:suite@ @[1844,1895]@ self.vo = load_json_file(vo_file)
+---UPD @type:suite@ @[1869,1926]@ self.vo = self.load_verbocean_file(vo_file) @TO@ @type:suite@ @[1951,2012]@ self.vo = self.load_verbocean_file(vo_file)
+
+
+MOV @type:simple_stmt@ @[1934,1985]@ logger.info('Verb Ocean module lead successfully') @TO@ @type:suite@ @[1788,2075]@ if method == OnlineOROfflineMethod.OFFLINE:
+       <text_longer_than_50>
+
+

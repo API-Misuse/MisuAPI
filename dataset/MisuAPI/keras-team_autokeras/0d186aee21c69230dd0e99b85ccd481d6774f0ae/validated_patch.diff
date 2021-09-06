@@ -1,0 +1,19 @@
+commit 0d186aee21c69230dd0e99b85ccd481d6774f0ae
+Author: Haifeng Jin <jin@tamu.edu>
+Date:   Mon Aug 6 22:22:56 2018 -0500
+
+    bug fix
+
+diff --git a/autokeras/net_transformer.py b/autokeras/net_transformer.py
+index 02d6590..26e61d6 100644
+--- a/autokeras/net_transformer.py
++++ b/autokeras/net_transformer.py
+@@ -39,6 +39,8 @@ def to_skip_connection_graph(graph):
+                 else:
+                     valid_connection.append((index_a, index_b, skip_type))
+ 
++    if len(valid_connection) < 1:
++        return graph
+     n_skip_connection = randint(1, len(valid_connection))
+     for index_a, index_b, skip_type in sample(valid_connection, n_skip_connection):
+         a_id = weighted_layer_ids[index_a]

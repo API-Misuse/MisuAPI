@@ -1,0 +1,10 @@
+UPD @type:atom_expr@ @[1655,1693]@ ImageClassifier(path='resources/temp') @TO@ @type:atom_expr@ @[1655,1699]@ ImageClassifier(path='tests/resources/temp')
+
+UPD @type:atom_expr@ @[1789,1826]@ load_from_path(path='resources/temp') @TO@ @type:atom_expr@ @[1795,1838]@ load_from_path(path='tests/resources/temp')
+
+INS @type:simple_stmt@ @[1843,1869]@ clf.fit(train_x, train_y) @TO@ @type:suite@ @[1459,1892]@ constant.MAX_ITER_NUM = 2
+    constant.MAX_MODEL_N <text_longer_than_50>
+
+INS @type:simple_stmt@ @[1938,1967]@ assert len(clf.history) == 4 @TO@ @type:suite@ @[1459,1892]@ constant.MAX_ITER_NUM = 2
+    constant.MAX_MODEL_N <text_longer_than_50>
+

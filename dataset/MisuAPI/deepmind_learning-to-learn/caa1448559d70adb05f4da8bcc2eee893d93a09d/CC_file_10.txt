@@ -1,0 +1,16 @@
+UPD @type:for_stmt@ @[4198,4471]@ for key, entry in dictionary.iteritems():
+      if <text_longer_than_50> @TO@ @type:for_stmt@ @[4198,4467]@ for key, entry in dictionary.items():
+      if isi <text_longer_than_50>
+---UPD @type:atom_expr@ @[4216,4238]@ dictionary.iteritems() @TO@ @type:atom_expr@ @[4216,4234]@ dictionary.items()
+------UPD @type:trailer@ @[4226,4236]@ .iteritems @TO@ @type:trailer@ @[4226,4232]@ .items
+---------UPD @type:name@ @[4227,4236]@ iteritems @TO@ @type:name@ @[4227,4232]@ items
+
+
+UPD @type:for_stmt@ @[5714,5987]@ for key, entry in dictionary.iteritems():
+      if <text_longer_than_50> @TO@ @type:for_stmt@ @[5710,5979]@ for key, entry in dictionary.items():
+      if isi <text_longer_than_50>
+---UPD @type:atom_expr@ @[5732,5754]@ dictionary.iteritems() @TO@ @type:atom_expr@ @[5728,5746]@ dictionary.items()
+------UPD @type:trailer@ @[5742,5752]@ .iteritems @TO@ @type:trailer@ @[5738,5744]@ .items
+---------UPD @type:name@ @[5743,5752]@ iteritems @TO@ @type:name@ @[5739,5744]@ items
+
+

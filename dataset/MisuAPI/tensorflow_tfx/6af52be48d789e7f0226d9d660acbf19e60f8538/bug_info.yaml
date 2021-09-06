@@ -1,0 +1,299 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/2273
+  title: 'PR #2254: Edited component name and id retrieval in pipeline recorder'
+  body: "PR #2254: Edited component name and id retrieval in pipeline recorder\n\n\
+    Please approve this CL. It will be submitted automatically, and its GitHub pull\
+    \ request will be marked as merged.\n\nImported from GitHub PR #2254\n\n\n\nCopybara\
+    \ import of the project:\n\n  - 6af52be48d789e7f0226d9d660acbf19e60f8538 raise\
+    \ error if component id or name doesn't exist by iamsusiep <sujip@google.com>\n\
+    \  - 6733a74238d9d61c187764341b6e114da86e88da update with master version recorder\
+    \ file by iamsusiep <sujip@google.com>\n  - 2b01d664daedce8f6250454cdea67a61c4f7665e\
+    \ edit error message by iamsusiep <sujip@google.com>\n  - 905a61d0f1fefbfd5ec359459bb8ab2e1a63992e\
+    \ Merge remote-tracking branch 'upstream/master' into pipel... by iamsusiep <sujip@google.com>\n\
+    \  - 6a50f73af221b459e1c0b9fcc290dbb5fc1757c1 fixed component name and id by iamsusiep\
+    \ <sujip@google.com>\n  - ad391cb19b54698363e086269755259bb2798d84 lint fix by\
+    \ iamsusiep <sujip@google.com>\n  - 19e0d89202e09cadafd46e706b91f045ccc0b35c added\
+    \ depth to directory, for multiple artifacts for a key by iamsusiep <sujip@google.com>\n\
+    \  - 868d0f1906f911dd17be1cce522563b8299eec13 fix stub launcher test by iamsusiep\
+    \ <sujip@google.com>\n  - 37254ae2e59314f4c49816f9f831d7c168550a33 resolve 8/3\
+    \ by iamsusiep <sujip@google.com>\n  - ba872f30631a602686464f676ff45a916abdc659\
+    \ add depth to src/dest by iamsusiep <sujip@google.com>\n  - f721f96b80820529242e0ae364db3b87ddde4d54\
+    \ update test code for stub launcher by iamsusiep <sujip@google.com>\n  - 79fcbf3213ee76222bb50d94bd700976160d88d8\
+    \ install wheel to run pip ci test by iamsusiep <sujip@google.com>\n  - d5b7017998712a15a2d15fe4cedff1dd635e97d6\
+    \ Merge 79fcbf3213ee76222bb50d94bd700976160d88d8 into e47ca... by Su Ji Park <sujip@google.com>\n\
+    \nCOPYBARA_INTEGRATE_REVIEW=https://github.com/tensorflow/tfx/pull/2254 from iamsusiep:pipeline_recorder\
+    \ 79fcbf3213ee76222bb50d94bd700976160d88d8\n"
+issue_1:
+  html_url: https://github.com/tensorflow/tfx/pull/2254
+  title: Edited component name and id retrieval in pipeline recorder
+  body: ''
+sha: 6af52be48d789e7f0226d9d660acbf19e60f8538
+message: raise error if component id or name doesn't exist
+commit_log: "commit 6af52be48d789e7f0226d9d660acbf19e60f8538\nAuthor: iamsusiep <sujip@google.com>\n\
+  Date:   Thu Jul 30 04:30:06 2020 -0400\n\n    raise error if component id or name\
+  \ doesn't exist"
+contained_keywords:
+- error
+commit_time: 2020-07-30 04:30:06 -0400
+commit_author: iamsusiep
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 25
+    - 'from ml_metadata.proto import metadata_store_pb2
+
+      '
+  - - 27
+    - 'from typing import Iterable, List, Mapping, Optional, Text, Tuple
+
+      '
+  - - 28
+    - '
+
+      '
+  - - 32
+    - 'def _get_paths(metadata_connection: metadata.Metadata,
+
+      '
+  - - 33
+    - '               execution_ids: List[int],
+
+      '
+  - - 38
+    - '  artifact uris are retrieved using execution ids. If the artifact name is
+
+      '
+  - - 39
+    - '  missing, the default name would be set to {component_id}_name.
+
+      '
+  - - 49
+    - '  events = metadata_connection.store.get_events_by_execution_ids(
+
+      '
+  - - 50
+    - '      execution_ids)
+
+      '
+  - - 52
+    - '      x for x in events
+
+      '
+  - - 53
+    - '      if x.type == metadata_store_pb2.Event.OUTPUT
+
+      '
+  - - 62
+    - '    output_key = artifact_properties[''name''].string_value
+
+      '
+  - - 63
+    - '    if not component_id or not output_key:
+
+      '
+  - - 64
+    - '      raise ValueError("component_id and output_key cannot be None.")
+
+      '
+  - - 65
+    - '    dest_uri = os.path.join(output_dir, component_id, output_key)
+
+      '
+  - - 68
+    - 'def _get_execution_dict(metadata_connection: metadata.Metadata
+
+      '
+  - - 69
+    - '                       ) -> Mapping[Text, List[metadata_store_pb2.Execution]]:
+
+      '
+  - - 84
+    - 'def _get_latest_executions(metadata_connection: metadata.Metadata,
+
+      '
+  - - 85
+    - '                           pipeline_name: Text
+
+      '
+  - - 86
+    - '                           ) -> List[metadata_store_pb2.Execution]:
+
+      '
+  - - 102
+    - '  latest_context = max(pipeline_run_contexts,
+
+      '
+  - - 103
+    - '                       key=lambda c: c.last_update_time_since_epoch)
+
+      '
+  - - 106
+    - 'def record_pipeline(output_dir: Text,
+
+      '
+  - - 107
+    - '                    metadata_db_uri: Optional[Text],
+
+      '
+  - - 108
+    - '                    host: Optional[Text],
+
+      '
+  - - 109
+    - '                    port: Optional[int],
+
+      '
+  - - 149
+    - '      executions = _get_latest_executions(metadata_connection,
+
+      '
+  - - 150
+    - '                                          pipeline_name)
+
+      '
+  - - 157
+    - '            "run_id {} is not recorded in the MLMD metadata".format(run_id))
+
+      '
+  - - 159
+    - '    for src_uri, dest_uri in _get_paths(metadata_connection,
+
+      '
+  - - 160
+    - '                                        execution_ids,
+
+      '
+  - - 163
+    - '        raise FileNotFoundError("{} does not exist".format(src_uri))
+
+      '
+  - - 165
+    - '    logging.info("Pipeline Recorded at %s", output_dir)
+
+      '
+  added: 33
+  del_line_no:
+  - - null
+    - 'from typing import Iterable, List, Mapping, Optional, Text, Tuple
+
+      '
+  - - null
+    - 'from ml_metadata.proto import metadata_store_pb2
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def _get_paths(metadata_connection: metadata.Metadata, execution_ids: List[int],
+
+      '
+  - - null
+    - '  artifact uris are retrieved using execution ids.
+
+      '
+  - - null
+    - '  events = metadata_connection.store.get_events_by_execution_ids(execution_ids)
+
+      '
+  - - null
+    - '      x for x in events if x.type == metadata_store_pb2.Event.OUTPUT
+
+      '
+  - - null
+    - '    name = artifact_properties[''name''].string_value
+
+      '
+  - - null
+    - '    dest_uri = os.path.join(output_dir, component_id, name)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def _get_execution_dict(
+
+      '
+  - - null
+    - '    metadata_connection: metadata.Metadata
+
+      '
+  - - null
+    - ') -> Mapping[Text, List[metadata_store_pb2.Execution]]:
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def _get_latest_executions(
+
+      '
+  - - null
+    - '    metadata_connection: metadata.Metadata,
+
+      '
+  - - null
+    - '    pipeline_name: Text) -> List[metadata_store_pb2.Execution]:
+
+      '
+  - - null
+    - '  latest_context = max(
+
+      '
+  - - null
+    - '      pipeline_run_contexts, key=lambda c: c.last_update_time_since_epoch)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - 'def record_pipeline(output_dir: Text, metadata_db_uri: Optional[Text],
+
+      '
+  - - null
+    - '                    host: Optional[Text], port: Optional[int],
+
+      '
+  - - null
+    - '      executions = _get_latest_executions(metadata_connection, pipeline_name)
+
+      '
+  - - null
+    - '            ''run_id {} is not recorded in the MLMD metadata''.format(run_id))
+
+      '
+  - - null
+    - '    for src_uri, dest_uri in _get_paths(metadata_connection, execution_ids,
+
+      '
+  - - null
+    - '        raise FileNotFoundError(''{} does not exist''.format(src_uri))
+
+      '
+  - - null
+    - '    logging.info(''Pipeline Recorded at %s'', output_dir)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/experimental/pipeline_testing/pipeline_recorder_utils.py
+  removed: 28
+  source_file: a/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py
+  target_file: b/tfx/experimental/pipeline_testing/pipeline_recorder_utils.py

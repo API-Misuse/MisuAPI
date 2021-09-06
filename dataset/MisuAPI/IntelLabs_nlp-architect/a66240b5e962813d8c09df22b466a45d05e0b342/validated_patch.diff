@@ -1,0 +1,46 @@
+commit a66240b5e962813d8c09df22b466a45d05e0b342
+Author: Peter Izsak <peter.izsak@intel.com>
+Date:   Thu Apr 12 16:40:08 2018 +0300
+
+    Security fixes
+
+diff --git a/chunker/inference.py b/chunker/inference.py
+index 7bda7b5..da972e5 100644
+--- a/chunker/inference.py
++++ b/chunker/inference.py
+@@ -19,6 +19,7 @@ from __future__ import print_function
+ from __future__ import unicode_literals
+ from __future__ import absolute_import
+ import pickle
++import os
+ 
+ import numpy as np
+ 
+@@ -47,16 +48,22 @@ if __name__ == '__main__':
+     be = gen_backend(**extract_valid_args(args, gen_backend))
+ 
+     model_file = args.model
+-    with open(args.settings, 'rb') as fp:
+-        mp = pickle.load(fp)
++    if not os.path.exists(args.settings):
++        raise Exception('Not valid model settings file')
++    else:
++        with open(args.settings, 'rb') as fp:
++            mp = pickle.load(fp)
+ 
+     if mp['char_rnn'] is not False:
+         raise NotImplementedError
+ 
+     sentence_len = mp['sentence_len']
+ 
+-    with open(args.input) as fp:
+-        input_texts = [t.strip() for t in fp.readlines()]
++    if not os.path.exists(args.input):
++        raise Exception('Not valid input file')
++    else:
++        with open(args.input) as fp:
++            input_texts = [t.strip() for t in fp.readlines()]
+ 
+     be.bsz = len(input_texts)
+     input_features = []
+

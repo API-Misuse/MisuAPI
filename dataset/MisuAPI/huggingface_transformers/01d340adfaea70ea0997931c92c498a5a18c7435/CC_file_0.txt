@@ -1,0 +1,67 @@
+INS @type:simple_stmt@ @[775,791]@ import warnings @TO@ @type:file_input@ @[740,77283]@ import inspect
+import os
+import re
+from dataclasse <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[809,878]@ from typing import Callable, Dict, List, Optional, <text_longer_than_50> @TO@ @type:simple_stmt@ @[825,899]@ from typing import Any, Callable, Dict, List, Opti <text_longer_than_50>
+---UPD @type:import_from@ @[809,877]@ from typing import Callable, Dict, List, Optional, <text_longer_than_50> @TO@ @type:import_from@ @[825,898]@ from typing import Any, Callable, Dict, List, Opti <text_longer_than_50>
+------UPD @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union @TO@ @type:import_as_names@ @[844,898]@ Any, Callable, Dict, List, Optional, Set, Tuple, U <text_longer_than_50>
+---------MOV @type:name@ @[828,836]@ Callable @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+---------MOV @type:name@ @[838,842]@ Dict @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+---------MOV @type:name@ @[844,848]@ List @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+---------MOV @type:name@ @[850,858]@ Optional @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+---------MOV @type:name@ @[860,863]@ Set @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+---------MOV @type:name@ @[865,870]@ Tuple @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+---------INS @type:name@ @[844,847]@ Any @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+---------INS @type:operator@ @[891,892]@ , @TO@ @type:import_as_names@ @[828,877]@ Callable, Dict, List, Optional, Set, Tuple, Union
+
+
+UPD @type:simple_stmt@ @[13319,13410]@ head_mask = head_mask.to(dtype=self.dtype)  # swit <text_longer_than_50> @TO@ @type:simple_stmt@ @[12771,12862]@ head_mask = head_mask.to(dtype=self.dtype)  # swit <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[3149,3484]@ """
+        Get the number of (optionally, trainab <text_longer_than_50> @TO@ @type:simple_stmt@ @[12997,13518]@ """
+        Get number of (optionally, trainable o <text_longer_than_50>
+---UPD @type:string@ @[3149,3483]@ """
+        Get the number of (optionally, trainab <text_longer_than_50> @TO@ @type:string@ @[12997,13517]@ """
+        Get number of (optionally, trainable o <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[3492,3595]@ params = filter(lambda x: x.requires_grad, self.pa <text_longer_than_50> @TO@ @type:simple_stmt@ @[13717,13811]@ params = filter(parameter_filter, self.parameters( <text_longer_than_50>
+---UPD @type:expr_stmt@ @[3492,3594]@ params = filter(lambda x: x.requires_grad, self.pa <text_longer_than_50> @TO@ @type:expr_stmt@ @[13717,13810]@ params = filter(parameter_filter, self.parameters( <text_longer_than_50>
+------UPD @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50> @TO@ @type:test@ @[13726,13810]@ filter(parameter_filter, self.parameters()) if onl <text_longer_than_50>
+---------INS @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters()) @TO@ @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50>
+------------INS @type:trailer@ @[13732,13769]@ (parameter_filter, self.parameters()) @TO@ @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters())
+---------------INS @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters() @TO@ @type:trailer@ @[13732,13769]@ (parameter_filter, self.parameters())
+---------MOV @type:atom_expr@ @[3577,3594]@ self.parameters() @TO@ @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters()
+---------DEL @type:atom_expr@ @[3501,3553]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50> @FROM@ @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[13564,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50> @TO@ @type:suite@ @[13551,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+---INS @type:return_stmt@ @[13564,13707]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50> @TO@ @type:simple_stmt@ @[13564,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+------INS @type:and_test@ @[13571,13707]@ (x.requires_grad or not only_trainable) and not (
+ <text_longer_than_50> @TO@ @type:return_stmt@ @[13564,13707]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+---------INS @type:atom@ @[13571,13610]@ (x.requires_grad or not only_trainable) @TO@ @type:and_test@ @[13571,13707]@ (x.requires_grad or not only_trainable) and not (
+ <text_longer_than_50>
+------------INS @type:or_test@ @[13572,13609]@ x.requires_grad or not only_trainable @TO@ @type:atom@ @[13571,13610]@ (x.requires_grad or not only_trainable)
+
+
+MOV @type:atom_expr@ @[3535,3552]@ self.parameters() @TO@ @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50>
+
+
+MOV @type:name@ @[3501,3507]@ filter @TO@ @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters())
+
+
+UPD @type:name@ @[3515,3516]@ x @TO@ @type:name@ @[13733,13749]@ parameter_filter
+
+
+MOV @type:name@ @[3515,3516]@ x @TO@ @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters()
+
+
+MOV @type:operator@ @[3533,3534]@ , @TO@ @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters()
+
+
+MOV @type:atom_expr@ @[3518,3533]@ x.requires_grad @TO@ @type:or_test@ @[13572,13609]@ x.requires_grad or not only_trainable
+
+

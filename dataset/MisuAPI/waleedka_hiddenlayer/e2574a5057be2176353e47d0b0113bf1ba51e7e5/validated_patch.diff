@@ -1,0 +1,21 @@
+commit e2574a5057be2176353e47d0b0113bf1ba51e7e5
+Author: Waleed <waleed.abdulla@gmail.com>
+Date:   Sun Nov 11 16:22:51 2018 -0800
+
+    Fix in history_canvas.py
+    
+    Pass metrics to draw_plot() as a list rather than separate parameters.
+
+diff --git a/demos/history_canvas.py b/demos/history_canvas.py
+index 632cddc..387ba41 100644
+--- a/demos/history_canvas.py
++++ b/demos/history_canvas.py
+@@ -40,7 +40,7 @@ for step in range(1000):
+         # Less occasionally, save a snapshot of the graphs
+         if step % 100 == 0:
+             # Plot the two metrics in one graph
+-            c.draw_plot(h["loss"], h["accuracy"])
++            c.draw_plot([h["loss"], h["accuracy"]])
+             # Save the canvas
+             c.save(os.path.join(OUTPUT_DIR, "training_progress.png"))
+ 

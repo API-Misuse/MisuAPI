@@ -1,0 +1,18 @@
+UPD @type:atom_expr@ @[1195,1232]@ c.draw_plot(h["loss"], h["accuracy"]) @TO@ @type:atom_expr@ @[1195,1234]@ c.draw_plot([h["loss"], h["accuracy"]])
+
+INS @type:atom@ @[1207,1233]@ [h["loss"], h["accuracy"]] @TO@ @type:trailer@ @[1206,1232]@ (h["loss"], h["accuracy"])
+
+INS @type:atom@ @[1207,1233]@ [h["loss"], h["accuracy"]] @TO@ @type:trailer@ @[1206,1232]@ (h["loss"], h["accuracy"])
+
+INS @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"] @TO@ @type:atom@ @[1207,1233]@ [h["loss"], h["accuracy"]]
+
+INS @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"] @TO@ @type:atom@ @[1207,1233]@ [h["loss"], h["accuracy"]]
+
+DEL @type:arglist@ @[1207,1231]@ h["loss"], h["accuracy"] @FROM@ @type:trailer@ @[1206,1232]@ (h["loss"], h["accuracy"])
+
+MOV @type:atom_expr@ @[1207,1216]@ h["loss"] @TO@ @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"]
+
+MOV @type:operator@ @[1216,1217]@ , @TO@ @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"]
+
+MOV @type:atom_expr@ @[1218,1231]@ h["accuracy"] @TO@ @type:testlist_comp@ @[1208,1232]@ h["loss"], h["accuracy"]
+

@@ -1,0 +1,13 @@
+UPD @type:with_stmt@ @[2977,3097]@ with Timer('ListingAndDeletingFilesFromGCS'):
+     <text_longer_than_50> @TO@ @type:with_stmt@ @[2977,3103]@ with Timer('ListingAndDeletingFilesFromGCS'):
+     <text_longer_than_50>
+---UPD @type:suite@ @[3022,3097]@ blobs = bucket.list_blobs(prefix=path)
+    bucket. <text_longer_than_50> @TO@ @type:suite@ @[3022,3103]@ blobs = list(bucket.list_blobs(prefix=path))
+    b <text_longer_than_50>
+------UPD @type:simple_stmt@ @[3027,3066]@ blobs = bucket.list_blobs(prefix=path) @TO@ @type:simple_stmt@ @[3027,3072]@ blobs = list(bucket.list_blobs(prefix=path))
+---------UPD @type:expr_stmt@ @[3027,3065]@ blobs = bucket.list_blobs(prefix=path) @TO@ @type:expr_stmt@ @[3027,3071]@ blobs = list(bucket.list_blobs(prefix=path))
+------------INS @type:atom_expr@ @[3035,3071]@ list(bucket.list_blobs(prefix=path)) @TO@ @type:expr_stmt@ @[3027,3065]@ blobs = bucket.list_blobs(prefix=path)
+---------------INS @type:trailer@ @[3039,3071]@ (bucket.list_blobs(prefix=path)) @TO@ @type:atom_expr@ @[3035,3071]@ list(bucket.list_blobs(prefix=path))
+------------MOV @type:atom_expr@ @[3035,3065]@ bucket.list_blobs(prefix=path) @TO@ @type:trailer@ @[3039,3071]@ (bucket.list_blobs(prefix=path))
+
+

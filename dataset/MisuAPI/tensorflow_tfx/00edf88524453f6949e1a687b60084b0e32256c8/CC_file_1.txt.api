@@ -1,0 +1,18 @@
+INS @type:try_stmt@ @[7904,8132]@ try:
+      fileio.makedirs(stateful_working_dir)
+  <text_longer_than_50> @TO@ @type:suite@ @[5269,6922]@ """Generates stateful working directory given (opt <text_longer_than_50>
+
+INS @type:try_stmt@ @[7904,8132]@ try:
+      fileio.makedirs(stateful_working_dir)
+  <text_longer_than_50> @TO@ @type:suite@ @[5269,6922]@ """Generates stateful working directory given (opt <text_longer_than_50>
+
+INS @type:suite@ @[7908,7953]@ fileio.makedirs(stateful_working_dir) @TO@ @type:try_stmt@ @[7904,8132]@ try:
+      fileio.makedirs(stateful_working_dir)
+  <text_longer_than_50>
+
+INS @type:suite@ @[7908,7953]@ fileio.makedirs(stateful_working_dir) @TO@ @type:try_stmt@ @[7904,8132]@ try:
+      fileio.makedirs(stateful_working_dir)
+  <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[6852,6890]@ fileio.makedirs(stateful_working_dir) @TO@ @type:suite@ @[7908,7953]@ fileio.makedirs(stateful_working_dir)
+

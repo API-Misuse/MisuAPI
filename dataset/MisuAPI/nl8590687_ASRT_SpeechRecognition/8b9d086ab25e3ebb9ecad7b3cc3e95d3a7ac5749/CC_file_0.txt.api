@@ -1,0 +1,22 @@
+INS @type:if_stmt@ @[3396,3498]@ if('Windows' == plat.system()):
+			filename=filena <text_longer_than_50> @TO@ @type:suite@ @[3151,4465]@ '''
+		读取数据，返回神经网络输入值和输出值矩阵(可直接用于神经网络训练的那种)
+		参数：
+	 <text_longer_than_50>
+
+INS @type:if_stmt@ @[3396,3498]@ if('Windows' == plat.system()):
+			filename=filena <text_longer_than_50> @TO@ @type:suite@ @[3151,4465]@ '''
+		读取数据，返回神经网络输入值和输出值矩阵(可直接用于神经网络训练的那种)
+		参数：
+	 <text_longer_than_50>
+
+INS @type:suite@ @[3427,3498]@ filename=filename.replace('/','\\') # windows系统下需要 <text_longer_than_50> @TO@ @type:if_stmt@ @[3396,3498]@ if('Windows' == plat.system()):
+			filename=filena <text_longer_than_50>
+
+INS @type:suite@ @[3427,3498]@ filename=filename.replace('/','\\') # windows系统下需要 <text_longer_than_50> @TO@ @type:if_stmt@ @[3396,3498]@ if('Windows' == plat.system()):
+			filename=filena <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3396,3452]@ filename=filename.replace('/','\\') # windows系统下需要 <text_longer_than_50> @TO@ @type:suite@ @[3427,3498]@ filename=filename.replace('/','\\') # windows系统下需要 <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4930,4969]@ label_length = np.matrix(label_length) @TO@ @type:suite@ @[5058,5980]@ #generator = ImageCaptcha(width=width, height=heig <text_longer_than_50>
+

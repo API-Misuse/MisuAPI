@@ -1,0 +1,40 @@
+sha: ae84b52ad5402ab1716e0f1e9790ce1da9d706d1
+message: bugfix in ImageFromFile
+commit_log: "commit ae84b52ad5402ab1716e0f1e9790ce1da9d706d1\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Tue May 2 15:57:23 2017 -0700\n\n    bugfix in ImageFromFile"
+contained_keywords:
+- bugfix
+commit_time: 2017-05-02 15:57:23 -0700
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tensorpack/dataflow/image.py
+  source_file: a/tensorpack/dataflow/image.py
+  target_file: b/tensorpack/dataflow/image.py
+  added: 3
+  removed: 1
+  add_line_no:
+  - - 30
+    - '        if resize is not None:
+
+      '
+  - - 31
+    - '            resize = shape2d(resize)
+
+      '
+  - - 32
+    - '        self.resize = resize
+
+      '
+  del_line_no:
+  - - null
+    - '        self.resize = shape2d(resize)
+
+      '

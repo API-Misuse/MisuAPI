@@ -1,0 +1,50 @@
+INS @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters()) @TO@ @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50>
+
+INS @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters()) @TO@ @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50>
+
+INS @type:trailer@ @[13732,13769]@ (parameter_filter, self.parameters()) @TO@ @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters())
+
+INS @type:trailer@ @[13732,13769]@ (parameter_filter, self.parameters()) @TO@ @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters())
+
+INS @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters() @TO@ @type:trailer@ @[13732,13769]@ (parameter_filter, self.parameters())
+
+INS @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters() @TO@ @type:trailer@ @[13732,13769]@ (parameter_filter, self.parameters())
+
+MOV @type:atom_expr@ @[3577,3594]@ self.parameters() @TO@ @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters()
+
+DEL @type:atom_expr@ @[3501,3553]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50> @FROM@ @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50>
+
+INS @type:simple_stmt@ @[13564,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50> @TO@ @type:suite@ @[13551,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+
+INS @type:simple_stmt@ @[13564,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50> @TO@ @type:suite@ @[13551,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+
+INS @type:return_stmt@ @[13564,13707]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50> @TO@ @type:simple_stmt@ @[13564,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+
+INS @type:return_stmt@ @[13564,13707]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50> @TO@ @type:simple_stmt@ @[13564,13708]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+
+INS @type:and_test@ @[13571,13707]@ (x.requires_grad or not only_trainable) and not (
+ <text_longer_than_50> @TO@ @type:return_stmt@ @[13564,13707]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+
+INS @type:and_test@ @[13571,13707]@ (x.requires_grad or not only_trainable) and not (
+ <text_longer_than_50> @TO@ @type:return_stmt@ @[13564,13707]@ return (x.requires_grad or not only_trainable) and <text_longer_than_50>
+
+INS @type:atom@ @[13571,13610]@ (x.requires_grad or not only_trainable) @TO@ @type:and_test@ @[13571,13707]@ (x.requires_grad or not only_trainable) and not (
+ <text_longer_than_50>
+
+INS @type:atom@ @[13571,13610]@ (x.requires_grad or not only_trainable) @TO@ @type:and_test@ @[13571,13707]@ (x.requires_grad or not only_trainable) and not (
+ <text_longer_than_50>
+
+INS @type:or_test@ @[13572,13609]@ x.requires_grad or not only_trainable @TO@ @type:atom@ @[13571,13610]@ (x.requires_grad or not only_trainable)
+
+INS @type:or_test@ @[13572,13609]@ x.requires_grad or not only_trainable @TO@ @type:atom@ @[13571,13610]@ (x.requires_grad or not only_trainable)
+
+MOV @type:atom_expr@ @[3535,3552]@ self.parameters() @TO@ @type:test@ @[3501,3594]@ filter(lambda x: x.requires_grad, self.parameters( <text_longer_than_50>
+
+MOV @type:name@ @[3501,3507]@ filter @TO@ @type:atom_expr@ @[13726,13769]@ filter(parameter_filter, self.parameters())
+
+MOV @type:name@ @[3515,3516]@ x @TO@ @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters()
+
+MOV @type:operator@ @[3533,3534]@ , @TO@ @type:arglist@ @[13733,13768]@ parameter_filter, self.parameters()
+
+MOV @type:atom_expr@ @[3518,3533]@ x.requires_grad @TO@ @type:or_test@ @[13572,13609]@ x.requires_grad or not only_trainable
+

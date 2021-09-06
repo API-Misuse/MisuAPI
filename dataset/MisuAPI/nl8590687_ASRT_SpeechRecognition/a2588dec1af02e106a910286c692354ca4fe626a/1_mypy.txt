@@ -1,0 +1,7 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/LanguageModel.py:242: error: Name "str_pinyin" is not defined
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/asrserver.py:10: error: Cannot find implementation or library stub for module named "keras"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/asrserver.py:10: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/a2588dec1af02e106a910286c692354ca4fe626a/a/asrserver.py:11: error: Cannot find implementation or library stub for module named "SpeechModel24"
+Found 3 errors in 2 files (checked 2 source files)
+
+time cost(in seconds): 1.9452433586120605

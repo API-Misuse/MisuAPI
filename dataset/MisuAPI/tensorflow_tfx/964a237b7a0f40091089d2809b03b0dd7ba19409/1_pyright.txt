@@ -1,0 +1,17 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/a/tfx/orchestration/airflow/airflow_dag_runner.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/a/tfx/orchestration/airflow/airflow_dag_runner.py:26:6 - error: Import "airflow" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/a/tfx/orchestration/airflow/airflow_dag_runner.py:28:6 - error: Import "tfx.orchestration" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/a/tfx/orchestration/airflow/airflow_dag_runner.py:29:6 - error: Import "tfx.orchestration" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/a/tfx/orchestration/airflow/airflow_dag_runner.py:30:6 - error: Import "tfx.orchestration.airflow" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/a/tfx/orchestration/airflow/airflow_dag_runner.py:31:6 - error: Import "tfx.orchestration.config" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_tfx/964a237b7a0f40091089d2809b03b0dd7ba19409/a/tfx/orchestration/airflow/airflow_dag_runner.py:32:6 - error: Import "tfx.orchestration.config" could not be resolved (reportMissingImports)
+6 errors, 0 warnings, 0 infos 
+Completed in 1.098sec
+
+time cost(in seconds): 1.3184783458709717

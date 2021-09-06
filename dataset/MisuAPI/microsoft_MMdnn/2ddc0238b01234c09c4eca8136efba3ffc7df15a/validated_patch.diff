@@ -1,0 +1,23 @@
+commit 2ddc0238b01234c09c4eca8136efba3ffc7df15a
+Author: namizzz <874169101@qq.com>
+Date:   Wed Aug 22 14:30:42 2018 +0800
+
+    fix caffe_emitter constant layer to help https://github.com/Microsoft/MMdnn/issues/366
+
+diff --git a/mmdnn/conversion/caffe/caffe_emitter.py b/mmdnn/conversion/caffe/caffe_emitter.py
+index 5796ccc..8a6eee0 100644
+--- a/mmdnn/conversion/caffe/caffe_emitter.py
++++ b/mmdnn/conversion/caffe/caffe_emitter.py
+@@ -378,7 +378,26 @@ bias_term={}, ntop=1)".format(
+         ))
+ 
+         if self.weight_loaded:
+-            self.weights_dict[IR_node.variable_name] = self.weights_dict.pop(IR_node.name)
++            try:
++                self.weights_dict[IR_node.variable_name] = self.weights_dict.pop(IR_node.name)
++            except:
++                self.weights_dict[IR_node.variable_name] = self.weights_dict.pop(IR_node.name + "_second")
+
+ 
+     def emit_LRN(self, IR_node):
+

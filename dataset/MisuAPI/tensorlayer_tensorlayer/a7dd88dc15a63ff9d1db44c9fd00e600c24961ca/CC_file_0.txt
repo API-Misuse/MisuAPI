@@ -1,0 +1,22 @@
+UPD @type:simple_stmt@ @[121,263]@ """
+    Specification for the distributed task wit <text_longer_than_50> @TO@ @type:simple_stmt@ @[121,258]@ """Specification for the distributed task with the <text_longer_than_50>
+---UPD @type:string@ @[121,262]@ """
+    Specification for the distributed task wit <text_longer_than_50> @TO@ @type:string@ @[121,257]@ """Specification for the distributed task with the <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[7442,8365]@ return tf.train.MonitoredTrainingSession(master=ta <text_longer_than_50> @TO@ @type:simple_stmt@ @[7437,8362]@ return tf.train.MonitoredTrainingSession(master=ta <text_longer_than_50>
+---UPD @type:return_stmt@ @[7442,8364]@ return tf.train.MonitoredTrainingSession(master=ta <text_longer_than_50> @TO@ @type:return_stmt@ @[7437,8361]@ return tf.train.MonitoredTrainingSession(master=ta <text_longer_than_50>
+------UPD @type:atom_expr@ @[7449,8364]@ tf.train.MonitoredTrainingSession(master=task_spec <text_longer_than_50> @TO@ @type:atom_expr@ @[7444,8361]@ tf.train.MonitoredTrainingSession(master=task_spec <text_longer_than_50>
+---------UPD @type:trailer@ @[7482,8364]@ (master=task_spec.target,
+                         <text_longer_than_50> @TO@ @type:trailer@ @[7477,8361]@ (master=task_spec.target(),
+                       <text_longer_than_50>
+------------UPD @type:arglist@ @[7483,8363]@ master=task_spec.target,
+                          <text_longer_than_50> @TO@ @type:arglist@ @[7478,8360]@ master=task_spec.target(),
+                        <text_longer_than_50>
+---------------UPD @type:argument@ @[7483,7506]@ master=task_spec.target @TO@ @type:argument@ @[7478,7503]@ master=task_spec.target()
+------------------UPD @type:atom_expr@ @[7490,7506]@ task_spec.target @TO@ @type:atom_expr@ @[7485,7503]@ task_spec.target()
+---------------------INS @type:trailer@ @[7494,7501]@ .target @TO@ @type:atom_expr@ @[7490,7506]@ task_spec.target
+---------------------UPD @type:trailer@ @[7499,7506]@ .target @TO@ @type:trailer@ @[7501,7503]@ ()
+------------------------MOV @type:name@ @[7500,7506]@ target @TO@ @type:trailer@ @[7494,7501]@ .target
+
+

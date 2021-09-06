@@ -1,0 +1,19 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:8:6 - error: Import "general_function.file_wav" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:10:6 - error: Import "python_speech_features" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:11:6 - error: Import "python_speech_features" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:12:6 - error: Import "python_speech_features" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:16:6 - error: Import "scipy.fftpack" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:81:39 - error: "get_wav_list" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:82:45 - error: "get_wav_symbol" is not defined (reportUndefinedVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/nl8590687_ASRT_SpeechRecognition/8b9d086ab25e3ebb9ecad7b3cc3e95d3a7ac5749/a/readdata2.py:131:16 - error: "read_wav_data" is not defined (reportUndefinedVariable)
+8 errors, 0 warnings, 0 infos 
+Completed in 1.076sec
+
+time cost(in seconds): 1.2182095050811768

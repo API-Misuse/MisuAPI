@@ -1,0 +1,12 @@
+INS @type:simple_stmt@ @[12864,12886]@ base_img = img.copy() @TO@ @type:suite@ @[12757,13482]@ #img might be path, base64 or numpy array. Convert <text_longer_than_50>
+
+
+INS @type:if_stmt@ @[13051,13371]@ if img.shape[0] > 0 and img.shape[1] > 0:
+		img =  <text_longer_than_50> @TO@ @type:suite@ @[12757,13482]@ #img might be path, base64 or numpy array. Convert <text_longer_than_50>
+---INS @type:suite@ @[13092,13160]@ img = align_face(img = img, detector_backend = det <text_longer_than_50> @TO@ @type:if_stmt@ @[13051,13371]@ if img.shape[0] > 0 and img.shape[1] > 0:
+		img =  <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[13102,13167]@ img = align_face(img = img, detector_backend = det <text_longer_than_50> @TO@ @type:suite@ @[13092,13160]@ img = align_face(img = img, detector_backend = det <text_longer_than_50>
+
+

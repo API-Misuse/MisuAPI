@@ -1,0 +1,89 @@
+INS @type:simple_stmt@ @[922,959]@ from torch.nn import functional as F @TO@ @type:file_input@ @[690,15920]@ from __future__ import absolute_import
+
+import uni <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[2038,2058]@ loss = nn.BCELoss() @TO@ @type:simple_stmt@ @[2075,2105]@ loss = F.binary_cross_entropy
+---UPD @type:expr_stmt@ @[2038,2057]@ loss = nn.BCELoss() @TO@ @type:expr_stmt@ @[2075,2104]@ loss = F.binary_cross_entropy
+------UPD @type:atom_expr@ @[2045,2057]@ nn.BCELoss() @TO@ @type:atom_expr@ @[2082,2104]@ F.binary_cross_entropy
+---------UPD @type:name@ @[2045,2047]@ nn @TO@ @type:name@ @[2082,2083]@ F
+---------UPD @type:trailer@ @[2047,2055]@ .BCELoss @TO@ @type:trailer@ @[2083,2104]@ .binary_cross_entropy
+------------UPD @type:name@ @[2048,2055]@ BCELoss @TO@ @type:name@ @[2084,2104]@ binary_cross_entropy
+---------DEL @type:trailer@ @[2055,2057]@ () @FROM@ @type:atom_expr@ @[2045,2057]@ nn.BCELoss()
+
+
+UPD @type:with_stmt@ @[2067,2916]@ with spark_session('test_fit_model') as spark:
+    <text_longer_than_50> @TO@ @type:with_stmt@ @[2114,3011]@ with spark_session('test_fit_model') as spark:
+    <text_longer_than_50>
+---UPD @type:suite@ @[2113,2916]@ df = create_xor_data(spark)
+
+            with loca <text_longer_than_50> @TO@ @type:suite@ @[2160,3011]@ df = create_xor_data(spark)
+
+            with loca <text_longer_than_50>
+------UPD @type:with_stmt@ @[2167,2916]@ with local_store() as store:
+                torch <text_longer_than_50> @TO@ @type:with_stmt@ @[2214,3011]@ with local_store() as store:
+                torch <text_longer_than_50>
+---------UPD @type:suite@ @[2195,2916]@ torch_estimator = hvd.TorchEstimator(
+             <text_longer_than_50> @TO@ @type:suite@ @[2242,3011]@ torch_estimator = hvd.TorchEstimator(
+             <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[2212,2640]@ torch_estimator = hvd.TorchEstimator(
+             <text_longer_than_50> @TO@ @type:simple_stmt@ @[2259,2735]@ torch_estimator = hvd.TorchEstimator(
+             <text_longer_than_50>
+---------------UPD @type:expr_stmt@ @[2212,2639]@ torch_estimator = hvd.TorchEstimator(
+             <text_longer_than_50> @TO@ @type:expr_stmt@ @[2259,2734]@ torch_estimator = hvd.TorchEstimator(
+             <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[2230,2639]@ hvd.TorchEstimator(
+                    num_proc=2 <text_longer_than_50> @TO@ @type:atom_expr@ @[2277,2734]@ hvd.TorchEstimator(
+                    num_proc=2 <text_longer_than_50>
+---------------------UPD @type:trailer@ @[2248,2639]@ (
+                    num_proc=2,
+                 <text_longer_than_50> @TO@ @type:trailer@ @[2295,2734]@ (
+                    num_proc=2,
+                 <text_longer_than_50>
+------------------------UPD @type:arglist@ @[2270,2638]@ num_proc=2,
+                    store=store,
+      <text_longer_than_50> @TO@ @type:arglist@ @[2317,2733]@ num_proc=2,
+                    store=store,
+      <text_longer_than_50>
+---------------------------INS @type:operator@ @[2685,2686]@ , @TO@ @type:arglist@ @[2270,2638]@ num_proc=2,
+                    store=store,
+      <text_longer_than_50>
+---------------------------INS @type:argument@ @[2707,2733]@ sample_weight_col='weight' @TO@ @type:arglist@ @[2270,2638]@ num_proc=2,
+                    store=store,
+      <text_longer_than_50>
+
+
+UPD @type:with_stmt@ @[4369,5269]@ with spark_session('test_transform_multi_class') a <text_longer_than_50> @TO@ @type:with_stmt@ @[4464,5402]@ with spark_session('test_transform_multi_class') a <text_longer_than_50>
+---UPD @type:suite@ @[4427,5269]@ df = create_xor_data(spark)
+            metadata = <text_longer_than_50> @TO@ @type:suite@ @[4522,5402]@ df = create_xor_data(spark)
+            metadata = <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4939,5147]@ expected_types = {
+                'x1': LongType, <text_longer_than_50> @TO@ @type:simple_stmt@ @[5034,5280]@ expected_types = {
+                'x1': LongType, <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[4939,5146]@ expected_types = {
+                'x1': LongType, <text_longer_than_50> @TO@ @type:expr_stmt@ @[5034,5279]@ expected_types = {
+                'x1': LongType, <text_longer_than_50>
+------------UPD @type:atom@ @[4956,5146]@ {
+                'x1': LongType,
+                 <text_longer_than_50> @TO@ @type:atom@ @[5051,5279]@ {
+                'x1': LongType,
+                 <text_longer_than_50>
+---------------UPD @type:dictorsetmaker@ @[4974,5132]@ 'x1': LongType,
+                'x2': LongType,
+   <text_longer_than_50> @TO@ @type:dictorsetmaker@ @[5069,5265]@ 'x1': LongType,
+                'x2': LongType,
+   <text_longer_than_50>
+------------------MOV @type:string@ @[5077,5080]@ 'y' @TO@ @type:dictorsetmaker@ @[4974,5132]@ 'x1': LongType,
+                'x2': LongType,
+   <text_longer_than_50>
+------------------INS @type:string@ @[5172,5180]@ 'weight' @TO@ @type:dictorsetmaker@ @[4974,5132]@ 'x1': LongType,
+                'x2': LongType,
+   <text_longer_than_50>
+------------------INS @type:name@ @[5215,5225]@ DoubleType @TO@ @type:dictorsetmaker@ @[4974,5132]@ 'x1': LongType,
+                'x2': LongType,
+   <text_longer_than_50>
+------------------INS @type:operator@ @[5225,5226]@ , @TO@ @type:dictorsetmaker@ @[4974,5132]@ 'x1': LongType,
+                'x2': LongType,
+   <text_longer_than_50>
+
+

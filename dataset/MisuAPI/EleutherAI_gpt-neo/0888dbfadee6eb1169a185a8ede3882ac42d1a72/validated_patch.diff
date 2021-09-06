@@ -1,0 +1,28 @@
+commit 0888dbfadee6eb1169a185a8ede3882ac42d1a72
+Author: Phil Wang <lucidrains@gmail.com>
+Date:   Sat Sep 12 10:51:58 2020 -0700
+
+    add faster sampling for global attention (#43)
+    
+    * add faster sampling for global attention
+    
+    * allow user to toggle slow sampling, in case fast sampling contains a bug
+    
+    * make fast sampling compatible with local attention by expanding and reducing queries before and after the local attention op
+    
+    * remove pasts variable, in favor of using contexts object
+    
+    * fix a bunch of broken things
+    
+    * remove use of reshapes in attention blocks
+diff --git a/models/gpt2/gpt2.py b/models/gpt2/gpt2.py
+index d085205..6369e96 100644
+--- a/models/gpt2/gpt2.py
++++ b/models/gpt2/gpt2.py
+@@ -179,7 +181,7 @@ def attn(x, scope, n_state, *, layer_num, past, params, bias, memory_length_dim,
+                 #   we should create a fake context, and pass to attention for the efficiency
+ 
+                 # broadcast mask bias across batch and heads
+-                broadcasted_bias = mtf.broadcast(bias, [dim_batch, dim_heads, bias.shape[-2], bias.shape[-1]])
++                broadcasted_bias = mtf.broadcast(bias, [dim_batch, dim_heads, bias.shape[-2], bias.shape[-1]]) if exists(bias) else None
+ 

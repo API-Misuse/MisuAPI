@@ -1,0 +1,197 @@
+sha: 8e732f2cf67e4a36196a48b1cb0368d58ff86afe
+message: 'fix bug in smac that configspace cannot deal with complex searchspace (#716)
+
+
+  fix bug in smac that configspace cannot deal with complex searchspace. That is converting
+  categorical'
+commit_log: "commit 8e732f2cf67e4a36196a48b1cb0368d58ff86afe\nAuthor: QuanluZhang\
+  \ <z.quanluzhang@gmail.com>\nDate:   Sun Feb 10 11:44:07 2019 +0800\n\n    fix bug\
+  \ in smac that configspace cannot deal with complex searchspace (#716)\n    \n \
+  \   fix bug in smac that configspace cannot deal with complex searchspace. That\
+  \ is converting categorical"
+contained_keywords:
+- bug
+- fix
+commit_time: 2019-02-10 11:44:07 +0800
+commit_author: QuanluZhang
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: src/sdk/pynni/nni/smac_tuner/convert_ss_to_scenario.py
+  source_file: a/src/sdk/pynni/nni/smac_tuner/convert_ss_to_scenario.py
+  target_file: b/src/sdk/pynni/nni/smac_tuner/convert_ss_to_scenario.py
+  added: 10
+  removed: 3
+  add_line_no:
+  - - 44
+    - '    categorical_dict = {}
+
+      '
+  - - 52
+    - '                            choice_len = len(search_space[key][''_value''])
+
+      '
+  - - 55
+    - "                                json.dumps(list(range(choice_len)))[1:-1],\
+      \ \n"
+  - - 56
+    - '                                json.dumps(0)))
+
+      '
+  - - 57
+    - '                            if key in categorical_dict:
+
+      '
+  - - 58
+    - '                                raise RuntimeError(''%s has already existed,
+      please make sure search space has no duplicate key.'' % key)
+
+      '
+  - - 59
+    - '                            categorical_dict[key] = search_space[key][''_value'']
+
+      '
+  - - 91
+    - '        return categorical_dict
+
+      '
+  - - 92
+    - '    return None
+
+      '
+  - - 129
+    - '    return generate_pcs(ss_content)
+
+      '
+  del_line_no:
+  - - null
+    - "                                json.dumps(search_space[key]['_value'])[1:-1],\
+      \ \n"
+  - - null
+    - '                                json.dumps(search_space[key][''_value''][0])))
+
+      '
+  - - null
+    - '    generate_pcs(ss_content)
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: src/sdk/pynni/nni/smac_tuner/smac_tuner.py
+  source_file: a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py
+  target_file: b/src/sdk/pynni/nni/smac_tuner/smac_tuner.py
+  added: 18
+  removed: 7
+  add_line_no:
+  - - 61
+    - '        self.categorical_dict = {}
+
+      '
+  - - 132
+    - '            self.categorical_dict = generate_scenario(search_space)
+
+      '
+  - - 133
+    - '            if self.categorical_dict is None:
+
+      '
+  - - 134
+    - '                raise RuntimeError(''categorical dict is not correctly returned
+      after parsing search space.'')
+
+      '
+  - - 158
+    - '    def convert_loguniform_categorical(self, challenger_dict):
+
+      '
+  - - 160
+    - '        Convert the values of type `loguniform` back to their initial range
+
+      '
+  - - 161
+    - '        Also, we convert categorical:
+
+      '
+  - - 162
+    - '        categorical values in search space are changed to list of numbers before,
+
+      '
+  - - 163
+    - '        those original values will be changed back in this function
+
+      '
+  - - 166
+    - '            # convert to loguniform
+
+      '
+  - - 169
+    - '            # convert categorical back to original value
+
+      '
+  - - 170
+    - '            if key in self.categorical_dict:
+
+      '
+  - - 171
+    - '                idx = challenger_dict[key]
+
+      '
+  - - 172
+    - '                challenger_dict[key] = self.categorical_dict[key][idx]
+
+      '
+  - - 183
+    - '            return self.convert_loguniform_categorical(init_challenger.get_dictionary())
+
+      '
+  - - 189
+    - '                return self.convert_loguniform_categorical(challenger.get_dictionary())
+
+      '
+  - - 203
+    - '                params.append(self.convert_loguniform_categorical(init_challenger.get_dictionary()))
+
+      '
+  - - 213
+    - '                params.append(self.convert_loguniform_categorical(challenger.get_dictionary()))
+
+      '
+  del_line_no:
+  - - null
+    - '            generate_scenario(search_space)
+
+      '
+  - - null
+    - '    def convert_loguniform(self, challenger_dict):
+
+      '
+  - - null
+    - '        convert the values of type `loguniform` back to their initial range
+
+      '
+  - - null
+    - '            return self.convert_loguniform(init_challenger.get_dictionary())
+
+      '
+  - - null
+    - '                return self.convert_loguniform(challenger.get_dictionary())
+
+      '
+  - - null
+    - '                params.append(self.convert_loguniform(init_challenger.get_dictionary()))
+
+      '
+  - - null
+    - '                params.append(self.convert_loguniform(challenger.get_dictionary()))
+
+      '

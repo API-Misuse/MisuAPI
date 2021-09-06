@@ -1,0 +1,18 @@
+commit 3ecc2b7906f172776ca40755875f427aa6b21c10
+Author: Leo Gao <leogao31@gmail.com>
+Date:   Sat Jul 11 08:13:19 2020 -0600
+
+    Fix mtf conv2d **attention_kwargs is None
+
+diff --git a/models/gpt2/gpt2.py b/models/gpt2/gpt2.py
+index 37ff095..0df4e7a 100644
+--- a/models/gpt2/gpt2.py
++++ b/models/gpt2/gpt2.py
+@@ -189,6 +189,7 @@ def attn(x, scope, n_state, *, past, params, block_offset=0, train=False):
+                 key_dim=dim_embd,
+                 value_dim=dim_embd,
+                 length_dim_num_splits=1,
++                attention_kwargs={}  # mtf argument here should be **kwargs but is just kwargs! so we have to actually give a dict
+                 # TODO: we might need to split along length dimension at some point, when we do we'll need to wire this up as a param
+             )
+         else:

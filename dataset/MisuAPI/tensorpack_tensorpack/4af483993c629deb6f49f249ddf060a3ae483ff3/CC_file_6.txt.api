@@ -1,0 +1,27 @@
+INS @type:if_stmt@ @[2102,2401]@ if not action:
+            _logger.warn("""\
+Direc <text_longer_than_50> @TO@ @type:suite@ @[2078,2962]@ _logger.warn("""\
+Directory {} exists! Please eith <text_longer_than_50>
+
+INS @type:if_stmt@ @[2102,2401]@ if not action:
+            _logger.warn("""\
+Direc <text_longer_than_50> @TO@ @type:suite@ @[2078,2962]@ _logger.warn("""\
+Directory {} exists! Please eith <text_longer_than_50>
+
+INS @type:suite@ @[2116,2401]@ _logger.warn("""\
+Directory {} exists! Please eith <text_longer_than_50> @TO@ @type:if_stmt@ @[2102,2401]@ if not action:
+            _logger.warn("""\
+Direc <text_longer_than_50>
+
+INS @type:suite@ @[2116,2401]@ _logger.warn("""\
+Directory {} exists! Please eith <text_longer_than_50> @TO@ @type:if_stmt@ @[2102,2401]@ if not action:
+            _logger.warn("""\
+Direc <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2087,2270]@ _logger.warn("""\
+Directory {} exists! Please eith <text_longer_than_50> @TO@ @type:suite@ @[2116,2401]@ _logger.warn("""\
+Directory {} exists! Please eith <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2278,2355]@ _logger.info("Select Action: k (keep) / b (backup) <text_longer_than_50> @TO@ @type:suite@ @[2116,2401]@ _logger.warn("""\
+Directory {} exists! Please eith <text_longer_than_50>
+

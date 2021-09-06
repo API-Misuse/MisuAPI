@@ -1,0 +1,10 @@
+UPD @type:atom_expr@ @[14484,14575]@ trace(
+                request.headers, service_na <text_longer_than_50> @TO@ @type:atom_expr@ @[14475,14582]@ trace(
+                request_headers=request.hea <text_longer_than_50>
+
+INS @type:argument@ @[14498,14529]@ request_headers=request.headers @TO@ @type:arglist@ @[14507,14561]@ request.headers, service_name=self.__class__.__nam <text_longer_than_50>
+
+INS @type:argument@ @[14498,14529]@ request_headers=request.headers @TO@ @type:arglist@ @[14507,14561]@ request.headers, service_name=self.__class__.__nam <text_longer_than_50>
+
+MOV @type:atom_expr@ @[14507,14522]@ request.headers @TO@ @type:argument@ @[14498,14529]@ request_headers=request.headers
+

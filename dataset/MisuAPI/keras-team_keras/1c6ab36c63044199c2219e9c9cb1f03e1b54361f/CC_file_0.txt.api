@@ -1,0 +1,18 @@
+UPD @type:atom_expr@ @[8585,8625]@ K.zeros(input_shape[0], self.output_dim) @TO@ @type:atom_expr@ @[8585,8627]@ K.zeros((input_shape[0], self.output_dim))
+
+INS @type:atom@ @[8593,8626]@ (input_shape[0], self.output_dim) @TO@ @type:trailer@ @[8592,8625]@ (input_shape[0], self.output_dim)
+
+INS @type:atom@ @[8593,8626]@ (input_shape[0], self.output_dim) @TO@ @type:trailer@ @[8592,8625]@ (input_shape[0], self.output_dim)
+
+INS @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim @TO@ @type:atom@ @[8593,8626]@ (input_shape[0], self.output_dim)
+
+INS @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim @TO@ @type:atom@ @[8593,8626]@ (input_shape[0], self.output_dim)
+
+DEL @type:arglist@ @[8593,8624]@ input_shape[0], self.output_dim @FROM@ @type:trailer@ @[8592,8625]@ (input_shape[0], self.output_dim)
+
+MOV @type:atom_expr@ @[8593,8607]@ input_shape[0] @TO@ @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim
+
+MOV @type:operator@ @[8607,8608]@ , @TO@ @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim
+
+MOV @type:atom_expr@ @[8609,8624]@ self.output_dim @TO@ @type:testlist_comp@ @[8594,8625]@ input_shape[0], self.output_dim
+

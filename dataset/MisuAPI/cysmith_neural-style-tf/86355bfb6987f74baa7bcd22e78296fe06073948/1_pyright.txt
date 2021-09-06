@@ -1,0 +1,22 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:3:8 - error: Import "scipy.io" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:7:8 - error: Import "cv2" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:328:10 - error: "pool" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:327:50 - error: "pool" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:353:10 - error: "K" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:531:7 - error: "__getitem__" method not defined on type "map[int]" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:532:7 - error: "__getitem__" method not defined on type "map[int]" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:633:10 - error: "optimizer" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:807:45 - error: "cvt_type" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:806:43 - error: "cvt_type" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/cysmith_neural-style-tf/86355bfb6987f74baa7bcd22e78296fe06073948/a/neural_style.py:811:30 - error: "inv_cvt_type" is possibly unbound (reportUnboundVariable)
+11 errors, 0 warnings, 0 infos 
+Completed in 2.503sec
+
+time cost(in seconds): 2.7329132556915283

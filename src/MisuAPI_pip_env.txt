@@ -1,0 +1,20 @@
+brotlipy==0.7.0
+certifi==2021.5.30
+cffi @ file:///tmp/build/80754af9/cffi_1625814693874/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+cryptography @ file:///tmp/build/80754af9/cryptography_1616769282133/work
+Deprecated @ file:///tmp/build/80754af9/deprecated_1615660604082/work
+idna @ file:///tmp/build/80754af9/idna_1622654382723/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+PyGithub @ file:///tmp/build/80754af9/pygithub_1623329096749/work
+PyJWT @ file:///tmp/build/80754af9/pyjwt_1619651623957/work
+PyNaCl @ file:///tmp/build/80754af9/pynacl_1595009112226/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1608057966937/work
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305763431/work
+PyYAML==5.4.1
+requests @ file:///tmp/build/80754af9/requests_1629994808627/work
+six @ file:///tmp/build/80754af9/six_1623709665295/work
+unidiff==0.5.5
+urllib3 @ file:///tmp/build/80754af9/urllib3_1625084269274/work
+wrapt==1.12.1
+yapf @ file:///tmp/build/80754af9/yapf_1615749224965/work

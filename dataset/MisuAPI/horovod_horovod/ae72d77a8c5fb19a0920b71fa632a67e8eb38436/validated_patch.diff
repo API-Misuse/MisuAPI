@@ -1,0 +1,22 @@
+commit ae72d77a8c5fb19a0920b71fa632a67e8eb38436
+Author: romerojosh <joshr@nvidia.com>
+Date:   Fri Jul 31 06:48:15 2020 -0700
+
+    Fix usage of HOROVOD_MIXED_INSTALL env var in tests. (#2151)
+    
+    Signed-off-by: Josh Romero <joshr@nvidia.com>
+
+diff --git a/test/test_mxnet.py b/test/test_mxnet.py
+index 3042518..b4ce873 100644
+--- a/test/test_mxnet.py
++++ b/test/test_mxnet.py
+@@ -213,7 +213,7 @@ class MXTests(unittest.TestCase):
+     def test_horovod_allreduce_cpu_gpu_error(self):
+         """Test that the allreduce raises an error if different ranks try to
+            perform reduction on CPU and GPU."""
+-        if os.environ.get('HOROVOD_MIXED_INSTALL'):
++        if int(os.environ.get('HOROVOD_MIXED_INSTALL', 0)):
+             # Skip if compiled with CUDA but without HOROVOD_GPU_OPERATIONS.
+             self.skipTest("Not compiled with HOROVOD_GPU_OPERATIONS")
+ 
+ 

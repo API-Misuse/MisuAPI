@@ -1,0 +1,62 @@
+commit 8e732f2cf67e4a36196a48b1cb0368d58ff86afe
+Author: QuanluZhang <z.quanluzhang@gmail.com>
+Date:   Sun Feb 10 11:44:07 2019 +0800
+
+    fix bug in smac that configspace cannot deal with complex searchspace (#716)
+    
+    fix bug in smac that configspace cannot deal with complex searchspace. That is converting categorical
+
+diff --git a/src/sdk/pynni/nni/smac_tuner/convert_ss_to_scenario.py b/src/sdk/pynni/nni/smac_tuner/convert_ss_to_scenario.py
+index 59daf481..fa01c6d0 100644
+--- a/src/sdk/pynni/nni/smac_tuner/convert_ss_to_scenario.py
++++ b/src/sdk/pynni/nni/smac_tuner/convert_ss_to_scenario.py
+@@ -41,6 +41,7 @@ def generate_pcs(nni_search_space_content):
+     # parameter_name real [min_value, max_value] [default value] log
+     # https://automl.github.io/SMAC3/stable/options.html
+     '''
++    categorical_dict = {}
+     search_space = nni_search_space_content
+     with open('param_config_space.pcs', 'w') as pcs_fd:
+         if isinstance(search_space, dict):
+@@ -48,10 +49,14 @@ def generate_pcs(nni_search_space_content):
+                 if isinstance(search_space[key], dict):
+                     try:
+                         if search_space[key]['_type'] == 'choice':
++                            choice_len = len(search_space[key]['_value'])
+                             pcs_fd.write('%s categorical {%s} [%s]\n' % (
+                                 key, 
+-                                json.dumps(search_space[key]['_value'])[1:-1], 
+-                                json.dumps(search_space[key]['_value'][0])))
++                                json.dumps(list(range(choice_len)))[1:-1], 
++                                json.dumps(0)))
++                            if key in categorical_dict:
++                                raise RuntimeError('%s has already existed, please make sure search space has no duplicate key.' % key)
++                            categorical_dict[key] = search_space[key]['_value']
+                         elif search_space[key]['_type'] == 'randint':
+                             # TODO: support lower bound in randint
+                             pcs_fd.write('%s integer [0, %d] [%d]\n' % (
+
+diff --git a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py b/src/sdk/pynni/nni/smac_tuner/smac_tuner.py
+index 313a9b3a..75dfcf06 100644
+--- a/src/sdk/pynni/nni/smac_tuner/smac_tuner.py
++++ b/src/sdk/pynni/nni/smac_tuner/smac_tuner.py
+@@ -58,6 +58,7 @@ class SMACTuner(Tuner):
+         self.first_one = True
+         self.update_ss_done = False
+         self.loguniform_key = set()
++        self.categorical_dict = {}
+ 
+     def _main_cli(self):
+         '''
+@@ -128,7 +129,9 @@ class SMACTuner(Tuner):
+         NOTE: updating search space is not supported.
+         '''
+         if not self.update_ss_done:
+-            generate_scenario(search_space)
++            self.categorical_dict = generate_scenario(search_space)
++            if self.categorical_dict is None:
++                raise RuntimeError('categorical dict is not correctly returned after parsing search space.')
+             self.optimizer = self._main_cli()
+             self.smbo_solver = self.optimizer.solver
+             self.loguniform_key = {key for key in search_space.keys() if search_space[key]['_type'] == 'loguniform'}
+

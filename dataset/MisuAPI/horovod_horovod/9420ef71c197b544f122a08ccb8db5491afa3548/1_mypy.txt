@@ -1,0 +1,8 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:1: error: Cannot find implementation or library stub for module named "keras"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:1: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:2: error: Cannot find implementation or library stub for module named "keras.backend"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:3: error: Skipping analyzing "tensorflow": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/horovod_horovod/9420ef71c197b544f122a08ccb8db5491afa3548/a/horovod/keras/callbacks.py:5: error: Cannot find implementation or library stub for module named "horovod.tensorflow"
+Found 4 errors in 1 file (checked 2 source files)
+
+time cost(in seconds): 0.4399404525756836

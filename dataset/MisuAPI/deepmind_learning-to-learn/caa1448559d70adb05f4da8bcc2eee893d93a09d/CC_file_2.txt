@@ -1,0 +1,59 @@
+UPD @type:if_stmt@ @[5655,6486]@ if net_assignments is None:
+    if len(config) !=  <text_longer_than_50> @TO@ @type:if_stmt@ @[5655,6506]@ if net_assignments is None:
+    if len(config) !=  <text_longer_than_50>
+---UPD @type:suite@ @[5682,6036]@ if len(config) != 1:
+      raise ValueError("Defau <text_longer_than_50> @TO@ @type:suite@ @[5682,6056]@ if len(config) != 1:
+      raise ValueError("Defau <text_longer_than_50>
+------UPD @type:with_stmt@ @[5839,5958]@ with tf.variable_scope("vars_optimizer"):
+      ke <text_longer_than_50> @TO@ @type:with_stmt@ @[5839,5978]@ with tf.variable_scope("vars_optimizer"):
+      ke <text_longer_than_50>
+---------UPD @type:suite@ @[5880,5958]@ key, kwargs = config.items()[0]
+      net = networ <text_longer_than_50> @TO@ @type:suite@ @[5880,5978]@ key = next(iter(config))
+      kwargs = config[key <text_longer_than_50>
+------------INS @type:simple_stmt@ @[5887,5912]@ key = next(iter(config)) @TO@ @type:suite@ @[5880,5958]@ key, kwargs = config.items()[0]
+      net = networ <text_longer_than_50>
+---------------INS @type:expr_stmt@ @[5887,5911]@ key = next(iter(config)) @TO@ @type:simple_stmt@ @[5887,5912]@ key = next(iter(config))
+------------UPD @type:simple_stmt@ @[5887,5919]@ key, kwargs = config.items()[0] @TO@ @type:simple_stmt@ @[5918,5939]@ kwargs = config[key]
+---------------UPD @type:expr_stmt@ @[5887,5918]@ key, kwargs = config.items()[0] @TO@ @type:expr_stmt@ @[5918,5938]@ kwargs = config[key]
+------------------UPD @type:atom_expr@ @[5901,5918]@ config.items()[0] @TO@ @type:atom_expr@ @[5927,5938]@ config[key]
+---------------------UPD @type:trailer@ @[5915,5918]@ [0] @TO@ @type:trailer@ @[5933,5938]@ [key]
+------------------------DEL @type:number@ @[5916,5917]@ 0 @FROM@ @type:trailer@ @[5915,5918]@ [0]
+---------------------DEL @type:trailer@ @[5907,5913]@ .items @FROM@ @type:atom_expr@ @[5901,5918]@ config.items()[0]
+---------------------DEL @type:trailer@ @[5913,5915]@ () @FROM@ @type:atom_expr@ @[5901,5918]@ config.items()[0]
+------------------DEL @type:testlist_star_expr@ @[5887,5898]@ key, kwargs @FROM@ @type:expr_stmt@ @[5887,5918]@ key, kwargs = config.items()[0]
+
+
+UPD @type:for_stmt@ @[8016,8300]@ for k, net in self._nets.iteritems():
+      if pat <text_longer_than_50> @TO@ @type:for_stmt@ @[8036,8316]@ for k, net in self._nets.items():
+      if path is <text_longer_than_50>
+---UPD @type:atom_expr@ @[8030,8052]@ self._nets.iteritems() @TO@ @type:atom_expr@ @[8050,8068]@ self._nets.items()
+------UPD @type:trailer@ @[8040,8050]@ .iteritems @TO@ @type:trailer@ @[8060,8066]@ .items
+---------UPD @type:name@ @[8041,8050]@ iteritems @TO@ @type:name@ @[8061,8066]@ items
+
+
+UPD @type:for_stmt@ @[12633,12780]@ for k, net in nets.iteritems():
+      print("Optim <text_longer_than_50> @TO@ @type:for_stmt@ @[12649,12792]@ for k, net in nets.items():
+      print("Optimizer <text_longer_than_50>
+---UPD @type:atom_expr@ @[12647,12663]@ nets.iteritems() @TO@ @type:atom_expr@ @[12663,12675]@ nets.items()
+------UPD @type:trailer@ @[12651,12661]@ .iteritems @TO@ @type:trailer@ @[12667,12673]@ .items
+---------UPD @type:name@ @[12652,12661]@ iteritems @TO@ @type:name@ @[12668,12673]@ items
+
+
+MOV @type:name@ @[5887,5890]@ key @TO@ @type:expr_stmt@ @[5887,5911]@ key = next(iter(config))
+
+
+UPD @type:operator@ @[5890,5891]@ , @TO@ @type:operator@ @[5891,5892]@ =
+
+
+MOV @type:operator@ @[5890,5891]@ , @TO@ @type:expr_stmt@ @[5887,5911]@ key = next(iter(config))
+
+
+MOV @type:name@ @[5892,5898]@ kwargs @TO@ @type:expr_stmt@ @[5887,5918]@ key, kwargs = config.items()[0]
+
+
+UPD @type:name@ @[5908,5913]@ items @TO@ @type:name@ @[5934,5937]@ key
+
+
+MOV @type:name@ @[5908,5913]@ items @TO@ @type:trailer@ @[5915,5918]@ [0]
+
+

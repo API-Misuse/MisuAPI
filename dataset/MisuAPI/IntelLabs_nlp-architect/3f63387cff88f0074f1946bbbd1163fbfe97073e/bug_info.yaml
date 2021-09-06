@@ -1,0 +1,55 @@
+issues_cnt: 0
+sha: 3f63387cff88f0074f1946bbbd1163fbfe97073e
+message: "Fix #268 (#273)\n\n* Fix #268\r\n\r\n* Update prepare_data.py\r\n\r\n* Minor\
+  \ fix"
+commit_log: "commit 3f63387cff88f0074f1946bbbd1163fbfe97073e\nAuthor: Peter Izsak\
+  \ <peteriz@users.noreply.github.com>\nDate:   Thu Sep 13 11:17:17 2018 +0300\n\n\
+  \    Fix #268 (#273)\n    \n    * Fix #268\n    \n    * Update prepare_data.py\n\
+  \    \n    * Minor fix"
+contained_keywords:
+- fix
+commit_time: 2018-09-13 11:17:17 +0300
+commit_author: Peter Izsak
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 128
+    - '            if not path.exists(_path_to_model):
+
+      '
+  - - 129
+    - '                download_unlicensed_file(nlp_chunker_url, chunker_model_file,
+      _path_to_model)
+
+      '
+  - - 131
+    - '            if not path.exists(_path_to_params):
+
+      '
+  - - 132
+    - '                download_unlicensed_file(nlp_chunker_url, chunker_model_dat_file,
+      _path_to_params)
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - '            download_unlicensed_file(nlp_chunker_url, chunker_model_file, _path_to_model)
+
+      '
+  - - null
+    - '            download_unlicensed_file(nlp_chunker_url, chunker_model_dat_file,
+      _path_to_params)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: solutions/set_expansion/prepare_data.py
+  removed: 2
+  source_file: a/solutions/set_expansion/prepare_data.py
+  target_file: b/solutions/set_expansion/prepare_data.py

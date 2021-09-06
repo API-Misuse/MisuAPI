@@ -1,0 +1,12 @@
+UPD @type:atom_expr@ @[5438,5568]@ tf.concat(axis=[tf.expand_dims(sparse_local_row, 1 <text_longer_than_50> @TO@ @type:atom_expr@ @[5438,5583]@ tf.concat(axis=1, values=[tf.expand_dims(sparse_lo <text_longer_than_50>
+
+MOV @type:argument@ @[5448,5557]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50> @TO@ @type:arglist@ @[5448,5567]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50>
+
+INS @type:argument@ @[5448,5454]@ axis=1 @TO@ @type:arglist@ @[5448,5567]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50>
+
+DEL @type:argument@ @[5559,5567]@ values=1 @FROM@ @type:arglist@ @[5448,5567]@ axis=[tf.expand_dims(sparse_local_row, 1),
+        <text_longer_than_50>
+

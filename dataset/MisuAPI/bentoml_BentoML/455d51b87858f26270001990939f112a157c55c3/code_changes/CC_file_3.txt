@@ -1,0 +1,20 @@
+UPD @type:simple_stmt@ @[1291,1334]@ from bentoml.tracing.__init__ import trace @TO@ @type:simple_stmt@ @[1291,1325]@ from bentoml.tracing import trace
+---UPD @type:import_from@ @[1291,1333]@ from bentoml.tracing.__init__ import trace @TO@ @type:import_from@ @[1291,1324]@ from bentoml.tracing import trace
+------UPD @type:dotted_name@ @[1296,1320]@ bentoml.tracing.__init__ @TO@ @type:dotted_name@ @[1296,1311]@ bentoml.tracing
+---------DEL @type:name@ @[1312,1320]@ __init__ @FROM@ @type:dotted_name@ @[1296,1320]@ bentoml.tracing.__init__
+
+
+UPD @type:with_stmt@ @[14479,14611]@ with trace(
+                request.headers, servi <text_longer_than_50> @TO@ @type:with_stmt@ @[14470,14618]@ with trace(
+                request_headers=reques <text_longer_than_50>
+---UPD @type:atom_expr@ @[14484,14575]@ trace(
+                request.headers, service_na <text_longer_than_50> @TO@ @type:atom_expr@ @[14475,14582]@ trace(
+                request_headers=request.hea <text_longer_than_50>
+------UPD @type:trailer@ @[14489,14575]@ (
+                request.headers, service_name=se <text_longer_than_50> @TO@ @type:trailer@ @[14480,14582]@ (
+                request_headers=request.headers, <text_longer_than_50>
+---------UPD @type:arglist@ @[14507,14561]@ request.headers, service_name=self.__class__.__nam <text_longer_than_50> @TO@ @type:arglist@ @[14498,14568]@ request_headers=request.headers, service_name=self <text_longer_than_50>
+------------INS @type:argument@ @[14498,14529]@ request_headers=request.headers @TO@ @type:arglist@ @[14507,14561]@ request.headers, service_name=self.__class__.__nam <text_longer_than_50>
+------------MOV @type:atom_expr@ @[14507,14522]@ request.headers @TO@ @type:argument@ @[14498,14529]@ request_headers=request.headers
+
+

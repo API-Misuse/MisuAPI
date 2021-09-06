@@ -1,0 +1,7 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/waleedka_hiddenlayer/e2574a5057be2176353e47d0b0113bf1ba51e7e5/a/demos/history_canvas.py:3: error: Cannot find implementation or library stub for module named "matplotlib"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/waleedka_hiddenlayer/e2574a5057be2176353e47d0b0113bf1ba51e7e5/a/demos/history_canvas.py:3: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/waleedka_hiddenlayer/e2574a5057be2176353e47d0b0113bf1ba51e7e5/a/demos/history_canvas.py:9: error: Skipping analyzing "numpy": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/waleedka_hiddenlayer/e2574a5057be2176353e47d0b0113bf1ba51e7e5/a/demos/history_canvas.py:10: error: Cannot find implementation or library stub for module named "hiddenlayer"
+Found 3 errors in 1 file (checked 1 source file)
+
+time cost(in seconds): 0.52950119972229

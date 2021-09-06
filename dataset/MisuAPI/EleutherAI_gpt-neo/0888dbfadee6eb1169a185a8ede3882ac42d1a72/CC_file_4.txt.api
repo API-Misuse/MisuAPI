@@ -1,0 +1,108 @@
+INS @type:simple_stmt@ @[2879,2930]@ slow_sampling = params.get('slow_sampling', False) @TO@ @type:suite@ @[960,9601]@ """Sample randomly one token at a time.
+
+    The p <text_longer_than_50>
+
+INS @type:if_stmt@ @[3739,5019]@ if not slow_sampling:
+        context_first_part = <text_longer_than_50> @TO@ @type:suite@ @[960,9601]@ """Sample randomly one token at a time.
+
+    The p <text_longer_than_50>
+
+INS @type:if_stmt@ @[3739,5019]@ if not slow_sampling:
+        context_first_part = <text_longer_than_50> @TO@ @type:suite@ @[960,9601]@ """Sample randomly one token at a time.
+
+    The p <text_longer_than_50>
+
+INS @type:suite@ @[3760,4981]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50> @TO@ @type:if_stmt@ @[3739,5019]@ if not slow_sampling:
+        context_first_part = <text_longer_than_50>
+
+INS @type:suite@ @[3760,4981]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50> @TO@ @type:if_stmt@ @[3739,5019]@ if not slow_sampling:
+        context_first_part = <text_longer_than_50>
+
+INS @type:simple_stmt@ @[3769,4582]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50> @TO@ @type:suite@ @[3760,4981]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50>
+
+INS @type:simple_stmt@ @[3769,4582]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50> @TO@ @type:suite@ @[3760,4981]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50>
+
+INS @type:if_stmt@ @[4790,4981]@ if not has_partial_sequences:
+            initial_ <text_longer_than_50> @TO@ @type:suite@ @[3760,4981]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50>
+
+INS @type:if_stmt@ @[4790,4981]@ if not has_partial_sequences:
+            initial_ <text_longer_than_50> @TO@ @type:suite@ @[3760,4981]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50>
+
+INS @type:suite@ @[4819,4908]@ initial_states = [mtf.zeros_like(t) for t in conte <text_longer_than_50> @TO@ @type:if_stmt@ @[4790,4981]@ if not has_partial_sequences:
+            initial_ <text_longer_than_50>
+
+INS @type:suite@ @[4819,4908]@ initial_states = [mtf.zeros_like(t) for t in conte <text_longer_than_50> @TO@ @type:if_stmt@ @[4790,4981]@ if not has_partial_sequences:
+            initial_ <text_longer_than_50>
+
+MOV @type:suite@ @[4842,4897]@ initial_states = context_first_part.new_states @TO@ @type:if_stmt@ @[4790,4981]@ if not has_partial_sequences:
+            initial_ <text_longer_than_50>
+
+INS @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50> @TO@ @type:simple_stmt@ @[5933,5961]@ nonlocal context_first_part
+
+INS @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50> @TO@ @type:simple_stmt@ @[5933,5961]@ nonlocal context_first_part
+
+INS @type:test@ @[6184,6987]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50> @TO@ @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50>
+
+INS @type:test@ @[6184,6987]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50> @TO@ @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50>
+
+INS @type:not_test@ @[6960,6977]@ not slow_sampling @TO@ @type:test@ @[6184,6987]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50>
+
+INS @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50> @TO@ @type:simple_stmt@ @[5933,5961]@ nonlocal context_first_part
+
+INS @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50> @TO@ @type:simple_stmt@ @[5933,5961]@ nonlocal context_first_part
+
+INS @type:test@ @[6184,6987]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50> @TO@ @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50>
+
+INS @type:test@ @[6184,6987]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50> @TO@ @type:expr_stmt@ @[6174,6987]@ context = mtf_transformer.transformer.Context(
+    <text_longer_than_50>
+
+INS @type:not_test@ @[6960,6977]@ not slow_sampling @TO@ @type:test@ @[6184,6987]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7354,7465]@ gpt2.model({'inputs': ids}, other_features, params <text_longer_than_50> @TO@ @type:atom_expr@ @[7077,7191]@ gpt2.model({'inputs': ids}, other_features, params <text_longer_than_50>
+
+INS @type:if_stmt@ @[7924,8116]@ if slow_sampling:
+            ids_this_step = mtf. <text_longer_than_50> @TO@ @type:suite@ @[5887,9066]@ nonlocal sampling_keep_top_k
+        nonlocal cont <text_longer_than_50>
+
+INS @type:if_stmt@ @[7924,8116]@ if slow_sampling:
+            ids_this_step = mtf. <text_longer_than_50> @TO@ @type:suite@ @[5887,9066]@ nonlocal sampling_keep_top_k
+        nonlocal cont <text_longer_than_50>
+
+INS @type:suite@ @[7941,8033]@ ids_this_step = mtf.shift(ids_this_step, offset=1, <text_longer_than_50> @TO@ @type:if_stmt@ @[7924,8116]@ if slow_sampling:
+            ids_this_step = mtf. <text_longer_than_50>
+
+INS @type:suite@ @[7941,8033]@ ids_this_step = mtf.shift(ids_this_step, offset=1, <text_longer_than_50> @TO@ @type:if_stmt@ @[7924,8116]@ if slow_sampling:
+            ids_this_step = mtf. <text_longer_than_50>
+
+INS @type:if_stmt@ @[8322,8384]@ if context is not None:
+            ret += context <text_longer_than_50> @TO@ @type:suite@ @[5887,9066]@ nonlocal sampling_keep_top_k
+        nonlocal cont <text_longer_than_50>
+
+INS @type:simple_stmt@ @[8392,8403]@ return ret @TO@ @type:suite@ @[5887,9066]@ nonlocal sampling_keep_top_k
+        nonlocal cont <text_longer_than_50>
+
+UPD @type:atom_expr@ @[3675,4386]@ mtf_transformer.transformer.Context(
+        model <text_longer_than_50> @TO@ @type:atom_expr@ @[3790,4581]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50>
+
+MOV @type:expr_stmt@ @[3654,4386]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50> @TO@ @type:simple_stmt@ @[3769,4582]@ context_first_part = mtf_transformer.transformer.C <text_longer_than_50>
+
+UPD @type:atom_expr@ @[3675,4386]@ mtf_transformer.transformer.Context(
+        model <text_longer_than_50> @TO@ @type:atom_expr@ @[3790,4581]@ mtf_transformer.transformer.Context(
+            m <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[8790,8869]@ ids_this_step = mtf.shift(ids_this_step, offset=1, <text_longer_than_50> @TO@ @type:suite@ @[7941,8033]@ ids_this_step = mtf.shift(ids_this_step, offset=1, <text_longer_than_50>
+

@@ -1,0 +1,8 @@
+UPD @type:atom_expr@ @[11519,11534]@ loss(net(X), y) @TO@ @type:atom_expr@ @[11519,11549]@ loss(net(X), y.reshape(-1, 1))
+
+INS @type:atom_expr@ @[11532,11548]@ y.reshape(-1, 1) @TO@ @type:arglist@ @[11524,11533]@ net(X), y
+
+INS @type:atom_expr@ @[11532,11548]@ y.reshape(-1, 1) @TO@ @type:arglist@ @[11524,11533]@ net(X), y
+
+MOV @type:name@ @[11532,11533]@ y @TO@ @type:atom_expr@ @[11532,11548]@ y.reshape(-1, 1)
+

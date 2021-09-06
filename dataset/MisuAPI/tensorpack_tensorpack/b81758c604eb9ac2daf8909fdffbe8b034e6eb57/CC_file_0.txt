@@ -1,0 +1,17 @@
+UPD @type:with_stmt@ @[856,1983]@ with self.graph.as_default():
+            handles  <text_longer_than_50> @TO@ @type:with_stmt@ @[856,2035]@ with self.graph.as_default():
+            handles  <text_longer_than_50>
+---UPD @type:suite@ @[885,1983]@ handles = []
+
+            input = PlaceholderInput <text_longer_than_50> @TO@ @type:suite@ @[885,2035]@ handles = []
+
+            input = PlaceholderInput <text_longer_than_50>
+------INS @type:simple_stmt@ @[1578,1613]@ config.session_init._setup_graph() @TO@ @type:suite@ @[885,1983]@ handles = []
+
+            input = PlaceholderInput <text_longer_than_50>
+------UPD @type:simple_stmt@ @[1642,1678]@ config.session_init.init(self.sess) @TO@ @type:simple_stmt@ @[1689,1730]@ config.session_init._run_init(self.sess)
+---------UPD @type:atom_expr@ @[1642,1677]@ config.session_init.init(self.sess) @TO@ @type:atom_expr@ @[1689,1729]@ config.session_init._run_init(self.sess)
+------------UPD @type:trailer@ @[1661,1666]@ .init @TO@ @type:trailer@ @[1708,1718]@ ._run_init
+---------------UPD @type:name@ @[1662,1666]@ init @TO@ @type:name@ @[1709,1718]@ _run_init
+
+

@@ -1,0 +1,14 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/ibab_tensorflow-wavenet/fa78e9e91fc4b2f1b8d36ccbc926ca4a791877b7/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/ibab_tensorflow-wavenet/fa78e9e91fc4b2f1b8d36ccbc926ca4a791877b7/a/wavenet/audio_reader.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/ibab_tensorflow-wavenet/fa78e9e91fc4b2f1b8d36ccbc926ca4a791877b7/a/wavenet/audio_reader.py:7:8 - error: Import "librosa" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/ibab_tensorflow-wavenet/fa78e9e91fc4b2f1b8d36ccbc926ca4a791877b7/a/wavenet/audio_reader.py:138:13 - error: Operator "+=" not supported for types "int | None" and "Literal[1]"
+    Operator "+" not supported for types "None" and "Literal[1]" (reportGeneralTypeIssues)
+2 errors, 0 warnings, 0 infos 
+Completed in 1.146sec
+
+time cost(in seconds): 1.284651756286621

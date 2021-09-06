@@ -1,0 +1,14 @@
+INS @type:atom_expr@ @[20941,20974]@ range(int(args.num_train_epochs)) @TO@ @type:for_stmt@ @[20928,21442]@ for epoch in range(args.num_train_epochs):
+        <text_longer_than_50>
+
+INS @type:atom_expr@ @[20941,20974]@ range(int(args.num_train_epochs)) @TO@ @type:for_stmt@ @[20928,21442]@ for epoch in range(args.num_train_epochs):
+        <text_longer_than_50>
+
+INS @type:trailer@ @[20946,20974]@ (int(args.num_train_epochs)) @TO@ @type:atom_expr@ @[20941,20974]@ range(int(args.num_train_epochs))
+
+INS @type:trailer@ @[20946,20974]@ (int(args.num_train_epochs)) @TO@ @type:atom_expr@ @[20941,20974]@ range(int(args.num_train_epochs))
+
+UPD @type:atom_expr@ @[20941,20969]@ range(args.num_train_epochs) @TO@ @type:atom_expr@ @[20947,20973]@ int(args.num_train_epochs)
+
+MOV @type:atom_expr@ @[20941,20969]@ range(args.num_train_epochs) @TO@ @type:trailer@ @[20946,20974]@ (int(args.num_train_epochs))
+

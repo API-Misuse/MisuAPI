@@ -1,0 +1,21 @@
+commit 53ee2b07864faf8989a97597cf2155b86769234d
+Author: Kit <cncng@microsoft.com>
+Date:   Sun Apr 8 21:02:03 2018 +0800
+
+    Fix misusage of caffe inference api in test.
+
+
+diff --git a/tests/test_conversion_imagenet.py b/tests/test_conversion_imagenet.py
+index 8d23a2d..34310ef 100644
+--- a/tests/test_conversion_imagenet.py
++++ b/tests/test_conversion_imagenet.py
+@@ -185,7 +185,7 @@ class TestModels(CorrectnessTest):
+         architecture_file, weight_file = caffe_extractor.download(architecture_name, TestModels.cachedir)
+ 
+         # get original model prediction result
+-        original_predict = caffe_extractor.inference(architecture_name,architecture_file, weight_file, image_path)
++        original_predict = caffe_extractor.inference(architecture_name, (architecture_file, weight_file), TestModels.cachedir, image_path)
+         del caffe_extractor
+ 
+         # original to IR
+

@@ -1,0 +1,37 @@
+sha: efc2f94dd1c6806aa249ba418aa118ce6f1165df
+message: Fixed update of centers for center loss
+commit_log: "commit efc2f94dd1c6806aa249ba418aa118ce6f1165df\nAuthor: David Sandberg\
+  \ <david.o.sandberg@gmail.com>\nDate:   Sat Mar 31 12:00:49 2018 +0200\n\n    Fixed\
+  \ update of centers for center loss"
+contained_keywords:
+- fixed
+commit_time: 2018-03-31 12:00:49 +0200
+commit_author: David Sandberg
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: src/facenet.py
+  source_file: a/src/facenet.py
+  target_file: b/src/facenet.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 75
+    - '    with tf.control_dependencies([centers]):
+
+      '
+  - - 76
+    - '        loss = tf.reduce_mean(tf.square(features - centers_batch))
+
+      '
+  del_line_no:
+  - - null
+    - '    loss = tf.reduce_mean(tf.square(features - centers_batch))
+
+      '

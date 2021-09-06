@@ -1,0 +1,18 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py:25:6 - error: Import ".configuration_xlnet" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py:26:6 - error: Import ".file_utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py:27:6 - error: Import ".modeling_tf_utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py:35:6 - error: Import ".tokenization_utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py:254:29 - error: "attn_prob_h" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py:254:42 - error: "attn_prob_g" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/huggingface_transformers/1d690289898bb4e7f69034333483c687d601015d/a/src/transformers/modeling_tf_xlnet.py:285:34 - error: "attn_prob" is possibly unbound (reportUnboundVariable)
+7 errors, 0 warnings, 0 infos 
+Completed in 1.956sec
+
+time cost(in seconds): 2.143303155899048

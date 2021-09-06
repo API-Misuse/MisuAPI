@@ -1,0 +1,22 @@
+commit a9b563437f7fc59d56afd43e55fcef99dd67d7d0
+Author: Fardin abdi <fardin@uber.com>
+Date:   Thu Mar 26 09:44:51 2020 -0700
+
+    Fixes bug with sample weight in torch (#1790)
+    
+    Signed-off-by: fardin abdi <fardin@uber.com>
+
+diff --git a/horovod/spark/torch/remote.py b/horovod/spark/torch/remote.py
+index aae774b..e33820e 100644
+--- a/horovod/spark/torch/remote.py
++++ b/horovod/spark/torch/remote.py
+@@ -235,6 +235,8 @@ def RemoteTrainer(estimator, metadata, last_checkpoint_state, run_id, dataset_id
+                         if cuda_available:
+                             inputs = [input.cuda() for input in inputs]
+                             labels = [label.cuda() for label in labels]
++                            if sample_weights:
++                                sample_weights = sample_weights.cuda()
+                         return inputs, labels, sample_weights
+ 
+                     def transform_outputs(outputs, labels):
+

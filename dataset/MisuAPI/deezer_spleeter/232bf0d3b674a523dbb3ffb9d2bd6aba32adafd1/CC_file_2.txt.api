@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[2805,2832]@ open('useless_config.json') @TO@ @type:atom_expr@ @[2805,2837]@ open('useless_config.json', 'w')
+

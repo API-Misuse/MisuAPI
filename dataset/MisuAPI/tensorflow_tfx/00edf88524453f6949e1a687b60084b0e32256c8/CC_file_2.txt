@@ -1,0 +1,9 @@
+INS @type:simple_stmt@ @[692,704]@ import mock @TO@ @type:file_input@ @[596,6507]@ """Tests for tfx.orchestration.portable.output_uti <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[4796,4832]@ fileio.exists(stateful_working_dir) @TO@ @type:simple_stmt@ @[4808,4861]@ self.assertTrue(fileio.exists(stateful_working_dir <text_longer_than_50>
+---INS @type:atom_expr@ @[4808,4860]@ self.assertTrue(fileio.exists(stateful_working_dir <text_longer_than_50> @TO@ @type:simple_stmt@ @[4796,4832]@ fileio.exists(stateful_working_dir)
+------INS @type:trailer@ @[4823,4860]@ (fileio.exists(stateful_working_dir)) @TO@ @type:atom_expr@ @[4808,4860]@ self.assertTrue(fileio.exists(stateful_working_dir <text_longer_than_50>
+---MOV @type:atom_expr@ @[4796,4831]@ fileio.exists(stateful_working_dir) @TO@ @type:trailer@ @[4823,4860]@ (fileio.exists(stateful_working_dir))
+
+

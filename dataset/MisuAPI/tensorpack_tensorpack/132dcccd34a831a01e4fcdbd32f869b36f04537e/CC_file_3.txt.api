@@ -1,0 +1,16 @@
+INS @type:try_stmt@ @[3321,3465]@ try:
+                    self.sess.run(self.close_ <text_longer_than_50> @TO@ @type:suite@ @[3304,3446]@ self.sess.run(self.close_op)
+                self. <text_longer_than_50>
+
+INS @type:try_stmt@ @[3321,3465]@ try:
+                    self.sess.run(self.close_ <text_longer_than_50> @TO@ @type:suite@ @[3304,3446]@ self.sess.run(self.close_op)
+                self. <text_longer_than_50>
+
+INS @type:suite@ @[3325,3375]@ self.sess.run(self.close_op) @TO@ @type:try_stmt@ @[3321,3465]@ try:
+                    self.sess.run(self.close_ <text_longer_than_50>
+
+INS @type:suite@ @[3325,3375]@ self.sess.run(self.close_op) @TO@ @type:try_stmt@ @[3321,3465]@ try:
+                    self.sess.run(self.close_ <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3321,3350]@ self.sess.run(self.close_op) @TO@ @type:suite@ @[3325,3375]@ self.sess.run(self.close_op)
+

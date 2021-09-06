@@ -1,0 +1,116 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/yahoo/TensorFlowOnSpark/pull/507
+  title: added error msg for missing executor_id
+  body: "also added msg to check for exceptions on other nodes\r\n\r\nI confirm that\
+    \ this contribution is made under the terms of the license found in the root directory\
+    \ of this repository's source tree and that I have the authority necessary to\
+    \ make this contribution on behalf of its copyright owner.\r\n"
+sha: 01152ff8213da2bd974e6df2cbb8c55a94af7cc9
+message: add error msg for missing executor_id; add msg to check for exceptions on
+  other nodes
+commit_log: "commit 01152ff8213da2bd974e6df2cbb8c55a94af7cc9\nAuthor: Lee Yang <leewyang@verizonmedia.com>\n\
+  Date:   Tue Feb 25 12:49:41 2020 -0800\n\n    add error msg for missing executor_id;\
+  \ add msg to check for exceptions on other nodes"
+contained_keywords:
+- error
+commit_time: 2020-02-25 12:49:41 -0800
+commit_author: Lee Yang
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  add_line_no:
+  - - 140
+    - '          "2. Spark tasks per executor is 1\n" + \
+
+      '
+  - - 141
+    - '          "3. Spark dynamic allocation is disabled\n" + \
+
+      '
+  - - 142
+    - '          "4. There are no other root-cause exceptions on other nodes\n"
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '          "2. Spark cores/tasks per executor is 1.\n" + \
+
+      '
+  - - null
+    - '          "3. Spark dynamic allocation is disabled."
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorflowonspark/TFSparkNode.py
+  removed: 2
+  source_file: a/tensorflowonspark/TFSparkNode.py
+  target_file: b/tensorflowonspark/TFSparkNode.py
+patched_file_1:
+  add_line_no:
+  - - 85
+    - '  if os.path.isfile("executor_id"):
+
+      '
+  - - 86
+    - '    with open("executor_id", "r") as f:
+
+      '
+  - - 87
+    - '      return int(f.read())
+
+      '
+  - - 88
+    - '  else:
+
+      '
+  - - 89
+    - '    msg = "No executor_id file found on this node, please ensure that:\n" +
+      \
+
+      '
+  - - 90
+    - '          "1. Spark num_executors matches TensorFlow cluster_size\n" + \
+
+      '
+  - - 91
+    - '          "2. Spark tasks per executor is 1\n" + \
+
+      '
+  - - 92
+    - '          "3. Spark dynamic allocation is disabled\n" + \
+
+      '
+  - - 93
+    - '          "4. There are no other root-cause exceptions on other nodes\n"
+
+      '
+  - - 94
+    - '    raise Exception(msg)
+
+      '
+  added: 10
+  del_line_no:
+  - - null
+    - '  with open("executor_id", "r") as f:
+
+      '
+  - - null
+    - '    return int(f.read())
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorflowonspark/util.py
+  removed: 2
+  source_file: a/tensorflowonspark/util.py
+  target_file: b/tensorflowonspark/util.py

@@ -1,0 +1,77 @@
+DEL @type:atom_expr@ @[7262,7286]@ np.array(distort_matrix) @FROM@ @type:return_stmt@ @[7255,7286]@ return np.array(distort_matrix)
+
+INS @type:name@ @[3083,3103]@ temp_distance_matrix @TO@ @type:expr_stmt@ @[2996,3058]@ self._distance_matrix = np.concatenate((up_k, down <text_longer_than_50>
+
+MOV @type:atom_expr@ @[2996,3017]@ self._distance_matrix @TO@ @type:expr_stmt@ @[3648,3692]@ self._distance_matrix = temp_distance_matrix
+
+DEL @type:atom_expr@ @[3084,3132]@ bourgain_embedding_matrix(self._distance_matrix) @FROM@ @type:expr_stmt@ @[3067,3132]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50>
+
+INS @type:try_stmt@ @[3390,3517]@ try:
+            self._l_matrix = cholesky(k_matri <text_longer_than_50> @TO@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+
+INS @type:try_stmt@ @[3390,3517]@ try:
+            self._l_matrix = cholesky(k_matri <text_longer_than_50> @TO@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+
+INS @type:suite@ @[3394,3465]@ self._l_matrix = cholesky(k_matrix, lower=True)  # <text_longer_than_50> @TO@ @type:try_stmt@ @[3390,3517]@ try:
+            self._l_matrix = cholesky(k_matri <text_longer_than_50>
+
+INS @type:suite@ @[3394,3465]@ self._l_matrix = cholesky(k_matrix, lower=True)  # <text_longer_than_50> @TO@ @type:try_stmt@ @[3390,3517]@ try:
+            self._l_matrix = cholesky(k_matri <text_longer_than_50>
+
+INS @type:simple_stmt@ @[3648,3693]@ self._distance_matrix = temp_distance_matrix @TO@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+
+INS @type:simple_stmt@ @[3648,3693]@ self._distance_matrix = temp_distance_matrix @TO@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+
+INS @type:expr_stmt@ @[3648,3692]@ self._distance_matrix = temp_distance_matrix @TO@ @type:simple_stmt@ @[3648,3693]@ self._distance_matrix = temp_distance_matrix
+
+INS @type:expr_stmt@ @[3648,3692]@ self._distance_matrix = temp_distance_matrix @TO@ @type:simple_stmt@ @[3648,3693]@ self._distance_matrix = temp_distance_matrix
+
+DEL @type:term@ @[4455,4545]@ 1.0 / np.exp(np.power(self.edit_distance_matrix(se <text_longer_than_50> @FROM@ @type:expr_stmt@ @[4445,4545]@ k_trans = 1.0 / np.exp(np.power(self.edit_distance <text_longer_than_50>
+
+UPD @type:atom_expr@ @[7061,7077]@ np.zeros((n, n)) @TO@ @type:atom_expr@ @[7119,7165]@ rbf_kernel(distort_elements, distort_elements)
+
+DEL @type:trailer@ @[7063,7069]@ .zeros @FROM@ @type:atom_expr@ @[7061,7077]@ np.zeros((n, n))
+
+MOV @type:atom_expr@ @[7061,7077]@ np.zeros((n, n)) @TO@ @type:return_stmt@ @[7255,7286]@ return np.array(distort_matrix)
+
+DEL @type:trailer@ @[7063,7069]@ .zeros @FROM@ @type:atom_expr@ @[7061,7077]@ np.zeros((n, n))
+
+MOV @type:name@ @[7262,7264]@ np @TO@ @type:atom_expr@ @[7061,7077]@ np.zeros((n, n))
+
+UPD @type:atom_expr@ @[3110,3131]@ self._distance_matrix @TO@ @type:atom_expr@ @[3164,3211]@ bourgain_embedding_matrix(temp_distance_matrix)
+
+MOV @type:atom_expr@ @[3110,3131]@ self._distance_matrix @TO@ @type:expr_stmt@ @[3067,3132]@ distort_matrix = bourgain_embedding_matrix(self._d <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[3495,3553]@ self._l_matrix = cholesky(k_matrix, lower=True)  # <text_longer_than_50> @TO@ @type:suite@ @[3394,3465]@ self._l_matrix = cholesky(k_matrix, lower=True)  # <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4461,4545]@ np.exp(np.power(self.edit_distance_matrix(self.ker <text_longer_than_50> @TO@ @type:atom_expr@ @[4528,4613]@ np.exp(-np.power(self.edit_distance_matrix(self.ke <text_longer_than_50>
+
+INS @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+INS @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+MOV @type:atom_expr@ @[4468,4544]@ np.power(self.edit_distance_matrix(self.kernel_lam <text_longer_than_50> @TO@ @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+MOV @type:atom_expr@ @[4461,4545]@ np.exp(np.power(self.edit_distance_matrix(self.ker <text_longer_than_50> @TO@ @type:expr_stmt@ @[4445,4545]@ k_trans = 1.0 / np.exp(np.power(self.edit_distance <text_longer_than_50>
+
+INS @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+INS @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50> @TO@ @type:trailer@ @[4467,4545]@ (np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+MOV @type:atom_expr@ @[4468,4544]@ np.power(self.edit_distance_matrix(self.kernel_lam <text_longer_than_50> @TO@ @type:factor@ @[4535,4612]@ -np.power(self.edit_distance_matrix(self.kernel_la <text_longer_than_50>
+
+MOV @type:name@ @[3084,3109]@ bourgain_embedding_matrix @TO@ @type:atom_expr@ @[3110,3131]@ self._distance_matrix
+
+DEL @type:simple_stmt@ @[3141,3194]@ k_matrix = 1.0 / np.exp(np.power(distort_matrix, 2 <text_longer_than_50> @FROM@ @type:suite@ @[2417,3657]@ if not self._first_fitted:
+            raise Value <text_longer_than_50>
+
+DEL @type:simple_stmt@ @[4083,4136]@ k_matrix = 1.0 / np.exp(np.power(distort_matrix, 2 <text_longer_than_50> @FROM@ @type:suite@ @[3777,4404]@ train_x, train_y = np.array(train_x), np.array(tra <text_longer_than_50>
+
+DEL @type:for_stmt@ @[7082,7251]@ for i in range(n):
+        for j in range(i + 1, n <text_longer_than_50> @FROM@ @type:suite@ @[6365,7287]@ distance_matrix = np.array(distance_matrix)
+    n  <text_longer_than_50>
+

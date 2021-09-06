@@ -1,0 +1,67 @@
+
+
+
+INS @type:if_stmt@ @[4456,4908]@ if exec_properties.get('custom_config'):
+      cml <text_longer_than_50> @TO@ @type:suite@ @[1232,4853]@ """Push model to target if blessed.
+
+    Args:
+    <text_longer_than_50>
+---INS @type:suite@ @[4496,4908]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:if_stmt@ @[4456,4908]@ if exec_properties.get('custom_config'):
+      cml <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[4458,4588]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:simple_stmt@ @[4503,4635]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4458,4587]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:expr_stmt@ @[4503,4634]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50>
+------UPD @type:atom_expr@ @[4478,4587]@ exec_properties.get('custom_config',
+              <text_longer_than_50> @TO@ @type:atom_expr@ @[4523,4634]@ exec_properties.get('custom_config',
+              <text_longer_than_50>
+---------UPD @type:trailer@ @[4497,4562]@ ('custom_config',
+                                 <text_longer_than_50> @TO@ @type:trailer@ @[4542,4609]@ ('custom_config',
+                                 <text_longer_than_50>
+------------UPD @type:arglist@ @[4498,4561]@ 'custom_config',
+                                  <text_longer_than_50> @TO@ @type:arglist@ @[4543,4608]@ 'custom_config',
+                                  <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[4458,4588]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:suite@ @[4496,4908]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4458,4587]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:expr_stmt@ @[4503,4634]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50>
+------UPD @type:atom_expr@ @[4478,4587]@ exec_properties.get('custom_config',
+              <text_longer_than_50> @TO@ @type:atom_expr@ @[4523,4634]@ exec_properties.get('custom_config',
+              <text_longer_than_50>
+---------UPD @type:trailer@ @[4497,4562]@ ('custom_config',
+                                 <text_longer_than_50> @TO@ @type:trailer@ @[4542,4609]@ ('custom_config',
+                                 <text_longer_than_50>
+------------UPD @type:arglist@ @[4498,4561]@ 'custom_config',
+                                  <text_longer_than_50> @TO@ @type:arglist@ @[4543,4608]@ 'custom_config',
+                                  <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[4592,4853]@ if cmle_serving_args is not None:
+      return cml <text_longer_than_50> @TO@ @type:if_stmt@ @[4641,4908]@ if cmle_serving_args is not None:
+        return c <text_longer_than_50>
+---UPD @type:suite@ @[4625,4853]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50> @TO@ @type:suite@ @[4674,4908]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4632,4853]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50> @TO@ @type:simple_stmt@ @[4683,4908]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50>
+---------UPD @type:return_stmt@ @[4632,4852]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50> @TO@ @type:return_stmt@ @[4683,4907]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50>
+------------UPD @type:atom_expr@ @[4639,4852]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50> @TO@ @type:atom_expr@ @[4690,4907]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50>
+---------------UPD @type:trailer@ @[4675,4852]@ (serving_path, model_version,
+                     <text_longer_than_50> @TO@ @type:trailer@ @[4726,4907]@ (serving_path, model_version,
+                     <text_longer_than_50>
+------------------UPD @type:arglist@ @[4676,4851]@ serving_path, model_version,
+                      <text_longer_than_50> @TO@ @type:arglist@ @[4727,4906]@ serving_path, model_version,
+                      <text_longer_than_50>
+
+
+MOV @type:if_stmt@ @[4592,4853]@ if cmle_serving_args is not None:
+      return cml <text_longer_than_50> @TO@ @type:suite@ @[4496,4908]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50>
+---UPD @type:suite@ @[4625,4853]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50> @TO@ @type:suite@ @[4674,4908]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4632,4853]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50> @TO@ @type:simple_stmt@ @[4683,4908]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50>
+---------UPD @type:return_stmt@ @[4632,4852]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50> @TO@ @type:return_stmt@ @[4683,4907]@ return cmle_runner.deploy_model_for_serving(servin <text_longer_than_50>
+------------UPD @type:atom_expr@ @[4639,4852]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50> @TO@ @type:atom_expr@ @[4690,4907]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50>
+---------------UPD @type:trailer@ @[4675,4852]@ (serving_path, model_version,
+                     <text_longer_than_50> @TO@ @type:trailer@ @[4726,4907]@ (serving_path, model_version,
+                     <text_longer_than_50>
+------------------UPD @type:arglist@ @[4676,4851]@ serving_path, model_version,
+                      <text_longer_than_50> @TO@ @type:arglist@ @[4727,4906]@ serving_path, model_version,
+                      <text_longer_than_50>
+
+

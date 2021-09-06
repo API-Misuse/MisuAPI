@@ -1,0 +1,20 @@
+commit a57ac7965bf6d74ed9e9660b086e3b9df3b24533
+Author: tinally <tinally@google.com>
+Date:   Fri Jul 24 14:42:43 2020 -0400
+
+    small fix
+
+diff --git a/tfx/components/transform/executor.py b/tfx/components/transform/executor.py
+index 002a0ebf..5b495fa5 100644
+--- a/tfx/components/transform/executor.py
++++ b/tfx/components/transform/executor.py
+@@ -304,7 +304,8 @@ class Executor(base_executor.BaseExecutor):
+     self._log_startup(input_dict, output_dict, exec_properties)
+ 
+     splits_config = transform_pb2.SplitsConfig()
+-    json_format.Parse(exec_properties['splits_config'], splits_config)
++    if exec_properties.get('splits_config'):
++      json_format.Parse(exec_properties['splits_config'], splits_config)
+ 
+     if not splits_config.analyze_splits:
+       splits_config.analyze_splits.append('train')

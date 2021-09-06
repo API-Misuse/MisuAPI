@@ -1,0 +1,39 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tkipf/gcn/pull/7
+  title: Changes to named arguments. (Fix for tf 1.0.0)
+  body: To avoid confusion, tf.nn.softmax_cross_entropy_with_logits only accepts named
+    arguments in Tensorflow 1.0.0.
+sha: 16553fd759e70d93824407f18cdea419703d85d4
+message: Fix typo for named argument
+commit_log: "commit 16553fd759e70d93824407f18cdea419703d85d4\nAuthor: Thomas Kipf\
+  \ <tkipf@users.noreply.github.com>\nDate:   Mon Feb 20 10:11:05 2017 +0100\n\n \
+  \   Fix typo for named argument"
+contained_keywords:
+- fix
+commit_time: 2017-02-20 10:11:05 +0100
+commit_author: Thomas Kipf
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 6
+    - '    loss = tf.nn.softmax_cross_entropy_with_logits(logits=preds, labels=labels)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    loss = tf.nn.softmax_cross_entropy_with_logits(logits=preds, lables=labels)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: gcn/metrics.py
+  removed: 1
+  source_file: a/gcn/metrics.py
+  target_file: b/gcn/metrics.py

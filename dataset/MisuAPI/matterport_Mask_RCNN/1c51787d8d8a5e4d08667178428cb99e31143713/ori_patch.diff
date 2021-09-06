@@ -1,0 +1,19 @@
+commit 1c51787d8d8a5e4d08667178428cb99e31143713
+Author: Waleed Abdulla <waleed.abdulla@gmail.com>
+Date:   Sat Dec 23 23:25:46 2017 -0800
+
+    Fix call to image_reference()
+
+diff --git a/coco.py b/coco.py
+index 5095654..e7db197 100644
+--- a/coco.py
++++ b/coco.py
+@@ -272,7 +272,7 @@ class CocoDataset(utils.Dataset):
+         if info["source"] == "coco":
+             return "http://cocodataset.org/#explore?id={}".format(info["id"])
+         else:
+-            super(CocoDataset, self).image_reference(self, image_id)
++            super(CocoDataset, self).image_reference(image_id)
+ 
+     # The following two functions are from pycocotools with a few changes.
+ 

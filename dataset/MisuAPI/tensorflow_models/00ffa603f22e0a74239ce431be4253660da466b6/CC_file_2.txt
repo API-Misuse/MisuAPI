@@ -1,0 +1,17 @@
+UPD @type:with_stmt@ @[13624,14082]@ with tf.name_scope(scope, 'OneHotEncoding', [label <text_longer_than_50> @TO@ @type:with_stmt@ @[13624,14082]@ with tf.name_scope(scope, 'OneHotEncoding', [label <text_longer_than_50>
+---UPD @type:suite@ @[13678,14082]@ batch_size = labels.get_shape()[0]
+    indices = t <text_longer_than_50> @TO@ @type:suite@ @[13678,14082]@ batch_size = labels.get_shape()[0]
+    indices = t <text_longer_than_50>
+------UPD @type:simple_stmt@ @[13842,13897]@ concated = tf.concat(axis=[indices, labels], value <text_longer_than_50> @TO@ @type:simple_stmt@ @[13842,13897]@ concated = tf.concat(axis=1, values=[indices, labe <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[13842,13896]@ concated = tf.concat(axis=[indices, labels], value <text_longer_than_50> @TO@ @type:expr_stmt@ @[13842,13896]@ concated = tf.concat(axis=1, values=[indices, labe <text_longer_than_50>
+------------UPD @type:atom_expr@ @[13853,13896]@ tf.concat(axis=[indices, labels], values=1) @TO@ @type:atom_expr@ @[13853,13896]@ tf.concat(axis=1, values=[indices, labels])
+---------------UPD @type:trailer@ @[13862,13896]@ (axis=[indices, labels], values=1) @TO@ @type:trailer@ @[13862,13896]@ (axis=1, values=[indices, labels])
+------------------UPD @type:arglist@ @[13863,13895]@ axis=[indices, labels], values=1 @TO@ @type:arglist@ @[13863,13895]@ axis=1, values=[indices, labels]
+---------------------MOV @type:argument@ @[13863,13885]@ axis=[indices, labels] @TO@ @type:arglist@ @[13863,13895]@ axis=[indices, labels], values=1
+------------------------UPD @type:name@ @[13863,13867]@ axis @TO@ @type:name@ @[13871,13877]@ values
+---------------------INS @type:argument@ @[13863,13869]@ axis=1 @TO@ @type:arglist@ @[13863,13895]@ axis=[indices, labels], values=1
+---------------------UPD @type:argument@ @[13863,13885]@ axis=[indices, labels] @TO@ @type:argument@ @[13871,13895]@ values=[indices, labels]
+------------------------UPD @type:name@ @[13863,13867]@ axis @TO@ @type:name@ @[13871,13877]@ values
+---------------------DEL @type:argument@ @[13887,13895]@ values=1 @FROM@ @type:arglist@ @[13863,13895]@ axis=[indices, labels], values=1
+
+

@@ -1,0 +1,111 @@
+commit fed8f2e074a71ff6fcf3d1f04dffb0d4b5279783
+Author: Chaoyu <paranoyang@gmail.com>
+Date:   Thu Apr 25 14:39:51 2019 -0700
+
+    Validate custom API name (#125)
+    
+    * validate-custom-api-name
+    
+    * formatting & lint fix
+    
+    * fix isidentifier in py2
+    
+    * Update __init__.py
+
+diff --git a/bentoml/handlers/dataframe_handler.py b/bentoml/handlers/dataframe_handler.py
+index 3c22006..bfb1f64 100644
+--- a/bentoml/handlers/dataframe_handler.py
++++ b/bentoml/handlers/dataframe_handler.py
+@@ -119,7 +119,7 @@ class DataframeHandler(BentoHandler):
+             return {
+                 "statusCode": 400,
+                 "body": "Request content-type not supported, only application/json and text/csv"
+-                        " are supported"
++                " are supported"
+             }
+ 
+         if self.typ == 'frame' and self.input_columns is not None:
+diff --git a/bentoml/service.py b/bentoml/service.py
+index e6f2564..8e5c3eb 100644
+--- a/bentoml/service.py
++++ b/bentoml/service.py
+@@ -29,6 +29,7 @@ from abc import abstractmethod, ABCMeta
+ from bentoml.utils.exceptions import BentoMLException
+ from bentoml.service_env import BentoServiceEnv
+ from bentoml.artifact import ArtifactCollection
++from bentoml.utils import isidentifier
+ from bentoml.utils.s3 import is_s3_url, download_from_s3
+ 
+ 
+@@ -153,7 +154,10 @@ def api_decorator(handler_cls, *args, **kwargs):
+ 
+         _set_func_attr(func, '_is_api', True)
+         _set_func_attr(func, '_handler', handler)
+-        # TODO: validate api_name
++        if not isidentifier(api_name):
++            raise ValueError(
++                "Invalid API name: '{}', a valid identifier must contains only letters, "
++                "numbers, underscores and not starting with a number.".format(api_name))
+         _set_func_attr(func, '_api_name', api_name)
+ 
+         return func
+diff --git a/bentoml/utils/__init__.py b/bentoml/utils/__init__.py
+index f57b5ac..ff8b4a6 100644
+--- a/bentoml/utils/__init__.py
++++ b/bentoml/utils/__init__.py
+@@ -18,8 +18,23 @@ from __future__ import absolute_import
+ from __future__ import division
+ from __future__ import print_function
+ 
++import re
++
+ try:
+     from pathlib import Path
+     Path().expanduser()
+ except (ImportError, AttributeError):
+     from pathlib2 import Path
++
++
++def isidentifier(s):
++    """
++    Return true if string is in a valid python identifier format:
++
++    https://docs.python.org/2/reference/lexical_analysis.html#identifiers
++    """
++    try:
++        return s.isidentifier()
++    except AttributeError:
++        # str#isidentifier is only available in python 3
++        return re.match(r"[A-Za-z_][A-Za-z_0-9]*\Z", s) is not None
+diff --git a/tests/test_service.py b/tests/test_service.py
+new file mode 100644
+index 0000000..24803b5
+--- /dev/null
++++ b/tests/test_service.py
+@@ -0,0 +1,26 @@
++import os
++import sys
++import pytest
++
++sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
++import bentoml  # noqa: E402
++
++
++def test_custom_api_name():
++    # these names should work:
++    bentoml.api(bentoml.handlers.DataframeHandler, api_name="a_valid_name")(lambda x: x)
++    bentoml.api(bentoml.handlers.DataframeHandler, api_name="AValidName")(lambda x: x)
++    bentoml.api(bentoml.handlers.DataframeHandler, api_name="_AValidName")(lambda x: x)
++    bentoml.api(bentoml.handlers.DataframeHandler, api_name="a_valid_name_123")(lambda x: x)
++
++    with pytest.raises(ValueError) as e:
++        bentoml.api(bentoml.handlers.DataframeHandler, api_name="a invalid name")(lambda x: x)
++    assert str(e.value).startswith("Invalid API name")
++
++    with pytest.raises(ValueError) as e:
++        bentoml.api(bentoml.handlers.DataframeHandler, api_name="123_a_invalid_name")(lambda x: x)
++    assert str(e.value).startswith("Invalid API name")
++
++    with pytest.raises(ValueError) as e:
++        bentoml.api(bentoml.handlers.DataframeHandler, api_name="a-invalid-name")(lambda x: x)
++    assert str(e.value).startswith("Invalid API name")

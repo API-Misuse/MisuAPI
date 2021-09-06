@@ -1,0 +1,8 @@
+INS @type:or_test@ @[22156,22203]@ len(tokens) == 0 or isinstance(tokens[0], list) @TO@ @type:if_stmt@ @[22052,22208]@ if isinstance(tokens[0], list):
+        # Flatten  <text_longer_than_50>
+
+INS @type:or_test@ @[22156,22203]@ len(tokens) == 0 or isinstance(tokens[0], list) @TO@ @type:if_stmt@ @[22052,22208]@ if isinstance(tokens[0], list):
+        # Flatten  <text_longer_than_50>
+
+MOV @type:atom_expr@ @[22055,22082]@ isinstance(tokens[0], list) @TO@ @type:or_test@ @[22156,22203]@ len(tokens) == 0 or isinstance(tokens[0], list)
+

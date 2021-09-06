@@ -1,0 +1,44 @@
+INS @type:try_stmt@ @[1501,1836]@ try:
+            self.saver.save(
+                 <text_longer_than_50> @TO@ @type:suite@ @[1492,1762]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50>
+---INS @type:suite@ @[1505,1712]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50> @TO@ @type:try_stmt@ @[1501,1836]@ try:
+            self.saver.save(
+                 <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1501,1679]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50> @TO@ @type:simple_stmt@ @[1518,1712]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50>
+---UPD @type:atom_expr@ @[1501,1678]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50> @TO@ @type:atom_expr@ @[1518,1711]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50>
+------UPD @type:trailer@ @[1516,1678]@ (
+            tf.get_default_session(),
+           <text_longer_than_50> @TO@ @type:trailer@ @[1533,1711]@ (
+                tf.get_default_session(),
+       <text_longer_than_50>
+---------UPD @type:arglist@ @[1530,1677]@ tf.get_default_session(),
+            self.path,
+  <text_longer_than_50> @TO@ @type:arglist@ @[1551,1710]@ tf.get_default_session(),
+                self.pat <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[1501,1679]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50> @TO@ @type:suite@ @[1505,1712]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50>
+---UPD @type:atom_expr@ @[1501,1678]@ self.saver.save(
+            tf.get_default_sessio <text_longer_than_50> @TO@ @type:atom_expr@ @[1518,1711]@ self.saver.save(
+                tf.get_default_se <text_longer_than_50>
+------UPD @type:trailer@ @[1516,1678]@ (
+            tf.get_default_session(),
+           <text_longer_than_50> @TO@ @type:trailer@ @[1533,1711]@ (
+                tf.get_default_session(),
+       <text_longer_than_50>
+---------UPD @type:arglist@ @[1530,1677]@ tf.get_default_session(),
+            self.path,
+  <text_longer_than_50> @TO@ @type:arglist@ @[1551,1710]@ tf.get_default_session(),
+                self.pat <text_longer_than_50>
+
+

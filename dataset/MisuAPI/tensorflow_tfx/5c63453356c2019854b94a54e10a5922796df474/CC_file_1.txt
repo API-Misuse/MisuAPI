@@ -1,0 +1,5 @@
+DEL @type:simple_stmt@ @[2904,2965]@ fileio.makedirs(os.path.dirname(_TEST_OUTPUT_METAD <text_longer_than_50> @FROM@ @type:suite@ @[1225,3019]@ super().setUp()
+
+    self._executor_invocation = p <text_longer_than_50>
+
+

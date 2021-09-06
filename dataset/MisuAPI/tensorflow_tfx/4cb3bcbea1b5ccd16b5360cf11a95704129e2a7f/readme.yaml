@@ -1,0 +1,106 @@
+sha: 4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f
+message: 'Fixed a nonetype bug in tuner executor
+
+
+  PiperOrigin-RevId: 359620434'
+commit_log: "commit 4cb3bcbea1b5ccd16b5360cf11a95704129e2a7f\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Thu Feb 25 14:57:57 2021 -0800\n\n    Fixed a nonetype bug in tuner executor\n\
+  \    \n    PiperOrigin-RevId: 359620434"
+contained_keywords:
+- bug
+- fixed
+commit_time: 2021-02-25 14:57:57 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/extensions/google_cloud_ai_platform/tuner/executor.py
+  source_file: a/tfx/extensions/google_cloud_ai_platform/tuner/executor.py
+  target_file: b/tfx/extensions/google_cloud_ai_platform/tuner/executor.py
+  added: 2
+  removed: 1
+  add_line_no:
+  - - 82
+    - '    training_inputs = custom_config.get(TUNING_ARGS_KEY)
+
+      '
+  - - 87
+    - '    training_inputs = training_inputs.copy()
+
+      '
+  del_line_no:
+  - - null
+    - '    training_inputs = custom_config.get(TUNING_ARGS_KEY).copy()
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py
+  source_file: a/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py
+  target_file: b/tfx/extensions/google_cloud_ai_platform/tuner/executor_test.py
+  added: 7
+  removed: 6
+  add_line_no:
+  - - 124
+    - '  def testDoWithoutCustomCaipTuneArgs(self):
+
+      '
+  - - 125
+    - '    executor = ai_platform_tuner_executor.Executor()
+
+      '
+  - - 126
+    - '    self._exec_properties = {''custom_config'': {}}
+
+      '
+  - - 127
+    - '    with self.assertRaises(ValueError):
+
+      '
+  - - 128
+    - '      executor.Do(self._inputs, self._outputs,
+
+      '
+  - - 129
+    - '                  self._serialize_custom_config_under_test())
+
+      '
+  - - 130
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - '    self.mock_runner.start_aip_training.assert_called_with(
+
+      '
+  - - null
+    - '        self._inputs, self._outputs, self._serialize_custom_config_under_test(),
+
+      '
+  - - null
+    - '        self._executor_class_path, {
+
+      '
+  - - null
+    - '            ''project'': self._project_id,
+
+      '
+  - - null
+    - '            ''jobDir'': self._job_dir,
+
+      '
+  - - null
+    - '        }, mock.ANY)
+
+      '

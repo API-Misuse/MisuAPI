@@ -1,0 +1,33 @@
+sha: 1c51787d8d8a5e4d08667178428cb99e31143713
+message: Fix call to image_reference()
+commit_log: "commit 1c51787d8d8a5e4d08667178428cb99e31143713\nAuthor: Waleed Abdulla\
+  \ <waleed.abdulla@gmail.com>\nDate:   Sat Dec 23 23:25:46 2017 -0800\n\n    Fix\
+  \ call to image_reference()"
+contained_keywords:
+- fix
+commit_time: 2017-12-23 23:25:46 -0800
+commit_author: Waleed Abdulla
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: coco.py
+  source_file: a/coco.py
+  target_file: b/coco.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 275
+    - '            super(CocoDataset, self).image_reference(image_id)
+
+      '
+  del_line_no:
+  - - null
+    - '            super(CocoDataset, self).image_reference(self, image_id)
+
+      '

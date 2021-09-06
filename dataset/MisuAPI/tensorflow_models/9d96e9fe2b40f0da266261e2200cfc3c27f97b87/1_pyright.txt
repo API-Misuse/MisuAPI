@@ -1,0 +1,18 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py:48:6 - warning: Import "six.moves" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py:50:8 - error: Import "cifar10" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py:190:5 - error: "summaries" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py:195:9 - error: "summaries" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py:202:7 - error: "summaries" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py:216:35 - error: "summaries" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_models/9d96e9fe2b40f0da266261e2200cfc3c27f97b87/a/tutorials/image/cifar10/cifar10_multi_gpu_train.py:236:43 - error: "loss" is possibly unbound (reportUnboundVariable)
+6 errors, 1 warning, 0 infos 
+Completed in 1.196sec
+
+time cost(in seconds): 1.3964881896972656

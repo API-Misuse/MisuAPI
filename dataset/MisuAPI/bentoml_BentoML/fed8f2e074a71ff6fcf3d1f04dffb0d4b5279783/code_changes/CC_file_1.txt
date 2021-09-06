@@ -1,0 +1,9 @@
+INS @type:simple_stmt@ @[1130,1169]@ from bentoml.utils import isidentifier @TO@ @type:file_input@ @[746,12297]@ from __future__ import absolute_import
+from __futu <text_longer_than_50>
+
+
+INS @type:if_stmt@ @[4914,5154]@ if not isidentifier(api_name):
+            raise V <text_longer_than_50> @TO@ @type:suite@ @[4613,4974]@ api_name = kwargs.pop('api_name', func.__name__)
+  <text_longer_than_50>
+
+

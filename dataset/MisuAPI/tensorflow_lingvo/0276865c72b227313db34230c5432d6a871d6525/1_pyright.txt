@@ -1,0 +1,58 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:23:8 - error: Import "lingvo.compat" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:24:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:25:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:26:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:27:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:28:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:29:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:30:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:31:6 - error: Import "lingvo.core" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:34:6 - error: Import "tensorflow.core.protobuf.tpu" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:35:6 - error: Import "tensorflow.python.tpu" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:36:6 - error: Import "tensorflow.python.tpu" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:37:6 - error: Import "tensorflow.python.tpu" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:38:6 - error: Import "tensorflow.python.tpu.ops" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:148:23 - error: Cannot access member "_task" for type "BaseProgram"
+    Member "_task" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:175:10 - error: Cannot access member "_task" for type "BaseProgram"
+    Member "_task" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:205:36 - error: Cannot access member "_model" for type "BaseProgram"
+    Member "_model" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:231:34 - error: Cannot access member "spmd" for type "BaseProgram"
+    Member "spmd" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:586:12 - error: Cannot assign member "decode_nm" for type "DecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:587:19 - error: Cannot access member "decode_nm" for type "DecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:595:51 - error: Cannot access member "decode_nm" for type "DecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:671:12 - error: Cannot assign member "decode_nm" for type "ExperimentalDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:709:35 - error: Cannot access member "decode_nm" for type "ExperimentalDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:687:57 - error: Cannot access member "decode_nm" for type "ExperimentalDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:719:45 - error: Cannot access member "decode_nm" for type "ExperimentalDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:720:45 - error: Cannot access member "decode_nm" for type "ExperimentalDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:850:12 - error: Cannot assign member "decode_nm" for type "MLPerfTrainDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:851:19 - error: Cannot access member "decode_nm" for type "MLPerfTrainDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:863:51 - error: Cannot access member "decode_nm" for type "MLPerfTrainDecodeProgram"
+    Member "decode_nm" is unknown (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:935:54 - error: "epoch" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:939:72 - error: "epoch" is possibly unbound (reportUnboundVariable)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_lingvo/0276865c72b227313db34230c5432d6a871d6525/a/lingvo/core/program.py:1028:33 - error: "Run" is not a known member of "None" (reportOptionalMemberAccess)
+32 errors, 0 warnings, 0 infos 
+Completed in 2.16sec
+
+time cost(in seconds): 2.403167724609375

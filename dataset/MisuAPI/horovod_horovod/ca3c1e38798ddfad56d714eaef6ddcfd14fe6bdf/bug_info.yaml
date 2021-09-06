@@ -1,0 +1,48 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/horovod/horovod/pull/853
+  title: Bugfix PyTorch ImageNet example
+  body: "Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>\r\n\r\nFixes\
+    \ #852"
+issue_1:
+  html_url: https://github.com/horovod/horovod/issues/855
+  title: how to sync variable if I use  tf.Session?
+  body: "In the example,  horovod use:\r\n\r\n> hvd.BroadcastGlobalVariablesHook(0)\r\
+    \n\r\n\r\nto sync variable at the beginning of training, but only \r\n\r\n> tf.train.MonitoredTrainingSession\r\
+    \n\r\n accept hooks as parameter?\r\n\r\nIs there native support for **tf.Session?**"
+sha: ca3c1e38798ddfad56d714eaef6ddcfd14fe6bdf
+message: 'Bugfix PyTorch ImageNet example (#853)
+
+
+  Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>'
+commit_log: "commit ca3c1e38798ddfad56d714eaef6ddcfd14fe6bdf\nAuthor: Alex Sergeev\
+  \ <alexander.sergeev@live.com>\nDate:   Fri Feb 22 14:15:01 2019 -0800\n\n    Bugfix\
+  \ PyTorch ImageNet example (#853)\n    \n    Signed-off-by: Alex Sergeev <alsrgv@users.noreply.github.com>"
+contained_keywords:
+- bugfix
+commit_time: 2019-02-22 14:15:01 -0800
+commit_author: Alex Sergeev
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 179
+    - '                train_loss.update(loss)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '                train_loss.update(loss.item())
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: examples/pytorch_imagenet_resnet50.py
+  removed: 1
+  source_file: a/examples/pytorch_imagenet_resnet50.py
+  target_file: b/examples/pytorch_imagenet_resnet50.py

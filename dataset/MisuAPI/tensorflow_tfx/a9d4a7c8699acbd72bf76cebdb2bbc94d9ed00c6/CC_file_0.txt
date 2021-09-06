@@ -1,0 +1,16 @@
+UPD @type:simple_stmt@ @[3244,6057]@ """Construct a Transform component.
+
+    Args:
+    <text_longer_than_50> @TO@ @type:simple_stmt@ @[3244,6105]@ """Construct a Transform component.
+
+    Args:
+    <text_longer_than_50>
+---UPD @type:string@ @[3244,6056]@ """Construct a Transform component.
+
+    Args:
+    <text_longer_than_50> @TO@ @type:string@ @[3244,6104]@ """Construct a Transform component.
+
+    Args:
+    <text_longer_than_50>
+
+

@@ -1,0 +1,33 @@
+sha: 336183864c6c704d7ff627c7cfa8356a0547bb00
+message: Better error message when bbox is missing.
+commit_log: "commit 336183864c6c704d7ff627c7cfa8356a0547bb00\nAuthor: Waleed Abdulla\
+  \ <waleed.abdulla@gmail.com>\nDate:   Mon Nov 13 05:39:11 2017 -0800\n\n    Better\
+  \ error message when bbox is missing."
+contained_keywords:
+- error
+commit_time: 2017-11-13 05:39:11 -0800
+commit_author: Waleed Abdulla
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: utils.py
+  source_file: a/utils.py
+  target_file: b/utils.py
+  added: 2
+  removed: 0
+  add_line_no:
+  - - 436
+    - '        if m.size == 0:
+
+      '
+  - - 437
+    - '            raise Exception("Invalid bounding box with area of zero")
+
+      '
+  del_line_no: []

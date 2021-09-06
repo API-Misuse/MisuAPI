@@ -1,0 +1,30 @@
+sha: 3ecc2b7906f172776ca40755875f427aa6b21c10
+message: Fix mtf conv2d **attention_kwargs is None
+commit_log: "commit 3ecc2b7906f172776ca40755875f427aa6b21c10\nAuthor: Leo Gao <leogao31@gmail.com>\n\
+  Date:   Sat Jul 11 08:13:19 2020 -0600\n\n    Fix mtf conv2d **attention_kwargs\
+  \ is None"
+contained_keywords:
+- fix
+commit_time: 2020-07-11 08:13:19 -0600
+commit_author: Leo Gao
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: models/gpt2/gpt2.py
+  source_file: a/models/gpt2/gpt2.py
+  target_file: b/models/gpt2/gpt2.py
+  added: 1
+  removed: 0
+  add_line_no:
+  - - 192
+    - '                attention_kwargs={}  # mtf argument here should be **kwargs
+      but is just kwargs! so we have to actually give a dict
+
+      '
+  del_line_no: []

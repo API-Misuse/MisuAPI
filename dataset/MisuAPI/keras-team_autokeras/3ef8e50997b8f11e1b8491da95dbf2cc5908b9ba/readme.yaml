@@ -1,0 +1,180 @@
+sha: 3ef8e50997b8f11e1b8491da95dbf2cc5908b9ba
+message: bug fixed
+commit_log: "commit 3ef8e50997b8f11e1b8491da95dbf2cc5908b9ba\nAuthor: Haifeng <jhfjhfj1@gmail.com>\n\
+  Date:   Wed Dec 20 16:44:46 2017 -0600\n\n    bug fixed"
+contained_keywords:
+- bug
+- fixed
+commit_time: 2017-12-20 16:44:46 -0600
+commit_author: Haifeng
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: autokeras/classifier.py
+  source_file: a/autokeras/classifier.py
+  target_file: b/autokeras/classifier.py
+  added: 9
+  removed: 7
+  add_line_no:
+  - - 10
+    - 'from autokeras.utils import ModelTrainer, ensure_dir
+
+      '
+  - - 14
+    - '    classifier = pickle.load(open(os.path.join(path, ''config''), ''rb''))
+
+      '
+  - - 15
+    - '    classifier.path = path
+
+      '
+  - - 29
+    - '        self.current_iteration = -1
+
+      '
+  - - 30
+    - '        ensure_dir(path)
+
+      '
+  - - 65
+    - '        for i in range(self.current_iteration + 1, constant.MAX_MODEL_NUM):
+
+      '
+  - - 72
+    - '            model.save(os.path.join(self.path, str(i) + ''.h5''))
+
+      '
+  - - 76
+    - '            pickle.dump(self, open(os.path.join(self.path, ''config''), ''wb''))
+
+      '
+  - - 79
+    - '        self.model = load_model(os.path.join(self.path, str(self.history[-1][''model_id''])
+      + ''.h5''))
+
+      '
+  del_line_no:
+  - - null
+    - 'from autokeras.utils import ModelTrainer, clear_path
+
+      '
+  - - null
+    - '    classifier = pickle.load(os.path.join(path, ''config''))
+
+      '
+  - - null
+    - '        self.current_iteration = 0
+
+      '
+  - - null
+    - '        for i in range(self.current_iteration, constant.MAX_MODEL_NUM):
+
+      '
+  - - null
+    - '            model.save(str(i) + ''.h5'')
+
+      '
+  - - null
+    - '            pickle.dump(self, os.path.join(self.path, ''config''))
+
+      '
+  - - null
+    - '        self.model = load_model(self.history[-1][''model_id''] + ''.h5'')
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: autokeras/utils.py
+  source_file: a/autokeras/utils.py
+  target_file: b/autokeras/utils.py
+  added: 10
+  removed: 0
+  add_line_no:
+  - - 1
+    - 'import os
+
+      '
+  - - 76
+    - '
+
+      '
+  - - 77
+    - '
+
+      '
+  - - 78
+    - 'def ensure_dir(directory):
+
+      '
+  - - 79
+    - '    if not os.path.exists(directory):
+
+      '
+  - - 80
+    - '        os.makedirs(directory)
+
+      '
+  - - 81
+    - '
+
+      '
+  - - 82
+    - '
+
+      '
+  - - 83
+    - 'def ensure_file_dir(path):
+
+      '
+  - - 84
+    - '    ensure_dir(os.path.dirname(path))
+
+      '
+  del_line_no: []
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: tests/test_classifier.py
+  source_file: a/tests/test_classifier.py
+  target_file: b/tests/test_classifier.py
+  added: 4
+  removed: 2
+  add_line_no:
+  - - 58
+    - '    clf = ImageClassifier(path=''tests/resources/temp'')
+
+      '
+  - - 63
+    - '    clf = load_from_path(path=''tests/resources/temp'')
+
+      '
+  - - 64
+    - '    clf.fit(train_x, train_y)
+
+      '
+  - - 67
+    - '    assert len(clf.history) == 4
+
+      '
+  del_line_no:
+  - - null
+    - '    clf = ImageClassifier(path=''resources/temp'')
+
+      '
+  - - null
+    - '    clf = load_from_path(path=''resources/temp'')
+
+      '

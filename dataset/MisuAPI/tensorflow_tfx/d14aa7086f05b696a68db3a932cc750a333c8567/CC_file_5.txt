@@ -1,0 +1,71 @@
+INS @type:try_stmt@ @[1205,1326]@ try:
+      return open(name, mode=mode)
+    except <text_longer_than_50> @TO@ @type:suite@ @[1200,1326]@ try:
+      return open(name, mode=mode)
+    except <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[1594,1712]@ try:
+      shutil.copyfile(src, dst)
+    except Fi <text_longer_than_50> @TO@ @type:suite@ @[1325,1528]@ if not overwrite and os.path.exists(dst):
+      ra <text_longer_than_50>
+---INS @type:suite@ @[1598,1631]@ shutil.copyfile(src, dst) @TO@ @type:try_stmt@ @[1594,1712]@ try:
+      shutil.copyfile(src, dst)
+    except Fi <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[2050,2166]@ try:
+      return os.listdir(path)
+    except File <text_longer_than_50> @TO@ @type:suite@ @[2045,2166]@ try:
+      return os.listdir(path)
+    except File <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[2318,2425]@ try:
+      os.mkdir(path)
+    except FileNotFoundE <text_longer_than_50> @TO@ @type:suite@ @[2313,2425]@ try:
+      os.mkdir(path)
+    except FileNotFoundE <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[2484,2592]@ try:
+      os.remove(path)
+    except FileNotFound <text_longer_than_50> @TO@ @type:suite@ @[2479,2592]@ try:
+      os.remove(path)
+    except FileNotFound <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[2862,2974]@ try:
+      os.rename(src, dst)
+    except FileNotF <text_longer_than_50> @TO@ @type:suite@ @[2225,2422]@ if not overwrite and os.path.exists(dst):
+      ra <text_longer_than_50>
+---INS @type:suite@ @[2866,2893]@ os.rename(src, dst) @TO@ @type:try_stmt@ @[2862,2974]@ try:
+      os.rename(src, dst)
+    except FileNotF <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[3033,3145]@ try:
+      shutil.rmtree(path)
+    except FileNotF <text_longer_than_50> @TO@ @type:suite@ @[3028,3145]@ try:
+      shutil.rmtree(path)
+    except FileNotF <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[3201,3314]@ try:
+      return os.stat(path)
+    except FileNot <text_longer_than_50> @TO@ @type:suite@ @[3196,3314]@ try:
+      return os.stat(path)
+    except FileNot <text_longer_than_50>
+
+
+INS @type:try_stmt@ @[3504,3654]@ try:
+      yield from os.walk(top, topdown=topdown <text_longer_than_50> @TO@ @type:suite@ @[3499,3654]@ try:
+      yield from os.walk(top, topdown=topdown <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[1502,1528]@ shutil.copyfile(src, dst) @TO@ @type:suite@ @[1598,1631]@ shutil.copyfile(src, dst)
+
+
+MOV @type:simple_stmt@ @[2402,2422]@ os.rename(src, dst) @TO@ @type:suite@ @[2866,2893]@ os.rename(src, dst)
+
+

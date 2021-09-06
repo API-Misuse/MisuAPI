@@ -1,0 +1,19 @@
+commit 217b22a86af8dac63b9c7b7c6f14f9d95d37cb7b
+Author: Martin Rajchl <m.rajchl@imperial.ac.uk>
+Date:   Fri Nov 17 14:59:17 2017 +0000
+
+    fix: tf.nn.conv3d_transpose call arg
+
+diff --git a/dltk/core/upsample.py b/dltk/core/upsample.py
+index 2ec863c..5dd864c 100644
+--- a/dltk/core/upsample.py
++++ b/dltk/core/upsample.py
+@@ -116,7 +116,7 @@ def linear_upsample_3d(inputs,
+         static_inp_shape, static_out_shape))
+ 
+     upsampled = tf.nn.conv3d_transpose(
+-        inputs=inputs,
++        value=inputs,
+         filter=kernel,
+         output_shape=dyn_out_shape,
+         strides=strides_5d,

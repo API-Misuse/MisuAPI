@@ -1,0 +1,1027 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/huggingface/transformers/pull/6768
+  title: Floating-point operations logging in trainer
+  body: "First of two PRs to implement #4847 :\r\n\r\n - logging loss vs floating-point\
+    \ operations\r\n - using the results for scaling laws analysis\r\n\r\nThis directly\
+    \ logs floating-point operations in wandb and comet, and creates a `log_history.json`\
+    \ file with training metrics. To do so, it adds methods to `PretrainedModel` to\
+    \ count parameters with and without embeddings, and the number of floating-point\
+    \ operations. It also has a few Trainer fixes, most importantly averaging the\
+    \ eval loss across processes rather than logging the one in process 0, and a bug\
+    \ with checkpoint folder creation."
+sha: 01d340adfaea70ea0997931c92c498a5a18c7435
+message: "Floating-point operations logging in trainer (#6768)\n\n* neFLOs calculation,\
+  \ logging, and reloading (#1)\r\n\r\n* testing distributed consecutive batches\r\
+  \n\r\n* fixed AttributeError from DataParallel\r\n\r\n* removed verbosity\r\n\r\n\
+  * rotate with use_mtime=True\r\n\r\n* removed print\r\n\r\n* fixed interaction with\
+  \ gradient accumulation\r\n\r\n* indent formatting\r\n\r\n* distributed neflo counting\r\
+  \n\r\n* fixed typo\r\n\r\n* fixed typo\r\n\r\n* mean distributed losses\r\n\r\n\
+  * exporting log history\r\n\r\n* moved a few functions\r\n\r\n* floating_point_ops\
+  \ clarification for transformers with parameter-reuse\r\n\r\n* code quality\r\n\r\
+  \n* double import\r\n\r\n* made flo estimation more task-agnostic\r\n\r\n* only\
+  \ logging flos if computed\r\n\r\n* code quality\r\n\r\n* unused import\r\n\r\n\
+  * Update src/transformers/trainer.py\r\n\r\nCo-authored-by: Sylvain Gugger <35901082+sgugger@users.noreply.github.com>\r\
+  \n\r\n* Update src/transformers/modeling_utils.py\r\n\r\nCo-authored-by: Sylvain\
+  \ Gugger <35901082+sgugger@users.noreply.github.com>\r\n\r\n* Sylvain review\r\n\
+  \r\n* Update src/transformers/modeling_utils.py\r\n\r\nCo-authored-by: Sylvain Gugger\
+  \ <35901082+sgugger@users.noreply.github.com>\r\n\r\n* black\r\n\r\nCo-authored-by:\
+  \ Sylvain Gugger <35901082+sgugger@users.noreply.github.com>"
+commit_log: "commit 01d340adfaea70ea0997931c92c498a5a18c7435\nAuthor: Teven <teven.lescao@gmail.com>\n\
+  Date:   Tue Sep 8 16:00:56 2020 +0200\n\n    Floating-point operations logging in\
+  \ trainer (#6768)\n    \n    * neFLOs calculation, logging, and reloading (#1)\n\
+  \    \n    * testing distributed consecutive batches\n    \n    * fixed AttributeError\
+  \ from DataParallel\n    \n    * removed verbosity\n    \n    * rotate with use_mtime=True\n\
+  \    \n    * removed print\n    \n    * fixed interaction with gradient accumulation\n\
+  \    \n    * indent formatting\n    \n    * distributed neflo counting\n    \n \
+  \   * fixed typo\n    \n    * fixed typo\n    \n    * mean distributed losses\n\
+  \    \n    * exporting log history\n    \n    * moved a few functions\n    \n  \
+  \  * floating_point_ops clarification for transformers with parameter-reuse\n  \
+  \  \n    * code quality\n    \n    * double import\n    \n    * made flo estimation\
+  \ more task-agnostic\n    \n    * only logging flos if computed\n    \n    * code\
+  \ quality\n    \n    * unused import\n    \n    * Update src/transformers/trainer.py\n\
+  \    \n    Co-authored-by: Sylvain Gugger <35901082+sgugger@users.noreply.github.com>\n\
+  \    \n    * Update src/transformers/modeling_utils.py\n    \n    Co-authored-by:\
+  \ Sylvain Gugger <35901082+sgugger@users.noreply.github.com>\n    \n    * Sylvain\
+  \ review\n    \n    * Update src/transformers/modeling_utils.py\n    \n    Co-authored-by:\
+  \ Sylvain Gugger <35901082+sgugger@users.noreply.github.com>\n    \n    * black\n\
+  \    \n    Co-authored-by: Sylvain Gugger <35901082+sgugger@users.noreply.github.com>"
+contained_keywords:
+- fixed
+- attributeerror
+commit_time: 2020-09-08 16:00:56 +0200
+commit_author: Teven
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  add_line_no:
+  - - 20
+    - 'import warnings
+
+      '
+  - - 22
+    - 'from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
+
+      '
+  - - 296
+    - '        head_mask = head_mask.to(dtype=self.dtype)  # switch to float if need
+      + fp16 compatibility
+
+      '
+  - - 299
+    - '    def num_parameters(self, only_trainable: bool = False, exclude_embeddings:
+      bool = False) -> int:
+
+      '
+  - - 300
+    - '        """
+
+      '
+  - - 301
+    - '        Get number of (optionally, trainable or non-embeddings) parameters
+      in the module.
+
+      '
+  - - 302
+    - '
+
+      '
+  - - 303
+    - '        Args:
+
+      '
+  - - 304
+    - '            only_trainable (:obj:`bool`, `optional`, defaults to :obj:`False`):
+
+      '
+  - - 305
+    - '                Whether or not to return only the number of trainable parameters
+
+      '
+  - - 306
+    - '
+
+      '
+  - - 307
+    - '            exclude_embeddings (:obj:`bool`, `optional`, defaults to :obj:`False`):
+
+      '
+  - - 308
+    - '                Whether or not to return only the number of non-embeddings
+      parameters
+
+      '
+  - - 309
+    - '
+
+      '
+  - - 310
+    - '        Returns:
+
+      '
+  - - 311
+    - '            :obj:`int`: The number of parameters.
+
+      '
+  - - 312
+    - '        """
+
+      '
+  - - 313
+    - '
+
+      '
+  - - 314
+    - '        def parameter_filter(x):
+
+      '
+  - - 315
+    - '            return (x.requires_grad or not only_trainable) and not (
+
+      '
+  - - 316
+    - '                isinstance(x, torch.nn.Embedding) and exclude_embeddings
+
+      '
+  - - 317
+    - '            )
+
+      '
+  - - 318
+    - '
+
+      '
+  - - 319
+    - '        params = filter(parameter_filter, self.parameters()) if only_trainable
+      else self.parameters()
+
+      '
+  - - 320
+    - '        return sum(p.numel() for p in params)
+
+      '
+  - - 321
+    - '
+
+      '
+  - - 322
+    - '    def estimate_tokens(self, input_dict: Dict[str, Union[torch.Tensor, Any]])
+      -> int:
+
+      '
+  - - 323
+    - '        """
+
+      '
+  - - 324
+    - '        Helper function to estimate the total number of tokens from the model
+      inputs.
+
+      '
+  - - 325
+    - '
+
+      '
+  - - 326
+    - '        Args:
+
+      '
+  - - 327
+    - '            inputs (:obj:`dict`): The model inputs.
+
+      '
+  - - 328
+    - '
+
+      '
+  - - 329
+    - '        Returns:
+
+      '
+  - - 330
+    - '            :obj:`int`: The total number of tokens.
+
+      '
+  - - 331
+    - '        """
+
+      '
+  - - 332
+    - '        token_inputs = [tensor for key, tensor in input_dict.items() if "input"
+      in key]
+
+      '
+  - - 333
+    - '        if token_inputs:
+
+      '
+  - - 334
+    - '            return sum([token_input.numel() for token_input in token_inputs])
+
+      '
+  - - 335
+    - '        else:
+
+      '
+  - - 336
+    - '            warnings.warn(
+
+      '
+  - - 337
+    - '                "Could not estimate the number of tokens of the input, floating-point
+      operations will not be computed"
+
+      '
+  - - 338
+    - '            )
+
+      '
+  - - 339
+    - '            return 0
+
+      '
+  - - 340
+    - '
+
+      '
+  - - 341
+    - '    def floating_point_ops(
+
+      '
+  - - 342
+    - '        self, input_dict: Dict[str, Union[torch.Tensor, Any]], exclude_embeddings:
+      bool = True
+
+      '
+  - - 343
+    - '    ) -> int:
+
+      '
+  - - 344
+    - '        """
+
+      '
+  - - 345
+    - '        Get number of (optionally, non-embeddings) floating-point operations
+      for the forward and backward passes of a
+
+      '
+  - - 346
+    - '        batch with this transformer model. Default approximation neglects the
+      quadratic dependency on the number of
+
+      '
+  - - 347
+    - '        tokens (valid if :obj:`12 * d_model << sequence_length`) as laid out
+      in `this paper <https://arxiv.org/pdf/2001.08361.pdf>`__ section
+
+      '
+  - - 348
+    - '        2.1. Should be  overriden for transformers with parameter re-use e.g.
+      Albert or Universal Transformers, or
+
+      '
+  - - 349
+    - '        if doing long-range modeling with very high sequence lengths.
+
+      '
+  - - 350
+    - '
+
+      '
+  - - 351
+    - '        Args:
+
+      '
+  - - 352
+    - '            batch_size (:obj:`int`):
+
+      '
+  - - 353
+    - '                The batch size for the forward pass.
+
+      '
+  - - 354
+    - '
+
+      '
+  - - 355
+    - '            sequence_length (:obj:`int`):
+
+      '
+  - - 356
+    - '                The number of tokens in each line of the batch.
+
+      '
+  - - 357
+    - '
+
+      '
+  - - 358
+    - '            exclude_embeddings (:obj:`bool`, `optional`, defaults to :obj:`True`):
+
+      '
+  - - 359
+    - '                Whether or not to count embedding and softmax operations.
+
+      '
+  - - 360
+    - '
+
+      '
+  - - 361
+    - '        Returns:
+
+      '
+  - - 362
+    - '            :obj:`int`: The number of floating-point operations.
+
+      '
+  - - 363
+    - '        """
+
+      '
+  - - 364
+    - '
+
+      '
+  - - 365
+    - '        return 6 * self.estimate_tokens(input_dict) * self.num_parameters(exclude_embeddings=exclude_embeddings)
+
+      '
+  - - 366
+    - '
+
+      '
+  added: 71
+  del_line_no:
+  - - null
+    - 'from typing import Callable, Dict, List, Optional, Set, Tuple, Union
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '    def num_parameters(self, only_trainable: bool = False) -> int:
+
+      '
+  - - null
+    - '        """
+
+      '
+  - - null
+    - '        Get the number of (optionally, trainable) parameters in the model.
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        Args:
+
+      '
+  - - null
+    - '            only_trainable (:obj:`bool`, `optional`, defaults to :obj:`False`):
+
+      '
+  - - null
+    - '                Whether or not to return only the number of trainable parameters
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        Returns:
+
+      '
+  - - null
+    - '            :obj:`int`: The number of parameters.
+
+      '
+  - - null
+    - '        """
+
+      '
+  - - null
+    - '        params = filter(lambda x: x.requires_grad, self.parameters()) if only_trainable
+      else self.parameters()
+
+      '
+  - - null
+    - '        return sum(p.numel() for p in params)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        head_mask = head_mask.to(dtype=self.dtype)  # switch to fload if need
+      + fp16 compatibility
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/transformers/modeling_utils.py
+  removed: 17
+  source_file: a/src/transformers/modeling_utils.py
+  target_file: b/src/transformers/modeling_utils.py
+patched_file_1:
+  add_line_no:
+  - - 2
+    - 'import json
+
+      '
+  - - 46
+    - '    distributed_broadcast_scalars,
+
+      '
+  - - 47
+    - '    distributed_concat,
+
+      '
+  - - 152
+    - '        ), f"Indices length {len(indices)} and sample number {self.num_samples}
+      mismatched"
+
+      '
+  - - 247
+    - '        self.log_history = []
+
+      '
+  - - 291
+    - '        self.total_flos = None
+
+      '
+  - - 469
+    - '            try:
+
+      '
+  - - 470
+    - '                combined_dict = {**self.model.config.to_dict(), **self.args.to_sanitized_dict()}
+
+      '
+  - - 471
+    - '            except AttributeError:
+
+      '
+  - - 472
+    - '                # in case the model has no config
+
+      '
+  - - 473
+    - '                combined_dict = {**self.args.to_sanitized_dict()}
+
+      '
+  - - 675
+    - '        self.total_flos = 0
+
+      '
+  - - 683
+    - '                self.total_flos = getattr(model.config, "total_flos", 0)
+
+      '
+  - - 684
+    - '
+
+      '
+  - - 693
+    - '                logger.info("  Continuing training from %d non-embedding floating-point
+      operations", self.total_flos)
+
+      '
+  - - 697
+    - '                self.total_flos = 0
+
+      '
+  - - 731
+    - '                self.total_flos += self.floating_point_ops(inputs)
+
+      '
+  - - 802
+    - '                            self._rotate_checkpoints(use_mtime=True)
+
+      '
+  - - 942
+    - '        if self.total_flos is not None:
+
+      '
+  - - 943
+    - '            if self.args.local_rank != -1:
+
+      '
+  - - 944
+    - '                total_flos = distributed_broadcast_scalars([self.total_flos]).sum().item()
+
+      '
+  - - 945
+    - '            else:
+
+      '
+  - - 946
+    - '                total_flos = self.total_flos
+
+      '
+  - - 947
+    - '            if total_flos > 0:
+
+      '
+  - - 948
+    - '                logs["total_flos"] = self.total_flos
+
+      '
+  - - 976
+    - '        if self.is_world_process_zero():
+
+      '
+  - - 977
+    - '            self.log_history.append(output)
+
+      '
+  - - 1116
+    - '            json.dump(
+
+      '
+  - - 1117
+    - '                self.log_history, open(os.path.join(output_dir, "log_history.json"),
+      "w"), indent=2, ensure_ascii=False
+
+      '
+  - - 1118
+    - '            )
+
+      '
+  - - 1126
+    - '        self._store_flos()
+
+      '
+  - - 1139
+    - '        self._store_flos()
+
+      '
+  - - 1146
+    - '        json.dump(
+
+      '
+  - - 1147
+    - '            self.log_history, open(os.path.join(output_dir, "log_history.json"),
+      "w"), indent=2, ensure_ascii=False
+
+      '
+  - - 1148
+    - '        )
+
+      '
+  - - 1149
+    - '
+
+      '
+  - - 1150
+    - '    def _store_flos(self):
+
+      '
+  - - 1151
+    - '        # Storing the number of floating-point operations that went into the
+      model
+
+      '
+  - - 1152
+    - '        if self.total_flos is not None:
+
+      '
+  - - 1153
+    - '            if self.args.local_rank != -1:
+
+      '
+  - - 1154
+    - '                total_flos = distributed_broadcast_scalars([self.total_flos]).sum().item()
+
+      '
+  - - 1155
+    - '            else:
+
+      '
+  - - 1156
+    - '                total_flos = self.total_flos
+
+      '
+  - - 1157
+    - '            if total_flos > 0:
+
+      '
+  - - 1158
+    - '                self.model.config.total_flos = total_flos
+
+      '
+  - - 1294
+    - '                eval_losses.extend([loss] * batch_size)
+
+      '
+  - - 1307
+    - '                preds = distributed_concat(preds, num_total_examples=self.num_examples(dataloader))
+
+      '
+  - - 1309
+    - '                label_ids = distributed_concat(label_ids, num_total_examples=self.num_examples(dataloader))
+
+      '
+  - - 1332
+    - '            if self.args.local_rank != -1:
+
+      '
+  - - 1333
+    - '                metrics["eval_loss"] = (
+
+      '
+  - - 1334
+    - '                    distributed_broadcast_scalars(eval_losses, num_total_examples=self.num_examples(dataloader))
+
+      '
+  - - 1335
+    - '                    .mean()
+
+      '
+  - - 1336
+    - '                    .item()
+
+      '
+  - - 1337
+    - '                )
+
+      '
+  - - 1338
+    - '            else:
+
+      '
+  - - 1339
+    - '                metrics["eval_loss"] = np.mean(eval_losses)
+
+      '
+  - - 1393
+    - '
+
+      '
+  - - 1394
+    - '    def floating_point_ops(self, inputs: Dict[str, Union[torch.Tensor, Any]]):
+
+      '
+  - - 1395
+    - '        """
+
+      '
+  - - 1396
+    - '        For models that inherit from :class:`~transformers.PretrainedModel`,
+      uses
+
+      '
+  - - 1397
+    - '        that method to compute the number of floating point operations for
+      every backward + forward pass. If using
+
+      '
+  - - 1398
+    - '        another model, either implement such a method in the model or subclass
+      and override this method.
+
+      '
+  - - 1399
+    - '
+
+      '
+  - - 1400
+    - '        Args:
+
+      '
+  - - 1401
+    - '            model (:obj:`nn.Module`):
+
+      '
+  - - 1402
+    - '                The model to evaluate.
+
+      '
+  - - 1403
+    - '            inputs (:obj:`Dict[str, Union[torch.Tensor, Any]]`):
+
+      '
+  - - 1404
+    - '                The inputs and targets of the model.
+
+      '
+  - - 1405
+    - '
+
+      '
+  - - 1406
+    - '        Returns:
+
+      '
+  - - 1407
+    - '            :obj:`int`: The number of floating-point operations.
+
+      '
+  - - 1408
+    - '        """
+
+      '
+  - - 1409
+    - '
+
+      '
+  - - 1410
+    - '        if isinstance(self.model, torch.nn.DataParallel) or isinstance(
+
+      '
+  - - 1411
+    - '            self.model, torch.nn.parallel.DistributedDataParallel
+
+      '
+  - - 1412
+    - '        ):
+
+      '
+  - - 1413
+    - '            model = self.model.module
+
+      '
+  - - 1414
+    - '        else:
+
+      '
+  - - 1415
+    - '            model = self.model
+
+      '
+  - - 1416
+    - '
+
+      '
+  - - 1417
+    - '        if hasattr(model, "floating_point_ops"):
+
+      '
+  - - 1418
+    - '            return model.floating_point_ops(inputs)
+
+      '
+  - - 1419
+    - '
+
+      '
+  - - 1420
+    - '        else:
+
+      '
+  - - 1421
+    - '            return 0
+
+      '
+  added: 85
+  del_line_no:
+  - - null
+    - '        ), f"Indices length {len(indices)} and and sample number {self.num_samples}
+      mismatched"
+
+      '
+  - - null
+    - '            combined_dict = {**self.model.config.to_dict(), **self.args.to_sanitized_dict()}
+
+      '
+  - - null
+    - '                            self._rotate_checkpoints()
+
+      '
+  - - null
+    - '        samples_count = 0
+
+      '
+  - - null
+    - '            samples_count += batch_size
+
+      '
+  - - null
+    - '                eval_losses.append(loss * batch_size)
+
+      '
+  - - null
+    - '                preds = self.distributed_concat(preds, num_total_examples=self.num_examples(dataloader))
+
+      '
+  - - null
+    - '                label_ids = self.distributed_concat(label_ids, num_total_examples=self.num_examples(dataloader))
+
+      '
+  - - null
+    - '            metrics["eval_loss"] = np.sum(eval_losses) / samples_count
+
+      '
+  - - null
+    - '    def distributed_concat(self, tensor: torch.Tensor, num_total_examples:
+      int) -> torch.Tensor:
+
+      '
+  - - null
+    - '        assert self.args.local_rank != -1
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        output_tensors = [tensor.clone() for _ in range(torch.distributed.get_world_size())]
+
+      '
+  - - null
+    - '        torch.distributed.all_gather(output_tensors, tensor)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        concat = torch.cat(output_tensors, dim=0)
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        # truncate the dummy elements added by SequentialDistributedSampler
+
+      '
+  - - null
+    - '        output = concat[:num_total_examples]
+
+      '
+  - - null
+    - '        return output
+
+      '
+  - - null
+    - '
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/transformers/trainer.py
+  removed: 21
+  source_file: a/src/transformers/trainer.py
+  target_file: b/src/transformers/trainer.py
+patched_file_2:
+  add_line_no:
+  - - 2
+    - 'from typing import Any, Dict, List, NamedTuple, Optional, Union
+
+      '
+  - - 5
+    - 'import torch
+
+      '
+  - - 130
+    - '
+
+      '
+  - - 131
+    - '
+
+      '
+  - - 132
+    - 'def distributed_concat(self, tensor: torch.Tensor, num_total_examples: Optional[int]
+      = None) -> torch.Tensor:
+
+      '
+  - - 133
+    - '    assert self.args.local_rank != -1
+
+      '
+  - - 134
+    - '
+
+      '
+  - - 135
+    - '    output_tensors = [tensor.clone() for _ in range(torch.distributed.get_world_size())]
+
+      '
+  - - 136
+    - '    torch.distributed.all_gather(output_tensors, tensor)
+
+      '
+  - - 137
+    - '    concat = torch.cat(output_tensors, dim=0)
+
+      '
+  - - 138
+    - '
+
+      '
+  - - 139
+    - '    # truncate the dummy elements added by SequentialDistributedSampler
+
+      '
+  - - 140
+    - '    if num_total_examples is not None:
+
+      '
+  - - 141
+    - '        concat = concat[:num_total_examples]
+
+      '
+  - - 142
+    - '    return concat
+
+      '
+  - - 143
+    - '
+
+      '
+  - - 144
+    - '
+
+      '
+  - - 145
+    - 'def distributed_broadcast_scalars(
+
+      '
+  - - 146
+    - '    self, scalars: List[Union[int, float]], num_total_examples: Optional[int]
+      = None
+
+      '
+  - - 147
+    - ') -> torch.Tensor:
+
+      '
+  - - 148
+    - '    assert self.args.local_rank != -1
+
+      '
+  - - 149
+    - '
+
+      '
+  - - 150
+    - '    tensorized_scalar = torch.Tensor(scalars).cuda()
+
+      '
+  - - 151
+    - '    output_tensors = [tensorized_scalar.clone() for _ in range(torch.distributed.get_world_size())]
+
+      '
+  - - 152
+    - '    torch.distributed.all_gather(output_tensors, tensorized_scalar)
+
+      '
+  - - 153
+    - '    concat = torch.cat(output_tensors, dim=0)
+
+      '
+  - - 154
+    - '
+
+      '
+  - - 155
+    - '    # truncate the dummy elements added by SequentialDistributedSampler
+
+      '
+  - - 156
+    - '    if num_total_examples is not None:
+
+      '
+  - - 157
+    - '        concat = concat[:num_total_examples]
+
+      '
+  - - 158
+    - '    return concat
+
+      '
+  added: 31
+  del_line_no:
+  - - null
+    - 'from typing import Any, Dict, NamedTuple, Optional
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: src/transformers/trainer_utils.py
+  removed: 1
+  source_file: a/src/transformers/trainer_utils.py
+  target_file: b/src/transformers/trainer_utils.py

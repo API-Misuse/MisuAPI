@@ -1,0 +1,34 @@
+issues_cnt: 0
+sha: 1c6ab36c63044199c2219e9c9cb1f03e1b54361f
+message: Fix typo in recurrent.
+commit_log: "commit 1c6ab36c63044199c2219e9c9cb1f03e1b54361f\nAuthor: Francois Chollet\
+  \ <francois.chollet@gmail.com>\nDate:   Wed Dec 2 09:56:57 2015 -0800\n\n    Fix\
+  \ typo in recurrent."
+contained_keywords:
+- fix
+commit_time: 2015-12-02 09:56:57 -0800
+commit_author: Francois Chollet
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 219
+    - '            self.states = [K.zeros((input_shape[0], self.output_dim))]
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '            self.states = [K.zeros(input_shape[0], self.output_dim)]
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: keras/layers/recurrent.py
+  removed: 1
+  source_file: a/keras/layers/recurrent.py
+  target_file: b/keras/layers/recurrent.py

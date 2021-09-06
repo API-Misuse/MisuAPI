@@ -1,0 +1,46 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 3 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:106:8 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:25:6 - error: Operator "in" not supported for types "Literal['[']" and "bytes"
+    Operator "in" not supported for types "Literal['[']" and "bytes" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:43:22 - error: Argument of type "Literal['=']" cannot be assigned to parameter "sep" of type "bytes | None" in function "split"
+    Type "Literal['=']" cannot be assigned to type "bytes | None"
+      "Literal['=']" is incompatible with "bytes"
+      Type cannot be assigned to type "None" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:43:5 - error: Argument of type "bytes" cannot be assigned to parameter "k" of type "str" in function "__setitem__"
+    "bytes" is incompatible with "str" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:43:5 - error: Argument of type "int | float" cannot be assigned to parameter "v" of type "bytes" in function "__setitem__"
+    Type "int | float" cannot be assigned to type "bytes"
+      "int" is incompatible with "bytes"
+      "float" is incompatible with "bytes" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:48:5 - error: Argument of type "bytes" cannot be assigned to parameter "k" of type "str" in function "__setitem__"
+    "bytes" is incompatible with "str" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:52:2 - error: Argument of type "list[int | Unknown | bytes]" cannot be assigned to parameter "v" of type "bytes" in function "__setitem__"
+    "list[int | Unknown | bytes]" is incompatible with "bytes" (reportGeneralTypeIssues)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/configs/process.py:130:15 - error: Operator ">" not supported for types "int" and "int | None"
+    Operator ">" not supported for types "int" and "None" (reportGeneralTypeIssues)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/tfop.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/tfop.py:59:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/tfop.py:60:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/tfop.py:29:8 - error: Cannot access member "forward" for type "tfop"
+    Member "forward" is unknown (reportGeneralTypeIssues)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:50:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:67:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:160:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:161:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:162:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:163:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:164:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:227:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:17:8 - error: Import "cPickle" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/thtrieu_darkflow/fbd5aa4a9a01c7d97d16465178f73e77400e02ef/a/tfnet/yolo/train.py:22:6 - error: Import "utils.pascal_voc_clean_xml" could not be resolved (reportMissingImports)
+21 errors, 0 warnings, 0 infos 
+Completed in 1.784sec
+
+time cost(in seconds): 2.0285847187042236

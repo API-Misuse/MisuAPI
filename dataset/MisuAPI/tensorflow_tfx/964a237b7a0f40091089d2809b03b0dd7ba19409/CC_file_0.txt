@@ -1,0 +1,7 @@
+UPD @type:simple_stmt@ @[1651,1703]@ super(AirflowPipelineConfig, self).__init__(kwargs <text_longer_than_50> @TO@ @type:simple_stmt@ @[1651,1705]@ super(AirflowPipelineConfig, self).__init__(**kwar <text_longer_than_50>
+---UPD @type:atom_expr@ @[1651,1702]@ super(AirflowPipelineConfig, self).__init__(kwargs <text_longer_than_50> @TO@ @type:atom_expr@ @[1651,1704]@ super(AirflowPipelineConfig, self).__init__(**kwar <text_longer_than_50>
+------UPD @type:trailer@ @[1694,1702]@ (kwargs) @TO@ @type:trailer@ @[1694,1704]@ (**kwargs)
+---------INS @type:argument@ @[1695,1703]@ **kwargs @TO@ @type:trailer@ @[1694,1702]@ (kwargs)
+---------MOV @type:name@ @[1695,1701]@ kwargs @TO@ @type:argument@ @[1695,1703]@ **kwargs
+
+

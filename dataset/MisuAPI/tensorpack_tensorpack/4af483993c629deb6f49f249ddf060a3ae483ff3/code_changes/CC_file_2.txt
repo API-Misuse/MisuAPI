@@ -1,0 +1,87 @@
+UPD @type:if_stmt@ @[4970,5179]@ if include_bb:
+            assert name == 'train', <text_longer_than_50> @TO@ @type:if_stmt@ @[4970,5270]@ if include_bb:
+            bbdir = os.path.join(di <text_longer_than_50>
+---UPD @type:suite@ @[4984,5179]@ assert name == 'train', 'Bounding box only availab <text_longer_than_50> @TO@ @type:suite@ @[4984,5270]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50>
+------INS @type:simple_stmt@ @[4997,5117]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50> @TO@ @type:suite@ @[4984,5179]@ assert name == 'train', 'Bounding box only availab <text_longer_than_50>
+---------INS @type:expr_stmt@ @[4997,5116]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50> @TO@ @type:simple_stmt@ @[4997,5117]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50>
+------------INS @type:test@ @[5005,5116]@ os.path.join(dir, 'bbox') if not \
+                <text_longer_than_50> @TO@ @type:expr_stmt@ @[4997,5116]@ bbdir = os.path.join(dir, 'bbox') if not \
+        <text_longer_than_50>
+------UPD @type:simple_stmt@ @[5076,5179]@ self.bblist = ILSVRC12.get_training_bbox(
+         <text_longer_than_50> @TO@ @type:simple_stmt@ @[5208,5270]@ self.bblist = ILSVRC12.get_training_bbox(bbdir, se <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[5076,5178]@ self.bblist = ILSVRC12.get_training_bbox(
+         <text_longer_than_50> @TO@ @type:expr_stmt@ @[5208,5269]@ self.bblist = ILSVRC12.get_training_bbox(bbdir, se <text_longer_than_50>
+------------UPD @type:atom_expr@ @[5090,5178]@ ILSVRC12.get_training_bbox(
+                    os <text_longer_than_50> @TO@ @type:atom_expr@ @[5222,5269]@ ILSVRC12.get_training_bbox(bbdir, self.imglist)
+---------------UPD @type:trailer@ @[5116,5178]@ (
+                    os.path.join(dir, 'bbox'), s <text_longer_than_50> @TO@ @type:trailer@ @[5248,5269]@ (bbdir, self.imglist)
+------------------UPD @type:arglist@ @[5138,5177]@ os.path.join(dir, 'bbox'), self.imglist @TO@ @type:arglist@ @[5249,5268]@ bbdir, self.imglist
+---------------------INS @type:name@ @[5249,5254]@ bbdir @TO@ @type:arglist@ @[5138,5177]@ os.path.join(dir, 'bbox'), self.imglist
+
+
+UPD @type:simple_stmt@ @[5303,5450]@ """
+        Produce original images of shape [h, w <text_longer_than_50> @TO@ @type:simple_stmt@ @[5394,5531]@ """
+        Produce original images of shape [h, w <text_longer_than_50>
+---UPD @type:string@ @[5303,5449]@ """
+        Produce original images of shape [h, w <text_longer_than_50> @TO@ @type:string@ @[5394,5530]@ """
+        Produce original images of shape [h, w <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[5651,6309]@ for k in idxs:
+            fname, label = self.img <text_longer_than_50> @TO@ @type:for_stmt@ @[5732,6418]@ for k in idxs:
+            fname, label = self.img <text_longer_than_50>
+---UPD @type:suite@ @[5665,6309]@ fname, label = self.imglist[k]
+            if add_ <text_longer_than_50> @TO@ @type:suite@ @[5746,6418]@ fname, label = self.imglist[k]
+            if add_ <text_longer_than_50>
+------UPD @type:if_stmt@ @[6098,6309]@ if self.include_bb:
+                bb = self.bbli <text_longer_than_50> @TO@ @type:if_stmt@ @[6179,6418]@ if self.include_bb:
+                bb = self.bbli <text_longer_than_50>
+---------UPD @type:suite@ @[6117,6257]@ bb = self.bblist[k]
+                if not bb:
+    <text_longer_than_50> @TO@ @type:suite@ @[6198,6366]@ bb = self.bblist[k]
+                if bb is None: <text_longer_than_50>
+------------UPD @type:if_stmt@ @[6170,6219]@ if not bb:
+                    bb = [0, 0, 1, 1] @TO@ @type:if_stmt@ @[6251,6328]@ if bb is None:
+                    bb = [0, 0, im. <text_longer_than_50>
+---------------INS @type:comparison@ @[6254,6264]@ bb is None @TO@ @type:if_stmt@ @[6170,6219]@ if not bb:
+                    bb = [0, 0, 1, 1]
+---------------UPD @type:suite@ @[6180,6219]@ bb = [0, 0, 1, 1] @TO@ @type:suite@ @[6265,6328]@ bb = [0, 0, im.shape[1]-1, im.shape[0]-1]
+------------------UPD @type:simple_stmt@ @[6201,6219]@ bb = [0, 0, 1, 1] @TO@ @type:simple_stmt@ @[6286,6328]@ bb = [0, 0, im.shape[1]-1, im.shape[0]-1]
+---------------------UPD @type:expr_stmt@ @[6201,6218]@ bb = [0, 0, 1, 1] @TO@ @type:expr_stmt@ @[6286,6327]@ bb = [0, 0, im.shape[1]-1, im.shape[0]-1]
+------------------------UPD @type:atom@ @[6206,6218]@ [0, 0, 1, 1] @TO@ @type:atom@ @[6291,6327]@ [0, 0, im.shape[1]-1, im.shape[0]-1]
+---------------------------UPD @type:testlist_comp@ @[6207,6217]@ 0, 0, 1, 1 @TO@ @type:testlist_comp@ @[6292,6326]@ 0, 0, im.shape[1]-1, im.shape[0]-1
+------------------------------INS @type:arith_expr@ @[6298,6311]@ im.shape[1]-1 @TO@ @type:testlist_comp@ @[6207,6217]@ 0, 0, 1, 1
+------------------------------INS @type:arith_expr@ @[6313,6326]@ im.shape[0]-1 @TO@ @type:testlist_comp@ @[6207,6217]@ 0, 0, 1, 1
+------------------------------MOV @type:number@ @[6213,6214]@ 1 @TO@ @type:arith_expr@ @[6298,6311]@ im.shape[1]-1
+------------------------------MOV @type:number@ @[6216,6217]@ 1 @TO@ @type:arith_expr@ @[6313,6326]@ im.shape[0]-1
+---------------DEL @type:not_test@ @[6173,6179]@ not bb @FROM@ @type:if_stmt@ @[6170,6219]@ if not bb:
+                    bb = [0, 0, 1, 1]
+
+
+MOV @type:atom_expr@ @[5138,5163]@ os.path.join(dir, 'bbox') @TO@ @type:test@ @[5005,5116]@ os.path.join(dir, 'bbox') if not \
+                <text_longer_than_50>
+
+
+MOV @type:name@ @[6177,6179]@ bb @TO@ @type:comparison@ @[6254,6264]@ bb is None
+
+
+DEL @type:simple_stmt@ @[6709,6727]@ box[0] /= size[0] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[6739,6757]@ box[1] /= size[1] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[6769,6787]@ box[2] /= size[0] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[6799,6817]@ box[3] /= size[1] @FROM@ @type:suite@ @[6422,6869]@ root = ET.parse(fname).getroot()
+            size  <text_longer_than_50>
+
+

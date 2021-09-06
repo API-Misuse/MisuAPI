@@ -1,0 +1,177 @@
+UPD @type:if_stmt@ @[1078,3012]@ if tf:
+
+  class TensorflowFilesystem(filesystem.Fi <text_longer_than_50> @TO@ @type:if_stmt@ @[1078,4028]@ if tf:
+
+  class TensorflowFilesystem(filesystem.Fi <text_longer_than_50>
+---UPD @type:suite@ @[1084,2944]@ class TensorflowFilesystem(filesystem.Filesystem): <text_longer_than_50> @TO@ @type:suite@ @[1084,3960]@ class TensorflowFilesystem(filesystem.Filesystem): <text_longer_than_50>
+------UPD @type:classdef@ @[1088,2821]@ class TensorflowFilesystem(filesystem.Filesystem): <text_longer_than_50> @TO@ @type:classdef@ @[1088,3837]@ class TensorflowFilesystem(filesystem.Filesystem): <text_longer_than_50>
+---------UPD @type:suite@ @[1138,2821]@ """Filesystem that delegates to `tensorflow.io.gfi <text_longer_than_50> @TO@ @type:suite@ @[1138,3837]@ """Filesystem that delegates to `tensorflow.io.gfi <text_longer_than_50>
+------------UPD @type:decorated@ @[1265,1382]@ @staticmethod
+    def open(name: PathType, mode: T <text_longer_than_50> @TO@ @type:decorated@ @[1265,1497]@ @staticmethod
+    def open(name: PathType, mode: T <text_longer_than_50>
+---------------UPD @type:funcdef@ @[1283,1382]@ def open(name: PathType, mode: Text = 'r') -> Any: <text_longer_than_50> @TO@ @type:funcdef@ @[1283,1497]@ def open(name: PathType, mode: Text = 'r') -> Any: <text_longer_than_50>
+------------------UPD @type:suite@ @[1333,1382]@ return tf.io.gfile.GFile(name, mode=mode) @TO@ @type:suite@ @[1333,1497]@ # Because the GFile implementation delays I/O unti <text_longer_than_50>
+------------UPD @type:decorated@ @[1387,1532]@ @staticmethod
+    def copy(src: PathType, dst: Pat <text_longer_than_50> @TO@ @type:decorated@ @[1502,1751]@ @staticmethod
+    def copy(src: PathType, dst: Pat <text_longer_than_50>
+---------------UPD @type:funcdef@ @[1405,1532]@ def copy(src: PathType, dst: PathType, overwrite:  <text_longer_than_50> @TO@ @type:funcdef@ @[1520,1751]@ def copy(src: PathType, dst: PathType, overwrite:  <text_longer_than_50>
+------------------INS @type:suite@ @[1592,1751]@ try:
+        tf.io.gfile.copy(src, dst, overwrite= <text_longer_than_50> @TO@ @type:funcdef@ @[1405,1532]@ def copy(src: PathType, dst: PathType, overwrite:  <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[1599,1751]@ try:
+        tf.io.gfile.copy(src, dst, overwrite= <text_longer_than_50> @TO@ @type:suite@ @[1592,1751]@ try:
+        tf.io.gfile.copy(src, dst, overwrite= <text_longer_than_50>
+------------------UPD @type:suite@ @[1477,1532]@ tf.io.gfile.copy(src, dst, overwrite=overwrite) @TO@ @type:suite@ @[1603,1660]@ tf.io.gfile.copy(src, dst, overwrite=overwrite)
+------------------MOV @type:suite@ @[1477,1532]@ tf.io.gfile.copy(src, dst, overwrite=overwrite) @TO@ @type:try_stmt@ @[1599,1751]@ try:
+        tf.io.gfile.copy(src, dst, overwrite= <text_longer_than_50>
+------------UPD @type:decorated@ @[1634,1738]@ @staticmethod
+    def glob(pattern: PathType) -> L <text_longer_than_50> @TO@ @type:decorated@ @[1853,2026]@ @staticmethod
+    def glob(pattern: PathType) -> L <text_longer_than_50>
+---------------UPD @type:funcdef@ @[1652,1738]@ def glob(pattern: PathType) -> List[PathType]:
+    <text_longer_than_50> @TO@ @type:funcdef@ @[1871,2026]@ def glob(pattern: PathType) -> List[PathType]:
+    <text_longer_than_50>
+------------------INS @type:suite@ @[1917,2026]@ try:
+        return tf.io.gfile.glob(pattern)
+     <text_longer_than_50> @TO@ @type:funcdef@ @[1652,1738]@ def glob(pattern: PathType) -> List[PathType]:
+    <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[1924,2026]@ try:
+        return tf.io.gfile.glob(pattern)
+     <text_longer_than_50> @TO@ @type:suite@ @[1917,2026]@ try:
+        return tf.io.gfile.glob(pattern)
+     <text_longer_than_50>
+------------------UPD @type:suite@ @[1698,1738]@ return tf.io.gfile.glob(pattern) @TO@ @type:suite@ @[1928,1970]@ return tf.io.gfile.glob(pattern)
+------------------MOV @type:suite@ @[1698,1738]@ return tf.io.gfile.glob(pattern) @TO@ @type:try_stmt@ @[1924,2026]@ try:
+        return tf.io.gfile.glob(pattern)
+     <text_longer_than_50>
+------------UPD @type:decorated@ @[1838,1942]@ @staticmethod
+    def listdir(path: PathType) -> L <text_longer_than_50> @TO@ @type:decorated@ @[2126,2334]@ @staticmethod
+    def listdir(path: PathType) -> L <text_longer_than_50>
+---------------UPD @type:funcdef@ @[1856,1942]@ def listdir(path: PathType) -> List[PathType]:
+    <text_longer_than_50> @TO@ @type:funcdef@ @[2144,2334]@ def listdir(path: PathType) -> List[PathType]:
+    <text_longer_than_50>
+------------------INS @type:suite@ @[2190,2334]@ try:
+        return tf.io.gfile.listdir(path)
+     <text_longer_than_50> @TO@ @type:funcdef@ @[1856,1942]@ def listdir(path: PathType) -> List[PathType]:
+    <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[2197,2334]@ try:
+        return tf.io.gfile.listdir(path)
+     <text_longer_than_50> @TO@ @type:suite@ @[2190,2334]@ try:
+        return tf.io.gfile.listdir(path)
+     <text_longer_than_50>
+------------------UPD @type:suite@ @[1902,1942]@ return tf.io.gfile.listdir(path) @TO@ @type:suite@ @[2201,2243]@ return tf.io.gfile.listdir(path)
+------------------MOV @type:suite@ @[1902,1942]@ return tf.io.gfile.listdir(path) @TO@ @type:try_stmt@ @[2197,2334]@ try:
+        return tf.io.gfile.listdir(path)
+     <text_longer_than_50>
+------------UPD @type:decorated@ @[2041,2124]@ @staticmethod
+    def mkdir(path: PathType) -> Non <text_longer_than_50> @TO@ @type:decorated@ @[2433,2620]@ @staticmethod
+    def mkdir(path: PathType) -> Non <text_longer_than_50>
+---------------UPD @type:funcdef@ @[2059,2124]@ def mkdir(path: PathType) -> None:
+      tf.io.gfi <text_longer_than_50> @TO@ @type:funcdef@ @[2451,2620]@ def mkdir(path: PathType) -> None:
+      try:
+     <text_longer_than_50>
+------------------INS @type:suite@ @[2485,2620]@ try:
+        tf.io.gfile.mkdir(path)
+      except  <text_longer_than_50> @TO@ @type:funcdef@ @[2059,2124]@ def mkdir(path: PathType) -> None:
+      tf.io.gfi <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[2492,2620]@ try:
+        tf.io.gfile.mkdir(path)
+      except  <text_longer_than_50> @TO@ @type:suite@ @[2485,2620]@ try:
+        tf.io.gfile.mkdir(path)
+      except  <text_longer_than_50>
+------------------UPD @type:suite@ @[2093,2124]@ tf.io.gfile.mkdir(path) @TO@ @type:suite@ @[2496,2529]@ tf.io.gfile.mkdir(path)
+------------------MOV @type:suite@ @[2093,2124]@ tf.io.gfile.mkdir(path) @TO@ @type:try_stmt@ @[2492,2620]@ try:
+        tf.io.gfile.mkdir(path)
+      except  <text_longer_than_50>
+------------UPD @type:decorated@ @[2129,2214]@ @staticmethod
+    def remove(path: PathType) -> No <text_longer_than_50> @TO@ @type:decorated@ @[2625,2814]@ @staticmethod
+    def remove(path: PathType) -> No <text_longer_than_50>
+---------------UPD @type:funcdef@ @[2147,2214]@ def remove(path: PathType) -> None:
+      tf.io.gf <text_longer_than_50> @TO@ @type:funcdef@ @[2643,2814]@ def remove(path: PathType) -> None:
+      try:
+    <text_longer_than_50>
+------------------INS @type:suite@ @[2678,2814]@ try:
+        tf.io.gfile.remove(path)
+      except <text_longer_than_50> @TO@ @type:funcdef@ @[2147,2214]@ def remove(path: PathType) -> None:
+      tf.io.gf <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[2685,2814]@ try:
+        tf.io.gfile.remove(path)
+      except <text_longer_than_50> @TO@ @type:suite@ @[2678,2814]@ try:
+        tf.io.gfile.remove(path)
+      except <text_longer_than_50>
+------------------UPD @type:suite@ @[2182,2214]@ tf.io.gfile.remove(path) @TO@ @type:suite@ @[2689,2723]@ tf.io.gfile.remove(path)
+------------------MOV @type:suite@ @[2182,2214]@ tf.io.gfile.remove(path) @TO@ @type:try_stmt@ @[2685,2814]@ try:
+        tf.io.gfile.remove(path)
+      except <text_longer_than_50>
+------------UPD @type:decorated@ @[2219,2368]@ @staticmethod
+    def rename(src: PathType, dst: P <text_longer_than_50> @TO@ @type:decorated@ @[2819,3072]@ @staticmethod
+    def rename(src: PathType, dst: P <text_longer_than_50>
+---------------UPD @type:funcdef@ @[2237,2368]@ def rename(src: PathType, dst: PathType, overwrite <text_longer_than_50> @TO@ @type:funcdef@ @[2837,3072]@ def rename(src: PathType, dst: PathType, overwrite <text_longer_than_50>
+------------------INS @type:suite@ @[2911,3072]@ try:
+        tf.io.gfile.rename(src, dst, overwrit <text_longer_than_50> @TO@ @type:funcdef@ @[2237,2368]@ def rename(src: PathType, dst: PathType, overwrite <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[2918,3072]@ try:
+        tf.io.gfile.rename(src, dst, overwrit <text_longer_than_50> @TO@ @type:suite@ @[2911,3072]@ try:
+        tf.io.gfile.rename(src, dst, overwrit <text_longer_than_50>
+------------------UPD @type:suite@ @[2311,2368]@ tf.io.gfile.rename(src, dst, overwrite=overwrite) @TO@ @type:suite@ @[2922,2981]@ tf.io.gfile.rename(src, dst, overwrite=overwrite)
+------------------MOV @type:suite@ @[2311,2368]@ tf.io.gfile.rename(src, dst, overwrite=overwrite) @TO@ @type:try_stmt@ @[2918,3072]@ try:
+        tf.io.gfile.rename(src, dst, overwrit <text_longer_than_50>
+------------UPD @type:decorated@ @[2373,2458]@ @staticmethod
+    def rmtree(path: PathType) -> No <text_longer_than_50> @TO@ @type:decorated@ @[3077,3266]@ @staticmethod
+    def rmtree(path: PathType) -> No <text_longer_than_50>
+---------------UPD @type:funcdef@ @[2391,2458]@ def rmtree(path: PathType) -> None:
+      tf.io.gf <text_longer_than_50> @TO@ @type:funcdef@ @[3095,3266]@ def rmtree(path: PathType) -> None:
+      try:
+    <text_longer_than_50>
+------------------INS @type:suite@ @[3130,3266]@ try:
+        tf.io.gfile.rmtree(path)
+      except <text_longer_than_50> @TO@ @type:funcdef@ @[2391,2458]@ def rmtree(path: PathType) -> None:
+      tf.io.gf <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[3137,3266]@ try:
+        tf.io.gfile.rmtree(path)
+      except <text_longer_than_50> @TO@ @type:suite@ @[3130,3266]@ try:
+        tf.io.gfile.rmtree(path)
+      except <text_longer_than_50>
+------------------UPD @type:suite@ @[2426,2458]@ tf.io.gfile.rmtree(path) @TO@ @type:suite@ @[3141,3175]@ tf.io.gfile.rmtree(path)
+------------------MOV @type:suite@ @[2426,2458]@ tf.io.gfile.rmtree(path) @TO@ @type:try_stmt@ @[3137,3266]@ try:
+        tf.io.gfile.rmtree(path)
+      except <text_longer_than_50>
+------------UPD @type:decorated@ @[2463,2550]@ @staticmethod
+    def stat(path: PathType) -> Any: <text_longer_than_50> @TO@ @type:decorated@ @[3271,3462]@ @staticmethod
+    def stat(path: PathType) -> Any: <text_longer_than_50>
+---------------UPD @type:funcdef@ @[2481,2550]@ def stat(path: PathType) -> Any:
+      return tf.i <text_longer_than_50> @TO@ @type:funcdef@ @[3289,3462]@ def stat(path: PathType) -> Any:
+      try:
+       <text_longer_than_50>
+------------------INS @type:suite@ @[3321,3462]@ try:
+        return tf.io.gfile.stat(path)
+      e <text_longer_than_50> @TO@ @type:funcdef@ @[2481,2550]@ def stat(path: PathType) -> Any:
+      return tf.i <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[3328,3462]@ try:
+        return tf.io.gfile.stat(path)
+      e <text_longer_than_50> @TO@ @type:suite@ @[3321,3462]@ try:
+        return tf.io.gfile.stat(path)
+      e <text_longer_than_50>
+------------------UPD @type:suite@ @[2513,2550]@ return tf.io.gfile.stat(path) @TO@ @type:suite@ @[3332,3371]@ return tf.io.gfile.stat(path)
+------------------MOV @type:suite@ @[2513,2550]@ return tf.io.gfile.stat(path) @TO@ @type:try_stmt@ @[3328,3462]@ try:
+        return tf.io.gfile.stat(path)
+      e <text_longer_than_50>
+------------UPD @type:decorated@ @[2555,2821]@ @staticmethod
+    def walk(
+        top: PathType, <text_longer_than_50> @TO@ @type:decorated@ @[3467,3837]@ @staticmethod
+    def walk(
+        top: PathType, <text_longer_than_50>
+---------------UPD @type:funcdef@ @[2573,2821]@ def walk(
+        top: PathType,
+        topdown:  <text_longer_than_50> @TO@ @type:funcdef@ @[3485,3837]@ def walk(
+        top: PathType,
+        topdown:  <text_longer_than_50>
+------------------INS @type:suite@ @[3659,3837]@ try:
+        yield from tf.io.gfile.walk(top, topd <text_longer_than_50> @TO@ @type:funcdef@ @[2573,2821]@ def walk(
+        top: PathType,
+        topdown:  <text_longer_than_50>
+---------------------INS @type:try_stmt@ @[3666,3837]@ try:
+        yield from tf.io.gfile.walk(top, topd <text_longer_than_50> @TO@ @type:suite@ @[3659,3837]@ try:
+        yield from tf.io.gfile.walk(top, topd <text_longer_than_50>
+------------------UPD @type:suite@ @[2747,2821]@ yield from tf.io.gfile.walk(top, topdown=topdown,  <text_longer_than_50> @TO@ @type:suite@ @[3670,3746]@ yield from tf.io.gfile.walk(top, topdown=topdown,  <text_longer_than_50>
+------------------MOV @type:suite@ @[2747,2821]@ yield from tf.io.gfile.walk(top, topdown=topdown,  <text_longer_than_50> @TO@ @type:try_stmt@ @[3666,3837]@ try:
+        yield from tf.io.gfile.walk(top, topd <text_longer_than_50>
+
+

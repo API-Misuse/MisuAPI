@@ -1,0 +1,57 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/models/pull/885
+  title: ensure output directory exists
+  body: "The neural programmer model fails the first time it's run, if the output\
+    \ directory folder does not already exist. In this case \"../model\" does not\
+    \ exist and the function fails because the mkdir function doesn't appear to create\
+    \ parent folders. \r\nError: \r\ntensorflow.python.framework.errors_impl.NotFoundError:\
+    \ ../model//modeltemp/"
+sha: 6601008ff2e65f9945d471486efadf73b1aac53a
+message: "ensure output directory exists\n\nThe neural programmer model fails the\
+  \ first time it's run, if the output directory folder does not already exist. In\
+  \ this case \"../model\" does not exist and the function fails because the mkdir\
+  \ function doesn't appear to create parent folders. \r\nError: \r\ntensorflow.python.framework.errors_impl.NotFoundError:\
+  \ ../model//modeltemp/"
+commit_log: "commit 6601008ff2e65f9945d471486efadf73b1aac53a\nAuthor: Henry-E <Henry-E@users.noreply.github.com>\n\
+  Date:   Wed Jan 11 11:19:22 2017 +0000\n\n    ensure output directory exists\n \
+  \   \n    The neural programmer model fails the first time it's run, if the output\
+  \ directory folder does not already exist. In this case \"../model\" does not exist\
+  \ and the function fails because the mkdir function doesn't appear to create parent\
+  \ folders.\n    Error:\n    tensorflow.python.framework.errors_impl.NotFoundError:\
+  \ ../model//modeltemp/"
+contained_keywords:
+- errors
+- notfounderror
+- error
+- fails
+commit_time: 2017-01-11 11:19:22 +0000
+commit_author: Henry-E
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 198
+    - '      if (not (tf.gfile.IsDirectory(utility.FLAGS.output_dir))):
+
+      '
+  - - 199
+    - '        print "create dir: ", utility.FLAGS.output_dir
+
+      '
+  - - 200
+    - '        tf.gfile.MkDir(utility.FLAGS.output_dir)
+
+      '
+  added: 3
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: neural_programmer/neural_programmer.py
+  removed: 0
+  source_file: a/neural_programmer/neural_programmer.py
+  target_file: b/neural_programmer/neural_programmer.py

@@ -1,0 +1,5 @@
+INS @type:simple_stmt@ @[929,961]@ logger.auto_set_dir(action='d') @TO@ @type:file_input@ @[117,1784]@ import argparse
+import cv2
+import tensorflow as tf <text_longer_than_50>
+
+

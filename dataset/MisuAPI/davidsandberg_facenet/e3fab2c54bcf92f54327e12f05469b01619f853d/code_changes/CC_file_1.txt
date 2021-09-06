@@ -1,0 +1,27 @@
+INS @type:if_stmt@ @[3033,3140]@ if not os.path.isdir(model_dir):  # Create the mod <text_longer_than_50> @TO@ @type:suite@ @[2700,5986]@ if FLAGS.model_name:
+    subdir = FLAGS.model_name <text_longer_than_50>
+
+
+UPD @type:while_stmt@ @[6178,8284]@ while batch_number<FLAGS.epoch_size:
+    print('Lo <text_longer_than_50> @TO@ @type:while_stmt@ @[6329,8402]@ while batch_number<FLAGS.epoch_size:
+    print('Lo <text_longer_than_50>
+---UPD @type:suite@ @[6214,8284]@ print('Loading training data')
+    # Sample people <text_longer_than_50> @TO@ @type:suite@ @[6365,8402]@ print('Loading training data')
+    # Sample people <text_longer_than_50>
+------UPD @type:while_stmt@ @[7516,8284]@ while i*FLAGS.batch_size<nrof_triplets*3 and batch <text_longer_than_50> @TO@ @type:while_stmt@ @[7667,8402]@ while i*FLAGS.batch_size<nrof_triplets*3 and batch <text_longer_than_50>
+---------UPD @type:suite@ @[7591,8284]@ start_time = time.time()
+      batch = facenet.get <text_longer_than_50> @TO@ @type:suite@ @[7742,8402]@ start_time = time.time()
+      batch = facenet.get <text_longer_than_50>
+------------DEL @type:if_stmt@ @[8107,8251]@ if (batch_number%20==0):
+        print('Epoch: [%d <text_longer_than_50> @FROM@ @type:suite@ @[7591,8284]@ start_time = time.time()
+      batch = facenet.get <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[8140,8251]@ print('Epoch: [%d][%d/%d]\tTime %.3f\ttripErr %2.3 <text_longer_than_50> @TO@ @type:suite@ @[7591,8284]@ start_time = time.time()
+      batch = facenet.get <text_longer_than_50>
+
+
+DEL @type:simple_stmt@ @[10371,10379]@ xxx = 1 @FROM@ @type:suite@ @[8440,10379]@ people_per_batch = FLAGS.people_per_batch*4
+  prin <text_longer_than_50>
+
+

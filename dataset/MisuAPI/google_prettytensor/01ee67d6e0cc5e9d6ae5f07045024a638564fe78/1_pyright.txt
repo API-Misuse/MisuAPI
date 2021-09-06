@@ -1,0 +1,24 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 3 source files
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/baby_names.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/baby_names.py:73:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/baby_names.py:188:13 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/baby_names.py:31:8 - error: Import "prettytensor" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/baby_names.py:32:6 - error: Import "prettytensor.tutorial" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/baby_names.py:170:18 - error: "xrange" is not defined (reportUndefinedVariable)
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py:138:9 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py:227:13 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py:232:13 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py:238:11 - error: Statements must be separated by newlines or semicolons
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py:23:8 - error: Import "prettytensor" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py:24:6 - error: Import "prettytensor.tutorial" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/google_prettytensor/01ee67d6e0cc5e9d6ae5f07045024a638564fe78/a/prettytensor/tutorial/shakespeare.py:208:18 - error: "xrange" is not defined (reportUndefinedVariable)
+12 errors, 0 warnings, 0 infos 
+Completed in 1.189sec
+
+time cost(in seconds): 1.4156289100646973

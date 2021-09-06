@@ -1,0 +1,44 @@
+commit c90b8ba10b8a23a450580df49f943145b3600c90
+Author: WeichenXu <weichen.xu@databricks.com>
+Date:   Mon Sep 9 03:32:22 2019 +0800
+
+    Make gloo job raise error when any task failed (#1376)
+
+diff --git a/horovod/run/gloo_run.py b/horovod/run/gloo_run.py
+index 243ec17..9a04880 100644
+--- a/horovod/run/gloo_run.py
++++ b/horovod/run/gloo_run.py 
+@@ -247,9 +249,17 @@ def _launch_jobs(settings, env, host_alloc_plan, remote_host_names, _run_command
+     # a SIGINT, the event will be set and the spawned threads will kill their
+     # corresponding middleman processes and thus the jobs will be killed as
+     # well.
+-    threads.execute_function_multithreaded(_exec_command,
+-                                           args_list,
+-                                           block_until_all_done=True)
++    res = threads.execute_function_multithreaded(_exec_command,
++                                                 args_list,
++                                                 block_until_all_done=True)
++
++    for name, value in sorted(res.items(), key=lambda item: item[1][1]):
++        exit_code, timestamp = value
++        if exit_code != 0:
++            raise RuntimeError('Gloo job detected that one or more processes exited with non-zero '
++                               'status, thus causing the job to be terminated. The first process '
++                               'to do so was:\nProcess name: {name}\nExit code: {code}\n'
++                               .format(name=name, code=exit_code))
+ 
+ 
+ def gloo_run(settings, remote_host_names, common_intfs, env):
+diff --git a/test/test_common.py b/test/test_common.py
+index e0c6e0e..06e6c98 100644
+--- a/test/test_common.py
++++ b/test/test_common.py
+@@ -43,7 +43,7 @@ class CommonTests(unittest.TestCase):
+         """Test that Gloo has been built if env is set."""
+         gloo_rank = int(os.getenv('HOROVOD_RANK', -1))
+         if gloo_rank >= 0:
+-            self.assertEqual(gloo_built())
++            self.assertTrue(gloo_built())
+ 
+     def test_tensorflow_available(self):
+         """Test that TensorFLow support has been built."""

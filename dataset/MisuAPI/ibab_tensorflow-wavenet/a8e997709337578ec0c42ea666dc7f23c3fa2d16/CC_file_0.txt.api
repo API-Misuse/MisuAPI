@@ -1,0 +1,24 @@
+UPD @type:atom_expr@ @[7228,7246]@ tf.nn.softmax(out) @TO@ @type:atom_expr@ @[7228,7267]@ tf.nn.softmax(tf.cast(out, tf.float64))
+
+INS @type:trailer@ @[7241,7267]@ (tf.cast(out, tf.float64)) @TO@ @type:atom_expr@ @[7228,7246]@ tf.nn.softmax(out)
+
+INS @type:trailer@ @[7241,7267]@ (tf.cast(out, tf.float64)) @TO@ @type:atom_expr@ @[7228,7246]@ tf.nn.softmax(out)
+
+INS @type:atom_expr@ @[7242,7266]@ tf.cast(out, tf.float64) @TO@ @type:trailer@ @[7241,7267]@ (tf.cast(out, tf.float64))
+
+INS @type:atom_expr@ @[7242,7266]@ tf.cast(out, tf.float64) @TO@ @type:trailer@ @[7241,7267]@ (tf.cast(out, tf.float64))
+
+INS @type:trailer@ @[7249,7266]@ (out, tf.float64) @TO@ @type:atom_expr@ @[7242,7266]@ tf.cast(out, tf.float64)
+
+INS @type:trailer@ @[7249,7266]@ (out, tf.float64) @TO@ @type:atom_expr@ @[7242,7266]@ tf.cast(out, tf.float64)
+
+INS @type:arglist@ @[7250,7265]@ out, tf.float64 @TO@ @type:trailer@ @[7249,7266]@ (out, tf.float64)
+
+INS @type:arglist@ @[7250,7265]@ out, tf.float64 @TO@ @type:trailer@ @[7249,7266]@ (out, tf.float64)
+
+INS @type:atom_expr@ @[7255,7265]@ tf.float64 @TO@ @type:arglist@ @[7250,7265]@ out, tf.float64
+
+INS @type:atom_expr@ @[7255,7265]@ tf.float64 @TO@ @type:arglist@ @[7250,7265]@ out, tf.float64
+
+MOV @type:trailer@ @[7241,7246]@ (out) @TO@ @type:atom_expr@ @[7255,7265]@ tf.float64
+

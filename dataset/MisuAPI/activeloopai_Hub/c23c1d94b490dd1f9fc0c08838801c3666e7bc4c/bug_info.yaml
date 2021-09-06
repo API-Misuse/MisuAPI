@@ -1,0 +1,39 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/activeloopai/Hub/pull/384
+  title: More checks for tensor shapes and max_shapes
+  body: More checks added so that user doesn't face problems during dataset creation
+sha: c23c1d94b490dd1f9fc0c08838801c3666e7bc4c
+message: fixing from_tensorflow
+commit_log: "commit c23c1d94b490dd1f9fc0c08838801c3666e7bc4c\nAuthor: AbhinavTuli\
+  \ <abhinav.tuli99@gmail.com>\nDate:   Fri Dec 25 00:36:05 2020 +0530\n\n    fixing\
+  \ from_tensorflow"
+contained_keywords:
+- fixing
+commit_time: 2020-12-25 00:36:05 +0530
+commit_author: AbhinavTuli
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 760
+    - '            shape = tuple(tf_dt.shape) if tf_dt.shape.rank is not None else
+      (None,)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '            shape = tf_dt.shape if tf_dt.shape.rank is not None else (None,)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: hub/api/dataset.py
+  removed: 1
+  source_file: a/hub/api/dataset.py
+  target_file: b/hub/api/dataset.py

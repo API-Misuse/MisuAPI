@@ -1,0 +1,6 @@
+UPD @type:atom_expr@ @[3024,3043]@ img.astype('uint8') @TO@ @type:atom_expr@ @[3024,3060]@ np.clip(img, 0, 255).astype('uint8')
+
+INS @type:trailer@ @[3026,3031]@ .clip @TO@ @type:atom_expr@ @[3024,3043]@ img.astype('uint8')
+
+INS @type:trailer@ @[3031,3044]@ (img, 0, 255) @TO@ @type:atom_expr@ @[3024,3043]@ img.astype('uint8')
+

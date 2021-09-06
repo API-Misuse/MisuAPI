@@ -1,0 +1,14 @@
+UPD @type:simple_stmt@ @[9269,9325]@ tf.logging.info("Bleu score (uncased):", uncased_s <text_longer_than_50> @TO@ @type:simple_stmt@ @[9269,9328]@ tf.logging.info("Bleu score (uncased): %d", uncase <text_longer_than_50>
+---UPD @type:atom_expr@ @[9269,9324]@ tf.logging.info("Bleu score (uncased):", uncased_s <text_longer_than_50> @TO@ @type:atom_expr@ @[9269,9327]@ tf.logging.info("Bleu score (uncased): %d", uncase <text_longer_than_50>
+------UPD @type:trailer@ @[9284,9324]@ ("Bleu score (uncased):", uncased_score) @TO@ @type:trailer@ @[9284,9327]@ ("Bleu score (uncased): %d", uncased_score)
+---------UPD @type:arglist@ @[9285,9323]@ "Bleu score (uncased):", uncased_score @TO@ @type:arglist@ @[9285,9326]@ "Bleu score (uncased): %d", uncased_score
+------------UPD @type:string@ @[9285,9308]@ "Bleu score (uncased):" @TO@ @type:string@ @[9285,9311]@ "Bleu score (uncased): %d"
+
+
+UPD @type:simple_stmt@ @[9327,9379]@ tf.logging.info("Bleu score (cased):", cased_score <text_longer_than_50> @TO@ @type:simple_stmt@ @[9330,9385]@ tf.logging.info("Bleu score (cased): %d", cased_sc <text_longer_than_50>
+---UPD @type:atom_expr@ @[9327,9378]@ tf.logging.info("Bleu score (cased):", cased_score <text_longer_than_50> @TO@ @type:atom_expr@ @[9330,9384]@ tf.logging.info("Bleu score (cased): %d", cased_sc <text_longer_than_50>
+------UPD @type:trailer@ @[9342,9378]@ ("Bleu score (cased):", cased_score) @TO@ @type:trailer@ @[9345,9384]@ ("Bleu score (cased): %d", cased_score)
+---------UPD @type:arglist@ @[9343,9377]@ "Bleu score (cased):", cased_score @TO@ @type:arglist@ @[9346,9383]@ "Bleu score (cased): %d", cased_score
+------------UPD @type:string@ @[9343,9364]@ "Bleu score (cased):" @TO@ @type:string@ @[9346,9370]@ "Bleu score (cased): %d"
+
+

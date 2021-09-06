@@ -1,0 +1,35 @@
+INS @type:if_stmt@ @[4456,4908]@ if exec_properties.get('custom_config'):
+      cml <text_longer_than_50> @TO@ @type:suite@ @[1232,4853]@ """Push model to target if blessed.
+
+    Args:
+    <text_longer_than_50>
+
+INS @type:if_stmt@ @[4456,4908]@ if exec_properties.get('custom_config'):
+      cml <text_longer_than_50> @TO@ @type:suite@ @[1232,4853]@ """Push model to target if blessed.
+
+    Args:
+    <text_longer_than_50>
+
+INS @type:suite@ @[4496,4908]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:if_stmt@ @[4456,4908]@ if exec_properties.get('custom_config'):
+      cml <text_longer_than_50>
+
+INS @type:suite@ @[4496,4908]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:if_stmt@ @[4456,4908]@ if exec_properties.get('custom_config'):
+      cml <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4478,4587]@ exec_properties.get('custom_config',
+              <text_longer_than_50> @TO@ @type:atom_expr@ @[4523,4634]@ exec_properties.get('custom_config',
+              <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[4458,4588]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50> @TO@ @type:suite@ @[4496,4908]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4478,4587]@ exec_properties.get('custom_config',
+              <text_longer_than_50> @TO@ @type:atom_expr@ @[4523,4634]@ exec_properties.get('custom_config',
+              <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4639,4852]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50> @TO@ @type:atom_expr@ @[4690,4907]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50>
+
+MOV @type:if_stmt@ @[4592,4853]@ if cmle_serving_args is not None:
+      return cml <text_longer_than_50> @TO@ @type:suite@ @[4496,4908]@ cmle_serving_args = exec_properties.get('custom_co <text_longer_than_50>
+
+UPD @type:atom_expr@ @[4639,4852]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50> @TO@ @type:atom_expr@ @[4690,4907]@ cmle_runner.deploy_model_for_serving(serving_path, <text_longer_than_50>
+

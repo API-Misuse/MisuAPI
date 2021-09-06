@@ -1,0 +1,37 @@
+sha: 26aef0a236e7053ab3cf9127962b1d50d6a6dc4c
+message: 'Disable threading in lmd
+
+
+  This fixes the "daemonic processes are not allowed to have children" error'
+commit_log: "commit 26aef0a236e7053ab3cf9127962b1d50d6a6dc4c\nAuthor: Leo Gao <54557097+leogao2@users.noreply.github.com>\n\
+  Date:   Fri Nov 13 11:45:27 2020 -0700\n\n    Disable threading in lmd\n    \n \
+  \   This fixes the \"daemonic processes are not allowed to have children\" error"
+contained_keywords:
+- fixes
+- error
+commit_time: 2020-11-13 11:45:27 -0700
+commit_author: Leo Gao
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: data/create_tfrecords.py
+  source_file: a/data/create_tfrecords.py
+  target_file: b/data/create_tfrecords.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 124
+    - '            g = Reader(f).stream_data(threaded=False)
+
+      '
+  del_line_no:
+  - - null
+    - '            g = Reader(f).stream_data()
+
+      '

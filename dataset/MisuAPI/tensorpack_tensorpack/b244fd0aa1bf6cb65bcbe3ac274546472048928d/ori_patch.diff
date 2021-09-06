@@ -1,0 +1,36 @@
+commit b244fd0aa1bf6cb65bcbe3ac274546472048928d
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Mon May 14 02:36:00 2018 -0600
+
+    bugfix
+
+diff --git a/examples/FasterRCNN/model.py b/examples/FasterRCNN/model.py
+index e0c9e120..ee23fa59 100644
+--- a/examples/FasterRCNN/model.py
++++ b/examples/FasterRCNN/model.py
+@@ -99,7 +99,7 @@ def rpn_losses(anchor_labels, anchor_boxes, label_logits, box_logits):
+     placeholder = 1.
+     label_loss = tf.nn.sigmoid_cross_entropy_with_logits(
+         labels=tf.to_float(valid_anchor_labels), logits=valid_label_logits)
+-    label_loss = label_loss * (1. / config.RPN_BATCH_PER_IM)
++    label_loss = tf.reduce_sum(label_loss) * (1. / config.RPN_BATCH_PER_IM)
+     label_loss = tf.where(tf.equal(nr_valid, 0), placeholder, label_loss, name='label_loss')
+ 
+     pos_anchor_boxes = tf.boolean_mask(anchor_boxes, pos_mask)
+diff --git a/examples/FasterRCNN/train.py b/examples/FasterRCNN/train.py
+index 83f2b6d9..cd0c336d 100755
+--- a/examples/FasterRCNN/train.py
++++ b/examples/FasterRCNN/train.py
+@@ -502,7 +502,11 @@ class EvalCallback(Callback):
+             logger.get_logger_dir(), 'outputs{}.json'.format(self.global_step))
+         with open(output_file, 'w') as f:
+             json.dump(all_results, f)
+-        scores = print_evaluation_scores(output_file)
++        try:
++            scores = print_evaluation_scores(output_file)
++        except Exception:
++            logger.exception("Exception in COCO evaluation.")
++            scores = {}
+         for k, v in scores.items():
+             self.trainer.monitors.put_scalar(k, v)
+ 

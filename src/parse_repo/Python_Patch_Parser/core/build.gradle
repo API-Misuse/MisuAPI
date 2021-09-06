@@ -1,0 +1,85 @@
+
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'application'
+}
+
+repositories {
+	/*
+	mavenLocal()
+    mavenCentral()
+    maven { url '/home/apr/env/mavenDownload/' }
+*/
+
+    // Use JCenter for resolving dependencies.
+    jcenter()
+}
+
+version = '0.0.1'
+group = 'apr.myapr.parser'
+mainClassName = 'apr.myapr.parser.main.Main'
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencies {
+    // Use JUnit test framework.
+    testImplementation 'junit:junit:4.13'
+    
+    // https://mvnrepository.com/artifact/com.github.gumtreediff/core
+	//implementation 'com.github.gumtreediff:gumtree:3.0.0-SNAPSHOT'
+	
+	// https://mvnrepository.com/artifact/com.github.gumtreediff/core
+	//runtimeOnly group: 'com.github.gumtreediff', name: 'core', version: '2.1.2'
+	//implementation 'com.github.gumtreediff:core:2.1.2'
+	
+	//implementation fileTree(dir: "/home/apr/apr_tools/GumTree_repos/gumtree/dist/build/libs/", includes: ['*.jar']) 
+	
+	implementation files('/home/apr/apr_tools/GumTree_repos/gumtree/dist/build/libs/gumtree.jar')
+    
+    // parameter parser
+    compile "commons-cli:commons-cli:1.4"
+    
+    // for logging
+    compile "org.slf4j:slf4j-log4j12:1.7.25"
+    compile "org.slf4j:slf4j-api:1.7.25"   
+}
+
+//create a single Jar with all dependencies
+/**/
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Fat Jar',  
+        	'Implementation-Version': version,
+        	'Main-Class': mainClassName
+    }
+    baseName = project.name + '-jar-with-dependencies'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+//./gradlew fatJar
+
+
+jar {
+    manifestContentCharset 'utf-8'
+    metadataCharset 'utf-8'
+    manifest {
+        attributes "Main-Class": mainClassName
+    }
+    if (project.hasProperty("allInOne")) { // ./gradlew jar -PallInOne
+    	baseName = project.name + '-jar-with-dependencies'
+        from {
+            configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
+check.dependsOn jacocoTestReport
+

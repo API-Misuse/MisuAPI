@@ -1,0 +1,29 @@
+sha: 3ef211761e4a337dae7a6745777f5f5ab5393417
+message: Fix spelling "doted" -> "dotted"
+commit_log: "commit 3ef211761e4a337dae7a6745777f5f5ab5393417\nAuthor: Phil Ferriere\
+  \ <pferriere@hotmail.com>\nDate:   Tue Nov 6 10:00:13 2018 -0800\n\n    Fix spelling\
+  \ \"doted\" -> \"dotted\""
+contained_keywords:
+- fix
+commit_time: 2018-11-06 10:00:13 -0800
+commit_author: Phil Ferriere
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: hiddenlayer/graph.py
+  source_file: a/hiddenlayer/graph.py
+  target_file: b/hiddenlayer/graph.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 324
+    - "        dot.attr(\"edge\", style=\"dotted\", \n"
+  del_line_no:
+  - - null
+    - "        dot.attr(\"edge\", style=\"doted\", \n"

@@ -1,0 +1,3 @@
+INS @type:not_test@ @[3203,3221]@ not self.stopped() @TO@ @type:while_stmt@ @[3199,3792]@ while True:
+            batched, futures = self.fe <text_longer_than_50>
+

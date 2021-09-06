@@ -1,0 +1,98 @@
+UPD @type:simple_stmt@ @[1108,1209]@ return librosa.effects.trim(wav, frame_length=hpar <text_longer_than_50> @TO@ @type:simple_stmt@ @[1122,1257]@ return librosa.effects.trim(wav, top_db= hparams.t <text_longer_than_50>
+---UPD @type:return_stmt@ @[1108,1208]@ return librosa.effects.trim(wav, frame_length=hpar <text_longer_than_50> @TO@ @type:return_stmt@ @[1122,1256]@ return librosa.effects.trim(wav, top_db= hparams.t <text_longer_than_50>
+------UPD @type:atom_expr@ @[1115,1208]@ librosa.effects.trim(wav, frame_length=hparams.fft <text_longer_than_50> @TO@ @type:atom_expr@ @[1129,1256]@ librosa.effects.trim(wav, top_db= hparams.trim_top <text_longer_than_50>
+---------UPD @type:trailer@ @[1135,1205]@ (wav, frame_length=hparams.fft_size, hop_length=ge <text_longer_than_50> @TO@ @type:trailer@ @[1149,1253]@ (wav, top_db= hparams.trim_top_db, frame_length=hp <text_longer_than_50>
+------------UPD @type:arglist@ @[1136,1204]@ wav, frame_length=hparams.fft_size, hop_length=get <text_longer_than_50> @TO@ @type:arglist@ @[1150,1252]@ wav, top_db= hparams.trim_top_db, frame_length=hpa <text_longer_than_50>
+---------------UPD @type:argument@ @[1141,1170]@ frame_length=hparams.fft_size @TO@ @type:argument@ @[1155,1182]@ top_db= hparams.trim_top_db
+------------------UPD @type:name@ @[1141,1153]@ frame_length @TO@ @type:name@ @[1155,1161]@ top_db
+------------------UPD @type:atom_expr@ @[1154,1170]@ hparams.fft_size @TO@ @type:atom_expr@ @[1163,1182]@ hparams.trim_top_db
+---------------------UPD @type:trailer@ @[1161,1170]@ .fft_size @TO@ @type:trailer@ @[1170,1182]@ .trim_top_db
+------------------------UPD @type:name@ @[1162,1170]@ fft_size @TO@ @type:name@ @[1171,1182]@ trim_top_db
+---------------INS @type:argument@ @[1184,1218]@ frame_length=hparams.trim_fft_size @TO@ @type:arglist@ @[1136,1204]@ wav, frame_length=hparams.fft_size, hop_length=get <text_longer_than_50>
+---------------INS @type:operator@ @[1218,1219]@ , @TO@ @type:arglist@ @[1136,1204]@ wav, frame_length=hparams.fft_size, hop_length=get <text_longer_than_50>
+---------------UPD @type:argument@ @[1172,1204]@ hop_length=get_hop_size(hparams) @TO@ @type:argument@ @[1220,1252]@ hop_length=hparams.trim_hop_size
+------------------MOV @type:operator@ @[1182,1183]@ = @TO@ @type:argument@ @[1184,1218]@ frame_length=hparams.trim_fft_size
+------------------UPD @type:atom_expr@ @[1183,1204]@ get_hop_size(hparams) @TO@ @type:atom_expr@ @[1197,1218]@ hparams.trim_fft_size
+---------------------UPD @type:name@ @[1183,1195]@ get_hop_size @TO@ @type:name@ @[1197,1204]@ hparams
+---------------------UPD @type:trailer@ @[1195,1204]@ (hparams) @TO@ @type:trailer@ @[1204,1218]@ .trim_fft_size
+------------------------UPD @type:name@ @[1196,1203]@ hparams @TO@ @type:name@ @[1205,1218]@ trim_fft_size
+------------------MOV @type:atom_expr@ @[1183,1204]@ get_hop_size(hparams) @TO@ @type:argument@ @[1184,1218]@ frame_length=hparams.trim_fft_size
+---------------------UPD @type:name@ @[1183,1195]@ get_hop_size @TO@ @type:name@ @[1197,1204]@ hparams
+---------------------UPD @type:trailer@ @[1195,1204]@ (hparams) @TO@ @type:trailer@ @[1204,1218]@ .trim_fft_size
+------------------------UPD @type:name@ @[1196,1203]@ hparams @TO@ @type:name@ @[1205,1218]@ trim_fft_size
+------------------INS @type:operator@ @[1230,1231]@ = @TO@ @type:argument@ @[1172,1204]@ hop_length=get_hop_size(hparams)
+------------------INS @type:atom_expr@ @[1231,1252]@ hparams.trim_hop_size @TO@ @type:argument@ @[1172,1204]@ hop_length=get_hop_size(hparams)
+
+
+UPD @type:if_stmt@ @[2141,2368]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50> @TO@ @type:if_stmt@ @[2189,2425]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50>
+---UPD @type:suite@ @[2325,2368]@ return _griffin_lim(S ** hparams.power) @TO@ @type:suite@ @[2373,2425]@ return _griffin_lim(S ** hparams.power, hparams)
+------UPD @type:simple_stmt@ @[2328,2368]@ return _griffin_lim(S ** hparams.power) @TO@ @type:simple_stmt@ @[2376,2425]@ return _griffin_lim(S ** hparams.power, hparams)
+---------UPD @type:return_stmt@ @[2328,2367]@ return _griffin_lim(S ** hparams.power) @TO@ @type:return_stmt@ @[2376,2424]@ return _griffin_lim(S ** hparams.power, hparams)
+------------UPD @type:atom_expr@ @[2335,2367]@ _griffin_lim(S ** hparams.power) @TO@ @type:atom_expr@ @[2383,2424]@ _griffin_lim(S ** hparams.power, hparams)
+---------------UPD @type:trailer@ @[2347,2367]@ (S ** hparams.power) @TO@ @type:trailer@ @[2395,2424]@ (S ** hparams.power, hparams)
+------------------INS @type:arglist@ @[2396,2423]@ S ** hparams.power, hparams @TO@ @type:trailer@ @[2347,2367]@ (S ** hparams.power)
+------------------MOV @type:power@ @[2348,2366]@ S ** hparams.power @TO@ @type:arglist@ @[2396,2423]@ S ** hparams.power, hparams
+
+
+UPD @type:if_stmt@ @[2684,2911]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50> @TO@ @type:if_stmt@ @[2741,2977]@ if hparams.use_lws:
+		processor = _lws_processor(h <text_longer_than_50>
+---UPD @type:suite@ @[2868,2911]@ return _griffin_lim(S ** hparams.power) @TO@ @type:suite@ @[2925,2977]@ return _griffin_lim(S ** hparams.power, hparams)
+------UPD @type:simple_stmt@ @[2871,2911]@ return _griffin_lim(S ** hparams.power) @TO@ @type:simple_stmt@ @[2928,2977]@ return _griffin_lim(S ** hparams.power, hparams)
+---------UPD @type:return_stmt@ @[2871,2910]@ return _griffin_lim(S ** hparams.power) @TO@ @type:return_stmt@ @[2928,2976]@ return _griffin_lim(S ** hparams.power, hparams)
+------------UPD @type:atom_expr@ @[2878,2910]@ _griffin_lim(S ** hparams.power) @TO@ @type:atom_expr@ @[2935,2976]@ _griffin_lim(S ** hparams.power, hparams)
+---------------UPD @type:trailer@ @[2890,2910]@ (S ** hparams.power) @TO@ @type:trailer@ @[2947,2976]@ (S ** hparams.power, hparams)
+------------------INS @type:arglist@ @[2948,2975]@ S ** hparams.power, hparams @TO@ @type:trailer@ @[2890,2910]@ (S ** hparams.power)
+------------------MOV @type:power@ @[2891,2909]@ S ** hparams.power @TO@ @type:arglist@ @[2948,2975]@ S ** hparams.power, hparams
+
+
+UPD @type:simple_stmt@ @[2954,3025]@ return lws.lws(hparams.fft_size, get_hop_size(hpar <text_longer_than_50> @TO@ @type:simple_stmt@ @[3020,3114]@ return lws.lws(hparams.n_fft, get_hop_size(hparams <text_longer_than_50>
+---UPD @type:return_stmt@ @[2954,3024]@ return lws.lws(hparams.fft_size, get_hop_size(hpar <text_longer_than_50> @TO@ @type:return_stmt@ @[3020,3113]@ return lws.lws(hparams.n_fft, get_hop_size(hparams <text_longer_than_50>
+------UPD @type:atom_expr@ @[2961,3024]@ lws.lws(hparams.fft_size, get_hop_size(hparams), m <text_longer_than_50> @TO@ @type:atom_expr@ @[3027,3113]@ lws.lws(hparams.n_fft, get_hop_size(hparams), ffts <text_longer_than_50>
+---------UPD @type:trailer@ @[2968,3024]@ (hparams.fft_size, get_hop_size(hparams), mode="sp <text_longer_than_50> @TO@ @type:trailer@ @[3034,3113]@ (hparams.n_fft, get_hop_size(hparams), fftsize=hpa <text_longer_than_50>
+------------UPD @type:arglist@ @[2969,3023]@ hparams.fft_size, get_hop_size(hparams), mode="spe <text_longer_than_50> @TO@ @type:arglist@ @[3035,3112]@ hparams.n_fft, get_hop_size(hparams), fftsize=hpar <text_longer_than_50>
+---------------UPD @type:atom_expr@ @[2969,2985]@ hparams.fft_size @TO@ @type:atom_expr@ @[3035,3048]@ hparams.n_fft
+------------------UPD @type:trailer@ @[2976,2985]@ .fft_size @TO@ @type:trailer@ @[3042,3048]@ .n_fft
+---------------------UPD @type:name@ @[2977,2985]@ fft_size @TO@ @type:name@ @[3043,3048]@ n_fft
+---------------INS @type:argument@ @[3073,3097]@ fftsize=hparams.win_size @TO@ @type:arglist@ @[2969,3023]@ hparams.fft_size, get_hop_size(hparams), mode="spe <text_longer_than_50>
+---------------INS @type:operator@ @[3097,3098]@ , @TO@ @type:arglist@ @[2969,3023]@ hparams.fft_size, get_hop_size(hparams), mode="spe <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[3471,3626]@ if hparams.use_lws:
+		return _lws_processor(hparam <text_longer_than_50> @TO@ @type:if_stmt@ @[3560,3741]@ if hparams.use_lws:
+		return _lws_processor(hparam <text_longer_than_50>
+---UPD @type:suite@ @[3540,3626]@ return librosa.stft(y=y, n_fft=hparams.fft_size, h <text_longer_than_50> @TO@ @type:suite@ @[3629,3741]@ return librosa.stft(y=y, n_fft=hparams.n_fft, hop_ <text_longer_than_50>
+------UPD @type:simple_stmt@ @[3543,3626]@ return librosa.stft(y=y, n_fft=hparams.fft_size, h <text_longer_than_50> @TO@ @type:simple_stmt@ @[3632,3741]@ return librosa.stft(y=y, n_fft=hparams.n_fft, hop_ <text_longer_than_50>
+---------UPD @type:return_stmt@ @[3543,3625]@ return librosa.stft(y=y, n_fft=hparams.fft_size, h <text_longer_than_50> @TO@ @type:return_stmt@ @[3632,3740]@ return librosa.stft(y=y, n_fft=hparams.n_fft, hop_ <text_longer_than_50>
+------------UPD @type:atom_expr@ @[3550,3625]@ librosa.stft(y=y, n_fft=hparams.fft_size, hop_leng <text_longer_than_50> @TO@ @type:atom_expr@ @[3639,3740]@ librosa.stft(y=y, n_fft=hparams.n_fft, hop_length= <text_longer_than_50>
+---------------UPD @type:trailer@ @[3562,3625]@ (y=y, n_fft=hparams.fft_size, hop_length=get_hop_s <text_longer_than_50> @TO@ @type:trailer@ @[3651,3740]@ (y=y, n_fft=hparams.n_fft, hop_length=get_hop_size <text_longer_than_50>
+------------------UPD @type:arglist@ @[3563,3624]@ y=y, n_fft=hparams.fft_size, hop_length=get_hop_si <text_longer_than_50> @TO@ @type:arglist@ @[3652,3739]@ y=y, n_fft=hparams.n_fft, hop_length=get_hop_size( <text_longer_than_50>
+---------------------UPD @type:argument@ @[3568,3590]@ n_fft=hparams.fft_size @TO@ @type:argument@ @[3657,3676]@ n_fft=hparams.n_fft
+------------------------UPD @type:atom_expr@ @[3574,3590]@ hparams.fft_size @TO@ @type:atom_expr@ @[3663,3676]@ hparams.n_fft
+---------------------------UPD @type:trailer@ @[3581,3590]@ .fft_size @TO@ @type:trailer@ @[3670,3676]@ .n_fft
+------------------------------UPD @type:name@ @[3582,3590]@ fft_size @TO@ @type:name@ @[3671,3676]@ n_fft
+---------------------INS @type:operator@ @[3710,3711]@ , @TO@ @type:arglist@ @[3563,3624]@ y=y, n_fft=hparams.fft_size, hop_length=get_hop_si <text_longer_than_50>
+---------------------INS @type:argument@ @[3712,3739]@ win_length=hparams.win_size @TO@ @type:arglist@ @[3563,3624]@ y=y, n_fft=hparams.fft_size, hop_length=get_hop_si <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[3652,3710]@ return librosa.istft(y, hop_length=get_hop_size(hp <text_longer_than_50> @TO@ @type:simple_stmt@ @[3767,3854]@ return librosa.istft(y, hop_length=get_hop_size(hp <text_longer_than_50>
+---UPD @type:return_stmt@ @[3652,3709]@ return librosa.istft(y, hop_length=get_hop_size(hp <text_longer_than_50> @TO@ @type:return_stmt@ @[3767,3853]@ return librosa.istft(y, hop_length=get_hop_size(hp <text_longer_than_50>
+------UPD @type:atom_expr@ @[3659,3709]@ librosa.istft(y, hop_length=get_hop_size(hparams)) @TO@ @type:atom_expr@ @[3774,3853]@ librosa.istft(y, hop_length=get_hop_size(hparams), <text_longer_than_50>
+---------UPD @type:trailer@ @[3672,3709]@ (y, hop_length=get_hop_size(hparams)) @TO@ @type:trailer@ @[3787,3853]@ (y, hop_length=get_hop_size(hparams), win_length=h <text_longer_than_50>
+------------UPD @type:arglist@ @[3673,3708]@ y, hop_length=get_hop_size(hparams) @TO@ @type:arglist@ @[3788,3852]@ y, hop_length=get_hop_size(hparams), win_length=hp <text_longer_than_50>
+---------------INS @type:operator@ @[3823,3824]@ , @TO@ @type:arglist@ @[3673,3708]@ y, hop_length=get_hop_size(hparams)
+---------------INS @type:argument@ @[3825,3852]@ win_length=hparams.win_size @TO@ @type:arglist@ @[3673,3708]@ y, hop_length=get_hop_size(hparams)
+
+
+UPD @type:simple_stmt@ @[4706,4845]@ return librosa.filters.mel(hparams.sample_rate, hp <text_longer_than_50> @TO@ @type:simple_stmt@ @[4850,4986]@ return librosa.filters.mel(hparams.sample_rate, hp <text_longer_than_50>
+---UPD @type:return_stmt@ @[4706,4844]@ return librosa.filters.mel(hparams.sample_rate, hp <text_longer_than_50> @TO@ @type:return_stmt@ @[4850,4985]@ return librosa.filters.mel(hparams.sample_rate, hp <text_longer_than_50>
+------UPD @type:atom_expr@ @[4713,4844]@ librosa.filters.mel(hparams.sample_rate, hparams.f <text_longer_than_50> @TO@ @type:atom_expr@ @[4857,4985]@ librosa.filters.mel(hparams.sample_rate, hparams.n <text_longer_than_50>
+---------UPD @type:trailer@ @[4732,4844]@ (hparams.sample_rate, hparams.fft_size, n_mels=hpa <text_longer_than_50> @TO@ @type:trailer@ @[4876,4985]@ (hparams.sample_rate, hparams.n_fft, n_mels=hparam <text_longer_than_50>
+------------UPD @type:arglist@ @[4733,4843]@ hparams.sample_rate, hparams.fft_size, n_mels=hpar <text_longer_than_50> @TO@ @type:arglist@ @[4877,4984]@ hparams.sample_rate, hparams.n_fft, n_mels=hparams <text_longer_than_50>
+---------------UPD @type:atom_expr@ @[4754,4770]@ hparams.fft_size @TO@ @type:atom_expr@ @[4898,4911]@ hparams.n_fft
+------------------UPD @type:trailer@ @[4761,4770]@ .fft_size @TO@ @type:trailer@ @[4905,4911]@ .n_fft
+---------------------UPD @type:name@ @[4762,4770]@ fft_size @TO@ @type:name@ @[4906,4911]@ n_fft
+
+

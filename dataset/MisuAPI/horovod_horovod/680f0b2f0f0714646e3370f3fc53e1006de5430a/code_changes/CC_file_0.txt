@@ -1,0 +1,34 @@
+UPD @type:with_stmt@ @[8417,19772]@ with remote_store.get_local_output_dir() as run_ou <text_longer_than_50> @TO@ @type:with_stmt@ @[8417,19784]@ with remote_store.get_local_output_dir() as run_ou <text_longer_than_50>
+---UPD @type:suite@ @[8476,19772]@ logs_dir = os.path.join(run_output_dir, remote_sto <text_longer_than_50> @TO@ @type:suite@ @[8476,19784]@ logs_dir = os.path.join(run_output_dir, remote_sto <text_longer_than_50>
+------UPD @type:with_stmt@ @[10152,19463]@ with reader_factory(remote_store.train_data_path,
+ <text_longer_than_50> @TO@ @type:with_stmt@ @[10152,19475]@ with reader_factory(remote_store.train_data_path,
+ <text_longer_than_50>
+---------UPD @type:suite@ @[10787,19463]@ with reader_factory(remote_store.val_data_path,
+   <text_longer_than_50> @TO@ @type:suite@ @[10787,19475]@ with reader_factory(remote_store.val_data_path,
+   <text_longer_than_50>
+------------UPD @type:with_stmt@ @[10804,19463]@ with reader_factory(remote_store.val_data_path,
+   <text_longer_than_50> @TO@ @type:with_stmt@ @[10804,19475]@ with reader_factory(remote_store.val_data_path,
+   <text_longer_than_50>
+---------------UPD @type:suite@ @[11536,19463]@ train_loader = BatchedDataLoader(train_reader,
+    <text_longer_than_50> @TO@ @type:suite@ @[11536,19475]@ train_loader = BatchedDataLoader(train_reader,
+    <text_longer_than_50>
+------------------UPD @type:funcdef@ @[12056,13086]@ def prepare_batch(row):
+                        in <text_longer_than_50> @TO@ @type:funcdef@ @[12056,13098]@ def prepare_batch(row):
+                        in <text_longer_than_50>
+---------------------UPD @type:suite@ @[12079,13086]@ inputs = [
+                            prepare_np_ <text_longer_than_50> @TO@ @type:suite@ @[12079,13098]@ inputs = [
+                            prepare_np_ <text_longer_than_50>
+------------------------UPD @type:if_stmt@ @[12743,13024]@ if cuda_available:
+                            inp <text_longer_than_50> @TO@ @type:if_stmt@ @[12743,13036]@ if cuda_available:
+                            inp <text_longer_than_50>
+---------------------------UPD @type:suite@ @[12761,13024]@ inputs = [input.cuda() for input in inputs]
+       <text_longer_than_50> @TO@ @type:suite@ @[12761,13036]@ inputs = [input.cuda() for input in inputs]
+       <text_longer_than_50>
+------------------------------UPD @type:if_stmt@ @[12934,13024]@ if sample_weights:
+                                <text_longer_than_50> @TO@ @type:if_stmt@ @[12934,13036]@ if sample_weights is not None:
+                    <text_longer_than_50>
+---------------------------------INS @type:comparison@ @[12937,12963]@ sample_weights is not None @TO@ @type:if_stmt@ @[12934,13024]@ if sample_weights:
+                                <text_longer_than_50>
+---------------------------------MOV @type:name@ @[12937,12951]@ sample_weights @TO@ @type:comparison@ @[12937,12963]@ sample_weights is not None
+
+

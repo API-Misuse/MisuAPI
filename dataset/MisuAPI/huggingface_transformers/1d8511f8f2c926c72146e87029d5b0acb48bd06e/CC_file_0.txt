@@ -1,0 +1,18 @@
+UPD @type:if_stmt@ @[19766,21442]@ if args.do_train:
+        train_features = convert <text_longer_than_50> @TO@ @type:if_stmt@ @[19766,21447]@ if args.do_train:
+        train_features = convert <text_longer_than_50>
+---UPD @type:suite@ @[19783,21442]@ train_features = convert_examples_to_features(
+    <text_longer_than_50> @TO@ @type:suite@ @[19783,21447]@ train_features = convert_examples_to_features(
+    <text_longer_than_50>
+------UPD @type:for_stmt@ @[20928,21442]@ for epoch in range(args.num_train_epochs):
+        <text_longer_than_50> @TO@ @type:for_stmt@ @[20928,21447]@ for epoch in range(int(args.num_train_epochs)):
+   <text_longer_than_50>
+---------INS @type:atom_expr@ @[20941,20974]@ range(int(args.num_train_epochs)) @TO@ @type:for_stmt@ @[20928,21442]@ for epoch in range(args.num_train_epochs):
+        <text_longer_than_50>
+------------INS @type:trailer@ @[20946,20974]@ (int(args.num_train_epochs)) @TO@ @type:atom_expr@ @[20941,20974]@ range(int(args.num_train_epochs))
+---------UPD @type:atom_expr@ @[20941,20969]@ range(args.num_train_epochs) @TO@ @type:atom_expr@ @[20947,20973]@ int(args.num_train_epochs)
+------------UPD @type:name@ @[20941,20946]@ range @TO@ @type:name@ @[20947,20950]@ int
+---------MOV @type:atom_expr@ @[20941,20969]@ range(args.num_train_epochs) @TO@ @type:trailer@ @[20946,20974]@ (int(args.num_train_epochs))
+------------UPD @type:name@ @[20941,20946]@ range @TO@ @type:name@ @[20947,20950]@ int
+
+

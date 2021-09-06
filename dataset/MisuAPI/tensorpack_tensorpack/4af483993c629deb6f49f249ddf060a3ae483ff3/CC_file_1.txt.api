@@ -1,0 +1,32 @@
+INS @type:try_stmt@ @[2364,2755]@ try:
+                result.append(
+               <text_longer_than_50> @TO@ @type:suite@ @[2132,2444]@ dt = data_holder[0][k]
+            if type(dt) in  <text_longer_than_50>
+
+INS @type:try_stmt@ @[2364,2755]@ try:
+                result.append(
+               <text_longer_than_50> @TO@ @type:suite@ @[2132,2444]@ dt = data_holder[0][k]
+            if type(dt) in  <text_longer_than_50>
+
+INS @type:suite@ @[2368,2469]@ result.append(
+                    np.array([x[k]  <text_longer_than_50> @TO@ @type:try_stmt@ @[2364,2755]@ try:
+                result.append(
+               <text_longer_than_50>
+
+INS @type:suite@ @[2368,2469]@ result.append(
+                    np.array([x[k]  <text_longer_than_50> @TO@ @type:try_stmt@ @[2364,2755]@ try:
+                result.append(
+               <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2364,2443]@ result.append(
+                np.array([x[k] for  <text_longer_than_50> @TO@ @type:atom_expr@ @[2385,2468]@ result.append(
+                    np.array([x[k]  <text_longer_than_50>
+
+MOV @type:simple_stmt@ @[2364,2444]@ result.append(
+                np.array([x[k] for  <text_longer_than_50> @TO@ @type:suite@ @[2368,2469]@ result.append(
+                    np.array([x[k]  <text_longer_than_50>
+
+UPD @type:atom_expr@ @[2364,2443]@ result.append(
+                np.array([x[k] for  <text_longer_than_50> @TO@ @type:atom_expr@ @[2385,2468]@ result.append(
+                    np.array([x[k]  <text_longer_than_50>
+

@@ -1,0 +1,8 @@
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_skflow/2a2d6c33a44ffc47c18dda8816b48b7432fc8c72/a/skflow/io/dask_io.py:16: error: Skipping analyzing "numpy": found module but no type hints or library stubs
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_skflow/2a2d6c33a44ffc47c18dda8816b48b7432fc8c72/a/skflow/io/dask_io.py:16: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_skflow/2a2d6c33a44ffc47c18dda8816b48b7432fc8c72/a/skflow/io/dask_io.py:20: error: Cannot find implementation or library stub for module named "dask.dataframe"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_skflow/2a2d6c33a44ffc47c18dda8816b48b7432fc8c72/a/skflow/io/dask_io.py:20: error: Cannot find implementation or library stub for module named "dask"
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorflow_skflow/2a2d6c33a44ffc47c18dda8816b48b7432fc8c72/a/skflow/io/dask_io.py:46: error: Cannot find implementation or library stub for module named "toolz"
+Found 4 errors in 1 file (checked 1 source file)
+
+time cost(in seconds): 0.4560971260070801

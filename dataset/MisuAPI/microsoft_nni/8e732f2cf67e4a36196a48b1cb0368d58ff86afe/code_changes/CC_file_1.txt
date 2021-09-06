@@ -1,0 +1,38 @@
+INS @type:simple_stmt@ @[2140,2167]@ self.categorical_dict = {} @TO@ @type:suite@ @[1735,2132]@ '''
+        Constructor
+        '''
+        self.l <text_longer_than_50>
+
+
+UPD @type:if_stmt@ @[4517,4931]@ if not self.update_ss_done:
+            generate_s <text_longer_than_50> @TO@ @type:if_stmt@ @[4552,5145]@ if not self.update_ss_done:
+            self.categ <text_longer_than_50>
+---UPD @type:suite@ @[4544,4844]@ generate_scenario(search_space)
+            self.o <text_longer_than_50> @TO@ @type:suite@ @[4579,5058]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4557,4589]@ generate_scenario(search_space) @TO@ @type:simple_stmt@ @[4592,4648]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50>
+---------INS @type:expr_stmt@ @[4592,4647]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50> @TO@ @type:simple_stmt@ @[4557,4589]@ generate_scenario(search_space)
+---------MOV @type:atom_expr@ @[4557,4588]@ generate_scenario(search_space) @TO@ @type:expr_stmt@ @[4592,4647]@ self.categorical_dict = generate_scenario(search_s <text_longer_than_50>
+------INS @type:if_stmt@ @[4660,4803]@ if self.categorical_dict is None:
+                 <text_longer_than_50> @TO@ @type:suite@ @[4544,4844]@ generate_scenario(search_space)
+            self.o <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[5635,5727]@ '''
+        convert the values of type `loguniform <text_longer_than_50> @TO@ @type:simple_stmt@ @[5861,6141]@ '''
+        Convert the values of type `loguniform <text_longer_than_50>
+---UPD @type:string@ @[5635,5726]@ '''
+        convert the values of type `loguniform <text_longer_than_50> @TO@ @type:string@ @[5861,6140]@ '''
+        Convert the values of type `loguniform <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[5735,5889]@ for key, value in challenger_dict.items():
+        <text_longer_than_50> @TO@ @type:for_stmt@ @[6149,6555]@ for key, value in challenger_dict.items():
+        <text_longer_than_50>
+---UPD @type:suite@ @[5777,5889]@ if key in self.loguniform_key:
+                cha <text_longer_than_50> @TO@ @type:suite@ @[6191,6555]@ # convert to loguniform
+            if key in self <text_longer_than_50>
+------INS @type:if_stmt@ @[6408,6555]@ if key in self.categorical_dict:
+                i <text_longer_than_50> @TO@ @type:suite@ @[5777,5889]@ if key in self.loguniform_key:
+                cha <text_longer_than_50>
+
+

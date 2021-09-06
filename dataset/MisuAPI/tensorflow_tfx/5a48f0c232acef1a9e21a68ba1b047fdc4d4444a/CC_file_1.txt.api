@@ -1,0 +1,10 @@
+INS @type:atom_expr@ @[3035,3071]@ list(bucket.list_blobs(prefix=path)) @TO@ @type:expr_stmt@ @[3027,3065]@ blobs = bucket.list_blobs(prefix=path)
+
+INS @type:atom_expr@ @[3035,3071]@ list(bucket.list_blobs(prefix=path)) @TO@ @type:expr_stmt@ @[3027,3065]@ blobs = bucket.list_blobs(prefix=path)
+
+INS @type:trailer@ @[3039,3071]@ (bucket.list_blobs(prefix=path)) @TO@ @type:atom_expr@ @[3035,3071]@ list(bucket.list_blobs(prefix=path))
+
+INS @type:trailer@ @[3039,3071]@ (bucket.list_blobs(prefix=path)) @TO@ @type:atom_expr@ @[3035,3071]@ list(bucket.list_blobs(prefix=path))
+
+MOV @type:atom_expr@ @[3035,3065]@ bucket.list_blobs(prefix=path) @TO@ @type:trailer@ @[3039,3071]@ (bucket.list_blobs(prefix=path))
+

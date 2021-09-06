@@ -1,0 +1,370 @@
+issues_cnt: 0
+sha: 132dcccd34a831a01e4fcdbd32f869b36f04537e
+message: handle disk error
+commit_log: "commit 132dcccd34a831a01e4fcdbd32f869b36f04537e\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Fri Jun 17 14:36:16 2016 -0700\n\n    handle disk error"
+contained_keywords:
+- error
+commit_time: 2016-06-17 14:36:16 -0700
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 5
+patched_file_0:
+  add_line_no:
+  - - 118
+    - '
+
+      '
+  - - 119
+    - 'See [blog of Andrej Karpathy](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+      for more interesting stories on this topic.
+
+      '
+  added: 2
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: examples/char-rnn/README.md
+  removed: 0
+  source_file: a/examples/char-rnn/README.md
+  target_file: b/examples/char-rnn/README.md
+patched_file_1:
+  add_line_no:
+  - - 52
+    - '        try:
+
+      '
+  - - 53
+    - '            self.saver.save(
+
+      '
+  - - 54
+    - '                tf.get_default_session(),
+
+      '
+  - - 55
+    - '                self.path,
+
+      '
+  - - 56
+    - '                global_step=self.global_step,
+
+      '
+  - - 57
+    - '                write_meta_graph=not self.meta_graph_written)
+
+      '
+  - - 58
+    - '        except Exception:   # disk error sometimes..
+
+      '
+  - - 59
+    - '            logger.exception("Exception in ModelSaver.trigger_epoch!")
+
+      '
+  added: 8
+  del_line_no:
+  - - null
+    - '        self.saver.save(
+
+      '
+  - - null
+    - '            tf.get_default_session(),
+
+      '
+  - - null
+    - '            self.path,
+
+      '
+  - - null
+    - '            global_step=self.global_step,
+
+      '
+  - - null
+    - '            write_meta_graph=not self.meta_graph_written)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/callbacks/common.py
+  removed: 5
+  source_file: a/tensorpack/callbacks/common.py
+  target_file: b/tensorpack/callbacks/common.py
+patched_file_2:
+  add_line_no:
+  - - 72
+    - '        try:
+
+      '
+  - - 73
+    - '            with open(tmp_filename, ''w'') as f:
+
+      '
+  - - 74
+    - '                json.dump(self.stat_history, f)
+
+      '
+  - - 75
+    - '            os.rename(tmp_filename, self.filename)
+
+      '
+  - - 76
+    - '        except IOError: # disk error sometimes..
+
+      '
+  - - 77
+    - '            logger.exception("Exception in StatHolder.finalize()!")
+
+      '
+  added: 6
+  del_line_no:
+  - - null
+    - '        with open(tmp_filename, ''w'') as f:
+
+      '
+  - - null
+    - '            json.dump(self.stat_history, f)
+
+      '
+  - - null
+    - '        os.rename(tmp_filename, self.filename)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/callbacks/summary.py
+  removed: 3
+  source_file: a/tensorpack/callbacks/summary.py
+  target_file: b/tensorpack/callbacks/summary.py
+patched_file_3:
+  add_line_no:
+  - - 94
+    - '                try:
+
+      '
+  - - 95
+    - '                    self.sess.run(self.close_op)
+
+      '
+  - - 96
+    - '                except RuntimeError:    # session already closed
+
+      '
+  - - 97
+    - '                    pass
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - '                self.sess.run(self.close_op)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/train/trainer.py
+  removed: 1
+  source_file: a/tensorpack/train/trainer.py
+  target_file: b/tensorpack/train/trainer.py
+patched_file_4:
+  add_line_no:
+  - - 6
+    - '__all__ = [''StatCounter'', ''Accuracy'', ''BinaryStatistics'', ''RatioStatistics'']
+
+      '
+  - - 13
+    - '        self._values.append(v)
+
+      '
+  - - 16
+    - '        self._values = []
+
+      '
+  - - 20
+    - '        return len(self._values)
+
+      '
+  - - 24
+    - '        assert len(self._values)
+
+      '
+  - - 25
+    - '        return np.mean(self._values)
+
+      '
+  - - 29
+    - '        assert len(self._values)
+
+      '
+  - - 30
+    - '        return np.sum(self._values)
+
+      '
+  - - 34
+    - '        assert len(self._values)
+
+      '
+  - - 35
+    - '        return max(self._values)
+
+      '
+  - - 37
+    - 'class RatioStatistics(object):
+
+      '
+  - - 42
+    - '        self._tot = 0
+
+      '
+  - - 43
+    - '        self._cnt = 0
+
+      '
+  - - 45
+    - '    def feed(self, cnt, tot=1):
+
+      '
+  - - 46
+    - '        self._tot += tot
+
+      '
+  - - 47
+    - '        self._cnt += cnt
+
+      '
+  - - 50
+    - '    def ratio(self):
+
+      '
+  - - 51
+    - '        if self._tot == 0:
+
+      '
+  - - 53
+    - '        return self._cnt * 1.0 / self._tot
+
+      '
+  - - 57
+    - '        return self._tot
+
+      '
+  - - 59
+    - 'class Accuracy(RatioStatistics):
+
+      '
+  - - 60
+    - '    @property
+
+      '
+  - - 61
+    - '    def accuracy(self):
+
+      '
+  - - 62
+    - '        return self.ratio
+
+      '
+  added: 24
+  del_line_no:
+  - - null
+    - '__all__ = [''StatCounter'', ''Accuracy'', ''BinaryStatistics'']
+
+      '
+  - - null
+    - '        self.values.append(v)
+
+      '
+  - - null
+    - '        self.values = []
+
+      '
+  - - null
+    - '        return len(self.values)
+
+      '
+  - - null
+    - '        assert len(self.values)
+
+      '
+  - - null
+    - '        return np.mean(self.values)
+
+      '
+  - - null
+    - '        assert len(self.values)
+
+      '
+  - - null
+    - '        return np.sum(self.values)
+
+      '
+  - - null
+    - '        assert len(self.values)
+
+      '
+  - - null
+    - '        return max(self.values)
+
+      '
+  - - null
+    - 'class Accuracy(object):
+
+      '
+  - - null
+    - '        self.tot = 0
+
+      '
+  - - null
+    - '        self.corr = 0
+
+      '
+  - - null
+    - '    def feed(self, corr, tot=1):
+
+      '
+  - - null
+    - '        self.tot += tot
+
+      '
+  - - null
+    - '        self.corr += corr
+
+      '
+  - - null
+    - '    def accuracy(self):
+
+      '
+  - - null
+    - '        if self.tot == 0:
+
+      '
+  - - null
+    - '        return self.corr * 1.0 / self.tot
+
+      '
+  - - null
+    - '        return self.tot
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/utils/stat.py
+  removed: 20
+  source_file: a/tensorpack/utils/stat.py
+  target_file: b/tensorpack/utils/stat.py

@@ -1,0 +1,142 @@
+MOV @type:simple_stmt@ @[987,1036]@ from ml_metadata.proto import metadata_store_pb2 @TO@ @type:file_input@ @[615,6407]@ """Recording pipeline from MLMD metadata."""
+
+from <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[800,866]@ from typing import Iterable, List, Mapping, Option <text_longer_than_50> @TO@ @type:file_input@ @[615,6407]@ """Recording pipeline from MLMD metadata."""
+
+from <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1186,1667]@ """Yields tuple with source and destination artifa <text_longer_than_50> @TO@ @type:simple_stmt@ @[1200,1770]@ """Yields tuple with source and destination artifa <text_longer_than_50>
+---UPD @type:string@ @[1186,1666]@ """Yields tuple with source and destination artifa <text_longer_than_50> @TO@ @type:string@ @[1200,1769]@ """Yields tuple with source and destination artifa <text_longer_than_50>
+
+
+UPD @type:simple_stmt@ @[1669,1747]@ events = metadata_connection.store.get_events_by_e <text_longer_than_50> @TO@ @type:simple_stmt@ @[1772,1857]@ events = metadata_connection.store.get_events_by_e <text_longer_than_50>
+---UPD @type:expr_stmt@ @[1669,1746]@ events = metadata_connection.store.get_events_by_e <text_longer_than_50> @TO@ @type:expr_stmt@ @[1772,1856]@ events = metadata_connection.store.get_events_by_e <text_longer_than_50>
+------UPD @type:atom_expr@ @[1678,1746]@ metadata_connection.store.get_events_by_execution_ <text_longer_than_50> @TO@ @type:atom_expr@ @[1781,1856]@ metadata_connection.store.get_events_by_execution_ <text_longer_than_50>
+---------UPD @type:trailer@ @[1731,1746]@ (execution_ids) @TO@ @type:trailer@ @[1834,1856]@ (
+      execution_ids)
+
+
+UPD @type:simple_stmt@ @[1749,1840]@ output_events = [
+      x for x in events if x.typ <text_longer_than_50> @TO@ @type:simple_stmt@ @[1859,1956]@ output_events = [
+      x for x in events
+      if <text_longer_than_50>
+---UPD @type:expr_stmt@ @[1749,1839]@ output_events = [
+      x for x in events if x.typ <text_longer_than_50> @TO@ @type:expr_stmt@ @[1859,1955]@ output_events = [
+      x for x in events
+      if <text_longer_than_50>
+------UPD @type:atom@ @[1765,1839]@ [
+      x for x in events if x.type == metadata_st <text_longer_than_50> @TO@ @type:atom@ @[1875,1955]@ [
+      x for x in events
+      if x.type == metad <text_longer_than_50>
+---------UPD @type:testlist_comp@ @[1773,1835]@ x for x in events if x.type == metadata_store_pb2. <text_longer_than_50> @TO@ @type:testlist_comp@ @[1883,1951]@ x for x in events
+      if x.type == metadata_stor <text_longer_than_50>
+------------UPD @type:sync_comp_for@ @[1775,1835]@ for x in events if x.type == metadata_store_pb2.Ev <text_longer_than_50> @TO@ @type:sync_comp_for@ @[1885,1951]@ for x in events
+      if x.type == metadata_store_ <text_longer_than_50>
+
+
+UPD @type:for_stmt@ @[1912,2299]@ for artifact in metadata_connection.store.get_arti <text_longer_than_50> @TO@ @type:for_stmt@ @[2028,2540]@ for artifact in metadata_connection.store.get_arti <text_longer_than_50>
+---UPD @type:suite@ @[2002,2299]@ src_uri = artifact.uri
+    artifact_properties = a <text_longer_than_50> @TO@ @type:suite@ @[2118,2540]@ src_uri = artifact.uri
+    artifact_properties = a <text_longer_than_50>
+------UPD @type:simple_stmt@ @[2161,2209]@ name = artifact_properties['name'].string_value @TO@ @type:simple_stmt@ @[2277,2331]@ output_key = artifact_properties['name'].string_va <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[2161,2208]@ name = artifact_properties['name'].string_value @TO@ @type:expr_stmt@ @[2277,2330]@ output_key = artifact_properties['name'].string_va <text_longer_than_50>
+------------UPD @type:name@ @[2161,2165]@ name @TO@ @type:name@ @[2277,2287]@ output_key
+------INS @type:if_stmt@ @[2335,2444]@ if not component_id or not output_key:
+      raise <text_longer_than_50> @TO@ @type:suite@ @[2002,2299]@ src_uri = artifact.uri
+    artifact_properties = a <text_longer_than_50>
+------UPD @type:simple_stmt@ @[2213,2269]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50> @TO@ @type:simple_stmt@ @[2448,2510]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[2213,2268]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50> @TO@ @type:expr_stmt@ @[2448,2509]@ dest_uri = os.path.join(output_dir, component_id,  <text_longer_than_50>
+------------UPD @type:atom_expr@ @[2224,2268]@ os.path.join(output_dir, component_id, name) @TO@ @type:atom_expr@ @[2459,2509]@ os.path.join(output_dir, component_id, output_key)
+---------------UPD @type:trailer@ @[2236,2268]@ (output_dir, component_id, name) @TO@ @type:trailer@ @[2471,2509]@ (output_dir, component_id, output_key)
+------------------UPD @type:arglist@ @[2237,2267]@ output_dir, component_id, name @TO@ @type:arglist@ @[2472,2508]@ output_dir, component_id, output_key
+---------------------UPD @type:name@ @[2263,2267]@ name @TO@ @type:name@ @[2498,2508]@ output_key
+
+
+UPD @type:simple_stmt@ @[3636,3733]@ latest_context = max(
+      pipeline_run_contexts, <text_longer_than_50> @TO@ @type:simple_stmt@ @[3939,4052]@ latest_context = max(pipeline_run_contexts,
+       <text_longer_than_50>
+---UPD @type:expr_stmt@ @[3636,3732]@ latest_context = max(
+      pipeline_run_contexts, <text_longer_than_50> @TO@ @type:expr_stmt@ @[3939,4051]@ latest_context = max(pipeline_run_contexts,
+       <text_longer_than_50>
+------UPD @type:atom_expr@ @[3653,3732]@ max(
+      pipeline_run_contexts, key=lambda c: c. <text_longer_than_50> @TO@ @type:atom_expr@ @[3956,4051]@ max(pipeline_run_contexts,
+                        <text_longer_than_50>
+---------UPD @type:trailer@ @[3656,3732]@ (
+      pipeline_run_contexts, key=lambda c: c.las <text_longer_than_50> @TO@ @type:trailer@ @[3959,4051]@ (pipeline_run_contexts,
+                       key <text_longer_than_50>
+------------UPD @type:arglist@ @[3664,3731]@ pipeline_run_contexts, key=lambda c: c.last_update <text_longer_than_50> @TO@ @type:arglist@ @[3960,4050]@ pipeline_run_contexts,
+                       key= <text_longer_than_50>
+
+
+UPD @type:with_stmt@ @[5361,6407]@ with metadata.Metadata(metadata_config) as metadat <text_longer_than_50> @TO@ @type:with_stmt@ @[5719,6847]@ with metadata.Metadata(metadata_config) as metadat <text_longer_than_50>
+---UPD @type:suite@ @[5424,6407]@ if run_id is None:
+      if pipeline_name is None: <text_longer_than_50> @TO@ @type:suite@ @[5782,6847]@ if run_id is None:
+      if pipeline_name is None: <text_longer_than_50>
+------UPD @type:if_stmt@ @[5429,6021]@ if run_id is None:
+      if pipeline_name is None: <text_longer_than_50> @TO@ @type:if_stmt@ @[5787,6421]@ if run_id is None:
+      if pipeline_name is None: <text_longer_than_50>
+---------UPD @type:suite@ @[5447,5753]@ if pipeline_name is None:
+        raise ValueError <text_longer_than_50> @TO@ @type:suite@ @[5805,6153]@ if pipeline_name is None:
+        raise ValueError <text_longer_than_50>
+------------UPD @type:simple_stmt@ @[5681,5753]@ executions = _get_latest_executions(metadata_conne <text_longer_than_50> @TO@ @type:simple_stmt@ @[6039,6153]@ executions = _get_latest_executions(metadata_conne <text_longer_than_50>
+---------------UPD @type:expr_stmt@ @[5681,5752]@ executions = _get_latest_executions(metadata_conne <text_longer_than_50> @TO@ @type:expr_stmt@ @[6039,6152]@ executions = _get_latest_executions(metadata_conne <text_longer_than_50>
+------------------UPD @type:atom_expr@ @[5694,5752]@ _get_latest_executions(metadata_connection, pipeli <text_longer_than_50> @TO@ @type:atom_expr@ @[6052,6152]@ _get_latest_executions(metadata_connection,
+       <text_longer_than_50>
+---------------------UPD @type:trailer@ @[5716,5752]@ (metadata_connection, pipeline_name) @TO@ @type:trailer@ @[6074,6152]@ (metadata_connection,
+                             <text_longer_than_50>
+------------------------UPD @type:arglist@ @[5717,5751]@ metadata_connection, pipeline_name @TO@ @type:arglist@ @[6075,6151]@ metadata_connection,
+                              <text_longer_than_50>
+---------UPD @type:suite@ @[5762,6021]@ execution_dict = _get_execution_dict(metadata_conn <text_longer_than_50> @TO@ @type:suite@ @[6162,6421]@ execution_dict = _get_execution_dict(metadata_conn <text_longer_than_50>
+------------UPD @type:if_stmt@ @[5833,6021]@ if run_id in execution_dict:
+        executions =  <text_longer_than_50> @TO@ @type:if_stmt@ @[6233,6421]@ if run_id in execution_dict:
+        executions =  <text_longer_than_50>
+---------------UPD @type:suite@ @[5917,6021]@ raise ValueError(
+            'run_id {} is not re <text_longer_than_50> @TO@ @type:suite@ @[6317,6421]@ raise ValueError(
+            "run_id {} is not re <text_longer_than_50>
+------------------UPD @type:simple_stmt@ @[5926,6021]@ raise ValueError(
+            'run_id {} is not re <text_longer_than_50> @TO@ @type:simple_stmt@ @[6326,6421]@ raise ValueError(
+            "run_id {} is not re <text_longer_than_50>
+---------------------UPD @type:raise_stmt@ @[5926,6020]@ raise ValueError(
+            'run_id {} is not re <text_longer_than_50> @TO@ @type:raise_stmt@ @[6326,6420]@ raise ValueError(
+            "run_id {} is not re <text_longer_than_50>
+------------------------UPD @type:atom_expr@ @[5932,6020]@ ValueError(
+            'run_id {} is not recorded <text_longer_than_50> @TO@ @type:atom_expr@ @[6332,6420]@ ValueError(
+            "run_id {} is not recorded <text_longer_than_50>
+---------------------------UPD @type:trailer@ @[5942,6020]@ (
+            'run_id {} is not recorded in the ML <text_longer_than_50> @TO@ @type:trailer@ @[6342,6420]@ (
+            "run_id {} is not recorded in the ML <text_longer_than_50>
+------------------------------UPD @type:atom_expr@ @[5956,6019]@ 'run_id {} is not recorded in the MLMD metadata'.f <text_longer_than_50> @TO@ @type:atom_expr@ @[6356,6419]@ "run_id {} is not recorded in the MLMD metadata".f <text_longer_than_50>
+---------------------------------UPD @type:string@ @[5956,6004]@ 'run_id {} is not recorded in the MLMD metadata' @TO@ @type:string@ @[6356,6404]@ "run_id {} is not recorded in the MLMD metadata"
+------UPD @type:for_stmt@ @[6072,6351]@ for src_uri, dest_uri in _get_paths(metadata_conne <text_longer_than_50> @TO@ @type:for_stmt@ @[6472,6791]@ for src_uri, dest_uri in _get_paths(metadata_conne <text_longer_than_50>
+---------UPD @type:atom_expr@ @[6097,6195]@ _get_paths(metadata_connection, execution_ids,
+    <text_longer_than_50> @TO@ @type:atom_expr@ @[6497,6635]@ _get_paths(metadata_connection,
+                   <text_longer_than_50>
+------------UPD @type:trailer@ @[6107,6195]@ (metadata_connection, execution_ids,
+              <text_longer_than_50> @TO@ @type:trailer@ @[6507,6635]@ (metadata_connection,
+                             <text_longer_than_50>
+---------------UPD @type:arglist@ @[6108,6194]@ metadata_connection, execution_ids,
+               <text_longer_than_50> @TO@ @type:arglist@ @[6508,6634]@ metadata_connection,
+                              <text_longer_than_50>
+---------UPD @type:suite@ @[6196,6351]@ if not tf.io.gfile.exists(src_uri):
+        raise  <text_longer_than_50> @TO@ @type:suite@ @[6636,6791]@ if not tf.io.gfile.exists(src_uri):
+        raise  <text_longer_than_50>
+------------UPD @type:if_stmt@ @[6203,6308]@ if not tf.io.gfile.exists(src_uri):
+        raise  <text_longer_than_50> @TO@ @type:if_stmt@ @[6643,6748]@ if not tf.io.gfile.exists(src_uri):
+        raise  <text_longer_than_50>
+---------------UPD @type:suite@ @[6238,6308]@ raise FileNotFoundError('{} does not exist'.format <text_longer_than_50> @TO@ @type:suite@ @[6678,6748]@ raise FileNotFoundError("{} does not exist".format <text_longer_than_50>
+------------------UPD @type:simple_stmt@ @[6247,6308]@ raise FileNotFoundError('{} does not exist'.format <text_longer_than_50> @TO@ @type:simple_stmt@ @[6687,6748]@ raise FileNotFoundError("{} does not exist".format <text_longer_than_50>
+---------------------UPD @type:raise_stmt@ @[6247,6307]@ raise FileNotFoundError('{} does not exist'.format <text_longer_than_50> @TO@ @type:raise_stmt@ @[6687,6747]@ raise FileNotFoundError("{} does not exist".format <text_longer_than_50>
+------------------------UPD @type:atom_expr@ @[6253,6307]@ FileNotFoundError('{} does not exist'.format(src_u <text_longer_than_50> @TO@ @type:atom_expr@ @[6693,6747]@ FileNotFoundError("{} does not exist".format(src_u <text_longer_than_50>
+---------------------------UPD @type:trailer@ @[6270,6307]@ ('{} does not exist'.format(src_uri)) @TO@ @type:trailer@ @[6710,6747]@ ("{} does not exist".format(src_uri))
+------------------------------UPD @type:atom_expr@ @[6271,6306]@ '{} does not exist'.format(src_uri) @TO@ @type:atom_expr@ @[6711,6746]@ "{} does not exist".format(src_uri)
+---------------------------------UPD @type:string@ @[6271,6290]@ '{} does not exist' @TO@ @type:string@ @[6711,6730]@ "{} does not exist"
+------UPD @type:simple_stmt@ @[6355,6407]@ logging.info('Pipeline Recorded at %s', output_dir <text_longer_than_50> @TO@ @type:simple_stmt@ @[6795,6847]@ logging.info("Pipeline Recorded at %s", output_dir <text_longer_than_50>
+---------UPD @type:atom_expr@ @[6355,6406]@ logging.info('Pipeline Recorded at %s', output_dir <text_longer_than_50> @TO@ @type:atom_expr@ @[6795,6846]@ logging.info("Pipeline Recorded at %s", output_dir <text_longer_than_50>
+------------UPD @type:trailer@ @[6367,6406]@ ('Pipeline Recorded at %s', output_dir) @TO@ @type:trailer@ @[6807,6846]@ ("Pipeline Recorded at %s", output_dir)
+---------------UPD @type:arglist@ @[6368,6405]@ 'Pipeline Recorded at %s', output_dir @TO@ @type:arglist@ @[6808,6845]@ "Pipeline Recorded at %s", output_dir
+------------------UPD @type:string@ @[6368,6393]@ 'Pipeline Recorded at %s' @TO@ @type:string@ @[6808,6833]@ "Pipeline Recorded at %s"
+
+

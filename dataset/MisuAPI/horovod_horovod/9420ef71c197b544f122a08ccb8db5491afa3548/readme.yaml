@@ -1,0 +1,50 @@
+sha: 9420ef71c197b544f122a08ccb8db5491afa3548
+message: 'Bugfix: Initialize MetricAverageCallback variables (#85)'
+commit_log: "commit 9420ef71c197b544f122a08ccb8db5491afa3548\nAuthor: Alex Sergeev\
+  \ <alexander.sergeev@live.com>\nDate:   Thu Nov 9 15:53:22 2017 -0800\n\n    Bugfix:\
+  \ Initialize MetricAverageCallback variables (#85)"
+contained_keywords:
+- bugfix
+commit_time: 2017-11-09 15:53:22 -0800
+commit_author: Alex Sergeev
+added_files: 0
+removed_files: 0
+modified_files: 2
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: horovod/__init__.py
+  source_file: a/horovod/__init__.py
+  target_file: b/horovod/__init__.py
+  added: 1
+  removed: 1
+  add_line_no:
+  - - 1
+    - '__version__ = ''0.10.2''
+
+      '
+  del_line_no:
+  - - null
+    - '__version__ = ''0.10.1''
+
+      '
+patched_file_1:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: horovod/keras/callbacks.py
+  source_file: a/horovod/keras/callbacks.py
+  target_file: b/horovod/keras/callbacks.py
+  added: 1
+  removed: 0
+  add_line_no:
+  - - 64
+    - '            K.get_session().run(var.initializer)
+
+      '
+  del_line_no: []

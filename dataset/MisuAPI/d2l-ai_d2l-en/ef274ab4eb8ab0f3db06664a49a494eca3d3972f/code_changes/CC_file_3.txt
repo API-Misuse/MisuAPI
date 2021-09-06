@@ -1,0 +1,23 @@
+UPD @type:if_stmt@ @[22052,22208]@ if isinstance(tokens[0], list):
+        # Flatten  <text_longer_than_50> @TO@ @type:if_stmt@ @[22153,22329]@ if len(tokens) == 0 or isinstance(tokens[0], list) <text_longer_than_50>
+---INS @type:or_test@ @[22156,22203]@ len(tokens) == 0 or isinstance(tokens[0], list) @TO@ @type:if_stmt@ @[22052,22208]@ if isinstance(tokens[0], list):
+        # Flatten  <text_longer_than_50>
+---MOV @type:atom_expr@ @[22055,22082]@ isinstance(tokens[0], list) @TO@ @type:or_test@ @[22156,22203]@ len(tokens) == 0 or isinstance(tokens[0], list)
+
+
+UPD @type:if_stmt@ @[20710,20771]@ if reserved_tokens is None:
+            reserved_t <text_longer_than_50> @TO@ @type:if_stmt@ @[20715,20758]@ if tokens is None:
+            tokens = []
+---UPD @type:comparison@ @[20713,20736]@ reserved_tokens is None @TO@ @type:comparison@ @[20718,20732]@ tokens is None
+------UPD @type:name@ @[20713,20728]@ reserved_tokens @TO@ @type:name@ @[20718,20724]@ tokens
+---UPD @type:suite@ @[20737,20771]@ reserved_tokens = [] @TO@ @type:suite@ @[20733,20758]@ tokens = []
+------UPD @type:simple_stmt@ @[20750,20771]@ reserved_tokens = [] @TO@ @type:simple_stmt@ @[20746,20758]@ tokens = []
+---------UPD @type:expr_stmt@ @[20750,20770]@ reserved_tokens = [] @TO@ @type:expr_stmt@ @[20746,20757]@ tokens = []
+------------UPD @type:name@ @[20750,20765]@ reserved_tokens @TO@ @type:name@ @[20746,20752]@ tokens
+
+
+INS @type:if_stmt@ @[20766,20828]@ if reserved_tokens is None:
+            reserved_t <text_longer_than_50> @TO@ @type:suite@ @[20701,21437]@ if reserved_tokens is None:
+            reserved_t <text_longer_than_50>
+
+

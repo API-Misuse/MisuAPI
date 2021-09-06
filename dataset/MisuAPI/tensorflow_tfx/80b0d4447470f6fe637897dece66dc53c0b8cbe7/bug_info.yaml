@@ -1,0 +1,90 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorflow/tfx/pull/2998
+  title: Fixed the component entrypoint, so that it creates the parent directory for
+    the output metadata file before trying to write the data.
+  body: 'Fixed the component entrypoint, so that it creates the parent directory for
+    the output metadata file before trying to write the data.
+
+    '
+sha: 80b0d4447470f6fe637897dece66dc53c0b8cbe7
+message: 'Fixed the component entrypoint, so that it creates the parent directory
+  for the output metadata file before trying to write the data.
+
+  Otherwise the code fails since the directory does not exist inside the container.
+
+
+  PiperOrigin-RevId: 350415630'
+commit_log: "commit 80b0d4447470f6fe637897dece66dc53c0b8cbe7\nAuthor: tfx-team <tensorflow-extended-nonhuman@googlegroups.com>\n\
+  Date:   Wed Jan 6 13:23:37 2021 -0800\n\n    Fixed the component entrypoint, so\
+  \ that it creates the parent directory for the output metadata file before trying\
+  \ to write the data.\n    Otherwise the code fails since the directory does not\
+  \ exist inside the container.\n    \n    PiperOrigin-RevId: 350415630"
+contained_keywords:
+- fails
+- fixed
+commit_time: 2021-01-06 13:23:37 -0800
+commit_author: tfx-team
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  add_line_no:
+  - - 78
+    - '*   Fixed the component entrypoint, so that it creates the parent directory
+      for
+
+      '
+  - - 79
+    - '    the output metadata file before trying to write the data.
+
+      '
+  added: 2
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: RELEASE.md
+  removed: 0
+  source_file: a/RELEASE.md
+  target_file: b/RELEASE.md
+patched_file_1:
+  add_line_no:
+  - - 17
+    - 'import os
+
+      '
+  - - 99
+    - '  fileio.makedirs(os.path.dirname(metadata_uri))
+
+      '
+  added: 2
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor.py
+  removed: 0
+  source_file: a/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor.py
+  target_file: b/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor.py
+patched_file_2:
+  add_line_no: []
+  added: 0
+  del_line_no:
+  - - null
+    - '    fileio.makedirs(os.path.dirname(_TEST_OUTPUT_METADATA_JSON))
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor_test.py
+  removed: 1
+  source_file: a/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor_test.py
+  target_file: b/tfx/orchestration/kubeflow/v2/container/kubeflow_v2_run_executor_test.py

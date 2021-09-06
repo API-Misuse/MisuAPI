@@ -1,0 +1,5 @@
+UPD @type:simple_stmt@ @[0,23]@ __version__ = '0.10.1' @TO@ @type:simple_stmt@ @[0,23]@ __version__ = '0.10.2'
+---UPD @type:expr_stmt@ @[0,22]@ __version__ = '0.10.1' @TO@ @type:expr_stmt@ @[0,22]@ __version__ = '0.10.2'
+------UPD @type:string@ @[14,22]@ '0.10.1' @TO@ @type:string@ @[14,22]@ '0.10.2'
+
+

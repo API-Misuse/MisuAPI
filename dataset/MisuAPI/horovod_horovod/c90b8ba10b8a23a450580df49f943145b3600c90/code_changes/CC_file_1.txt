@@ -1,0 +1,10 @@
+UPD @type:if_stmt@ @[1512,1574]@ if gloo_rank >= 0:
+            self.assertEqual(gl <text_longer_than_50> @TO@ @type:if_stmt@ @[1512,1573]@ if gloo_rank >= 0:
+            self.assertTrue(glo <text_longer_than_50>
+---UPD @type:suite@ @[1530,1574]@ self.assertEqual(gloo_built()) @TO@ @type:suite@ @[1530,1573]@ self.assertTrue(gloo_built())
+------UPD @type:simple_stmt@ @[1543,1574]@ self.assertEqual(gloo_built()) @TO@ @type:simple_stmt@ @[1543,1573]@ self.assertTrue(gloo_built())
+---------UPD @type:atom_expr@ @[1543,1573]@ self.assertEqual(gloo_built()) @TO@ @type:atom_expr@ @[1543,1572]@ self.assertTrue(gloo_built())
+------------UPD @type:trailer@ @[1547,1559]@ .assertEqual @TO@ @type:trailer@ @[1547,1558]@ .assertTrue
+---------------UPD @type:name@ @[1548,1559]@ assertEqual @TO@ @type:name@ @[1548,1558]@ assertTrue
+
+

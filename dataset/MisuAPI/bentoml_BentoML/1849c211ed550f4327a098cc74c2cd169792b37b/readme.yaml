@@ -1,0 +1,826 @@
+sha: 1849c211ed550f4327a098cc74c2cd169792b37b
+message: "[ISSUE #319] Tensorflow SavedModel artifact support  (#367)\n\n* tf savedmodel\
+  \ format support\r\n\r\n* Update tf_savedmodel_artifact.py\r\n\r\n* Update base_handlers.py"
+commit_log: "commit 1849c211ed550f4327a098cc74c2cd169792b37b\nAuthor: Chaoyu <paranoyang@gmail.com>\n\
+  Date:   Thu Nov 7 15:53:46 2019 -0800\n\n    [ISSUE #319] Tensorflow SavedModel\
+  \ artifact support  (#367)\n    \n    * tf savedmodel format support\n    \n   \
+  \ * Update tf_savedmodel_artifact.py\n    \n    * Update base_handlers.py"
+contained_keywords:
+- issue
+commit_time: 2019-11-07 15:53:46 -0800
+commit_author: Chaoyu
+added_files: 1
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: bentoml/artifact/__init__.py
+  source_file: a/bentoml/artifact/__init__.py
+  target_file: b/bentoml/artifact/__init__.py
+  added: 2
+  removed: 0
+  add_line_no:
+  - - 32
+    - 'from bentoml.artifact.tf_savedmodel_artifact import TensorflowSavedModelArtifact
+
+      '
+  - - 46
+    - '    "TensorflowSavedModelArtifact",
+
+      '
+  del_line_no: []
+patched_file_1:
+  is_added_file: true
+  is_removed_file: false
+  is_modified_file: false
+  is_binary_file: false
+  is_rename: false
+  path: bentoml/artifact/tf_savedmodel_artifact.py
+  source_file: /dev/null
+  target_file: b/bentoml/artifact/tf_savedmodel_artifact.py
+  added: 173
+  removed: 0
+  add_line_no:
+  - - 1
+    - '# Copyright 2019 Atalaya Tech, Inc.
+
+      '
+  - - 2
+    - '
+
+      '
+  - - 3
+    - '# Licensed under the Apache License, Version 2.0 (the "License");
+
+      '
+  - - 4
+    - '# you may not use this file except in compliance with the License.
+
+      '
+  - - 5
+    - '# You may obtain a copy of the License at
+
+      '
+  - - 6
+    - '
+
+      '
+  - - 7
+    - '# http://www.apache.org/licenses/LICENSE-2.0
+
+      '
+  - - 8
+    - '
+
+      '
+  - - 9
+    - '# Unless required by applicable law or agreed to in writing, software
+
+      '
+  - - 10
+    - '# distributed under the License is distributed on an "AS IS" BASIS,
+
+      '
+  - - 11
+    - '# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+      '
+  - - 12
+    - '# See the License for the specific language governing permissions and
+
+      '
+  - - 13
+    - '# limitations under the License.
+
+      '
+  - - 14
+    - '
+
+      '
+  - - 15
+    - 'from __future__ import absolute_import
+
+      '
+  - - 16
+    - 'from __future__ import division
+
+      '
+  - - 17
+    - 'from __future__ import print_function
+
+      '
+  - - 18
+    - '
+
+      '
+  - - 19
+    - 'import os
+
+      '
+  - - 20
+    - 'import shutil
+
+      '
+  - - 21
+    - 'import logging
+
+      '
+  - - 22
+    - '
+
+      '
+  - - 23
+    - 'from bentoml.utils import pathlib
+
+      '
+  - - 24
+    - 'from bentoml.artifact import BentoServiceArtifact, BentoServiceArtifactWrapper
+
+      '
+  - - 25
+    - '
+
+      '
+  - - 26
+    - '
+
+      '
+  - - 27
+    - 'logger = logging.getLogger(__name__)
+
+      '
+  - - 28
+    - '
+
+      '
+  - - 29
+    - '
+
+      '
+  - - 30
+    - 'def _is_path_like(p):
+
+      '
+  - - 31
+    - '    return isinstance(p, (str, bytes, pathlib.PurePath, os.PathLike))
+
+      '
+  - - 32
+    - '
+
+      '
+  - - 33
+    - '
+
+      '
+  - - 34
+    - 'def _load_tf_saved_model(path):
+
+      '
+  - - 35
+    - '    try:
+
+      '
+  - - 36
+    - '        import tensorflow as tf
+
+      '
+  - - 37
+    - '
+
+      '
+  - - 38
+    - '        TF2 = tf.__version__.startswith(''2'')
+
+      '
+  - - 39
+    - '    except ImportError:
+
+      '
+  - - 40
+    - '        raise ImportError("Tensorflow package is required to use TfSavedModelArtifact")
+
+      '
+  - - 41
+    - '
+
+      '
+  - - 42
+    - '    if TF2:
+
+      '
+  - - 43
+    - '        return tf.saved_model.load(path)
+
+      '
+  - - 44
+    - '    else:
+
+      '
+  - - 45
+    - '        return tf.compat.v2.saved_model.load(path)
+
+      '
+  - - 46
+    - '
+
+      '
+  - - 47
+    - '
+
+      '
+  - - 48
+    - 'class TensorflowSavedModelArtifact(BentoServiceArtifact):
+
+      '
+  - - 49
+    - '    """
+
+      '
+  - - 50
+    - '    Abstraction for saving/loading Tensorflow model in tf.saved_model format
+
+      '
+  - - 51
+    - '
+
+      '
+  - - 52
+    - '    Example usage:
+
+      '
+  - - 53
+    - '
+
+      '
+  - - 54
+    - '    ```python
+
+      '
+  - - 55
+    - '    import tensorflow as tf
+
+      '
+  - - 56
+    - '    class Adder(tf.Module):
+
+      '
+  - - 57
+    - '        @tf.function(input_signature=[tf.TensorSpec(shape=None, dtype=tf.float32)])
+
+      '
+  - - 58
+    - '        def add(self, x):
+
+      '
+  - - 59
+    - '            return x + x + 1.
+
+      '
+  - - 60
+    - '    to_export = Adder()
+
+      '
+  - - 61
+    - '
+
+      '
+  - - 62
+    - '    import bentoml
+
+      '
+  - - 63
+    - '    from bentoml.handlers import JsonHandler
+
+      '
+  - - 64
+    - '    from bentoml.artifact import TensorflowSavedModelArtifact
+
+      '
+  - - 65
+    - '
+
+      '
+  - - 66
+    - '    @bentoml.env(pip_dependencies=["tensorflow"])
+
+      '
+  - - 67
+    - '    @bentoml.artifacts([TensorflowSavedModelArtifact(''model'')])
+
+      '
+  - - 68
+    - '    class TfModelService(bentoml.BentoService):
+
+      '
+  - - 69
+    - '
+
+      '
+  - - 70
+    - '        @bentoml.api(JsonHandler)
+
+      '
+  - - 71
+    - '        def predict(self, json):
+
+      '
+  - - 72
+    - '            input_data = json[''input'']
+
+      '
+  - - 73
+    - '            prediction = self.artifacts.model.add(input_data)
+
+      '
+  - - 74
+    - '            return prediction.numpy()
+
+      '
+  - - 75
+    - '
+
+      '
+  - - 76
+    - '    svc = TfModelService()
+
+      '
+  - - 77
+    - '
+
+      '
+  - - 78
+    - '    # Option 1: pack directly with Tensorflow trackable object
+
+      '
+  - - 79
+    - '    svc.pack(''model'', to_export)
+
+      '
+  - - 80
+    - '
+
+      '
+  - - 81
+    - '    # Option 2: save to file path then pack
+
+      '
+  - - 82
+    - '    tf.saved_model.save(to_export, ''/tmp/adder/1'')
+
+      '
+  - - 83
+    - '    svc.pack(''model'', ''/tmp/adder/1'')
+
+      '
+  - - 84
+    - '    ```
+
+      '
+  - - 85
+    - '
+
+      '
+  - - 86
+    - '    Args:
+
+      '
+  - - 87
+    - '        name (string): name of the artifact
+
+      '
+  - - 88
+    - '    """
+
+      '
+  - - 89
+    - '
+
+      '
+  - - 90
+    - '    def _saved_model_path(self, base_path):
+
+      '
+  - - 91
+    - '        return os.path.join(base_path, self.name + ''_saved_model'')
+
+      '
+  - - 92
+    - '
+
+      '
+  - - 93
+    - '    def pack(
+
+      '
+  - - 94
+    - '        self, obj, signatures=None, options=None
+
+      '
+  - - 95
+    - '    ):  # pylint:disable=arguments-differ
+
+      '
+  - - 96
+    - '        """
+
+      '
+  - - 97
+    - '
+
+      '
+  - - 98
+    - '        Args:
+
+      '
+  - - 99
+    - '            obj: Either a path(str/byte/os.PathLike) containing exported
+
+      '
+  - - 100
+    - '                `tf.saved_model` files, or a Trackable object mapping to the
+      `obj`
+
+      '
+  - - 101
+    - '                parameter of `tf.saved_model.save`
+
+      '
+  - - 102
+    - '            signatures:
+
+      '
+  - - 103
+    - '            options:
+
+      '
+  - - 104
+    - '        """
+
+      '
+  - - 105
+    - '
+
+      '
+  - - 106
+    - '        if _is_path_like(obj):
+
+      '
+  - - 107
+    - '            return _ExportedTensorflowSavedModelArtifactWrapper(self, obj)
+
+      '
+  - - 108
+    - '
+
+      '
+  - - 109
+    - '        return _TensorflowSavedModelArtifactWrapper(self, obj, signatures,
+      options)
+
+      '
+  - - 110
+    - '
+
+      '
+  - - 111
+    - '    def load(self, path):
+
+      '
+  - - 112
+    - '        saved_model_path = self._saved_model_path(path)
+
+      '
+  - - 113
+    - '        loaded_model = _load_tf_saved_model(saved_model_path)
+
+      '
+  - - 114
+    - '        return self.pack(loaded_model)
+
+      '
+  - - 115
+    - '
+
+      '
+  - - 116
+    - '
+
+      '
+  - - 117
+    - 'class _ExportedTensorflowSavedModelArtifactWrapper(BentoServiceArtifactWrapper):
+
+      '
+  - - 118
+    - '    def __init__(self, spec, path):
+
+      '
+  - - 119
+    - '        super(_ExportedTensorflowSavedModelArtifactWrapper, self).__init__(spec)
+
+      '
+  - - 120
+    - '
+
+      '
+  - - 121
+    - '        self.path = path
+
+      '
+  - - 122
+    - '        self.model = None
+
+      '
+  - - 123
+    - '
+
+      '
+  - - 124
+    - '    def save(self, dst):
+
+      '
+  - - 125
+    - '        # Copy exported SavedModel model directory to BentoML saved artifact
+      directory
+
+      '
+  - - 126
+    - '        shutil.copytree(self.path, self.spec._saved_model_path(dst))
+
+      '
+  - - 127
+    - '
+
+      '
+  - - 128
+    - '    def get(self):
+
+      '
+  - - 129
+    - '        if not self.model:
+
+      '
+  - - 130
+    - '            self.model = _load_tf_saved_model(self.path)
+
+      '
+  - - 131
+    - '
+
+      '
+  - - 132
+    - '        return self.model
+
+      '
+  - - 133
+    - '
+
+      '
+  - - 134
+    - '
+
+      '
+  - - 135
+    - 'class _TensorflowSavedModelArtifactWrapper(BentoServiceArtifactWrapper):
+
+      '
+  - - 136
+    - '    def __init__(self, spec, obj, signatures=None, options=None):
+
+      '
+  - - 137
+    - '        super(_TensorflowSavedModelArtifactWrapper, self).__init__(spec)
+
+      '
+  - - 138
+    - '
+
+      '
+  - - 139
+    - '        self.obj = obj
+
+      '
+  - - 140
+    - '        self.signatures = signatures
+
+      '
+  - - 141
+    - '        self.options = options
+
+      '
+  - - 142
+    - '
+
+      '
+  - - 143
+    - '    def save(self, dst):
+
+      '
+  - - 144
+    - '        try:
+
+      '
+  - - 145
+    - '            import tensorflow as tf
+
+      '
+  - - 146
+    - '
+
+      '
+  - - 147
+    - '            TF2 = tf.__version__.startswith(''2'')
+
+      '
+  - - 148
+    - '        except ImportError:
+
+      '
+  - - 149
+    - '            raise ImportError(
+
+      '
+  - - 150
+    - '                "Tensorflow package is required to use TfSavedModelArtifact."
+
+      '
+  - - 151
+    - '            )
+
+      '
+  - - 152
+    - '
+
+      '
+  - - 153
+    - '        if TF2:
+
+      '
+  - - 154
+    - '            return tf.saved_model.save(
+
+      '
+  - - 155
+    - '                self.obj,
+
+      '
+  - - 156
+    - '                self.spec._saved_model_path(dst),
+
+      '
+  - - 157
+    - '                signatures=self.signatures,
+
+      '
+  - - 158
+    - '                options=self.options,
+
+      '
+  - - 159
+    - '            )
+
+      '
+  - - 160
+    - '        else:
+
+      '
+  - - 161
+    - '            if self.options:
+
+      '
+  - - 162
+    - '                logger.warning(
+
+      '
+  - - 163
+    - '                    "Parameter ''options: %s'' is ignored when using Tensorflow
+      "
+
+      '
+  - - 164
+    - '                    "version 1",
+
+      '
+  - - 165
+    - '                    str(self.options),
+
+      '
+  - - 166
+    - '                )
+
+      '
+  - - 167
+    - '
+
+      '
+  - - 168
+    - '            return tf.saved_model.save(
+
+      '
+  - - 169
+    - '                self.obj, self.spec._saved_model_path(dst), signatures=self.signatures
+
+      '
+  - - 170
+    - '            )
+
+      '
+  - - 171
+    - '
+
+      '
+  - - 172
+    - '    def get(self):
+
+      '
+  - - 173
+    - '        return self.obj
+
+      '
+  del_line_no: []
+patched_file_2:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: bentoml/handlers/base_handlers.py
+  source_file: a/bentoml/handlers/base_handlers.py
+  target_file: b/bentoml/handlers/base_handlers.py
+  added: 5
+  removed: 1
+  add_line_no:
+  - - 113
+    - '            try:
+
+      '
+  - - 114
+    - '                return json.dumps(result)
+
+      '
+  - - 115
+    - '            except (TypeError, OverflowError):
+
+      '
+  - - 116
+    - '                # when result is not JSON serializable
+
+      '
+  - - 117
+    - '                return json.dumps(str(result))
+
+      '
+  del_line_no:
+  - - null
+    - '            return json.dumps(result)
+
+      '
+patched_file_3:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: bentoml/utils/__init__.py
+  source_file: a/bentoml/utils/__init__.py
+  target_file: b/bentoml/utils/__init__.py
+  added: 4
+  removed: 4
+  add_line_no:
+  - - 30
+    - '    import pathlib
+
+      '
+  - - 32
+    - '    import pathlib2 as pathlib
+
+      '
+  - - 33
+    - 'Path = pathlib.Path
+
+      '
+  - - 34
+    - '
+
+      '
+  del_line_no:
+  - - null
+    - '    from pathlib import Path
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '    Path().expanduser()
+
+      '
+  - - null
+    - '    from pathlib2 import Path
+
+      '

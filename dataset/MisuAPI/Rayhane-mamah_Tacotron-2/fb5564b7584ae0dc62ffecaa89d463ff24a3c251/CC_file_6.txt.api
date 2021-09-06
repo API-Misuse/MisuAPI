@@ -1,0 +1,6 @@
+DEL @type:or_test@ @[7132,7161]@ loss > 1000 or np.isnan(loss) @FROM@ @type:if_stmt@ @[7129,7267]@ if loss > 1000 or np.isnan(loss):
+					log('Loss e <text_longer_than_50>
+
+MOV @type:atom_expr@ @[7147,7161]@ np.isnan(loss) @TO@ @type:if_stmt@ @[7129,7267]@ if loss > 1000 or np.isnan(loss):
+					log('Loss e <text_longer_than_50>
+

@@ -1,0 +1,21 @@
+commit ae84b52ad5402ab1716e0f1e9790ce1da9d706d1
+Author: Yuxin Wu <ppwwyyxxc@gmail.com>
+Date:   Tue May 2 15:57:23 2017 -0700
+
+    bugfix in ImageFromFile
+
+diff --git a/tensorpack/dataflow/image.py b/tensorpack/dataflow/image.py
+index a6ff6774..c5534de8 100644
+--- a/tensorpack/dataflow/image.py
++++ b/tensorpack/dataflow/image.py
+@@ -27,7 +27,9 @@ class ImageFromFile(RNGDataFlow):
+         self.files = files
+         self.channel = int(channel)
+         self.imread_mode = cv2.IMREAD_GRAYSCALE if self.channel == 1 else cv2.IMREAD_COLOR
+-        self.resize = shape2d(resize)
++        if resize is not None:
++            resize = shape2d(resize)
++        self.resize = resize
+         self.shuffle = shuffle
+ 
+     def size(self):

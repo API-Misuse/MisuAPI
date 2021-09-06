@@ -1,0 +1,8 @@
+UPD @type:simple_stmt@ @[4091,4148]@ label_loss = label_loss * (1. / config.RPN_BATCH_P <text_longer_than_50> @TO@ @type:simple_stmt@ @[4091,4163]@ label_loss = tf.reduce_sum(label_loss) * (1. / con <text_longer_than_50>
+---UPD @type:expr_stmt@ @[4091,4147]@ label_loss = label_loss * (1. / config.RPN_BATCH_P <text_longer_than_50> @TO@ @type:expr_stmt@ @[4091,4162]@ label_loss = tf.reduce_sum(label_loss) * (1. / con <text_longer_than_50>
+------UPD @type:term@ @[4104,4147]@ label_loss * (1. / config.RPN_BATCH_PER_IM) @TO@ @type:term@ @[4104,4162]@ tf.reduce_sum(label_loss) * (1. / config.RPN_BATCH <text_longer_than_50>
+---------INS @type:atom_expr@ @[4104,4129]@ tf.reduce_sum(label_loss) @TO@ @type:term@ @[4104,4147]@ label_loss * (1. / config.RPN_BATCH_PER_IM)
+------------INS @type:trailer@ @[4117,4129]@ (label_loss) @TO@ @type:atom_expr@ @[4104,4129]@ tf.reduce_sum(label_loss)
+---------MOV @type:name@ @[4104,4114]@ label_loss @TO@ @type:trailer@ @[4117,4129]@ (label_loss)
+
+

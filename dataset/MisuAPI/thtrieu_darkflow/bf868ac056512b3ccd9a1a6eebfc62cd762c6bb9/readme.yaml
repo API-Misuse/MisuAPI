@@ -1,0 +1,62 @@
+sha: bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9
+message: 'Check to see if summary flag exists.
+
+
+  TensorBoard is awesome...but it''s not for everyone :) - don''t use
+
+  TensorBoard features if "summary" flag doesn''t exist (mostly a fix for
+
+  return_predict usage of darkflow)'
+commit_log: "commit bf868ac056512b3ccd9a1a6eebfc62cd762c6bb9\nAuthor: Andrew Bagshaw\
+  \ <abagshaw@hotmail.ca>\nDate:   Tue Apr 11 17:45:35 2017 -0700\n\n    Check to\
+  \ see if summary flag exists.\n    \n    TensorBoard is awesome...but it's not for\
+  \ everyone :) - don't use\n    TensorBoard features if \"summary\" flag doesn't\
+  \ exist (mostly a fix for\n    return_predict usage of darkflow)"
+contained_keywords:
+- fix
+commit_time: 2017-04-11 17:45:35 -0700
+commit_author: Andrew Bagshaw
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: net/build.py
+  source_file: a/net/build.py
+  target_file: b/net/build.py
+  added: 7
+  removed: 5
+  add_line_no:
+  - - 107
+    - "\t\t\n"
+  - - 108
+    - "\t\tif self.FLAGS.summary is not None:\n"
+  - - 109
+    - "\t\t\tself.summary_op = tf.summary.merge_all()\n"
+  - - 110
+    - "\t\t\tself.writer = tf.summary.FileWriter(self.FLAGS.summary + 'train')\n"
+  - - 119
+    - "\t\t\n"
+  - - 120
+    - "\t\tif self.FLAGS.summary is not None:\n"
+  - - 121
+    - "\t\t\tself.writer.add_graph(self.sess.graph)\n"
+  del_line_no:
+  - - null
+    - '
+
+      '
+  - - null
+    - "\t\tself.summary_op = tf.summary.merge_all()\n"
+  - - null
+    - "\t\tself.writer = tf.summary.FileWriter(self.FLAGS.summary + 'train')\n"
+  - - null
+    - '
+
+      '
+  - - null
+    - "\t\tself.writer.add_graph(self.sess.graph)\n"

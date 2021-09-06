@@ -1,0 +1,10 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/ibab_tensorflow-wavenet/a8e997709337578ec0c42ea666dc7f23c3fa2d16/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+0 errors, 0 warnings, 0 infos 
+Completed in 0.942sec
+
+time cost(in seconds): 1.12628173828125

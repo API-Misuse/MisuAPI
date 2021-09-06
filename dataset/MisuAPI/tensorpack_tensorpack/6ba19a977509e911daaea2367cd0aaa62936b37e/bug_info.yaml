@@ -1,0 +1,51 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/tensorpack/tensorpack/issues/215
+  title: CTC-TIMIT problem
+  body: "tensorflow version: 1.0.1\r\ncuda version: 8.0\r\n\r\nI followed this Tutorial\r\
+    \nhttps://github.com/ppwwyyxx/tensorpack/tree/4a30d18dd9512319ddbe2e7f1503abe45e1e80cb/examples/CTC-TIMIT\r\
+    \n\r\nbut when i ran \"./create-lmdb.py build --dataset ./TRAIN --db train.mdb\"\
+    , it printed:\r\n\r\nI tensorflow/stream_executor/dso_loader.cc:135] successfully\
+    \ opened CUDA library libcublas.so.8.0 locally\r\nI tensorflow/stream_executor/dso_loader.cc:135]\
+    \ successfully opened CUDA library libcudnn.so.5 locally\r\nI tensorflow/stream_executor/dso_loader.cc:135]\
+    \ successfully opened CUDA library libcufft.so.8.0 locally\r\nI tensorflow/stream_executor/dso_loader.cc:135]\
+    \ successfully opened CUDA library libcuda.so.1 locally\r\nI tensorflow/stream_executor/dso_loader.cc:135]\
+    \ successfully opened CUDA library libcurand.so.8.0 locally\r\n[0401 18:00:04\
+    \ @create-lmdb.py:86] Found 10 wav files ...\r\n  0%|                        \
+    \                               |0/10[00:00<?,?it/s][0401 18:00:04 @dftools.py:127]\
+    \ Flushing database ...\r\n100%|##############################################|10/10[00:00<00:00,72.11it/s]\r\
+    \nSegmentation fault (core dumped)\r\n\r\ni just copy the timit data sets( including\
+    \ 10 .PHN files, 10 .TXT files, 10 .WRD files and 10 .wav files ) into ./TRAIN\
+    \ folder\r\n\r\n"
+sha: 6ba19a977509e911daaea2367cd0aaa62936b37e
+message: fix ctc_loss API (#215)
+commit_log: "commit 6ba19a977509e911daaea2367cd0aaa62936b37e\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Sat Apr 1 22:40:54 2017 -0700\n\n    fix ctc_loss API (#215)"
+contained_keywords:
+- fix
+commit_time: 2017-04-01 22:40:54 -0700
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 59
+    - '        loss = tf.nn.ctc_loss(label, logits, seqlen, time_major=False)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '        loss = tf.nn.ctc_loss(logits, label, seqlen, time_major=False)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: examples/CTC-TIMIT/train-timit.py
+  removed: 1
+  source_file: a/examples/CTC-TIMIT/train-timit.py
+  target_file: b/examples/CTC-TIMIT/train-timit.py

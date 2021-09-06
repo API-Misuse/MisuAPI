@@ -1,0 +1,10 @@
+UPD @type:with_stmt@ @[2202,2406]@ with tf.name_scope('MetricAverageCallback'):
+      <text_longer_than_50> @TO@ @type:with_stmt@ @[2202,2455]@ with tf.name_scope('MetricAverageCallback'):
+      <text_longer_than_50>
+---UPD @type:suite@ @[2246,2406]@ var = tf.Variable(value, name=metric)
+             <text_longer_than_50> @TO@ @type:suite@ @[2246,2455]@ var = tf.Variable(value, name=metric)
+             <text_longer_than_50>
+------INS @type:simple_stmt@ @[2309,2346]@ K.get_session().run(var.initializer) @TO@ @type:suite@ @[2246,2406]@ var = tf.Variable(value, name=metric)
+             <text_longer_than_50>
+
+

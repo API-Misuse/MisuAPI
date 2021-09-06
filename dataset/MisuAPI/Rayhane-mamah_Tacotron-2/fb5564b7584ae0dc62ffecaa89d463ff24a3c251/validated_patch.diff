@@ -1,0 +1,27 @@
+commit fb5564b7584ae0dc62ffecaa89d463ff24a3c251
+Author: Rayhane Mama <34689728+Rayhane-mamah@users.noreply.github.com>
+Date:   Fri May 25 15:27:31 2018 +0100
+
+    my hparams + faster attention + pitch loss fix
+
+diff --git a/datasets/audio.py b/datasets/audio.py
+index 04b89df..81b9793 100644
+--- a/datasets/audio.py
++++ b/datasets/audio.py
+@@ -74,7 +74,7 @@ def inv_linear_spectrogram(linear_spectrogram, hparams):
+ 		y = processor.istft(D).astype(np.float32)
+ 		return y
+ 	else:
+-		return _griffin_lim(S ** hparams.power)
++		return _griffin_lim(S ** hparams.power, hparams)
+ 	
+ 
+ def inv_mel_spectrogram(mel_spectrogram, hparams):
+@@ -92,11 +92,11 @@ def inv_mel_spectrogram(mel_spectrogram, hparams):
+ 		y = processor.istft(D).astype(np.float32)
+ 		return y
+ 	else:
+-		return _griffin_lim(S ** hparams.power)
++		return _griffin_lim(S ** hparams.power, hparams)
+ 
+

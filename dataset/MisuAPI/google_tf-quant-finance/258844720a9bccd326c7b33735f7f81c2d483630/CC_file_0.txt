@@ -1,0 +1,52 @@
+UPD @type:with_stmt@ @[3359,5450]@ with tf.compat.v1.name_scope(name, default_name='s <text_longer_than_50> @TO@ @type:with_stmt@ @[3359,5629]@ with tf.compat.v1.name_scope(name, default_name='s <text_longer_than_50>
+---UPD @type:suite@ @[3435,5450]@ x = tf.convert_to_tensor(x, dtype=dtype)
+    raw_d <text_longer_than_50> @TO@ @type:suite@ @[3435,5629]@ x = tf.convert_to_tensor(x, dtype=dtype)
+    raw_d <text_longer_than_50>
+------UPD @type:simple_stmt@ @[4777,4920]@ needs_fix = tf.scatter_nd(
+        fix_indices,
+   <text_longer_than_50> @TO@ @type:simple_stmt@ @[4777,5049]@ needs_fix = tf.scatter_nd(
+        fix_indices,
+   <text_longer_than_50>
+---------UPD @type:expr_stmt@ @[4777,4919]@ needs_fix = tf.scatter_nd(
+        fix_indices,
+   <text_longer_than_50> @TO@ @type:expr_stmt@ @[4777,5048]@ needs_fix = tf.scatter_nd(
+        fix_indices,
+   <text_longer_than_50>
+------------UPD @type:atom_expr@ @[4789,4919]@ tf.scatter_nd(
+        fix_indices,
+        tf.res <text_longer_than_50> @TO@ @type:atom_expr@ @[4789,5048]@ tf.scatter_nd(
+        fix_indices,
+        # Unfo <text_longer_than_50>
+---------------UPD @type:trailer@ @[4802,4919]@ (
+        fix_indices,
+        tf.reshape(tf.ones_ <text_longer_than_50> @TO@ @type:trailer@ @[4802,5048]@ (
+        fix_indices,
+        # Unfortunately, sc <text_longer_than_50>
+------------------UPD @type:arglist@ @[4812,4918]@ fix_indices,
+        tf.reshape(tf.ones_like(fix_i <text_longer_than_50> @TO@ @type:arglist@ @[4812,5047]@ fix_indices,
+        # Unfortunately, scatter_nd d <text_longer_than_50>
+---------------------UPD @type:atom_expr@ @[4833,4891]@ tf.reshape(tf.ones_like(fix_indices, dtype=tf.bool <text_longer_than_50> @TO@ @type:atom_expr@ @[4961,5020]@ tf.reshape(tf.ones_like(fix_indices, dtype=tf.int3 <text_longer_than_50>
+------------------------UPD @type:trailer@ @[4843,4891]@ (tf.ones_like(fix_indices, dtype=tf.bool), [-1]) @TO@ @type:trailer@ @[4971,5020]@ (tf.ones_like(fix_indices, dtype=tf.int32), [-1])
+---------------------------UPD @type:arglist@ @[4844,4890]@ tf.ones_like(fix_indices, dtype=tf.bool), [-1] @TO@ @type:arglist@ @[4972,5019]@ tf.ones_like(fix_indices, dtype=tf.int32), [-1]
+------------------------------INS @type:atom_expr@ @[4972,5013]@ tf.ones_like(fix_indices, dtype=tf.int32) @TO@ @type:arglist@ @[4844,4890]@ tf.ones_like(fix_indices, dtype=tf.bool), [-1]
+------INS @type:simple_stmt@ @[5193,5239]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool) @TO@ @type:suite@ @[3435,5450]@ x = tf.convert_to_tensor(x, dtype=dtype)
+    raw_d <text_longer_than_50>
+---------INS @type:expr_stmt@ @[5193,5238]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool) @TO@ @type:simple_stmt@ @[5193,5239]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool)
+
+
+UPD @type:atom_expr@ @[4844,4884]@ tf.ones_like(fix_indices, dtype=tf.bool) @TO@ @type:atom_expr@ @[5205,5238]@ tf.cast(needs_fix, dtype=tf.bool)
+---UPD @type:trailer@ @[4846,4856]@ .ones_like @TO@ @type:trailer@ @[5207,5212]@ .cast
+------UPD @type:name@ @[4847,4856]@ ones_like @TO@ @type:name@ @[5208,5212]@ cast
+---UPD @type:trailer@ @[4856,4884]@ (fix_indices, dtype=tf.bool) @TO@ @type:trailer@ @[5212,5238]@ (needs_fix, dtype=tf.bool)
+------UPD @type:arglist@ @[4857,4883]@ fix_indices, dtype=tf.bool @TO@ @type:arglist@ @[5213,5237]@ needs_fix, dtype=tf.bool
+---------UPD @type:name@ @[4857,4868]@ fix_indices @TO@ @type:name@ @[5213,5222]@ needs_fix
+
+
+MOV @type:atom_expr@ @[4844,4884]@ tf.ones_like(fix_indices, dtype=tf.bool) @TO@ @type:expr_stmt@ @[5193,5238]@ needs_fix = tf.cast(needs_fix, dtype=tf.bool)
+---UPD @type:trailer@ @[4846,4856]@ .ones_like @TO@ @type:trailer@ @[5207,5212]@ .cast
+------UPD @type:name@ @[4847,4856]@ ones_like @TO@ @type:name@ @[5208,5212]@ cast
+---UPD @type:trailer@ @[4856,4884]@ (fix_indices, dtype=tf.bool) @TO@ @type:trailer@ @[5212,5238]@ (needs_fix, dtype=tf.bool)
+------UPD @type:arglist@ @[4857,4883]@ fix_indices, dtype=tf.bool @TO@ @type:arglist@ @[5213,5237]@ needs_fix, dtype=tf.bool
+---------UPD @type:name@ @[4857,4868]@ fix_indices @TO@ @type:name@ @[5213,5222]@ needs_fix
+
+

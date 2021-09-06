@@ -1,0 +1,39 @@
+commit 86355bfb6987f74baa7bcd22e78296fe06073948
+Author: cam <cameron@ideum.com>
+Date:   Mon Oct 24 22:03:11 2016 -0600
+
+    Added error checking for input images as per request.
+
+diff --git a/neural_style.py b/neural_style.py
+index fa11f56..bad10d1 100644
+--- a/neural_style.py
++++ b/neural_style.py
+@@ -3,6 +3,7 @@ import numpy as np
+ import scipy.io  
+ import argparse 
+ import struct
++import errno
+ import time                       
+ import cv2
+ import os
+@@ -486,7 +487,9 @@ def sum_total_variation_losses(sess, net, input_img):
+ '''
+ def read_image(path):
+   # bgr image
+-  img = cv2.imread(path, cv2.IMREAD_COLOR).astype(np.float32)
++  img = cv2.imread(path, cv2.IMREAD_COLOR)
++  check_image(img, path)
++  img = img.astype(np.float32)
+   img = preprocess(img, vgg19_mean)
+   return img
+ 
+@@ -540,12 +543,16 @@ def read_weights_file(path):
+   return weights
+ 
++def check_image(img, path):
++  if img is None:
++    raise OSError(errno.ENOENT, "No such file", path)
++
+ '''
+   rendering -- where the magic happens
+ '''

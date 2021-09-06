@@ -1,0 +1,41 @@
+sha: e9d4e8eca95829e5607236fa30a0556b40813f62
+message: Fixed keepdims
+commit_log: "commit e9d4e8eca95829e5607236fa30a0556b40813f62\nAuthor: David Sandberg\
+  \ <david.o.sandberg@gmail.com>\nDate:   Tue Apr 10 22:32:45 2018 +0200\n\n    Fixed\
+  \ keepdims"
+contained_keywords:
+- fixed
+commit_time: 2018-04-10 22:32:45 +0200
+commit_author: David Sandberg
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: src/align/detect_face.py
+  source_file: a/src/align/detect_face.py
+  target_file: b/src/align/detect_face.py
+  added: 2
+  removed: 2
+  add_line_no:
+  - - 210
+    - '        max_axis = tf.reduce_max(target, axis, keepdims=True)
+
+      '
+  - - 212
+    - '        normalize = tf.reduce_sum(target_exp, axis, keepdims=True)
+
+      '
+  del_line_no:
+  - - null
+    - '        max_axis = tf.reduce_max(target, axis, keep_dims=True)
+
+      '
+  - - null
+    - '        normalize = tf.reduce_sum(target_exp, axis, keep_dims=True)
+
+      '

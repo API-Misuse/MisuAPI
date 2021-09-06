@@ -1,0 +1,77 @@
+sha: 68ab303cd840bd98cfd7697035f4504b137fe0fa
+message: 'fix: add ffmpeg binaries check'
+commit_log: "commit 68ab303cd840bd98cfd7697035f4504b137fe0fa\nAuthor: F\xE9lix Voituret\
+  \ <fvoituret@deezer.com>\nDate:   Wed Jun 10 16:40:55 2020 +0200\n\n    fix: add\
+  \ ffmpeg binaries check"
+contained_keywords:
+- fix
+commit_time: 2020-06-10 16:40:55 +0200
+commit_author: "F\xE9lix Voituret"
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: spleeter/audio/ffmpeg.py
+  source_file: a/spleeter/audio/ffmpeg.py
+  target_file: b/spleeter/audio/ffmpeg.py
+  added: 13
+  removed: 0
+  add_line_no:
+  - - 12
+    - 'import shutil
+
+      '
+  - - 28
+    - 'def _check_ffmpeg_install():
+
+      '
+  - - 29
+    - '    """ Ensure FFMPEG binaries are available.
+
+      '
+  - - 30
+    - '
+
+      '
+  - - 31
+    - '    :raise SpleeterError: If ffmpeg or ffprobe is not found.
+
+      '
+  - - 32
+    - '    """
+
+      '
+  - - 33
+    - '    for binary in (''ffmpeg'', ''ffprobe''):
+
+      '
+  - - 34
+    - '        if shutil.which(binary) is None:
+
+      '
+  - - 35
+    - '            raise SpleeterError(''{} binary not found''.format(binary))
+
+      '
+  - - 36
+    - '
+
+      '
+  - - 37
+    - '
+
+      '
+  - - 80
+    - '        _check_ffmpeg_install()
+
+      '
+  - - 127
+    - '        _check_ffmpeg_install()
+
+      '
+  del_line_no: []

@@ -1,0 +1,2 @@
+UPD @type:atom_expr@ @[13853,13896]@ tf.concat(axis=[indices, labels], values=1) @TO@ @type:atom_expr@ @[13853,13896]@ tf.concat(axis=1, values=[indices, labels])
+

@@ -1,0 +1,386 @@
+issues_cnt: 0
+sha: 0a5632529562fa326ab7564a4147c68748ebc777
+message: catch some errors and stop the proecsses when training exited
+commit_log: "commit 0a5632529562fa326ab7564a4147c68748ebc777\nAuthor: Yuxin Wu <ppwwyyxxc@gmail.com>\n\
+  Date:   Wed Jan 25 14:05:06 2017 +0800\n\n    catch some errors and stop the proecsses\
+  \ when training exited"
+contained_keywords:
+- errors
+commit_time: 2017-01-25 14:05:06 +0800
+commit_author: Yuxin Wu
+added_files: 0
+removed_files: 0
+modified_files: 5
+patched_file_0:
+  add_line_no:
+  - - 147
+    - '        try:
+
+      '
+  - - 148
+    - '            while True:
+
+      '
+  - - 149
+    - '                msg = loads(self.c2s_socket.recv(copy=False).bytes)
+
+      '
+  - - 150
+    - '                ident, state, reward, isOver = msg
+
+      '
+  - - 151
+    - '                # TODO check history and warn about dead client
+
+      '
+  - - 152
+    - '                client = self.clients[ident]
+
+      '
+  - - 153
+    - '
+
+      '
+  - - 154
+    - '                # check if reward&isOver is valid
+
+      '
+  - - 155
+    - '                # in the first message, only state is valid
+
+      '
+  - - 156
+    - '                if len(client.memory) > 0:
+
+      '
+  - - 157
+    - '                    client.memory[-1].reward = reward
+
+      '
+  - - 158
+    - '                    if isOver:
+
+      '
+  - - 159
+    - '                        self._on_episode_over(ident)
+
+      '
+  - - 160
+    - '                    else:
+
+      '
+  - - 161
+    - '                        self._on_datapoint(ident)
+
+      '
+  - - 162
+    - '                # feed state and return action
+
+      '
+  - - 163
+    - '                self._on_state(state, ident)
+
+      '
+  - - 164
+    - '        except zmq.ContextTerminated:
+
+      '
+  - - 165
+    - '            logger.info("[Simulator] Context was terminated.")
+
+      '
+  added: 19
+  del_line_no:
+  - - null
+    - '        while True:
+
+      '
+  - - null
+    - '            msg = loads(self.c2s_socket.recv(copy=False).bytes)
+
+      '
+  - - null
+    - '            ident, state, reward, isOver = msg
+
+      '
+  - - null
+    - '            # TODO check history and warn about dead client
+
+      '
+  - - null
+    - '            client = self.clients[ident]
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '            # check if reward&isOver is valid
+
+      '
+  - - null
+    - '            # in the first message, only state is valid
+
+      '
+  - - null
+    - '            if len(client.memory) > 0:
+
+      '
+  - - null
+    - '                client.memory[-1].reward = reward
+
+      '
+  - - null
+    - '                if isOver:
+
+      '
+  - - null
+    - '                    self._on_episode_over(ident)
+
+      '
+  - - null
+    - '                else:
+
+      '
+  - - null
+    - '                    self._on_datapoint(ident)
+
+      '
+  - - null
+    - '            # feed state and return action
+
+      '
+  - - null
+    - '            self._on_state(state, ident)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: examples/A3C-Gym/simulator.py
+  removed: 16
+  source_file: a/examples/A3C-Gym/simulator.py
+  target_file: b/examples/A3C-Gym/simulator.py
+patched_file_1:
+  add_line_no: []
+  added: 0
+  del_line_no:
+  - - null
+    - '
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: examples/A3C-Gym/train-atari.py
+  removed: 1
+  source_file: a/examples/A3C-Gym/train-atari.py
+  target_file: b/examples/A3C-Gym/train-atari.py
+patched_file_2:
+  add_line_no:
+  - - 20
+    - '        with G.gradient_override_map({"Round": "Identity"}):
+
+      '
+  - - 21
+    - '            return tf.round(x * n) / n
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '        with G.gradient_override_map({"Floor": "Identity"}):
+
+      '
+  - - null
+    - '            return tf.floor(x * n + 0.5) / n
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: examples/DoReFa-Net/dorefa.py
+  removed: 2
+  source_file: a/examples/DoReFa-Net/dorefa.py
+  target_file: b/examples/DoReFa-Net/dorefa.py
+patched_file_3:
+  add_line_no:
+  - - 6
+    - 'import multiprocessing as mp
+
+      '
+  - - 8
+    - 'from ..utils.concurrency import start_proc_mask_signal, StoppableThread
+
+      '
+  - - 19
+    - '    def __init__(self, startable, stop_at_last=True):
+
+      '
+  - - 22
+    - '            startable (list): list of processes or threads which have ``start()``
+      method.
+
+      '
+  - - 24
+    - '            stop_at_last (bool): whether to stop the processes or threads
+
+      '
+  - - 25
+    - '                after training. It will use :meth:`Process.terminate()` or
+
+      '
+  - - 26
+    - '                :meth:`StoppableThread.stop()`, but will do nothing on normal
+
+      '
+  - - 27
+    - '                `threading.Thread` or other startable objects.
+
+      '
+  - - 32
+    - '        self._stop_at_last = stop_at_last
+
+      '
+  - - 36
+    - '                    '', ''.join([k.name for k in self._procs_threads]))
+
+      '
+  - - 39
+    - '
+
+      '
+  - - 40
+    - '    def _after_train(self):
+
+      '
+  - - 41
+    - '        if not self._stop_at_last:
+
+      '
+  - - 42
+    - '            return
+
+      '
+  - - 43
+    - '        for k in self._procs_threads:
+
+      '
+  - - 44
+    - '            if isinstance(k, mp.Process):
+
+      '
+  - - 45
+    - '                k.terminate()
+
+      '
+  - - 46
+    - '                k.join()
+
+      '
+  - - 47
+    - '            elif isinstance(k, StoppableThread):
+
+      '
+  - - 48
+    - '                k.stop()
+
+      '
+  - - 49
+    - '            else:
+
+      '
+  - - 50
+    - '                logger.warn(
+
+      '
+  - - 51
+    - '                    "[StartProcOrThread] {} "
+
+      '
+  - - 52
+    - '                    "is neither a Process nor a StoppableThread, won''t stop
+      it.".format(k.name))
+
+      '
+  added: 24
+  del_line_no:
+  - - null
+    - 'from ..utils.concurrency import start_proc_mask_signal
+
+      '
+  - - null
+    - '    def __init__(self, startable):
+
+      '
+  - - null
+    - '            startable(list): list of processes or threads which have ``start()``
+      method.
+
+      '
+  - - null
+    - '                    '', ''.join([k.name for k in self._procs_threads]) + ''
+      ...'')
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/callbacks/concurrency.py
+  removed: 4
+  source_file: a/tensorpack/callbacks/concurrency.py
+  target_file: b/tensorpack/callbacks/concurrency.py
+patched_file_4:
+  add_line_no:
+  - - 10
+    - 'from ..utils.concurrency import DIE, StoppableThread
+
+      '
+  - - 85
+    - 'class PredictorWorkerThread(StoppableThread):
+
+      '
+  - - 95
+    - '        while not self.stopped():
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - 'import threading
+
+      '
+  - - null
+    - 'from ..utils.concurrency import DIE
+
+      '
+  - - null
+    - 'class PredictorWorkerThread(threading.Thread):
+
+      '
+  - - null
+    - '
+
+      '
+  - - null
+    - '        while True:
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorpack/predict/concurrency.py
+  removed: 5
+  source_file: a/tensorpack/predict/concurrency.py
+  target_file: b/tensorpack/predict/concurrency.py

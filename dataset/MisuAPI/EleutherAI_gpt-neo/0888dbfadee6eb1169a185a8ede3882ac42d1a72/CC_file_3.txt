@@ -1,0 +1,9 @@
+MOV @type:simple_stmt@ @[903,972]@ global_step = tf.train.get_or_create_global_step() <text_longer_than_50> @TO@ @type:suite@ @[628,3629]@ """Creates and returns an optimizer training op."" <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[690,798]@ learning_rate = tf.constant(value=params["lr"], sh <text_longer_than_50> @TO@ @type:suite@ @[628,3629]@ """Creates and returns an optimizer training op."" <text_longer_than_50>
+
+
+MOV @type:simple_stmt@ @[802,897]@ clip_value = mtf.constant(mesh, params["gradient_c <text_longer_than_50> @TO@ @type:suite@ @[628,3629]@ """Creates and returns an optimizer training op."" <text_longer_than_50>
+
+

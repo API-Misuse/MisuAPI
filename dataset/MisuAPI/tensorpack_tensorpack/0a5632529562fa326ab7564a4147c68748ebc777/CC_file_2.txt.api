@@ -1,0 +1,4 @@
+UPD @type:atom_expr@ @[523,569]@ G.gradient_override_map({"Floor": "Identity"}) @TO@ @type:atom_expr@ @[523,569]@ G.gradient_override_map({"Round": "Identity"})
+
+UPD @type:atom_expr@ @[590,611]@ tf.floor(x * n + 0.5) @TO@ @type:atom_expr@ @[590,605]@ tf.round(x * n)
+

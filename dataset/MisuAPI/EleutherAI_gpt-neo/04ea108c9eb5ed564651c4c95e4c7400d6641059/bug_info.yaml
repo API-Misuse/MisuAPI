@@ -1,0 +1,35 @@
+issues_cnt: 0
+sha: 04ea108c9eb5ed564651c4c95e4c7400d6641059
+message: Bug fix run_experiment.py
+commit_log: "commit 04ea108c9eb5ed564651c4c95e4c7400d6641059\nAuthor: Kevin Watkins\
+  \ <kevin.watkins@gmail.com>\nDate:   Fri Sep 11 15:17:45 2020 -0400\n\n    Bug fix\
+  \ run_experiment.py"
+contained_keywords:
+- fix
+- bug
+commit_time: 2020-09-11 15:17:45 -0400
+commit_author: Kevin Watkins
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 70
+    - '    resp = requests.get(uri, params=params, timeout=timeout)
+
+      '
+  added: 1
+  del_line_no:
+  - - null
+    - '    resp = requests.get(uri, params, timeout)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: run_experiment.py
+  removed: 1
+  source_file: a/run_experiment.py
+  target_file: b/run_experiment.py

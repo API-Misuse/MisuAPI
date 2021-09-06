@@ -1,0 +1,160 @@
+commit af74038a4df2337404736e0d3b80a47d6f928ea8
+Author: David Sandberg <david.o.sandberg@gmail.com>
+Date:   Sat Mar 11 20:06:56 2017 +0100
+
+    Closing session to fix problem with memory leak in test cases
+
+diff --git a/src/facenet_train.py b/src/facenet_train.py
+index 4a66717..651ea22 100644
+--- a/src/facenet_train.py
++++ b/src/facenet_train.py
+@@ -176,7 +176,8 @@ def main(args):
+         sess.run(tf.local_variables_initializer(), feed_dict={phase_train_placeholder:True})
+ 
+         summary_writer = tf.summary.FileWriter(log_dir, sess.graph)
+-        tf.train.start_queue_runners(sess=sess)
++        coord = tf.train.Coordinator()
++        tf.train.start_queue_runners(coord=coord, sess=sess)
+ 
+         with sess.as_default():
+ 
+@@ -204,6 +205,7 @@ def main(args):
+                             batch_size_placeholder, learning_rate_placeholder, phase_train_placeholder, enqueue_op, actual_issame, args.batch_size, 
+                             args.lfw_nrof_folds, log_dir, step, summary_writer, args.embedding_size)
+ 
++    sess.close()
+     return model_dir
+ 
+ 
+diff --git a/src/facenet_train_classifier.py b/src/facenet_train_classifier.py
+index 615f718..f2df76a 100644
+--- a/src/facenet_train_classifier.py
++++ b/src/facenet_train_classifier.py
+@@ -38,11 +38,11 @@ import importlib
+ import argparse
+ import facenet
+ import lfw
++import h5py
+ import tensorflow.contrib.slim as slim
+ from tensorflow.python.ops import data_flow_ops
+ from tensorflow.python.framework import ops
+ from tensorflow.python.ops import array_ops
+-import h5py
+ 
+ def main(args):
+   
+@@ -214,7 +214,8 @@ def main(args):
+         sess.run(tf.global_variables_initializer())
+         sess.run(tf.local_variables_initializer())
+         summary_writer = tf.summary.FileWriter(log_dir, sess.graph)
+-        tf.train.start_queue_runners(sess=sess)
++        coord = tf.train.Coordinator()
++        tf.train.start_queue_runners(coord=coord, sess=sess)
+ 
+         with sess.as_default():
+ 
+@@ -240,6 +241,7 @@ def main(args):
+                 if args.lfw_dir:
+                     evaluate(sess, enqueue_op, image_paths_placeholder, labels_placeholder, phase_train_placeholder, batch_size_placeholder, 
+                         embeddings, label_batch, lfw_paths, actual_issame, args.lfw_batch_size, args.lfw_nrof_folds, log_dir, step, summary_writer)
++    sess.close()
+     return model_dir
+   
+ def find_threshold(var, percentile):
+diff --git a/test/train_test.py b/test/train_test.py
+index 5f1982d..fa8283a 100644
+--- a/test/train_test.py
++++ b/test/train_test.py
+@@ -35,6 +35,13 @@ import visualize
+ import test_invariance_on_lfw
+ import download_and_extract_model
+ 
++def memory_usage_psutil():
++    # return the memory usage in MB
++    import psutil
++    process = psutil.Process(os.getpid())
++    mem = process.memory_info()[0] / float(2 ** 20)
++    return mem
++
+ class TrainTest(unittest.TestCase):
+   
+     @classmethod
+@@ -47,12 +54,17 @@ class TrainTest(unittest.TestCase):
+         self.pretrained_model_name = '20170216-091149'
+         download_and_extract_model.download_and_extract_model(self.pretrained_model_name, 'data/')
+         self.model_file = os.path.join('data', self.pretrained_model_name, 'model-%s.ckpt-250000' % self.pretrained_model_name)
++        print('Memory utilization (SetUpClass): %.3f MB' % memory_usage_psutil())
+ 
+         
+     @classmethod
+     def tearDownClass(self):
+         # Recursively remove the temporary directory
+         shutil.rmtree(self.tmp_dir)
++        
++    def tearDown(self):
++        print('Memory utilization (TearDown): %.3f MB' % memory_usage_psutil())
++
+ 
+     @unittest.skip("Skip this test case for now")
+     def test_training_nn4(self):
+@@ -89,6 +101,8 @@ class TrainTest(unittest.TestCase):
+     
+     # test_freeze_graph
+     
++    # test_evaluate_on_lfw
++    
+     def test_training_classifier_inception_resnet_v1(self):
+         argv = ['--logs_base_dir', self.tmp_dir,
+                 '--models_base_dir', self.tmp_dir,
+@@ -106,7 +120,6 @@ class TrainTest(unittest.TestCase):
+         args = facenet_train_classifier.parse_arguments(argv)
+         facenet_train_classifier.main(args)
+ 
+-    @unittest.skip("Skip this test case for now")
+     def test_training_classifier_inception_resnet_v2(self):
+         argv = ['--logs_base_dir', self.tmp_dir,
+                 '--models_base_dir', self.tmp_dir,
+@@ -123,7 +136,7 @@ class TrainTest(unittest.TestCase):
+                 '--no_store_revision_info' ]
+         args = facenet_train_classifier.parse_arguments(argv)
+         facenet_train_classifier.main(args)
+-
++ 
+     def test_train_tripletloss_inception_resnet_v1(self):
+         argv = ['--logs_base_dir', self.tmp_dir,
+                 '--models_base_dir', self.tmp_dir,
+@@ -140,7 +153,7 @@ class TrainTest(unittest.TestCase):
+                 '--no_store_revision_info' ]
+         args = facenet_train.parse_arguments(argv)
+         facenet_train.main(args)
+-
++ 
+     def test_finetune_tripletloss_inception_resnet_v1(self):
+         argv = ['--logs_base_dir', self.tmp_dir,
+                 '--models_base_dir', self.tmp_dir,
+@@ -158,14 +171,14 @@ class TrainTest(unittest.TestCase):
+                 '--no_store_revision_info' ]
+         args = facenet_train.parse_arguments(argv)
+         facenet_train.main(args)
+-
++ 
+     def test_compare(self):
+         argv = [os.path.join('data/', self.pretrained_model_name),
+                 'data/images/Anthony_Hopkins_0001.jpg',
+                 'data/images/Anthony_Hopkins_0002.jpg' ]
+         args = compare.parse_arguments(argv)
+         compare.main(args)
+-
++ 
+     @unittest.skip("Skip this test case for now")
+     def test_visualize(self):
+         model_dir = os.path.abspath('../data/model/20160620-173927')
+@@ -174,7 +187,7 @@ class TrainTest(unittest.TestCase):
+                 '--model_def', 'models.nn4' ]
+         args = visualize.parse_arguments(argv)
+         visualize.main(args)
+-
++ 
+     @unittest.skip("Skip this test case for now")
+     def test_test_invariance_on_lfw(self):
+         model_dir = os.path.abspath('../data/model/20160620-173927')

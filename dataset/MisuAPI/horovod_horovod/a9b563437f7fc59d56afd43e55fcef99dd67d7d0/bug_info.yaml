@@ -1,0 +1,117 @@
+issues_cnt: 1
+issue_0:
+  html_url: https://github.com/horovod/horovod/pull/1790
+  title: Fixes bug with sample weight in torch
+  body: ''
+sha: a9b563437f7fc59d56afd43e55fcef99dd67d7d0
+message: 'Fixes bug with sample weight in torch (#1790)
+
+
+  Signed-off-by: fardin abdi <fardin@uber.com>'
+commit_log: "commit a9b563437f7fc59d56afd43e55fcef99dd67d7d0\nAuthor: Fardin abdi\
+  \ <fardin@uber.com>\nDate:   Thu Mar 26 09:44:51 2020 -0700\n\n    Fixes bug with\
+  \ sample weight in torch (#1790)\n    \n    Signed-off-by: fardin abdi <fardin@uber.com>"
+contained_keywords:
+- bug
+- fixes
+commit_time: 2020-03-26 09:44:51 -0700
+commit_author: Fardin abdi
+added_files: 0
+removed_files: 0
+modified_files: 3
+patched_file_0:
+  add_line_no:
+  - - 238
+    - '                            if sample_weights:
+
+      '
+  - - 239
+    - '                                sample_weights = sample_weights.cuda()
+
+      '
+  added: 2
+  del_line_no: []
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: horovod/spark/torch/remote.py
+  removed: 0
+  source_file: a/horovod/spark/torch/remote.py
+  target_file: b/horovod/spark/torch/remote.py
+patched_file_1:
+  add_line_no:
+  - - 88
+    - '    data = [[0, 0, 0.0, 0.1], [0, 1, 1.0, 0.2], [1, 0, 1.0, 0.3], [1, 1, 0.0,
+      0.4]]
+
+      '
+  - - 91
+    - '                         StructField(''y'', FloatType()),
+
+      '
+  - - 92
+    - '                         StructField(''weight'', FloatType())])
+
+      '
+  added: 3
+  del_line_no:
+  - - null
+    - '    data = [[0, 0, 0.0], [0, 1, 1.0], [1, 0, 1.0], [1, 1, 0.0]]
+
+      '
+  - - null
+    - '                         StructField(''y'', FloatType())])
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: test/spark_common.py
+  removed: 2
+  source_file: a/test/spark_common.py
+  target_file: b/test/spark_common.py
+patched_file_2:
+  add_line_no:
+  - - 29
+    - 'from torch.nn import functional as F
+
+      '
+  - - 67
+    - '        loss = F.binary_cross_entropy
+
+      '
+  - - 84
+    - '                    verbose=2,
+
+      '
+  - - 85
+    - '                    sample_weight_col=''weight'')
+
+      '
+  - - 150
+    - '                ''weight'': DoubleType,
+
+      '
+  added: 5
+  del_line_no:
+  - - null
+    - '        loss = nn.BCELoss()
+
+      '
+  - - null
+    - '                    verbose=2)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: test/test_spark_torch.py
+  removed: 2
+  source_file: a/test/test_spark_torch.py
+  target_file: b/test/test_spark_torch.py

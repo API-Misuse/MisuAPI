@@ -1,0 +1,52 @@
+issues_cnt: 2
+issue_0:
+  html_url: https://github.com/tensorflow/models/pull/1569
+  title: A fix to object_detection/builders/model_builder_test.py
+  body: Fix compatibility with py35
+issue_1:
+  html_url: https://github.com/tensorflow/models/pull/1480
+  title: Fixed the device specification for dequeue
+  body: "This patch assigns dequeue node to inputs_device. And nolonger shows\r\n\"\
+    Ignoring device specification /device:GPU:X for node\r\n'clone_X/fifo_queue_Dequeue'\"\
+    \ message."
+sha: 001a260214ba34f36e149bbd24f7f5d6a6634500
+message: "Fixed the device specification for dequeue (#1480)\n\nThis patch assigns\
+  \ dequeue node to inputs_device. And nolonger shows\r\n\"Ignoring device specification\
+  \ /device:GPU:X for node\r\n'clone_X/fifo_queue_Dequeue'\" message."
+commit_log: "commit 001a260214ba34f36e149bbd24f7f5d6a6634500\nAuthor: g21589 <g21589@gmail.com>\n\
+  Date:   Thu Jun 15 02:12:54 2017 +0800\n\n    Fixed the device specification for\
+  \ dequeue (#1480)\n    \n    This patch assigns dequeue node to inputs_device. And\
+  \ nolonger shows\n    \"Ignoring device specification /device:GPU:X for node\n \
+  \   'clone_X/fifo_queue_Dequeue'\" message."
+contained_keywords:
+- fixed
+commit_time: 2017-06-15 02:12:54 +0800
+commit_author: g21589
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 453
+    - '      with tf.device(deploy_config.inputs_device()):
+
+      '
+  - - 454
+    - '        images, labels = batch_queue.dequeue()
+
+      '
+  added: 2
+  del_line_no:
+  - - null
+    - '      images, labels = batch_queue.dequeue()
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: slim/train_image_classifier.py
+  removed: 1
+  source_file: a/slim/train_image_classifier.py
+  target_file: b/slim/train_image_classifier.py

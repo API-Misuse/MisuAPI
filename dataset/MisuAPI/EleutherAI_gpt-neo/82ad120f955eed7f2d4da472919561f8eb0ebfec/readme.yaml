@@ -1,0 +1,53 @@
+sha: 82ad120f955eed7f2d4da472919561f8eb0ebfec
+message: fix error if stop_at_token is None
+commit_log: "commit 82ad120f955eed7f2d4da472919561f8eb0ebfec\nAuthor: sdtblck <sdtblck@gmail.com>\n\
+  Date:   Thu Aug 20 02:38:36 2020 +0200\n\n    fix error if stop_at_token is None"
+contained_keywords:
+- fix
+- error
+commit_time: 2020-08-20 02:38:36 +0200
+commit_author: sdtblck
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  is_added_file: false
+  is_removed_file: false
+  is_modified_file: true
+  is_binary_file: false
+  is_rename: false
+  path: sample.py
+  source_file: a/sample.py
+  target_file: b/sample.py
+  added: 4
+  removed: 3
+  add_line_no:
+  - - 116
+    - '    if stop_at_token is not None:
+
+      '
+  - - 117
+    - '        partial_sequences_eos_count = mtf.reduce_sum(
+
+      '
+  - - 118
+    - '            mtf.to_int32(mtf.equal(partial_sequences, stop_at_token)),
+
+      '
+  - - 119
+    - '            reduced_dim=length_dim)
+
+      '
+  del_line_no:
+  - - null
+    - '    partial_sequences_eos_count = mtf.reduce_sum(
+
+      '
+  - - null
+    - '        mtf.to_int32(mtf.equal(partial_sequences, stop_at_token)),
+
+      '
+  - - null
+    - '        reduced_dim=length_dim)
+
+      '

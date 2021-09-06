@@ -1,0 +1,10 @@
+INS @type:simple_stmt@ @[309,323]@ import shutil @TO@ @type:file_input@ @[38,5162]@ """
+    This module provides an AudioAdapter imple <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[2459,2483]@ _check_ffmpeg_install() @TO@ @type:suite@ @[1540,3518]@ """ Loads the audio file denoted by the given path <text_longer_than_50>
+
+
+INS @type:simple_stmt@ @[4448,4472]@ _check_ffmpeg_install() @TO@ @type:suite@ @[3614,5162]@ """ Write waveform data to the file denoted by the <text_longer_than_50>
+
+

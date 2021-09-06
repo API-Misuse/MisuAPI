@@ -1,0 +1,24 @@
+commit 6601008ff2e65f9945d471486efadf73b1aac53a
+Author: Henry-E <Henry-E@users.noreply.github.com>
+Date:   Wed Jan 11 11:19:22 2017 +0000
+
+    ensure output directory exists
+    
+    The neural programmer model fails the first time it's run, if the output directory folder does not already exist. In this case "../model" does not exist and the function fails because the mkdir function doesn't appear to create parent folders.
+    Error:
+    tensorflow.python.framework.errors_impl.NotFoundError: ../model//modeltemp/
+
+diff --git a/neural_programmer/neural_programmer.py b/neural_programmer/neural_programmer.py
+index 22c8725d..5ab1bde5 100755
+--- a/neural_programmer/neural_programmer.py
++++ b/neural_programmer/neural_programmer.py
+@@ -195,6 +195,9 @@ def master(train_data, dev_data, utility):
+     else:
+       ckpt = tf.train.get_checkpoint_state(model_dir)
+       print "model dir: ", model_dir
++      if (not (tf.gfile.IsDirectory(utility.FLAGS.output_dir))):
++        print "create dir: ", utility.FLAGS.output_dir
++        tf.gfile.MkDir(utility.FLAGS.output_dir)
+       if (not (tf.gfile.IsDirectory(model_dir))):
+         print "create dir: ", model_dir
+         tf.gfile.MkDir(model_dir)

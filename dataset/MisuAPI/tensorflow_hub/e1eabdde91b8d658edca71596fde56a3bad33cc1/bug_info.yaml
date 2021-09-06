@@ -1,0 +1,64 @@
+issues_cnt: 0
+sha: e1eabdde91b8d658edca71596fde56a3bad33cc1
+message: 'Fix "TypeError: Cannot mix str and non-str arguments" error when loading
+  a module from https.
+
+
+  Users were likely to have encountered this in google cloud datalab and composer.
+
+
+  This is likely the fix for https://github.com/tensorflow/hub/issues/76.
+
+
+  Tested: manually in google cloud datalab.
+
+  PiperOrigin-RevId: 212179432'
+commit_log: "commit e1eabdde91b8d658edca71596fde56a3bad33cc1\nAuthor: TensorFlow Hub\
+  \ Authors <no-reply@google.com>\nDate:   Sun Sep 9 17:21:05 2018 +0200\n\n    Fix\
+  \ \"TypeError: Cannot mix str and non-str arguments\" error when loading a module\
+  \ from https.\n    \n    Users were likely to have encountered this in google cloud\
+  \ datalab and composer.\n    \n    This is likely the fix for https://github.com/tensorflow/hub/issues/76.\n\
+  \    \n    Tested: manually in google cloud datalab.\n    PiperOrigin-RevId: 212179432"
+contained_keywords:
+- issues
+- fix
+- error
+- typeerror
+commit_time: 2018-09-09 17:21:05 +0200
+commit_author: TensorFlow Hub Authors
+added_files: 0
+removed_files: 0
+modified_files: 1
+patched_file_0:
+  add_line_no:
+  - - 62
+    - '  # NOTE: Cast to string to avoid urlunparse to deal with mixed types.
+
+      '
+  - - 63
+    - '  # This happens due to backport of urllib.parse into python2 returning an
+
+      '
+  - - 64
+    - '  # instance of <class ''future.types.newstr.newstr''>.
+
+      '
+  - - 65
+    - '  parsed[4] = str(urlencode(qsl))
+
+      '
+  added: 4
+  del_line_no:
+  - - null
+    - '  parsed[4] = urlencode(qsl)
+
+      '
+  is_added_file: false
+  is_binary_file: false
+  is_modified_file: true
+  is_removed_file: false
+  is_rename: false
+  path: tensorflow_hub/compressed_module_resolver.py
+  removed: 1
+  source_file: a/tensorflow_hub/compressed_module_resolver.py
+  target_file: b/tensorflow_hub/compressed_module_resolver.py

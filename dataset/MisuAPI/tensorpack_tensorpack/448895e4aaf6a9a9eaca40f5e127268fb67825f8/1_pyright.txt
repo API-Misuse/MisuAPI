@@ -1,0 +1,22 @@
+No configuration file found.
+No pyproject.toml file found.
+stubPath /mnt/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/typings is not a valid directory.
+Assuming Python platform Linux
+Searching for source files
+Found 1 source file
+/home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:9:6 - warning: Import "six.moves" could not be resolved from source (reportMissingModuleSource)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:14:6 - error: Import "..utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:15:6 - error: Import "..utils.develop" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:16:6 - error: Import "..utils.argtools" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:17:6 - error: Import "..utils.naming" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:18:6 - error: Import ".tower" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:19:6 - error: Import ".symbolic_functions" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:20:6 - error: Import ".scope_utils" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:255:12 - error: Import "scipy.misc" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:257:10 - error: Import "..utils.develop" could not be resolved (reportMissingImports)
+  /home/apr/data/2020-11-API-misuse/Repair_API_Misuse/api-misuse-repair/2_parse_dl_repos/repo_download_v2/misuse_repos/tensorpack_tensorpack/448895e4aaf6a9a9eaca40f5e127268fb67825f8/a/tensorpack/tfutils/summary.py:258:5 - error: Declaration "create_image_summary" is obscured by a declaration of the same name (reportGeneralTypeIssues)
+10 errors, 1 warning, 0 infos 
+Completed in 1.266sec
+
+time cost(in seconds): 1.38535737991333
