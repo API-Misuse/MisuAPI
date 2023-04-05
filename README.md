@@ -18,6 +18,8 @@ All artifacts of our study "Demystifying API Misuses in Deep Learning Applicatio
 2. The Python implementation to identify, collect and parse TensorFlow dependent repositories for constructing the dataset;
 3. The results of all questions investigated in our study.
 
+These artifacts are also made available at [Zenodo](https://zenodo.org/record/7684952).
+
 ## 2. Dataset
 
 Our dataset **MisuAPI** is publicly [available](./dataset/MisuAPI) now. Each API misuse corresponds to a folder (e.g., [./dataset/MisuAPI/activeloopai_Hub/c23c1d94b490dd1f9fc0c08838801c3666e7bc4c](./dataset/MisuAPI/activeloopai_Hub/c23c1d94b490dd1f9fc0c08838801c3666e7bc4c))
